@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a3d6b;
+  --navy-dark: #07466f;
+  --blue: #0b63b5;
+  --blue-light: #2a8fd6;
+  --sky: #e8f3fc;
+  --bg: #f3f8fd;
+  --text: #4b5d70;
+  --heading: #0a3d6b;
+  --green: #e3f5ea;
+  --line: #dbe7f3;
+  --radius: 14px;
+  --shadow: 0 8px 28px rgba(10, 61, 107, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background-color: #ffffff;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: Plus Jakarta Sans */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+h2 {
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+@media (min-width: 640px) {
+  h3 {
+    font-size: 1.375rem;
+  }
+}
+
+p {
+  font-size: 15px;
+  line-height: 24px;
+}
+@media (min-width: 640px) {
+  p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Navigation elements: Plus Jakarta Sans */
+nav,
+nav a,
+[role="navigation"],
+.nav-link {
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Buttons and interactive submit controls: Plus Jakarta Sans */
+button,
+.btn,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+}
+
+/* Section titles, kickers, badges, and labels: Plus Jakarta Sans */
+.section-title,
+.section-subtitle,
+.section-kicker,
+.font-heading,
+label {
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Body text, descriptions, and paragraphs: Inter */
+p,
+li,
+dd,
+blockquote,
+figcaption,
+.body-text,
+.font-sans {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Form input elements use Inter for legibility */
+input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+textarea,
+select {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom image mask utilities matching original design */
+.hero-img-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 22%);
+}
+
+@media (max-width: 860px) {
+  .hero-img-mask {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 18%);
+  }
+}
+
+.cta-img-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 40%);
+}
+
+@media (max-width: 860px) {
+  .cta-img-mask {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 35%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 35%);
+  }
+}
