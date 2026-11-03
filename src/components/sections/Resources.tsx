@@ -74,7 +74,7 @@ export function Resources() {
             </div>
 
             {/* Main Heading (Exact font hierarchy matching Services, Process, and Testimonials) */}
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
               Helpful Resources for Your{" "}
               <span className="text-brand-blue relative inline-block">
                 Journey
@@ -101,8 +101,8 @@ export function Resources() {
 
           {/* View All Articles Pill Button */}
           <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[16px] font-heading transition-all duration-200 shadow-sm flex-shrink-0 group"
+            href="/services"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[14px] font-heading transition-all duration-200 shadow-xs flex-shrink-0 group"
           >
             <span>View All Articles</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -118,10 +118,10 @@ export function Resources() {
             return (
               <article
                 key={article.id}
-                className="relative bg-white rounded-[5px] overflow-hidden shadow-[0_10px_30px_rgba(10,61,107,0.10)] border-4 border-[#ffffff]/80 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_38px_rgba(10,61,107,0.12)] flex flex-col group"
+                className="relative bg-white rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(10,61,107,0.08)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_38px_rgba(10,61,107,0.12)] flex flex-col group"
               >
                 {/* Decorative Bottom-Right Corner Petal Accent */}
-                <div className="absolute bottom-0 right-0 w-24 h-24 pointer-events-none overflow-hidden rounded-br-[5px] z-0">
+                <div className="absolute bottom-0 right-0 w-24 h-24 pointer-events-none overflow-hidden rounded-br-[20px] z-0">
                   <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
                     <path
                       d="M100 0V100H0C55.23 100 100 55.23 100 0Z"
@@ -153,7 +153,7 @@ export function Resources() {
                       {/* Organic colored accent stroke along the wave */}
                       <path
                         d="M0 22C80 34 160 36 240 20C300 9 345 10 380 16"
-                        stroke={isBlue ? "#84cbfa" : "#72e2a8"}
+                        stroke={isBlue ? "#79bbf0" : "#5eead4"}
                         strokeWidth="4"
                         strokeLinecap="round"
                         opacity="0.85"
@@ -182,7 +182,7 @@ export function Resources() {
                       <Icon
                         className={cn(
                           "w-6 h-6 stroke-[2.2]",
-                          isBlue ? "text-brand-blue" : "text-brand-navy"
+                          isBlue ? "text-brand-blue" : "text-[#2F9E5C]"
                         )}
                       />
                     </div>
@@ -190,7 +190,7 @@ export function Resources() {
 
                   <div>
                     {/* Article Title */}
-                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading leading-[1.3] mb-2.5">
+                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading leading-[1.3] mb-2.5 group-hover:text-brand-blue transition-colors">
                       {article.title}
                     </h3>
 
@@ -204,7 +204,7 @@ export function Resources() {
                   <div>
                     <Link
                       href={article.href}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[8px] bg-brand-blue hover:bg-brand-navy text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <span>Read More</span>
                       <ArrowRight className="w-3.5 h-3.5" />

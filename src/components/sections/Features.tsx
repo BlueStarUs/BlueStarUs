@@ -51,7 +51,7 @@ export function Features() {
             </div>
 
             {/* Main Heading (Exact font size & hierarchy maintained) */}
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2] mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-6">
               Guidance That Puts{" "}
               <span className="text-brand-blue block sm:inline">Your Goals First</span>
             </h2>

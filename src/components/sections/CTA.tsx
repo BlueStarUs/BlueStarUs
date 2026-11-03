@@ -21,7 +21,7 @@ export function CTA() {
             </div>
 
             {/* Main Title (Identical font hierarchy to preceding sections) */}
-            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-white mb-2.5 font-heading tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-white mb-2.5 font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
               Let&apos;s Plan Your Brighter Future Together
             </h2>
 
@@ -33,7 +33,7 @@ export function CTA() {
             {/* Primary Action Button */}
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] text-xs sm:text-[16px] font-semibold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[8px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] text-xs sm:text-[16px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-4 h-4 text-[#0A3D6B]" />

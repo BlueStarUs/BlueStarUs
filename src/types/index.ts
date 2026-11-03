@@ -7,7 +7,7 @@ export interface ServiceItem {
   id: string;
   title: string;
   description: string;
-  iconName: 'building' | 'doc' | 'pencil' | 'coins';
+  iconName: 'building' | 'doc' | 'pencil' | 'coins' | 'compass' | 'palette';
   accent?: 'blue' | 'green';
   linkHref: string;
 }

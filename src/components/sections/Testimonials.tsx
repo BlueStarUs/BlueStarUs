@@ -80,7 +80,7 @@ export function Testimonials() {
             </div>
 
             {/* Main Title (Exact font hierarchy matching Services & Process) */}
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
               Real Students.{" "}
               <span className="text-brand-blue relative inline-block">
                 Real Journeys.

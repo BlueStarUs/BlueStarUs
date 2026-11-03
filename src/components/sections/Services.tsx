@@ -6,6 +6,8 @@ import {
   ServiceDocIcon,
   ServicePencilIcon,
   ServiceCoinsIcon,
+  ServiceCompassIcon,
+  ServicePaletteIcon,
 } from "@/components/ui/Icons";
 
 interface ServiceCardData {
@@ -20,13 +22,31 @@ interface ServiceCardData {
 
 const SERVICES_DATA: ServiceCardData[] = [
   {
+    id: "college-admissions-consulting",
+    title: "College Admissions\nConsulting",
+    description: "Individually tailored advising, coaching, and mentoring to ignite curiosity and build authentic applications.",
+    icon: ServiceCompassIcon,
+    iconBg: "bg-[#e5f1fc]",
+    cornerColor: "#dbeefc",
+    linkHref: "/services/college-admissions-consulting",
+  },
+  {
+    id: "art-admissions-consulting",
+    title: "Art Admissions\nConsulting",
+    description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
+    icon: ServicePaletteIcon,
+    iconBg: "bg-[#e2f7eb]",
+    cornerColor: "#e0f6ea",
+    linkHref: "/services/art-admissions-consulting",
+  },
+  {
     id: "college-planning",
     title: "College & University\nPlanning",
     description: "Find the right colleges that match your goals, interests and profile.",
     icon: UniversityCampusIcon,
     iconBg: "bg-[#e2f7eb]",
     cornerColor: "#e0f6ea",
-    linkHref: "/#contact",
+    linkHref: "/services/college-planning",
   },
   {
     id: "application-strategy",
@@ -35,7 +55,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     icon: ServiceDocIcon,
     iconBg: "bg-[#e5f1fc]",
     cornerColor: "#dbeefc",
-    linkHref: "/#contact",
+    linkHref: "/services/application-strategy",
   },
   {
     id: "essay-guidance",
@@ -44,7 +64,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     icon: ServicePencilIcon,
     iconBg: "bg-[#e5f1fc]",
     cornerColor: "#dbeefc",
-    linkHref: "/#contact",
+    linkHref: "/services/essay-guidance",
   },
   {
     id: "scholarships",
@@ -53,15 +73,29 @@ const SERVICES_DATA: ServiceCardData[] = [
     icon: ServiceCoinsIcon,
     iconBg: "bg-[#eef9dc]",
     cornerColor: "#edf8dc",
-    linkHref: "/#contact",
+    linkHref: "/services/scholarships",
   },
 ];
 
-export function Services() {
+export interface ServicesProps {
+  kicker?: string;
+  title?: React.ReactNode;
+  description?: string;
+  showViewAllLink?: boolean;
+  id?: string;
+}
+
+export function Services({
+  kicker = "OUR SERVICES",
+  title,
+  description = "From choosing the right colleges to crafting a compelling application, we provide end-to-end guidance tailored to your unique goals.",
+  showViewAllLink = true,
+  id = "services",
+}: ServicesProps = {}) {
   return (
     <section
       className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
-      id="services"
+      id={id}
     >
       {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
       <div
@@ -81,55 +115,63 @@ export function Services() {
           <div className="flex items-center justify-center gap-2.5 mb-2.5">
             <span className="w-6 sm:w-8 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
             <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-              OUR SERVICES
+              {kicker}
             </span>
             <span className="w-6 sm:w-8 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
           </div>
 
           {/* Centered Main Title with Responsive Scaling */}
           <div className="relative inline-block mb-3.5">
-            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2]">
-              Comprehensive Support for{" "}
-              <span className="text-brand-blue relative inline-block">
-                Your College Journey
-                {/* Centered Curved Arc Highlight Underneath Title */}
-                <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                  <svg
-                    className="w-44 sm:w-56 h-3 text-[#79bbf0] opacity-85"
-                    viewBox="0 0 240 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 9.5C65 2.5 175 2.5 238 9.5"
-                      stroke="currentColor"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+            {title ? (
+              title
+            ) : (
+              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
+                Comprehensive Support for{" "}
+                <span className="text-brand-blue relative inline-block">
+                  Your College Journey
+                  {/* Centered Curved Arc Highlight Underneath Title */}
+                  <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
+                    <svg
+                      className="w-44 sm:w-56 h-3 text-[#79bbf0] opacity-85"
+                      viewBox="0 0 240 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 9.5C65 2.5 175 2.5 238 9.5"
+                        stroke="currentColor"
+                        strokeWidth="2.8"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </h2>
+              </h2>
+            )}
           </div>
 
           {/* Centered Description */}
-          <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text max-w-2xl font-sans mb-3 sm:mb-3.5 mt-1">
-            From choosing the right colleges to crafting a compelling application, we provide end-to-end guidance tailored to your unique goals.
-          </p>
+          {description && (
+            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text max-w-2xl font-sans mb-3 sm:mb-3.5 mt-1">
+              {description}
+            </p>
+          )}
 
           {/* Centered View All Services Link */}
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-[13px] text-brand-blue hover:text-brand-navy transition-colors font-heading group"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
+          {showViewAllLink && (
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-[13px] text-brand-blue hover:text-brand-navy transition-colors font-heading group"
+            >
+              <span>View All Services</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+          )}
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7" id="planning">
+        {/* 6 Cards Grid (Responsive 3-Column on Desktop, 2-Column on Tablet, 1-Column on Mobile) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-7" id="planning">
           {SERVICES_DATA.map((service) => {
             const Icon = service.icon;
             return (
@@ -177,9 +219,9 @@ export function Services() {
                 <div className="relative z-10 pt-2">
                   <Link
                     href={service.linkHref}
-                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-[5px] text-xs sm:text-[12.5px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
                   >
-                    <span>Learn More</span>
+                    <span>Read More</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Link>
                 </div>

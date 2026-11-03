@@ -19,11 +19,11 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 const QUICK_LINKS = [
   { name: "Home", href: "/#home", icon: Home },
-  { name: "Our Services", href: "/#services", icon: Layers },
-  { name: "College Planning", href: "/#planning", icon: GraduationCap },
+  { name: "Our Services", href: "/services", icon: Layers },
+  { name: "College Planning", href: "/services/college-planning", icon: GraduationCap },
   { name: "Resources", href: "/#resources", icon: BookOpen },
   { name: "About", href: "/about", icon: Info },
-  { name: "Contact Us", href: "/#contact", icon: Mail },
+  { name: "Contact Us", href: "/contact", icon: Mail },
 ];
 
 export function Footer() {

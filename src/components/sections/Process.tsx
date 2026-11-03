@@ -76,7 +76,7 @@ export function Process() {
 
           {/* Main Title (Exact font hierarchy matching Services section) */}
           <div className="relative inline-block mb-3.5">
-            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
               A Clear Path to{" "}
               <span className="text-brand-blue relative inline-block">
                 Your College Goals

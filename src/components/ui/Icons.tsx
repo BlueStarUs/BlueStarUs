@@ -172,3 +172,34 @@ export function ServiceCoinsIcon({ className = "w-7 h-7", ...props }: React.SVGP
   );
 }
 
+export function ServiceCompassIcon({ className = "w-7 h-7", ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 28 28" fill="none" className={className} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="14" cy="14" r="10" stroke="#0B63B5" strokeWidth="2" />
+      <circle cx="14" cy="14" r="2" fill="#0B63B5" />
+      <path d="M14 6V8M14 20V22M6 14H8M20 14H22" stroke="#0B63B5" strokeWidth="1.8" strokeLinecap="round" />
+      <polygon points="14,9 17.5,14 14,19 10.5,14" fill="#0B63B5" opacity="0.3" />
+      <polygon points="14,9 17.5,14 14,14" fill="#0B63B5" />
+      <polygon points="14,19 10.5,14 14,14" fill="#2A8FD6" />
+    </svg>
+  );
+}
+
+export function ServicePaletteIcon({ className = "w-7 h-7", ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 28 28" fill="none" className={className} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        d="M14 4C8.48 4 4 8.25 4 13.5C4 16.81 5.79 19.67 8.5 21.25C9.09 21.6 9.5 22.22 9.5 22.9C9.5 23.78 10.22 24.5 11.1 24.5H13C19.07 24.5 24 19.57 24 13.5C24 8.25 19.52 4 14 4Z"
+        stroke="#2F9E5C"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="9" cy="10" r="1.6" fill="#2F9E5C" />
+      <circle cx="14" cy="8.5" r="1.6" fill="#0B63B5" />
+      <circle cx="19" cy="11" r="1.6" fill="#eab308" />
+      <circle cx="18.5" cy="16.5" r="1.6" fill="#ec4899" />
+      <circle cx="14" cy="18" r="2.2" stroke="#2F9E5C" strokeWidth="1.4" />
+    </svg>
+  );
+}
+

@@ -71,17 +71,17 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr_1fr] gap-8 lg:gap-6 xl:gap-8 items-center">
           {/* Left Column: Info & Contact Details */}
           <div className="flex flex-col items-start text-left z-20">
-            {/* Pill Kicker with Left Indicator Bar (Matching Services) */}
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 sm:w-8 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+            {/* Pill Kicker with flanking line */}
+            <div className="flex items-center gap-3 mb-2.5">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 GET IN TOUCH
               </span>
+              <span className="w-10 sm:w-14 h-[1.5px] bg-brand-navy/30 rounded-full" aria-hidden="true" />
             </div>
 
             {/* Main Heading with Signature Curved Arc Highlight */}
             <div className="relative inline-block mb-3.5">
-              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.2]">
+              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
                 Let&apos;s Discuss<br />
                 <span className="text-brand-blue relative inline-block">
                   Your College Goals
@@ -126,7 +126,7 @@ export function Contact() {
               </li>
 
               <li className="flex items-center gap-3 text-xs sm:text-[13.5px] text-brand-navy font-bold font-heading">
-                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#22c55e] shadow-xs">
+                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <Phone className="w-4 h-4" />
                 </span>
                 <a
@@ -138,7 +138,7 @@ export function Contact() {
               </li>
 
               <li className="flex items-center gap-3 text-xs sm:text-[13.5px] text-brand-navy font-bold font-heading">
-                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#22c55e] shadow-xs">
+                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <MapPin className="w-4 h-4" />
                 </span>
                 <span>{SITE_CONFIG.contact.address}</span>
@@ -146,11 +146,11 @@ export function Contact() {
             </ul>
           </div>
 
-          {/* Center Column: Family Advising Photograph with Smooth Edge Fades */}
-          <div className="relative w-full aspect-[4/3] sm:aspect-[17/10] lg:aspect-[1.15/1] rounded-[5px] overflow-hidden shadow-[0_12px_36px_rgba(10,61,107,0.08)] border border-[#e2eef9] flex items-center justify-center">
+          {/* Center Column: Family Advising Photograph */}
+          <div className="relative w-full aspect-[4/3] sm:aspect-[17/10] lg:aspect-[1.15/1] rounded-[16px] overflow-hidden shadow-[0_10px_32px_rgba(10,61,107,0.06)] flex items-center justify-center">
             {/* Desktop Left Soft Fade Mask */}
             <div
-              className="hidden lg:block absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white via-white/50 to-transparent z-10 pointer-events-none"
+              className="hidden lg:block absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white via-white/40 to-transparent z-10 pointer-events-none"
               aria-hidden="true"
             />
 
@@ -167,25 +167,14 @@ export function Contact() {
 
             {/* Desktop Right Soft Fade Mask */}
             <div
-              className="hidden lg:block absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white via-white/50 to-transparent z-10 pointer-events-none"
+              className="hidden lg:block absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white via-white/40 to-transparent z-10 pointer-events-none"
               aria-hidden="true"
             />
           </div>
 
-          {/* Right Column: Modern Elevated Form Card (Matching Services Card Aesthetic) */}
-          <div className="bg-white rounded-[5px]  shadow-[0_16px_44px_rgba(10,61,107,0.08)] border border-[#e2eef9] p-6 sm:p-7 relative z-20 overflow-hidden">
-            {/* Decorative Top-Right Corner Petal (Matching Services cards) */}
-            <svg
-              className="absolute top-0 right-0 w-24 h-24 pointer-events-none"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M100 0H28C28 39.76 60.24 72 100 72V0Z" fill="#d8edfd" opacity="0.6" />
-            </svg>
-
-            <h3 className="text-[19px] sm:text-[21px] font-bold text-brand-navy mb-4 font-heading tracking-tight relative z-10">
+          {/* Right Column: Modern Elevated Form Card */}
+          <div className="bg-white rounded-[18px] shadow-[0_16px_44px_rgba(10,61,107,0.08)] border border-[#e2eef9] p-6 sm:p-7 relative z-20 overflow-hidden">
+            <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-4 font-heading tracking-tight relative z-10">
               Send Us a Message
             </h3>
 
@@ -206,7 +195,7 @@ export function Contact() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[5px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                 />
               </div>
 
@@ -226,7 +215,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[5px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                 />
               </div>
 
@@ -244,7 +233,7 @@ export function Contact() {
                     name="interest"
                     value={formData.interest}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[5px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
+                    className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
                   >
                     <option value="">Select an option</option>
                     <option value="College & University Planning">College &amp; University Planning</option>
@@ -272,7 +261,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[5px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue min-h-[50px] resize-y transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue min-h-[50px] resize-y transition-all"
                 />
               </div>
 
@@ -280,7 +269,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[8px] font-bold text-xs sm:text-[14px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

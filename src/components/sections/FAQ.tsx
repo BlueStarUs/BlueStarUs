@@ -28,25 +28,11 @@ export function FAQ() {
         aria-hidden="true"
       />
 
-      {/* Floating 4-Point Brand Stars in Background (Matching reference) */}
-      <div
-        className="absolute left-[34%] lg:left-[36%] top-[12%] lg:top-[16%] w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[145px] lg:h-[145px] text-[#7ec2f5] opacity-35 pointer-events-none select-none z-0"
-        aria-hidden="true"
-      >
-        <BrandStar className="w-full h-full fill-current" />
-      </div>
-      <div
-        className="absolute left-[27%] lg:left-[29%] top-[48%] sm:top-[44%] w-[75px] h-[75px] sm:w-[88px] sm:h-[88px] lg:w-[100px] lg:h-[100px] text-[#7ec2f5] opacity-25 pointer-events-none select-none z-0"
-        aria-hidden="true"
-      >
-        <BrandStar className="w-full h-full fill-current" />
-      </div>
-
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] xl:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] xl:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14 xl:gap-16 items-start relative">
           {/* Left Column: Section Title & Kicker */}
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-start text-left relative">
             {/* Pill Kicker with flanking line */}
             <div className="flex items-center gap-3 mb-3">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
@@ -56,14 +42,28 @@ export function FAQ() {
             </div>
 
             {/* Main Heading (Exact font hierarchy maintained) */}
-            <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-brand-navy font-heading tracking-tight leading-[1.18]">
-              Got Questions?
+            <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[44px] relative z-10">
+              Got Questions?<br />
               We&apos;ve Got Answers.
             </h2>
+
+            {/* Floating 4-Point Brand Stars (Matching reference position next to heading) */}
+            <div
+              className="hidden sm:block absolute -right-8 lg:-right-12 -top-4 w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[145px] lg:h-[145px] text-[#7ec2f5] opacity-35 pointer-events-none select-none z-0"
+              aria-hidden="true"
+            >
+              <BrandStar className="w-full h-full fill-current" />
+            </div>
+            <div
+              className="hidden sm:block absolute right-4 lg:right-6 top-28 sm:top-24 w-[75px] h-[75px] sm:w-[85px] sm:h-[85px] lg:w-[95px] lg:h-[95px] text-[#7ec2f5] opacity-25 pointer-events-none select-none z-0"
+              aria-hidden="true"
+            >
+              <BrandStar className="w-full h-full fill-current" />
+            </div>
           </div>
 
           {/* Right Column: Unified Elevated FAQ Card */}
-          <div className="bg-white rounded-[5px] border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.08)] overflow-hidden transition-all duration-300">
+          <div className="bg-white rounded-[16px] border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)] overflow-hidden transition-all duration-300">
             <div className="divide-y divide-[#edf3f9]">
               {FAQS.map((faq, index) => {
                 const isOpen = openIndex === index;

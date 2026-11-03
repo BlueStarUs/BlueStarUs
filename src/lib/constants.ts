@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   url: "https://bluestars.us",
   contact: {
     email: "hello@bluestars.us",
-    phone: "+1 (555) 123-4567",
+    phone: "+1 (855) 123-4567",
     address: "United States",
   },
   socials: {
@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/#home" },
-  { label: "Our Services", href: "/#services" },
+  { label: "Our Services", href: "/services" },
   { label: "College Planning", href: "/#planning" },
   { label: "Resources", href: "/#resources" },
   { label: "About", href: "/about" },
@@ -29,12 +29,28 @@ export const NAV_LINKS: NavItem[] = [
 
 export const SERVICES: ServiceItem[] = [
   {
+    id: "college-admissions-consulting",
+    title: "College Admissions Consulting",
+    description: "Individually tailored advising, coaching, and mentoring to ignite curiosity and build authentic applications.",
+    iconName: "compass",
+    accent: "blue",
+    linkHref: "/services/college-admissions-consulting",
+  },
+  {
+    id: "art-admissions-consulting",
+    title: "Art Admissions Consulting",
+    description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
+    iconName: "palette",
+    accent: "green",
+    linkHref: "/services/art-admissions-consulting",
+  },
+  {
     id: "college-planning",
     title: "College & University Planning",
     description: "Find the right colleges that match your goals, interests and profile.",
     iconName: "building",
     accent: "green",
-    linkHref: "/#contact",
+    linkHref: "/services/college-planning",
   },
   {
     id: "application-strategy",
@@ -42,7 +58,7 @@ export const SERVICES: ServiceItem[] = [
     description: "Build a strong application with the right strategy and timeline.",
     iconName: "doc",
     accent: "blue",
-    linkHref: "/#contact",
+    linkHref: "/services/application-strategy",
   },
   {
     id: "essay-guidance",
@@ -50,7 +66,7 @@ export const SERVICES: ServiceItem[] = [
     description: "Tell your story effectively with expert feedback and support.",
     iconName: "pencil",
     accent: "blue",
-    linkHref: "/#contact",
+    linkHref: "/services/essay-guidance",
   },
   {
     id: "scholarship-aid",
@@ -58,7 +74,7 @@ export const SERVICES: ServiceItem[] = [
     description: "Explore funding opportunities and get guidance on financial aid.",
     iconName: "coins",
     accent: "green",
-    linkHref: "/#contact",
+    linkHref: "/services/scholarships",
   },
 ];
 
