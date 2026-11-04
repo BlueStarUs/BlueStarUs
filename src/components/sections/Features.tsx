@@ -77,6 +77,7 @@ export function Features() {
             {/* CTA Button */}
             <Link
               href="/about"
+              target="_blank"
               className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-sm font-semibold font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               <span>Learn More About Us</span>

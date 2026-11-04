@@ -22,7 +22,7 @@ const RESOURCES_DATA: ResourceArticleItem[] = [
     image: "/images/blogs/blogs1.png",
     icon: GraduationCap,
     accent: "green",
-    href: "/#contact",
+    href: "/blogs/how-to-choose-colleges",
   },
   {
     id: "application-timeline",
@@ -31,7 +31,7 @@ const RESOURCES_DATA: ResourceArticleItem[] = [
     image: "/images/blogs/blogs2.png",
     icon: CalendarDays,
     accent: "blue",
-    href: "/#contact",
+    href: "/blogs/application-timeline",
   },
   {
     id: "strong-personal-statement",
@@ -40,7 +40,7 @@ const RESOURCES_DATA: ResourceArticleItem[] = [
     image: "/images/blogs/blogs3.png",
     icon: FileEdit,
     accent: "green",
-    href: "/#contact",
+    href: "/blogs/strong-personal-statement",
   },
 ];
 
@@ -101,8 +101,8 @@ export function Resources() {
 
           {/* View All Articles Pill Button */}
           <Link
-            href="/services"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[14px] font-heading transition-all duration-200 shadow-xs flex-shrink-0 group"
+            href="/blogs"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[16px] font-heading transition-all duration-200 shadow-sm flex-shrink-0 group"
           >
             <span>View All Articles</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -132,7 +132,7 @@ export function Resources() {
                 </div>
 
                 {/* Top Image Container with Wavy Organic Bottom Edge */}
-                <div className="relative w-full h-[190px] sm:h-[205px] overflow-hidden">
+                <Link href={article.href} className="relative block w-full h-[190px] sm:h-[205px] overflow-hidden">
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -165,7 +165,7 @@ export function Resources() {
                       />
                     </svg>
                   </div>
-                </div>
+                </Link>
 
                 {/* Content Area with Floating Squircle Icon */}
                 <div className="relative p-6 pt-9 sm:p-7 sm:pt-9 flex-1 flex flex-col justify-between z-10">
@@ -190,8 +190,10 @@ export function Resources() {
 
                   <div>
                     {/* Article Title */}
-                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading leading-[1.3] mb-2.5 group-hover:text-brand-blue transition-colors">
-                      {article.title}
+                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading leading-[1.3] mb-2.5">
+                      <Link href={article.href} className="hover:text-brand-blue transition-colors">
+                        {article.title}
+                      </Link>
                     </h3>
 
                     {/* Article Description */}

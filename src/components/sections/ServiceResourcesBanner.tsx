@@ -29,7 +29,7 @@ const DEFAULT_RESOURCES: ResourceCardItem[] = [
     image: "/images/sub_images/Admissions _img.png",
     alt: "Student typing on laptop researching college admissions strategies",
     actionText: "Read Articles",
-    actionHref: "/#resources",
+    actionHref: "/blogs",
   },
   {
     id: "videos",
@@ -42,7 +42,7 @@ const DEFAULT_RESOURCES: ResourceCardItem[] = [
     image: "/images/sub_images/Student_Videos.png",
     alt: "Digital screen library of student interviews and campus tour videos",
     actionText: "Watch Videos",
-    actionHref: "/#resources",
+    actionHref: "/resources/videos",
   },
   {
     id: "webinars",
@@ -55,7 +55,7 @@ const DEFAULT_RESOURCES: ResourceCardItem[] = [
     image: "/images/sub_images/live_Admissions_Webinars.png",
     alt: "Live interactive college prep webinar with students and counselors",
     actionText: "Join Next Webinar",
-    actionHref: "/#contact",
+    actionHref: "/resources/webinars",
   },
 ];
 

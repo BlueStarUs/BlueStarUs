@@ -20,8 +20,9 @@ import { SITE_CONFIG } from "@/lib/constants";
 const QUICK_LINKS = [
   { name: "Home", href: "/#home", icon: Home },
   { name: "Our Services", href: "/services", icon: Layers },
-  { name: "College Planning", href: "/services/college-planning", icon: GraduationCap },
-  { name: "Resources", href: "/#resources", icon: BookOpen },
+  { name: "Resources & Insights", href: "/resources", icon: BookOpen },
+  { name: "Success Stories", href: "/stories", icon: GraduationCap },
+  { name: "Blogs & Articles", href: "/blogs", icon: BookOpen },
   { name: "About", href: "/about", icon: Info },
   { name: "Contact Us", href: "/contact", icon: Mail },
 ];

@@ -66,26 +66,26 @@ export function Hero() {
               </Button>
             </div>
 
-            {/* Feature Highlights Row (Increased text & icon sizes) */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center gap-5 sm:gap-7 lg:gap-8 pt-4 sm:pt-5 border-t border-brand-border/60">
-              <div className="flex items-center gap-2.5 text-[11.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-snug font-heading group">
-                <HeroUsersIcon className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
+            {/* Feature Highlights Row: 1 Row with 3 Columns & Centered on Mobile */}
+            <div className="grid grid-cols-3 items-center justify-items-center gap-2 sm:gap-6 lg:gap-8 pt-4 sm:pt-5 border-t border-brand-border/60 w-full">
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
+                <HeroUsersIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
                 <span>
                   Personalized
                   <br />
                   Guidance
                 </span>
               </div>
-              <div className="flex items-center gap-2.5 text-[11.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-snug font-heading group">
-                <HeroDocIcon className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
+                <HeroDocIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
                 <span>
                   Clear Application
                   <br />
                   Strategy
                 </span>
               </div>
-              <div className="flex items-center gap-2.5 text-[11.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-snug font-heading group">
-                <HeroHeartIcon className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
+                <HeroHeartIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
                 <span>
                   Support at
                   <br />
