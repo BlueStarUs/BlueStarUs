@@ -1157,3 +1157,12 @@ export const UNIVERSITY_ACCEPTANCES = [
   "Williams College",
   "Caltech",
 ];
+
+export function getStoryById(id: string): SuccessStory | undefined {
+  return SUCCESS_STORIES.find((story) => story.id === id);
+}
+
+export function getAllStories(): SuccessStory[] {
+  return SUCCESS_STORIES;
+}
+

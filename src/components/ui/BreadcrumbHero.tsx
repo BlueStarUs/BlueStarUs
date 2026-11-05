@@ -123,21 +123,19 @@ export function BreadcrumbHero({
                     />
                     {isLast || !crumb.href ? (
                       <span
-  className={cn(
-    "font-bold font-heading",
-    isDark ? "text-white" : "text-brand-blue"
-  )}
->
-  <span className="sm:hidden">
-    {crumb.label.length > 20
-      ? `${crumb.label.slice(0, 20)}...`
-      : crumb.label}
-  </span>
+                        className={cn(
+                          "font-bold font-heading",
+                          isDark ? "text-white" : "text-brand-blue",
+                        )}
+                      >
+                        <span className="sm:hidden">
+                          {crumb.label.length > 20
+                            ? `${crumb.label.slice(0, 20)}...`
+                            : crumb.label}
+                        </span>
 
-  <span className="hidden sm:inline">
-    {crumb.label}
-  </span>
-</span>
+                        <span className="hidden sm:inline">{crumb.label}</span>
+                      </span>
                     ) : (
                       <Link
                         href={crumb.href}
@@ -192,7 +190,7 @@ export function BreadcrumbHero({
           {description && (
             <p
               className={cn(
-                "text-xs sm:text-[14px] md:text-[15px] font-sans mt-2 max-w-2xl leading-relaxed text-center",
+                "text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-sans mt-2.5 max-w-2xl leading-relaxed text-center",
                 isDark ? "text-[#d4e8f8]" : "text-brand-text",
               )}
             >

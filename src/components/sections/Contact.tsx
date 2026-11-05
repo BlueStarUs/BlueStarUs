@@ -72,7 +72,7 @@ export function Contact() {
           {/* Left Column: Info & Contact Details */}
           <div className="flex flex-col items-start text-left z-20">
             {/* Pill Kicker with flanking line */}
-            <div className="flex items-center gap-3 mb-2.5">
+            <div className="flex items-center gap-3 mb-1.5.5">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 GET IN TOUCH
               </span>
@@ -80,8 +80,8 @@ export function Contact() {
             </div>
 
             {/* Main Heading with Signature Curved Arc Highlight */}
-            <div className="relative inline-block mb-3.5">
-              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
+            <div className="relative inline-block mb-1.5.5">
+              <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[44px]">
                 Let&apos;s Discuss<br />
                 <span className="text-brand-blue relative inline-block">
                   Your College Goals
@@ -112,8 +112,8 @@ export function Contact() {
             </p>
 
             {/* Contact Details List with Squircle Icon Badges */}
-            <ul className="space-y-3.5 sm:space-y-4">
-              <li className="flex items-center gap-3 text-xs sm:text-[13.5px] text-brand-navy font-bold font-heading">
+            <ul className="space-y-4 sm:space-y-6">
+              <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
                 <span className="w-9 h-9 rounded-[12px] bg-[#e3f1fc] grid place-items-center flex-shrink-0 text-brand-blue shadow-xs">
                   <Mail className="w-4 h-4" />
                 </span>
@@ -125,7 +125,7 @@ export function Contact() {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3 text-xs sm:text-[13.5px] text-brand-navy font-bold font-heading">
+              <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
                 <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <Phone className="w-4 h-4" />
                 </span>
@@ -137,7 +137,7 @@ export function Contact() {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3 text-xs sm:text-[13.5px] text-brand-navy font-bold font-heading">
+              <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
                 <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <MapPin className="w-4 h-4" />
                 </span>
@@ -173,8 +173,8 @@ export function Contact() {
           </div>
 
           {/* Right Column: Modern Elevated Form Card */}
-          <div className="bg-white rounded-[18px] shadow-[0_16px_44px_rgba(10,61,107,0.08)] border border-[#e2eef9] p-6 sm:p-7 relative z-20 overflow-hidden">
-            <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-4 font-heading tracking-tight relative z-10">
+          <div className="bg-white rounded-[15px] shadow-[0_16px_44px_rgba(10,61,107,0.08)] border border-[#e2eef9] p-6 sm:p-7 relative z-20 overflow-hidden">
+            <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-4 font-heading tracking-tight relative z-10 mb-6">
               Send Us a Message
             </h3>
 
@@ -183,7 +183,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="fullName"
-                  className="block text-[11px] font-bold text-brand-navy mb-1 font-heading"
+                  className="block text-[15px] sm:text-[16px] leading-[24px] font-bold text-brand-navy mb-1.5 font-heading"
                 >
                   Full Name <span className="text-red-500">*</span>
                 </label>
@@ -195,7 +195,7 @@ export function Contact() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                 />
               </div>
 
@@ -203,7 +203,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-[11px] font-bold text-brand-navy mb-1 font-heading"
+                  className="block text-[15px] sm:text-[16px] leading-[24px] font-bold text-brand-navy mb-1.5 font-heading"
                 >
                   Email Address <span className="text-red-500">*</span>
                 </label>
@@ -215,7 +215,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                 />
               </div>
 
@@ -223,7 +223,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="interest"
-                  className="block text-[11px] font-bold text-brand-navy mb-1 font-heading"
+                  className="block text-[15px] sm:text-[16px] leading-[24px] font-bold text-brand-navy mb-1.5 font-heading"
                 >
                   I&apos;m interested in <span className="text-red-500">*</span>
                 </label>
@@ -233,7 +233,7 @@ export function Contact() {
                     name="interest"
                     value={formData.interest}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
+                    className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
                   >
                     <option value="">Select an option</option>
                     <option value="College & University Planning">College &amp; University Planning</option>
@@ -249,7 +249,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-[11px] font-bold text-brand-navy mb-1 font-heading"
+                  className="block text-[15px] sm:text-[16px] leading-[24px] font-bold text-brand-navy mb-1.5 font-heading"
                 >
                   Your Message <span className="text-red-500">*</span>
                 </label>
@@ -261,7 +261,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-xs sm:text-[13px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue min-h-[50px] resize-y transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue min-h-[50px] resize-y transition-all"
                 />
               </div>
 
@@ -269,7 +269,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[8px] font-bold text-xs sm:text-[14px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[5px] font-bold text-[15px] sm:text-[16px] leading-[24px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

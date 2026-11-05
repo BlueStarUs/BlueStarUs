@@ -147,7 +147,7 @@ export function Footer() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="flex items-center gap-3 py-1 group text-xs sm:text-[13.5px] text-[#e0effa] hover:text-white transition-colors"
+                        className="flex items-center gap-3 py-1 group text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#e0effa] hover:text-white transition-colors"
                       >
                         <span className="w-7 h-7 rounded-[8px] bg-[#0d4f7c]/80 group-hover:bg-brand-blue border border-[#2177ab]/40 grid place-items-center text-white flex-shrink-0 transition-colors shadow-xs">
                           <Icon className="w-3.5 h-3.5" />
@@ -188,7 +188,7 @@ export function Footer() {
                 <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
                   <Mail className="w-4 h-4" />
                 </span>
-                <span className="text-xs sm:text-[13.5px] font-medium text-white tracking-wide truncate">
+                <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
                   {SITE_CONFIG.contact.email}
                 </span>
               </a>
@@ -201,7 +201,7 @@ export function Footer() {
                 <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
                   <Phone className="w-4 h-4" />
                 </span>
-                <span className="text-xs sm:text-[13.5px] font-medium text-white tracking-wide truncate">
+                <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
                   +1 (655) 123-4567
                 </span>
               </a>
@@ -211,7 +211,7 @@ export function Footer() {
                 <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm">
                   <MapPin className="w-4 h-4" />
                 </span>
-                <span className="text-xs sm:text-[13.5px] font-medium text-white tracking-wide truncate">
+                <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
                   United States
                 </span>
               </div>
@@ -220,7 +220,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar with Horizontal Divider */}
-        <div className="border-t border-[#185e8d]/40 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-[12.5px] text-[#a8d1ee] font-sans">
+        <div className="border-t-[1px] border-[#ffffff]/50 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[14px] sm:text-[14.5px] text-[#a8d1ee] font-sans">
           <span>&copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.</span>
           <div className="flex items-center gap-4 sm:gap-6 font-heading font-medium text-[#d2e9fb]">
             <Link href="#" className="hover:text-white transition-colors">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import {
   Star,
   GraduationCap,
@@ -12,7 +13,6 @@ import {
 } from "lucide-react";
 import { SuccessStory } from "@/types";
 import { STORY_CATEGORIES, UNIVERSITY_ACCEPTANCES } from "@/lib/stories-data";
-import { StoryModal } from "@/components/ui/StoryModal";
 import { cn } from "@/lib/utils";
 
 interface StoriesListingProps {
@@ -41,7 +41,6 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All Stories");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [activeStory, setActiveStory] = useState<SuccessStory | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // Detect mobile viewport (< 768px) to show 6 cards per page
@@ -286,7 +285,9 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
 
                       {/* Headline / Title */}
                       <h3 className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug mb-2.5 group-hover:text-brand-blue transition-colors line-clamp-2">
-                        {story.title || "Admissions Consulting Success"}
+                        <Link href={`/stories/${story.id}`} className="hover:underline">
+                          {story.title || "Admissions Consulting Success"}
+                        </Link>
                       </h3>
 
                       {/* Quote Preview - Clamped with Ellipsis */}
@@ -314,10 +315,10 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
 
                           {/* Author Name and Role */}
                           <div className="min-w-0">
-                            <div className="text-[13.5px] font-bold text-brand-navy font-heading truncate">
+                            <div className="text-base sm:text-[17px] font-bold text-brand-navy font-heading truncate">
                               {story.name}
                             </div>
-                            <div className="text-[11.5px] text-brand-text truncate font-sans">
+                            <div className="text-[14px] sm:text-[14.5px] leading-[22px] text-brand-text truncate font-sans">
                               {authorRole}
                             </div>
                           </div>
@@ -333,19 +334,18 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                       </div>
 
                       {/* Dedicated Bottom Read Full Story Button - Responsive and Mobile-friendly */}
-                      <button
-                        type="button"
-                        onClick={() => setActiveStory(story)}
+                      <Link
+                        href={`/stories/${story.id}`}
                         className={cn(
-                          "w-full py-2.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-2xs border",
+                          "w-full py-2.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-2xs border text-center",
                           isBlue
-                            ? "bg-[#f8fbfe] hover:bg-brand-blue text-brand-navy hover:text-white border-[#e2eef9] hover:border-brand-blue"
-                            : "bg-[#f6fcf8] hover:bg-[#1e9e5a] text-brand-navy hover:text-white border-[#d2f3e0] hover:border-[#1e9e5a]"
+                            ? "bg-brand-blue hover:bg-[#f8fbfe] text-white hover:text-brand-blue border-brand-blue hover:border-brand-blue"
+                            : "bg-[#1e9e5a] hover:bg-[#f6fcf8] text-white hover:text-[#1e9e5a] border-[#1e9e5a] hover:border-[#1e9e5a]"
                         )}
                       >
                         <span>Read Full Story</span>
                         <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                      </button>
+                      </Link>
                     </div>
                   </article>
                 );
@@ -461,13 +461,6 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
           </div>
         </div>
       </div>
-
-      {/* Detail Popup Modal for Full Story Data */}
-      <StoryModal
-        story={activeStory}
-        isOpen={Boolean(activeStory)}
-        onClose={() => setActiveStory(null)}
-      />
     </section>
   );
 }

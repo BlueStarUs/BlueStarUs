@@ -1,12 +1,40 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star, GraduationCap, User } from "lucide-react";
-import { SuccessStory } from "@/types";
-import { SUCCESS_STORIES } from "@/lib/stories-data";
-import { StoryModal } from "@/components/ui/StoryModal";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+interface StudentStoryItem {
+  id: string;
+  name: string;
+  quote: string;
+  image: string;
+  accent: "blue" | "green";
+}
+
+const TESTIMONIALS_DATA: StudentStoryItem[] = [
+  {
+    id: "aisha",
+    name: "Aisha",
+    quote: "The guidance I received helped me stay organized and confident throughout the process.",
+    image: "/images/person/person1.png",
+    accent: "blue",
+  },
+  {
+    id: "rohan",
+    name: "Rohan",
+    quote: "They truly understood my goals and helped me find the right colleges for my profile.",
+    image: "/images/person/person2.png",
+    accent: "green",
+  },
+  {
+    id: "maya",
+    name: "Maya",
+    quote: "The support with my essay made a huge difference. I felt more confident and prepared.",
+    image: "/images/person/person3.png",
+    accent: "blue",
+  },
+];
 
 function QuoteIcon({ className }: { className?: string }) {
   return (
@@ -23,17 +51,12 @@ function QuoteIcon({ className }: { className?: string }) {
 }
 
 export function Testimonials() {
-  const [activeStory, setActiveStory] = useState<SuccessStory | null>(null);
-
-  // Pick top 3 signature testimonials for the home page showcase
-  const featuredStories = SUCCESS_STORIES.slice(0, 3);
-
   return (
     <section
-      className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
+      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
       id="stories"
     >
-      {/* Decorative Organic Wave Shapes in Background */}
+      {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
       <div
         className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/60 via-[#edf6fd]/25 to-transparent rounded-br-[220px] pointer-events-none"
         aria-hidden="true"
@@ -45,23 +68,23 @@ export function Testimonials() {
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Row: Title & View More Stories Button */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-5 mb-10 sm:mb-12">
+        {/* Header Row: Title & View More Stories Pill Button */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-5 mb-10 sm:mb-14">
           <div>
-            {/* Kicker with accent line matching Services Page */}
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-[5px]" aria-hidden="true" />
+            {/* Pill Kicker with flanking line */}
+            <div className="flex items-center gap-3 mb-2.5">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 STUDENT SUCCESS STORIES
               </span>
+              <span className="w-10 sm:w-14 h-[1.5px] bg-brand-navy/30 rounded-full" aria-hidden="true" />
             </div>
 
-            {/* Main Title matching Services Page Typography */}
-            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
+            {/* Main Title (Exact font hierarchy matching Services & Process) */}
+            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
               Real Students.{" "}
               <span className="text-brand-blue relative inline-block">
                 Real Journeys.
-                {/* Curved Arc Highlight */}
+                {/* Curved Arc Highlight Underneath "Journeys." */}
                 <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
                   <svg
                     className="w-36 sm:w-44 h-2.5 text-[#79bbf0] opacity-85"
@@ -82,143 +105,96 @@ export function Testimonials() {
             </h2>
           </div>
 
-          {/* View More Stories Button - strictly rounded-[5px] */}
+          {/* View More Stories Pill Button */}
           <Link
             href="/stories"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[14px] font-heading transition-all duration-200 shadow-xs flex-shrink-0 group"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[15px] font-heading transition-all duration-200 shadow-sm flex-shrink-0 group"
           >
-            <span>View All Stories</span>
+            <span>View More Stories</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </div>
 
-        {/* 3 Story Cards Grid (Modern, Clean Cards with Very Small Image Avatar & Read More Popup) */}
+        {/* 3 Story Cards Grid (Responsive across mobile, tablet, and 1360px viewport) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-          {featuredStories.map((story) => {
-            const isBlue = story.accent !== "green";
-            const authorRole =
-              story.authorRole ||
-              story.highSchool ||
-              story.schoolOrRole ||
-              "BlueStars Family";
+          {TESTIMONIALS_DATA.map((story) => {
+            const isBlue = story.accent === "blue";
 
             return (
               <article
                 key={story.id}
-                className="relative bg-white rounded-[5px] p-5 sm:p-6 shadow-[0_6px_24px_rgba(10,61,107,0.05)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(10,61,107,0.1)] flex flex-col justify-between group"
+                className={cn(
+                  "relative bg-white rounded-[5px] p-3.5 sm:p-4 shadow-[0_10px_30px_rgba(10,61,107,0.06)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(10,61,107,0.12)] flex flex-row items-stretch gap-3 xs:gap-3.5 sm:gap-4.5 overflow-hidden group",
+                  "md:max-lg:last:col-span-2 md:max-lg:last:max-w-md md:max-lg:last:mx-auto md:max-lg:last:w-full"
+                )}
               >
-                <div>
-                  {/* Top Bar: Category + 5 Stars */}
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      {story.category && (
-                        <span
-                          className={cn(
-                            "px-2.5 py-0.5 rounded-[5px] text-[11px] font-bold font-heading tracking-wide uppercase",
-                            isBlue
-                              ? "bg-brand-sky text-brand-blue border border-brand-border/60"
-                              : "bg-[#e2f7eb] text-[#1e9e5a] border border-[#c4eed6]"
-                          )}
-                        >
-                          {story.category}
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-0.5" aria-label="5 stars">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Admitted School Badge - strictly rounded-[5px] */}
-                  {story.admittedTo && (
-                    <div className="mb-3">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs font-bold text-brand-navy font-heading">
-                        <GraduationCap className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" />
-                        <span className="truncate">{story.admittedTo}</span>
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Headline / Title */}
-                  <h3 className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug mb-2.5 group-hover:text-brand-blue transition-colors line-clamp-2">
-                    {story.title || "Admissions Consulting Success"}
-                  </h3>
-
-                  {/* Quote Preview - Clamped with Ellipsis */}
-                  <p className="text-[14px] sm:text-[14.5px] leading-[22px] sm:leading-[24px] text-brand-text font-sans line-clamp-3">
-                    &ldquo;{story.quote}&rdquo;
-                  </p>
+                {/* Decorative Top-Right Corner Petal Accent */}
+                <div className="absolute top-0 right-0 w-20 sm:w-24 h-20 sm:h-24 pointer-events-none overflow-hidden rounded-tr-[5px]">
+                  <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+                    <path
+                      d="M0 0H100V100C100 44.77 55.23 0 0 0Z"
+                      fill={isBlue ? "#d8edfd" : "#daf5e5"}
+                      opacity={isBlue ? 0.75 : 0.8}
+                    />
+                  </svg>
                 </div>
 
-                {/* Card Bottom: Modern Person Icon + Author Info + Bottom Read More Button */}
-                <div className="mt-5 pt-4 border-t border-[#eef4fa] flex flex-col gap-3.5">
-                  {/* Author Info Row */}
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      {/* Modern Person Icon - strictly rounded-[5px] (40px) */}
-                      <div
-                        className={cn(
-                          "w-10 h-10 rounded-[5px] flex items-center justify-center flex-shrink-0 shadow-xs border transition-colors",
-                          isBlue
-                            ? "bg-gradient-to-br from-[#E3F1FC] to-[#d6ebfb] border-[#c4e0f7] text-brand-blue"
-                            : "bg-gradient-to-br from-[#e2f7eb] to-[#d2f3e0] border-[#c0ebd2] text-[#1e9e5a]"
-                        )}
-                      >
-                        <User className="w-5 h-5 stroke-[2.2]" />
-                      </div>
+                {/* Decorative Bottom-Right Corner Petal Accent */}
+                <div className="absolute bottom-0 right-0 w-20 sm:w-24 h-20 sm:h-24 pointer-events-none overflow-hidden rounded-br-[5px]">
+                  <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+                    <path
+                      d="M100 0V100H0C55.23 100 100 55.23 100 0Z"
+                      fill={isBlue ? "#e2f2fd" : "#e3f8ec"}
+                      opacity={isBlue ? 0.7 : 0.75}
+                    />
+                  </svg>
+                </div>
 
-                      <div className="min-w-0">
-                        <div className="text-[13.5px] font-bold text-brand-navy font-heading truncate">
-                          {story.name}
-                        </div>
-                        <div className="text-[11.5px] text-brand-text truncate font-sans">
-                          {authorRole}
-                        </div>
-                      </div>
-                    </div>
+                {/* Left: Person Image from public/images/person/ */}
+                <div className="relative w-[100px] xs:w-[115px] sm:w-[132px] md:w-[124px] lg:w-[116px] xl:w-[142px] aspect-[3/4] rounded-[5px] overflow-hidden flex-shrink-0 z-10 shadow-sm border border-[#e8f1fa]">
+                  <Image
+                    src={story.image}
+                    alt={story.name}
+                    fill
+                    sizes="(max-width: 640px) 120px, (max-width: 1024px) 140px, 160px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
+                {/* Right: Content Area (Quote Icon, Testimonial Text & Name Badge) */}
+                <div className="flex-1 flex flex-col justify-between items-start py-1 sm:py-2 z-10 min-w-0">
+                  <div>
+                    {/* Large Quote Icon */}
                     <QuoteIcon
                       className={cn(
-                        "w-4 h-4 flex-shrink-0 opacity-70",
+                        "w-5 h-5 sm:w-6 sm:h-6 mb-2 flex-shrink-0",
                         isBlue ? "text-[#7ebbf0]" : "text-[#58d492]"
                       )}
                     />
+
+                    {/* Testimonial Quote Text */}
+                    <p className="text-[13.5px] xs:text-[14px] sm:text-[15px] xl:text-[16px] leading-[21px] xs:leading-[22px] sm:leading-[24px] xl:leading-[26px] text-brand-navy font-medium font-sans">
+                      &ldquo;{story.quote}&rdquo;
+                    </p>
                   </div>
 
-                  {/* Dedicated Bottom Read Full Story Button - Responsive and Mobile-friendly */}
-                  <button
-                    type="button"
-                    onClick={() => setActiveStory(story)}
+                  {/* Name Pill Badge */}
+                  <div
                     className={cn(
-                      "w-full py-2.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-2xs border",
+                      "mt-3 px-3.5 sm:px-4 py-1 rounded-full font-bold text-xs font-heading select-none",
                       isBlue
-                        ? "bg-[#f8fbfe] hover:bg-brand-blue text-brand-navy hover:text-white border-[#e2eef9] hover:border-brand-blue"
-                        : "bg-[#f6fcf8] hover:bg-[#1e9e5a] text-brand-navy hover:text-white border-[#d2f3e0] hover:border-[#1e9e5a]"
+                        ? "bg-[#E3F1FC] text-brand-blue"
+                        : "bg-[#e2f7eb] text-[#1e9e5a]"
                     )}
                   >
-                    <span>Read Full Story</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                  </button>
+                    {story.name}
+                  </div>
                 </div>
               </article>
             );
           })}
         </div>
       </div>
-
-      {/* Story Detail Modal */}
-      <StoryModal
-        story={activeStory}
-        isOpen={Boolean(activeStory)}
-        onClose={() => setActiveStory(null)}
-      />
     </section>
   );
 }

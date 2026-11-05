@@ -361,7 +361,7 @@ export function Navbar() {
                         <div className="px-6 py-3.5 bg-gradient-to-r from-brand-bg via-white to-brand-sky/40 border-b border-brand-border flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-                            <span className="text-[11.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
+                            <span className="text-[14px] sm:text-[14.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
                               Admissions Consulting Programs
                             </span>
                           </div>
@@ -369,7 +369,7 @@ export function Navbar() {
                             href="/services"
                             scroll={true}
                             onClick={handleNavClick}
-                            className="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1.5 transition-colors font-heading group/link"
+                            className="text-[14px] sm:text-[14.5px] font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1.5 transition-colors font-heading group/link"
                           >
                             <span>Explore All Services</span>
                             <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
@@ -415,7 +415,7 @@ export function Navbar() {
                                     {service.badge && (
                                       <span
                                         className={cn(
-                                          "text-[9px] font-bold px-1.5 py-0.5 rounded-[5px] uppercase tracking-wider flex-shrink-0",
+                                          "text-[10px] font-bold px-1.5 py-0.5 rounded-[5px] uppercase tracking-wider flex-shrink-0",
                                           service.accent === "green"
                                             ? "bg-brand-green text-brand-greenDark"
                                             : "bg-brand-sky text-brand-blue"
@@ -435,14 +435,14 @@ export function Navbar() {
 
                         {/* Dropdown Bottom Banner */}
                         <div className="px-6 py-3.5 bg-brand-bg border-t border-brand-border flex items-center justify-between">
-                          <div className="text-[12px] text-brand-text font-sans">
+                          <div className="text-[14px] sm:text-[14.5px] leading-[22px] sm:leading-[24px] text-brand-text truncate font-sans">
                             <span className="font-semibold text-brand-navy">Not sure which roadmap fits?</span>{" "}
                             Book a free 30-minute diagnostic session.
                           </div>
                           <Link
                             href="/contact"
                             onClick={() => setIsServicesOpen(false)}
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
+                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
                             <span>Free Consultation</span>
                             <ArrowRight className="w-3 h-3" />
@@ -510,7 +510,7 @@ export function Navbar() {
                         <div className="px-6 py-3.5 bg-gradient-to-r from-brand-bg via-white to-brand-sky/40 border-b border-brand-border flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-                            <span className="text-[11.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
+                            <span className="text-[14px] sm:text-[14.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
                               Admissions Knowledge & Insights
                             </span>
                           </div>
@@ -518,7 +518,7 @@ export function Navbar() {
                             href="/resources"
                             scroll={true}
                             onClick={handleNavClick}
-                            className="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1.5 transition-colors font-heading group/link"
+                            className="text-[14px] sm:text-[14.5px] font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1.5 transition-colors font-heading group/link"
                           >
                             <span>Explore All Resources</span>
                             <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
@@ -564,7 +564,7 @@ export function Navbar() {
                                     {resource.badge && (
                                       <span
                                         className={cn(
-                                          "text-[9px] font-bold px-1.5 py-0.5 rounded-[5px] uppercase tracking-wider flex-shrink-0",
+                                          "text-[10px] font-bold px-1.5 py-0.5 rounded-[5px] uppercase tracking-wider flex-shrink-0",
                                           resource.accent === "green"
                                             ? "bg-brand-green text-brand-greenDark"
                                             : "bg-brand-sky text-brand-blue"
@@ -584,14 +584,14 @@ export function Navbar() {
 
                         {/* Dropdown Bottom Banner */}
                         <div className="px-6 py-3.5 bg-brand-bg border-t border-brand-border flex items-center justify-between">
-                          <div className="text-[12px] text-brand-text font-sans">
+                          <div className="text-[14px] sm:text-[14.5px] leading-[22px] sm:leading-[24px] text-brand-text truncate font-sans">
                             <span className="font-semibold text-brand-navy">Empowering teens & families</span>{" "}
                             with actionable college admissions guidance.
                           </div>
                           <Link
                             href="/contact"
                             onClick={() => setIsResourcesOpen(false)}
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
+                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
                             <span>Free Consultation</span>
                             <ArrowRight className="w-3 h-3" />

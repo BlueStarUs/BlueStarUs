@@ -260,7 +260,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-semibold text-brand-navy bg-brand-bg hover:bg-brand-sky px-3 py-1 rounded-full border border-brand-border/80 transition-colors"
+                    className="text-xs font-semibold text-brand-navy bg-brand-bg hover:bg-brand-sky px-3 py-1 rounded-[5px] border border-brand-border/80 transition-colors"
                   >
                     {tag}
                   </span>
@@ -271,8 +271,8 @@ export default async function SingleBlogPage({ params }: PageProps) {
             {/* Author Attribution Card */}
             <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-white border border-brand-border shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
               <div className="flex items-center gap-4 min-w-0">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-sky text-brand-blue border-2 border-brand-blue/30 flex items-center justify-center flex-shrink-0 shadow-xs">
-                  <User className="w-6 h-6 sm:w-7 sm:h-7" />
+                <div className="w-12.5 h-12.5  rounded-[5px] bg-brand-sky text-brand-blue border-2 border-brand-blue/30 flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <User className="w-6 h-6" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-brand-blue font-heading mb-0.5">
@@ -289,7 +289,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-brand-bg hover:bg-brand-sky text-brand-blue hover:text-brand-navy text-xs font-bold font-heading transition-colors border border-brand-border flex-shrink-0 group self-start sm:self-auto"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-[5px] bg-brand-bg hover:bg-brand-sky text-brand-blue hover:text-brand-navy text-[14px] sm:text-[14.5px] font-bold font-heading transition-colors border border-brand-border flex-shrink-0 group self-start sm:self-auto"
               >
                 <span>Learn more about our advisory team</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -300,7 +300,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             <div className="mt-10 flex items-center justify-between">
               <Link
                 href="/blogs"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-bg hover:bg-brand-sky text-brand-navy hover:text-brand-blue font-bold text-xs sm:text-[13.5px] font-heading border border-brand-border transition-colors group"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-brand-bg hover:bg-brand-sky text-brand-navy hover:text-brand-blue font-bold text-[14px] sm:text-[14.5px] font-heading border border-brand-border transition-colors group"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
                 <span>Back to All Blogs</span>
@@ -311,7 +311,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
           {/* Sticky Right Sidebar (4 cols) */}
           <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
             {/* Table of Contents Card */}
-            <div className="p-6 rounded-2xl bg-white border border-brand-border shadow-xs">
+            <div className="p-6 rounded-[5px] bg-white border border-brand-border shadow-xs">
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-brand-border">
                 <BookOpen className="w-4 h-4 text-brand-blue" />
                 <h3 className="font-heading font-bold text-sm sm:text-[15px] uppercase tracking-wider text-brand-navy">
@@ -324,7 +324,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   <a
                     key={idx}
                     href={`#section-${idx + 1}`}
-                    className="block text-xs sm:text-[13.5px] text-brand-text hover:text-brand-blue hover:translate-x-1 transition-all py-1 leading-snug"
+                    className="block text-[14px] sm:text-[14.5px] text-brand-text hover:text-brand-blue hover:translate-x-1 transition-all py-1 leading-snug"
                   >
                     {section.heading}
                   </a>
@@ -333,7 +333,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             </div>
 
             {/* Free Consultation Card */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-card relative overflow-hidden">
+            <div className="p-6 sm:p-7 rounded-[5px] bg-gradient-to-br from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-card relative overflow-hidden">
               <div className="relative z-10">
                 <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 grid place-items-center mb-4">
                   <BrandStar className="w-5 h-5 text-white fill-white" />
@@ -341,12 +341,12 @@ export default async function SingleBlogPage({ params }: PageProps) {
                 <h3 className="font-heading font-extrabold text-lg sm:text-xl text-white mb-2 leading-tight">
                   Personalized Admissions Mentorship
                 </h3>
-                <p className="text-xs sm:text-[13px] text-[#d0e6f7] leading-relaxed mb-5 font-sans">
+                <p className="text-[14px] sm:text-[14.5px] text-[#d0e6f7] leading-relaxed mb-5 font-sans">
                   Ready to turn these insights into a tailored admissions strategy? Book your complimentary 30-minute consultation with Dr. Amy Morgenstern.
                 </p>
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-brand-navy hover:bg-brand-sky font-bold text-xs sm:text-[13.5px] font-heading shadow-md hover:shadow-lg transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-[5px] bg-white text-brand-navy hover:bg-brand-sky font-bold text-xs sm:text-[13.5px] font-heading shadow-md hover:shadow-lg transition-all"
                 >
                   <span>Book Free Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -361,19 +361,19 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
             {/* Related Articles Mini List */}
             {relatedPosts.length > 0 && (
-              <div className="p-6 rounded-2xl bg-white border border-brand-border shadow-xs">
+              <div className="p-6 rounded-[5px] bg-white border border-brand-border shadow-xs">
                 <h3 className="font-heading font-bold text-sm sm:text-[15px] uppercase tracking-wider text-brand-navy mb-4 pb-3 border-b border-brand-border">
                   Related Guides
                 </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-7">
                   {relatedPosts.map((related) => (
                     <Link
                       key={related.slug}
                       href={`/blogs/${related.slug}`}
                       className="group/item flex items-start gap-3 transition-colors"
                     >
-                      <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-brand-sky border border-brand-border/60">
+                      <div className="relative w-14 h-14 rounded-[5px] overflow-hidden flex-shrink-0 bg-brand-sky border border-brand-border/60">
                         <Image
                           src={related.coverImage}
                           alt={related.title}
@@ -382,10 +382,10 @@ export default async function SingleBlogPage({ params }: PageProps) {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-[10px] font-bold text-brand-blue uppercase tracking-wider font-heading mb-0.5">
+                        <div className="text-[12px] font-bold text-brand-blue uppercase tracking-wider font-heading mb-0.5">
                           {related.category}
                         </div>
-                        <h4 className="font-heading font-bold text-xs sm:text-[13px] text-brand-navy group-hover/item:text-brand-blue transition-colors line-clamp-2 leading-snug">
+                        <h4 className="font-heading font-[550] text-base sm:text-[17px] text-brand-navy group-hover/item:text-brand-blue transition-colors line-clamp-2 leading-snug">
                           {related.title}
                         </h4>
                       </div>

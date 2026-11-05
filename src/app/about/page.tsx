@@ -318,10 +318,10 @@ export default function AboutPage() {
                     <div className="text-2xl sm:text-3xl font-extrabold text-brand-blue font-heading tracking-tight">
                       {item.value}
                     </div>
-                    <div className="text-xs sm:text-[13px] font-bold text-brand-navy font-heading mt-1 leading-snug">
+                    <div className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading mt-1 leading-snug">
                       {item.label}
                     </div>
-                    <div className="text-[11px] sm:text-xs text-brand-text font-sans mt-0.5">
+                    <div className="text-[14px] sm:text-[14.5px] text-brand-text font-sans mt-0.5">
                       {item.subtext}
                     </div>
                   </div>
@@ -430,7 +430,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#073d63] via-[#094c79]/95 to-[#0c5989]/90 z-0" />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
             {/* Centered Glowing Pill Kicker */}
             <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#9ed5ff] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3.5 shadow-xs">
               <Users2 className="w-3.5 h-3.5 text-[#38bdf8]" />
@@ -443,12 +443,12 @@ export default function AboutPage() {
             </h2>
 
             {/* Centered Description */}
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans mb-8 max-w-2xl mx-auto">
+            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans mb-8 mt-4 max-w-2xl mx-auto">
               At BlueStars Admissions Consulting, our team blends former university faculty insight, Ivy League academic backgrounds, and executive functioning coaching. We listen deeply to student aspirations, helping them find joy and confidence in the admissions journey.
             </p>
 
             {/* Centered 2-Column Responsive Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-7xl w-full mx-auto mb-9 text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-7xl w-full mx-auto mb-9 text-left mt-4">
               <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
                 <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
                 <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
@@ -479,7 +479,7 @@ export default function AboutPage() {
             <div className="flex justify-center w-full">
               <Link
                 href="#team"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center sm:mt-4 gap-2 px-7 py-3.5 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Meet Our Full Team Below</span>
                 <ArrowRight className="w-4 h-4 text-brand-navy" />
@@ -731,10 +731,10 @@ export default function AboutPage() {
             </p>
 
             <div className="inline-block p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
-              <span className="block text-xs sm:text-[13px] font-bold text-[#bfe2fa] tracking-wider uppercase font-heading">
+              <span className="block text-base sm:text-[17px] font-bold text-[#bfe2fa] tracking-wider uppercase font-heading">
                 &mdash; DR. AMY MORGENSTERN, PH.D.
               </span>
-              <span className="block text-[11px] text-[#9ed5ff] font-sans mt-0.5">
+              <span className="block text-[14px] sm:text-[14.5px] text-[#9ed5ff] font-sans mt-0.5">
                 Founder &amp; Lead Strategist, BlueStars Admissions Consulting
               </span>
             </div>

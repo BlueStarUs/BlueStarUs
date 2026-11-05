@@ -209,10 +209,10 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         <User className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                       </div>
                       <div>
-                        <div className="font-heading font-bold text-xs sm:text-sm text-brand-navy leading-tight">
+                        <div className="font-heading font-bold text-base sm:text-[17px] leading-[24px] text-brand-navy leading-tight">
                           {featuredPost.author.name}
                         </div>
-                        <div className="text-[11px] sm:text-xs text-brand-text font-sans">
+                        <div className="text-[14px] sm:text-[14.5px] text-brand-text font-sans">
                           {featuredPost.author.role}
                         </div>
                       </div>
@@ -306,7 +306,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         <div className="w-7 h-7 rounded-full bg-brand-sky text-brand-blue border border-brand-blue/30 flex items-center justify-center flex-shrink-0">
                           <User className="w-3.5 h-3.5" />
                         </div>
-                        <span className="text-xs font-semibold text-brand-navy font-heading truncate max-w-[130px]">
+                        <span className="text-[14px] sm:text-[14.5px] font-semibold text-brand-navy font-heading truncate max-w-[140px]">
                           {article.author.name}
                         </span>
                       </div>

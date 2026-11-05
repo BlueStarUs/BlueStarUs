@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { ChatBot } from "@/components/ui/ChatBot";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body className="antialiased text-brand-text bg-white selection:bg-brand-sky selection:text-brand-navy min-h-screen flex flex-col font-sans">
         <ScrollToTop />
         {children}
+        {/* <ChatBot /> */}
       </body>
     </html>
   );
