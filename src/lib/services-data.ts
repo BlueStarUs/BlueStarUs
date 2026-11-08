@@ -23,7 +23,7 @@ export interface ServiceDetail {
   subtitle: string;
   shortDescription: string;
   accent: "green" | "blue";
-  iconName: "building" | "doc" | "pencil" | "coins" | "compass" | "palette";
+  iconName: "building" | "doc" | "pencil" | "coins" | "compass" | "palette" | "research" | "sparkles";
   heroTagline: string;
   overview: {
     heading: string;
@@ -83,7 +83,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     overview: {
       heading: "Holistic, Long-Term Guidance Built for Top-Tier Results",
       intro:
-        "College planning is not an eleventh-hour sprint—it is a thoughtful, multi-year developmental journey. Founded in 2010 in the San Francisco Bay Area by Dr. Amy Morgenstern ('Dr. M'), BlueStars provides proactive, student-centered mentoring starting as early as 8th, 9th, and 10th grade. Guided by our signature 'The Calm Way' methodology, we help students eliminate admissions panic while cultivating a genuine academic 'spike' that distinguishes them in Ivy League, Stanford, and top-tier applicant pools.",
+        "College planning is not an eleventh-hour sprint—it is a thoughtful, multi-year developmental journey. Founded in 2010 in the San Francisco Bay Area by Dr. Amy Morgenstern ('Dr. M'), Blue Stars provides proactive, student-centered mentoring starting as early as 8th, 9th, and 10th grade. Guided by our signature 'The Calm Way' methodology, we help students eliminate admissions panic while cultivating a genuine academic 'spike' that distinguishes them in Ivy League, Stanford, and top-tier applicant pools.",
       paragraph2:
         "Rather than manufacturing a generic profile, our whole-student mentoring model uncovers each student's authentic passions. From choosing rigorous AP/IB/Honors coursework to developing high-impact summer research and leadership initiatives, we ensure every semester builds a cohesive, compelling admissions narrative.",
       targetAudience: [
@@ -176,14 +176,14 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     ],
     faqs: [
       {
-        question: "When is the ideal time to start college planning with BlueStars?",
+        question: "When is the ideal time to start college planning with Blue Stars?",
         answer:
           "Most families begin working with us in 8th, 9th, or 10th grade. Starting early allows us to strategically choose courses, establish strong study habits, and develop meaningful extracurricular initiatives before the high-pressure junior year.",
       },
       {
-        question: "How does BlueStars differ from our school counselor?",
+        question: "How does Blue Stars differ from our school counselor?",
         answer:
-          "High school counselors often manage 300 to 500+ students and focus primarily on graduation requirements. BlueStars provides boutique, dedicated 1-on-1 mentorship with frequent check-ins, insider knowledge of selective admissions, and personalized strategic planning.",
+          "High school counselors often manage 300 to 500+ students and focus primarily on graduation requirements. Blue Stars provides boutique, dedicated 1-on-1 mentorship with frequent check-ins, insider knowledge of selective admissions, and personalized strategic planning.",
       },
       {
         question: "Do you help students who don't know what they want to study?",
@@ -191,9 +191,9 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
           "Yes! Exploratory students are one of our core specialties. We use reflective assessments, reading lists, and experiential micro-projects to help teens discover what excites them intellectually before finalizing their college targets.",
       },
       {
-        question: "Can BlueStars assist international students or students outside California?",
+        question: "Can Blue Stars assist international students or students outside California?",
         answer:
-          "Absolutely. While headquartered in the San Francisco Bay Area, BlueStars works with students across the United States and internationally (including Asia, Europe, and Latin America) via our structured remote counseling platform.",
+          "Absolutely. While headquartered in the San Francisco Bay Area, Blue Stars works with students across the United States and internationally (including Asia, Europe, and Latin America) via our structured remote counseling platform.",
       },
     ],
   },
@@ -214,7 +214,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       intro:
         "Top-tier college admissions acceptance rates continue to hit record lows. In this environment, exceptional grades and test scores are merely the baseline. Success requires an intelligent, cohesive application strategy that aligns a student's unique profile with institutional priorities, institutional funding models, and admissions round mechanics.",
       paragraph2:
-        "At BlueStars, our senior strategists work directly with students to balance their college list into Reach, Target, and Safety tiers, master Early Decision (ED1/ED2), Early Action (EA), and Restrictive Early Action (REA) timing, and craft an unforgettable narrative that resonates with regional admissions readers.",
+        "At Blue Stars, our senior strategists work directly with students to balance their college list into Reach, Target, and Safety tiers, master Early Decision (ED1/ED2), Early Action (EA), and Restrictive Early Action (REA) timing, and craft an unforgettable narrative that resonates with regional admissions readers.",
       targetAudience: [
         "Rising high school seniors (12th grade) preparing their college applications",
         "Second-semester juniors (11th grade) developing their initial balanced college list",
@@ -343,7 +343,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       intro:
         "Every year, admissions officers read tens of thousands of essays about winning the big game, volunteering on a mission trip, or struggling through a difficult calculus class. Generic essays get lost in the shuffle. To stand out, a student's personal statement must reveal authentic introspection, emotional maturity, intellectual curiosity, and vulnerability.",
       paragraph2:
-        "BlueStars founder Dr. Amy Morgenstern (Ph.D. in philosophy, MFA in contemporary art) and our writing mentors do not write essays for students. Instead, we use structured Socratic dialogue and deep active listening to help teens uncover their singular voice. Practicing 'The Calm Way,' we guide students piece-by-piece through iterative drafts until their essays captivate admissions committees with genuine vulnerability and insight.",
+        "Blue Stars founder Dr. Amy Morgenstern (Ph.D. in philosophy, MFA in contemporary art) and our writing mentors do not write essays for students. Instead, we use structured Socratic dialogue and deep active listening to help teens uncover their singular voice. Practicing 'The Calm Way,' we guide students piece-by-piece through iterative drafts until their essays captivate admissions committees with genuine vulnerability and insight.",
       targetAudience: [
         "High school seniors facing the Common App Personal Statement and school supplements",
         "Students applying to colleges requiring numerous supplemental essays (Stanford, Harvard, UChicago, Columbia, MIT)",
@@ -434,7 +434,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     ],
     faqs: [
       {
-        question: "Will BlueStars write or rewrite my student's essays?",
+        question: "Will Blue Stars write or rewrite my student's essays?",
         answer:
           "Never. Admissions officers are trained to detect adult voices and AI-generated text immediately. We coach, guide, question, and polish, but the ideas, voice, and words always belong 100% to the student.",
       },
@@ -456,131 +456,131 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     ],
   },
 
-  "scholarships": {
-    slug: "scholarships",
-    title: "Scholarship & Financial Aid Guidance",
-    badge: "FINANCIAL & VALUE SERVICE",
+  "research-internships": {
+    slug: "research-internships",
+    title: "Research & Internships",
+    badge: "SIGNATURE RESEARCH ACADEMY",
     subtitle:
-      "Strategic guidance to maximize institutional merit aid, navigate FAFSA and CSS Profile requirements, and evaluate college return on investment.",
+      "Mentorship for high school students to pursue independent scientific and humanities research, university lab placements, faculty outreach, and selective summer programs.",
     shortDescription:
-      "Explore funding opportunities and get guidance on financial aid.",
-    accent: "green",
-    iconName: "coins",
-    heroTagline: "Make Top-Tier Higher Education Affordable and Financially Sustainable.",
+      "Mentorship for lab placements, Ivy League faculty outreach, original research papers, and prestigious summer programs.",
+    accent: "blue",
+    iconName: "research",
+    heroTagline: "Cultivate Authentic Intellectual Vitality. Stand Out with Original Research.",
     overview: {
-      heading: "Smart Financial Planning for World-Class Educational Outcomes",
+      heading: "Empowering High School Scholars with Original Research & University Placements",
       intro:
-        "The published sticker price of top universities can easily exceed $85,000 to $90,000 per year. However, very few families actually pay the full retail cost. Understanding the distinction between need-based financial aid, institutional merit scholarships, and competitive outside grants can save families tens of thousands of dollars over four years.",
+        "In today's hyper-competitive admissions landscape, stellar GPAs and high test scores alone are no longer enough for top-20 universities and Ivy League programs. Admissions committees actively seek out authentic 'intellectual vitality'—concrete evidence that a student creates knowledge, asks profound questions, and conducts meaningful inquiry beyond high school walls. Blue Stars’ Research & Internships program provides structured, 1-on-1 mentorship connecting ambitious high schoolers with real-world research opportunities.",
       paragraph2:
-        "BlueStars helps families demystify financial aid formulas, accurately submit the FAFSA and CSS Profile, identify colleges offering aggressive merit awards to top students, and draft respectful, data-supported financial aid appeal letters when initial awards fall short.",
+        "Guided by Dr. Amy Morgenstern and our network of university researchers and faculty mentors, students learn how to conduct literature reviews, formulate hypotheses, contact professors for lab positions, and submit papers to prestigious youth journals and national competitions like Regeneron STS, ISEF, and the Junior Science and Humanities Symposium (JSHS).",
       targetAudience: [
-        "Families planning college funding across single or multiple children",
-        "Middle-income and high-achieving families seeking substantial merit scholarships",
-        "Students applying for competitive national scholarship programs (Coca-Cola, Gates, Elks)",
-        "Parents seeking guidance on FAFSA, CSS Profile, and financial aid negotiation",
+        "9th, 10th, and 11th graders seeking to build an authentic intellectual spike",
+        "Aspiring STEM, Pre-Med, Computer Science, Economics, and Humanities scholars",
+        "Students applying to selective summer research programs (RSI, MIT PRIMES, Simons, Clark Scholars, PROMYS)",
+        "Teens eager to land university lab assistantships, clinical internships, and professor mentorship",
       ],
       keyStats: [
-        { value: "$45K+", label: "Average 4-Year Merit Award per Student" },
-        { value: "100%", label: "FAFSA & CSS Profile Accuracy" },
-        { value: "$2.4M+", label: "Total Scholarships Won by BlueStars Students" },
+        { value: "100%", label: "Personalized Research Direction" },
+        { value: "Ivy League", label: "Lab Placements & Faculty Outreach" },
+        { value: "Top Tier", label: "Competition & Summer Program Admits" },
       ],
     },
     pillars: [
       {
-        title: "Institutional Merit Aid Strategy",
+        title: "Original Independent Research Capstone",
         description:
-          "Targeting premier colleges that actively award generous non-need-based merit scholarships to attract academically gifted students.",
+          "Guiding students through identifying novel research questions, conducting thorough literature reviews, designing experiments, and writing academic papers.",
         highlights: [
-          "Identifying universities where student profile falls in the top 10%",
-          "Targeting full-tuition and full-ride presidential scholarship programs",
-          "Navigating early scholarship deadlines that differ from regular admissions",
+          "Topic ideation tailored to the student's unique intellectual interests",
+          "Academic paper structure conforming to peer-reviewed scholarly standards",
+          "Interdisciplinary research spanning STEM, machine learning, public policy, and humanities",
         ],
       },
       {
-        title: "FAFSA & CSS Profile Navigation",
+        title: "Faculty Outreach & University Lab Placements",
         description:
-          "Step-by-step guidance through federal and institutional financial aid documentation to prevent costly filing errors.",
+          "Teaching high schoolers our signature outreach methodology to secure research assistant positions and mentorship in elite university laboratories.",
         highlights: [
-          "FAFSA timeline, contributor requirements, and student aid index (SAI)",
-          "CSS Profile institutional methodology, home equity, and business asset treatment",
-          "Special circumstances documentation (medical expenses, job changes)",
+          "Curating targeted lists of principal investigators (PIs) and research labs",
+          "Crafting professional academic CVs and personalized faculty cold emails",
+          "Interview coaching for meeting professors and lab directors with confidence",
         ],
       },
       {
-        title: "Competitive Outside Scholarship Sourcing",
+        title: "Prestigious Summer Research Programs",
         description:
-          "Curating a vetted list of high-value national, regional, and niche corporate scholarships matched to student background and intended career.",
+          "Targeted application coaching for the world's most competitive high school research institutes, fellows, and STEM programs.",
         highlights: [
-          "Filtering out low-probability sweepstakes in favor of high-yield merit grants",
-          "Coaching on scholarship-specific essays, interviews, and portfolio submissions",
-          "Deadlines and submission tracking for major foundation awards",
+          "Coaching for top summer institutes (RSI, MIT PRIMES, SSP, Simons, Clark Scholars, TASP)",
+          "Polishing research proposals, personal essays, and technical problem sets",
+          "Strategic timeline management to submit flawless early applications",
         ],
       },
       {
-        title: "Financial Aid Comparison & Formal Appeals",
+        title: "Journal Publishing & Competition Submissions",
         description:
-          "Analyzing multi-year financial aid award letters, calculating net out-of-pocket costs, and drafting formal appeal letters.",
+          "Assisting students in submitting their original findings to vetted academic journals and prestigious national research competitions.",
         highlights: [
-          "Line-by-line analysis of grants, loans, work-study, and hidden fees",
-          "Drafting professional, respectful financial aid appeal letters",
-          "Leveraging competing offers to secure additional institutional grant funding",
+          "Submission to journals such as JEI (Journal of Emerging Investigators) and The Concord Review",
+          "Preparation for Regeneron STS, Regeneron ISEF, and local science fairs",
+          "Integrating research findings seamlessly into Common App activity descriptions and supplements",
         ],
       },
     ],
     methodology: [
       {
         stepNumber: "01",
-        title: "Financial Readiness & SAI Assessment",
+        title: "Curiosity Assessment & Domain Exploration",
         description:
-          "We evaluate family college savings, estimate the Student Aid Index (SAI), and establish realistic budget and merit aid targets.",
+          "We explore the student's passions through deep-dive diagnostic discussions, reading scientific and scholarly journals, and identifying high-impact areas where an authentic research project can be developed.",
       },
       {
         stepNumber: "02",
-        title: "Merit-Optimized College List Building",
+        title: "Hypothesis Formulation & Literature Review",
         description:
-          "We strategically integrate colleges known for generous merit aid, honoring student academic ambitions while ensuring strong financial safety.",
+          "Under dedicated mentorship, the student conducts a literature review of recent studies, defines an original hypothesis or investigation, and establishes a clear methodology and timeline.",
       },
       {
         stepNumber: "03",
-        title: "Document Filing & Outside Application Support",
+        title: "Execution, Mentorship & Faculty Outreach",
         description:
-          "We guide timely submission of the FAFSA, CSS Profile, and vetted national outside scholarship applications.",
+          "The student gathers data, conducts experiments or computational analysis, and connects with university faculty through our proven professional outreach process for lab placement.",
       },
       {
         stepNumber: "04",
-        title: "Offer Comparison & Appeal Strategy",
+        title: "Scholarly Paper, Publication & Admissions Integration",
         description:
-          "When acceptances arrive in spring, we compare net costs, calculate ROI, and draft data-backed appeal letters to maximize final packages.",
+          "We guide the final paper write-up, assist in submissions to competitions or journals, and showcase the research effectively in college essays and activity resumes.",
       },
     ],
     deliverables: [
-      "Custom Merit Aid College Target List with Historical Award Percentiles",
-      "Step-by-Step FAFSA & CSS Profile Filing Checklist",
-      "Curated External Scholarship Opportunity Database with Deadlines",
-      "Financial Aid Award Letter Comparison & Net Cost Calculator",
-      "Professional Financial Aid Reconsideration / Appeal Letter Templates & Review",
-      "4-Year College ROI & Career Earning Potential Assessment",
+      "Publication-Ready Independent Research Capstone Paper",
+      "Curated Faculty Outreach List & Tailored Cold-Email Templates",
+      "Professional Academic CV & Resume for High School Researchers",
+      "Selective Summer Program Application Roadmap (RSI, MIT PRIMES, SSP, etc.)",
+      "Science Fair & Competition Submission Plan (Regeneron STS, ISEF, JSHS)",
+      "Letters of Recommendation Strategy from Research Mentors and PIs",
     ],
     faqs: [
       {
-        question: "Can high-income families still qualify for college scholarships?",
+        question: "Does my student need prior research experience to join?",
         answer:
-          "Yes! Merit scholarships are awarded based on academic achievement, leadership, and talent—regardless of family income. Many top universities offer substantial 4-year tuition discounts to attract top-tier students.",
+          "No prior research experience is required. We work with students who have a genuine spark of curiosity and guide them from foundational academic reading to designing and completing an original, high-level project.",
       },
       {
-        question: "What is the difference between FAFSA and the CSS Profile?",
+        question: "How do students secure research positions with university professors?",
         answer:
-          "FAFSA is the federal form used by all U.S. colleges to determine federal grant and loan eligibility. The CSS Profile is an additional, more detailed financial aid application used by roughly 400 selective private universities to award their own institutional endowment funds.",
+          "We teach students Dr. M's proven faculty outreach framework. This includes identifying active professors whose research aligns with the student's goals, preparing an academic CV, drafting respectful, individualized cold emails, and conducting mock interview prep.",
       },
       {
-        question: "Can financial aid awards be negotiated?",
+        question: "Is research only for STEM students or also for humanities and social sciences?",
         answer:
-          "Yes. Colleges call this an 'appeal' or 'reconsideration.' If a family has experienced changes in financial circumstances or received a stronger merit award from a competing peer institution, we help draft polite, well-documented appeal letters that frequently yield additional grant aid.",
+          "Both! While many students conduct research in computational biology, physics, AI, and chemistry, we also mentor students in economics, historical analysis (such as papers for The Concord Review), political science, and philosophy.",
       },
       {
-        question: "Do outside scholarships reduce financial aid packages?",
+        question: "How does conducting research elevate a college application?",
         answer:
-          "In some cases, colleges practice 'scholarship displacement,' reducing institutional grants when outside scholarships are won. We teach families how to select outside scholarships that reduce student loans and student contributions first.",
+          "Top-tier universities like Stanford, MIT, and Ivy League schools look for deep intellectual vitality. An original research paper, a prestigious summer program admit, or a letter of recommendation from a university research mentor demonstrates maturity, academic initiative, and genuine readiness for undergraduate scholarship.",
       },
     ],
   },
@@ -942,10 +942,10 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
         title: "Let's get your teen ready for the ART PROGRAM of their dreams",
         paragraphs: [
           "Applying to competitive BFA, BA, and architecture programs requires far more than technical drawing skills. Admissions committees look for distinct artistic voice, conceptual curiosity, and experimental drive.",
-          "Led by Dr. Amy Morgenstern—who holds an MFA in contemporary art and taught university-level studio art—BlueStars provides unmatched artistic mentorship.",
+          "Led by Dr. Amy Morgenstern—who holds an MFA in contemporary art and taught university-level studio art—Blue Stars provides unmatched artistic mentorship.",
           "We guide students through idea generation, medium experimentation, and iterative critique, transforming raw talent into cohesive, high-impact portfolios.",
         ],
-        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop",
+        image: "/images/services/others_images/Dream _art_Programs.png",
         alt: "Young artist in ceramic and painting studio working on portfolio artwork",
         imagePosition: "left",
         ctaText: "Schedule an Art Consultation",
@@ -962,7 +962,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
           "11th Grade: Deep thematic focus, sustained series creation, and summer pre-college program applications",
           "12th Grade: Portfolio curation, professional photography/documentation, SlideRoom formatting, and artist statement writing",
         ],
-        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop",
+        image: "/images/services/others_images/Early _art_Development.png",
         alt: "Artist painting on canvas easel developing high school art portfolio",
         imagePosition: "right",
         ctaText: "Explore Art Portfolio Roadmap",
@@ -997,7 +997,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       },
       {
         quote:
-          "BlueStars helped my son organize his artwork, write a stunning artist statement, and present his architectural drawings with absolute clarity. The guidance was indispensable.",
+          "Blue Stars helped my son organize his artwork, write a stunning artist statement, and present his architectural drawings with absolute clarity. The guidance was indispensable.",
         author: "Marcus T.",
         role: "Parent of Brown University Visual Arts Admit",
       },

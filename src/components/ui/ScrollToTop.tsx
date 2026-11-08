@@ -57,8 +57,8 @@ export function ScrollToTop() {
       aria-label="Scroll to top of page"
       className={cn(
         "fixed z-50 flex items-center justify-center transition-all duration-300 transform select-none cursor-pointer",
-        "bottom-5 right-5 sm:bottom-7 sm:right-7",
-        "w-11 h-11 sm:w-12 sm:h-12 rounded-[5px]",
+        "bottom-[90px] right-[22.5px] sm:bottom-[105px] sm:right-[30px]",
+        "w-10 h-11 sm:w-10 sm:h-10 rounded-[5px]",
         "bg-brand-blue hover:bg-brand-navy text-white",
         "border border-white/25 shadow-[0_8px_24px_rgba(10,61,107,0.28)] hover:shadow-[0_12px_32px_rgba(10,61,107,0.4)]",
         "active:scale-95 group focus:outline-none focus:ring-2 focus:ring-brand-blue/50",

@@ -17,6 +17,10 @@ import {
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { ServiceResourcesBanner } from "@/components/sections/ServiceResourcesBanner";
+import { CollegeAdmissionsConsultingView } from "@/components/sections/CollegeAdmissionsConsultingView";
+import { CollegePlanningView } from "@/components/sections/CollegePlanningView";
+import { EssayGuidanceView } from "@/components/sections/EssayGuidanceView";
+import { ResearchInternshipsView } from "@/components/sections/ResearchInternshipsView";
 import { BrandStar } from "@/components/ui/Icons";
 import { SERVICES_CATALOG } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
@@ -44,10 +48,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${service.title} | BlueStars Admissions Consulting`,
+    title: `${service.title} | Blue Stars Admissions Consulting`,
     description: service.subtitle,
     openGraph: {
-      title: `${service.title} | BlueStars Admissions Consulting`,
+      title: `${service.title} | Blue Stars Admissions Consulting`,
       description: service.subtitle,
     },
   };
@@ -80,6 +84,26 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   if (!service) {
     notFound();
+  }
+
+  // Render the dedicated custom view with all local images & Framer Motion / GSAP animations
+  if (slug === "college-admissions-consulting") {
+    return <CollegeAdmissionsConsultingView service={service} />;
+  }
+
+  // Render the dedicated custom view for College Planning with 4 images & Framer Motion / GSAP animations
+  if (slug === "college-planning") {
+    return <CollegePlanningView service={service} />;
+  }
+
+  // Render the dedicated custom view for Essay Guidance with images & Framer Motion / GSAP animations
+  if (slug === "essay-guidance") {
+    return <EssayGuidanceView service={service} />;
+  }
+
+  // Render the dedicated custom view for Research & Internships with images & Framer Motion / GSAP animations
+  if (slug === "research-internships") {
+    return <ResearchInternshipsView service={service} />;
   }
 
   const isBlue = service.accent === "blue";
@@ -179,7 +203,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </ul>
 
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
                 >
                   <span>Book a Free Consultation</span>
@@ -340,7 +364,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* 5. Modern Feature Stories with Alternative Images (From Screenshots) */}
       {service.stories && service.stories.length > 0 && (
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#f8fbfe] border-y border-[#e2eef9]">
+        <section className="py-8 sm:py-12 lg:py-14 bg-[#f8fbfe] border-y border-[#e2eef9]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20 lg:space-y-24">
             {service.stories.map((story, sIdx) => {
               const isImageLeft = story.imagePosition === "left";
@@ -359,7 +383,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                       isImageLeft ? "order-1" : "order-1 lg:order-2"
                     )}
                   >
-                    <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
+                    <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden">
                       <Image
                         src={story.image}
                         alt={story.alt}
@@ -466,7 +490,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
 
               {/* Tags and CTA Row */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-6 border-t border-[#e2eef9]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-6 border-t border-[#e2eef9]">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mr-1">
                     Specializations:
@@ -508,7 +532,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px]">
-                What Families Say About BlueStars
+                What Families Say About Blue Stars
               </h2>
             </div>
 
@@ -721,7 +745,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                 {/* Primary Action Button */}
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book a Free Consultation</span>

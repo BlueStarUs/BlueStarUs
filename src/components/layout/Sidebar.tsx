@@ -32,7 +32,7 @@ export function Sidebar() {
     <aside className="w-64 bg-white border-r border-brand-border min-h-screen flex flex-col p-4">
       {/* Brand */}
       <div className="px-3 py-4 border-b border-brand-border/60">
-        <Link href="/#home" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="w-7 h-7 text-brand-blue flex-shrink-0">
             <BrandStar className="w-full h-full text-brand-blue" />
           </div>

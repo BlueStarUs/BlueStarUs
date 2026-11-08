@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   ArrowRight,
@@ -17,18 +18,19 @@ import {
   Award,
 } from "lucide-react";
 import {
-  BrandStar,
   ServiceCompassIcon,
   ServicePaletteIcon,
   UniversityCampusIcon,
   ServiceDocIcon,
   ServicePencilIcon,
   ServiceCoinsIcon,
+  ServiceResearchIcon,
 } from "@/components/ui/Icons";
 import { NAV_LINKS, NAV_SERVICES, NAV_RESOURCES, SITE_CONFIG } from "@/lib/constants";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { cn } from "@/lib/utils";
 
-// Map service icon names to custom BlueStars SVG icon components
+// Map service icon names to custom Blue Stars SVG icon components
 const SERVICE_ICONS: Record<
   string,
   React.ComponentType<{ className?: string }>
@@ -39,6 +41,7 @@ const SERVICE_ICONS: Record<
   doc: ServiceDocIcon,
   pencil: ServicePencilIcon,
   coins: ServiceCoinsIcon,
+  research: ServiceResearchIcon,
 };
 
 // Map resource icon names to Lucide icon components
@@ -242,7 +245,7 @@ export function Navbar() {
     }
 
     if (pathname === "/") {
-      if (href === "/#home" || href === "/") {
+      if (href === "/") {
         return activeHash === "home";
       }
       if (href === "/#planning") {
@@ -270,32 +273,29 @@ export function Navbar() {
           : "shadow-[0_2px_12px_rgba(10,61,107,0.03)]"
       )}
     >
+      {/* Dynamic Announcement Bar */}
+      <AnnouncementBar />
+
       {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[80px] flex items-center justify-between gap-4">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] sm:h-[80px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
-          href="/#home"
-          className="flex items-center gap-3 group cursor-pointer focus:outline-none rounded-lg select-none"
+          href="/"
+          className="flex items-center cursor-pointer focus:outline-none select-none py-1"
           aria-label={SITE_CONFIG.name}
           onClick={() => {
             setIsOpen(false);
             window.scrollTo({ top: 0, left: 0, behavior: "instant" });
           }}
         >
-          {/* Dual Star Logo Mark */}
-          <div className="relative w-9 h-9 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-            <BrandStar className="w-7 h-7 text-brand-blue fill-brand-blue absolute top-0 right-0 drop-shadow-[0_2px_8px_rgba(11,99,181,0.25)]" />
-            <BrandStar className="w-4 h-4 text-[#2A8FD6] fill-[#2A8FD6] absolute bottom-0 left-0 drop-shadow-[0_2px_6px_rgba(42,143,214,0.25)]" />
-          </div>
-
-          <span className="flex flex-col">
-            <span className="font-heading text-2xl sm:text-[25px] font-extrabold text-brand-navy leading-none tracking-tight">
-              BlueStars
-            </span>
-            <span className="font-heading text-[8px] sm:text-[8.5px] font-bold tracking-[0.16em] text-brand-blue uppercase mt-1 leading-tight">
-              ADMISSIONS CONSULTING
-            </span>
-          </span>
+          <Image
+            src="/images/BlueStars_Admission_Consulting_Logo.webp"
+            alt="Blue Stars Admissions Consulting"
+            width={220}
+            height={120}
+            priority
+            className="h-[57px] sm:h-[62px] w-auto object-contain transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -404,7 +404,7 @@ export function Navbar() {
                                       : "bg-brand-sky text-brand-blue"
                                   )}
                                 >
-                                  <IconComponent className="w-4.5 h-4.5" />
+                                  <IconComponent className="w-4 h-4" />
                                 </div>
 
                                 <div className="flex-1 min-w-0">
@@ -656,19 +656,19 @@ export function Navbar() {
           {/* Mobile Menu Hamburger Button */}
           <button
             type="button"
-            className="md:hidden w-11 h-11 rounded-[5px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/40"
+            className="md:hidden w-8 h-8 rounded-[2px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-5 h-5 stroke-[2.4]" /> : <Menu className="w-5 h-5 stroke-[2.4]" />}
+            {isOpen ? <X className="w-6 h-6 stroke-[2.4]" /> : <Menu className="w-6 h-6 stroke-[2.4]" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown Menu Drawer */}
       {isOpen && (
-        <div className="md:hidden bg-white/100 border-b border-[#e2eef9] px-5 py-5 shadow-[0_20px_40px_rgba(10,61,107,0.12)] animate-in fade-in slide-in-from-top-3 duration-200 max-h-[calc(100vh-80px)] overflow-y-auto">
+       <div className="md:hidden absolute top-full left-0 w-full h-[calc(100dvh-100%)] bg-white px-5 py-5 shadow-[0_20px_40px_rgba(10,61,107,0.12)] overflow-y-auto animate-in slide-in-from-left duration-300 ease-out">
           <nav className="flex flex-col space-y-1.5" aria-label="Mobile Navigation">
             {NAV_LINKS.map((item) => {
               const active = isLinkActive(item.href);

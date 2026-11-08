@@ -8,7 +8,7 @@ export default function Loading() {
         <BrandStar className="w-full h-full" />
       </div>
       <p className="font-heading font-semibold text-xs tracking-wider uppercase text-brand-navy">
-        Loading BlueStars Admissions...
+        Loading Blue Stars Admissions...
       </p>
     </div>
   );

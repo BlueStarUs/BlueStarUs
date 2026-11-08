@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { Features } from "@/components/sections/Features";
+import { FounderVision } from "@/components/sections/FounderVision";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Resources } from "@/components/sections/Resources";
 import { CTA } from "@/components/sections/CTA";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Services />
         <Process />
         <Features />
+        <FounderVision />
         <Testimonials />
         <Resources />
         <CTA />

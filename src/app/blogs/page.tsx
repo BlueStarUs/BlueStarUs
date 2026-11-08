@@ -6,9 +6,9 @@ import { CTA } from "@/components/sections/CTA";
 import { BLOG_POSTS } from "@/lib/blogs-data";
 
 export const metadata: Metadata = {
-  title: "Blogs & Admissions Insights | BlueStars Admissions Consulting",
+  title: "Blogs & Admissions Insights | Blue Stars Admissions Consulting",
   description:
-    "Expert articles, step-by-step application timelines, personal statement brainstorming guides, and scholarship strategies from BlueStars Admissions Consulting.",
+    "Expert articles, step-by-step application timelines, personal statement brainstorming guides, and scholarship strategies from Blue Stars Admissions Consulting.",
 };
 
 export default function BlogsPage() {

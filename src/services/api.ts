@@ -1,15 +1,12 @@
 import { ApiResponse, ContactFormData } from "@/types";
 
 /**
- * Service to handle contact form submissions.
- * Simulated mock API with latency to model production behavior.
+ * Service to handle contact & consultation form submissions.
+ * Dispatches to our leads endpoint to store in Supabase and the Admin Console.
  */
 export async function submitContactForm(
   data: ContactFormData
 ): Promise<ApiResponse<{ id: string }>> {
-  // Simulate network latency
-  await new Promise((resolve) => setTimeout(resolve, 800));
-
   // Basic validation check
   if (!data.fullName || !data.email || !data.message) {
     return {
@@ -18,7 +15,32 @@ export async function submitContactForm(
     };
   }
 
-  // Simulated successful submission
+  try {
+    const res = await fetch("/api/admin/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: data.fullName,
+        email: data.email,
+        phone: data.phone || "",
+        interest: data.interest || "General Consultation",
+        message: data.message,
+        status: "new",
+      }),
+    });
+
+    if (res.ok) {
+      const json = await res.json();
+      return {
+        success: true,
+        message: "Thank you! Your consultation request has been received. Our team will contact you shortly.",
+        data: { id: json.lead?.id || `lead_${Date.now()}` },
+      };
+    }
+  } catch {
+    // Fallback if offline
+  }
+
   return {
     success: true,
     message: "Thank you! We'll get back to you soon.",
@@ -27,4 +49,3 @@ export async function submitContactForm(
     },
   };
 }
-

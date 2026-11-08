@@ -129,7 +129,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div className="max-w-3xl">
               <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px] mb-3">
-                Inspiring Journeys from BlueStars Families &amp; Students
+                Inspiring Journeys from Blue Stars Families &amp; Students
               </h2>
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
                 Read firsthand accounts of how structured guidance, calm timelines, and authentic storytelling opened doors to the nation’s most competitive universities and merit scholarships.
@@ -236,7 +236,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                   story.authorRole ||
                   story.highSchool ||
                   story.schoolOrRole ||
-                  "BlueStars Family";
+                  "Blue Stars Family";
 
                 return (
                   <article
@@ -445,7 +445,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
               Where Our Students Learn &amp; Lead
             </h2>
             <p className="text-sm sm:text-[15px] leading-relaxed text-brand-text font-sans">
-              From Ivy League campuses to top-ranked engineering universities and premier art institutes, BlueStars students earn admissions offers at America&apos;s most selective institutions.
+              From Ivy League campuses to top-ranked engineering universities and premier art institutes, Blue Stars students earn admissions offers at America&apos;s most selective institutions.
             </p>
           </div>
 

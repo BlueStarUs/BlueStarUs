@@ -44,7 +44,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
     sender: "amy",
     senderName: "Amy Morgenstern",
     timestamp: "3 min",
-    text: "Hello! I'm Dr. Amy Morgenstern from BlueStars Admissions Consulting. Whether you're exploring Ivy League pathways, research spikes, art admissions, or essay guidance, I'm here to help. What questions can I answer for you or your student today?",
+    text: "Hello! I'm Dr. Amy Morgenstern from Blue Stars Admissions Consulting. Whether you're exploring Ivy League pathways, research spikes, art admissions, or essay guidance, I'm here to help. What questions can I answer for you or your student today?",
     reactionCount: 1,
     hasUserReacted: false,
   },
@@ -69,7 +69,7 @@ function getBotResponse(userText: string): {
 
   if (query.includes("research") || query.includes("internship") || query.includes("academy")) {
     return {
-      text: "Yes! At BlueStars, we guide students in developing academic spikes through independent research projects, mentorship with university faculty, and prestigious summer internships. This provides compelling depth on college applications, especially for STEM, humanities, and pre-med tracks.",
+      text: "Yes! At Blue Stars, we guide students in developing academic spikes through independent research projects, mentorship with university faculty, and prestigious summer internships. This provides compelling depth on college applications, especially for STEM, humanities, and pre-med tracks.",
       actionLink: { label: "Learn About Application Strategy", href: "/services/application-strategy" },
     };
   }
@@ -97,7 +97,7 @@ function getBotResponse(userText: string): {
     query.includes("ivy")
   ) {
     return {
-      text: "Over 98% of BlueStars students earn admission to one of their top-three choices. Our recent graduates have secured spots at Harvard, Stanford, Brown, Dartmouth, WashU, UPenn, UC Berkeley, UCLA, and received over $80,000 in merit scholarships!",
+      text: "Over 98% of Blue Stars students earn admission to one of their top-three choices. Our recent graduates have secured spots at Harvard, Stanford, Brown, Dartmouth, WashU, UPenn, UC Berkeley, UCLA, and received over $80,000 in merit scholarships!",
       actionLink: { label: "Browse Student Success Stories", href: "/stories" },
     };
   }
@@ -125,14 +125,14 @@ function getBotResponse(userText: string): {
 
   if (query.includes("service") || query.includes("program") || query.includes("planning") || query.includes("roadmap")) {
     return {
-      text: "BlueStars provides end-to-end guidance including 8th–11th Grade College Planning, Comprehensive Application Strategy, Essay Coaching, Art Admissions, and Merit Scholarship Guidance.",
+      text: "Blue Stars provides end-to-end guidance including 8th–11th Grade College Planning, Comprehensive Application Strategy, Essay Coaching, Art Admissions, and Merit Scholarship Guidance.",
       actionLink: { label: "View All Services", href: "/services" },
     };
   }
 
   // Friendly default answer
   return {
-    text: "Thank you for reaching out! Every student's journey is unique. At BlueStars, we tailor our mentoring to each student's authentic strengths. Would you like to explore our student success stories or book a free 30-minute strategic consultation with our team?",
+    text: "Thank you for reaching out! Every student's journey is unique. At Blue Stars, we tailor our mentoring to each student's authentic strengths. Would you like to explore our student success stories or book a free 30-minute strategic consultation with our team?",
     actionLink: { label: "Book Free Consultation", href: "/contact" },
   };
 }
@@ -281,7 +281,7 @@ export function ChatBot() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          aria-label="Open BlueStars Chat Assistant"
+          aria-label="Open Blue Stars Chat Assistant"
           className={cn(
             "fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50",
             // 5% smaller on mobile (53px), 20% smaller on desktop (52px)
@@ -295,7 +295,7 @@ export function ChatBot() {
           {/* Online green indicator badge */}
           <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 rounded-full ring-2 ring-white animate-pulse" />
 
-          {/* BlueStars Star Icon with Chat Glyph */}
+          {/* Blue Stars Star Icon with Chat Glyph */}
           <div className="relative w-7 h-7 sm:w-6.5 sm:h-6.5 flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
             <BrandStar className="w-5.5 h-5.5 sm:w-5.5 sm:h-5.5 text-white fill-white drop-shadow-sm" />
             <Sparkles className="w-3 h-3 text-[#9ee3b8] absolute -top-1 -right-1" />
@@ -307,7 +307,7 @@ export function ChatBot() {
       {isOpen && (
         <div
           role="dialog"
-          aria-label="BlueStars Chat Assistant"
+          aria-label="Blue Stars Chat Assistant"
           className={cn(
             "fixed z-50 flex flex-col overflow-hidden bg-white shadow-[0_20px_50px_rgba(10,61,107,0.25)] border border-[#d6e5f3]",
             // Mobile: 5% scaled (inset-x-3.5 bottom-3.5 top-14), Desktop: 20% smaller (350px x 490px)
@@ -321,7 +321,7 @@ export function ChatBot() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none" />
 
             <div className="flex items-center gap-2 min-w-0 z-10">
-              {/* Circular Avatar matching reference image (Blue circle with BlueStars star) */}
+              {/* Circular Avatar matching reference image (Blue circle with Blue Stars star) */}
               <div className="w-9 h-9 sm:w-9.5 sm:h-9.5 rounded-full bg-gradient-to-br from-[#073D6B] to-[#0d4f82] border-2 border-white/40 flex items-center justify-center flex-shrink-0 relative shadow-sm">
                 <BrandStar className="w-5 h-5 sm:w-5 sm:h-5 text-white fill-white drop-shadow-xs" />
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute -bottom-0.5 -right-0.5 ring-2 ring-brand-navy" />
@@ -338,7 +338,7 @@ export function ChatBot() {
                 </div>
                 <div className="text-[10.5px] text-white/80 font-sans truncate flex items-center gap-1 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>BlueStars Admissions Director</span>
+                  <span>Blue Stars Admissions Director</span>
                 </div>
               </div>
             </div>
@@ -378,11 +378,11 @@ export function ChatBot() {
           </header>
 
           {/* Conversation Body */}
-          <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-4 bg-[#f8fbfe] font-sans">
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-3.5 sm:p-4 space-y-4 bg-[#f8fbfe] font-sans">
             {/* Start of chat timestamp */}
             <div className="text-center my-1">
               <span className="text-[10.5px] font-bold uppercase tracking-wider text-brand-text/50 font-heading bg-white px-2.5 py-1 rounded-full border border-[#e4edf6]">
-                BlueStars Admissions Advisor
+                Blue Stars Admissions Advisor
               </span>
             </div>
 

@@ -1,8 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Video, Radio, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Video, Radio } from "lucide-react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrandStar } from "@/components/ui/Icons";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export interface ResourceCardItem {
   id: string;
@@ -38,7 +47,7 @@ const DEFAULT_RESOURCES: ResourceCardItem[] = [
     kicker: "CAMPUS & TOURS",
     title: "Student Videos & Insights",
     description:
-      "Learn, be inspired, and cultivate personal growth. From campus tours to interviews with former BlueStars students, choose the video that resonates with your personal journey.",
+      "Learn, be inspired, and cultivate personal growth. From campus tours to interviews with former Blue Stars students, choose the video that resonates with your personal journey.",
     image: "/images/sub_images/Student_Videos.png",
     alt: "Digital screen library of student interviews and campus tour videos",
     actionText: "Watch Videos",
@@ -74,18 +83,47 @@ export function ServiceResourcesBanner({
   resources = DEFAULT_RESOURCES,
   id = "service-resources",
 }: ServiceResourcesBannerProps) {
+  const bannerRef = useRef<HTMLElement>(null);
+  const glowStarRef = useRef<HTMLDivElement>(null);
+
+  // GSAP: Parallax on decorative star & ambient glows on scroll
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (glowStarRef.current) {
+        gsap.to(glowStarRef.current, {
+          scrollTrigger: {
+            trigger: bannerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+          y: -40,
+          rotate: 25,
+          scale: 1.15,
+          ease: "none",
+        });
+      }
+    }, bannerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={bannerRef}
       id={id}
       className="relative w-full py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden"
     >
-      {/* Luminous Ambient Background Glow Ribbons (Matching reference style) */}
+      {/* Luminous Ambient Background Glow Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
         <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
-        {/* Floating Brand Star Glow */}
-        <div className="absolute top-12 right-[8%] w-16 h-16 text-[#38bdf8] opacity-35 blur-xs">
+        {/* Floating Brand Star Glow with GSAP Scroll Parallax */}
+        <div
+          ref={glowStarRef}
+          className="absolute top-12 right-[8%] w-16 h-16 text-[#38bdf8] opacity-35 blur-xs pointer-events-none"
+        >
           <BrandStar className="w-full h-full fill-current" />
         </div>
 
@@ -101,8 +139,14 @@ export function ServiceResourcesBanner({
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        {/* Section Header (Framer Motion: triggers both scroll down & up) */}
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14"
+        >
           {/* Glowing Pill Kicker */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse" aria-hidden="true" />
@@ -120,16 +164,41 @@ export function ServiceResourcesBanner({
               {description}
             </p>
           )}
-        </div>
+        </motion.div>
 
-        {/* 3 Modern Cards Grid: 1 col on mobile, 3 cols on tablet & desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 3 Modern Cards Grid with Staggered Motion */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.12 },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+        >
           {resources.map((item) => {
             const BadgeIcon = item.badgeIcon;
             return (
-              <div
+              <motion.div
                 key={item.id}
-                className="bg-white rounded-[6px] border border-[#e5f0fa] shadow-[0_14px_40px_rgba(7,61,99,0.25)] hover:shadow-[0_20px_50px_rgba(7,61,99,0.35)] overflow-hidden flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
+                variants={{
+                  hidden: { opacity: 0, y: 30, scale: 0.97 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                whileHover={{
+                  y: -7,
+                  transition: { duration: 0.25, ease: "easeOut" },
+                }}
+                className="bg-white rounded-[8px] border border-[#e5f0fa] shadow-[0_14px_40px_rgba(7,61,99,0.25)] hover:shadow-[0_22px_55px_rgba(7,61,99,0.38)] overflow-hidden flex flex-col justify-between group transition-shadow duration-300"
               >
                 {/* Top Image Container with Badge */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8f2fc]">
@@ -138,11 +207,11 @@ export function ServiceResourcesBanner({
                     alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 420px"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-104"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
 
-                  {/* Floating Glassmorphic Pill Badge (Matching "Blog", "Videos", "Live Webinars" in reference) */}
+                  {/* Floating Glassmorphic Pill Badge */}
                   <div className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#07466f]/90 backdrop-blur-md border border-white/20 text-white shadow-sm">
                     <BadgeIcon className="w-3.5 h-3.5 text-[#38bdf8]" />
                     <span className="text-xs sm:text-[12.5px] font-bold font-heading tracking-wide">
@@ -169,19 +238,21 @@ export function ServiceResourcesBanner({
 
                   {/* Bottom Action Button */}
                   <div className="pt-2 border-t border-[#edf4fb]">
-                    <Link
-                      href={item.actionHref}
-                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
-                    >
-                      <span>{item.actionText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                    </Link>
+                    <motion.div whileTap={{ scale: 0.96 }} className="inline-block">
+                      <Link
+                        href={item.actionHref}
+                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
+                      >
+                        <span>{item.actionText}</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

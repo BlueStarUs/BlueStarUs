@@ -5,9 +5,10 @@ import {
   UniversityCampusIcon,
   ServiceDocIcon,
   ServicePencilIcon,
-  ServiceCoinsIcon,
   ServiceCompassIcon,
   ServicePaletteIcon,
+  ServiceResearchIcon,
+  ServiceSparklesIcon,
 } from "@/components/ui/Icons";
 
 interface ServiceCardData {
@@ -20,7 +21,7 @@ interface ServiceCardData {
   linkHref: string;
 }
 
-const SERVICES_DATA: ServiceCardData[] = [
+const HOME_SERVICES_DATA: ServiceCardData[] = [
   {
     id: "college-admissions-consulting",
     title: "College Admissions\nConsulting",
@@ -31,27 +32,27 @@ const SERVICES_DATA: ServiceCardData[] = [
     linkHref: "/services/college-admissions-consulting",
   },
   {
-    id: "art-admissions-consulting",
-    title: "Art Admissions\nConsulting",
-    description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
-    icon: ServicePaletteIcon,
+    id: "research-internships",
+    title: "Research &\nInternships",
+    description: "Mentorship for lab placements, Ivy League faculty outreach, original research papers, and prestigious summer programs.",
+    icon: ServiceResearchIcon,
     iconBg: "bg-[#e2f7eb]",
     cornerColor: "#e0f6ea",
-    linkHref: "/services/art-admissions-consulting",
+    linkHref: "/services/research-internships",
   },
   {
     id: "college-planning",
     title: "College & University\nPlanning",
-    description: "Find the right colleges that match your goals, interests and profile.",
+    description: "Find the right colleges that match your goals, interests and profile with a multi-year Calm Way roadmap.",
     icon: UniversityCampusIcon,
-    iconBg: "bg-[#e2f7eb]",
-    cornerColor: "#e0f6ea",
+    iconBg: "bg-[#e5f1fc]",
+    cornerColor: "#dbeefc",
     linkHref: "/services/college-planning",
   },
   {
     id: "application-strategy",
-    title: "Application Strategy",
-    description: "Build a strong application with the right strategy and timeline.",
+    title: "Application Strategy\n& Positioning",
+    description: "Build a strong application with the right strategy, balanced college lists, and deadline execution.",
     icon: ServiceDocIcon,
     iconBg: "bg-[#e5f1fc]",
     cornerColor: "#dbeefc",
@@ -60,28 +61,39 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: "essay-guidance",
     title: "Essay & Personal\nStatement Guidance",
-    description: "Tell your story effectively with expert feedback and support.",
+    description: "Tell your authentic story effectively with expert brainstorming, structural feedback, and line editing.",
     icon: ServicePencilIcon,
-    iconBg: "bg-[#e5f1fc]",
-    cornerColor: "#dbeefc",
+    iconBg: "bg-[#e2f7eb]",
+    cornerColor: "#e0f6ea",
     linkHref: "/services/essay-guidance",
   },
   {
-    id: "scholarships",
-    title: "Scholarship &\nFinancial Aid Guidance",
-    description: "Explore funding opportunities and get guidance on financial aid.",
-    icon: ServiceCoinsIcon,
-    iconBg: "bg-[#eef9dc]",
-    cornerColor: "#edf8dc",
-    linkHref: "/services/scholarships",
+    id: "extracurricular-capstones",
+    title: "Extracurricular &\nLeadership Capstones",
+    description: "Cultivate distinctive passion projects, independent initiatives, and competitions that demonstrate leadership.",
+    icon: ServiceSparklesIcon,
+    iconBg: "bg-[#e5f1fc]",
+    cornerColor: "#dbeefc",
+    linkHref: "/services/college-planning#extracurricular",
   },
 ];
+
+const ART_ADMISSIONS_SERVICE: ServiceCardData = {
+  id: "art-admissions-consulting",
+  title: "Art Admissions\nConsulting",
+  description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
+  icon: ServicePaletteIcon,
+  iconBg: "bg-[#e2f7eb]",
+  cornerColor: "#e0f6ea",
+  linkHref: "/services/art-admissions-consulting",
+};
 
 export interface ServicesProps {
   kicker?: string;
   title?: React.ReactNode;
   description?: string;
   showViewAllLink?: boolean;
+  showArtAdmissions?: boolean;
   id?: string;
 }
 
@@ -90,8 +102,13 @@ export function Services({
   title,
   description = "From choosing the right colleges to crafting a compelling application, we provide end-to-end guidance tailored to your unique goals.",
   showViewAllLink = true,
+  showArtAdmissions = false,
   id = "services",
 }: ServicesProps = {}) {
+  // If on sub-page (showArtAdmissions=true), display all services including Art Admissions
+  const displayedServices = showArtAdmissions
+    ? [...HOME_SERVICES_DATA, ART_ADMISSIONS_SERVICE]
+    : HOME_SERVICES_DATA;
   return (
     <section
       className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
@@ -170,9 +187,9 @@ export function Services({
           )}
         </div>
 
-        {/* 6 Cards Grid (Responsive 3-Column on Desktop, 2-Column on Tablet, 1-Column on Mobile) */}
+        {/* Cards Grid (Responsive 3-Column on Desktop, 2-Column on Tablet, 1-Column on Mobile) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-7" id="planning">
-          {SERVICES_DATA.map((service) => {
+          {displayedServices.map((service) => {
             const Icon = service.icon;
             return (
               <div
@@ -200,13 +217,8 @@ export function Services({
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-2.5 font-heading leading-snug">
-                    {service.title.split("\n").map((line, idx) => (
-                      <React.Fragment key={idx}>
-                        {line}
-                        {idx !== service.title.split("\n").length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
+                  <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-2.5 font-heading leading-snug sm:mb-4">
+                    {service.title}
                   </h3>
 
                   {/* Description */}

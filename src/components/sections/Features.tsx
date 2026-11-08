@@ -35,7 +35,7 @@ export function Features() {
           <div className="relative w-full aspect-[4/3] sm:aspect-[1.3/1] lg:aspect-[1.28/1] rounded-[5px] overflow-hidden shadow-[0_12px_36px_rgba(10,61,107,0.1)] border border-brand-border/60">
             <Image
               src="/images/sub_images/choose.png"
-              alt="Guidance That Puts Your Goals First - BlueStars Admissions Consulting"
+              alt="Guidance That Puts Your Goals First - Blue Stars Admissions Consulting"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
               className="object-cover"
@@ -47,7 +47,7 @@ export function Features() {
           <div className="flex flex-col items-start text-left lg:pl-2">
             {/* Pill Kicker / Subtitle */}
             <div className="text-xs sm:text-[13px] font-bold tracking-[0.12em] uppercase text-brand-blue mb-6 font-heading">
-              WHY CHOOSE BLUESTARS
+              WHY CHOOSE BLUE STARS
             </div>
 
             {/* Main Heading (Exact font size & hierarchy maintained) */}

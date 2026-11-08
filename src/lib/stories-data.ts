@@ -198,7 +198,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     name: "Jessica",
     title: "Full-Tuition Merit Scholarship Worth Over $240,000",
     quote:
-      "Thanks to BlueStars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000, allowing me to graduate debt-free.",
+      "Thanks to Blue Stars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000, allowing me to graduate debt-free.",
     image: "/images/person/person1.png",
     authorRole: "Blue Stars Student & Merit Scholar",
     location: "New York",
@@ -207,8 +207,8 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     admittedTo: "Full Tuition Merit Scholar ($240k+)",
     rating: 5,
     fullStory: [
-      "Thanks to BlueStars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000.",
-      "The BlueStars team taught me how to present my academic spikes, align with institutional priority criteria, and negotiate competitive merit offers without compromising on my college dream.",
+      "Thanks to Blue Stars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000.",
+      "The Blue Stars team taught me how to present my academic spikes, align with institutional priority criteria, and negotiate competitive merit offers without compromising on my college dream.",
     ],
     tags: ["Merit Scholarships", "Full Tuition", "Admissions Strategy"],
   },

@@ -1,8 +1,28 @@
-import { NavItem, NavServiceItem, NavResourceItem, ServiceItem, ProcessStep, Testimonial, ResourceArticle, FAQItem } from "@/types";
+import { NavItem, NavServiceItem, NavResourceItem, ServiceItem, ProcessStep, Testimonial, ResourceArticle, FAQItem, HeroConfig, Announcement } from "@/types";
+
+export const DEFAULT_HERO_CONFIG: HeroConfig = {
+  kicker: "EXPERT GUIDANCE. BRIGHTER OPPORTUNITIES.",
+  headingLine1: "Your Future Starts",
+  headingLine2: "With the Right",
+  headingLine3: "College Plan",
+  description:
+    "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
+  primaryBtnText: "Book a Free Consultation",
+  primaryBtnHref: "/#contact",
+  secondaryBtnText: "Explore Our Services",
+  secondaryBtnHref: "/#services",
+  image: "/images/sub_images/Students_hero.png",
+  feature1: "Personalized\nGuidance",
+  feature2: "Clear Application\nStrategy",
+  feature3: "Support at\nEvery Step",
+  card1: "Personalized\nGuidance",
+  card2: "Holistic\nApproach",
+  card3: "Student-Centric\nSupport",
+};
 
 export const SITE_CONFIG = {
-  name: "BlueStars Admissions Consulting",
-  shortName: "BlueStars",
+  name: "Blue Stars Admissions Consulting",
+  shortName: "Blue Stars",
   tagline: "ADMISSIONS CONSULTING",
   description:
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
@@ -20,7 +40,7 @@ export const SITE_CONFIG = {
 };
 
 export const NAV_LINKS: NavItem[] = [
-  { label: "Home", href: "/#home" },
+  { label: "Home", href: "/" },
   { label: "Our Services", href: "/services", hasDropdown: true },
   { label: "Resources", href: "/resources", hasDropdown: true },
   { label: "Blogs", href: "/blogs" },
@@ -96,13 +116,13 @@ export const NAV_SERVICES: NavServiceItem[] = [
     iconName: "compass",
   },
   {
-    id: "art-admissions-consulting",
-    title: "Art Admissions Consulting",
-    shortDescription: "Portfolio curation and artist statements for top art, design, and architecture programs.",
-    href: "/services/art-admissions-consulting",
-    badge: "Specialized",
-    accent: "green",
-    iconName: "palette",
+    id: "research-internships",
+    title: "Research & Internships",
+    shortDescription: "Independent scientific & humanities research, lab placements, and summer program applications.",
+    href: "/services/research-internships",
+    badge: "Academic Spike",
+    accent: "blue",
+    iconName: "research",
   },
   {
     id: "college-planning",
@@ -132,13 +152,13 @@ export const NAV_SERVICES: NavServiceItem[] = [
     iconName: "pencil",
   },
   {
-    id: "scholarships",
-    title: "Scholarship & Financial Aid Guidance",
-    shortDescription: "Merit scholarship targeting, FAFSA/CSS Profile strategy, and award letter negotiation.",
-    href: "/services/scholarships",
-    badge: "Financial",
+    id: "art-admissions-consulting",
+    title: "Art Admissions Consulting",
+    shortDescription: "Portfolio curation and artist statements for top art, design, and architecture programs.",
+    href: "/services/art-admissions-consulting",
+    badge: "Specialized",
     accent: "green",
-    iconName: "coins",
+    iconName: "palette",
   },
 ];
 
@@ -152,12 +172,12 @@ export const SERVICES: ServiceItem[] = [
     linkHref: "/services/college-admissions-consulting",
   },
   {
-    id: "art-admissions-consulting",
-    title: "Art Admissions Consulting",
-    description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
-    iconName: "palette",
-    accent: "green",
-    linkHref: "/services/art-admissions-consulting",
+    id: "research-internships",
+    title: "Research & Internships",
+    description: "Mentorship for lab placements, Ivy League faculty outreach, original research papers, and prestigious summer programs.",
+    iconName: "research",
+    accent: "blue",
+    linkHref: "/services/research-internships",
   },
   {
     id: "college-planning",
@@ -184,12 +204,12 @@ export const SERVICES: ServiceItem[] = [
     linkHref: "/services/essay-guidance",
   },
   {
-    id: "scholarship-aid",
-    title: "Scholarship & Financial Aid Guidance",
-    description: "Explore funding opportunities and get guidance on financial aid.",
-    iconName: "coins",
+    id: "art-admissions-consulting",
+    title: "Art Admissions Consulting",
+    description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
+    iconName: "palette",
     accent: "green",
-    linkHref: "/services/scholarships",
+    linkHref: "/services/art-admissions-consulting",
   },
 ];
 
@@ -344,12 +364,51 @@ export const FAQS: FAQItem[] = [
     answer: "Yes. We guide students applying to colleges in different countries, including requirements, timelines and documentation.",
   },
   {
-    question: "Can you help with scholarship and financial aid guidance?",
-    answer: "Absolutely. We help you explore funding opportunities and understand financial aid options and deadlines.",
+    question: "Do you help students find research opportunities and internships?",
+    answer: "Yes! Our Research Academy and internship mentorship connects students with university laboratory positions (including Ivy League labs), faculty cold-email frameworks, and prestigious summer research fellowships.",
   },
   {
     question: "When should I start the college planning process?",
     answer: "The earlier the better. Ideally start 12 to 18 months before applications are due, but we support students at every stage.",
+  },
+];
+
+export const DEFAULT_ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "announcement-cohort-2026",
+    title: "Class of 2026 & 2027 Admissions Cohort",
+    message: "Now accepting high school students for comprehensive 1-on-1 college admissions mentoring. Limited advisory spots available.",
+    badge: "LIMITED SPOTS",
+    linkText: "Schedule Free 30-Min Consultation",
+    linkUrl: "/contact",
+    type: "banner",
+    isActive: true,
+    priority: 10,
+    createdAt: "2026-11-08T00:00:00Z",
+  },
+  {
+    id: "announcement-live-webinar",
+    title: "Live Admissions Masterclass",
+    message: "How to Build an Authentic Extracurricular Profile Spike That Stanford & Ivies Can't Ignore — with Dr. Amy Morgenstern.",
+    badge: "FREE WEBINAR",
+    linkText: "Reserve Free Seat",
+    linkUrl: "/resources/webinars",
+    type: "webinar",
+    isActive: true,
+    priority: 8,
+    createdAt: "2026-11-07T00:00:00Z",
+  },
+  {
+    id: "announcement-early-outcomes",
+    title: "98% Top-3 College Acceptance Rate",
+    message: "Explore our newly published student success case studies and accepted essays for Stanford, WashU, RISD & UC Berkeley.",
+    badge: "NEW RESULTS",
+    linkText: "Explore Student Stories",
+    linkUrl: "/stories",
+    type: "success",
+    isActive: true,
+    priority: 6,
+    createdAt: "2026-11-06T00:00:00Z",
   },
 ];
 

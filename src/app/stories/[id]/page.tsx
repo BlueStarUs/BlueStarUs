@@ -40,13 +40,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!story) {
     return {
-      title: "Success Story Not Found | BlueStars Admissions Consulting",
+      title: "Success Story Not Found | Blue Stars Admissions Consulting",
     };
   }
 
-  const roleText = story.authorRole || story.highSchool || "BlueStars Family";
+  const roleText = story.authorRole || story.highSchool || "Blue Stars Family";
   return {
-    title: `${story.name}'s Success Story – ${story.admittedTo || "Admissions Success"} | BlueStars`,
+    title: `${story.name}'s Success Story – ${story.admittedTo || "Admissions Success"} | Blue Stars`,
     description: story.quote.slice(0, 160),
     openGraph: {
       title: `${story.name}'s Story: ${story.title || story.admittedTo}`,
@@ -68,7 +68,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
     story.authorRole ||
     story.highSchool ||
     story.schoolOrRole ||
-    "BlueStars Family";
+    "Blue Stars Family";
 
   const fullStoryParagraphs =
     story.fullStory && story.fullStory.length > 0
@@ -371,7 +371,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                 </h4>
 
                 <p className="text-xs sm:text-[13px] text-white/80 leading-[20px] font-sans mb-5">
-                  Discover how BlueStars can help your student craft an authentic spike, write standout essays, and secure admission into dream universities.
+                  Discover how Blue Stars can help your student craft an authentic spike, write standout essays, and secure admission into dream universities.
                 </p>
 
                 <Link
@@ -386,7 +386,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
               {/* Quick Services Link Card */}
               <div className="bg-[#f8fbfe] rounded-[5px] border border-[#e2eef9] p-5">
                 <h4 className="text-sm font-bold text-brand-navy font-heading mb-2">
-                  Explore BlueStars Services
+                  Explore Blue Stars Services
                 </h4>
                 <p className="text-xs text-brand-text font-sans mb-3">
                   From 8th–11th grade roadmap planning to application strategy and essay coaching.
@@ -433,7 +433,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                   relStory.authorRole ||
                   relStory.highSchool ||
                   relStory.schoolOrRole ||
-                  "BlueStars Family";
+                  "Blue Stars Family";
 
                 return (
                   <article

@@ -23,11 +23,11 @@ import { cn } from "@/lib/utils";
 
 const INTEREST_OPTIONS = [
   "College Admissions Consulting",
-  "Art Admissions Consulting",
+  "Research & Internships",
   "College & University Planning",
   "Application Strategy",
   "Essay & Personal Statement Guidance",
-  "Scholarships & Financial Aid",
+  "Art Admissions Consulting",
   "Other General Inquiry",
 ];
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Direct Info & Advisory Details */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-7 space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
@@ -194,24 +194,24 @@ export default function ContactPage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="p-5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] space-y-2.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-brand-navy font-heading">
-                  <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0" />
+              <div className="p-5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] space-y-4">
+                <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
+                  <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
                   <span>16+ Years Guiding Top Students to Dream Universities</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-brand-navy font-heading">
-                  <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
+                  <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
                   <span>98% Top-Choice Acceptance Rate (Ivies, Stanford, UCs)</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-brand-navy font-heading">
-                  <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
+                  <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
                   <span>100% Confidential & No-Pressure Introductory Discussion</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Small, Compact, Clean Contact Form */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-5">
               <div className="bg-white rounded-[5px] p-6 sm:p-8 lg:p-9 border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)]">
                 <div className="mb-6">
                   <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-1">
@@ -234,7 +234,7 @@ export default function ContactPage() {
                       Message Received!
                     </h4>
                     <p className="text-xs sm:text-[13px] text-[#1e6f40] max-w-md mx-auto leading-relaxed">
-                      Thank you for contacting BlueStars Admissions Consulting. A member of our senior counseling team will review your inquiry and follow up with you within 24 hours.
+                      Thank you for contacting Blue Stars Admissions Consulting. A member of our senior counseling team will review your inquiry and follow up with you within 24 hours.
                     </p>
                     <button
                       type="button"
@@ -507,7 +507,7 @@ export default function ContactPage() {
                       </>
                     ) : (
                       <>
-                        <span>SUBSCRIBE TO NEWSLETTER</span>
+                        <span>SUBSCRIBE</span>
                         <Send className="w-3.5 h-3.5 text-[#07466f]" />
                       </>
                     )}

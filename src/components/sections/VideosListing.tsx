@@ -34,10 +34,10 @@ export function VideosListing() {
       : VIDEO_RESOURCES.filter((v) => v.category === selectedCat);
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section className="py-8 sm:py-12 lg:py-20 bg-white">
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-6 sm:mb-10">
           {VIDEO_CATEGORIES.map((cat) => {
             const isActive = selectedCat === cat;
             return (
@@ -148,67 +148,74 @@ export function VideosListing() {
         {/* Video Player Modal */}
         {activeVideo && (
           <div
-            className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 animate-in fade-in duration-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="video-modal-title"
+            onClick={() => setActiveVideo(null)}
           >
-            <div className="bg-white rounded-[5px] max-w-3xl w-full overflow-hidden shadow-[0_25px_60px_rgba(10,61,107,0.3)] border border-[#e2eef9] relative animate-in zoom-in-95 duration-200">
+            <div
+              className="bg-white rounded-[6px] max-w-2xl w-full overflow-hidden shadow-[0_25px_60px_rgba(10,61,107,0.3)] border border-[#e2eef9] relative animate-in zoom-in-95 duration-200 flex flex-col max-h-[92vh] sm:max-h-[88vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 type="button"
                 onClick={() => setActiveVideo(null)}
-                className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/70 text-white hover:bg-black grid place-items-center transition-colors focus:outline-none cursor-pointer"
+                className="absolute top-2.5 right-2.5 z-20 w-8 h-8 rounded-full bg-black/75 hover:bg-black text-white grid place-items-center transition-colors focus:outline-none cursor-pointer shadow-md"
                 aria-label="Close video"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
-              {/* Simulated High-Res Video Player */}
-              <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+              {/* Simulated Compact High-Res Video Player */}
+              <div className="relative aspect-[16/9] max-h-[220px] sm:max-h-[260px] md:max-h-[290px] w-full bg-black flex items-center justify-center shrink-0">
                 <Image
                   src={activeVideo.thumbnail}
                   alt={activeVideo.title}
                   fill
                   className="object-cover opacity-60"
+                  sizes="(max-width: 768px) 100vw, 680px"
                 />
-                <div className="relative z-10 text-center p-6 max-w-md">
-                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center mx-auto mb-4 shadow-xl animate-pulse">
-                    <Play className="w-8 h-8 fill-current ml-1" />
+                <div className="relative z-10 text-center px-4 py-3 max-w-md">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-brand-blue text-white flex items-center justify-center mx-auto mb-2 sm:mb-2.5 shadow-xl animate-pulse">
+                    <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current ml-0.5" />
                   </div>
-                  <div className="text-white font-heading font-extrabold text-lg sm:text-xl drop-shadow-md">
+                  <div className="text-white font-heading font-extrabold text-sm sm:text-base md:text-lg drop-shadow-md line-clamp-1">
                     {activeVideo.title}
                   </div>
-                  <div className="text-white/80 text-xs sm:text-sm mt-1">
+                  <div className="text-white/85 text-[11px] sm:text-xs mt-0.5">
                     Speaker: {activeVideo.speaker} • {activeVideo.duration}
                   </div>
                 </div>
               </div>
 
               {/* Video Info Drawer */}
-              <div className="p-6 sm:p-7 bg-white">
-                <div className="flex items-center justify-between gap-3 mb-2">
-                  <span className="text-xs font-bold text-brand-blue uppercase tracking-wider font-heading">
-                    {activeVideo.category}
-                  </span>
-                  <span className="text-xs text-brand-text font-semibold">
-                    {activeVideo.duration} Full Masterclass
-                  </span>
+              <div className="p-4 sm:p-5 lg:p-6 bg-white overflow-y-auto flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-1.5">
+                    <span className="text-[11px] sm:text-xs font-bold text-brand-blue uppercase tracking-wider font-heading">
+                      {activeVideo.category}
+                    </span>
+                    <span className="text-[11px] sm:text-xs text-brand-text font-semibold">
+                      {activeVideo.duration} Full Masterclass
+                    </span>
+                  </div>
+
+                  <h3 id="video-modal-title" className="text-base sm:text-lg md:text-xl font-extrabold text-brand-navy font-heading mb-1.5 leading-snug">
+                    {activeVideo.title}
+                  </h3>
+
+                  <p className="text-[13px] sm:text-[14px] leading-[20px] sm:leading-[22px] text-brand-text font-sans mb-3 sm:mb-4">
+                    {activeVideo.description}
+                  </p>
                 </div>
 
-                <h3 id="video-modal-title" className="text-xl font-extrabold text-brand-navy font-heading mb-2">
-                  {activeVideo.title}
-                </h3>
-
-                <p className="text-[14px] leading-[22px] text-brand-text font-sans mb-5">
-                  {activeVideo.description}
-                </p>
-
-                <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#edf4fb]">
-                  <div className="flex flex-wrap gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-[#edf4fb] mt-auto">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {activeVideo.keyTopics.map((topic, i) => (
                       <span
                         key={i}
-                        className="text-xs font-semibold px-2.5 py-1 rounded-[5px] bg-[#f0f6fc] text-brand-navy border border-[#e2eef9]"
+                        className="text-[11px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-[5px] bg-[#f0f6fc] text-brand-navy border border-[#e2eef9]"
                       >
                         {topic}
                       </span>
@@ -218,7 +225,7 @@ export function VideosListing() {
                   <Link
                     href="/contact"
                     onClick={() => setActiveVideo(null)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy px-4 py-2 rounded-[5px] transition-all font-heading"
+                    className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 sm:px-4 py-2 rounded-[5px] transition-all font-heading shrink-0 text-center"
                   >
                     <span>Discuss With a Counselor</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -4,9 +4,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us | BlueStars Admissions Consulting",
+  title: "Contact Us | Blue Stars Admissions Consulting",
   description:
-    "Get in touch with BlueStars Admissions Consulting. Schedule an introductory consultation, subscribe to our college admissions newsletter, or send an inquiry for our Bay Area and global programs.",
+    "Get in touch with Blue Stars Admissions Consulting. Schedule an introductory consultation, subscribe to our college admissions newsletter, or send an inquiry for our Bay Area and global programs.",
 };
 
 export default function ContactLayout({

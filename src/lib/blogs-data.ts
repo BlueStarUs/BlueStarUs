@@ -26,11 +26,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: "Dr. Amy Morgenstern",
       role: "Founder & Master Admissions Consultant",
       avatar: "/images/person/person1.png",
-      bio: "Dr. Amy Morgenstern ('Dr. M') founded BlueStars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
+      bio: "Dr. Amy Morgenstern ('Dr. M') founded Blue Stars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
     },
     intro: [
       "Building a college list is one of the most consequential decisions of a high school student's academic journey. Yet all too often, families fall into the trap of letting commercial rankings, brand prestige, or hearsay dictate their selections. The result is often an unbalanced list heavy with reach schools, leading to avoidable anxiety and disappointing outcomes.",
-      "At BlueStars Admissions Consulting, we approach college list construction through a holistic lens of institutional fit: academic alignment, social culture, pedagogical philosophy, and long-term career acceleration. In this comprehensive guide, we share the exact strategic framework we use with our students to curate balanced, inspiring, and de-risked college lists.",
+      "At Blue Stars Admissions Consulting, we approach college list construction through a holistic lens of institutional fit: academic alignment, social culture, pedagogical philosophy, and long-term career acceleration. In this comprehensive guide, we share the exact strategic framework we use with our students to curate balanced, inspiring, and de-risked college lists.",
     ],
     keyTakeaways: [
       "Focus on institutional alignment and academic philosophy over US News & World Report rankings.",
@@ -102,7 +102,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "5. Next Steps: Refining Your List with Admissions Mentorship",
         paragraphs: [
           "Finalizing your college list is an iterative process. As students take diagnostic practice tests, complete sophomore or junior coursework, and deepen their extracurricular passions, the list should naturally evolve.",
-          "Working with a dedicated BlueStars mentor ensures your list reflects realistic admissions probability while preserving ambitious aspirational targets.",
+          "Working with a dedicated Blue Stars mentor ensures your list reflects realistic admissions probability while preserving ambitious aspirational targets.",
         ],
       },
     ],
@@ -128,7 +128,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: "Dr. Amy Morgenstern",
       role: "Founder & Master Admissions Consultant",
       avatar: "/images/person/person2.png",
-      bio: "Dr. Amy Morgenstern ('Dr. M') founded BlueStars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
+      bio: "Dr. Amy Morgenstern ('Dr. M') founded Blue Stars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
     },
     intro: [
       "The college admissions timeline is a multi-year marathon, not a sprint in October of senior year. When families wait until 12th grade to consider standardized testing, letter of recommendation relationships, and essay drafts, stress levels skyrocket and strategic opportunities are permanently missed.",
@@ -166,7 +166,7 @@ export const BLOG_POSTS: BlogPost[] = [
         callout: {
           type: "tip",
           title: "Summer Milestone",
-          text: "Our most successful BlueStars students finalize their Common App Personal Statement draft before the first day of senior year high school classes. This single milestone prevents burnout during the intense fall semester.",
+          text: "Our most successful Blue Stars students finalize their Common App Personal Statement draft before the first day of senior year high school classes. This single milestone prevents burnout during the intense fall semester.",
         },
       },
       {
@@ -208,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     conclusion: [
       "A structured timeline transforms what could be a chaotic, anxiety-ridden senior year into an orderly, celebratory rite of passage.",
-      "BlueStars advisors build customized, milestone-driven calendars for every student, ensuring no deadline is missed and every essay is polished to perfection.",
+      "Blue Stars advisors build customized, milestone-driven calendars for every student, ensuring no deadline is missed and every essay is polished to perfection.",
     ],
     relatedSlugs: ["how-to-choose-colleges", "strong-personal-statement", "navigating-merit-scholarships"],
   },
@@ -228,7 +228,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: "Dr. Amy Morgenstern",
       role: "Founder & Master Admissions Consultant",
       avatar: "/images/person/person3.png",
-      bio: "Dr. Amy Morgenstern ('Dr. M') founded BlueStars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
+      bio: "Dr. Amy Morgenstern ('Dr. M') founded Blue Stars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
     },
     intro: [
       "With thousands of applicants possessing near-identical GPAs and standardized test scores, the personal statement is often the single most decisive component of a selective college application. It is the one place where admissions officers hear your authentic speaking voice.",
@@ -302,7 +302,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     conclusion: [
       "Your personal statement is the beating heart of your application. When crafted with honesty, nuance, and structural mastery, it transforms numbers into a memorable human being.",
-      "Explore BlueStars Essay & Personal Statement Guidance to work one-on-one with our master writing coaches and former Ivy League admissions evaluators.",
+      "Explore Blue Stars Essay & Personal Statement Guidance to work one-on-one with our master writing coaches and former Ivy League admissions evaluators.",
     ],
     relatedSlugs: ["how-to-choose-colleges", "application-timeline", "extracurricular-profile-spike"],
   },
@@ -322,7 +322,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: "Dr. Amy Morgenstern",
       role: "Founder & Master Admissions Consultant",
       avatar: "/images/person/person1.png",
-      bio: "Dr. Amy Morgenstern ('Dr. M') founded BlueStars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
+      bio: "Dr. Amy Morgenstern ('Dr. M') founded Blue Stars Admissions Consulting in 2010. Holding degrees from UC Berkeley and Stanford University, she has guided hundreds of students to top-tier university admissions through 'The Calm Way' methodology.",
     },
     intro: [
       "For decades, high school students were told that colleges wanted 'well-rounded' individuals: a varsity sport, an instrument, five honor societies, and 100 hours of assorted community service. Today, that conventional wisdom is not only obsolete—it is a recipe for application mediocrity.",
@@ -378,7 +378,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     conclusion: [
       "Cultivating an extracurricular spike is an empowering developmental journey that prepares students for college leadership and lifelong fulfillment.",
-      "Learn more about how BlueStars Admissions Consulting mentors high school students from 8th to 12th grade to build world-class capstone portfolios.",
+      "Learn more about how Blue Stars Admissions Consulting mentors high school students from 8th to 12th grade to build world-class capstone portfolios.",
     ],
     relatedSlugs: ["how-to-choose-colleges", "application-timeline", "ivy-league-interview-prep"],
   },

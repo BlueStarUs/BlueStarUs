@@ -203,3 +203,42 @@ export function ServicePaletteIcon({ className = "w-7 h-7", ...props }: React.SV
   );
 }
 
+export function ServiceResearchIcon({ className = "w-7 h-7", ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 28 28" fill="none" className={className} xmlns="http://www.w3.org/2000/svg" {...props}>
+      {/* Microscope / Research Icon */}
+      <path d="M10 4.5H16.5" stroke="#0B63B5" strokeWidth="2" strokeLinecap="round" />
+      <rect x="11.5" y="4.5" width="3.5" height="7.5" rx="1.2" fill="#0B63B5" />
+      <path d="M8.5 12H18" stroke="#0B63B5" strokeWidth="2" strokeLinecap="round" />
+      <path d="M13.2 12V15.5" stroke="#0B63B5" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M17.5 14C20 15 21.5 17.5 21.5 20.5V22.5H6.5V20.5C6.5 17.5 8 15 10.5 14"
+        stroke="#0B63B5"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <rect x="5" y="22.5" width="18" height="2.5" rx="1.2" fill="#0B63B5" />
+      <circle cx="13.2" cy="18.5" r="1.6" fill="#2A8FD6" />
+      <path d="M20 7L22 9M22 7L20 9" stroke="#2F9E5C" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="21" cy="4" r="1.2" fill="#2F9E5C" />
+    </svg>
+  );
+}
+
+export function ServiceSparklesIcon({ className = "w-7 h-7", ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 28 28" fill="none" className={className} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        d="M14 3L16.2 10.8L24 13L16.2 15.2L14 23L11.8 15.2L4 13L11.8 10.8L14 3Z"
+        fill="#0B63B5"
+        stroke="#0B63B5"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+      <circle cx="21" cy="6" r="1.8" fill="#2F9E5C" />
+      <circle cx="6" cy="20" r="1.5" fill="#2A8FD6" />
+    </svg>
+  );
+}
+
+

@@ -47,10 +47,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${post.title} | BlueStars Admissions Consulting`,
+    title: `${post.title} | Blue Stars Admissions Consulting`,
     description: post.excerpt,
     openGraph: {
-      title: `${post.title} | BlueStars Admissions Consulting`,
+      title: `${post.title} | Blue Stars Admissions Consulting`,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,

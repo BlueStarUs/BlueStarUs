@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Home,
   Layers,
@@ -14,11 +15,10 @@ import {
   Instagram,
   Youtube,
 } from "lucide-react";
-import { BrandStar } from "@/components/ui/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const QUICK_LINKS = [
-  { name: "Home", href: "/#home", icon: Home },
+  { name: "Home", href: "/", icon: Home },
   { name: "Our Services", href: "/services", icon: Layers },
   { name: "Resources & Insights", href: "/resources", icon: BookOpen },
   { name: "Success Stories", href: "/stories", icon: GraduationCap },
@@ -68,24 +68,19 @@ export function Footer() {
         <div className="py-14 sm:py-16 lg:py-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_auto_1.1fr_auto_1.35fr] gap-10 lg:gap-8 xl:gap-12 items-start">
           {/* Column 1: Brand Info & Socials */}
           <div className="flex flex-col items-start">
-            {/* Dual Star Logo */}
+            {/* Brand Logo */}
             <Link
-              href="/#home"
-              className="inline-flex items-center gap-3 group focus:outline-none select-none mb-4"
+              href="/"
+              className="inline-flex items-center group focus:outline-none select-none mb-4"
               aria-label={SITE_CONFIG.name}
             >
-              <div className="relative w-9 h-9 flex-shrink-0">
-                <BrandStar className="w-7 h-7 text-white fill-white absolute top-0 right-0 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]" />
-                <BrandStar className="w-4 h-4 text-white fill-white absolute bottom-0 left-0 drop-shadow-[0_2px_6px_rgba(255,255,255,0.4)]" />
-              </div>
-              <span className="flex flex-col">
-                <span className="font-heading text-2xl sm:text-[26px] font-extrabold text-white leading-none tracking-tight">
-                  BlueStars
-                </span>
-                <span className="font-heading text-[8px] font-bold tracking-[0.16em] text-[#d6ecfb] uppercase mt-1 leading-tight">
-                  ADMISSIONS CONSULTING
-                </span>
-              </span>
+              <Image
+                src="/images/BlueStars_Admission_Consulting_Logo.webp"
+                alt="Blue Stars Admissions Consulting"
+                width={220}
+                height={120}
+                className="h-10 sm:h-[85px] w-auto object-contain brightness-0 invert opacity-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-[1.03] drop-shadow-[0_2px_12px_rgba(255,255,255,0.18)]"
+              />
             </Link>
 
             {/* Description */}

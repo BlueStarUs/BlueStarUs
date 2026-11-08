@@ -157,7 +157,7 @@ export function Contact() {
             <div className="relative w-full h-full min-h-[260px] sm:min-h-[300px] lg:min-h-[360px]">
               <Image
                 src="/images/sub_images/bottoms.png"
-                alt="Family consulting with BlueStars admissions advisor"
+                alt="Family consulting with Blue Stars admissions advisor"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 480px"
@@ -236,10 +236,12 @@ export function Contact() {
                     className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
                   >
                     <option value="">Select an option</option>
+                    <option value="College Admissions Consulting">College Admissions Consulting</option>
+                    <option value="Research & Internships">Research &amp; Internships</option>
                     <option value="College & University Planning">College &amp; University Planning</option>
                     <option value="Application Strategy">Application Strategy</option>
                     <option value="Essay & Personal Statement Guidance">Essay &amp; Personal Statement Guidance</option>
-                    <option value="Scholarship & Financial Aid Guidance">Scholarship &amp; Financial Aid Guidance</option>
+                    <option value="Art Admissions Consulting">Art Admissions Consulting</option>
                   </select>
                   <ChevronDown className="w-4 h-4 text-brand-navy/60 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>

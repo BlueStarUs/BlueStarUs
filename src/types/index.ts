@@ -11,7 +11,7 @@ export interface NavServiceItem {
   href: string;
   badge?: string;
   accent: 'blue' | 'green';
-  iconName: 'compass' | 'palette' | 'building' | 'doc' | 'pencil' | 'coins';
+  iconName: 'compass' | 'palette' | 'building' | 'doc' | 'pencil' | 'coins' | 'research' | 'sparkles';
 }
 
 export interface NavResourceItem {
@@ -28,7 +28,7 @@ export interface ServiceItem {
   id: string;
   title: string;
   description: string;
-  iconName: 'building' | 'doc' | 'pencil' | 'coins' | 'compass' | 'palette';
+  iconName: 'building' | 'doc' | 'pencil' | 'coins' | 'compass' | 'palette' | 'research' | 'sparkles';
   accent?: 'blue' | 'green';
   linkHref: string;
 }
@@ -149,4 +149,65 @@ export interface ApiResponse<T = unknown> {
 export interface BenefitItem {
   text: string;
 }
+
+export type LeadStatus = "new" | "contacted" | "consulted" | "enrolled" | "archived";
+
+export interface ConsultationLead {
+  id: string;
+  fullName: string;
+  email: string;
+  phone?: string;
+  studentGrade?: string;
+  interest: string;
+  targetColleges?: string;
+  message: string;
+  status: LeadStatus;
+  createdAt: string;
+  notes?: string;
+}
+
+export interface AdminUser {
+  email: string;
+  role: "superadmin" | "admin" | "counselor";
+  name: string;
+}
+
+export interface HeroConfig {
+  kicker: string;
+  headingLine1: string;
+  headingLine2: string;
+  headingLine3: string;
+  description: string;
+  primaryBtnText: string;
+  primaryBtnHref: string;
+  secondaryBtnText: string;
+  secondaryBtnHref: string;
+  image: string;
+  feature1: string;
+  feature2: string;
+  feature3: string;
+  card1: string;
+  card2: string;
+  card3: string;
+}
+
+export type AnnouncementType = "banner" | "alert" | "webinar" | "urgent" | "success";
+
+export interface Announcement {
+  id: string;
+  title: string;
+  message?: string;
+  badge?: string;
+  linkText?: string;
+  linkUrl?: string;
+  type?: AnnouncementType;
+  isActive: boolean;
+  priority: number;
+  startDate?: string;
+  endDate?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+
 

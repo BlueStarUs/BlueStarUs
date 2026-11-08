@@ -27,7 +27,7 @@ import {
 } from "@/lib/resources-data";
 
 export const metadata: Metadata = {
-  title: "Resources & Insights | BlueStars Admissions Consulting",
+  title: "Resources & Insights | Blue Stars Admissions Consulting",
   description:
     "Comprehensive college admissions guides, live webinars, video masterclasses, FAQs, and expert insights designed to guide high school students and families toward acceptance at dream colleges.",
 };
@@ -123,7 +123,7 @@ const RESOURCE_HUBS = [
     title: "Student Success Stories",
     category: "CASE STUDIES",
     description:
-      "Explore 50+ real admissions transformations, student case studies, and parent testimonials from 16+ years of BlueStars mentorship.",
+      "Explore 50+ real admissions transformations, student case studies, and parent testimonials from 16+ years of Blue Stars mentorship.",
     href: "/stories",
     badge: "50+ Verified Stories",
     accent: "green" as const,
@@ -141,7 +141,7 @@ const GENERAL_RESOURCE_FAQS = [
   {
     question: "Are all the guides, checklists, and video resources on this page free?",
     answer:
-      "Yes! All BlueStars admissions guides, application checklists, and video masterclasses are completely free. We believe in providing families with transparent, accessible, high-caliber admissions intelligence.",
+      "Yes! All Blue Stars admissions guides, application checklists, and video masterclasses are completely free. We believe in providing families with transparent, accessible, high-caliber admissions intelligence.",
   },
   {
     question: "How frequently are the admissions guides and checklists updated?",
@@ -557,7 +557,7 @@ export default function ResourcesPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                Have questions about how to utilize our free tools, when to begin working with a counselor, or how BlueStars compares to other consulting programs?
+                Have questions about how to utilize our free tools, when to begin working with a counselor, or how Blue Stars compares to other consulting programs?
               </p>
 
               <div className="p-6 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs">
@@ -584,7 +584,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Modern Elevated BlueStars CTA Banner Card (Exact match with Services page) */}
+      {/* Modern Elevated Blue Stars CTA Banner Card (Exact match with Services page) */}
       <section className="relative w-full py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-4 lg:px-4">
           <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">

@@ -13,7 +13,7 @@ export default function ErrorBoundary({
 }) {
   useEffect(() => {
     // Log the error to console or error reporting service
-    console.error("BlueStars Application Error:", error);
+    console.error("Blue Stars Application Error:", error);
   }, [error]);
 
   return (

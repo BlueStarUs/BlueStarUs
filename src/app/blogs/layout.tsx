@@ -5,11 +5,11 @@ import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Blogs & Insights | BlueStars Admissions Consulting",
-    template: "%s | BlueStars Admissions Consulting",
+    default: "Blogs & Insights | Blue Stars Admissions Consulting",
+    template: "%s | Blue Stars Admissions Consulting",
   },
   description:
-    "Expert admissions insights, comprehensive guides, timeline strategies, and essay tips from Dr. Amy Morgenstern and the BlueStars Admissions Consulting team.",
+    "Expert admissions insights, comprehensive guides, timeline strategies, and essay tips from Dr. Amy Morgenstern and the Blue Stars Admissions Consulting team.",
 };
 
 export default function BlogsLayout({

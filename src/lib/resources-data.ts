@@ -68,7 +68,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "A multi-year strategic blueprint for highly selective college admissions.",
     category: "Strategy",
     description: "Learn how top universities evaluate applications holistically, how to build an undeniable spike, and how to position your high school activities for maximum institutional impact.",
-    coverImage: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/Ivy_League_Top_20_Admissions_Playbook.png",
     pages: 42,
     readTime: "25 min read",
     downloadCount: "4,820+",
@@ -97,7 +97,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "Complete analysis, prompts breakdown, and annotated winning essays for the UC system.",
     category: "UC System",
     description: "Step-by-step guidance on all 8 Personal Insight Questions (PIQs), how UC readers evaluate them without interviews or teacher recommendations, and how to write clear, context-rich responses.",
-    coverImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/University_of_California_PIQ_Mastery_Handbook.png",
     pages: 36,
     readTime: "20 min read",
     downloadCount: "6,150+",
@@ -125,7 +125,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "Finding your authentic voice and crafting an unforgettable 650-word personal essay.",
     category: "Essays",
     description: "Our signature essay-writing methodology created by Dr. Amy Morgenstern. Discover how to brainstorm non-cliché topics, identify your core emotional truth, and avoid generic tropes.",
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/Common_App_Personal_Statement_Guide.png",
     pages: 38,
     readTime: "22 min read",
     downloadCount: "5,340+",
@@ -153,7 +153,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "Month-by-month actionable milestones for coursework, testing, activities, and summer planning.",
     category: "Checklists",
     description: "Never miss a deadline or milestone. This comprehensive PDF timeline provides a structured calendar from freshman orientation through senior decision day.",
-    coverImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/College_Planning_Master_Checklist_Timeline.png",
     pages: 24,
     readTime: "15 min read",
     downloadCount: "7,890+",
@@ -180,7 +180,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "A curated guide to selective summer programs, STEM labs, arts residencies, and publishing.",
     category: "High School",
     description: "Detailed evaluation of over 75+ free and selective summer programs (RSI, COSMOS, SSP, TASP, Clark Scholars) versus fee-based pay-to-play programs.",
-    coverImage: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/Summer_Programs_Research_Directory.png",
     pages: 32,
     readTime: "18 min read",
     downloadCount: "3,950+",
@@ -206,7 +206,7 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     subtitle: "How to maximize institutional aid, appeal awards, and win competitive outside scholarships.",
     category: "Strategy",
     description: "Demystifying FAFSA, CSS Profile, institutional methodology, and merit aid grids so your family can access tens of thousands of dollars in college funding.",
-    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+    coverImage: "/images/resources/guides/Financial_Aid_Merit_Scholarship_Toolkit.png",
     pages: 30,
     readTime: "18 min read",
     downloadCount: "3,410+",
@@ -294,7 +294,7 @@ export const WEBINARS_DATA: WebinarItem[] = [
     date: "Past Recording (October 2024)",
     time: "Recorded Live Session",
     speaker: {
-      name: "Dr. Amy Morgenstern & BlueStars Counselors",
+      name: "Dr. Amy Morgenstern & Blue Stars Counselors",
       role: "Founder & Admissions Mentors",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
     },
@@ -323,7 +323,7 @@ export const WEBINARS_DATA: WebinarItem[] = [
     date: "Past Recording (September 2024)",
     time: "Recorded Live Session",
     speaker: {
-      name: "BlueStars Arts Advisory Team",
+      name: "Blue Stars Arts Advisory Team",
       role: "Senior Arts Portfolio Mentors",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
     },
@@ -354,7 +354,7 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     duration: "14:20",
     speaker: "Dr. Amy Morgenstern",
     description: "Discover our core brainstorming exercises that help students bypass clichés and unearth personal stories that genuinely move admissions officers.",
-    thumbnail: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/images/resources/videos_img/How_to_Brainstorm_Authentic_College_Essay.webp",
     keyTopics: ["Core Value Identification", "Story Arc Techniques", "Vulnerability vs. TMI", "Finding Your Voice"],
     featured: true,
   },
@@ -366,7 +366,7 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     duration: "22:45",
     speaker: "Helen C., Senior Counselor",
     description: "Watch a senior counselor walk through the entire University of California portal, showing how to avoid common pitfalls in the academic history and activities sections.",
-    thumbnail: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/images/resources/videos_img/Complete_UC_Application_Walkthrough_Step_by_Step.webp",
     keyTopics: ["UC Portal Navigation", "Reporting AP & Honors Courses", "Activities Description Optimization", "PIQ Upload Process"],
     featured: true,
   },
@@ -377,8 +377,8 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     category: "Student Stories",
     duration: "18:10",
     speaker: "Alya (Stanford Admit) & Helen",
-    description: "BlueStars student Alya shares how she worked with Helen to create a niche science-literacy initiative, narrow down summer research programs, and write reflective essays that earned admission to Stanford.",
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    description: "Blue Stars student Alya shares how she worked with Helen to create a niche science-literacy initiative, narrow down summer research programs, and write reflective essays that earned admission to Stanford.",
+    thumbnail: "/images/resources/videos_img/Student_Story_Stanford_Admit_Alya.webp",
     keyTopics: ["STEM & Humanities Synthesis", "Independent Science Literacy Non-Profit", "High School Habits", "Authentic Mentorship"],
     featured: true,
   },
@@ -388,9 +388,9 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     title: "Campus Insight: Inside NYU Stern & The Liberal Studies Program",
     category: "Campus Tours",
     duration: "12:35",
-    speaker: "BlueStars Student Ambassadors",
+    speaker: "Blue Stars Student Ambassadors",
     description: "Get an unfiltered look at student life in Greenwich Village, internships in NYC, and the transition from high school to a major global university.",
-    thumbnail: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/images/resources/videos_img/Campus_Insight_NYU_Stern_Liberal_Studies.webp",
     keyTopics: ["NYU Campus Culture", "Stern Business Academics", "Living in NYC", "Application Advice"],
   },
   {
@@ -401,7 +401,7 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     duration: "16:50",
     speaker: "Jeanie (RISD Student)",
     description: "Explore the sketchbooks, mixed media works, and personal artist statements that helped Jeanie gain acceptance to the prestigious Rhode Island School of Design.",
-    thumbnail: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/images/resources/videos_img/Portfolio_Breakdown_RISD_Accepted_Jeanie.webp",
     keyTopics: ["Sketchbook Development", "Observational vs Conceptual Art", "Artist Statements", "RISD Assignment Tips"],
   },
   {
@@ -412,7 +412,7 @@ export const VIDEO_RESOURCES: VideoResource[] = [
     duration: "09:40",
     speaker: "Dr. Amy Morgenstern",
     description: "A concise masterclass on when to ask teachers, how to prepare a 'Brag Sheet', and how to ensure your recommenders highlight your intellectual vitality.",
-    thumbnail: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/images/resources/videos_img/Letters_of_Recommendation_Mastery_Guide.webp",
     keyTopics: ["Teacher Selection", "Preparing the Brag Sheet", "Timeline & Etiquette", "Counselor Letter Strategy"],
   },
 ];
@@ -435,7 +435,7 @@ export const FAQ_CATEGORIES: FAQCategoryItem[] = [
         answer: "The earlier, the better. While junior and senior years focus on essays and applications, 9th and 10th grades are when crucial foundations are built—course rigor, leadership development, passion projects, and summer research. Starting early eliminates last-minute stress and ensures a coherent academic spike.",
       },
       {
-        question: "Does BlueStars help students create balanced college lists?",
+        question: "Does Blue Stars help students create balanced college lists?",
         answer: "Yes, personalized college list development is a cornerstone of our work. We evaluate your student's academic strengths, personality, desired learning environment, career ambitions, and family financial parameters to curate an intentional, exciting list of schools.",
       },
     ],
@@ -457,7 +457,7 @@ export const FAQ_CATEGORIES: FAQCategoryItem[] = [
         answer: "While the personal statement is about WHO you are, supplemental essays usually answer 'Why THIS College?', 'Why THIS Major?', or ask about community contributions. They require deep school-specific research into specific professors, campus traditions, courses, and labs to prove genuine fit.",
       },
       {
-        question: "Can BlueStars help with the 8 UC Personal Insight Questions (PIQs)?",
+        question: "Can Blue Stars help with the 8 UC Personal Insight Questions (PIQs)?",
         answer: "Absolutely. The UC system requires 4 essays of up to 350 words each. Because UCs don't conduct interviews or review teacher recommendations, PIQs are evaluated differently from Common App essays—they require clarity, context, and quantifiable impact. We have a dedicated UC PIQ curriculum.",
       },
     ],
@@ -517,4 +517,10 @@ export const FAQ_CATEGORIES: FAQCategoryItem[] = [
     ],
   },
 ];
+
+// Aliases for admin store and resources management
+export const WEBINARS_LIST = WEBINARS_DATA;
+export const VIDEOS_LIST = VIDEO_RESOURCES;
+export const FAQ_KNOWLEDGE_BASE = FAQ_CATEGORIES;
+
 

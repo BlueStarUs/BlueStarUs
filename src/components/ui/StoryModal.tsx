@@ -50,7 +50,7 @@ export function StoryModal({ story, isOpen, onClose }: StoryModalProps) {
     story.authorRole ||
     (story as SuccessStory).highSchool ||
     story.schoolOrRole ||
-    "BlueStars Family";
+    "Blue Stars Family";
 
   return (
     <div

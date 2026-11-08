@@ -22,9 +22,9 @@ import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { BrandStar } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
-  title: "About Us | BlueStars Admissions Consulting",
+  title: "About Us | Blue Stars Admissions Consulting",
   description:
-    "Learn about BlueStars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our whole-student philosophy, senior counseling team, global reach, and track record of dream college admissions.",
+    "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our whole-student philosophy, senior counseling team, global reach, and track record of dream college admissions.",
 };
 
 const STRATEGIC_PILLARS = [
@@ -46,27 +46,27 @@ const ACHIEVEMENTS_DATA = [
 const TEAM_MEMBERS = [
   {
     name: "Dr. Amy Morgenstern",
-    role: "Founder & Lead Admissions Strategist",
+    role: "Founder & Principal Consultant",
     credentials: "Ph.D. in Philosophy, MFA in Contemporary Art",
-    bio: "Former university philosophy professor and honors program associate director. Dr. Morgenstern founded BlueStars in 2010 to replace admissions frenzy with thoughtful, whole-student mentorship guided by 'The Calm Way.'",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-    badge: "FOUNDER & FACULTY MENTOR",
+    bio: "Former university philosophy professor and honors program associate director. Dr. Morgenstern founded Blue Stars in 2010 to replace admissions frenzy with thoughtful, whole-student mentorship guided by 'The Calm Way.'",
+    image: "/images/teams/Dr_Amy_Morgenstern.png",
+    badge: "FOUNDER & PRINCIPAL CONSULTANT",
   },
   {
-    name: "Lisa Sommer",
-    role: "Senior Admissions Counselor & Writing Director",
-    credentials: "M.A. in English & Education, Former Admissions Reader",
-    bio: "With over 12 years evaluating university applications, Lisa coaches students to eliminate clichés, unearth personal vulnerability, and craft unforgettable Common App personal statements.",
-    image: "https://images.unsplash.com/photo-1580894732488-81e0503f8cb7?q=80&w=800&auto=format&fit=crop",
-    badge: "ESSAY & NARRATIVE LEAD",
+    name: "Helen Ingerson",
+    role: "Senior Counselor & Editor",
+    credentials: "M.A. in Literature & Writing, Veteran Admissions Reader & Narrative Strategist",
+    bio: "With extensive experience evaluating university applications, Helen guides students through comprehensive college lists, summer research program applications, and transformative, authentic essays with renowned promptness and empowering editorial care.",
+    image: "/images/teams/Helen-Ingerson-Upscaled.png",
+    badge: "SENIOR COUNSELOR & EDITOR",
   },
   {
-    name: "Jonathan Chen",
-    role: "Senior College Strategist & STEM Advisory Lead",
-    credentials: "M.S. in Computer Science, 10+ Years College Counseling",
-    bio: "Jonathan guides aspiring engineers, computer scientists, and pre-med students to build compelling academic 'spikes,' navigate prestigious research labs, and win national STEM Olympiads.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-    badge: "STEM & RESEARCH SPECIALIST",
+    name: "Wai Cheng",
+    role: "Senior Counselor & Editor",
+    credentials: "B.A. / M.A., Expert College Admissions Strategist & Editor",
+    bio: "Dedicated college admissions counselor and editor at Blue Stars Admissions Consulting, Wai works closely with students across multi-year academic planning, extracurricular positioning, and crafting resonant narratives that stand out to selective admissions committees.",
+    image: "/images/teams/Wai-Cheng-Headshot.webp",
+    badge: "COLLEGE ADMISSIONS COUNSELOR",
   },
 ];
 
@@ -221,8 +221,8 @@ export default function AboutPage() {
             <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
-                  alt="Student focused on high school academics and college planning"
+                  src="/images/abouts/Academic_Excellence.png"
+                  alt="Paving the Way for Personal & Academic Excellence - Blue Stars Admissions Consulting"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -245,7 +245,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                At BlueStars, we believe higher education consulting should be transformative rather than transactional. Our personalized advising empowers high school students to build genuine self-reliance, academic vigor, and intellectual vitality.
+                At Blue Stars, we believe higher education consulting should be transformative rather than transactional. Our personalized advising empowers high school students to build genuine self-reliance, academic vigor, and intellectual vitality.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
@@ -277,7 +277,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Why Choose BlueStars Admissions Consulting */}
+      {/* 4. Why Choose Blue Stars Admissions Consulting */}
       <section className="py-14 sm:py-18 lg:py-22 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden">
         {/* Ambient Organic Waves */}
         <div
@@ -292,16 +292,16 @@ export default function AboutPage() {
               <div className="flex items-center gap-2.5 mb-2.5">
                 <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                  THE BLUESTARS DIFFERENCE
+                  THE BLUE STARS DIFFERENCE
                 </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[42px] mb-4">
-                Why Choose BlueStars Admissions Consulting?
+                Why Choose Blue Stars Admissions Consulting?
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Founded in 2010 by Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), BlueStars provides proactive, student-centered admissions mentoring. Unlike transactional agencies that churn out formulaic essays, we take a whole-student life-coaching approach that builds genuine leadership, executive function, and lasting academic confidence.
+                Founded in 2010 by Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), Blue Stars provides proactive, student-centered admissions mentoring. Unlike transactional agencies that churn out formulaic essays, we take a whole-student life-coaching approach that builds genuine leadership, executive function, and lasting academic confidence.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-8">
@@ -333,8 +333,8 @@ export default function AboutPage() {
             <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
-                  alt="High school student smiling with college admissions materials"
+                  src="/images/abouts/THE_BLUESTARS_DIFFERENCE.png"
+                  alt="The Blue Stars Difference - Admissions Consulting"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -354,8 +354,8 @@ export default function AboutPage() {
             <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-slate-900 group">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop"
-                  alt="Glowing world globe representing global admissions reach"
+                  src="/images/abouts/Nationwide_International_Reach.png"
+                  alt="We Work With Students All Over the World - Nationwide and International Reach"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -386,7 +386,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Headquartered in the San Francisco Bay Area, BlueStars partners with students across the United States as well as international families in Asia, Europe, and the Middle East.
+                Headquartered in the San Francisco Bay Area, Blue Stars partners with students across the United States as well as international families in Asia, Europe, and the Middle East.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
@@ -444,7 +444,7 @@ export default function AboutPage() {
 
             {/* Centered Description */}
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans mb-8 mt-4 max-w-2xl mx-auto">
-              At BlueStars Admissions Consulting, our team blends former university faculty insight, Ivy League academic backgrounds, and executive functioning coaching. We listen deeply to student aspirations, helping them find joy and confidence in the admissions journey.
+              At Blue Stars Admissions Consulting, our team blends former university faculty insight, Ivy League academic backgrounds, and executive functioning coaching. We listen deeply to student aspirations, helping them find joy and confidence in the admissions journey.
             </p>
 
             {/* Centered 2-Column Responsive Highlights Grid */}
@@ -514,28 +514,28 @@ export default function AboutPage() {
             {TEAM_MEMBERS.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-[6px] border border-[#e5f0fa] shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between group"
+                className="bg-white rounded-[8px] border border-[#e2eef9] shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
                   {/* Photo with Overlay Badge */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                  <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 420px"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-[4px] bg-[#07466f]/90 backdrop-blur-md text-white text-[11px] font-bold font-heading border border-white/20">
+                    <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-[4px] bg-[#07466f]/90 backdrop-blur-md text-white text-[10.5px] sm:text-[11px] font-bold font-heading border border-white/20 tracking-wider">
                       {member.badge}
                     </div>
                   </div>
 
                   {/* Body Content */}
                   <div className="p-6">
-                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-1">
+                    <h3 className="text-[20px] sm:text-[22px] font-extrabold text-brand-navy font-heading mb-1 leading-snug">
                       {member.name}
                     </h3>
                     <div className="text-xs sm:text-[13px] font-bold text-brand-blue font-heading mb-1.5">
@@ -544,19 +544,19 @@ export default function AboutPage() {
                     <div className="text-xs text-brand-text/80 font-sans italic mb-3.5">
                       {member.credentials}
                     </div>
-                    <p className="text-[14.5px] sm:text-[15.5px] leading-[23px] sm:leading-[25px] text-brand-text font-sans">
+                    <p className="text-[14px] sm:text-[15px] leading-[22px] sm:leading-[24px] text-brand-text font-sans">
                       {member.bio}
                     </p>
                   </div>
                 </div>
 
                 <div className="p-6 pt-0">
-                  <div className="pt-3 border-t border-[#edf4fb]">
+                  <div className="pt-3.5 border-t border-[#edf4fb]">
                     <Link
-                      href="/#contact"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-brand-blue hover:text-brand-navy transition-colors font-heading group-hover:translate-x-0.5"
+                      href="/contact"
+                      className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[6px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-md font-heading group-hover:scale-[1.01]"
                     >
-                      <span>Book Consultation With Team</span>
+                      <span>Book a Free 30 Minute Consultation</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -652,7 +652,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Six foundational values shape every consultation, essay review, and strategic milestone at BlueStars.
+              Six foundational values shape every consultation, essay review, and strategic milestone at Blue Stars.
             </p>
           </div>
 
@@ -735,16 +735,16 @@ export default function AboutPage() {
                 &mdash; DR. AMY MORGENSTERN, PH.D.
               </span>
               <span className="block text-[14px] sm:text-[14.5px] text-[#9ed5ff] font-sans mt-0.5">
-                Founder &amp; Lead Strategist, BlueStars Admissions Consulting
+                Founder &amp; CEO, Blue Stars Admissions Consulting
               </span>
             </div>
 
             <div>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
-                <span>Begin Your BlueStars Journey</span>
+                <span>Begin Your Blue Stars Journey</span>
                 <ArrowRight className="w-4 h-4 text-[#0A3D6B]" />
               </Link>
             </div>
@@ -793,7 +793,7 @@ export default function AboutPage() {
                 </div>
 
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book a Free Consultation</span>

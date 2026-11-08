@@ -26,8 +26,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "BlueStars Admissions Consulting | Your Future Starts With the Right College Plan",
-    template: "%s | BlueStars Admissions Consulting",
+    default: "Blue Stars Admissions Consulting | Your Future Starts With the Right College Plan",
+    template: "%s | Blue Stars Admissions Consulting",
   },
   description:
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
@@ -39,20 +39,20 @@ export const metadata: Metadata = {
     "scholarship advice",
     "Ivy League admissions",
   ],
-  authors: [{ name: "BlueStars Admissions Consulting" }],
-  creator: "BlueStars Admissions Consulting",
+  authors: [{ name: "Blue Stars Admissions Consulting" }],
+  creator: "Blue Stars Admissions Consulting",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_CONFIG.url,
-    title: "BlueStars Admissions Consulting | Your Future Starts With the Right College Plan",
+    title: "Blue Stars Admissions Consulting | Your Future Starts With the Right College Plan",
     description:
       "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
     siteName: SITE_CONFIG.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "BlueStars Admissions Consulting",
+    title: "Blue Stars Admissions Consulting",
     description:
       "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   },
@@ -68,7 +68,7 @@ export default function RootLayout({
       <body className="antialiased text-brand-text bg-white selection:bg-brand-sky selection:text-brand-navy min-h-screen flex flex-col font-sans">
         <ScrollToTop />
         {children}
-        {/* <ChatBot /> */}
+        <ChatBot />
       </body>
     </html>
   );
