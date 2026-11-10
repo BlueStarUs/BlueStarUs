@@ -4,13 +4,12 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Laptop,
+  Compass,
   GraduationCap,
-  BarChart3,
-  Users,
-  Banknote,
-  Plane,
-  ShieldCheck,
+  Microscope,
+  Target,
+  PenTool,
+  Palette,
   ArrowRight,
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
@@ -34,74 +33,64 @@ export interface ProgramItem {
 
 export const SERVICES_PROGRAMS: ProgramItem[] = [
   {
-    id: "undergraduate-programs",
-    title: "College/Undergraduate Programs",
+    id: "college-admissions-consulting",
+    title: "College Admissions Consulting",
     description:
-      "Explore bachelor's programs, eligibility, and admission processes across top colleges and universities.",
-    icon: Laptop,
+      "Individually tailored advising, coaching, and mentoring to ignite curiosity and build standout, authentic applications for Ivy League, Stanford, and Top 20 colleges.",
+    icon: Compass,
     accent: "blue",
-    image: "/images/services/Undergraduate_Programs.png",
+    image: "/images/services/College_Admissions_Consulting/College_Admissions_Consulting.png",
     href: "/services/college-admissions-consulting",
   },
   {
-    id: "masters-programs",
-    title: "Master's Programs",
+    id: "college-planning",
+    title: "College & University Planning",
     description:
-      "Discover master's programs, key entrance requirements, and specializations to advance your academic and career goals.",
+      "Proactive multi-year high school roadmap (8th–12th grade) covering academic course rigor, AP/IB timelines, and extracurricular positioning following 'The Calm Way.'",
     icon: GraduationCap,
     accent: "green",
-    image: "/images/services/Masters_Programs.png",
+    image: "/images/services/college-planning/Academic_Coursework_Curriculum_Mapping.png",
     href: "/services/college-planning",
   },
   {
-    id: "college-university-rankings",
-    title: "College & University Rankings",
+    id: "research-internships",
+    title: "Research & Internships",
     description:
-      "Check the latest rankings, compare colleges, and find the best fit based on your goals and preferences.",
-    icon: BarChart3,
+      "Independent scientific & humanities research capstones, university lab placements, faculty outreach, and prestigious summer program admissions (SIMR, RSI, COSMOS).",
+    icon: Microscope,
     accent: "blue",
-    image: "/images/services/College_University_Rankings.png",
-    href: "/services/college-planning",
+    image: "/images/services/research-internships/Original_Independent_Research_Capstone.png",
+    href: "/services/research-internships",
   },
   {
-    id: "application-admission-process",
-    title: "Application & Admission Process",
+    id: "application-strategy",
+    title: "Application Strategy & Positioning",
     description:
-      "Get step-by-step guidance on application timelines, required documents, and key admission tips to maximize your chances.",
-    icon: Users,
+      "Balanced college list architecture (Reach, Target, Likely), Early Decision/Early Action strategy, activity list spike optimization, and stress-free deadline execution.",
+    icon: Target,
     accent: "blue",
     image: "/images/services/Application_&_Admission_Process.png",
     href: "/services/application-strategy",
   },
   {
-    id: "fees-financial-aid-scholarships",
-    title: "Fees & Financial Aid/scholarships",
+    id: "essay-guidance",
+    title: "Essay & Personal Statement Guidance",
     description:
-      "Learn about tuition fees, financial aid options, scholarships, and other funding resources to make your education more affordable.",
-    icon: Banknote,
+      "Authentic Socratic storytelling, core topic ideation, structural coaching, and line-by-line editorial feedback from published writers and veteran admissions readers.",
+    icon: PenTool,
     accent: "green",
-    image: "/images/services/Fees_&_Financial_Aid_Scholarships.png",
-    href: "/services/college-planning",
+    image: "/images/services/essay-guidance/Deep_Dive_Narrative_Brainstorming.png",
+    href: "/services/essay-guidance",
   },
   {
-    id: "international-study-options",
-    title: "International Study Options",
+    id: "art-admissions-consulting",
+    title: "Art Admissions Consulting",
     description:
-      "Explore global education opportunities, application requirements, visa processes, and support for studying at universities abroad.",
-    icon: Plane,
-    accent: "blue",
-    image: "/images/services/International_Study_Options.png",
-    href: "/services/college-admissions-consulting",
-  },
-  {
-    id: "career-guidance-support",
-    title: "Career Guidance & Support",
-    description:
-      "Get career planning tips, skill recommendations, and resources to help you build a successful future after your studies.",
-    icon: ShieldCheck,
+      "Comprehensive visual arts & design portfolio curation, SlideRoom preparation, National Portfolio Day coaching, and artist statements for top BFA/MFA programs.",
+    icon: Palette,
     accent: "green",
-    image: "/images/services/Career_Guidance_&_Support.png",
-    href: "/services/research-internships",
+    image: "/images/services/others_images/Dream_art_Programs.png",
+    href: "/services/art-admissions-consulting",
   },
 ];
 
@@ -193,10 +182,10 @@ export function ServicesProgramsGrid() {
             aria-hidden="true"
           />
           <h2 className="text-2xl sm:text-[30px] md:text-[34px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-2.5">
-            Select a Program to Explore Details
+            Explore Our Comprehensive Admissions Services
           </h2>
           <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-            Choose from a wide range of college programs, understand eligibility, compare options, and plan your next step.
+            Personalized, student-centered admissions consulting designed to nurture intellectual curiosity, build purpose, and secure dream college acceptances.
           </p>
         </motion.div>
 
@@ -221,7 +210,7 @@ export function ServicesProgramsGrid() {
                   y: -7,
                   transition: { duration: 0.25, ease: "easeOut" },
                 }}
-                className="bg-white rounded-[12px] border border-[#e5eef7] shadow-xs hover:shadow-[0_18px_40px_rgba(10,61,107,0.12)] transition-shadow duration-300 p-5 sm:p-6 flex flex-col justify-between group overflow-hidden relative cursor-default"
+                className="bg-white rounded-[5px] border border-[#e5eef7] shadow-xs hover:shadow-[0_18px_40px_rgba(10,61,107,0.12)] transition-shadow duration-300 p-5 sm:p-6 flex flex-col justify-between group overflow-hidden relative cursor-default"
               >
                 {/* Top-Right Decorative Curve Accent */}
                 <div
@@ -239,7 +228,7 @@ export function ServicesProgramsGrid() {
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 2 }}
                     className={cn(
-                      "w-11 h-11 rounded-[12px] flex items-center justify-center mb-3.5 transition-colors duration-300 shadow-2xs",
+                      "w-11 h-11 rounded-[5px] flex items-center justify-center mb-3.5 transition-colors duration-300 shadow-2xs",
                       isBlue
                         ? "bg-[#eaf4fc] text-brand-blue group-hover:bg-brand-blue group-hover:text-white"
                         : "bg-[#e3f5ea] text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white"
@@ -254,12 +243,12 @@ export function ServicesProgramsGrid() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[15px] sm:text-[16px] leading-[23px] sm:leading-[26px] text-brand-text font-sans mb-4 min-h-[58px]">
+                  <p className="text-[14.5px] sm:text-[15.5px] leading-[23px] sm:leading-[25px] text-brand-text font-sans mb-4 min-h-[58px]">
                     {item.description}
                   </p>
 
                   {/* Program Image (From public/images/services) with smooth scale */}
-                  <div className="relative w-full aspect-[16/9] rounded-[8px] overflow-hidden mb-4 border border-[#e8f1f9] bg-[#f8fbfe] shadow-2xs">
+                  <div className="relative w-full aspect-[16/9] rounded-[5px] overflow-hidden mb-4 border border-[#e8f1f9] bg-[#f8fbfe] shadow-2xs">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -275,9 +264,9 @@ export function ServicesProgramsGrid() {
                   <motion.div whileTap={{ scale: 0.96 }} className="inline-block">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[5px] bg-[#eaf3fc] hover:bg-brand-blue text-brand-blue hover:text-white text-[15px] sm:text-[16px] font-bold font-heading transition-all shadow-2xs group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[5px] bg-[#eaf3fc] hover:bg-brand-blue text-brand-blue hover:text-white text-[14px] sm:text-[15px] font-bold font-heading transition-all shadow-2xs group/btn"
                     >
-                      <span>View Details</span>
+                      <span>Explore Service</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
                     </Link>
                   </motion.div>

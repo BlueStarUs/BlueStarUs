@@ -68,13 +68,13 @@ const HOME_SERVICES_DATA: ServiceCardData[] = [
     linkHref: "/services/essay-guidance",
   },
   {
-    id: "extracurricular-capstones",
-    title: "Extracurricular &\nLeadership Capstones",
-    description: "Cultivate distinctive passion projects, independent initiatives, and competitions that demonstrate leadership.",
-    icon: ServiceSparklesIcon,
+    id: "art-admissions-consulting",
+    title: "Art Admissions\nConsulting",
+    description: "Build a stunning visual art portfolio and compelling artist statement for top BFA, MFA, and design programs.",
+    icon: ServicePaletteIcon,
     iconBg: "bg-[#e5f1fc]",
     cornerColor: "#dbeefc",
-    linkHref: "/services/college-planning#extracurricular",
+    linkHref: "/services/art-admissions-consulting",
   },
 ];
 

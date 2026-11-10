@@ -9,7 +9,7 @@ import { ServicesCta } from "@/components/sections/ServicesCta";
 export const metadata: Metadata = {
   title: "Our Services | Blue Stars Admissions Consulting",
   description:
-    "Comprehensive college admissions programs: College & Undergraduate Programs, Master's Programs, Rankings, Admissions Guidance, Financial Aid & Scholarships, International Study, and Career Mentorship.",
+    "Explore Blue Stars' personalized admissions consulting services: College Admissions Consulting, Multi-Year College Planning, Research & Internships, Application Strategy, Essay Guidance, and Art Admissions.",
 };
 
 const GENERAL_SERVICES_FAQS = [

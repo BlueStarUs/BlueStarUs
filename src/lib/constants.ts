@@ -37,18 +37,21 @@ export const SITE_CONFIG = {
     address: "San Francisco, CA",
   },
   socials: {
-    linkedin: "https://linkedin.com",
-    instagram: "https://instagram.com",
-    youtube: "https://youtube.com",
+    facebook: "https://www.facebook.com/bluestarsadmissionsconsulting/",
+    instagram: "https://www.instagram.com/bluestarsadmissions/",
+    pinterest: "https://www.pinterest.com/bluestarsadmissions/",
+    linkedin: "https://www.linkedin.com/company/blue-stars-consulting/",
+    youtube: "https://www.youtube.com/channel/UChxR3UpVaFnySlXL2zhQWFw",
   },
 };
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Our Services", href: "/services", hasDropdown: true },
+  { label: "Successes", href: "/successes" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Resources", href: "/resources", hasDropdown: true },
-  { label: "Blogs", href: "/blogs" },
-  { label: "College Planning", href: "/#planning" },
+  { label: "Blog", href: "/blogs" },
   { label: "About", href: "/about" },
 ];
 

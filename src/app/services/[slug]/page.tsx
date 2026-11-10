@@ -21,6 +21,7 @@ import { CollegeAdmissionsConsultingView } from "@/components/sections/CollegeAd
 import { CollegePlanningView } from "@/components/sections/CollegePlanningView";
 import { EssayGuidanceView } from "@/components/sections/EssayGuidanceView";
 import { ResearchInternshipsView } from "@/components/sections/ResearchInternshipsView";
+import { ArtAdmissionsView } from "@/components/sections/ArtAdmissionsView";
 import { BrandStar } from "@/components/ui/Icons";
 import { SERVICES_CATALOG } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
@@ -104,6 +105,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   // Render the dedicated custom view for Research & Internships with images & Framer Motion / GSAP animations
   if (slug === "research-internships") {
     return <ResearchInternshipsView service={service} />;
+  }
+
+  // Render the dedicated custom view for Art Admissions Consulting (BFA/MFA, portfolio mentorship)
+  if (slug === "art-admissions-consulting" || slug === "art-admissions") {
+    return <ArtAdmissionsView service={service} />;
   }
 
   const isBlue = service.accent === "blue";

@@ -231,6 +231,12 @@ export function Navbar() {
     if (href === "/resources") {
       return pathname.startsWith("/resources");
     }
+    if (href === "/successes") {
+      return pathname.startsWith("/successes");
+    }
+    if (href === "/testimonials") {
+      return pathname.startsWith("/testimonials") || pathname.startsWith("/stories");
+    }
     if (href === "/blogs") {
       return pathname.startsWith("/blogs");
     }
@@ -300,7 +306,7 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-9 text-[14.5px] sm:text-[15px] font-semibold font-heading"
+          className="hidden md:flex items-center gap-4 lg:gap-8  text-[13.5px] lg:text-[14.5px] xl:text-[15px] font-semibold font-heading"
           aria-label="Main Navigation"
         >
           {NAV_LINKS.map((item) => {
@@ -324,9 +330,9 @@ export function Navbar() {
                     aria-haspopup="true"
                     aria-controls="services-dropdown-panel"
                     className={cn(
-                      "relative py-1.5 flex items-center gap-1.5 transition-colors duration-200 select-none cursor-pointer focus:outline-none focus-visible:text-brand-blue group",
+                      "relative py-1.5 flex items-center gap-1.5 transition-colors font-[450] duration-200 select-none cursor-pointer focus:outline-none focus-visible:text-brand-blue group",
                       active || isServicesOpen
-                        ? "text-brand-blue font-bold"
+                        ? "text-brand-blue font-[450]"
                         : "text-brand-navy hover:text-brand-blue font-medium"
                     )}
                   >
@@ -632,7 +638,7 @@ export function Navbar() {
         {/* Action Buttons & Mobile Menu Trigger */}
         <div className="flex items-center gap-3">
           {/* Secondary Action: Contact Us */}
-          <Link
+          {/* <Link
             href="/contact"
             className={cn(
               "hidden sm:inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading shadow-sm transition-all duration-200 border",
@@ -642,16 +648,17 @@ export function Navbar() {
             )}
           >
             <span>Contact Us</span>
-          </Link>
+          </Link> */}
 
           {/* Primary Action: Get Started */}
           <Link
             href="/contact"
             className="hidden sm:inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border border-brand-blue"
           >
-            <span>Get Started</span>
+            <span>Contact Us</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
+
 
           {/* Mobile Menu Hamburger Button */}
           <button

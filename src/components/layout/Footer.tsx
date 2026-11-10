@@ -11,20 +11,29 @@ import {
   Phone,
   MapPin,
   ChevronRight,
-  Linkedin,
-  Instagram,
-  Youtube,
+  ShieldCheck,
+  Award,
+  Star,
 } from "lucide-react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  PinterestIcon,
+  LinkedinIcon,
+  YoutubeIcon,
+} from "@/components/ui/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const QUICK_LINKS = [
   { name: "Home", href: "/", icon: Home },
   { name: "Our Services", href: "/services", icon: Layers },
+  { name: "Successes", href: "/successes", icon: Award },
+  { name: "Testimonials", href: "/testimonials", icon: Star },
   { name: "Resources & Insights", href: "/resources", icon: BookOpen },
-  { name: "Success Stories", href: "/stories", icon: GraduationCap },
   { name: "Blogs & Articles", href: "/blogs", icon: BookOpen },
   { name: "About", href: "/about", icon: Info },
   { name: "Contact Us", href: "/contact", icon: Mail },
+  { name: "Privacy Policy", href: "/privacy-policy", icon: ShieldCheck },
 ];
 
 export function Footer() {
@@ -89,33 +98,51 @@ export function Footer() {
             </p>
 
             {/* Glassmorphic Social Buttons */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
               <a
-                href={SITE_CONFIG.socials.linkedin}
+                href={SITE_CONFIG.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
-                aria-label="LinkedIn"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                aria-label="Facebook"
               >
-                <Linkedin className="w-4.5 h-4.5" />
+                <FacebookIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
               </a>
               <a
                 href={SITE_CONFIG.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4.5 h-4.5" />
+                <InstagramIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+              </a>
+              <a
+                href={SITE_CONFIG.socials.pinterest}
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                aria-label="Pinterest"
+              >
+                <PinterestIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+              </a>
+              <a
+                href={SITE_CONFIG.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
               </a>
               <a
                 href={SITE_CONFIG.socials.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="YouTube"
               >
-                <Youtube className="w-4.5 h-4.5" />
+                <YoutubeIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
               </a>
             </div>
           </div>
@@ -214,16 +241,69 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Professional Accreditations & Affiliations Trust Banner */}
+        <div className="border-t border-white/15 pt-8 pb-7 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-center md:text-left">
+            <span className="block text-xs uppercase tracking-[0.14em] text-[#79c3f7] font-bold font-heading">
+              Professional Memberships &amp; Ethical Standards
+            </span>
+            <span className="block text-xs sm:text-[13px] text-[#bfe2fa]/80 font-sans mt-0.5">
+              Proud members of HECA, WACAC, and IECA adhering to the highest admissions counseling ethics.
+            </span>
+          </div>
+
+          <div className="flex items-center gap-6 sm:gap-8 flex-wrap justify-center">
+            {/* HECA */}
+            <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">
+              <Image
+                src="/images/badges/heca.gif"
+                alt="HECA - Higher Education Consultants Association"
+                width={90}
+                height={40}
+                className="h-7 w-auto object-contain"
+              />
+            </div>
+
+            {/* WACAC */}
+            <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">
+              <Image
+                src="/images/badges/wacac.png"
+                alt="WACAC - Western Association for College Admission Counseling"
+                width={110}
+                height={40}
+                className="h-7 w-auto object-contain"
+              />
+            </div>
+
+            {/* IECA */}
+            <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">
+              <Image
+                src="/images/badges/ieca.png"
+                alt="IECA - Independent Educational Consultants Association Professional Member"
+                width={120}
+                height={40}
+                className="h-7 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar with Horizontal Divider */}
         <div className="border-t-[1px] border-[#ffffff]/50 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[14px] sm:text-[14.5px] text-[#a8d1ee] font-sans">
           <span>&copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.</span>
           <div className="flex items-center gap-4 sm:gap-6 font-heading font-medium text-[#d2e9fb]">
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white underline-offset-4 hover:underline transition-colors"
+            >
               Privacy Policy
             </Link>
             <span className="text-[#1c6496]" aria-hidden="true">|</span>
-            <Link href="#" className="hover:text-white transition-colors">
-              Terms of Service
+            <Link
+              href="/privacy-policy#safeguarding"
+              className="hover:text-white underline-offset-4 hover:underline transition-colors"
+            >
+              Security &amp; Data Safeguards
             </Link>
           </div>
         </div>

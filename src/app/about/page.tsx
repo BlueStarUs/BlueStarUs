@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { BrandStar } from "@/components/ui/Icons";
+import { TeamMembersGrid } from "@/components/sections/TeamMembersGrid";
 
 export const metadata: Metadata = {
   title: "About Us | Blue Stars Admissions Consulting",
@@ -48,25 +49,57 @@ const TEAM_MEMBERS = [
     name: "Dr. Amy Morgenstern",
     role: "Founder & Principal Consultant",
     credentials: "Ph.D. in Philosophy, MFA in Contemporary Art",
-    bio: "Former university philosophy professor and honors program associate director. Dr. Morgenstern founded Blue Stars in 2010 to replace admissions frenzy with thoughtful, whole-student mentorship guided by 'The Calm Way.'",
+    bio: "Former university philosophy professor and honors program associate director. Dr. Morgenstern founded Blue Stars in 2010 to replace admissions frenzy with thoughtful, whole-student mentorship guided by 'The Calm Way'—mentoring hundreds of students into Stanford, Harvard, MIT, the Ivy League, and premier BFA/MFA programs nationwide.",
     image: "/images/teams/Dr_Amy_Morgenstern.png",
     badge: "FOUNDER & PRINCIPAL CONSULTANT",
   },
   {
     name: "Helen Ingerson",
     role: "Senior Counselor & Editor",
-    credentials: "M.A. in Literature & Writing, Veteran Admissions Reader & Narrative Strategist",
-    bio: "With extensive experience evaluating university applications, Helen guides students through comprehensive college lists, summer research program applications, and transformative, authentic essays with renowned promptness and empowering editorial care.",
+    credentials: "B.A. Harvard University (Magna Cum Laude, Phi Beta Kappa), MBA Simmons College",
+    bio: "A National Merit Scholar and Phi Beta Kappa, Magna Cum Laude graduate of Harvard University, Helen has worked for over a decade with students across the Bay Area as a tutor, coach, and admissions essay editor. Her students appreciate her ability to make them feel heard while preserving their authentic voice and producing concise, standout drafts that earn admission to top colleges. Helen holds California teaching credentials, was an administrator at St. Ann's in NYC (cited by The Wall Street Journal for unmatched admissions success), and brings senior leadership experience from venture capital.",
     image: "/images/teams/Helen-Ingerson-Upscaled.png",
     badge: "SENIOR COUNSELOR & EDITOR",
   },
   {
     name: "Wai Cheng",
     role: "Senior Counselor & Editor",
-    credentials: "B.A. / M.A., Expert College Admissions Strategist & Editor",
-    bio: "Dedicated college admissions counselor and editor at Blue Stars Admissions Consulting, Wai works closely with students across multi-year academic planning, extracurricular positioning, and crafting resonant narratives that stand out to selective admissions committees.",
+    credentials: "Wharton MBA & M.A. University of Pennsylvania, B.A. Tufts University",
+    bio: "A native New Yorker, Wai brings over 10 years of college admissions experience to Blue Stars. Holding a Wharton MBA and Master of International Studies from UPenn and a B.A. in International Relations from Tufts, Wai has helped over 100 students majoring in engineering, natural sciences, and humanities enter dream universities like Yale, MIT, Stanford, Johns Hopkins, Amherst, and NYU. Having served on the Wharton Admissions Office team and in product management at Electronic Arts, Wai is celebrated for his warmth, humor, and empowering student-parent guidance.",
     image: "/images/teams/Wai-Cheng-Headshot.webp",
+    badge: "SENIOR COUNSELOR & EDITOR",
+  },
+  {
+    name: "Samuel Ortiz",
+    role: "College Admissions Counselor & STEM Specialist",
+    credentials: "B.A. & M.A. in English, Former Professor of English",
+    bio: "Samuel has advised students who have gone on to attend highly selective universities, including Stanford, UC Berkeley, Yale, Columbia, Duke, Johns Hopkins, Northwestern, and Rice. In the past cycle alone, two of his students were admitted to Stanford in competitive STEM fields (Symbolic Systems, CS, Data Science, and Engineering). Drawing on his background as a college admissions counselor and former professor of English, Samuel helps students discover their unique strengths, build compelling extracurricular profiles, and articulate their intellectual interests through powerful, authentic essays.",
+    image: "/images/teams/Samuel-Ortiz.png",
     badge: "COLLEGE ADMISSIONS COUNSELOR",
+  },
+];
+
+const PROFESSIONAL_ACCREDITATIONS = [
+  {
+    name: "HECA",
+    fullName: "Higher Education Consultants Association",
+    description: "Dedicated to advancing high professional standards, ethical counseling practices, and student advocacy in independent college admissions consulting.",
+    image: "/images/badges/heca.gif",
+    tag: "Verified Member",
+  },
+  {
+    name: "WACAC",
+    fullName: "Western Association for College Admission Counseling",
+    description: "Regional affiliate of the National Association for College Admission Counseling (NACAC), upholding student-centered ethics across California, Nevada, and the West.",
+    image: "/images/badges/wacac.png",
+    tag: "Professional Member",
+  },
+  {
+    name: "IECA",
+    fullName: "Independent Educational Consultants Association",
+    description: "The nation's premier professional association of experienced, vetted educational consultants committed to excellence, integrity, and whole-student mentorship.",
+    image: "/images/badges/ieca.png",
+    tag: "Professional Member",
   },
 ];
 
@@ -512,58 +545,55 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {TEAM_MEMBERS.map((member) => (
+          <TeamMembersGrid members={TEAM_MEMBERS} />
+        </div>
+      </section>
+
+      {/* 7b. Professional Accreditations & Affiliations (HECA / WACAC / IECA Badges) */}
+      <section className="py-12 sm:py-16 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden">
+        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs font-bold tracking-[0.14em] uppercase font-heading mb-2">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-blue" />
+              <span>ETHICS &amp; PROFESSIONAL STANDARDS</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy font-heading tracking-tight">
+              Professional Accreditations &amp; Affiliations
+            </h2>
+            <p className="text-xs sm:text-[14.5px] text-brand-text font-sans mt-1.5">
+              Blue Stars Admissions Consulting adheres to the strict ethical codes and industry-leading standards of the nation&apos;s foremost admissions associations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+            {PROFESSIONAL_ACCREDITATIONS.map((badge) => (
               <div
-                key={member.name}
-                className="bg-white rounded-[8px] border border-[#e2eef9] shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between group"
+                key={badge.name}
+                className="bg-white rounded-[5px] border border-[#e2eef9] p-6 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_12px_28px_rgba(10,61,107,0.08)] hover:border-brand-blue/40 transition-all duration-200 flex flex-col items-center text-center justify-between group"
               >
                 <div>
-                  {/* Photo with Overlay Badge */}
-                  <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                  {/* Badge Logo Container */}
+                  <div className="h-20 w-full flex items-center justify-center mb-4 p-2">
                     <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 420px"
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      src={badge.image}
+                      alt={`${badge.name} - ${badge.fullName}`}
+                      width={220}
+                      height={90}
+                      className="max-h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-
-                    <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-[4px] bg-[#07466f]/90 backdrop-blur-md text-white text-[10.5px] sm:text-[11px] font-bold font-heading border border-white/20 tracking-wider">
-                      {member.badge}
-                    </div>
                   </div>
 
-                  {/* Body Content */}
-                  <div className="p-6">
-                    <h3 className="text-[20px] sm:text-[22px] font-extrabold text-brand-navy font-heading mb-1 leading-snug">
-                      {member.name}
-                    </h3>
-                    <div className="text-xs sm:text-[13px] font-bold text-brand-blue font-heading mb-1.5">
-                      {member.role}
-                    </div>
-                    <div className="text-xs text-brand-text/80 font-sans italic mb-3.5">
-                      {member.credentials}
-                    </div>
-                    <p className="text-[14px] sm:text-[15px] leading-[22px] sm:leading-[24px] text-brand-text font-sans">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
+                  <span className="inline-block px-2.5 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-[11px] font-bold font-heading mb-2">
+                    {badge.tag}
+                  </span>
 
-                <div className="p-6 pt-0">
-                  <div className="pt-3.5 border-t border-[#edf4fb]">
-                    <Link
-                      href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[6px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-md font-heading group-hover:scale-[1.01]"
-                    >
-                      <span>Book a Free 30 Minute Consultation</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                  <h3 className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading mb-1.5">
+                    {badge.fullName} ({badge.name})
+                  </h3>
+
+                  <p className="text-xs sm:text-[13px] leading-[20px] text-brand-text font-sans">
+                    {badge.description}
+                  </p>
                 </div>
               </div>
             ))}

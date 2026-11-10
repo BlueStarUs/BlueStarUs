@@ -222,7 +222,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
         "Applicants applying to high-demand majors (CS, Pre-Med, Engineering, Finance)",
       ],
       keyStats: [
-        { value: "3.5x", label: "Higher Acceptance Rate via Strategic ED/EA" },
+        { value: "Strategic", label: "Early Decision & Action Architecture" },
         { value: "100%", label: "Balanced List Architecture" },
         { value: "15+", label: "Application Portals Managed" },
       ],
