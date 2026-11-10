@@ -28,9 +28,9 @@ export const SITE_CONFIG = {
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   url: "https://bluestars.us",
   contact: {
-    email: "hello@bluestars.us",
-    phone: "+1 (855) 123-4567",
-    address: "United States",
+    email: "info@bluestars.us",
+    phone: "415-426-9444",
+    address: "San Francisco, CA",
   },
   socials: {
     linkedin: "https://linkedin.com",

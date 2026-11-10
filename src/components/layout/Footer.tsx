@@ -197,7 +197,7 @@ export function Footer() {
                   <Phone className="w-4 h-4" />
                 </span>
                 <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
-                  +1 (655) 123-4567
+                  {SITE_CONFIG.contact.phone}
                 </span>
               </a>
 
@@ -207,7 +207,7 @@ export function Footer() {
                   <MapPin className="w-4 h-4" />
                 </span>
                 <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
-                  United States
+                  {SITE_CONFIG.contact.address}
                 </span>
               </div>
             </div>

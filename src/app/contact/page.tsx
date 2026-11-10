@@ -166,10 +166,10 @@ export default function ContactPage() {
                       Telephone & WhatsApp
                     </div>
                     <a
-                      href="tel:4154202444"
+                      href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
                       className="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors font-heading"
                     >
-                      (415) 420-2444
+                      {SITE_CONFIG.contact.phone}
                     </a>
                     <span className="text-[11px] text-brand-text ml-2">
                       (Mon–Fri 9am–6pm PST)
@@ -187,7 +187,7 @@ export default function ContactPage() {
                       Headquarters & Online
                     </div>
                     <div className="text-xs sm:text-[13px] font-semibold text-brand-navy">
-                      San Francisco Bay Area • Serving Families Worldwide
+                      San Francisco, CA
                     </div>
                   </div>
                 </div>
@@ -396,10 +396,10 @@ export default function ContactPage() {
                 Monday – Friday, 9:00 AM – 6:00 PM PST
               </p>
               <a
-                href="tel:4154202444"
+                href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
                 className="inline-block text-brand-blue font-heading font-bold text-sm sm:text-base hover:underline"
               >
-                (415) 420-2444
+                {SITE_CONFIG.contact.phone}
               </a>
             </div>
 
@@ -428,13 +428,13 @@ export default function ContactPage() {
                 <MapPin className="w-5 h-5" />
               </div>
               <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
-                Consultations Nationwide
+                Head Office & Consultations
               </h3>
               <p className="text-xs text-brand-text mb-2">
-                San Francisco Bay Area & Zoom Video Worldwide
+                San Francisco, CA & Zoom Video Worldwide
               </p>
               <span className="inline-block text-brand-navy font-heading font-bold text-sm">
-                United States & International
+                San Francisco, CA
               </span>
             </div>
           </div>
