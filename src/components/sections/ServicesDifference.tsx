@@ -90,10 +90,10 @@ export function ServicesDifference({ faqs }: ServicesDifferenceProps) {
                 className="gsap-stat-box p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] text-center shadow-2xs hover:shadow-xs transition-shadow"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-[#2F9E5C] font-heading">
-                  98%
+                  Top 20
                 </div>
                 <div className="text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  Top-Choice Admits
+                  & UC Acceptances
                 </div>
               </motion.div>
 

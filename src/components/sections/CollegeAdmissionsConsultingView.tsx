@@ -201,10 +201,10 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center"
                 >
                   <div className="text-lg sm:text-2xl font-extrabold text-[#2F9E5C] font-heading tracking-tight">
-                    98%
+                    Top 20
                   </div>
                   <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                    Top-Choice Admits
+                    Elite & UC Admits
                   </div>
                 </motion.div>
 
@@ -275,7 +275,9 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
 
                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
                   <Link
-                    href="/#contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <span>Start Your Admissions Journey</span>
@@ -532,7 +534,9 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
 
                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="w-full">
                   <Link
-                    href="/#contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <span>Schedule Free Consultation</span>
@@ -601,7 +605,9 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               <div className="mt-2">
                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="inline-block">
                   <Link
-                    href="/#contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
                   >
                     <span>Schedule a Consultation</span>
@@ -773,7 +779,9 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                 </div>
 
                 <Link
-                  href="/#contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
                 >
                   <span>Book 30-Min Consultation</span>
@@ -1198,7 +1206,9 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
 
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link
-                    href="/contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group"
                   >
                     <span>Book a Free Consultation</span>

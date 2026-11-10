@@ -14,23 +14,26 @@ interface StudentStoryItem {
 
 const TESTIMONIALS_DATA: StudentStoryItem[] = [
   {
-    id: "aisha",
-    name: "Aisha",
-    quote: "The guidance I received helped me stay organized and confident throughout the process.",
+    id: "sandy-los-gatos",
+    name: "Sandy",
+    quote:
+      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are very grateful.",
     image: "/images/person/person1.png",
     accent: "blue",
   },
   {
-    id: "rohan",
-    name: "Rohan",
-    quote: "They truly understood my goals and helped me find the right colleges for my profile.",
+    id: "sharon-washu-ed",
+    name: "Sharon",
+    quote:
+      "Helen has been an absolute gift to our family over the past four years. From the beginning, she respected my daughter’s clarity of purpose and academic direction, supporting her goals rather than trying to reshape her into someone else for the sake of admissions optics.",
     image: "/images/person/person2.png",
     accent: "green",
   },
   {
-    id: "maya",
-    name: "Maya",
-    quote: "The support with my essay made a huge difference. I felt more confident and prepared.",
+    id: "jeanie-risd-arts",
+    name: "Jeanie",
+    quote:
+      "When I first started working with Blue Stars, I wasn’t completely sure I wanted to pursue art. She encouraged me to immerse myself in the art world by visiting art museums and listening to podcasts. With Blue Stars’ guidance during the college admissions process, I was admitted into my dream school, RISD!",
     image: "/images/person/person3.png",
     accent: "blue",
   },

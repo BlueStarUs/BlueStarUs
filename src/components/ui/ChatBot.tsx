@@ -97,7 +97,7 @@ function getBotResponse(userText: string): {
     query.includes("ivy")
   ) {
     return {
-      text: "Over 98% of Blue Stars students earn admission to one of their top-three choices. Our recent graduates have secured spots at Harvard, Stanford, Brown, Dartmouth, WashU, UPenn, UC Berkeley, UCLA, and received over $80,000 in merit scholarships!",
+      text: "Blue Stars students earn admissions to prestigious universities nationwide. Our graduates have secured spots at Harvard, Stanford, Brown, Dartmouth, WashU, UPenn, UC Berkeley, UCLA, and received valuable merit scholarships!",
       actionLink: { label: "Browse Student Success Stories", href: "/stories" },
     };
   }
@@ -105,7 +105,10 @@ function getBotResponse(userText: string): {
   if (query.includes("price") || query.includes("cost") || query.includes("fee") || query.includes("package")) {
     return {
       text: "We offer tailored, comprehensive consulting packages based on your student's current grade (8th–12th grade) and specific admissions goals. We start with a complimentary 30-minute strategic consultation to review your student's profile and recommend the ideal pathway.",
-      actionLink: { label: "Schedule Free Consultation", href: "/contact" },
+      actionLink: {
+        label: "Schedule Free Consultation",
+        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+      },
     };
   }
 
@@ -119,7 +122,10 @@ function getBotResponse(userText: string): {
   ) {
     return {
       text: "I'd love to connect! You can book a complimentary 30-minute Strategic Admissions Consultation with our directors. We'll discuss your student's aspirations, GPA, extracurriculars, and recommend a personalized plan.",
-      actionLink: { label: "Book Free Strategic Call", href: "/contact" },
+      actionLink: {
+        label: "Book Free Strategic Call",
+        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+      },
     };
   }
 
@@ -133,7 +139,10 @@ function getBotResponse(userText: string): {
   // Friendly default answer
   return {
     text: "Thank you for reaching out! Every student's journey is unique. At Blue Stars, we tailor our mentoring to each student's authentic strengths. Would you like to explore our student success stories or book a free 30-minute strategic consultation with our team?",
-    actionLink: { label: "Book Free Consultation", href: "/contact" },
+    actionLink: {
+      label: "Book Free Consultation",
+      href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    },
   };
 }
 

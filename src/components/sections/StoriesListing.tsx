@@ -145,9 +145,9 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                 </div>
               </div>
               <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">98%</div>
+                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">Top 20</div>
                 <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  Top-Choice Admits
+                  & UC Admits
                 </div>
               </div>
               <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">

@@ -1,5 +1,8 @@
 import { NavItem, NavServiceItem, NavResourceItem, ServiceItem, ProcessStep, Testimonial, ResourceArticle, FAQItem, HeroConfig, Announcement } from "@/types";
 
+export const HUBSPOT_CONSULTATION_URL =
+  "https://meetings-na2.hubspot.com/bluestars/initial-consultation";
+
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
   kicker: "EXPERT GUIDANCE. BRIGHTER OPPORTUNITIES.",
   headingLine1: "Your Future Starts",
@@ -8,7 +11,7 @@ export const DEFAULT_HERO_CONFIG: HeroConfig = {
   description:
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   primaryBtnText: "Book a Free Consultation",
-  primaryBtnHref: "/#contact",
+  primaryBtnHref: HUBSPOT_CONSULTATION_URL,
   secondaryBtnText: "Explore Our Services",
   secondaryBtnHref: "/#services",
   image: "/images/sub_images/Students_hero.png",
@@ -27,6 +30,7 @@ export const SITE_CONFIG = {
   description:
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   url: "https://bluestars.us",
+  consultationUrl: HUBSPOT_CONSULTATION_URL,
   contact: {
     email: "info@bluestars.us",
     phone: "415-426-9444",
@@ -400,7 +404,7 @@ export const DEFAULT_ANNOUNCEMENTS: Announcement[] = [
   },
   {
     id: "announcement-early-outcomes",
-    title: "98% Top-3 College Acceptance Rate",
+    title: "Proven College Acceptance Outcomes",
     message: "Explore our newly published student success case studies and accepted essays for Stanford, WashU, RISD & UC Berkeley.",
     badge: "NEW RESULTS",
     linkText: "Explore Student Stories",

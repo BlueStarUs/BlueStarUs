@@ -375,7 +375,9 @@ export default async function StoryDetailPage({ params }: PageProps) {
                 </p>
 
                 <Link
-                  href="/contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy font-bold text-xs sm:text-[13.5px] font-heading transition-all duration-200 shadow-sm group"
                 >
                   <span>Book Free Consultation</span>

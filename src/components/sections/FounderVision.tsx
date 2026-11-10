@@ -174,7 +174,7 @@ export function FounderVision() {
                   Results Oriented
                 </div>
                 <div className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-brand-text leading-[18px] font-sans">
-                  98% top-choice college acceptance and $14M+ in merit scholarships won.
+                  Proven admissions results and merit scholarships across top universities nationwide.
                 </div>
               </div>
             </div>
@@ -182,7 +182,9 @@ export function FounderVision() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
               <Link
-                href="/contact"
+                href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-md hover:shadow-lg transition-all duration-200"
               >
                 <span>Book a Free 30 Minute Consultation</span>

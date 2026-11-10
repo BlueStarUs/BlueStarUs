@@ -136,7 +136,9 @@ export default function WebinarsPage() {
 
                 <div className="flex flex-wrap items-center gap-3.5">
                   <Link
-                    href="/contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
                   >
                     <span>Schedule Free Diagnostic</span>

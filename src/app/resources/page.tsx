@@ -320,7 +320,7 @@ export default function ResourcesPage() {
                     </div>
                     <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-white text-xs font-semibold">
                       <span>{guide.pages} Pages</span>
-                      <span>{guide.downloadCount} Downloads</span>
+                      <span>Free PDF Guide</span>
                     </div>
                   </div>
 
@@ -620,7 +620,9 @@ export default function ResourcesPage() {
 
                 <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
                   <Link
-                    href="/contact"
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all duration-200"
                   >
                     <span>Schedule Free Consultation</span>
@@ -655,7 +657,7 @@ export default function ResourcesPage() {
                     <CheckCircle2 className="w-5 h-5 text-[#38bdf8] flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="font-heading font-bold text-white text-sm">
-                        98% Top-Choice Acceptance Rate
+                        Top 20 & Elite University Admits
                       </div>
                       <div className="text-xs text-[#d4e8f8] mt-0.5 font-sans">
                         Students admitted to Ivies, Stanford, MIT, and UC campuses.

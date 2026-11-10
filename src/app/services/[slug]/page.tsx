@@ -203,7 +203,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </ul>
 
                 <Link
-                  href="/contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
                 >
                   <span>Book a Free Consultation</span>
@@ -745,7 +747,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                 {/* Primary Action Button */}
                 <Link
-                  href="/contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book a Free Consultation</span>

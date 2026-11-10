@@ -345,7 +345,9 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   Ready to turn these insights into a tailored admissions strategy? Book your complimentary 30-minute consultation with Dr. Amy Morgenstern.
                 </p>
                 <Link
-                  href="/contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-[5px] bg-white text-brand-navy hover:bg-brand-sky font-bold text-xs sm:text-[13.5px] font-heading shadow-md hover:shadow-lg transition-all"
                 >
                   <span>Book Free Consultation</span>

@@ -38,9 +38,9 @@ const STRATEGIC_PILLARS = [
 
 const ACHIEVEMENTS_DATA = [
   { value: "16+", label: "Years Guiding Families", subtext: "Since 2010 in SF Bay Area" },
-  { value: "98%", label: "Top-Choice College Admits", subtext: "Stanford, Ivy League & UCs" },
+  { value: "Top 20", label: "Elite & UC Admissions", subtext: "Stanford, Ivy League & UCs" },
   { value: "100%", label: "Custom Socratic Mentorship", subtext: "Never formulaic or outsourced" },
-  { value: "$14M+", label: "Merit Aid Won for Students", subtext: "Institutional & outside scholarships" },
+  { value: "1-on-1", label: "Dedicated Guidance", subtext: "Tailored to every student's spike" },
 ];
 
 const TEAM_MEMBERS = [
@@ -134,7 +134,7 @@ const CORE_VALUES = [
   },
   {
     title: "Results",
-    description: "Delivering world-class admissions outcomes: 98% acceptance into top-choice colleges and over $14M in merit scholarships won.",
+    description: "Delivering world-class admissions outcomes with personalized, holistic mentorship guiding students to top-choice universities nationwide.",
     icon: Trophy,
     image: "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=800&auto=format&fit=crop",
   },
@@ -202,7 +202,9 @@ export default function AboutPage() {
                 </span>
               </div>
               <Link
-                href="/#contact"
+                href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
               >
                 <span>Get Started Now</span>
@@ -553,7 +555,9 @@ export default function AboutPage() {
                 <div className="p-6 pt-0">
                   <div className="pt-3.5 border-t border-[#edf4fb]">
                     <Link
-                      href="/contact"
+                      href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[6px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-md font-heading group-hover:scale-[1.01]"
                     >
                       <span>Book a Free 30 Minute Consultation</span>
@@ -793,7 +797,9 @@ export default function AboutPage() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book a Free Consultation</span>

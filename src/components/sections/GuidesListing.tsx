@@ -98,7 +98,7 @@ export function GuidesListing() {
                       <FileText className="w-3.5 h-3.5" />
                       {guide.pages} Pages PDF
                     </span>
-                    <span>{guide.downloadCount} Downloads</span>
+                    <span>Free Admissions Guide</span>
                   </div>
                 </div>
 

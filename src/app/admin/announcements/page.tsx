@@ -38,7 +38,7 @@ export default function AdminAnnouncementsPage() {
     title: "",
     badge: "LIMITED SPOTS",
     linkText: "Schedule Free Consultation",
-    linkUrl: "/contact",
+    linkUrl: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
     type: "banner",
     isActive: true,
     priority: 10,

@@ -201,7 +201,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
                   <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
-                  <span>98% Top-Choice Acceptance Rate (Ivies, Stanford, UCs)</span>
+                  <span>Admissions to Ivy League, Stanford, Top UCs & Nationwide</span>
                 </div>
                 <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
                   <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />

@@ -94,7 +94,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       ],
       keyStats: [
         { value: "16+ Years", label: "Proven Student Success" },
-        { value: "98%", label: "Top-Choice College Admissions" },
+        { value: "Top 20", label: "Elite & UC Admissions" },
         { value: "4-Year", label: "Personalized Strategic Roadmap" },
       ],
     },
@@ -610,7 +610,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       ],
       keyStats: [
         { value: "16+ Years", label: "Proven Advisory Experience" },
-        { value: "98%", label: "Top-Choice College Admissions" },
+        { value: "Top 20", label: "Elite & UC Admissions" },
         { value: "100%", label: "Authentic Student Narrative" },
       ],
     },
@@ -821,7 +821,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       keyStats: [
         { value: "MFA Led", label: "Contemporary Art Faculty Mentorship" },
         { value: "12-20", label: "Curated Original Works per Portfolio" },
-        { value: "$100k+", label: "Average Merit Scholarships Won" },
+        { value: "Top BFA", label: "Acceptances & Merit Recognition" },
       ],
     },
     pillars: [
