@@ -21,6 +21,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { ServiceResourcesBanner } from "@/components/sections/ServiceResourcesBanner";
+import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { BrandStar } from "@/components/ui/Icons";
 import { ServiceDetail } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
@@ -686,6 +687,9 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
           </div>
         </div>
       </section>
+
+      {/* 9.5 Free College Planning Foundations Workbook Lead Magnet */}
+      <FreeWorkbookSection />
 
       {/* 10. Consultation CTA Banner with Student Cutout */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">

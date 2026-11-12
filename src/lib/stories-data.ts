@@ -14,7 +14,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     name: "Sandy",
     title: "Trusted Guidance for All Three of Our Children",
     quote:
-      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are very grateful.",
+      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are deeply grateful for their guidance throughout each journey.",
     image: "/images/person/person1.png",
     authorRole: "Blue Stars Parent, Los Gatos, CA",
     location: "Los Gatos, CA",
@@ -24,8 +24,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     rating: 5,
     fullStory: [
       "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard.",
-      "Each child is completely different, and Blue Stars found the story true to each of them. We are very grateful.",
-      "Blue Stars Admissions Consulting provided dedicated, personalized mentoring that celebrated each child's individual voice, strengths, and personal journey without ever resorting to one-size-fits-all formulas.",
+      "Each child is completely different, and Blue Stars found the story true to each of them. We are deeply grateful for their guidance throughout each journey.",
     ],
     tags: ["All 3 Children", "Stanford & Harvard", "UC Berkeley", "NYU Stern"],
   },
@@ -95,26 +94,26 @@ export const SUCCESS_STORIES: SuccessStory[] = [
   {
     id: "adrian-brown-env",
     name: "Adrian",
-    title: "Positive Encouragement and a Place at Brown University",
+    title: "Her Positive Encouragement Was a Great Influence on My Son and Eventually He Was Offered a Place at Brown",
     quote:
-      "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering.",
+      "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering. She assisted us in applying for summer programs like Brown University Summer Camp and the COSMOS program. She also gave useful advice on college application essays and made sure our son was always staying on top of his college application schedule. We are deeply grateful to Blue Stars for their prompt and proper guidance and encouragement at each stage of the application process. The positive encouragement had a great influence on our son, and eventually, he was offered a place at Brown.",
     image: "/images/person/person2.png",
     authorRole: "Blue Stars Parent",
     location: "California",
     accent: "green",
     category: "STEM & Engineering",
-    admittedTo: "Brown University (Environmental Engineering)",
+    admittedTo: "Brown University",
     rating: 5,
     fullStory: [
       "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering. She assisted us in applying for summer programs like Brown University Summer Camp and the COSMOS program.",
       "She also gave useful advice on college application essays and made sure our son was always staying on top of his college application schedule. We are deeply grateful to Blue Stars for their prompt and proper guidance and encouragement at each stage of the application process. The positive encouragement had a great influence on our son, and eventually, he was offered a place at Brown.",
     ],
-    tags: ["Brown University", "COSMOS Program", "Environmental Engineering", "10th Grade Start"],
+    tags: ["Brown University", "COSMOS Program", "10th Grade Start"],
   },
   {
     id: "angela-brian-palo-alto",
     name: "Angela and Brian",
-    title: "Tremendous Knowledge, Dedication, Teaching, and Mentorship",
+    title: "We Truly Cannot Even Begin to Thank You Enough for All Your Knowledge, Expertise, Help, Dedication, Teaching, and Mentorship",
     quote:
       "We still remember vividly our first phone discussion with you about Nick’s college planning when he was an eighth grader. Time flies fast and it is hard to believe Nick is heading off to college. Nick, along with his parents, feel so fortunate to have had Helen as his college counselor throughout his high school years.",
     image: "/images/person/person3.png",
@@ -157,22 +156,22 @@ export const SUCCESS_STORIES: SuccessStory[] = [
   {
     id: "matt-lowell-high",
     name: "Matt",
-    title: "Forever Grateful That My Daughter Found Her Authentic Self",
+    title: "I Will Be Forever Grateful That My Daughter Found Her Authentic Self",
     quote:
-      "Blue Stars came highly recommended and immediately surpassed our expectations. Because of the astute and nurturing mentoring, my child began to attend the office hours of instructors, took and passed five AP exams, sought and acquired school leadership, got involved in school more wholeheartedly, tested in the top 2% in math, became a TA, participated in prestigious Georgetown and Brown camps, and markedly had fun while doing so.",
+      "Blue Stars came highly recommended and immediately surpassed our expectations. Because of the astute and nurturing mentoring, my child began to attend the office hours of instructors, took and passed five AP exams, sought and acquired school leadership, got involved in school more wholeheartedly, tested in the top 2% in math, became a TA, participated in prestigious Georgetown and Brown camps, and markedly had fun while doing so. Perhaps most importantly, she found her passion – mathematics – and close friends who are equally enthralled with the subject. I will be forever grateful that my daughter found her authentic self. The greatest gift of all.",
     image: "/images/person/person2.png",
     authorRole: "Dad of Rising Senior, Lowell High School",
     location: "San Francisco, CA",
     highSchool: "Lowell High School",
     accent: "blue",
     category: "STEM & Engineering",
-    admittedTo: "Georgetown & Brown Pre-College, Top 2% Math",
+    admittedTo: "Rising Senior, Lowell High School",
     rating: 5,
     fullStory: [
       "Blue Stars came highly recommended and immediately surpassed our expectations. Because of the astute and nurturing mentoring, my child began to attend the office hours of instructors, took and passed five AP exams, sought and acquired school leadership, got involved in school more wholeheartedly, tested in the top 2% in math, became a TA, participated in prestigious Georgetown and Brown camps, and markedly had fun while doing so.",
       "Perhaps most importantly, she found her passion – mathematics – and close friends who are equally enthralled with the subject. I will be forever grateful that my daughter found her authentic self. The greatest gift of all.",
     ],
-    tags: ["Lowell High School", "Top 2% Math", "5 AP Exams", "Brown & Georgetown"],
+    tags: ["Lowell High School", "Rising Senior Mentorship"],
   },
   {
     id: "carmen-best-fit",
@@ -192,25 +191,6 @@ export const SUCCESS_STORIES: SuccessStory[] = [
       "I really enjoyed working with you and I hope everything is going well now that you’re working with my brother as well!",
     ],
     tags: ["College Fit", "Multiple Admissions", "Sibling Mentorship"],
-  },
-  {
-    id: "jessica-merit-scholarship",
-    name: "Jessica",
-    title: "Full-Tuition Merit Scholarship Worth Over $240,000",
-    quote:
-      "Thanks to Blue Stars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000, allowing me to graduate debt-free.",
-    image: "/images/person/person1.png",
-    authorRole: "Blue Stars Student & Merit Scholar",
-    location: "New York",
-    accent: "green",
-    category: "Merit Scholars",
-    admittedTo: "Full Tuition Merit Scholar ($240k+)",
-    rating: 5,
-    fullStory: [
-      "Thanks to Blue Stars' strategic merit scholarship targeting and essay coaching, I received a 4-year full-tuition merit scholarship worth over $240,000.",
-      "The Blue Stars team taught me how to present my academic spikes, align with institutional priority criteria, and negotiate competitive merit offers without compromising on my college dream.",
-    ],
-    tags: ["Merit Scholarships", "Full Tuition", "Admissions Strategy"],
   },
   {
     id: "nate-harker",
@@ -887,21 +867,21 @@ export const SUCCESS_STORIES: SuccessStory[] = [
   {
     id: "dylan-law-school-scholarship",
     name: "Dylan",
-    title: "Full-Tuition Moritz Merit Scholarship to Law School",
+    title: "A Full-Tuition Scholarship to Law School",
     quote:
       "Dr. M’s writing process is one of the most rigorous I have ever experienced. I was accepted into law schools at UVA, Notre Dame, Georgetown, and was awarded the full-tuition Moritz Merit Scholarship at Ohio State!",
     authorRole: "Law School Applicant",
     location: "United States",
     accent: "green",
     category: "Merit Scholars",
-    admittedTo: "Full-Tuition Moritz Merit Scholarship (UVA, Notre Dame, Georgetown, OSU)",
+    admittedTo: "Law School (Full-Tuition Scholarship)",
     rating: 5,
     fullStory: [
       "Dr. M’s writing process is one of the most rigorous I have ever experienced (and I’m in the third year of law school!). Draft after draft, hour after hour, Dr. M worked closely with me to focus my ideas and hone my message. In the end, I had a series of precise, powerful essays. Dr. M is attentive, intuitive, and downright brilliant!",
       "Dr. M is also a lot of fun to work with. She has an exceptional academic background and extensive experience working with students. Dr. M also has a special ability to connect with her students and understand their goals.",
       "As a result, I was accepted into the law schools at the University of Virginia, Notre Dame, Georgetown University, and the University of Cincinnati. I ultimately chose to attend the Ohio State University after being one of four students in a class of more than 200 awarded the full-tuition Moritz Merit Scholarship. I highly recommend Dr. M to any potential professional school applicant.",
     ],
-    tags: ["Full-Tuition Merit", "Law School Admissions", "Georgetown & UVA", "Rigorous Writing"],
+    tags: ["Law School Applicant", "Full-Tuition Scholarship", "Rigorous Writing"],
   },
   {
     id: "lisa-ucla-worry-free",

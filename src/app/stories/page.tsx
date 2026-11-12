@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { StoriesHero } from "@/components/sections/StoriesHero";
 import { StoriesListing } from "@/components/sections/StoriesListing";
+import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { CTA } from "@/components/sections/CTA";
 import { SUCCESS_STORIES } from "@/lib/stories-data";
 
@@ -19,6 +20,9 @@ export default function StoriesPage() {
 
       {/* Main Interactive Stories Listing */}
       <StoriesListing initialStories={SUCCESS_STORIES} />
+
+      {/* Free College Planning Foundations Workbook */}
+      <FreeWorkbookSection />
 
       {/* Free Consultation CTA */}
       <CTA />

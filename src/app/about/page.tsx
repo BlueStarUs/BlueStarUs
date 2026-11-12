@@ -23,9 +23,9 @@ import { BrandStar } from "@/components/ui/Icons";
 import { TeamMembersGrid } from "@/components/sections/TeamMembersGrid";
 
 export const metadata: Metadata = {
-  title: "About Us | Blue Stars Admissions Consulting",
+  title: "About Us & Why Blue Stars | Blue Stars Admissions Consulting",
   description:
-    "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our whole-student philosophy, senior counseling team, global reach, and track record of dream college admissions.",
+    "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our 90% top-choice track record, whole-student philosophy, senior counseling team, global reach, and 3 core pillars of admissions success.",
 };
 
 const STRATEGIC_PILLARS = [
@@ -38,10 +38,31 @@ const STRATEGIC_PILLARS = [
 ];
 
 const ACHIEVEMENTS_DATA = [
-  { value: "16+", label: "Years Guiding Families", subtext: "Since 2010 in SF Bay Area" },
-  { value: "Top 20", label: "Elite & UC Admissions", subtext: "Stanford, Ivy League & UCs" },
-  { value: "100%", label: "Custom Socratic Mentorship", subtext: "Never formulaic or outsourced" },
-  { value: "1-on-1", label: "Dedicated Guidance", subtext: "Tailored to every student's spike" },
+  { value: "90%", label: "Top-Choice Acceptances", subtext: "Admitted to schools of their choice" },
+  { value: "16+", label: "Years Guiding Families", subtext: "Since 2010 in SF Bay Area & beyond" },
+  { value: "Top 20", label: "Elite & UC Admissions", subtext: "Stanford, Ivy League & premier UCs" },
+  { value: "1-on-1", label: "Dedicated Mentorship", subtext: "Tailored to every student's spike" },
+];
+
+const WHY_US_PILLARS = [
+  {
+    icon: Target,
+    title: "1. Strategizing with Expert Guidance",
+    description:
+      "A proactive, multi-year roadmap tailored to your teen's authentic strengths, coursework rigor, testing timeline, and high-impact extracurricular spikes.",
+  },
+  {
+    icon: GraduationCap,
+    title: "2. Balanced School List Architecture",
+    description:
+      "Curating strategic reach, target, and likely institutions where your student will truly thrive academically, intellectually, and personally.",
+  },
+  {
+    icon: Sparkles,
+    title: "3. Standout Essay Development",
+    description:
+      "Guiding students through thoughtful Socratic inquiry to uncover their authentic voice and craft the most compelling, beautifully written personal statements of their lives.",
+  },
 ];
 
 const TEAM_MEMBERS = [
@@ -49,9 +70,14 @@ const TEAM_MEMBERS = [
     name: "Dr. Amy Morgenstern",
     role: "Founder & Principal Consultant",
     credentials: "Ph.D. in Philosophy, MFA in Contemporary Art",
-    bio: "Former university philosophy professor and honors program associate director. Dr. Morgenstern founded Blue Stars in 2010 to replace admissions frenzy with thoughtful, whole-student mentorship guided by 'The Calm Way'—mentoring hundreds of students into Stanford, Harvard, MIT, the Ivy League, and premier BFA/MFA programs nationwide.",
+    bio: "Dr. Amy Morgenstern (“Dr. M”) is the Founder of Blue Stars Admissions Consulting, established in 2010 to serve students and families navigating complex and competitive college admissions landscapes. A first-generation college student, Dr. M holds a Ph.D. in philosophy and an MFA in contemporary art. She is a former professor of philosophy, honors program associate director, and assistant to the director of an international academic and cultural studies program. Fluent in German, she served as a dissertation fellow in Germany for two years. As an award-winning writer, cultural theorist, and interdisciplinary artist, she brings deep institutional insight to selective admissions, combining structural analysis with careful narrative development so each student’s application is coherent, intentional, and strategically positioned.",
     image: "/images/teams/Dr_Amy_Morgenstern.png",
     badge: "FOUNDER & PRINCIPAL CONSULTANT",
+    affiliations: [
+      { name: "HECA", image: "/images/badges/heca.gif" },
+      { name: "WACAC", image: "/images/badges/wacac.png" },
+      { name: "IECA", image: "/images/badges/ieca.png" },
+    ],
   },
   {
     name: "Helen Ingerson",
@@ -313,7 +339,10 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Why Choose Blue Stars Admissions Consulting */}
-      <section className="py-14 sm:py-18 lg:py-22 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden">
+      <section
+        id="why-us"
+        className="scroll-mt-24 sm:scroll-mt-28 py-14 sm:py-18 lg:py-22 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden"
+      >
         {/* Ambient Organic Waves */}
         <div
           className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
@@ -336,11 +365,11 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Founded in 2010 by Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), Blue Stars provides proactive, student-centered admissions mentoring. Unlike transactional agencies that churn out formulaic essays, we take a whole-student life-coaching approach that builds genuine leadership, executive function, and lasting academic confidence.
+                The college-planning and application process is a deeply personal journey with long-lasting impact. Founded in 2010 by Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), Blue Stars provides proactive, comprehensive college admissions guidance customized to the individual goals of each teen and family.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-8">
-                Our students do not just get admitted to their dream colleges—they arrive on campus equipped with the communication skills, intellectual stamina, and self-advocacy needed to thrive in university and career life.
+                We’re not your ordinary admissions consulting service: we focus on enhancing your teen’s natural abilities while guiding their intellectual development. Our high-performance program integrates academic mentorship, community engagement, and personal development with experienced writers, editors, educators, and life coaches.
               </p>
 
               {/* 4 Stats Cards Grid */}
@@ -376,6 +405,47 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
               </div>
+            </div>
+          </div>
+
+          {/* 3 Core Pillars From Why-Us */}
+          <div className="mt-12 sm:mt-14 pt-8 sm:pt-10 border-t border-[#dbe7f3]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
+              <div>
+                <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-1">
+                  OUR 3 CORE PILLARS
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading tracking-tight">
+                  How We Guide Your Teen to Admissions Success
+                </h3>
+              </div>
+              <p className="text-xs sm:text-[14px] text-brand-text font-sans max-w-md">
+                A structured, whole-student approach ensuring every facet of your teen&apos;s application reflects authentic intellectual excellence.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+              {WHY_US_PILLARS.map((pillar) => {
+                const Icon = pillar.icon;
+                return (
+                  <div
+                    key={pillar.title}
+                    className="p-5 sm:p-6 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs hover:shadow-card hover:border-brand-blue/40 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-[5px] bg-[#E3F1FC] text-brand-blue flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h4 className="text-[17px] sm:text-[18px] font-extrabold text-brand-navy font-heading mb-2 leading-snug">
+                        {pillar.title}
+                      </h4>
+                      <p className="text-[14px] sm:text-[15px] leading-[22px] sm:leading-[24px] text-brand-text font-sans">
+                        {pillar.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -421,11 +491,11 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Headquartered in the San Francisco Bay Area, Blue Stars partners with students across the United States as well as international families in Asia, Europe, and the Middle East.
+                Headquartered in the San Francisco Bay Area, Blue Stars partners with families across the United States—from California to New York—as well as international students across Europe, Asia (Shanghai, Chengdu, Tokyo), and the Middle East.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                Through interactive video counseling, shared Google Docs workspaces, and transparent parent milestone portals, distance is never a barrier to world-class admissions advising.
+                We are proven experts at remote and online education. Through interactive 1-on-1 video counseling, shared digital workspaces, and proactive milestone tracking, distance is never an obstacle to transformative, personalized admissions mentoring.
               </p>
 
               <div className="p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] mb-6">
@@ -439,7 +509,7 @@ export default function AboutPage() {
 
               <div>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
                 >
                   <span>Connect With Our Global Team</span>
@@ -474,7 +544,7 @@ export default function AboutPage() {
 
             {/* Centered Main Heading */}
             <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-white font-heading tracking-tight leading-[32px] sm:leading-[38px] md:leading-[42px] lg:!leading-[46px] mb-4 max-w-3xl mx-auto">
-              Our College Counselors Make All the Difference. Combined, We Have Over 25 Years of Experience.
+              Our College Counselors Make All the Difference
             </h2>
 
             {/* Centered Description */}

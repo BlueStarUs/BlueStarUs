@@ -16,6 +16,7 @@ import {
   HelpCircle,
   Newspaper,
   Award,
+  Search,
 } from "lucide-react";
 import {
   ServiceCompassIcon,
@@ -26,8 +27,16 @@ import {
   ServiceCoinsIcon,
   ServiceResearchIcon,
 } from "@/components/ui/Icons";
-import { NAV_LINKS, NAV_SERVICES, NAV_RESOURCES, SITE_CONFIG } from "@/lib/constants";
+import {
+  NAV_LINKS,
+  NAV_SERVICES,
+  NAV_RESOURCES,
+  SITE_CONFIG,
+  HUBSPOT_CONSULTATION_URL,
+  HUBSPOT_DISCOVERY_URL,
+} from "@/lib/constants";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { SiteSearchModal } from "@/components/ui/SiteSearchModal";
 import { cn } from "@/lib/utils";
 
 // Map service icon names to custom Blue Stars SVG icon components
@@ -74,6 +83,21 @@ export function Navbar() {
   const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const resourcesDropdownRef = useRef<HTMLDivElement | null>(null);
   const resourcesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Site Search state
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Global search shortcut (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Clear debounce timeouts on unmount
   useEffect(() => {
@@ -445,14 +469,16 @@ export function Navbar() {
                             <span className="font-semibold text-brand-navy">Not sure which roadmap fits?</span>{" "}
                             Book a free 30-minute diagnostic session.
                           </div>
-                          <Link
-                            href="/contact"
+                          <a
+                            href={HUBSPOT_CONSULTATION_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsServicesOpen(false)}
                             className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
-                            <span>Free Consultation</span>
+                            <span>Book Consultation</span>
                             <ArrowRight className="w-3 h-3" />
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -594,14 +620,16 @@ export function Navbar() {
                             <span className="font-semibold text-brand-navy">Empowering teens & families</span>{" "}
                             with actionable college admissions guidance.
                           </div>
-                          <Link
-                            href="/contact"
+                          <a
+                            href={HUBSPOT_CONSULTATION_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsResourcesOpen(false)}
                             className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
-                            <span>Free Consultation</span>
+                            <span>Book Consultation</span>
                             <ArrowRight className="w-3 h-3" />
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -636,29 +664,41 @@ export function Navbar() {
         </nav>
 
         {/* Action Buttons & Mobile Menu Trigger */}
-        <div className="flex items-center gap-3">
-          {/* Secondary Action: Contact Us */}
-          {/* <Link
-            href="/contact"
-            className={cn(
-              "hidden sm:inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading shadow-sm transition-all duration-200 border",
-              isContactActive
-                ? "bg-brand-blue text-white border-brand-blue shadow-md"
-                : "text-brand-blue bg-white hover:bg-brand-navy hover:text-white hover:shadow-md hover:scale-[1.02] active:scale-[0.98] border-brand-blue"
-            )}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Header Site Search Trigger (Desktop) */}
+          <button
+            type="button"
+            onClick={() => setIsSearchOpen(true)}
+            className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-xs sm:text-[13px] font-medium font-sans text-brand-navy/75 hover:text-brand-blue bg-[#f0f6fc] hover:bg-[#e4effa] border border-[#d6e5f5] hover:border-brand-blue/30 transition-all shadow-2xs group"
+            aria-label="Search website"
           >
-            <span>Contact Us</span>
-          </Link> */}
+            <Search className="w-3.5 h-3.5 text-brand-blue group-hover:scale-110 transition-transform" />
+            <span className="hidden lg:inline text-brand-navy/80">Search...</span>
+            <kbd className="hidden xl:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white text-brand-navy/60 border border-brand-border/80 shadow-2xs">
+              ⌘K
+            </kbd>
+          </button>
 
-          {/* Primary Action: Get Started */}
-          <Link
-            href="/contact"
-            className="hidden sm:inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border border-brand-blue"
+          {/* Primary Consultation Booking CTA (HubSpot Direct) */}
+          <a
+            href={HUBSPOT_CONSULTATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border border-brand-blue"
           >
-            <span>Contact Us</span>
+            <span>Book Consultation</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          </a>
 
+          {/* Mobile Site Search Button */}
+          <button
+            type="button"
+            className="md:hidden w-8 h-8 rounded-[2px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+            onClick={() => setIsSearchOpen(true)}
+            aria-label="Open search dialog"
+          >
+            <Search className="w-4 h-4 text-brand-blue stroke-[2.2]" />
+          </button>
 
           {/* Mobile Menu Hamburger Button */}
           <button
@@ -918,31 +958,47 @@ export function Navbar() {
             })}
 
             <div className="pt-4 mt-2 border-t border-[#e2eef9] flex flex-col gap-2.5">
-              <Link
-                href="/contact"
+              <a
+                href={HUBSPOT_CONSULTATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={handleNavClick}
-                className={cn(
-                  "w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-bold font-heading transition-all shadow-xs",
-                  isContactActive
-                    ? "bg-brand-blue text-white"
-                    : "text-brand-blue bg-[#E3F1FC] hover:bg-brand-blue hover:text-white"
-                )}
+                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all shadow-sm flex items-center justify-center gap-2"
               >
-                Contact Us
-              </Link>
+                <span>Book Initial Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href={HUBSPOT_DISCOVERY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-bold font-heading text-brand-blue bg-[#E3F1FC] hover:bg-brand-blue hover:text-white transition-all shadow-xs flex items-center justify-center gap-2"
+              >
+                <span>Schedule Discovery Session</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
 
               <Link
                 href="/contact"
                 onClick={handleNavClick}
-                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all shadow-sm flex items-center justify-center gap-2"
+                className={cn(
+                  "w-full py-2.5 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-medium font-heading transition-all",
+                  isContactActive
+                    ? "bg-brand-bg text-brand-blue font-bold"
+                    : "text-brand-navy hover:bg-[#E3F1FC]/50 hover:text-brand-blue"
+                )}
               >
-                <span>Get Started</span>
-                <ArrowRight className="w-4 h-4" />
+                Contact Form &amp; Questions
               </Link>
             </div>
           </nav>
         </div>
       )}
+
+      {/* Global Site Search Modal */}
+      <SiteSearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }

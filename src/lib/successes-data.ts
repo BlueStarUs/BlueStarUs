@@ -573,7 +573,7 @@ export const SUCCESS_CYCLES: YearSuccessCycle[] = [
       { institution: "UC Riverside", tags: ["UC System"] },
       { institution: "UC Santa Barbara", tags: ["UC System"] },
       { institution: "UC Santa Cruz", tags: ["UC System"] },
-      { institution: "University of Illinois Urbana Champaign  (Engineering)", tags: ["STEM"] },
+      { institution: "University of Illinois Urbana Champaign (Engineering)", tags: ["STEM"] },
       { institution: "University of Miami", tags: ["Top Public"] },
       { institution: "University of North Carolina, PhD in Political Science", tags: ["Top Public"] },
       { institution: "University of Pittsburgh, PhD in Political Science", tags: ["Top Public"] },
@@ -659,7 +659,7 @@ export const SUCCESS_CYCLES: YearSuccessCycle[] = [
       { institution: "UC Riverside", tags: ["UC System"] },
       { institution: "UC Santa Barbara", tags: ["UC System"] },
       { institution: "UC Santa Cruz", tags: ["UC System"] },
-      { institution: "University of Illinois Urbana Champaign  (Engineering)", tags: ["STEM"] },
+      { institution: "University of Illinois Urbana Champaign (Engineering)", tags: ["STEM"] },
       { institution: "University of Miami", tags: ["Top Public"] },
       { institution: "University of North Carolina, PhD in Political Science", tags: ["Top Public"] },
       { institution: "University of Pittsburgh, PhD in Political Science", tags: ["Top Public"] },

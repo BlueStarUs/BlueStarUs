@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Share2, Link as LinkIcon, Check, Linkedin, Twitter } from "lucide-react";
+import { Link as LinkIcon, Check, Linkedin, Twitter, Mail, MessageCircle } from "lucide-react";
+import { FacebookIcon } from "@/components/ui/Icons";
 
 interface BlogShareButtonsProps {
   title: string;
@@ -25,16 +26,15 @@ export function BlogShareButtons({ title, url }: BlogShareButtonsProps) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Fallback
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     }
   };
 
-  const handleShareLinkedIn = () => {
+  const handleShareFacebook = () => {
     const shareUrl = encodeURIComponent(getShareUrl());
     window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
+      `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
       "_blank",
       "noopener,noreferrer"
     );
@@ -50,12 +50,39 @@ export function BlogShareButtons({ title, url }: BlogShareButtonsProps) {
     );
   };
 
+  const handleShareLinkedIn = () => {
+    const shareUrl = encodeURIComponent(getShareUrl());
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handleShareWhatsApp = () => {
+    const shareUrl = encodeURIComponent(getShareUrl());
+    const shareText = encodeURIComponent(title);
+    window.open(
+      `https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handleShareEmail = () => {
+    const shareUrl = getShareUrl();
+    const subject = encodeURIComponent(`Recommended Article: ${title}`);
+    const body = encodeURIComponent(`Hi,\n\nI thought you might find this article from Blue Stars Admissions Consulting helpful:\n\n${title}\n${shareUrl}\n`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
       <span className="text-xs font-bold text-brand-navy/70 uppercase tracking-wider font-heading mr-1 hidden sm:inline">
         Share:
       </span>
 
+      {/* Copy Link Button */}
       <button
         type="button"
         onClick={handleCopyLink}
@@ -75,6 +102,29 @@ export function BlogShareButtons({ title, url }: BlogShareButtonsProps) {
         )}
       </button>
 
+      {/* Facebook */}
+      <button
+        type="button"
+        onClick={handleShareFacebook}
+        className="w-8 h-8 rounded-full bg-brand-bg hover:bg-[#1877f2] text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border/70"
+        title="Share on Facebook"
+        aria-label="Share on Facebook"
+      >
+        <FacebookIcon className="w-3.5 h-3.5" />
+      </button>
+
+      {/* X / Twitter */}
+      <button
+        type="button"
+        onClick={handleShareTwitter}
+        className="w-8 h-8 rounded-full bg-brand-bg hover:bg-black text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border/70"
+        title="Share on X"
+        aria-label="Share on X"
+      >
+        <Twitter className="w-3.5 h-3.5" />
+      </button>
+
+      {/* LinkedIn */}
       <button
         type="button"
         onClick={handleShareLinkedIn}
@@ -85,14 +135,26 @@ export function BlogShareButtons({ title, url }: BlogShareButtonsProps) {
         <Linkedin className="w-3.5 h-3.5" />
       </button>
 
+      {/* WhatsApp */}
       <button
         type="button"
-        onClick={handleShareTwitter}
-        className="w-8 h-8 rounded-full bg-brand-bg hover:bg-black text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border/70"
-        title="Share on X"
-        aria-label="Share on X"
+        onClick={handleShareWhatsApp}
+        className="w-8 h-8 rounded-full bg-brand-bg hover:bg-[#25D366] text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border/70"
+        title="Share on WhatsApp"
+        aria-label="Share on WhatsApp"
       >
-        <Twitter className="w-3.5 h-3.5" />
+        <MessageCircle className="w-3.5 h-3.5" />
+      </button>
+
+      {/* Email */}
+      <button
+        type="button"
+        onClick={handleShareEmail}
+        className="w-8 h-8 rounded-full bg-brand-bg hover:bg-brand-blue text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border/70"
+        title="Share via Email"
+        aria-label="Share via Email"
+      >
+        <Mail className="w-3.5 h-3.5" />
       </button>
     </div>
   );

@@ -266,6 +266,14 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   </span>
                 ))}
               </div>
+
+              {/* Bottom Social Share Bar */}
+              <div className="pt-5 mt-4 border-t border-brand-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider">
+                  Enjoyed this article? Share it with family &amp; friends:
+                </span>
+                <BlogShareButtons title={post.title} />
+              </div>
             </div>
 
             {/* Author Attribution Card */}

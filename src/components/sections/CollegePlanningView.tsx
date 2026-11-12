@@ -18,6 +18,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { ServiceResourcesBanner } from "@/components/sections/ServiceResourcesBanner";
+import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { BrandStar } from "@/components/ui/Icons";
 import { ServiceDetail } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
@@ -551,6 +552,11 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
           7. RESOURCES TO HELP TEENS & FAMILIES
           ======================================================== */}
       <ServiceResourcesBanner />
+
+      {/* ========================================================
+          7.5 FREE WORKBOOK LEAD MAGNET
+          ======================================================== */}
+      <FreeWorkbookSection />
 
       {/* ========================================================
           8. MODERN ELEVATED CTA BANNER CARD

@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { GuidesListing } from "@/components/sections/GuidesListing";
+import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { BrandStar } from "@/components/ui/Icons";
 
@@ -53,6 +54,9 @@ export default function GuidesPage() {
 
       {/* Interactive Guides Filter & Downloads Grid */}
       <GuidesListing />
+
+      {/* Free Workbook Lead Capture & Instant PDF Download */}
+      <FreeWorkbookSection />
 
       {/* Why Blue Stars Guides Section */}
       <section className="py-12 sm:py-16 bg-[#f8fbfe] border-y border-[#e2eef9]">

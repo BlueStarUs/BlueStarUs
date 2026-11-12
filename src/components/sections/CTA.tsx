@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
+import { HUBSPOT_CONSULTATION_URL, HUBSPOT_DISCOVERY_URL } from "@/lib/constants";
 
 export function CTA() {
   return (
@@ -30,16 +31,28 @@ export function CTA() {
               Book a free consultation and get personalized guidance for your college journey.
             </p>
 
-            {/* Primary Action Button */}
-            <Link
-              href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[8px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] text-xs sm:text-[16px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
-              <span>Book a Free Consultation</span>
-              <ArrowRight className="w-4 h-4 text-[#0A3D6B]" />
-            </Link>
+            {/* Primary & Discovery Session Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <Link
+                href={HUBSPOT_CONSULTATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-[8px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] text-[13.5px] sm:text-[15px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              >
+                <span>Book Free Consultation (30 Min)</span>
+                <ArrowRight className="w-4 h-4 text-[#0A3D6B]" />
+              </Link>
+
+              <Link
+                href={HUBSPOT_DISCOVERY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-[8px] bg-white/10 hover:bg-white/20 text-white text-[13.5px] sm:text-[15px] font-bold font-heading border border-white/40 hover:border-white shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 backdrop-blur-xs"
+              >
+                <span>Schedule Discovery Session (90 Min)</span>
+                <ArrowRight className="w-4 h-4 text-white" />
+              </Link>
+            </div>
           </div>
 
           {/* Right Column: Student Image & Decorative Brand Stars */}

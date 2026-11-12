@@ -42,11 +42,13 @@ export interface VideoResource {
   id: string;
   slug: string;
   title: string;
-  category: "Masterclass" | "Campus Tours" | "Student Stories" | "Admissions Q&A";
+  category: "College Tours" | "Alumni Interviews" | "Recorded Webinars" | "Admissions Strategy" | string;
   duration: string;
   speaker: string;
   description: string;
   thumbnail: string;
+  youtubeId?: string;
+  publishedAt?: string;
   keyTopics: string[];
   featured?: boolean;
 }
@@ -347,74 +349,784 @@ export const WEBINARS_DATA: WebinarItem[] = [
 
 export const VIDEO_RESOURCES: VideoResource[] = [
   {
-    id: "video-essay-brainstorming",
-    slug: "essay-brainstorming-blueprint",
-    title: "How to Brainstorm an Authentic College Essay Topic",
-    category: "Masterclass",
-    duration: "14:20",
-    speaker: "Dr. Amy Morgenstern",
-    description: "Discover our core brainstorming exercises that help students bypass clichés and unearth personal stories that genuinely move admissions officers.",
-    thumbnail: "/images/resources/videos_img/How_to_Brainstorm_Authentic_College_Essay.webp",
-    keyTopics: ["Core Value Identification", "Story Arc Techniques", "Vulnerability vs. TMI", "Finding Your Voice"],
-    featured: true,
+    "id": "yt-18ICjuPxpaY",
+    "slug": "university-of-michigan-campus-tour-insights-academ",
+    "title": "University of Michigan Campus Tour & Insights | Academics, Student Life, Clubs & Resources",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Join Dr. Amy Morgenstern of Blue Stars Admissions Consulting for an insider look at the University of Michigan, Ann Arbor—academics, student culture, and admissions strategy.",
+    "thumbnail": "https://img.youtube.com/vi/18ICjuPxpaY/hqdefault.jpg",
+    "youtubeId": "18ICjuPxpaY",
+    "publishedAt": "2025-08-25",
+    "keyTopics": [
+      "University of Michigan",
+      "Campus Tour",
+      "Public Ivies",
+      "Student Life"
+    ],
+    "featured": true
   },
   {
-    id: "video-uc-application-walkthrough",
-    slug: "complete-uc-application-walkthrough",
-    title: "Complete UC Application Walkthrough: Step-by-Step",
-    category: "Masterclass",
-    duration: "22:45",
-    speaker: "Helen C., Senior Counselor",
-    description: "Watch a senior counselor walk through the entire University of California portal, showing how to avoid common pitfalls in the academic history and activities sections.",
-    thumbnail: "/images/resources/videos_img/Complete_UC_Application_Walkthrough_Step_by_Step.webp",
-    keyTopics: ["UC Portal Navigation", "Reporting AP & Honors Courses", "Activities Description Optimization", "PIQ Upload Process"],
-    featured: true,
+    "id": "yt-BVJfU_8lV_k",
+    "slug": "celebrating-15-years-of-student-success",
+    "title": "Celebrating 15 Years of Student Success",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Reflecting on 15+ years of empowering college-bound teens, whole-student mentorship, and guiding families to top university acceptances nationwide.",
+    "thumbnail": "https://img.youtube.com/vi/BVJfU_8lV_k/hqdefault.jpg",
+    "youtubeId": "BVJfU_8lV_k",
+    "publishedAt": "2025-06-11",
+    "keyTopics": [
+      "15th Anniversary",
+      "Student Success",
+      "Whole-Student Mentoring",
+      "Blue Stars Journey"
+    ],
+    "featured": false
   },
   {
-    id: "video-stanford-admit-story",
-    slug: "student-journey-to-stanford",
-    title: "Student Story: How Alya Found Her Niche and Got Into Stanford",
-    category: "Student Stories",
-    duration: "18:10",
-    speaker: "Alya (Stanford Admit) & Helen",
-    description: "Blue Stars student Alya shares how she worked with Helen to create a niche science-literacy initiative, narrow down summer research programs, and write reflective essays that earned admission to Stanford.",
-    thumbnail: "/images/resources/videos_img/Student_Story_Stanford_Admit_Alya.webp",
-    keyTopics: ["STEM & Humanities Synthesis", "Independent Science Literacy Non-Profit", "High School Habits", "Authentic Mentorship"],
-    featured: true,
+    "id": "yt-tVW8-qKTCFE",
+    "slug": "two-stanford-rea-students-share-admissions-tips",
+    "title": "Two Stanford REA Students Share Admissions Tips",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Stanford REA Students",
+    "description": "Two Blue Stars students admitted to Stanford University through Restrictive Early Action (REA) share their admissions strategies, essay timelines, and authentic advice.",
+    "thumbnail": "https://img.youtube.com/vi/tVW8-qKTCFE/hqdefault.jpg",
+    "youtubeId": "tVW8-qKTCFE",
+    "publishedAt": "2024-05-11",
+    "keyTopics": [
+      "Stanford University",
+      "Early Action",
+      "REA Strategy",
+      "Admissions Tips"
+    ],
+    "featured": true
   },
   {
-    id: "video-campus-tour-nyu",
-    slug: "campus-tours-nyu-stern-experience",
-    title: "Campus Insight: Inside NYU Stern & The Liberal Studies Program",
-    category: "Campus Tours",
-    duration: "12:35",
-    speaker: "Blue Stars Student Ambassadors",
-    description: "Get an unfiltered look at student life in Greenwich Village, internships in NYC, and the transition from high school to a major global university.",
-    thumbnail: "/images/resources/videos_img/Campus_Insight_NYU_Stern_Liberal_Studies.webp",
-    keyTopics: ["NYU Campus Culture", "Stern Business Academics", "Living in NYC", "Application Advice"],
+    "id": "yt-KKsUocGuI9Q",
+    "slug": "your-college-major-does-not-define-your-future-inc",
+    "title": "🎓 Your College Major DOES NOT Define Your Future Income 🌟",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Dr. Amy Morgenstern breaks down why your undergraduate college major does not limit your long-term career earning potential, and how to pursue genuine intellectual passions.",
+    "thumbnail": "https://img.youtube.com/vi/KKsUocGuI9Q/hqdefault.jpg",
+    "youtubeId": "KKsUocGuI9Q",
+    "publishedAt": "2024-02-19",
+    "keyTopics": [
+      "College Majors",
+      "Career Pathways",
+      "Income Myths",
+      "Academic Passion"
+    ],
+    "featured": false
   },
   {
-    id: "video-risd-portfolio-critique",
-    slug: "risd-accepted-portfolio-walkthrough",
-    title: "Portfolio Breakdown: Inside Jeanie's Accepted RISD Portfolio",
-    category: "Student Stories",
-    duration: "16:50",
-    speaker: "Jeanie (RISD Student)",
-    description: "Explore the sketchbooks, mixed media works, and personal artist statements that helped Jeanie gain acceptance to the prestigious Rhode Island School of Design.",
-    thumbnail: "/images/resources/videos_img/Portfolio_Breakdown_RISD_Accepted_Jeanie.webp",
-    keyTopics: ["Sketchbook Development", "Observational vs Conceptual Art", "Artist Statements", "RISD Assignment Tips"],
+    "id": "yt-mrR9nbQeJEk",
+    "slug": "making-college-campus-tours-worth-your-time",
+    "title": "Making College Campus Tours Worth Your Time",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Practical strategies for families and students to maximize college campus visits, evaluate institutional fit, and engage meaningfully with admissions departments.",
+    "thumbnail": "https://img.youtube.com/vi/mrR9nbQeJEk/hqdefault.jpg",
+    "youtubeId": "mrR9nbQeJEk",
+    "publishedAt": "2023-11-07",
+    "keyTopics": [
+      "College Visits",
+      "Campus Tours",
+      "Admissions Fit",
+      "Demonstrated Interest"
+    ],
+    "featured": false
   },
   {
-    id: "video-letters-of-recommendation",
-    slug: "letters-of-recommendation-mastery",
-    title: "How to Ask for Letters of Recommendation That Truly Stand Out",
-    category: "Admissions Q&A",
-    duration: "09:40",
-    speaker: "Dr. Amy Morgenstern",
-    description: "A concise masterclass on when to ask teachers, how to prepare a 'Brag Sheet', and how to ensure your recommenders highlight your intellectual vitality.",
-    thumbnail: "/images/resources/videos_img/Letters_of_Recommendation_Mastery_Guide.webp",
-    keyTopics: ["Teacher Selection", "Preparing the Brag Sheet", "Timeline & Etiquette", "Counselor Letter Strategy"],
+    "id": "yt-emsTxlBCf9o",
+    "slug": "webinar-ai-for-all-an-interdisciplinary-introducti",
+    "title": "Webinar - AI for All: An Interdisciplinary Introduction",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Comprehensive webinar exploring how high schoolers can engage with artificial intelligence across interdisciplinary STEM, humanities, and ethics projects.",
+    "thumbnail": "https://img.youtube.com/vi/emsTxlBCf9o/hqdefault.jpg",
+    "youtubeId": "emsTxlBCf9o",
+    "publishedAt": "2023-10-11",
+    "keyTopics": [
+      "Artificial Intelligence",
+      "Interdisciplinary STEM",
+      "High School AI",
+      "Research"
+    ],
+    "featured": true
   },
+  {
+    "id": "yt-52Yd17-jVO0",
+    "slug": "interview-with-former-blue-stars-student-naomi-zim",
+    "title": "Interview with former Blue Stars student Naomi Zimmerman",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Naomi Zimmerman (Alum) & Dr. M",
+    "description": "Former Blue Stars student Naomi Zimmerman reflects on her high school journey, discovering her academic focus, and transitioning successfully to college life.",
+    "thumbnail": "https://img.youtube.com/vi/52Yd17-jVO0/hqdefault.jpg",
+    "youtubeId": "52Yd17-jVO0",
+    "publishedAt": "2023-10-09",
+    "keyTopics": [
+      "Alumni Interview",
+      "Student Journey",
+      "College Transition",
+      "High School Growth"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-6dMU6O1NJ3g",
+    "slug": "webinar-prepare-for-a-career-in-ai-as-a-high-schoo",
+    "title": "Webinar - Prepare for a Career in AI as a High Schooler",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Actionable guidance on preparing for future careers in AI, machine learning, and computational data science starting in 9th to 12th grade.",
+    "thumbnail": "https://img.youtube.com/vi/6dMU6O1NJ3g/hqdefault.jpg",
+    "youtubeId": "6dMU6O1NJ3g",
+    "publishedAt": "2023-10-06",
+    "keyTopics": [
+      "AI Careers",
+      "STEM Pathways",
+      "High School Projects",
+      "Future Skills"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-DvVTrzsYEjI",
+    "slug": "webinar-the-new-digital-psat-sat-all-you-need-to-k",
+    "title": "Webinar - The New Digital PSAT/SAT: All You Need to Know",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Essential breakdown of the Digital PSAT and SAT formats, adaptive testing scoring, preparation timelines, and strategic test-optional considerations.",
+    "thumbnail": "https://img.youtube.com/vi/DvVTrzsYEjI/hqdefault.jpg",
+    "youtubeId": "DvVTrzsYEjI",
+    "publishedAt": "2023-08-08",
+    "keyTopics": [
+      "Digital SAT",
+      "PSAT Prep",
+      "Testing Strategy",
+      "Score Improvement"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-HOyacSoA2no",
+    "slug": "webinar-five-time-management-tips-for-summer-succe",
+    "title": "Webinar - Five Time-Management Tips for Summer Success",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Five essential time-management, planning, and goal-setting strategies to make high school summers productive, rejuvenating, and admissions-impactful.",
+    "thumbnail": "https://img.youtube.com/vi/HOyacSoA2no/hqdefault.jpg",
+    "youtubeId": "HOyacSoA2no",
+    "publishedAt": "2023-06-14",
+    "keyTopics": [
+      "Summer Planning",
+      "Time Management",
+      "High School Productivity",
+      "Calm Execution"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-kmFQMiNBusA",
+    "slug": "webinar-celebrating-your-child-s-unique-strengths",
+    "title": "Webinar - Celebrating Your Child's Unique Strengths",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Inspiring webinar on discovering, celebrating, and cultivating each teen’s unique strengths rather than trying to fit a generic admissions mold.",
+    "thumbnail": "https://img.youtube.com/vi/kmFQMiNBusA/hqdefault.jpg",
+    "youtubeId": "kmFQMiNBusA",
+    "publishedAt": "2023-05-02",
+    "keyTopics": [
+      "Student Strengths",
+      "Growth Mindset",
+      "Parent Partnership",
+      "The Calm Way"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-qccVw0E8KYE",
+    "slug": "interview-with-dr-irena-smith-author-of-the-golden",
+    "title": "Interview with Dr. Irena Smith - Author of The Golden Ticket: A Life in College Admissions Essays",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Dr. Irena Smith & Dr. M",
+    "description": "In-depth interview with Dr. Irena Smith, former Stanford admissions officer and author of The Golden Ticket, discussing sanity and authenticity in admissions.",
+    "thumbnail": "https://img.youtube.com/vi/qccVw0E8KYE/hqdefault.jpg",
+    "youtubeId": "qccVw0E8KYE",
+    "publishedAt": "2023-04-15",
+    "keyTopics": [
+      "Dr. Irena Smith",
+      "Author Interview",
+      "Stanford Admissions",
+      "The Golden Ticket"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-ATlWZyDiSkY",
+    "slug": "5-college-admissions-tips-for-stem-students",
+    "title": "5 College Admissions Tips for STEM Students",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Five proven strategies for students applying to competitive STEM, engineering, computer science, and pre-med programs at top-tier universities.",
+    "thumbnail": "https://img.youtube.com/vi/ATlWZyDiSkY/hqdefault.jpg",
+    "youtubeId": "ATlWZyDiSkY",
+    "publishedAt": "2023-03-29",
+    "keyTopics": [
+      "STEM Admissions",
+      "Engineering Applications",
+      "Pre-Med Strategy",
+      "Computer Science"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-ymAy4jL1VIk",
+    "slug": "webinar-making-test-prep-work-for-you-with-eric-ra",
+    "title": "Webinar - Making Test Prep Work For You with Eric Rath",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Eric Rath & Dr. M",
+    "description": "Expert test prep webinar with Eric Rath exploring efficient SAT/ACT mastery, personalized study cadences, and reducing standardized testing stress.",
+    "thumbnail": "https://img.youtube.com/vi/ymAy4jL1VIk/hqdefault.jpg",
+    "youtubeId": "ymAy4jL1VIk",
+    "publishedAt": "2023-01-24",
+    "keyTopics": [
+      "Eric Rath",
+      "SAT & ACT Test Prep",
+      "Study Habits",
+      "Stress-Free Testing"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-O6dJL0Gbv4E",
+    "slug": "webinar-making-test-prep-work-for-you-with-eric-ra",
+    "title": "Webinar - Making Test Prep Work For You with Eric Rath (Promo)",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Eric Rath & Dr. M",
+    "description": "Preview and highlights from our masterclass with Eric Rath on making standardized test preparation work for your student’s schedule.",
+    "thumbnail": "https://img.youtube.com/vi/O6dJL0Gbv4E/hqdefault.jpg",
+    "youtubeId": "O6dJL0Gbv4E",
+    "publishedAt": "2023-01-20",
+    "keyTopics": [
+      "Test Prep Overview",
+      "SAT Strategies",
+      "Eric Rath",
+      "Blue Stars Webinar"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-ynylPJNGzys",
+    "slug": "stanford-blog-reflections",
+    "title": "Stanford Blog Reflections",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Dr. Amy Morgenstern reflects on Stanford University admissions essays, personal narrative vulnerability, and what makes applicants memorable.",
+    "thumbnail": "https://img.youtube.com/vi/ynylPJNGzys/hqdefault.jpg",
+    "youtubeId": "ynylPJNGzys",
+    "publishedAt": "2023-01-18",
+    "keyTopics": [
+      "Stanford Essays",
+      "Personal Statements",
+      "Reflective Writing",
+      "Admissions Readers"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-ko4-tTFr7os",
+    "slug": "oberlin-college-tour",
+    "title": "Oberlin College Tour",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "On-campus walking tour and insider review of Oberlin College & Conservatory, highlighting progressive academics, research, and creative arts.",
+    "thumbnail": "https://img.youtube.com/vi/ko4-tTFr7os/hqdefault.jpg",
+    "youtubeId": "ko4-tTFr7os",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "Oberlin College",
+      "Campus Tour",
+      "Liberal Arts",
+      "Creative Arts"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-Wn4ByAR71Dc",
+    "slug": "williams-college-tour",
+    "title": "Williams College Tour",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Explore Williams College in the Berkshires—tutorial-style learning, undergraduate research focus, and elite liberal arts admissions criteria.",
+    "thumbnail": "https://img.youtube.com/vi/Wn4ByAR71Dc/hqdefault.jpg",
+    "youtubeId": "Wn4ByAR71Dc",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "Williams College",
+      "Campus Tour",
+      "Top Liberal Arts",
+      "Undergraduate Focus"
+    ],
+    "featured": true
+  },
+  {
+    "id": "yt-H2cr7obUY1M",
+    "slug": "ohio-wesleyan-college-tour",
+    "title": "Ohio Wesleyan College Tour",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Campus tour of Ohio Wesleyan University exploring the OWU Connection, global travel opportunities, and personalized undergraduate mentoring.",
+    "thumbnail": "https://img.youtube.com/vi/H2cr7obUY1M/hqdefault.jpg",
+    "youtubeId": "H2cr7obUY1M",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "Ohio Wesleyan",
+      "Campus Tour",
+      "Global Connection",
+      "Undergraduate Mentorship"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-fd6fu17gUgA",
+    "slug": "intro-to-dr-m-s-college-tours",
+    "title": "Intro to Dr. M's College Tours",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Introduction to Dr. M’s college tour series: How to look beyond the brochures and see what real undergraduate life is like.",
+    "thumbnail": "https://img.youtube.com/vi/fd6fu17gUgA/hqdefault.jpg",
+    "youtubeId": "fd6fu17gUgA",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "College Tour Guide",
+      "Campus Research",
+      "Dr. Amy Morgenstern",
+      "Admissions Insights"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-oF1dYZ7yu3g",
+    "slug": "kenyon-college-tour",
+    "title": "Kenyon College Tour",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Explore Kenyon College in Gambier, Ohio—renowned writing traditions, collaborative community, and close faculty-student mentorship.",
+    "thumbnail": "https://img.youtube.com/vi/oF1dYZ7yu3g/hqdefault.jpg",
+    "youtubeId": "oF1dYZ7yu3g",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "Kenyon College",
+      "Campus Tour",
+      "Writing Excellence",
+      "Collaborative Learning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-nKd2OHxNvEY",
+    "slug": "amherst-college-tour",
+    "title": "Amherst College Tour",
+    "category": "College Tours",
+    "duration": "Campus Walk",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Comprehensive tour of Amherst College exploring open curriculum opportunities, undergraduate research, and selective admissions positioning.",
+    "thumbnail": "https://img.youtube.com/vi/nKd2OHxNvEY/hqdefault.jpg",
+    "youtubeId": "nKd2OHxNvEY",
+    "publishedAt": "2022-12-30",
+    "keyTopics": [
+      "Amherst College",
+      "Campus Tour",
+      "Open Curriculum",
+      "Top 10 Colleges"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-Mp84oQPjEG8",
+    "slug": "on-becoming-a-doctor-a-panel-discussion-with-dr-m",
+    "title": "On Becoming a Doctor: A Panel Discussion with Dr. M",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Medical Advisory Panel",
+    "description": "Panel discussion with practicing physicians and pre-med advisors on the journey to medical school, undergraduate preparation, and clinical experience.",
+    "thumbnail": "https://img.youtube.com/vi/Mp84oQPjEG8/hqdefault.jpg",
+    "youtubeId": "Mp84oQPjEG8",
+    "publishedAt": "2020-09-16",
+    "keyTopics": [
+      "Pre-Med Advice",
+      "Medical School Pathways",
+      "Doctor Panel",
+      "Healthcare Careers"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-BzP9EFw_yEg",
+    "slug": "tackling-the-common-app-essay",
+    "title": "Tackling the Common App Essay",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Masterclass on architecting the Common Application personal statement—ideation, structuring, avoiding clichés, and polishing authentic voice.",
+    "thumbnail": "https://img.youtube.com/vi/BzP9EFw_yEg/hqdefault.jpg",
+    "youtubeId": "BzP9EFw_yEg",
+    "publishedAt": "2020-08-15",
+    "keyTopics": [
+      "Common App Essay",
+      "Personal Statement",
+      "Brainstorming",
+      "Essay Editing"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-NUb3dvxG9DE",
+    "slug": "uc-personal-insight-question-8-what-makes-you-stan",
+    "title": "UC Personal Insight Question 8: What Makes You Stand Out?",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Detailed breakdown of UC PIQ #8: Beyond grades and test scores, what makes you stand out as a strong candidate for the University of California?",
+    "thumbnail": "https://img.youtube.com/vi/NUb3dvxG9DE/hqdefault.jpg",
+    "youtubeId": "NUb3dvxG9DE",
+    "publishedAt": "2020-07-31",
+    "keyTopics": [
+      "UC PIQ 8",
+      "Standing Out",
+      "UC Berkeley & UCLA",
+      "Application Strategy"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-6CekYAesGy8",
+    "slug": "uc-personal-insight-question-7-what-you-ve-done-to",
+    "title": "UC Personal Insight Question 7: What You've Done to Make Your School/Community a Better Place",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Deep dive into UC PIQ #7: How you have worked to make your school, family, or community a better place through sustained impact.",
+    "thumbnail": "https://img.youtube.com/vi/6CekYAesGy8/hqdefault.jpg",
+    "youtubeId": "6CekYAesGy8",
+    "publishedAt": "2020-07-20",
+    "keyTopics": [
+      "UC PIQ 7",
+      "Community Impact",
+      "Leadership Initiatives",
+      "UC Applications"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-TkTFcJOu1qA",
+    "slug": "uc-personal-insight-question-6-an-academic-subject",
+    "title": "UC Personal Insight Question 6: An Academic Subject That Inspires You",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Strategies for UC PIQ #6: Describing your favorite academic subject and how it has influenced your intellectual vitality outside the classroom.",
+    "thumbnail": "https://img.youtube.com/vi/TkTFcJOu1qA/hqdefault.jpg",
+    "youtubeId": "TkTFcJOu1qA",
+    "publishedAt": "2020-06-30",
+    "keyTopics": [
+      "UC PIQ 6",
+      "Academic Passion",
+      "Intellectual Curiosity",
+      "Subject Mastery"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-KY0CF1B1puk",
+    "slug": "uc-personal-insight-question-5-most-significant-ch",
+    "title": "UC Personal Insight Question 5: Most Significant Challenge",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Coaching for UC PIQ #5: How to address your most significant challenge, personal resilience, and how you overcame obstacles without sounding like a victim.",
+    "thumbnail": "https://img.youtube.com/vi/KY0CF1B1puk/hqdefault.jpg",
+    "youtubeId": "KY0CF1B1puk",
+    "publishedAt": "2020-06-23",
+    "keyTopics": [
+      "UC PIQ 5",
+      "Overcoming Challenges",
+      "Resilience",
+      "Authentic Voice"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-EZs_l5696Jo",
+    "slug": "uc-personal-insight-question-4-educational-opportu",
+    "title": "UC Personal Insight Question 4: Educational Opportunity or Barrier",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Guidance on UC PIQ #4: Discussing an educational opportunity you took advantage of or an educational barrier you worked to overcome.",
+    "thumbnail": "https://img.youtube.com/vi/EZs_l5696Jo/hqdefault.jpg",
+    "youtubeId": "EZs_l5696Jo",
+    "publishedAt": "2020-06-16",
+    "keyTopics": [
+      "UC PIQ 4",
+      "Educational Opportunity",
+      "Overcoming Barriers",
+      "UC Prompts"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-5YFsT63GaxA",
+    "slug": "uc-personal-insight-question-3-greatest-talent-or-",
+    "title": "UC Personal Insight Question 3: Greatest Talent or Skill",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Analyzing UC PIQ #3: Showcasing your greatest talent or skill and how you have developed and demonstrated it over time.",
+    "thumbnail": "https://img.youtube.com/vi/5YFsT63GaxA/hqdefault.jpg",
+    "youtubeId": "5YFsT63GaxA",
+    "publishedAt": "2020-06-10",
+    "keyTopics": [
+      "UC PIQ 3",
+      "Greatest Talent",
+      "Skill Development",
+      "Creative Craft"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-eLEROi8Wny0",
+    "slug": "uc-personal-insight-question-2-creativity",
+    "title": "UC Personal Insight Question 2: Creativity",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Step-by-step coaching on UC PIQ #2: Expressing your creative side—through art, problem solving, innovative thinking, or unique passions.",
+    "thumbnail": "https://img.youtube.com/vi/eLEROi8Wny0/hqdefault.jpg",
+    "youtubeId": "eLEROi8Wny0",
+    "publishedAt": "2020-06-04",
+    "keyTopics": [
+      "UC PIQ 2",
+      "Creative Expression",
+      "Problem Solving",
+      "Arts & Design"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-GIB_zp_6e64",
+    "slug": "uc-personal-insight-question-1-leadership",
+    "title": "UC Personal Insight Question 1: Leadership",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Deconstructing UC PIQ #1: How to define and demonstrate leadership in family, clubs, community, or independent projects.",
+    "thumbnail": "https://img.youtube.com/vi/GIB_zp_6e64/hqdefault.jpg",
+    "youtubeId": "GIB_zp_6e64",
+    "publishedAt": "2020-05-27",
+    "keyTopics": [
+      "UC PIQ 1",
+      "Leadership",
+      "Initiative",
+      "UC System Insights"
+    ],
+    "featured": true
+  },
+  {
+    "id": "yt-swsk9D8VUGo",
+    "slug": "session-6-college-planning-and-covid-19-featuring-",
+    "title": "Session 6: College Planning and COVID-19 Featuring New Trends in College Admissions",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 6: Navigating college planning, admissions trends, and evolving institutional criteria following the global health crisis.",
+    "thumbnail": "https://img.youtube.com/vi/swsk9D8VUGo/hqdefault.jpg",
+    "youtubeId": "swsk9D8VUGo",
+    "publishedAt": "2020-05-21",
+    "keyTopics": [
+      "Admissions Trends",
+      "Rapid Response",
+      "College Planning",
+      "Webinar Series"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-2jMMtrXySwk",
+    "slug": "session-5-college-planning-and-covid-19-featuring-",
+    "title": "Session 5: College Planning and COVID-19 Featuring Shelter-in-Place Summer Ideas",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 5: Creative shelter-in-place summer enrichment ideas, independent research projects, and online learning initiatives.",
+    "thumbnail": "https://img.youtube.com/vi/2jMMtrXySwk/hqdefault.jpg",
+    "youtubeId": "2jMMtrXySwk",
+    "publishedAt": "2020-05-14",
+    "keyTopics": [
+      "Summer Projects",
+      "Independent Learning",
+      "Enrichment Strategy",
+      "Webinar Series"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-G3V032hDPdk",
+    "slug": "session-4-college-planning-and-covid-19-college-fu",
+    "title": "Session 4: College Planning and COVID-19 + College Funding Advice",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 4: Financial planning, college funding advice, tuition transparency, and merit scholarship strategies for families.",
+    "thumbnail": "https://img.youtube.com/vi/G3V032hDPdk/hqdefault.jpg",
+    "youtubeId": "G3V032hDPdk",
+    "publishedAt": "2020-05-14",
+    "keyTopics": [
+      "Financial Aid",
+      "College Funding",
+      "Merit Scholarships",
+      "Webinar Series"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-w4_iLZxuMJQ",
+    "slug": "session-3-college-planning-and-covid-19-rapid-resp",
+    "title": "Session 3: College Planning and COVID-19 Rapid Response Webinar",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 3: Rapid response strategies for students adapting their high school trajectories, activities, and online schooling.",
+    "thumbnail": "https://img.youtube.com/vi/w4_iLZxuMJQ/hqdefault.jpg",
+    "youtubeId": "w4_iLZxuMJQ",
+    "publishedAt": "2020-04-20",
+    "keyTopics": [
+      "Rapid Response",
+      "High School Roadmap",
+      "Adaptability",
+      "Webinar Series"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-APDR9c9aDkI",
+    "slug": "session-2-college-planning-covid-19-rapid-response",
+    "title": "Session 2: College Planning & COVID-19 Rapid Response Webinar",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 2: Maintaining emotional well-being, executive functioning, and family harmony during turbulent academic semesters.",
+    "thumbnail": "https://img.youtube.com/vi/APDR9c9aDkI/hqdefault.jpg",
+    "youtubeId": "APDR9c9aDkI",
+    "publishedAt": "2020-04-13",
+    "keyTopics": [
+      "Student Well-Being",
+      "Executive Function",
+      "Family Support",
+      "The Calm Way"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-xtYCRa6gYKk",
+    "slug": "session-1-college-planning-and-covid-19-rapid-resp",
+    "title": "Session 1: College Planning and COVID-19 Rapid Response Webinar",
+    "category": "Recorded Webinars",
+    "duration": "60–90 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Session 1: Initial emergency roadmap and guidance for high school families navigating unprecedented school closures.",
+    "thumbnail": "https://img.youtube.com/vi/xtYCRa6gYKk/hqdefault.jpg",
+    "youtubeId": "xtYCRa6gYKk",
+    "publishedAt": "2020-04-06",
+    "keyTopics": [
+      "Foundations Webinar",
+      "Emergency Strategy",
+      "Parent Roadmap",
+      "Webinar Series"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-yM3ui1MPvEY",
+    "slug": "college-admissions-the-calm-way-a-talk-by-dr-amy-m",
+    "title": "College Admissions the Calm Way - A Talk by Dr. Amy Morgenstern",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Keynote talk by Dr. Amy Morgenstern on \"College Admissions the Calm Way\"—replacing frenzy with whole-student purpose and clarity.",
+    "thumbnail": "https://img.youtube.com/vi/yM3ui1MPvEY/hqdefault.jpg",
+    "youtubeId": "yM3ui1MPvEY",
+    "publishedAt": "2018-08-01",
+    "keyTopics": [
+      "The Calm Way",
+      "Dr. Amy Morgenstern",
+      "Keynote Talk",
+      "Admissions Philosophy"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt--KzOic8VBBU",
+    "slug": "how-do-you-get-students-to-write-amazing-admission",
+    "title": "How do you get students to write amazing admissions essays?",
+    "category": "Alumni Interviews",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Essential insights on helping teens find their true voice and write admissions essays that move selective review committees.",
+    "thumbnail": "https://img.youtube.com/vi/-KzOic8VBBU/hqdefault.jpg",
+    "youtubeId": "-KzOic8VBBU",
+    "publishedAt": "2016-09-14",
+    "keyTopics": [
+      "Essay Coaching",
+      "Storytelling Techniques",
+      "Writing Masterclass",
+      "Admissions Advice"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yt-YfGVLUJlZ1E",
+    "slug": "dream-schools-are-for-everyone",
+    "title": "Dream Schools are for Everyone!",
+    "category": "Admissions Strategy",
+    "duration": "15–30 min",
+    "speaker": "Dr. Amy Morgenstern",
+    "description": "Inspiring talk on why dream schools are accessible to everyone when students lead with authenticity, purpose, and deliberate effort.",
+    "thumbnail": "https://img.youtube.com/vi/YfGVLUJlZ1E/hqdefault.jpg",
+    "youtubeId": "YfGVLUJlZ1E",
+    "publishedAt": "2015-12-06",
+    "keyTopics": [
+      "Dream Schools",
+      "Access & Equity",
+      "Keynote Address",
+      "Blue Stars Philosophy"
+    ],
+    "featured": false
+  }
 ];
 
 export const FAQ_CATEGORIES: FAQCategoryItem[] = [

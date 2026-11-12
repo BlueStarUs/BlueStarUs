@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatBot } from "@/components/ui/ChatBot";
+import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
         <ScrollToTop />
         {children}
         <ChatBot />
+        <NewsletterPopup />
       </body>
     </html>
   );

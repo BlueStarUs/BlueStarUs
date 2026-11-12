@@ -13,6 +13,7 @@ export interface TeamMember {
   bio: string;
   image: string;
   badge: string;
+  affiliations?: { name: string; image: string }[];
 }
 
 interface TeamMembersGridProps {
@@ -67,6 +68,30 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
                 <div className="text-[11.5px] text-brand-text/80 font-sans italic mb-3">
                   {member.credentials}
                 </div>
+
+                {/* Professional Accreditation Badges (HECA, WACAC, IECA) */}
+                {member.affiliations && member.affiliations.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-1.5 mb-3 pt-2 border-t border-[#e2eef9]">
+                    <span className="text-[10px] font-bold text-brand-navy/70 uppercase tracking-wider font-heading mr-0.5">
+                      Accredited:
+                    </span>
+                    {member.affiliations.map((aff) => (
+                      <div
+                        key={aff.name}
+                        className="h-6 px-1.5 py-0.5 rounded-[3px] bg-[#f0f6fc] border border-[#dce8f5] flex items-center justify-center shadow-2xs"
+                        title={aff.name}
+                      >
+                        <Image
+                          src={aff.image}
+                          alt={aff.name}
+                          width={36}
+                          height={16}
+                          className="max-h-3.5 w-auto object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Bio text with 4-line clamp & modern Read More / Read Less toggle */}
                 <div>

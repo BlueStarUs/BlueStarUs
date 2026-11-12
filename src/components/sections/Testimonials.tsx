@@ -20,7 +20,7 @@ const TESTIMONIALS_DATA: StudentStoryItem[] = [
     role: "Blue Stars Parent • Los Gatos, CA",
     admittedTo: "Harvard, Stanford, UC Berkeley & NYU Stern",
     quote:
-      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are very grateful.",
+      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are deeply grateful for their guidance throughout each journey.",
     accent: "blue",
     tags: ["All 3 Children", "Ivy & Stanford", "Merit Honors"],
   },

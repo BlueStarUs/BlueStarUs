@@ -16,7 +16,14 @@ import {
   Loader2,
 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
-import { SITE_CONFIG } from "@/lib/constants";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  PinterestIcon,
+  LinkedinIcon,
+  YoutubeIcon,
+} from "@/components/ui/Icons";
+import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_DISCOVERY_URL } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
 import { ContactFormData } from "@/types";
 import { cn } from "@/lib/utils";
@@ -82,14 +89,31 @@ export default function ContactPage() {
     }
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail.trim()) return;
     setNewsletterStatus("submitting");
-    setTimeout(() => {
+    try {
+      await fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: "Newsletter Subscriber",
+          email: newsletterEmail.trim(),
+          phone: "Not provided",
+          interest: "Newsletter Subscription",
+          serviceInterest: "Newsletter Subscription",
+          message: "User subscribed to Blue Stars Admissions Newsletter from Contact Page footer.",
+          source: "Contact Page Newsletter",
+          formGuid: "20578b68-3cb4-47fa-be3e-037888cf7ddf",
+        }),
+      });
       setNewsletterStatus("success");
       setNewsletterEmail("");
-    }, 600);
+    } catch {
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+    }
   };
 
   return (
@@ -206,6 +230,95 @@ export default function ContactPage() {
                 <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
                   <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
                   <span>100% Confidential & No-Pressure Introductory Discussion</span>
+                </div>
+              </div>
+
+              {/* Direct HubSpot Consultation Booking Cards */}
+              <div className="p-5 rounded-[5px] bg-gradient-to-r from-brand-sky/60 via-brand-bg to-brand-sky/40 border border-brand-blue/30 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-brand-blue font-heading">
+                    Prefer Instant Online Booking?
+                  </span>
+                  <span className="text-[10.5px] font-bold px-2 py-0.5 rounded-[4px] bg-brand-blue text-white uppercase tracking-wider">
+                    HubSpot Live
+                  </span>
+                </div>
+                <p className="text-xs sm:text-[13px] text-brand-navy/90 font-sans">
+                  Choose a live time slot directly on Dr. Amy Morgenstern&apos;s calendar:
+                </p>
+                <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
+                  <a
+                    href={HUBSPOT_CONSULTATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-[13px] font-bold font-heading transition-all shadow-xs"
+                  >
+                    <span>30-Min Initial Consultation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={HUBSPOT_DISCOVERY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy text-xs sm:text-[13px] font-bold font-heading border border-brand-border transition-all shadow-xs"
+                  >
+                    <span>90-Min Discovery Session</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-brand-blue" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Connect Across 5 Social Channels */}
+              <div className="pt-2">
+                <span className="block text-xs font-bold uppercase tracking-wider text-brand-navy/70 font-heading mb-2">
+                  Follow Blue Stars Online:
+                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={SITE_CONFIG.socials.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    aria-label="Facebook"
+                  >
+                    <FacebookIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SITE_CONFIG.socials.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SITE_CONFIG.socials.pinterest}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    aria-label="Pinterest"
+                  >
+                    <PinterestIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SITE_CONFIG.socials.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    aria-label="LinkedIn"
+                  >
+                    <LinkedinIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SITE_CONFIG.socials.youtube}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    aria-label="YouTube"
+                  >
+                    <YoutubeIcon className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>

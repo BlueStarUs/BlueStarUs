@@ -4,22 +4,35 @@ import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface ServiceFAQAccordionProps {
+export interface ServiceFAQAccordionProps {
   faqs: Array<{
     question: string;
     answer: string;
   }>;
+  title?: string;
+  subtitle?: string;
+  className?: string;
 }
 
-export function ServiceFAQAccordion({ faqs }: ServiceFAQAccordionProps) {
+export function ServiceFAQAccordion({
+  faqs,
+  title,
+  subtitle,
+  className,
+}: ServiceFAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
-    <div className="bg-white rounded-[5px]  border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.08)] overflow-hidden transition-all duration-300">
+  const accordionCard = (
+    <div
+      className={cn(
+        "bg-white rounded-[5px] border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.08)] overflow-hidden transition-all duration-300",
+        !title && className
+      )}
+    >
       <div className="divide-y divide-[#edf3f9]">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
@@ -64,5 +77,27 @@ export function ServiceFAQAccordion({ faqs }: ServiceFAQAccordionProps) {
       </div>
     </div>
   );
-}
 
+  if (title) {
+    return (
+      <section className={cn("py-12 sm:py-16 lg:py-20 bg-white", className)}>
+        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="w-12 h-[3px] bg-brand-blue rounded-full mb-3.5 mx-auto" aria-hidden="true" />
+            <h2 className="text-2xl sm:text-[30px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug">
+              {title}
+            </h2>
+            {subtitle && (
+              <p className="text-[14.5px] sm:text-[15.5px] text-brand-text font-sans mt-2">
+                {subtitle}
+              </p>
+            )}
+          </div>
+          <div className="max-w-4xl mx-auto">{accordionCard}</div>
+        </div>
+      </section>
+    );
+  }
+
+  return accordionCard;
+}

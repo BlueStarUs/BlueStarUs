@@ -11,11 +11,38 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "picsum.photos",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i9.ytimg.com",
+      },
     ],
   },
   async redirects() {
     return [
       // 301 Permanent Redirects for Legacy / Old Site URLs
+      {
+        source: "/why-us",
+        destination: "/about#why-us",
+        permanent: true,
+      },
+      {
+        source: "/why-us/:path*",
+        destination: "/about#why-us",
+        permanent: true,
+      },
+      {
+        source: "/why-bluestars",
+        destination: "/about#why-us",
+        permanent: true,
+      },
       {
         source: "/about-us",
         destination: "/about",
@@ -174,11 +201,6 @@ const nextConfig: NextConfig = {
       {
         source: "/free-guides",
         destination: "/resources/guides",
-        permanent: true,
-      },
-      {
-        source: "/videos",
-        destination: "/resources/videos",
         permanent: true,
       },
       {

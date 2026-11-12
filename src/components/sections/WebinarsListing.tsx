@@ -26,9 +26,21 @@ export function WebinarsListing() {
 
   const filtered = WEBINARS_DATA.filter((w) => w.status === activeTab);
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!regEmail.trim()) return;
+    try {
+      await fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: regName.trim() || "Webinar Attendee",
+          email: regEmail.trim(),
+          serviceInterest: `Webinar Seat Reservation (${selectedWebinar?.title || "Webinar"})`,
+          message: `Reserved seat for: ${selectedWebinar?.title}. Date: ${selectedWebinar?.date} ${selectedWebinar?.time}`,
+        }),
+      });
+    } catch {}
     setRegSuccess(true);
     setTimeout(() => {
       setRegSuccess(false);
@@ -72,119 +84,151 @@ export function WebinarsListing() {
           </button>
         </div>
 
-        {/* Webinars Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filtered.map((webinar) => (
-            <div
-              key={webinar.id}
-              className="bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-8 shadow-xs hover:shadow-md hover:border-brand-blue/30 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* Header Tag & Duration */}
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <span
-                    className={cn(
-                      "inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] text-[11px] font-bold uppercase tracking-wider font-heading border",
-                      webinar.status === "upcoming"
-                        ? "bg-[#E3F5EA] text-[#2F9E5C] border-[#2F9E5C]/20"
-                        : "bg-brand-sky text-brand-blue border-brand-blue/20"
-                    )}
+        {/* Webinars Grid or Empty State */}
+        {filtered.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {filtered.map((webinar) => (
+              <div
+                key={webinar.id}
+                className="bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-8 shadow-xs hover:shadow-md hover:border-brand-blue/30 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Header Tag & Duration */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <span
+                      className={cn(
+                        "inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] text-[11px] font-bold uppercase tracking-wider font-heading border",
+                        webinar.status === "upcoming"
+                          ? "bg-[#E3F5EA] text-[#2F9E5C] border-[#2F9E5C]/20"
+                          : "bg-brand-sky text-brand-blue border-brand-blue/20"
+                      )}
+                    >
+                      {webinar.status === "upcoming" && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#2F9E5C] animate-pulse" />
+                      )}
+                      <span>{webinar.category}</span>
+                    </span>
+
+                    <span className="text-xs font-semibold text-brand-text flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-brand-blue" />
+                      <span>{webinar.duration}</span>
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-[23px] font-extrabold text-brand-navy font-heading mb-2 leading-snug">
+                    {webinar.title}
+                  </h3>
+
+                  <p className="text-[13.5px] font-semibold text-brand-navy/80 font-sans mb-3">
+                    {webinar.subtitle}
+                  </p>
+
+                  {/* Date & Time */}
+                  <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold text-brand-blue mb-4">
+                    <Calendar className="w-4 h-4" />
+                    <span>{webinar.date} {webinar.time && `• ${webinar.time}`}</span>
+                  </div>
+
+                  <p className="text-[14.5px] leading-[23px] text-brand-text font-sans mb-6">
+                    {webinar.description}
+                  </p>
+
+                  {/* Speaker Card */}
+                  <div className="flex items-center gap-3.5 p-3.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] mb-6">
+                    <div className="w-12 h-12 rounded-[5px] overflow-hidden relative flex-shrink-0">
+                      <Image
+                        src={webinar.speaker.avatar}
+                        alt={webinar.speaker.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <div className="text-xs sm:text-[13.5px] font-bold text-brand-navy font-heading">
+                        {webinar.speaker.name}
+                      </div>
+                      <div className="text-[11.5px] sm:text-xs text-brand-text">
+                        {webinar.speaker.role}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Topics Covered */}
+                  <div className="space-y-2 mb-6 pt-3 border-t border-[#edf4fb]">
+                    <div className="text-[11px] font-bold text-brand-navy font-heading uppercase tracking-wider">
+                      Key Topics Covered:
+                    </div>
+                    {webinar.topics.map((t, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs text-brand-navy/90">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue flex-shrink-0 mt-0.5" />
+                        <span>{t}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Footer */}
+                <div className="pt-4 border-t border-[#edf4fb] flex items-center justify-between gap-3">
+                  <span className="text-xs text-brand-text font-sans hidden sm:inline">
+                    {webinar.status === "upcoming" ? "Free registration • Interactive Q&A" : "Full recording • Instant replay"}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedWebinar(webinar);
+                      setRegSuccess(false);
+                    }}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all font-heading shadow-xs cursor-pointer"
                   >
-                    {webinar.status === "upcoming" && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2F9E5C] animate-pulse" />
+                    {webinar.status === "upcoming" ? (
+                      <>
+                        <span>Reserve Seat</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </>
+                    ) : (
+                      <>
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                        <span>Watch Replay Now</span>
+                      </>
                     )}
-                    <span>{webinar.category}</span>
-                  </span>
-
-                  <span className="text-xs font-semibold text-brand-text flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-brand-blue" />
-                    <span>{webinar.duration}</span>
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl sm:text-[23px] font-extrabold text-brand-navy font-heading mb-2 leading-snug">
-                  {webinar.title}
-                </h3>
-
-                <p className="text-[13.5px] font-semibold text-brand-navy/80 font-sans mb-3">
-                  {webinar.subtitle}
-                </p>
-
-                {/* Date & Time */}
-                <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold text-brand-blue mb-4">
-                  <Calendar className="w-4 h-4" />
-                  <span>{webinar.date} {webinar.time && `• ${webinar.time}`}</span>
-                </div>
-
-                <p className="text-[14.5px] leading-[23px] text-brand-text font-sans mb-6">
-                  {webinar.description}
-                </p>
-
-                {/* Speaker Card */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] mb-6">
-                  <div className="w-12 h-12 rounded-[5px] overflow-hidden relative flex-shrink-0">
-                    <Image
-                      src={webinar.speaker.avatar}
-                      alt={webinar.speaker.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-[13.5px] font-bold text-brand-navy font-heading">
-                      {webinar.speaker.name}
-                    </div>
-                    <div className="text-[11.5px] sm:text-xs text-brand-text">
-                      {webinar.speaker.role}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Topics Covered */}
-                <div className="space-y-2 mb-6 pt-3 border-t border-[#edf4fb]">
-                  <div className="text-[11px] font-bold text-brand-navy font-heading uppercase tracking-wider">
-                    Key Topics Covered:
-                  </div>
-                  {webinar.topics.map((t, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-brand-navy/90">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue flex-shrink-0 mt-0.5" />
-                      <span>{t}</span>
-                    </div>
-                  ))}
+                  </button>
                 </div>
               </div>
-
-              {/* Action Footer */}
-              <div className="pt-4 border-t border-[#edf4fb] flex items-center justify-between gap-3">
-                <span className="text-xs text-brand-text font-sans hidden sm:inline">
-                  {webinar.status === "upcoming" ? "Free registration • Interactive Q&A" : "Full recording • Instant replay"}
-                </span>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedWebinar(webinar);
-                    setRegSuccess(false);
-                  }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all font-heading shadow-xs cursor-pointer"
-                >
-                  {webinar.status === "upcoming" ? (
-                    <>
-                      <span>Reserve Your Seat (Free)</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </>
-                  ) : (
-                    <>
-                      <Play className="w-3.5 h-3.5 fill-current" />
-                      <span>Watch Replay Now</span>
-                    </>
-                  )}
-                </button>
-              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="bg-[#F8FBFE] rounded-[5px] border border-[#e2eef9] p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xs">
+            <div className="w-14 h-14 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center mx-auto mb-4">
+              <Radio className="w-7 h-7 text-brand-blue" />
             </div>
-          ))}
-        </div>
+            <span className="text-xs font-bold text-brand-blue uppercase tracking-wider font-heading px-2.5 py-1 rounded-[5px] bg-[#E3F1FC] mb-2 inline-block">
+              2025–2026 Admissions Season
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading mb-2">
+              New Live Masterclasses Coming Soon
+            </h3>
+            <p className="text-xs sm:text-[14px] leading-[22px] text-brand-text font-sans mb-6 max-w-lg mx-auto">
+              Our counseling team is scheduling the upcoming live webinars and UC PIQ workshops. In the meantime, you can explore all past on-demand replays or stream our library of 41+ video masterclasses.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => setActiveTab("past")}
+                className="px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-colors font-heading shadow-xs cursor-pointer"
+              >
+                <span>Browse On-Demand Replays</span>
+              </button>
+              <Link
+                href="/videos"
+                className="px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-brand-navy bg-white hover:bg-brand-sky border border-[#e2eef9] transition-colors font-heading"
+              >
+                <span>Watch 41+ Free Videos</span>
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Modal for Registration / Replay Access */}
         {selectedWebinar && (

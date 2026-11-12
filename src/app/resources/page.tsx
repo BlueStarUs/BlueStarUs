@@ -370,15 +370,15 @@ export default function ResourcesPage() {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
-                Interactive Webinars & Strategy Masterclasses
+                Interactive Webinars &amp; Strategy Masterclasses
               </h2>
             </div>
 
             <Link
-              href="/resources/webinars"
+              href="/events"
               className="inline-flex items-center gap-2 text-xs sm:text-[13.5px] font-bold text-brand-blue hover:text-brand-navy font-heading group"
             >
-              <span>View All Webinars & Replays</span>
+              <span>View All Events &amp; Webinars</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -441,7 +441,7 @@ export default function ResourcesPage() {
                     Free live registration • Interactive Q&A
                   </span>
                   <Link
-                    href="/resources/webinars"
+                    href="/events"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-colors font-heading shadow-xs"
                   >
                     <span>Reserve Seat</span>
@@ -493,6 +493,7 @@ export default function ResourcesPage() {
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                     

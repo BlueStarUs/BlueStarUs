@@ -1,42 +1,67 @@
+"use client";
+
 import React from "react";
-import { Search, FileText, Settings, Send, ChevronsRight } from "lucide-react";
+import Link from "next/link";
+import {
+  Calendar,
+  Compass,
+  Award,
+  GraduationCap,
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
+import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface ProcessStepItem {
+  step: string;
   stepNumber: string;
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
   accent: "blue" | "green";
+  ctaText?: string;
+  ctaHref?: string;
 }
 
-const PROCESS_STEPS_DATA: ProcessStepItem[] = [
+const GET_STARTED_STEPS: ProcessStepItem[] = [
   {
+    step: "Step 1",
     stepNumber: "01",
-    title: "Discover",
-    description: "Understand your goals, interests and strengths.",
-    icon: Search,
+    title: "Book a free 30-min consultation",
+    description:
+      "Let’s get together and talk about what Blue Stars can do for your teen and family. Meet one of our counselors and get to know us. If it feels right and we’re a good fit, we’ll set up the next step.",
+    icon: Calendar,
     accent: "blue",
+    ctaText: "Book Free Session",
+    ctaHref: HUBSPOT_CONSULTATION_URL,
   },
   {
+    step: "Step 2",
     stepNumber: "02",
-    title: "Plan",
-    description: "Create a personalized college list and strategy.",
-    icon: FileText,
+    title: "Get ready for College Admissions with a strategic plan",
+    description:
+      "We’ll meet for a 90-min in-depth consultation. Our lead counselor will assess your teen’s career path and create a detailed proposal showcasing their path to successful college admission and beyond.",
+    icon: Compass,
     accent: "green",
   },
   {
+    step: "Step 3",
     stepNumber: "03",
-    title: "Prepare",
-    description: "Work on applications, essays and requirements.",
-    icon: Settings,
+    title: "Solidify success. The future awaits great people",
+    description:
+      "Once you accept the proposal, we’ll celebrate our partnership and get started working with a designated counselor just for you and your teen.",
+    icon: Award,
     accent: "blue",
   },
   {
+    step: "Step 4",
     stepNumber: "04",
-    title: "Apply",
-    description: "Submit strong applications with confidence.",
-    icon: Send,
+    title: "Strategic & aligned for successful admissions applications",
+    description:
+      "Support. Skills development. Confidence. Self-reliance. Personal development leads the way to a desired college and becoming the leader the world needs your child to be.",
+    icon: GraduationCap,
     accent: "green",
   },
 ];
@@ -44,10 +69,10 @@ const PROCESS_STEPS_DATA: ProcessStepItem[] = [
 export function Process() {
   return (
     <section
-      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden text-center"
+      className="relative w-full py-14 sm:py-18 lg:py-22 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden border-b border-[#e2eef9]"
       id="planning"
     >
-      {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
+      {/* Decorative Organic Wave Shapes in Background */}
       <div
         className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/70 via-[#edf6fd]/30 to-transparent rounded-br-[220px] pointer-events-none"
         aria-hidden="true"
@@ -56,203 +81,113 @@ export function Process() {
         className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#e5f2fc]/70 via-[#eef6fe]/30 to-transparent rounded-tl-[200px] pointer-events-none"
         aria-hidden="true"
       />
-      <div
-        className="absolute bottom-0 left-0 w-[300px] h-[240px] bg-gradient-to-tr from-[#e7f3fd]/50 to-transparent rounded-tr-[160px] pointer-events-none"
-        aria-hidden="true"
-      />
 
-      {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header: Centered & Responsive */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-14 px-4">
-          {/* Pill Kicker with flanking lines */}
-          <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="w-8 sm:w-12 h-[1.5px] bg-brand-blue/30 rounded-full" aria-hidden="true" />
-            <span className="px-4 py-1 rounded-full bg-[#e3f1fc] text-brand-blue font-bold text-xs uppercase tracking-wider font-heading">
-              OUR PROCESS
-            </span>
-            <span className="w-8 sm:w-12 h-[1.5px] bg-brand-blue/30 rounded-full" aria-hidden="true" />
+        {/* Section Header: Centered & Responsive with Services Styling */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="w-12 h-[3px] bg-brand-blue rounded-full mb-3.5 origin-center" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
+            <span>OUR 4-STEP ADMISSIONS PATHWAY</span>
           </div>
 
-          {/* Main Title (Exact font hierarchy matching Services section) */}
-          <div className="relative inline-block mb-3.5">
-            <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
-              A Clear Path to{" "}
-              <span className="text-brand-blue relative inline-block">
-                Your College Goals
-                {/* Curved Arc Highlight Underneath "Your College Goals" */}
-                <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                  <svg
-                    className="w-44 sm:w-56 h-3 text-[#79bbf0] opacity-85"
-                    viewBox="0 0 240 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 9.5C65 2.5 175 2.5 238 9.5"
-                      stroke="currentColor"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px] mb-3.5">
+            Here’s how to get started
+          </h2>
 
-          {/* Lead Description */}
-          <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text max-w-2xl font-sans mt-1">
-            We make the college admissions process simple and structured, so you always know what&apos;s next.
+          <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans max-w-2xl">
+            A clear, collaborative, four-step path designed to guide your teen from initial exploration to admission into their dream college and beyond.
           </p>
         </div>
 
-        {/* 4 Cards Flow with Connecting Chevrons (Responsive 1-col on mobile, 2x2 on tablet, 4-col with >> on desktop) */}
-        <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-12 sm:gap-8 lg:gap-3 xl:gap-4">
-          {PROCESS_STEPS_DATA.map((step, index) => {
-            const Icon = step.icon;
-            const isBlue = step.accent === "blue";
-            const showChevron = index < PROCESS_STEPS_DATA.length - 1;
+        {/* 4-Step Responsive Cards Grid with Stepper Flow */}
+        <div className="relative">
+          {/* Subtle Stepper Line Behind Cards (Desktop) */}
+          <div
+            className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#2A8FD6]/20 via-[#0B63B5]/40 to-[#2F9E5C]/30 z-0"
+            aria-hidden="true"
+          />
 
-            return (
-              <React.Fragment key={step.stepNumber}>
-                {/* 3D Elevated Card Wrapper with Colored Base Plate */}
-                <div className="relative group w-full transition-all duration-300 hover:-translate-y-2">
-                  <div
-                    className={cn(
-                      "relative rounded-[26px] pb-[9px] transition-all duration-300",
-                      isBlue
-                        ? "bg-gradient-to-b from-[#4dbbfe] to-[#25a2f7] shadow-[0_14px_30px_-6px_rgba(37,162,247,0.38)] group-hover:shadow-[0_20px_36px_-6px_rgba(37,162,247,0.48)]"
-                        : "bg-gradient-to-b from-[#4fd890] to-[#2bc574] shadow-[0_14px_30px_-6px_rgba(43,197,116,0.38)] group-hover:shadow-[0_20px_36px_-6px_rgba(43,197,116,0.48)]"
-                    )}
-                  >
-                    {/* White Card Body */}
-                    <div className="bg-white rounded-[23px] pt-12 sm:pt-14 pb-8 sm:pb-9 px-5 sm:px-6 flex flex-col items-center text-center relative overflow-visible w-full min-h-[204px] sm:min-h-[214px]">
-                      {/* Top-Left Wave Ribbon with Step Number and 3D Fold Curl */}
-                      <div className="absolute top-0 left-0 w-[84px] h-[64px] pointer-events-none z-10 overflow-hidden rounded-tl-[5px]">
-                        <svg
-                          className="w-full h-full"
-                          viewBox="0 0 84 64"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <defs>
-                            <linearGradient
-                              id={`ribbon-grad-${step.stepNumber}`}
-                              x1="0"
-                              y1="0"
-                              x2="1"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stopColor={isBlue ? "#0A83F2" : "#28CF76"}
-                              />
-                              <stop
-                                offset="100%"
-                                stopColor={isBlue ? "#0860B3" : "#1BA95A"}
-                              />
-                            </linearGradient>
-                            <linearGradient
-                              id={`curl-grad-${step.stepNumber}`}
-                              x1="0"
-                              y1="0"
-                              x2="1"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stopColor="#FFFFFF"
-                                stopOpacity="0.85"
-                              />
-                              <stop
-                                offset="100%"
-                                stopColor="#FFFFFF"
-                                stopOpacity="0.15"
-                              />
-                            </linearGradient>
-                          </defs>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch relative z-10">
+            {GET_STARTED_STEPS.map((item, index) => {
+              const Icon = item.icon;
+              const isBlue = item.accent === "blue";
 
-                          {/* Colored Ribbon Wave Body */}
-                          <path
-                            d="M0 0H52C60 0 65 6 62 14C56 26 42 34 26 44C12 52 4 58 0 64V0Z"
-                            fill={`url(#ribbon-grad-${step.stepNumber})`}
-                          />
-
-                          {/* 3D Paper Fold / Ribbon Highlight Curl */}
-                          <path
-                            d="M52 0C60 6 62 14 54 22C44 32 30 40 18 48C8 54 2 58 0 62"
-                            stroke={`url(#curl-grad-${step.stepNumber})`}
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-
-                        {/* Bold White Step Number */}
-                        <span className="absolute top-2.5 left-3.5 text-xs sm:text-[13px] font-extrabold text-white font-heading tracking-tight select-none">
-                          {step.stepNumber}
-                        </span>
+              return (
+                <div
+                  key={item.step}
+                  className="bg-white rounded-[5px] border border-[#e5eef7] shadow-xs hover:shadow-[0_16px_36px_rgba(10,61,107,0.12)] hover:-translate-y-1.5 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden"
+                >
+                  {/* Card Top: Step Badge & Icon */}
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#E3F1FC] text-brand-blue font-heading font-extrabold text-xs sm:text-[12.5px] uppercase tracking-wider">
+                        <span>{item.step}</span>
                       </div>
 
-                      {/* Notched Shoulder Scoop on the Right of the Circle */}
-                      <svg
-                        className="absolute -top-[1px] left-[calc(50%+33px)] w-4 h-4 pointer-events-none hidden sm:block"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
+                      <div
+                        className={cn(
+                          "w-12 h-12 rounded-[5px] grid place-items-center transition-all duration-300 shadow-xs group-hover:scale-110",
+                          isBlue
+                            ? "bg-brand-blue text-white"
+                            : "bg-[#2F9E5C] text-white"
+                        )}
                       >
-                        <path
-                          d="M0 0C0 8.836 7.164 16 16 16L0 16V0Z"
-                          fill="#f8fbfe"
-                        />
-                      </svg>
-
-                      {/* Top-Center Floating Icon Disc (Overlapping the card top edge) */}
-                      <div className="absolute -top-9 sm:-top-10 left-1/2 -translate-x-1/2 z-20">
-                        <div
-                          className={cn(
-                            "w-[70px] h-[70px] sm:w-[74px] sm:h-[74px] rounded-full border-[3.5px] border-white shadow-[0_6px_18px_rgba(10,61,107,0.12)] grid place-items-center transition-transform duration-300 group-hover:scale-105",
-                            isBlue
-                              ? "bg-gradient-to-b from-[#f0f7fe] via-[#dcf0fd] to-[#c7e5fb]"
-                              : "bg-gradient-to-b from-[#f0fbf4] via-[#def7e6] to-[#c7f2d5]"
-                          )}
-                        >
-                          <Icon
-                            className={cn(
-                              "w-7 h-7 sm:w-8 sm:h-8 stroke-[2.2]",
-                              isBlue ? "text-brand-blue" : "text-brand-navy",
-                              step.stepNumber === "04" && "translate-x-0.5 -translate-y-0.5"
-                            )}
-                          />
-                        </div>
+                        <Icon className="w-6 h-6" />
                       </div>
-
-                      {/* Card Title */}
-                      <h3 className="text-[22px] sm:text-[24px] font-bold text-brand-navy font-heading mb-2.5 tracking-tight">
-                        {step.title}
-                      </h3>
-
-                      {/* Card Description */}
-                      <p className="text-[14.5px] sm:text-[16px] leading-[22px] sm:leading-[26px] text-brand-text font-sans max-w-[220px] mx-auto">
-                        {step.description}
-                      </p>
                     </div>
+
+                    {/* Step Title matching Services cards */}
+                    <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-3 leading-snug group-hover:text-brand-blue transition-colors">
+                      {item.title}
+                    </h3>
+
+                    {/* Step Description matching Services cards */}
+                    <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[26px] text-brand-text font-sans mb-4">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Card Bottom: Optional CTA or Progress Marker */}
+                  <div className="pt-5 mt-5 border-t border-[#edf4fb] flex items-center justify-between">
+                    {item.ctaHref ? (
+                      <Link
+                        href={item.ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[14px] sm:text-[15px] font-bold text-brand-blue hover:text-brand-navy font-heading transition-colors"
+                      >
+                        <span>{item.ctaText}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    ) : (
+                      <div className="flex items-center gap-1.5 text-[13.5px] sm:text-[14.5px] text-brand-text/80 font-medium font-sans">
+                        <CheckCircle2 className="w-4 h-4 text-[#2F9E5C]" />
+                        <span>Step {index + 1} of 4</span>
+                      </div>
+                    )}
+
+                    <span className="text-xs font-mono font-bold text-brand-navy/30">
+                      {item.stepNumber}
+                    </span>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+        </div>
 
-                {/* Connecting >> Chevron for Desktop Viewports */}
-                {showChevron && (
-                  <div
-                    className="hidden lg:flex items-center justify-center flex-shrink-0 px-0.5 xl:px-1 text-[#2A8FD6]"
-                    aria-hidden="true"
-                  >
-                    <ChevronsRight className="w-7 h-7 stroke-[2.8]" />
-                  </div>
-                )}
-              </React.Fragment>
-            );
-          })}
+        {/* Bottom Quick Action Banner */}
+        <div className="mt-12 sm:mt-14 text-center">
+          <Link
+            href={HUBSPOT_CONSULTATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-[5px] text-[14.5px] sm:text-[16px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+          >
+            <span>Book Your Free 30-Min Consultation</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

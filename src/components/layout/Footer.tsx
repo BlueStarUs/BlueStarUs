@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Award,
   Star,
+  Sparkles,
 } from "lucide-react";
 import {
   FacebookIcon,
@@ -22,6 +23,7 @@ import {
   LinkedinIcon,
   YoutubeIcon,
 } from "@/components/ui/Icons";
+import { FooterNewsletter } from "@/components/ui/FooterNewsletter";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const QUICK_LINKS = [
@@ -31,7 +33,8 @@ const QUICK_LINKS = [
   { name: "Testimonials", href: "/testimonials", icon: Star },
   { name: "Resources & Insights", href: "/resources", icon: BookOpen },
   { name: "Blogs & Articles", href: "/blogs", icon: BookOpen },
-  { name: "About", href: "/about", icon: Info },
+  { name: "About Us", href: "/about", icon: Info },
+  { name: "Why Us", href: "/about#why-us", icon: Award },
   { name: "Contact Us", href: "/contact", icon: Mail },
   { name: "Privacy Policy", href: "/privacy-policy", icon: ShieldCheck },
 ];
@@ -73,6 +76,24 @@ export function Footer() {
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Newsletter Subscription Bar: Get College Admissions Updates */}
+        <div className="pt-10 pb-8 sm:pt-12 sm:pb-10 border-b border-white/15 flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="text-center lg:text-left max-w-xl">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-[#79c3f7] font-bold font-heading mb-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
+              <span>Stay Ahead in Admissions</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white font-heading tracking-tight">
+              Get College Admissions Updates
+            </h3>
+            <p className="text-[13.5px] sm:text-[14.5px] text-[#bfe2fa]/85 font-sans mt-1">
+              Receive seasonal deadlines, expert webinars, Ivy &amp; UC strategy insights, and actionable tips delivered directly to your inbox.
+            </p>
+          </div>
+
+          <FooterNewsletter />
+        </div>
+
         {/* Main Footer Content Row */}
         <div className="py-14 sm:py-16 lg:py-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_auto_1.1fr_auto_1.35fr] gap-10 lg:gap-8 xl:gap-12 items-start">
           {/* Column 1: Brand Info & Socials */}
@@ -162,7 +183,7 @@ export function Footer() {
             <div className="w-10 h-[3px] bg-[#00b4d8] rounded-full mt-1.5 mb-5" />
 
             <nav className="w-full" aria-label="Footer Quick Links">
-              <ul className="space-y-2.5 w-full">
+              <ul className="space-y-2.5 w-full ">
                 {QUICK_LINKS.map((link) => {
                   const Icon = link.icon;
                   return (
@@ -252,7 +273,41 @@ export function Footer() {
             </span>
           </div>
 
-          <div className="flex items-center gap-6 sm:gap-8 flex-wrap justify-center">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+            {/* BBB Accredited Business Seal */}
+            <a
+              href="https://www.bbb.org/us/ca/san-francisco/profile/educational-consultant/blue-stars-admissions-consulting-1116-968560/#sealclick"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/95 hover:bg-white rounded-[5px] px-3 py-1.5 shadow-xs transition-all hover:scale-105"
+              title="Blue Stars Admissions Consulting BBB Business Review"
+            >
+              <Image
+                src="/images/badges/bbb-seal.png"
+                alt="Better Business Bureau Accredited Business A+ Rating"
+                width={110}
+                height={36}
+                className="h-6 sm:h-7 w-auto object-contain"
+              />
+            </a>
+
+            {/* 16 Years of Student Success Badge */}
+            <div
+              className="bg-white/95 rounded-[5px] px-2.5 py-1 shadow-xs flex items-center gap-2"
+              title="Blue Stars Admissions Consulting - 16 Years of Student Success"
+            >
+              <Image
+                src="/images/badges/16-years-success.png"
+                alt="16 Years of Student Success"
+                width={36}
+                height={30}
+                className="h-7 w-auto object-contain"
+              />
+              <span className="text-[10px] sm:text-[11px] font-extrabold text-[#07466F] font-heading leading-tight uppercase hidden sm:inline">
+                16 Years of<br />Student Success
+              </span>
+            </div>
+
             {/* HECA */}
             <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">
               <Image
@@ -300,10 +355,10 @@ export function Footer() {
             </Link>
             <span className="text-[#1c6496]" aria-hidden="true">|</span>
             <Link
-              href="/privacy-policy#safeguarding"
+              href="#"
               className="hover:text-white underline-offset-4 hover:underline transition-colors"
             >
-              Security &amp; Data Safeguards
+              Terms of Service
             </Link>
           </div>
         </div>

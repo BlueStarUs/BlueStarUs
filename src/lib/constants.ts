@@ -3,6 +3,9 @@ import { NavItem, NavServiceItem, NavResourceItem, ServiceItem, ProcessStep, Tes
 export const HUBSPOT_CONSULTATION_URL =
   "https://meetings-na2.hubspot.com/bluestars/initial-consultation";
 
+export const HUBSPOT_DISCOVERY_URL =
+  "https://meetings-na2.hubspot.com/bluestars/discovery-session";
+
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
   kicker: "EXPERT GUIDANCE. BRIGHTER OPPORTUNITIES.",
   headingLine1: "Your Future Starts",
@@ -31,6 +34,7 @@ export const SITE_CONFIG = {
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   url: "https://bluestars.us",
   consultationUrl: HUBSPOT_CONSULTATION_URL,
+  discoveryUrl: HUBSPOT_DISCOVERY_URL,
   contact: {
     email: "info@bluestars.us",
     phone: "415-426-9444",
@@ -56,6 +60,15 @@ export const NAV_LINKS: NavItem[] = [
 ];
 
 export const NAV_RESOURCES: NavResourceItem[] = [
+  {
+    id: "free-workbook",
+    title: "Free College Planning Workbook",
+    shortDescription: "Official 4-year planning roadmap and reflection prompts for students & parents.",
+    href: "/free-workbook",
+    badge: "Free PDF",
+    accent: "blue",
+    iconName: "book",
+  },
   {
     id: "guides",
     title: "Application Guides & Toolkits",
@@ -261,7 +274,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Sandy",
     title: "Trusted Guidance for All Three of Our Children",
     quote:
-      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them.",
+      "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard. Each child is completely different, and Blue Stars found the story true to each of them. We are deeply grateful for their guidance throughout each journey.",
     image: "/images/person/person1.png",
     authorRole: "Blue Stars Parent, Los Gatos, CA",
     location: "Los Gatos, CA",
@@ -270,8 +283,7 @@ export const TESTIMONIALS: Testimonial[] = [
     accent: "blue",
     fullStory: [
       "We have trusted Blue Stars with all three of our children. Our first was admitted to NYU Stern, our second to UC Berkeley, and our third was admitted to both Stanford and Harvard.",
-      "Each child is completely different, and Blue Stars found the story true to each of them. We are very grateful.",
-      "Blue Stars Admissions Consulting provided dedicated, personalized mentoring that celebrated each child's individual voice, strengths, and personal journey without ever resorting to one-size-fits-all formulas.",
+      "Each child is completely different, and Blue Stars found the story true to each of them. We are deeply grateful for their guidance throughout each journey.",
     ],
     tags: ["All 3 Children", "Stanford & Harvard", "UC Berkeley", "NYU Stern"],
   },
@@ -317,20 +329,20 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "adrian-brown-env",
     name: "Adrian",
-    title: "Positive Encouragement and a Place at Brown University",
+    title: "Her Positive Encouragement Was a Great Influence on My Son and Eventually He Was Offered a Place at Brown",
     quote:
-      "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering.",
+      "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering. She assisted us in applying for summer programs like Brown University Summer Camp and the COSMOS program. She also gave useful advice on college application essays and made sure our son was always staying on top of his college application schedule. We are deeply grateful to Blue Stars for their prompt and proper guidance and encouragement at each stage of the application process. The positive encouragement had a great influence on our son, and eventually, he was offered a place at Brown.",
     image: "/images/person/person2.png",
     authorRole: "Blue Stars Parent",
     location: "California",
-    admittedTo: "Brown University (Environmental Engineering)",
+    admittedTo: "Brown University",
     rating: 5,
     accent: "green",
     fullStory: [
       "Our son was introduced to Blue Stars in 10th grade. Although at that time he studied well and loved reading, he was not very confident and did not know which major to choose for college. After consulting his assigned counselor and Dr. Amy, he decided to major in environmental engineering. She assisted us in applying for summer programs like Brown University Summer Camp and the COSMOS program.",
       "She also gave useful advice on college application essays and made sure our son was always staying on top of his college application schedule. We are deeply grateful to Blue Stars for their prompt and proper guidance and encouragement at each stage of the application process. The positive encouragement had a great influence on our son, and eventually, he was offered a place at Brown.",
     ],
-    tags: ["Brown University", "COSMOS Program", "Environmental Engineering"],
+    tags: ["Brown University", "COSMOS Program", "10th Grade Start"],
   },
 ];
 
