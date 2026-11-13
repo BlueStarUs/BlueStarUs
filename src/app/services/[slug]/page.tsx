@@ -23,6 +23,7 @@ import { EssayGuidanceView } from "@/components/sections/EssayGuidanceView";
 import { ResearchInternshipsView } from "@/components/sections/ResearchInternshipsView";
 import { ArtAdmissionsView } from "@/components/sections/ArtAdmissionsView";
 import { BrandStar } from "@/components/ui/Icons";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SERVICES_CATALOG } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
 
@@ -48,12 +49,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const canonicalUrl = `https://bluestars.us/services/${slug}`;
+  const ogImage = "/images/og-image.png";
+
   return {
-    title: `${service.title} | Blue Stars Admissions Consulting`,
+    title: `${service.title} - Admissions Consulting`,
     description: service.subtitle,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${service.title} | Blue Stars Admissions Consulting`,
       description: service.subtitle,
+      url: canonicalUrl,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} - Blue Stars Admissions Consulting`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} | Blue Stars Admissions Consulting`,
+      description: service.subtitle,
+      images: [ogImage],
     },
   };
 }
@@ -87,35 +109,78 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: service.title, url: `/services/${slug}` },
+  ];
+
+  const jsonLdElements = (
+    <>
+      <ServiceJsonLd
+        name={service.title}
+        description={service.subtitle || service.shortDescription}
+        url={`https://bluestars.us/services/${slug}`}
+      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+    </>
+  );
+
   // Render the dedicated custom view with all local images & Framer Motion / GSAP animations
   if (slug === "college-admissions-consulting") {
-    return <CollegeAdmissionsConsultingView service={service} />;
+    return (
+      <>
+        {jsonLdElements}
+        <CollegeAdmissionsConsultingView service={service} />
+      </>
+    );
   }
 
   // Render the dedicated custom view for College Planning with 4 images & Framer Motion / GSAP animations
   if (slug === "college-planning") {
-    return <CollegePlanningView service={service} />;
+    return (
+      <>
+        {jsonLdElements}
+        <CollegePlanningView service={service} />
+      </>
+    );
   }
 
   // Render the dedicated custom view for Essay Guidance with images & Framer Motion / GSAP animations
   if (slug === "essay-guidance") {
-    return <EssayGuidanceView service={service} />;
+    return (
+      <>
+        {jsonLdElements}
+        <EssayGuidanceView service={service} />
+      </>
+    );
   }
 
   // Render the dedicated custom view for Research & Internships with images & Framer Motion / GSAP animations
   if (slug === "research-internships") {
-    return <ResearchInternshipsView service={service} />;
+    return (
+      <>
+        {jsonLdElements}
+        <ResearchInternshipsView service={service} />
+      </>
+    );
   }
 
   // Render the dedicated custom view for Art Admissions Consulting (BFA/MFA, portfolio mentorship)
   if (slug === "art-admissions-consulting" || slug === "art-admissions") {
-    return <ArtAdmissionsView service={service} />;
+    return (
+      <>
+        {jsonLdElements}
+        <ArtAdmissionsView service={service} />
+      </>
+    );
   }
 
   const isBlue = service.accent === "blue";
 
   return (
     <div className="w-full bg-white">
+      {jsonLdElements}
       {/* 1. Short, Compact Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[

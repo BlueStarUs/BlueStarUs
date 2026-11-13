@@ -6,16 +6,50 @@ import { ArrowRight } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { FAQKnowledgeBaseListing } from "@/components/sections/FAQKnowledgeBaseListing";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Admissions FAQ & Knowledge Base | Blue Stars Admissions Consulting",
+  title: "College Admissions FAQ & Knowledge Base",
   description:
-    "Comprehensive answers to top admissions questions covering college list strategy, Common App personal statements, UC PIQs, test-optional policies, and financial aid.",
+    "Comprehensive answers to top admissions questions covering college list strategy, Common App personal statements, UC PIQs, testing, and financial aid.",
+  alternates: {
+    canonical: "https://bluestars.us/resources/faq",
+  },
+  openGraph: {
+    title: "College Admissions FAQ & Knowledge Base | Blue Stars",
+    description:
+      "Comprehensive answers to top admissions questions covering college list strategy, Common App personal statements, UC PIQs, testing, and financial aid.",
+    url: "https://bluestars.us/resources/faq",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Admissions FAQ & Knowledge Base - Blue Stars",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Admissions FAQ & Knowledge Base | Blue Stars",
+    description:
+      "Comprehensive answers to top admissions questions covering college list strategy, Common App personal statements, UC PIQs, testing, and financial aid.",
+    images: ["/images/og-image.png"],
+  },
 };
 
 export default function FAQPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+    { name: "Admissions FAQ", url: "/resources/faq" },
+  ];
+
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      {/* Breadcrumb Hero */}
       {/* Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[
@@ -57,18 +91,20 @@ export default function FAQPage() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5">
-                  <Link
-                    href="/contact"
+                  <a
+                    href={HUBSPOT_CONSULTATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
                   >
-                    <span>Ask Our Counselors</span>
+                    <span>Book a Free Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
-                  </Link>
+                  </a>
                   <Link
-                    href="/services"
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-white border border-white/30 hover:bg-white/10 transition-all"
                   >
-                    <span>View Consulting Services</span>
+                    <span>Contact Us</span>
                   </Link>
                 </div>
               </div>

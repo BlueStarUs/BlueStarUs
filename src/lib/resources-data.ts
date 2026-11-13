@@ -8,7 +8,7 @@ export interface ResourceGuide {
   coverImage: string;
   pages: number;
   readTime: string;
-  downloadCount: string;
+  downloadCount?: string;
   updatedAt: string;
   featured?: boolean;
   highlights: string[];
@@ -73,7 +73,6 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/Ivy_League_Top_20_Admissions_Playbook.png",
     pages: 42,
     readTime: "25 min read",
-    downloadCount: "4,820+",
     updatedAt: "Fall 2024",
     featured: true,
     highlights: [
@@ -102,19 +101,18 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/University_of_California_PIQ_Mastery_Handbook.png",
     pages: 36,
     readTime: "20 min read",
-    downloadCount: "6,150+",
     updatedAt: "Updated for 2024–2025",
     featured: true,
     highlights: [
       "Breakdown of all 8 UC Personal Insight Prompts",
-      "Annotated real essays from admitted UC Berkeley & UCLA applicants",
+      "Prompt-by-prompt strategies and proven UC insight frameworks",
       "The 'Context, Action, Result' formula for 350-word limits",
       "UC Activities List optimization strategies (20 slots explained)",
     ],
     tableOfContents: [
       "1. How UC Admissions Differs from the Common Application",
       "2. Prompt-by-Prompt Strategy & Brainstorming Exercises",
-      "3. Real Student Essay Breakdowns (Accepted to Cal & UCLA)",
+      "3. Proven PIQ Structure & Reflection Frameworks",
       "4. Maximizing the 20 UC Activities and Awards Entries",
       "5. Common Mistakes That Derail UC Applications",
     ],
@@ -130,7 +128,6 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/Common_App_Personal_Statement_Guide.png",
     pages: 38,
     readTime: "22 min read",
-    downloadCount: "5,340+",
     updatedAt: "Fall 2024",
     featured: true,
     highlights: [
@@ -158,7 +155,6 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/College_Planning_Master_Checklist_Timeline.png",
     pages: 24,
     readTime: "15 min read",
-    downloadCount: "7,890+",
     updatedAt: "2024–2025 Edition",
     highlights: [
       "Grade-by-grade academic course selection guidance",
@@ -185,7 +181,6 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/Summer_Programs_Research_Directory.png",
     pages: 32,
     readTime: "18 min read",
-    downloadCount: "3,950+",
     updatedAt: "2024 Edition",
     highlights: [
       "The Tier 1 vs Tier 4 summer program breakdown (what colleges actually value)",
@@ -211,7 +206,6 @@ export const RESOURCE_GUIDES: ResourceGuide[] = [
     coverImage: "/images/resources/guides/Financial_Aid_Merit_Scholarship_Toolkit.png",
     pages: 30,
     readTime: "18 min read",
-    downloadCount: "3,410+",
     updatedAt: "Updated for New FAFSA",
     highlights: [
       "Understanding the Student Aid Index (SAI) calculation",
@@ -321,7 +315,7 @@ export const WEBINARS_DATA: WebinarItem[] = [
     id: "webinar-art-portfolio-excellence",
     slug: "art-portfolio-architecture-admissions",
     title: "Visual Arts, Design & Architecture Portfolio Strategy",
-    subtitle: "Curating a standout Slideroom portfolio for RISD, Cooper Union, Cornell, and top art programs.",
+    subtitle: "Curating a standout Slideroom portfolio for RISD, Pratt, Parsons, Cornell, and top art programs.",
     date: "Past Recording (September 2024)",
     time: "Recorded Live Session",
     speaker: {

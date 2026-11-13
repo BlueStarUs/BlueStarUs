@@ -7,11 +7,36 @@ import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { WebinarsListing } from "@/components/sections/WebinarsListing";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { BrandStar } from "@/components/ui/Icons";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Admissions Webinars & Workshops | Blue Stars Admissions Consulting",
+  title: "College Admissions Webinars & Live Workshops",
   description:
     "Join live admissions strategy masterclasses, interactive UC workshops, and on-demand college planning replays hosted by Dr. Amy Morgenstern.",
+  alternates: {
+    canonical: "https://bluestars.us/resources/webinars",
+  },
+  openGraph: {
+    title: "College Admissions Webinars & Live Workshops | Blue Stars",
+    description:
+      "Join live admissions strategy masterclasses, interactive UC workshops, and on-demand college planning replays hosted by Dr. Amy Morgenstern.",
+    url: "https://bluestars.us/resources/webinars",
+    images: [
+      {
+        url: "/images/sub_images/live_Admissions_Webinars.png",
+        width: 1200,
+        height: 630,
+        alt: "Blue Stars Admissions Consulting Webinars",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Admissions Webinars & Live Workshops | Blue Stars",
+    description:
+      "Join live admissions strategy masterclasses, interactive UC workshops, and on-demand college planning replays hosted by Dr. Amy Morgenstern.",
+    images: ["/images/sub_images/live_Admissions_Webinars.png"],
+  },
 };
 
 const WEBINAR_FAQS = [
@@ -38,8 +63,15 @@ const WEBINAR_FAQS = [
 ];
 
 export default function WebinarsPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+    { name: "Webinars", url: "/resources/webinars" },
+  ];
+
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbs} />
       {/* Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[

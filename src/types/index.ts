@@ -113,18 +113,21 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   coverImage: string;
-  category: "College Planning" | "Admissions Strategy" | "Essay Writing" | "Financial Aid" | "Interviews";
+  category: string;
   readTime: string;
   publishedAt: string;
+  dateIso?: string;
   author: BlogAuthor;
   accent: "blue" | "green";
   featured?: boolean;
   tags: string[];
-  intro: string[];
-  keyTakeaways: string[];
-  sections: BlogSection[];
-  conclusion: string[];
-  relatedSlugs: string[];
+  contentHtml?: string;
+  intro?: string[];
+  keyTakeaways?: string[];
+  sections?: BlogSection[];
+  conclusion?: string[];
+  relatedSlugs?: string[];
+  wordCount?: number;
 }
 
 export interface FAQItem {

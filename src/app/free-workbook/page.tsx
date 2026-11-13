@@ -11,15 +11,42 @@ import {
   Users,
   Award,
 } from "lucide-react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Free College Planning Foundations Workbook (PDF Download) | Blue Stars Admissions Consulting",
+  title: "Free 4-Year College Planning Workbook PDF",
   description:
-    "Download Dr. Amy Morgenstern's 4-Year College Planning Foundations Workbook. Guided self-reflection, activity roadmap, and narrative storytelling exercises for high school students.",
+    "Download Dr. Amy Morgenstern's 4-Year College Planning Foundations Workbook. Guided self-reflection, activity roadmap, and storytelling exercises for high school students.",
+  alternates: {
+    canonical: "https://bluestars.us/free-workbook",
+  },
+  openGraph: {
+    title: "Free 4-Year College Planning Workbook PDF | Blue Stars",
+    description:
+      "Download Dr. Amy Morgenstern's 4-Year College Planning Foundations Workbook with guided self-reflection prompts and roadmaps.",
+    url: "https://bluestars.us/free-workbook",
+    images: [
+      {
+        url: "/images/workbook-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "College Planning Foundations Workbook",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free 4-Year College Planning Workbook PDF | Blue Stars",
+    description:
+      "Download Dr. Amy Morgenstern's 4-Year College Planning Foundations Workbook with guided self-reflection prompts and roadmaps.",
+    images: ["/images/workbook-cover.png"],
+  },
 };
 
 const WORKBOOK_FAQS = [
@@ -51,21 +78,30 @@ const WORKBOOK_FAQS = [
 ];
 
 export default function FreeWorkbookPage() {
-  return (
-    <div className="w-full bg-white">
-      {/* Breadcrumb Hero with Blue Stars Services styling */}
-      <BreadcrumbHero
-        breadcrumbs={[
-          { label: "Resources", href: "/resources" },
-          { label: "Free Workbook: College Planning Foundations" },
-        ]}
-        badge="FREE STRATEGIC TOOLKIT"
-        title="College Planning Foundations Workbook"
-        description="A guided self-reflection and 4-year strategic roadmap created by Dr. Amy Morgenstern to help college-bound teens stand out with authenticity."
-      />
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+    { name: "Free College Planning Workbook", url: "/free-workbook" },
+  ];
 
-      {/* Main Free Workbook Lead Capture & Instant PDF Download Section */}
-      <FreeWorkbookSection />
+  return (
+    <>
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <Navbar />
+      <main className="flex-1 bg-white">
+        {/* Breadcrumb Hero with Blue Stars Services styling */}
+        <BreadcrumbHero
+          breadcrumbs={[
+            { label: "Resources", href: "/resources" },
+            { label: "Free Workbook: College Planning Foundations" },
+          ]}
+          badge="FREE STRATEGIC TOOLKIT"
+          title="College Planning Foundations Workbook"
+          description="A guided self-reflection and 4-year strategic roadmap created by Dr. Amy Morgenstern to help college-bound teens stand out with authenticity."
+        />
+
+        {/* Main Free Workbook Lead Capture & Instant PDF Download Section */}
+        <FreeWorkbookSection />
 
       {/* Why This Workbook Matters - 3 Column Feature Grid (Services Theme) */}
       <section className="py-12 sm:py-16 bg-[#F3F8FD] border-b border-[#e2eef9]">
@@ -113,7 +149,7 @@ export default function FreeWorkbookPage() {
                 16+ Years of Proven Results
               </h3>
               <p className="text-xs sm:text-[13.5px] leading-[22px] text-brand-text font-sans">
-                Over 30,000 students and families have downloaded this toolkit to gain clarity and guide their path into Stanford, Harvard, MIT, and premier colleges nationwide.
+                Created by Dr. Amy Morgenstern, this signature toolkit helps students and families gain clarity and guide their path into Stanford, Harvard, MIT, and premier colleges nationwide.
               </p>
             </div>
           </div>
@@ -160,7 +196,9 @@ export default function FreeWorkbookPage() {
           </div>
         </div>
       </section>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 

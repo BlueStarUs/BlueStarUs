@@ -23,9 +23,33 @@ import { BrandStar } from "@/components/ui/Icons";
 import { TeamMembersGrid } from "@/components/sections/TeamMembersGrid";
 
 export const metadata: Metadata = {
-  title: "About Us & Why Blue Stars | Blue Stars Admissions Consulting",
+  title: "About Us & Expert College Counselors",
   description:
-    "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our 90% top-choice track record, whole-student philosophy, senior counseling team, global reach, and 3 core pillars of admissions success.",
+    "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our 16+ years of student success, whole-student philosophy, and senior counseling team.",
+  alternates: {
+    canonical: "https://bluestars.us/about",
+  },
+  openGraph: {
+    title: "About Us & Expert College Counselors | Blue Stars",
+    description:
+      "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our 16+ years of student success, whole-student philosophy, and senior counseling team.",
+    url: "https://bluestars.us/about",
+    images: [
+      {
+        url: "/images/teams/Dr_Amy_Morgenstern.png",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Amy Morgenstern - Blue Stars Admissions Consulting",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us & Expert College Counselors | Blue Stars",
+    description:
+      "Learn about Blue Stars Admissions Consulting, founded by Dr. Amy Morgenstern. Discover our 16+ years of student success, whole-student philosophy, and senior counseling team.",
+    images: ["/images/teams/Dr_Amy_Morgenstern.png"],
+  },
 };
 
 const STRATEGIC_PILLARS = [
@@ -38,8 +62,8 @@ const STRATEGIC_PILLARS = [
 ];
 
 const ACHIEVEMENTS_DATA = [
-  { value: "90%", label: "Top-Choice Acceptances", subtext: "Admitted to schools of their choice" },
-  { value: "16+", label: "Years Guiding Families", subtext: "Since 2010 in SF Bay Area & beyond" },
+  { value: "16+", label: "Years of Student Success", subtext: "Guiding families since 2010" },
+  { value: "100%", label: "Personalized Support", subtext: "The Calm Way to college success" },
   { value: "Top 20", label: "Elite & UC Admissions", subtext: "Stanford, Ivy League & premier UCs" },
   { value: "1-on-1", label: "Dedicated Mentorship", subtext: "Tailored to every student's spike" },
 ];
@@ -471,7 +495,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#07466f]/90 backdrop-blur-md border border-white/20 text-white shadow-sm">
                   <Globe2 className="w-4 h-4 text-[#38bdf8]" />
                   <span className="text-xs sm:text-[13px] font-bold font-heading">
-                    Students Across 30+ US States &amp; 14+ Countries
+                    Serving Students Across the Bay Area &amp; Globally
                   </span>
                 </div>
               </div>
@@ -557,7 +581,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
                 <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
                 <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
-                  Former university faculty &amp; admissions readers
+                  Former university faculty &amp; admissions advisors
                 </span>
               </div>
               <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
@@ -611,7 +635,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Dedicated mentors combining academic rigor, admissions reader insight, and compassionate coaching.
+              Dedicated mentors combining academic rigor, university admissions insight, and compassionate coaching.
             </p>
           </div>
 

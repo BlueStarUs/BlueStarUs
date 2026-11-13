@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
+import { trackContactFormSubmission } from "@/lib/analytics";
 import { ContactFormData } from "@/types";
 
 export function Contact() {
@@ -35,6 +37,7 @@ export function Contact() {
       const response = await submitContactForm(formData);
       if (response.success) {
         setIsSuccess(true);
+        trackContactFormSubmission("contact_form");
         setFormData({
           fullName: "",
           email: "",
@@ -129,12 +132,24 @@ export function Contact() {
                 <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <Phone className="w-4 h-4" />
                 </span>
-                <a
-                  href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  {SITE_CONFIG.contact.phone}
-                </a>
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  <a
+                    href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                    className="hover:text-brand-blue transition-colors"
+                  >
+                    {SITE_CONFIG.contact.phone}
+                  </a>
+                  <a
+                    href="https://wa.me/14154269444?text=Hi%20Blue%20Stars%2C%20I%20am%20interested%20in%20college%20admissions%20counseling."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[4px] bg-[#25D366] hover:bg-[#20ba5a] text-white text-[11px] font-bold font-heading transition-colors"
+                    title="Chat on WhatsApp"
+                  >
+                    <WhatsAppIcon className="w-3 h-3" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
               </li>
 
               <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">

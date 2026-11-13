@@ -67,6 +67,16 @@ function getBotResponse(userText: string): {
 } {
   const query = userText.toLowerCase();
 
+  if (query.includes("@") || (query.includes("email") && query.length > 10)) {
+    return {
+      text: "Thank you for sharing your contact details! I have forwarded your inquiry directly to Dr. Amy Morgenstern and our senior counseling team. We will review your questions and reach out promptly. You can also book a live 30-minute consultation on Dr. Amy's calendar directly below:",
+      actionLink: {
+        label: "Schedule Free Consultation (HubSpot)",
+        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+      },
+    };
+  }
+
   if (query.includes("research") || query.includes("internship") || query.includes("academy")) {
     return {
       text: "Yes! At Blue Stars, we guide students in developing academic spikes through independent research projects, mentorship with university faculty, and prestigious summer internships. This provides compelling depth on college applications, especially for STEM, humanities, and pre-med tracks.",
@@ -83,7 +93,7 @@ function getBotResponse(userText: string): {
 
   if (query.includes("art") || query.includes("portfolio") || query.includes("risd") || query.includes("design")) {
     return {
-      text: "Our Art Admissions Consulting helps aspiring artists, architects, and designers build cohesive portfolios and articulate artist statements for top institutions like RISD, Cooper Union, Pratt, and Carnegie Mellon. Jeanie and Hye Won both secured RISD admissions with our coaching!",
+      text: "Our Art Admissions Consulting helps aspiring artists, architects, and designers build cohesive portfolios and articulate artist statements for top institutions like RISD, Pratt, Parsons, and Carnegie Mellon. Jeanie and Hye Won both secured RISD admissions with our coaching!",
       actionLink: { label: "Art Admissions Program", href: "/services/art-admissions-consulting" },
     };
   }
@@ -199,6 +209,25 @@ export function ChatBot() {
     setInputValue("");
     setQuotingMessage(null);
     setIsTyping(true);
+
+    // If user provided an email, forward automatically to admin leads & CRM
+    if (text.includes("@")) {
+      const extractedEmail = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/)?.[0] || text;
+      fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: "Chat Widget Visitor",
+          email: extractedEmail,
+          phone: "Not provided",
+          interest: "Chatbot Admissions Inquiry",
+          serviceInterest: "Live Chat Assistance",
+          message: text,
+          source: "Interactive Chat Widget",
+          formGuid: "557872d0-5bf5-45db-96d7-b07c4cc96c50",
+        }),
+      }).catch(() => {});
+    }
 
     // Simulate natural thinking delay
     setTimeout(() => {
@@ -347,7 +376,7 @@ export function ChatBot() {
                 </div>
                 <div className="text-[10.5px] text-white/80 font-sans truncate flex items-center gap-1 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Blue Stars Admissions Director</span>
+                  <span>Admissions Assistant • Dr. Amy &amp; Team</span>
                 </div>
               </div>
             </div>

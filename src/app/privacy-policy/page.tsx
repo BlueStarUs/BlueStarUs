@@ -19,14 +19,32 @@ import {
 import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Blue Stars Admissions Consulting",
+  title: "Privacy Policy",
   description:
     "Read the Blue Stars Admissions Consulting privacy policy. Learn how we collect, safeguard, and protect your personal data when you use bluestars.us.",
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/privacy-policy`,
+  },
   openGraph: {
     title: "Privacy Policy | Blue Stars Admissions Consulting",
     description:
       "Learn how Blue Stars Admissions Consulting protects your personal data and online privacy.",
     url: `${SITE_CONFIG.url}/privacy-policy`,
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Blue Stars Privacy Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Blue Stars Admissions Consulting",
+    description:
+      "Learn how Blue Stars Admissions Consulting protects your personal data and online privacy.",
+    images: ["/images/og-image.png"],
   },
 };
 

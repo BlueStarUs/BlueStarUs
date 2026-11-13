@@ -85,7 +85,7 @@ export function SiteSearchModal({
         title: "About Us & Why Blue Stars",
         category: "Page",
         href: "/about",
-        description: "Founded by Dr. Amy Morgenstern. Discover our 90% top-choice admissions track record and whole-student philosophy.",
+        description: "Founded by Dr. Amy Morgenstern. Discover our 16+ years of admissions track record and whole-student philosophy.",
         icon: Users,
       },
       {

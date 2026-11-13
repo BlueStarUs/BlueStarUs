@@ -49,7 +49,7 @@ const INITIAL_LEADS: ConsultationLead[] = [
     phone: "+1 (206) 555-0812",
     studentGrade: "10th Grade",
     interest: "Art Admissions Consulting",
-    targetColleges: "Rhode Island School of Design (RISD), Cooper Union, Pratt",
+    targetColleges: "Rhode Island School of Design (RISD), Pratt, Parsons",
     message: "Looking for early art portfolio curation, sketchbook review, and summer program application strategy.",
     status: "consulted",
     createdAt: "2026-11-04T09:20:00Z",

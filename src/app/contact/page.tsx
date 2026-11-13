@@ -22,6 +22,7 @@ import {
   PinterestIcon,
   LinkedinIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 } from "@/components/ui/Icons";
 import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_DISCOVERY_URL } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
@@ -180,24 +181,53 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Phone Card */}
-                <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-bold text-brand-navy/70 uppercase tracking-wider font-heading">
-                      Telephone & WhatsApp
+                {/* Telephone & WhatsApp Card */}
+                <div className="p-4 sm:p-4.5 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] flex items-center justify-center flex-shrink-0 shadow-xs">
+                      <Phone className="w-5 h-5" />
                     </div>
+                    <div className="min-w-0">
+                      <div className="text-[11px] font-bold text-brand-navy/70 uppercase tracking-wider font-heading flex items-center gap-1.5">
+                        <span>Telephone &amp; WhatsApp</span>
+                        <span className="px-1.5 py-0.2 rounded-[3px] bg-[#E3F5EA] text-[#2F9E5C] text-[9.5px] font-extrabold uppercase">
+                          Available
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <a
+                          href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                          className="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors font-heading"
+                        >
+                          {SITE_CONFIG.contact.phone}
+                        </a>
+                        <span className="text-[11px] text-brand-text">
+                          (Mon–Fri 9am–6pm PST)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Direct Contact Actions: Call & WhatsApp */}
+                  <div className="flex items-center gap-2 self-start sm:self-auto flex-shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-[#e2eef9] w-full sm:w-auto justify-end">
                     <a
                       href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-                      className="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors font-heading"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-brand-bg hover:bg-brand-sky text-brand-navy hover:text-brand-blue text-xs font-bold font-heading border border-brand-border transition-colors shadow-2xs"
+                      title="Direct Telephone Call"
                     >
-                      {SITE_CONFIG.contact.phone}
+                      <Phone className="w-3.5 h-3.5 text-brand-blue" />
+                      <span>Call</span>
                     </a>
-                    <span className="text-[11px] text-brand-text ml-2">
-                      (Mon–Fri 9am–6pm PST)
-                    </span>
+                    <a
+                      href="https://wa.me/14154269444?text=Hi%20Blue%20Stars%2C%20I%20am%20interested%20in%20college%20admissions%20counseling."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold font-heading transition-colors shadow-2xs"
+                      title="Chat on WhatsApp"
+                    >
+                      <WhatsAppIcon className="w-3.5 h-3.5" />
+                      <span>WhatsApp</span>
+                    </a>
                   </div>
                 </div>
 
@@ -400,14 +430,14 @@ export default function ContactPage() {
 
                       <div>
                         <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
-                          Phone Number <span className="text-brand-text/60 lowercase font-normal">(optional)</span>
+                          Phone / WhatsApp <span className="text-brand-text/60 lowercase font-normal">(optional)</span>
                         </label>
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone || ""}
                           onChange={handleChange}
-                          placeholder="(415) 000-0000"
+                          placeholder="(415) 000-0000 (Call or WhatsApp)"
                           className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all"
                         />
                       </div>
@@ -497,23 +527,46 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Phone */}
-            <div className="p-6 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center">
-              <div className="w-11 h-11 rounded-[5px] bg-brand-sky flex items-center justify-center mx-auto mb-3 text-brand-blue">
-                <Phone className="w-5 h-5" />
+            {/* Telephone & WhatsApp */}
+            <div className="p-6 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center flex flex-col justify-between">
+              <div>
+                <div className="w-11 h-11 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] flex items-center justify-center mx-auto mb-3 shadow-xs">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
+                  Telephone &amp; WhatsApp
+                </h3>
+                <p className="text-xs text-brand-text mb-2">
+                  Monday – Friday, 9:00 AM – 6:00 PM PST
+                </p>
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                  className="inline-block text-brand-navy hover:text-brand-blue font-heading font-bold text-sm sm:text-base mb-3 transition-colors"
+                >
+                  {SITE_CONFIG.contact.phone}
+                </a>
               </div>
-              <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
-                Telephone & Direct Call
-              </h3>
-              <p className="text-xs text-brand-text mb-2">
-                Monday – Friday, 9:00 AM – 6:00 PM PST
-              </p>
-              <a
-                href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-                className="inline-block text-brand-blue font-heading font-bold text-sm sm:text-base hover:underline"
-              >
-                {SITE_CONFIG.contact.phone}
-              </a>
+
+              <div className="flex items-center justify-center gap-2 pt-3 border-t border-brand-border/60">
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy hover:text-brand-blue text-xs font-bold font-heading border border-brand-border transition-colors shadow-2xs"
+                  title="Direct Telephone Call"
+                >
+                  <Phone className="w-3.5 h-3.5 text-brand-blue" />
+                  <span>Call</span>
+                </a>
+                <a
+                  href="https://wa.me/14154269444?text=Hi%20Blue%20Stars%2C%20I%20am%20interested%20in%20college%20admissions%20counseling."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold font-heading transition-colors shadow-2xs"
+                  title="Chat on WhatsApp"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
 
             {/* Email */}

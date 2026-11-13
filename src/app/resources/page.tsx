@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import {
   RESOURCE_GUIDES,
   WEBINARS_DATA,
@@ -27,9 +28,33 @@ import {
 } from "@/lib/resources-data";
 
 export const metadata: Metadata = {
-  title: "Resources & Insights | Blue Stars Admissions Consulting",
+  title: "College Admissions Resources & Toolkits",
   description:
-    "Comprehensive college admissions guides, live webinars, video masterclasses, FAQs, and expert insights designed to guide high school students and families toward acceptance at dream colleges.",
+    "Comprehensive college admissions guides, live webinars, video masterclasses, FAQs, and expert insights designed to guide high school students toward top colleges.",
+  alternates: {
+    canonical: "https://bluestars.us/resources",
+  },
+  openGraph: {
+    title: "College Admissions Resources & Toolkits | Blue Stars",
+    description:
+      "Comprehensive college admissions guides, live webinars, video masterclasses, FAQs, and expert insights designed to guide high school students toward top colleges.",
+    url: "https://bluestars.us/resources",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Blue Stars Admissions Consulting Resources & Insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Admissions Resources & Toolkits | Blue Stars",
+    description:
+      "Comprehensive college admissions guides, live webinars, video masterclasses, FAQs, and expert insights designed to guide high school students toward top colleges.",
+    images: ["/images/og-image.png"],
+  },
 };
 
 const RESOURCE_HUBS = [
@@ -131,7 +156,7 @@ const RESOURCE_HUBS = [
     highlights: [
       "Acceptances to Stanford, Harvard, MIT, Columbia & Yale",
       "UC Berkeley, UCLA, and Top Engineering Programs",
-      "RISD, Cooper Union, and Specialized Arts Colleges",
+      "RISD, Pratt, Parsons, and Specialized Arts Colleges",
     ],
     actionText: "Read Success Stories",
   },
@@ -163,9 +188,14 @@ const GENERAL_RESOURCE_FAQS = [
 export default function ResourcesPage() {
   const featuredGuides = RESOURCE_GUIDES.slice(0, 3);
   const upcomingWebinars = WEBINARS_DATA.slice(0, 2);
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+  ];
 
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbs} />
       {/* Short, Compact Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[{ label: "Resources & Insights" }]}

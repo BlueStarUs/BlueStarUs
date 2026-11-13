@@ -8,11 +8,36 @@ import { GuidesListing } from "@/components/sections/GuidesListing";
 import { FreeWorkbookSection } from "@/components/sections/FreeWorkbookSection";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
 import { BrandStar } from "@/components/ui/Icons";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Application Guides & Toolkits | Blue Stars Admissions Consulting",
+  title: "College Application Guides & Free PDF Downloads",
   description:
     "Free downloadable admissions guides, UC PIQ handbooks, Common App essay blueprints, and grade-by-grade college planning checklists created by senior counselors.",
+  alternates: {
+    canonical: "https://bluestars.us/resources/guides",
+  },
+  openGraph: {
+    title: "College Application Guides & Free PDF Downloads | Blue Stars",
+    description:
+      "Free downloadable admissions guides, UC PIQ handbooks, Common App essay blueprints, and grade-by-grade college planning checklists created by senior counselors.",
+    url: "https://bluestars.us/resources/guides",
+    images: [
+      {
+        url: "/images/workbook-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "College Application Guides & Toolkits - Blue Stars",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Application Guides & Free PDF Downloads | Blue Stars",
+    description:
+      "Free downloadable admissions guides, UC PIQ handbooks, Common App essay blueprints, and grade-by-grade college planning checklists created by senior counselors.",
+    images: ["/images/workbook-cover.png"],
+  },
 };
 
 const GUIDES_FAQS = [
@@ -29,7 +54,7 @@ const GUIDES_FAQS = [
   {
     question: "How do your guides compare to generic advice found online?",
     answer:
-      "Our guides are developed by former admissions reviewers and master educators led by Dr. Amy Morgenstern. Rather than surface-level tips, our blueprints include annotated real-life essays from admitted students, holistic scoring rubrics, and concrete action plans.",
+      "Our guides are developed by experienced admissions strategists and master educators led by Dr. Amy Morgenstern. Rather than surface-level tips, our blueprints include proven narrative frameworks, strategic self-reflection prompts, holistic scoring rubrics, and concrete action plans.",
   },
   {
     question: "Do you offer individualized guidance if we need personalized help?",
@@ -39,8 +64,15 @@ const GUIDES_FAQS = [
 ];
 
 export default function GuidesPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+    { name: "Application Guides", url: "/resources/guides" },
+  ];
+
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbs} />
       {/* Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[
@@ -80,8 +112,8 @@ export default function GuidesPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9]">
-                  <div className="text-2xl font-extrabold text-brand-blue font-heading">30,000+</div>
-                  <div className="text-xs font-semibold text-brand-navy font-heading mt-0.5">Guides Downloaded</div>
+                  <div className="text-2xl font-extrabold text-brand-blue font-heading">16+</div>
+                  <div className="text-xs font-semibold text-brand-navy font-heading mt-0.5">Years of Success</div>
                 </div>
                 <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9]">
                   <div className="text-2xl font-extrabold text-brand-blue font-heading">100%</div>

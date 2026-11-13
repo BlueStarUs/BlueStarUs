@@ -30,9 +30,38 @@ export function GuidesListing() {
       ? RESOURCE_GUIDES
       : RESOURCE_GUIDES.filter((g) => g.category === selectedCategory);
 
-  const handleDownloadSubmit = (e: React.FormEvent) => {
+  const handleDownloadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!emailInput.trim()) return;
+    if (!emailInput.trim() || !activeGuideModal) return;
+
+    try {
+      // Record lead in admin leads endpoint
+      await fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: "Guide Download Lead",
+          email: emailInput.trim(),
+          phone: "Not provided",
+          interest: `Guide Download: ${activeGuideModal.title}`,
+          serviceInterest: activeGuideModal.title,
+          message: `User downloaded '${activeGuideModal.title}' (${activeGuideModal.pages} pages PDF) from Application Guides page.`,
+          source: "Application Guides Download Modal",
+          formGuid: "557872d0-5bf5-45db-96d7-b07c4cc96c50",
+        }),
+      });
+    } catch {
+      // fallback gracefully
+    }
+
+    // Trigger instant browser download of the PDF
+    const link = document.createElement("a");
+    link.href = `/downloads/${activeGuideModal.slug}.pdf`;
+    link.download = `${activeGuideModal.slug}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     setDownloadSuccess(true);
     setTimeout(() => {
       setDownloadSuccess(false);

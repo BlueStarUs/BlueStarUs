@@ -5,6 +5,11 @@ import { Sidebar } from "@/components/layout/Sidebar";
 export const metadata: Metadata = {
   title: "Student Portal & Dashboard",
   description: "Manage your college list, track application deadlines, and view mentor feedback.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function DashboardLayout({

@@ -153,7 +153,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                       <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
                     ))}
                   </div>
-                  <span>Downloaded by 30,000+ Students &amp; Families</span>
+                  <span>Guided by 16+ Years of Admissions Experience</span>
                 </div>
               </div>
             </div>

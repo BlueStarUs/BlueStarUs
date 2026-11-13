@@ -1,0 +1,2204 @@
+[
+  {
+    "source": "/about-us",
+    "destination": "/about",
+    "permanent": true,
+    "note": "Legacy About URL"
+  },
+  {
+    "source": "/about-us/:path*",
+    "destination": "/about",
+    "permanent": true,
+    "note": "Legacy About Subpaths"
+  },
+  {
+    "source": "/why-us",
+    "destination": "/about#why-us",
+    "permanent": true,
+    "note": "Legacy Why Us"
+  },
+  {
+    "source": "/why-us/:path*",
+    "destination": "/about#why-us",
+    "permanent": true,
+    "note": "Legacy Why Us Subpaths"
+  },
+  {
+    "source": "/why-bluestars",
+    "destination": "/about#why-us",
+    "permanent": true,
+    "note": "Legacy Why BlueStars"
+  },
+  {
+    "source": "/meet-our-team",
+    "destination": "/about#team",
+    "permanent": true,
+    "note": "Legacy Team URL"
+  },
+  {
+    "source": "/our-team",
+    "destination": "/about#team",
+    "permanent": true,
+    "note": "Legacy Team URL"
+  },
+  {
+    "source": "/dr-amy-morgenstern",
+    "destination": "/about",
+    "permanent": true,
+    "note": "Legacy Founder Bio URL"
+  },
+  {
+    "source": "/contact-us",
+    "destination": "/contact",
+    "permanent": true,
+    "note": "Legacy Contact URL"
+  },
+  {
+    "source": "/contact-us/:path*",
+    "destination": "/contact",
+    "permanent": true,
+    "note": "Legacy Contact Subpaths"
+  },
+  {
+    "source": "/our-services",
+    "destination": "/services",
+    "permanent": true,
+    "note": "Legacy Services URL"
+  },
+  {
+    "source": "/services-overview",
+    "destination": "/services",
+    "permanent": true,
+    "note": "Legacy Services Overview URL"
+  },
+  {
+    "source": "/admissions-consulting",
+    "destination": "/services/college-admissions-consulting",
+    "permanent": true,
+    "note": "Legacy Admissions Consulting URL"
+  },
+  {
+    "source": "/college-planning",
+    "destination": "/services/college-planning",
+    "permanent": true,
+    "note": "Legacy College Planning URL"
+  },
+  {
+    "source": "/college-admissions-consulting",
+    "destination": "/services/college-admissions-consulting",
+    "permanent": true,
+    "note": "Legacy Consulting URL"
+  },
+  {
+    "source": "/comprehensive-application-strategy",
+    "destination": "/services/application-strategy",
+    "permanent": true,
+    "note": "Legacy Strategy URL"
+  },
+  {
+    "source": "/application-strategy",
+    "destination": "/services/application-strategy",
+    "permanent": true,
+    "note": "Direct Service URL"
+  },
+  {
+    "source": "/essay-guidance",
+    "destination": "/services/essay-guidance",
+    "permanent": true,
+    "note": "Legacy Essay Guidance URL"
+  },
+  {
+    "source": "/research-internships",
+    "destination": "/services/research-internships",
+    "permanent": true,
+    "note": "Legacy Research Internships URL"
+  },
+  {
+    "source": "/research-academy",
+    "destination": "/services/research-internships",
+    "permanent": true,
+    "note": "Legacy Research Academy URL"
+  },
+  {
+    "source": "/art-school-admissions",
+    "destination": "/art-admissions",
+    "permanent": true,
+    "note": "Legacy Art Admissions URL"
+  },
+  {
+    "source": "/results",
+    "destination": "/successes",
+    "permanent": true,
+    "note": "Legacy Results URL"
+  },
+  {
+    "source": "/case-studies",
+    "destination": "/stories",
+    "permanent": true,
+    "note": "Legacy Case Studies URL"
+  },
+  {
+    "source": "/case-studies/:path*",
+    "destination": "/stories",
+    "permanent": true,
+    "note": "Legacy Case Studies Subpaths"
+  },
+  {
+    "source": "/privacy",
+    "destination": "/privacy-policy",
+    "permanent": true,
+    "note": "Legacy Privacy URL"
+  },
+  {
+    "source": "/privacy-statement",
+    "destination": "/privacy-policy",
+    "permanent": true,
+    "note": "Legacy Privacy Statement URL"
+  },
+  {
+    "source": "/faq",
+    "destination": "/resources/faq",
+    "permanent": true,
+    "note": "Legacy FAQ URL"
+  },
+  {
+    "source": "/faqs",
+    "destination": "/resources/faq",
+    "permanent": true,
+    "note": "Legacy FAQs URL"
+  },
+  {
+    "source": "/guides",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Legacy Guides URL"
+  },
+  {
+    "source": "/free-guides",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Legacy Free Guides URL"
+  },
+  {
+    "source": "/webinars",
+    "destination": "/resources/webinars",
+    "permanent": true,
+    "note": "Legacy Webinars URL"
+  },
+  {
+    "source": "/free-consultation",
+    "destination": "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    "permanent": true,
+    "note": "HubSpot Consultation"
+  },
+  {
+    "source": "/initial-consultation",
+    "destination": "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    "permanent": true,
+    "note": "HubSpot Consultation"
+  },
+  {
+    "source": "/consultation",
+    "destination": "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    "permanent": true,
+    "note": "HubSpot Consultation"
+  },
+  {
+    "source": "/book-consultation",
+    "destination": "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    "permanent": true,
+    "note": "HubSpot Consultation"
+  },
+  {
+    "source": "/schedule",
+    "destination": "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+    "permanent": true,
+    "note": "HubSpot Consultation"
+  },
+  {
+    "source": "/blog",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Legacy Blog Archive URL"
+  },
+  {
+    "source": "/blog/:slug*",
+    "destination": "/blogs/:slug*",
+    "permanent": true,
+    "note": "Legacy /blog/ Wildcard"
+  },
+  {
+    "source": "/articles",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Legacy Articles Archive URL"
+  },
+  {
+    "source": "/articles/:slug*",
+    "destination": "/blogs/:slug*",
+    "permanent": true,
+    "note": "Legacy /articles/ Wildcard"
+  },
+  {
+    "source": "/feed",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "RSS Feed Redirect"
+  },
+  {
+    "source": "/feed/:path*",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "RSS Subfeed Redirect"
+  },
+  {
+    "source": "/category/21st-century-teenhood-and-toxic-stress",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Category: 21st-century-teenhood-and-toxic-stress"
+  },
+  {
+    "source": "/category/series/21st-century-teenhood-and-toxic-stress",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/21st-century-teenhood-and-toxic-stress"
+  },
+  {
+    "source": "/category/college-admissions-tips/21st-century-teenhood-and-toxic-stress",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/21st-century-teenhood-and-toxic-stress"
+  },
+  {
+    "source": "/category/admissions-survival-toolkit",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: admissions-survival-toolkit"
+  },
+  {
+    "source": "/category/series/admissions-survival-toolkit",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/admissions-survival-toolkit"
+  },
+  {
+    "source": "/category/college-admissions-tips/admissions-survival-toolkit",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/admissions-survival-toolkit"
+  },
+  {
+    "source": "/category/application-essay-writing",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Category: application-essay-writing"
+  },
+  {
+    "source": "/category/series/application-essay-writing",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/application-essay-writing"
+  },
+  {
+    "source": "/category/college-admissions-tips/application-essay-writing",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/application-essay-writing"
+  },
+  {
+    "source": "/category/art-school",
+    "destination": "/blogs?category=Art+Admissions",
+    "permanent": true,
+    "note": "Old Category: art-school"
+  },
+  {
+    "source": "/category/series/art-school",
+    "destination": "/blogs?category=Art+Admissions",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/art-school"
+  },
+  {
+    "source": "/category/college-admissions-tips/art-school",
+    "destination": "/blogs?category=Art+Admissions",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/art-school"
+  },
+  {
+    "source": "/category/blue-stars-programs",
+    "destination": "/services",
+    "permanent": true,
+    "note": "Old Category: blue-stars-programs"
+  },
+  {
+    "source": "/category/series/blue-stars-programs",
+    "destination": "/services",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/blue-stars-programs"
+  },
+  {
+    "source": "/category/college-admissions-tips/blue-stars-programs",
+    "destination": "/services",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/blue-stars-programs"
+  },
+  {
+    "source": "/category/career",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Category: career"
+  },
+  {
+    "source": "/category/series/career",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/career"
+  },
+  {
+    "source": "/category/college-admissions-tips/career",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/career"
+  },
+  {
+    "source": "/category/college-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: college-admissions-tips"
+  },
+  {
+    "source": "/category/series/college-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/college-admissions-tips"
+  },
+  {
+    "source": "/category/college-admissions-tips/college-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/college-admissions-tips"
+  },
+  {
+    "source": "/category/college-planning",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Category: college-planning"
+  },
+  {
+    "source": "/category/series/college-planning",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/college-planning"
+  },
+  {
+    "source": "/category/college-admissions-tips/college-planning",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/college-planning"
+  },
+  {
+    "source": "/category/college-tours",
+    "destination": "/blogs?category=College+Tours",
+    "permanent": true,
+    "note": "Old Category: college-tours"
+  },
+  {
+    "source": "/category/series/college-tours",
+    "destination": "/blogs?category=College+Tours",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/college-tours"
+  },
+  {
+    "source": "/category/college-admissions-tips/college-tours",
+    "destination": "/blogs?category=College+Tours",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/college-tours"
+  },
+  {
+    "source": "/category/covid",
+    "destination": "/blogs?category=Admissions+Archives",
+    "permanent": true,
+    "note": "Old Category: covid"
+  },
+  {
+    "source": "/category/series/covid",
+    "destination": "/blogs?category=Admissions+Archives",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/covid"
+  },
+  {
+    "source": "/category/college-admissions-tips/covid",
+    "destination": "/blogs?category=Admissions+Archives",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/covid"
+  },
+  {
+    "source": "/category/early-acceptance",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: early-acceptance"
+  },
+  {
+    "source": "/category/series/early-acceptance",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/early-acceptance"
+  },
+  {
+    "source": "/category/college-admissions-tips/early-acceptance",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/early-acceptance"
+  },
+  {
+    "source": "/category/expert-interviews",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Category: expert-interviews"
+  },
+  {
+    "source": "/category/series/expert-interviews",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/expert-interviews"
+  },
+  {
+    "source": "/category/college-admissions-tips/expert-interviews",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/expert-interviews"
+  },
+  {
+    "source": "/category/extracurriculars-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Category: extracurriculars-summer-programs"
+  },
+  {
+    "source": "/category/series/extracurriculars-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/extracurriculars-summer-programs"
+  },
+  {
+    "source": "/category/college-admissions-tips/extracurriculars-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/extracurriculars-summer-programs"
+  },
+  {
+    "source": "/category/extracurriculars-and-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Category: extracurriculars-and-summer-programs"
+  },
+  {
+    "source": "/category/series/extracurriculars-and-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/extracurriculars-and-summer-programs"
+  },
+  {
+    "source": "/category/college-admissions-tips/extracurriculars-and-summer-programs",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/extracurriculars-and-summer-programs"
+  },
+  {
+    "source": "/category/featured",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Old Category: featured"
+  },
+  {
+    "source": "/category/series/featured",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/featured"
+  },
+  {
+    "source": "/category/college-admissions-tips/featured",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/featured"
+  },
+  {
+    "source": "/category/graduate-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: graduate-admissions-tips"
+  },
+  {
+    "source": "/category/series/graduate-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/graduate-admissions-tips"
+  },
+  {
+    "source": "/category/college-admissions-tips/graduate-admissions-tips",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/graduate-admissions-tips"
+  },
+  {
+    "source": "/category/interview",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Category: interview"
+  },
+  {
+    "source": "/category/series/interview",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/interview"
+  },
+  {
+    "source": "/category/college-admissions-tips/interview",
+    "destination": "/blogs?category=Expert+Interviews",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/interview"
+  },
+  {
+    "source": "/category/ivy-league",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: ivy-league"
+  },
+  {
+    "source": "/category/series/ivy-league",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/ivy-league"
+  },
+  {
+    "source": "/category/college-admissions-tips/ivy-league",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/ivy-league"
+  },
+  {
+    "source": "/category/medical-school-admissions",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Category: medical-school-admissions"
+  },
+  {
+    "source": "/category/series/medical-school-admissions",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/medical-school-admissions"
+  },
+  {
+    "source": "/category/college-admissions-tips/medical-school-admissions",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/medical-school-admissions"
+  },
+  {
+    "source": "/category/mental-health",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Category: mental-health"
+  },
+  {
+    "source": "/category/series/mental-health",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/mental-health"
+  },
+  {
+    "source": "/category/college-admissions-tips/mental-health",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/mental-health"
+  },
+  {
+    "source": "/category/research",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Category: research"
+  },
+  {
+    "source": "/category/series/research",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/research"
+  },
+  {
+    "source": "/category/college-admissions-tips/research",
+    "destination": "/blogs?category=STEM+%26+Research",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/research"
+  },
+  {
+    "source": "/category/mentorship",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Category: mentorship"
+  },
+  {
+    "source": "/category/series/mentorship",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/mentorship"
+  },
+  {
+    "source": "/category/college-admissions-tips/mentorship",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/mentorship"
+  },
+  {
+    "source": "/category/sat",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: sat"
+  },
+  {
+    "source": "/category/series/sat",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/sat"
+  },
+  {
+    "source": "/category/college-admissions-tips/sat",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/sat"
+  },
+  {
+    "source": "/category/student-success",
+    "destination": "/stories",
+    "permanent": true,
+    "note": "Old Category: student-success"
+  },
+  {
+    "source": "/category/series/student-success",
+    "destination": "/stories",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/student-success"
+  },
+  {
+    "source": "/category/college-admissions-tips/student-success",
+    "destination": "/stories",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/student-success"
+  },
+  {
+    "source": "/category/the-calm-way-series",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Category: the-calm-way-series"
+  },
+  {
+    "source": "/category/series/the-calm-way-series",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/the-calm-way-series"
+  },
+  {
+    "source": "/category/college-admissions-tips/the-calm-way-series",
+    "destination": "/blogs?category=The+Calm+Way",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/the-calm-way-series"
+  },
+  {
+    "source": "/category/tools",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Old Category: tools"
+  },
+  {
+    "source": "/category/series/tools",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/tools"
+  },
+  {
+    "source": "/category/college-admissions-tips/tools",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/tools"
+  },
+  {
+    "source": "/category/uc-personal-insight-question",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Category: uc-personal-insight-question"
+  },
+  {
+    "source": "/category/series/uc-personal-insight-question",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/uc-personal-insight-question"
+  },
+  {
+    "source": "/category/college-admissions-tips/uc-personal-insight-question",
+    "destination": "/blogs?category=UC+PIQs+%26+Essays",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/uc-personal-insight-question"
+  },
+  {
+    "source": "/category/undergraduate-admissions",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Category: undergraduate-admissions"
+  },
+  {
+    "source": "/category/series/undergraduate-admissions",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/undergraduate-admissions"
+  },
+  {
+    "source": "/category/college-admissions-tips/undergraduate-admissions",
+    "destination": "/blogs?category=Admissions+Strategy",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/undergraduate-admissions"
+  },
+  {
+    "source": "/category/undergraduate-majors-and-minors",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Category: undergraduate-majors-and-minors"
+  },
+  {
+    "source": "/category/series/undergraduate-majors-and-minors",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/undergraduate-majors-and-minors"
+  },
+  {
+    "source": "/category/college-admissions-tips/undergraduate-majors-and-minors",
+    "destination": "/blogs?category=College+Planning",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/undergraduate-majors-and-minors"
+  },
+  {
+    "source": "/category/videos",
+    "destination": "/resources/videos",
+    "permanent": true,
+    "note": "Old Category: videos"
+  },
+  {
+    "source": "/category/series/videos",
+    "destination": "/resources/videos",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/videos"
+  },
+  {
+    "source": "/category/college-admissions-tips/videos",
+    "destination": "/resources/videos",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/videos"
+  },
+  {
+    "source": "/category/problems-plaguing-todays-teens",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Category: problems-plaguing-todays-teens"
+  },
+  {
+    "source": "/category/series/problems-plaguing-todays-teens",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: series/problems-plaguing-todays-teens"
+  },
+  {
+    "source": "/category/college-admissions-tips/problems-plaguing-todays-teens",
+    "destination": "/blogs?category=Student+Well-Being",
+    "permanent": true,
+    "note": "Old Hierarchical Category: college-admissions-tips/problems-plaguing-todays-teens"
+  },
+  {
+    "source": "/category",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Old Category Root Archive"
+  },
+  {
+    "source": "/category/:path*",
+    "destination": "/blogs",
+    "permanent": true,
+    "note": "Category Fallback to Blogs"
+  },
+  {
+    "source": "/testimonial/college-application-process",
+    "destination": "/testimonials",
+    "permanent": true,
+    "note": "Legacy Testimonial Slug"
+  },
+  {
+    "source": "/testimonial/multitude-of-opportunities",
+    "destination": "/testimonials",
+    "permanent": true,
+    "note": "Legacy Testimonial Slug"
+  },
+  {
+    "source": "/testimonial/better-writer",
+    "destination": "/testimonials",
+    "permanent": true,
+    "note": "Legacy Testimonial Slug"
+  },
+  {
+    "source": "/testimonial/sandy-los-gatos",
+    "destination": "/stories/sandy-los-gatos",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sandy-los-gatos"
+  },
+  {
+    "source": "/testimonial/sharon-washu-ed",
+    "destination": "/stories/sharon-washu-ed",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sharon-washu-ed"
+  },
+  {
+    "source": "/testimonial/jeanie-risd-arts",
+    "destination": "/stories/jeanie-risd-arts",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: jeanie-risd-arts"
+  },
+  {
+    "source": "/testimonial/henry-three-children",
+    "destination": "/stories/henry-three-children",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: henry-three-children"
+  },
+  {
+    "source": "/testimonial/adrian-brown-env",
+    "destination": "/stories/adrian-brown-env",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: adrian-brown-env"
+  },
+  {
+    "source": "/testimonial/angela-brian-palo-alto",
+    "destination": "/stories/angela-brian-palo-alto",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: angela-brian-palo-alto"
+  },
+  {
+    "source": "/testimonial/sara-monta-vista",
+    "destination": "/stories/sara-monta-vista",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sara-monta-vista"
+  },
+  {
+    "source": "/testimonial/matt-lowell-high",
+    "destination": "/stories/matt-lowell-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: matt-lowell-high"
+  },
+  {
+    "source": "/testimonial/carmen-best-fit",
+    "destination": "/stories/carmen-best-fit",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: carmen-best-fit"
+  },
+  {
+    "source": "/testimonial/nate-harker",
+    "destination": "/stories/nate-harker",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: nate-harker"
+  },
+  {
+    "source": "/testimonial/alek-irena-international",
+    "destination": "/stories/alek-irena-international",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: alek-irena-international"
+  },
+  {
+    "source": "/testimonial/janet-dartmouth-ed",
+    "destination": "/stories/janet-dartmouth-ed",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: janet-dartmouth-ed"
+  },
+  {
+    "source": "/testimonial/mia-saratoga-biotech",
+    "destination": "/stories/mia-saratoga-biotech",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: mia-saratoga-biotech"
+  },
+  {
+    "source": "/testimonial/sean-lisa-merit",
+    "destination": "/stories/sean-lisa-merit",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sean-lisa-merit"
+  },
+  {
+    "source": "/testimonial/michael-college-planning",
+    "destination": "/stories/michael-college-planning",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: michael-college-planning"
+  },
+  {
+    "source": "/testimonial/amelia-cupertino-high",
+    "destination": "/stories/amelia-cupertino-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: amelia-cupertino-high"
+  },
+  {
+    "source": "/testimonial/colin-international-europe",
+    "destination": "/stories/colin-international-europe",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: colin-international-europe"
+  },
+  {
+    "source": "/testimonial/henry-adam-choice",
+    "destination": "/stories/henry-adam-choice",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: henry-adam-choice"
+  },
+  {
+    "source": "/testimonial/alya-lynbrook-high",
+    "destination": "/stories/alya-lynbrook-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: alya-lynbrook-high"
+  },
+  {
+    "source": "/testimonial/theresa-parent-growth",
+    "destination": "/stories/theresa-parent-growth",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: theresa-parent-growth"
+  },
+  {
+    "source": "/testimonial/sarah-dream-school",
+    "destination": "/stories/sarah-dream-school",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sarah-dream-school"
+  },
+  {
+    "source": "/testimonial/kelly-early-decision-relief",
+    "destination": "/stories/kelly-early-decision-relief",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: kelly-early-decision-relief"
+  },
+  {
+    "source": "/testimonial/nathan-monta-vista",
+    "destination": "/stories/nathan-monta-vista",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: nathan-monta-vista"
+  },
+  {
+    "source": "/testimonial/chloe-st-francis",
+    "destination": "/stories/chloe-st-francis",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: chloe-st-francis"
+  },
+  {
+    "source": "/testimonial/jeffrey-mitty-high",
+    "destination": "/stories/jeffrey-mitty-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: jeffrey-mitty-high"
+  },
+  {
+    "source": "/testimonial/tyler-los-altos-high",
+    "destination": "/stories/tyler-los-altos-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: tyler-los-altos-high"
+  },
+  {
+    "source": "/testimonial/thomas-foothill-high",
+    "destination": "/stories/thomas-foothill-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: thomas-foothill-high"
+  },
+  {
+    "source": "/testimonial/jenny-irvington-high",
+    "destination": "/stories/jenny-irvington-high",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: jenny-irvington-high"
+  },
+  {
+    "source": "/testimonial/kelsey-harker-grad",
+    "destination": "/stories/kelsey-harker-grad",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: kelsey-harker-grad"
+  },
+  {
+    "source": "/testimonial/michael-b-saratoga",
+    "destination": "/stories/michael-b-saratoga",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: michael-b-saratoga"
+  },
+  {
+    "source": "/testimonial/leslie-michigan-first-choice",
+    "destination": "/stories/leslie-michigan-first-choice",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: leslie-michigan-first-choice"
+  },
+  {
+    "source": "/testimonial/marithza-berkeley-stanford",
+    "destination": "/stories/marithza-berkeley-stanford",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: marithza-berkeley-stanford"
+  },
+  {
+    "source": "/testimonial/aaron-monta-vista",
+    "destination": "/stories/aaron-monta-vista",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: aaron-monta-vista"
+  },
+  {
+    "source": "/testimonial/rose-stanford-los-altos",
+    "destination": "/stories/rose-stanford-los-altos",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: rose-stanford-los-altos"
+  },
+  {
+    "source": "/testimonial/amy-r-parent-connection",
+    "destination": "/stories/amy-r-parent-connection",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: amy-r-parent-connection"
+  },
+  {
+    "source": "/testimonial/debra-ivy-lab-research",
+    "destination": "/stories/debra-ivy-lab-research",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: debra-ivy-lab-research"
+  },
+  {
+    "source": "/testimonial/erwin-pandemic-admissions",
+    "destination": "/stories/erwin-pandemic-admissions",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: erwin-pandemic-admissions"
+  },
+  {
+    "source": "/testimonial/laura-mission-san-jose",
+    "destination": "/stories/laura-mission-san-jose",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: laura-mission-san-jose"
+  },
+  {
+    "source": "/testimonial/niki-top-20-gpa",
+    "destination": "/stories/niki-top-20-gpa",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: niki-top-20-gpa"
+  },
+  {
+    "source": "/testimonial/lori-mfa-graduate",
+    "destination": "/stories/lori-mfa-graduate",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: lori-mfa-graduate"
+  },
+  {
+    "source": "/testimonial/susan-berkeley-eecs",
+    "destination": "/stories/susan-berkeley-eecs",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: susan-berkeley-eecs"
+  },
+  {
+    "source": "/testimonial/liam-upenn-cs",
+    "destination": "/stories/liam-upenn-cs",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: liam-upenn-cs"
+  },
+  {
+    "source": "/testimonial/linda-swarthmore-college",
+    "destination": "/stories/linda-swarthmore-college",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: linda-swarthmore-college"
+  },
+  {
+    "source": "/testimonial/dylan-law-school-scholarship",
+    "destination": "/stories/dylan-law-school-scholarship",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: dylan-law-school-scholarship"
+  },
+  {
+    "source": "/testimonial/lisa-ucla-worry-free",
+    "destination": "/stories/lisa-ucla-worry-free",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: lisa-ucla-worry-free"
+  },
+  {
+    "source": "/testimonial/liana-nyu-liberal-studies",
+    "destination": "/stories/liana-nyu-liberal-studies",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: liana-nyu-liberal-studies"
+  },
+  {
+    "source": "/testimonial/sharon-swarthmore-columbia",
+    "destination": "/stories/sharon-swarthmore-columbia",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: sharon-swarthmore-columbia"
+  },
+  {
+    "source": "/testimonial/eric-ut-dallas-ms",
+    "destination": "/stories/eric-ut-dallas-ms",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: eric-ut-dallas-ms"
+  },
+  {
+    "source": "/testimonial/karen-gunn-high-miracles",
+    "destination": "/stories/karen-gunn-high-miracles",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: karen-gunn-high-miracles"
+  },
+  {
+    "source": "/testimonial/hj-mountain-view-tenacious",
+    "destination": "/stories/hj-mountain-view-tenacious",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: hj-mountain-view-tenacious"
+  },
+  {
+    "source": "/testimonial/grace-duke-cmu-scholarships",
+    "destination": "/stories/grace-duke-cmu-scholarships",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: grace-duke-cmu-scholarships"
+  },
+  {
+    "source": "/testimonial/dana-mfa-three-for-three",
+    "destination": "/stories/dana-mfa-three-for-three",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: dana-mfa-three-for-three"
+  },
+  {
+    "source": "/testimonial/keyvan-crystal-springs",
+    "destination": "/stories/keyvan-crystal-springs",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: keyvan-crystal-springs"
+  },
+  {
+    "source": "/testimonial/hye-won-nueva-risd",
+    "destination": "/stories/hye-won-nueva-risd",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: hye-won-nueva-risd"
+  },
+  {
+    "source": "/testimonial/kara-reach-schools-merit",
+    "destination": "/stories/kara-reach-schools-merit",
+    "permanent": true,
+    "note": "Story Direct Testimonial Mapping: kara-reach-schools-merit"
+  },
+  {
+    "source": "/testimonial",
+    "destination": "/testimonials",
+    "permanent": true,
+    "note": "Old Testimonial Root Archive"
+  },
+  {
+    "source": "/testimonial/:slug*",
+    "destination": "/testimonials",
+    "permanent": true,
+    "note": "Old Testimonial Fallback"
+  },
+  {
+    "source": "/samuel-ortiz-blue-stars-counselor",
+    "destination": "/blogs/samuel-ortiz-blue-stars-counselor",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: samuel-ortiz-blue-stars-counselor"
+  },
+  {
+    "source": "/cs-job-crisis-future-of-stem-careers-2026",
+    "destination": "/blogs/cs-job-crisis-future-of-stem-careers-2026",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: cs-job-crisis-future-of-stem-careers-2026"
+  },
+  {
+    "source": "/the-harvard-counselor-who-keeps-getting-students-into-harvard-and-stanford",
+    "destination": "/blogs/the-harvard-counselor-who-keeps-getting-students-into-harvard-and-stanford",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-harvard-counselor-who-keeps-getting-students-into-harvard-and-stanford"
+  },
+  {
+    "source": "/college-admissions-results-2026-blue-stars",
+    "destination": "/blogs/college-admissions-results-2026-blue-stars",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-admissions-results-2026-blue-stars"
+  },
+  {
+    "source": "/neuroscience-research-mentor-ucla",
+    "destination": "/blogs/neuroscience-research-mentor-ucla",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: neuroscience-research-mentor-ucla"
+  },
+  {
+    "source": "/ai-resistant-undergraduate-majors-a-strategic-guide-for-high-achieving-students",
+    "destination": "/blogs/ai-resistant-undergraduate-majors-a-strategic-guide-for-high-achieving-students",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: ai-resistant-undergraduate-majors-a-strategic-guide-for-high-achieving-students"
+  },
+  {
+    "source": "/a-rare-opportunity-dr-m-returns-to-one-on-one-student-mentorship",
+    "destination": "/blogs/a-rare-opportunity-dr-m-returns-to-one-on-one-student-mentorship",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: a-rare-opportunity-dr-m-returns-to-one-on-one-student-mentorship"
+  },
+  {
+    "source": "/why-research-matters-for-competitive-college-admissions",
+    "destination": "/blogs/why-research-matters-for-competitive-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: why-research-matters-for-competitive-college-admissions"
+  },
+  {
+    "source": "/ai-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students",
+    "destination": "/blogs/ai-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: ai-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students"
+  },
+  {
+    "source": "/15-lessons-from-15-years-of-college-admissions-guidance-reflections-from-the-blue-stars-admissions-consulting-team",
+    "destination": "/blogs/15-lessons-from-15-years-of-college-admissions-guidance-reflections-from-the-blue-stars-admissions-consulting-team",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 15-lessons-from-15-years-of-college-admissions-guidance-reflections-from-the-blue-stars-admissions-consulting-team"
+  },
+  {
+    "source": "/independent-research-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students",
+    "destination": "/blogs/independent-research-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: independent-research-reshapes-elite-college-admissions-strategic-guide-for-high-achieving-students"
+  },
+  {
+    "source": "/16-years-of-outstanding-essays-inspiring-examples-from-applicants-accepted-to-top-universities",
+    "destination": "/blogs/16-years-of-outstanding-essays-inspiring-examples-from-applicants-accepted-to-top-universities",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 16-years-of-outstanding-essays-inspiring-examples-from-applicants-accepted-to-top-universities"
+  },
+  {
+    "source": "/blue-stars-data-driven-advising-gives-high-achieving-students-an-edge-in-college-admissions",
+    "destination": "/blogs/blue-stars-data-driven-advising-gives-high-achieving-students-an-edge-in-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: blue-stars-data-driven-advising-gives-high-achieving-students-an-edge-in-college-admissions"
+  },
+  {
+    "source": "/amherst-college-tour",
+    "destination": "/blogs/amherst-college-tour",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: amherst-college-tour"
+  },
+  {
+    "source": "/5-college-admissions-tips-for-stem-students",
+    "destination": "/blogs/5-college-admissions-tips-for-stem-students",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 5-college-admissions-tips-for-stem-students"
+  },
+  {
+    "source": "/16-things-your-11th-grader-should-be-doing-now-for-top-college-admissions",
+    "destination": "/blogs/16-things-your-11th-grader-should-be-doing-now-for-top-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 16-things-your-11th-grader-should-be-doing-now-for-top-college-admissions"
+  },
+  {
+    "source": "/11x-higher-than-standfords-own-admission-rate",
+    "destination": "/blogs/11x-higher-than-standfords-own-admission-rate",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 11x-higher-than-standfords-own-admission-rate"
+  },
+  {
+    "source": "/brown-ed-3-cornell-admits-berkeley-duke-nyu-stern-and-more-highlights-from-our-2025-successes-ivy-league-acceptances",
+    "destination": "/blogs/brown-ed-3-cornell-admits-berkeley-duke-nyu-stern-and-more-highlights-from-our-2025-successes-ivy-league-acceptances",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: brown-ed-3-cornell-admits-berkeley-duke-nyu-stern-and-more-highlights-from-our-2025-successes-ivy-league-acceptances"
+  },
+  {
+    "source": "/dream-schools-are-for-everyone",
+    "destination": "/blogs/dream-schools-are-for-everyone",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: dream-schools-are-for-everyone"
+  },
+  {
+    "source": "/how-do-you-get-students-to-write-amazing-admissions-essays-2",
+    "destination": "/blogs/how-do-you-get-students-to-write-amazing-admissions-essays-2",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-do-you-get-students-to-write-amazing-admissions-essays-2"
+  },
+  {
+    "source": "/wharton-mba-wai-cheng",
+    "destination": "/blogs/wharton-mba-wai-cheng",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: wharton-mba-wai-cheng"
+  },
+  {
+    "source": "/college-admissions-the-calm-way-a-talk-by-dr-amy-morgenstern",
+    "destination": "/blogs/college-admissions-the-calm-way-a-talk-by-dr-amy-morgenstern",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-admissions-the-calm-way-a-talk-by-dr-amy-morgenstern"
+  },
+  {
+    "source": "/demystifying-the-uc-personal-insight-questions",
+    "destination": "/blogs/demystifying-the-uc-personal-insight-questions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: demystifying-the-uc-personal-insight-questions"
+  },
+  {
+    "source": "/your-college-major-does-not-define-your-future-income",
+    "destination": "/blogs/your-college-major-does-not-define-your-future-income",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: your-college-major-does-not-define-your-future-income"
+  },
+  {
+    "source": "/intro-to-dr-ms-college-tours",
+    "destination": "/blogs/intro-to-dr-ms-college-tours",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: intro-to-dr-ms-college-tours"
+  },
+  {
+    "source": "/uc-berkeley-student-discusses-pathways-to-success",
+    "destination": "/blogs/uc-berkeley-student-discusses-pathways-to-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-berkeley-student-discusses-pathways-to-success"
+  },
+  {
+    "source": "/uc-personal-insight-questions-six-essential-tips-for-acing-them",
+    "destination": "/blogs/uc-personal-insight-questions-six-essential-tips-for-acing-them",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-questions-six-essential-tips-for-acing-them"
+  },
+  {
+    "source": "/is-it-advantageous-to-answer-personal-insight-question-8",
+    "destination": "/blogs/is-it-advantageous-to-answer-personal-insight-question-8",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: is-it-advantageous-to-answer-personal-insight-question-8"
+  },
+  {
+    "source": "/interview-with-dr-irena-smith-author-of-the-golden-ticket-a-life-in-college-admissions-essays",
+    "destination": "/blogs/interview-with-dr-irena-smith-author-of-the-golden-ticket-a-life-in-college-admissions-essays",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: interview-with-dr-irena-smith-author-of-the-golden-ticket-a-life-in-college-admissions-essays"
+  },
+  {
+    "source": "/10-things-your-8th-grader-should-be-doing-now-for-top-college-admissions",
+    "destination": "/blogs/10-things-your-8th-grader-should-be-doing-now-for-top-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 10-things-your-8th-grader-should-be-doing-now-for-top-college-admissions"
+  },
+  {
+    "source": "/students-admitted-to-29-prestigious-summer-courses",
+    "destination": "/blogs/students-admitted-to-29-prestigious-summer-courses",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: students-admitted-to-29-prestigious-summer-courses"
+  },
+  {
+    "source": "/interview-with-former-blue-stars-student-naomi-zimmerman",
+    "destination": "/blogs/interview-with-former-blue-stars-student-naomi-zimmerman",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: interview-with-former-blue-stars-student-naomi-zimmerman"
+  },
+  {
+    "source": "/exploring-the-true-value-of-humanities-and-stem-majors-in-career-success",
+    "destination": "/blogs/exploring-the-true-value-of-humanities-and-stem-majors-in-career-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: exploring-the-true-value-of-humanities-and-stem-majors-in-career-success"
+  },
+  {
+    "source": "/on-becoming-a-doctor-a-panel-discussion-with-dr-m",
+    "destination": "/blogs/on-becoming-a-doctor-a-panel-discussion-with-dr-m",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: on-becoming-a-doctor-a-panel-discussion-with-dr-m"
+  },
+  {
+    "source": "/webinar-ai-for-all-an-interdisciplinary-introduction",
+    "destination": "/blogs/webinar-ai-for-all-an-interdisciplinary-introduction",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-ai-for-all-an-interdisciplinary-introduction"
+  },
+  {
+    "source": "/ohio-wesleyan-college-tour",
+    "destination": "/blogs/ohio-wesleyan-college-tour",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: ohio-wesleyan-college-tour"
+  },
+  {
+    "source": "/oberlin-college-tour",
+    "destination": "/blogs/oberlin-college-tour",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: oberlin-college-tour"
+  },
+  {
+    "source": "/what-teens-want-in-college-planning",
+    "destination": "/blogs/what-teens-want-in-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: what-teens-want-in-college-planning"
+  },
+  {
+    "source": "/essential-questions-to-ask-before-you-hire-a-college-counselor",
+    "destination": "/blogs/essential-questions-to-ask-before-you-hire-a-college-counselor",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: essential-questions-to-ask-before-you-hire-a-college-counselor"
+  },
+  {
+    "source": "/from-studying-environmental-science-at-barnard-to-a-career-on-wall-street-a-blue-stars-alum-shares-her-journey",
+    "destination": "/blogs/from-studying-environmental-science-at-barnard-to-a-career-on-wall-street-a-blue-stars-alum-shares-her-journey",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: from-studying-environmental-science-at-barnard-to-a-career-on-wall-street-a-blue-stars-alum-shares-her-journey"
+  },
+  {
+    "source": "/7-key-traits-top-colleges",
+    "destination": "/blogs/7-key-traits-top-colleges",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 7-key-traits-top-colleges"
+  },
+  {
+    "source": "/9-things-your-10th-grader-should-be-doing-now-for-top-college-admissions",
+    "destination": "/blogs/9-things-your-10th-grader-should-be-doing-now-for-top-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 9-things-your-10th-grader-should-be-doing-now-for-top-college-admissions"
+  },
+  {
+    "source": "/7-things-your-9th-grader-should-be-doing-now-for-top-college-admissions",
+    "destination": "/blogs/7-things-your-9th-grader-should-be-doing-now-for-top-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 7-things-your-9th-grader-should-be-doing-now-for-top-college-admissions"
+  },
+  {
+    "source": "/my-kid-cant-do-it-all-4-tips-for-choosing-the-right-activities-for-your-child",
+    "destination": "/blogs/my-kid-cant-do-it-all-4-tips-for-choosing-the-right-activities-for-your-child",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: my-kid-cant-do-it-all-4-tips-for-choosing-the-right-activities-for-your-child"
+  },
+  {
+    "source": "/stanford-blog-reflections",
+    "destination": "/blogs/stanford-blog-reflections",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: stanford-blog-reflections"
+  },
+  {
+    "source": "/celebrating-early-college-admission-success-stories",
+    "destination": "/blogs/celebrating-early-college-admission-success-stories",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: celebrating-early-college-admission-success-stories"
+  },
+  {
+    "source": "/navigating-the-2025-waitlist-surge-why-more-students-are-in-limbo-and-how-to-stand-out",
+    "destination": "/blogs/navigating-the-2025-waitlist-surge-why-more-students-are-in-limbo-and-how-to-stand-out",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: navigating-the-2025-waitlist-surge-why-more-students-are-in-limbo-and-how-to-stand-out"
+  },
+  {
+    "source": "/essential-legal-documents-for-college-bound-students",
+    "destination": "/blogs/essential-legal-documents-for-college-bound-students",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: essential-legal-documents-for-college-bound-students"
+  },
+  {
+    "source": "/ucla-admissions-6-important-updates",
+    "destination": "/blogs/ucla-admissions-6-important-updates",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: ucla-admissions-6-important-updates"
+  },
+  {
+    "source": "/part-2-what-not-to-do-while-writing-and-editing-your-college-essay",
+    "destination": "/blogs/part-2-what-not-to-do-while-writing-and-editing-your-college-essay",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: part-2-what-not-to-do-while-writing-and-editing-your-college-essay"
+  },
+  {
+    "source": "/part-1-what-not-to-do-before-you-start-writing-your-college-essay",
+    "destination": "/blogs/part-1-what-not-to-do-before-you-start-writing-your-college-essay",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: part-1-what-not-to-do-before-you-start-writing-your-college-essay"
+  },
+  {
+    "source": "/elite-summer-internships-and-programs-you-dont-want-your-child-to-miss",
+    "destination": "/blogs/elite-summer-internships-and-programs-you-dont-want-your-child-to-miss",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: elite-summer-internships-and-programs-you-dont-want-your-child-to-miss"
+  },
+  {
+    "source": "/the-sat-is-back-what-college-bound-teens-and-their-parents-need-to-know",
+    "destination": "/blogs/the-sat-is-back-what-college-bound-teens-and-their-parents-need-to-know",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-sat-is-back-what-college-bound-teens-and-their-parents-need-to-know"
+  },
+  {
+    "source": "/deciphering-the-code-4-key-differences-between-computer-science-and-data-science-majors",
+    "destination": "/blogs/deciphering-the-code-4-key-differences-between-computer-science-and-data-science-majors",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: deciphering-the-code-4-key-differences-between-computer-science-and-data-science-majors"
+  },
+  {
+    "source": "/acing-uc-personal-insight-question-7-your-community-impact",
+    "destination": "/blogs/acing-uc-personal-insight-question-7-your-community-impact",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: acing-uc-personal-insight-question-7-your-community-impact"
+  },
+  {
+    "source": "/uc-personal-insight-question-6-showcasing-your-academic-passion",
+    "destination": "/blogs/uc-personal-insight-question-6-showcasing-your-academic-passion",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-6-showcasing-your-academic-passion"
+  },
+  {
+    "source": "/navigating-challenges-and-thriving-academically-answering-uc-personal-insight-question-5",
+    "destination": "/blogs/navigating-challenges-and-thriving-academically-answering-uc-personal-insight-question-5",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: navigating-challenges-and-thriving-academically-answering-uc-personal-insight-question-5"
+  },
+  {
+    "source": "/answering-uc-personal-insight-question-4-educational-barriers-or-opportunities",
+    "destination": "/blogs/answering-uc-personal-insight-question-4-educational-barriers-or-opportunities",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: answering-uc-personal-insight-question-4-educational-barriers-or-opportunities"
+  },
+  {
+    "source": "/decoding-uc-personal-insight-question-3-six-tips-for-writing-about-your-greatest-talent-or-skill",
+    "destination": "/blogs/decoding-uc-personal-insight-question-3-six-tips-for-writing-about-your-greatest-talent-or-skill",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: decoding-uc-personal-insight-question-3-six-tips-for-writing-about-your-greatest-talent-or-skill"
+  },
+  {
+    "source": "/tackling-the-common-app-essay",
+    "destination": "/blogs/tackling-the-common-app-essay",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: tackling-the-common-app-essay"
+  },
+  {
+    "source": "/uc-personal-insight-question-2-on-creativity-six-helpful-tips",
+    "destination": "/blogs/uc-personal-insight-question-2-on-creativity-six-helpful-tips",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-2-on-creativity-six-helpful-tips"
+  },
+  {
+    "source": "/help-your-teen-overcome-back-to-school-stress-6-proven-tips",
+    "destination": "/blogs/help-your-teen-overcome-back-to-school-stress-6-proven-tips",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: help-your-teen-overcome-back-to-school-stress-6-proven-tips"
+  },
+  {
+    "source": "/responding-to-uc-personal-insight-question-1-showcasing-leadership",
+    "destination": "/blogs/responding-to-uc-personal-insight-question-1-showcasing-leadership",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: responding-to-uc-personal-insight-question-1-showcasing-leadership"
+  },
+  {
+    "source": "/new-supplements-are-coming-in-response-to-scotus-affirmative-action-decision",
+    "destination": "/blogs/new-supplements-are-coming-in-response-to-scotus-affirmative-action-decision",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: new-supplements-are-coming-in-response-to-scotus-affirmative-action-decision"
+  },
+  {
+    "source": "/tackling-the-common-application-essay",
+    "destination": "/blogs/tackling-the-common-application-essay",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: tackling-the-common-application-essay"
+  },
+  {
+    "source": "/vital-to-impressing-top-colleges-is-doing-deep-school-research-well-show-you-how",
+    "destination": "/blogs/vital-to-impressing-top-colleges-is-doing-deep-school-research-well-show-you-how",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: vital-to-impressing-top-colleges-is-doing-deep-school-research-well-show-you-how"
+  },
+  {
+    "source": "/fun-family-activities-for-road-trips",
+    "destination": "/blogs/fun-family-activities-for-road-trips",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: fun-family-activities-for-road-trips"
+  },
+  {
+    "source": "/uc-personal-insight-question-8-what-makes-you-stand-out",
+    "destination": "/blogs/uc-personal-insight-question-8-what-makes-you-stand-out",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-8-what-makes-you-stand-out"
+  },
+  {
+    "source": "/the-blue-stars-difference",
+    "destination": "/blogs/the-blue-stars-difference",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-blue-stars-difference"
+  },
+  {
+    "source": "/rave-reviews-for-all-boys-college-planning-workshop",
+    "destination": "/blogs/rave-reviews-for-all-boys-college-planning-workshop",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: rave-reviews-for-all-boys-college-planning-workshop"
+  },
+  {
+    "source": "/dr-m-speaks-at-national-conference",
+    "destination": "/blogs/dr-m-speaks-at-national-conference",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: dr-m-speaks-at-national-conference"
+  },
+  {
+    "source": "/uc-personal-insight-question-7-what-youve-done-to-make-your-school-community-a-better-place",
+    "destination": "/blogs/uc-personal-insight-question-7-what-youve-done-to-make-your-school-community-a-better-place",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-7-what-youve-done-to-make-your-school-community-a-better-place"
+  },
+  {
+    "source": "/30-blue-stars-students-admitted-to-top-ucs-and-private-schools-ucla-stanford-cambridge-risd-and-more",
+    "destination": "/blogs/30-blue-stars-students-admitted-to-top-ucs-and-private-schools-ucla-stanford-cambridge-risd-and-more",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 30-blue-stars-students-admitted-to-top-ucs-and-private-schools-ucla-stanford-cambridge-risd-and-more"
+  },
+  {
+    "source": "/preparing-your-teen-for-the-future-job-market-how-to-help-them-build-durable-skills-now",
+    "destination": "/blogs/preparing-your-teen-for-the-future-job-market-how-to-help-them-build-durable-skills-now",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: preparing-your-teen-for-the-future-job-market-how-to-help-them-build-durable-skills-now"
+  },
+  {
+    "source": "/uc-personal-insight-question-6-an-academic-subject-that-inspires-you",
+    "destination": "/blogs/uc-personal-insight-question-6-an-academic-subject-that-inspires-you",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-6-an-academic-subject-that-inspires-you"
+  },
+  {
+    "source": "/uc-personal-insight-question-5-most-significant-challenge",
+    "destination": "/blogs/uc-personal-insight-question-5-most-significant-challenge",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-5-most-significant-challenge"
+  },
+  {
+    "source": "/the-five-most-important-features-of-a-successful-stanford-application",
+    "destination": "/blogs/the-five-most-important-features-of-a-successful-stanford-application",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-five-most-important-features-of-a-successful-stanford-application"
+  },
+  {
+    "source": "/uc-personal-insight-question-4-educational-opportunity-or-barrier",
+    "destination": "/blogs/uc-personal-insight-question-4-educational-opportunity-or-barrier",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-4-educational-opportunity-or-barrier"
+  },
+  {
+    "source": "/uc-personal-insight-question-3-greatest-talent-or-skill",
+    "destination": "/blogs/uc-personal-insight-question-3-greatest-talent-or-skill",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-3-greatest-talent-or-skill"
+  },
+  {
+    "source": "/stress-management-tips-for-teens-a-bonus-pro-tip",
+    "destination": "/blogs/stress-management-tips-for-teens-a-bonus-pro-tip",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: stress-management-tips-for-teens-a-bonus-pro-tip"
+  },
+  {
+    "source": "/community-service-tips-the-scales-for-college-applicants",
+    "destination": "/blogs/community-service-tips-the-scales-for-college-applicants",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: community-service-tips-the-scales-for-college-applicants"
+  },
+  {
+    "source": "/uc-personal-insight-question-2-creativity",
+    "destination": "/blogs/uc-personal-insight-question-2-creativity",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-2-creativity"
+  },
+  {
+    "source": "/how-to-help-your-teen-avoid-the-debilitating-trap-of-perfectionism",
+    "destination": "/blogs/how-to-help-your-teen-avoid-the-debilitating-trap-of-perfectionism",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-to-help-your-teen-avoid-the-debilitating-trap-of-perfectionism"
+  },
+  {
+    "source": "/uc-personal-insight-question-1-leadership",
+    "destination": "/blogs/uc-personal-insight-question-1-leadership",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-1-leadership"
+  },
+  {
+    "source": "/2023-early-application-deadlines-for-summer-programs",
+    "destination": "/blogs/2023-early-application-deadlines-for-summer-programs",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 2023-early-application-deadlines-for-summer-programs"
+  },
+  {
+    "source": "/the-new-digital-sat-7-quick-takeaways",
+    "destination": "/blogs/the-new-digital-sat-7-quick-takeaways",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-new-digital-sat-7-quick-takeaways"
+  },
+  {
+    "source": "/webinar-prepare-for-a-career-in-ai-as-a-high-schooler",
+    "destination": "/blogs/webinar-prepare-for-a-career-in-ai-as-a-high-schooler",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-prepare-for-a-career-in-ai-as-a-high-schooler"
+  },
+  {
+    "source": "/the-hidden-gems-of-college-admissions-national-liberal-arts-schools",
+    "destination": "/blogs/the-hidden-gems-of-college-admissions-national-liberal-arts-schools",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-hidden-gems-of-college-admissions-national-liberal-arts-schools"
+  },
+  {
+    "source": "/want-to-get-into-a-top-college-know-what-that-college-wants",
+    "destination": "/blogs/want-to-get-into-a-top-college-know-what-that-college-wants",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: want-to-get-into-a-top-college-know-what-that-college-wants"
+  },
+  {
+    "source": "/teens-can-improve-focus-with-the-pomodoro-technique",
+    "destination": "/blogs/teens-can-improve-focus-with-the-pomodoro-technique",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: teens-can-improve-focus-with-the-pomodoro-technique"
+  },
+  {
+    "source": "/webinar-making-test-prep-work-for-you-with-eric-rath",
+    "destination": "/blogs/webinar-making-test-prep-work-for-you-with-eric-rath",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-making-test-prep-work-for-you-with-eric-rath"
+  },
+  {
+    "source": "/whats-really-in-your-teens-control-in-the-college-admissions-process",
+    "destination": "/blogs/whats-really-in-your-teens-control-in-the-college-admissions-process",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: whats-really-in-your-teens-control-in-the-college-admissions-process"
+  },
+  {
+    "source": "/webinar-making-test-prep-work-for-you-with-eric-rath-promo",
+    "destination": "/blogs/webinar-making-test-prep-work-for-you-with-eric-rath-promo",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-making-test-prep-work-for-you-with-eric-rath-promo"
+  },
+  {
+    "source": "/college-rankings-what-they-do-and-dont-measure",
+    "destination": "/blogs/college-rankings-what-they-do-and-dont-measure",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-rankings-what-they-do-and-dont-measure"
+  },
+  {
+    "source": "/webinar-celebrating-your-childs-unique-strengths",
+    "destination": "/blogs/webinar-celebrating-your-childs-unique-strengths",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-celebrating-your-childs-unique-strengths"
+  },
+  {
+    "source": "/the-new-test-optional-policy-when-to-submit-scores-vs-when-not-to-part-ii",
+    "destination": "/blogs/the-new-test-optional-policy-when-to-submit-scores-vs-when-not-to-part-ii",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-new-test-optional-policy-when-to-submit-scores-vs-when-not-to-part-ii"
+  },
+  {
+    "source": "/annie-malcolm",
+    "destination": "/blogs/annie-malcolm",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: annie-malcolm"
+  },
+  {
+    "source": "/webinar-five-time-management-tips-for-summer-success",
+    "destination": "/blogs/webinar-five-time-management-tips-for-summer-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-five-time-management-tips-for-summer-success"
+  },
+  {
+    "source": "/the-new-test-optional-policy-does-it-help-or-hurt-applicants-part-i",
+    "destination": "/blogs/the-new-test-optional-policy-does-it-help-or-hurt-applicants-part-i",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-new-test-optional-policy-does-it-help-or-hurt-applicants-part-i"
+  },
+  {
+    "source": "/webinar-the-new-digital-psat-sat-all-you-need-to-know",
+    "destination": "/blogs/webinar-the-new-digital-psat-sat-all-you-need-to-know",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-the-new-digital-psat-sat-all-you-need-to-know"
+  },
+  {
+    "source": "/picking-your-major-for-the-right-reasons",
+    "destination": "/blogs/picking-your-major-for-the-right-reasons",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: picking-your-major-for-the-right-reasons"
+  },
+  {
+    "source": "/upcoming-summer-extracurricular-program-deadlines",
+    "destination": "/blogs/upcoming-summer-extracurricular-program-deadlines",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: upcoming-summer-extracurricular-program-deadlines"
+  },
+  {
+    "source": "/dont-do-these-things-in-your-college-application-personal-statement",
+    "destination": "/blogs/dont-do-these-things-in-your-college-application-personal-statement",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: dont-do-these-things-in-your-college-application-personal-statement"
+  },
+  {
+    "source": "/the-effect-of-the-pandemic-on-college-admissions",
+    "destination": "/blogs/the-effect-of-the-pandemic-on-college-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-effect-of-the-pandemic-on-college-admissions"
+  },
+  {
+    "source": "/uc-permanently-bans-sat-act-6-takeaways-for-navigating-the-new-landscape",
+    "destination": "/blogs/uc-permanently-bans-sat-act-6-takeaways-for-navigating-the-new-landscape",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-permanently-bans-sat-act-6-takeaways-for-navigating-the-new-landscape"
+  },
+  {
+    "source": "/blue-stars-school-selection-program",
+    "destination": "/blogs/blue-stars-school-selection-program",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: blue-stars-school-selection-program"
+  },
+  {
+    "source": "/creating-a-diy-summer",
+    "destination": "/blogs/creating-a-diy-summer",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: creating-a-diy-summer"
+  },
+  {
+    "source": "/kenyon-college-tour",
+    "destination": "/blogs/kenyon-college-tour",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: kenyon-college-tour"
+  },
+  {
+    "source": "/stanford-brown-yale-and-so-much-more-blue-stars-2021-results",
+    "destination": "/blogs/stanford-brown-yale-and-so-much-more-blue-stars-2021-results",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: stanford-brown-yale-and-so-much-more-blue-stars-2021-results"
+  },
+  {
+    "source": "/decoding-uc-personal-insight-question-3",
+    "destination": "/blogs/decoding-uc-personal-insight-question-3",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: decoding-uc-personal-insight-question-3"
+  },
+  {
+    "source": "/major-change-to-the-common-applications-additional-information-section-what-it-means-for-you",
+    "destination": "/blogs/major-change-to-the-common-applications-additional-information-section-what-it-means-for-you",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: major-change-to-the-common-applications-additional-information-section-what-it-means-for-you"
+  },
+  {
+    "source": "/webinar-making-college-campus-tours-worth-your-time",
+    "destination": "/blogs/webinar-making-college-campus-tours-worth-your-time",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: webinar-making-college-campus-tours-worth-your-time"
+  },
+  {
+    "source": "/news-outlets-for-college-planning",
+    "destination": "/blogs/news-outlets-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: news-outlets-for-college-planning"
+  },
+  {
+    "source": "/writing-and-language-resources-for-college-planning",
+    "destination": "/blogs/writing-and-language-resources-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: writing-and-language-resources-for-college-planning"
+  },
+  {
+    "source": "/articles-and-inspiration-for-college-planning",
+    "destination": "/blogs/articles-and-inspiration-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: articles-and-inspiration-for-college-planning"
+  },
+  {
+    "source": "/ted-talks-for-college-planning",
+    "destination": "/blogs/ted-talks-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: ted-talks-for-college-planning"
+  },
+  {
+    "source": "/podcasts-for-college-planning",
+    "destination": "/blogs/podcasts-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: podcasts-for-college-planning"
+  },
+  {
+    "source": "/non-fiction-reading-for-college-planning",
+    "destination": "/blogs/non-fiction-reading-for-college-planning",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: non-fiction-reading-for-college-planning"
+  },
+  {
+    "source": "/leap-ahead-with-these-insider-profiles",
+    "destination": "/blogs/leap-ahead-with-these-insider-profiles",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: leap-ahead-with-these-insider-profiles"
+  },
+  {
+    "source": "/staying-calm-2",
+    "destination": "/blogs/staying-calm-2",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: staying-calm-2"
+  },
+  {
+    "source": "/how-to-get-the-most-out-of-your-college-visits",
+    "destination": "/blogs/how-to-get-the-most-out-of-your-college-visits",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-to-get-the-most-out-of-your-college-visits"
+  },
+  {
+    "source": "/our-huge-secret-to-a-brighter-you",
+    "destination": "/blogs/our-huge-secret-to-a-brighter-you",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: our-huge-secret-to-a-brighter-you"
+  },
+  {
+    "source": "/8-keys-making-summer-stand",
+    "destination": "/blogs/8-keys-making-summer-stand",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 8-keys-making-summer-stand"
+  },
+  {
+    "source": "/three-powerful-steps-manage-time",
+    "destination": "/blogs/three-powerful-steps-manage-time",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: three-powerful-steps-manage-time"
+  },
+  {
+    "source": "/summer-extracurricular-opportunities",
+    "destination": "/blogs/summer-extracurricular-opportunities",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: summer-extracurricular-opportunities"
+  },
+  {
+    "source": "/5-steps-head-turning-resume",
+    "destination": "/blogs/5-steps-head-turning-resume",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: 5-steps-head-turning-resume"
+  },
+  {
+    "source": "/extracurricular-activities-colleges-want-see",
+    "destination": "/blogs/extracurricular-activities-colleges-want-see",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: extracurricular-activities-colleges-want-see"
+  },
+  {
+    "source": "/admissions-survival-kit-tool-1-defining-your-interests-for-college-admissions-success",
+    "destination": "/blogs/admissions-survival-kit-tool-1-defining-your-interests-for-college-admissions-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: admissions-survival-kit-tool-1-defining-your-interests-for-college-admissions-success"
+  },
+  {
+    "source": "/teen-volunteering-ideas-while-sheltering-in-place",
+    "destination": "/blogs/teen-volunteering-ideas-while-sheltering-in-place",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: teen-volunteering-ideas-while-sheltering-in-place"
+  },
+  {
+    "source": "/the-importance-of-taking-teen-stress-grief-and-sadness-very-seriously-and-what-you-can-do-about-it",
+    "destination": "/blogs/the-importance-of-taking-teen-stress-grief-and-sadness-very-seriously-and-what-you-can-do-about-it",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-importance-of-taking-teen-stress-grief-and-sadness-very-seriously-and-what-you-can-do-about-it"
+  },
+  {
+    "source": "/how-my-role-as-a-college-counselor-has-changed-and-why",
+    "destination": "/blogs/how-my-role-as-a-college-counselor-has-changed-and-why",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-my-role-as-a-college-counselor-has-changed-and-why"
+  },
+  {
+    "source": "/blue-stars-has-a-plan-for-everybody",
+    "destination": "/blogs/blue-stars-has-a-plan-for-everybody",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: blue-stars-has-a-plan-for-everybody"
+  },
+  {
+    "source": "/college-planning-stresses-teens-out-but-it-doesnt-have-to",
+    "destination": "/blogs/college-planning-stresses-teens-out-but-it-doesnt-have-to",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-planning-stresses-teens-out-but-it-doesnt-have-to"
+  },
+  {
+    "source": "/the-key-problem-plaguing-todays-teens-a-crisis-in-self-regulation-amidst-rising-demands",
+    "destination": "/blogs/the-key-problem-plaguing-todays-teens-a-crisis-in-self-regulation-amidst-rising-demands",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-key-problem-plaguing-todays-teens-a-crisis-in-self-regulation-amidst-rising-demands"
+  },
+  {
+    "source": "/standardized-testing-and-tips-on-admissions",
+    "destination": "/blogs/standardized-testing-and-tips-on-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: standardized-testing-and-tips-on-admissions"
+  },
+  {
+    "source": "/williams-college-tour",
+    "destination": "/blogs/williams-college-tour",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: williams-college-tour"
+  },
+  {
+    "source": "/advice-from-a-deep-sea-cave-explorer",
+    "destination": "/blogs/advice-from-a-deep-sea-cave-explorer",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: advice-from-a-deep-sea-cave-explorer"
+  },
+  {
+    "source": "/summer-activities-neuroplasticity",
+    "destination": "/blogs/summer-activities-neuroplasticity",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: summer-activities-neuroplasticity"
+  },
+  {
+    "source": "/how-covid-is-changing-2020-21-admissions",
+    "destination": "/blogs/how-covid-is-changing-2020-21-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-covid-is-changing-2020-21-admissions"
+  },
+  {
+    "source": "/college-planning-foundations-one-on-one-mentoring-program",
+    "destination": "/blogs/college-planning-foundations-one-on-one-mentoring-program",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-planning-foundations-one-on-one-mentoring-program"
+  },
+  {
+    "source": "/uc-personal-insight-question-6",
+    "destination": "/blogs/uc-personal-insight-question-6",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-6"
+  },
+  {
+    "source": "/top-summer-art-programs",
+    "destination": "/blogs/top-summer-art-programs",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: top-summer-art-programs"
+  },
+  {
+    "source": "/uc-personal-insight-question-5",
+    "destination": "/blogs/uc-personal-insight-question-5",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: uc-personal-insight-question-5"
+  },
+  {
+    "source": "/best-summer-programs",
+    "destination": "/blogs/best-summer-programs",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: best-summer-programs"
+  },
+  {
+    "source": "/parents-guide-high-school-timeline",
+    "destination": "/blogs/parents-guide-high-school-timeline",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: parents-guide-high-school-timeline"
+  },
+  {
+    "source": "/alumnus-interview-career-goals",
+    "destination": "/blogs/alumnus-interview-career-goals",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: alumnus-interview-career-goals"
+  },
+  {
+    "source": "/acceptance-rates-fall-soft-skills-matter",
+    "destination": "/blogs/acceptance-rates-fall-soft-skills-matter",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: acceptance-rates-fall-soft-skills-matter"
+  },
+  {
+    "source": "/college-planning-workbook",
+    "destination": "/blogs/college-planning-workbook",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-planning-workbook"
+  },
+  {
+    "source": "/harvard-admissions",
+    "destination": "/blogs/harvard-admissions",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: harvard-admissions"
+  },
+  {
+    "source": "/interview-art-mentor-nicole-mueller",
+    "destination": "/blogs/interview-art-mentor-nicole-mueller",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: interview-art-mentor-nicole-mueller"
+  },
+  {
+    "source": "/comparing-art-colleges-2",
+    "destination": "/blogs/comparing-art-colleges-2",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: comparing-art-colleges-2"
+  },
+  {
+    "source": "/comparing-art-colleges-1",
+    "destination": "/blogs/comparing-art-colleges-1",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: comparing-art-colleges-1"
+  },
+  {
+    "source": "/unique-college-planning-ideas-strategy-consultation",
+    "destination": "/blogs/unique-college-planning-ideas-strategy-consultation",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: unique-college-planning-ideas-strategy-consultation"
+  },
+  {
+    "source": "/college-admissions-calm-case-study-3",
+    "destination": "/blogs/college-admissions-calm-case-study-3",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-admissions-calm-case-study-3"
+  },
+  {
+    "source": "/college-calm-way-case-study-2",
+    "destination": "/blogs/college-calm-way-case-study-2",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-calm-way-case-study-2"
+  },
+  {
+    "source": "/college-calm-way-case-study-1-personal-growth",
+    "destination": "/blogs/college-calm-way-case-study-1-personal-growth",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: college-calm-way-case-study-1-personal-growth"
+  },
+  {
+    "source": "/how-do-you-get-students-to-write-amazing-admissions-essays",
+    "destination": "/blogs/how-do-you-get-students-to-write-amazing-admissions-essays",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-do-you-get-students-to-write-amazing-admissions-essays"
+  },
+  {
+    "source": "/start-early-and-finish-big-your-ideal-admissions-calendar-for-success",
+    "destination": "/blogs/start-early-and-finish-big-your-ideal-admissions-calendar-for-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: start-early-and-finish-big-your-ideal-admissions-calendar-for-success"
+  },
+  {
+    "source": "/worth-the-rush",
+    "destination": "/blogs/worth-the-rush",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: worth-the-rush"
+  },
+  {
+    "source": "/collegeapps-hobbies",
+    "destination": "/blogs/collegeapps-hobbies",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: collegeapps-hobbies"
+  },
+  {
+    "source": "/school-selection",
+    "destination": "/blogs/school-selection",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: school-selection"
+  },
+  {
+    "source": "/getting-into-a-top-college-real-life-success-stories-jonathan",
+    "destination": "/blogs/getting-into-a-top-college-real-life-success-stories-jonathan",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: getting-into-a-top-college-real-life-success-stories-jonathan"
+  },
+  {
+    "source": "/a-sample-common-app-activities-list",
+    "destination": "/blogs/a-sample-common-app-activities-list",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: a-sample-common-app-activities-list"
+  },
+  {
+    "source": "/what-your-college-admissions-application-says-about-you",
+    "destination": "/blogs/what-your-college-admissions-application-says-about-you",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: what-your-college-admissions-application-says-about-you"
+  },
+  {
+    "source": "/major-in-media-studies",
+    "destination": "/blogs/major-in-media-studies",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: major-in-media-studies"
+  },
+  {
+    "source": "/public-health-major",
+    "destination": "/blogs/public-health-major",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: public-health-major"
+  },
+  {
+    "source": "/how-your-college-essay-can-avoid-the-yawn",
+    "destination": "/blogs/how-your-college-essay-can-avoid-the-yawn",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: how-your-college-essay-can-avoid-the-yawn"
+  },
+  {
+    "source": "/applying-to-art-school-for-a-bfa",
+    "destination": "/blogs/applying-to-art-school-for-a-bfa",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: applying-to-art-school-for-a-bfa"
+  },
+  {
+    "source": "/the-art-of-college-admissions-success",
+    "destination": "/blogs/the-art-of-college-admissions-success",
+    "permanent": true,
+    "note": "Legacy Blog Root Slug: the-art-of-college-admissions-success"
+  },
+  {
+    "source": "/wp-content/uploads/ToolSchoolResearch.pdf",
+    "destination": "/resources/guides",
+    "permanent": true,
+    "note": "Legacy Download Asset"
+  }
+]

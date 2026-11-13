@@ -5,6 +5,8 @@ const eslintConfig = [
   {
     rules: {
       "@next/next/no-page-custom-font": "off",
+      "react-hooks/set-state-in-effect": "warn",
+      "react-hooks/purity": "warn",
     },
   },
 ];

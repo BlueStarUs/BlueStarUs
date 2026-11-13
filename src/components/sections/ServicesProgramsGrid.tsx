@@ -76,7 +76,7 @@ export const SERVICES_PROGRAMS: ProgramItem[] = [
     id: "essay-guidance",
     title: "Essay & Personal Statement Guidance",
     description:
-      "Authentic Socratic storytelling, core topic ideation, structural coaching, and line-by-line editorial feedback from published writers and veteran admissions readers.",
+      "Authentic Socratic storytelling, core topic ideation, structural coaching, and line-by-line editorial feedback from published writers and veteran admissions advisors.",
     icon: PenTool,
     accent: "green",
     image: "/images/services/essay-guidance/Deep_Dive_Narrative_Brainstorming.png",

@@ -22,6 +22,7 @@ import {
   PinterestIcon,
   LinkedinIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 } from "@/components/ui/Icons";
 import { FooterNewsletter } from "@/components/ui/FooterNewsletter";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -236,18 +237,31 @@ export function Footer() {
                 </span>
               </a>
 
-              {/* Phone */}
-              <a
-                href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-                className="w-full bg-[#0a4570]/50 hover:bg-[#0c4e7e]/70 backdrop-blur-md border border-[#1b6d9e]/40 hover:border-[#2a8fd6]/60 rounded-[14px] p-2 pr-5 sm:p-2.5 sm:pr-6 flex items-center gap-3.5 transition-all group"
-              >
-                <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
-                  <Phone className="w-4 h-4" />
-                </span>
-                <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
-                  {SITE_CONFIG.contact.phone}
-                </span>
-              </a>
+              {/* Phone & WhatsApp */}
+              <div className="w-full bg-[#0a4570]/50 hover:bg-[#0c4e7e]/70 backdrop-blur-md border border-[#1b6d9e]/40 hover:border-[#2a8fd6]/60 rounded-[14px] p-2 pr-3 sm:p-2.5 sm:pr-4 flex items-center justify-between gap-2 transition-all group">
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                  className="flex items-center gap-3.5 flex-1 min-w-0"
+                  title="Direct Telephone Call"
+                >
+                  <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </span>
+                  <span className="text-[14.5px] sm:text-[15.5px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
+                    {SITE_CONFIG.contact.phone}
+                  </span>
+                </a>
+                <a
+                  href="https://wa.me/14154269444?text=Hi%20Blue%20Stars%2C%20I%20am%20interested%20in%20college%20admissions%20counseling."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-[#25D366] hover:bg-[#20ba5a] text-white text-[11px] font-bold font-heading transition-colors flex-shrink-0 shadow-xs"
+                  title="Chat on WhatsApp"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">WhatsApp</span>
+                </a>
+              </div>
 
               {/* Location */}
               <div className="w-full bg-[#0a4570]/50 backdrop-blur-md border border-[#1b6d9e]/40 rounded-[14px] p-2 pr-5 sm:p-2.5 sm:pr-6 flex items-center gap-3.5">
@@ -279,6 +293,7 @@ export function Footer() {
               href="https://www.bbb.org/us/ca/san-francisco/profile/educational-consultant/blue-stars-admissions-consulting-1116-968560/#sealclick"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Blue Stars Admissions Consulting Better Business Bureau A+ Accredited Business Profile"
               className="bg-white/95 hover:bg-white rounded-[5px] px-3 py-1.5 shadow-xs transition-all hover:scale-105"
               title="Blue Stars Admissions Consulting BBB Business Review"
             >
@@ -291,7 +306,7 @@ export function Footer() {
               />
             </a>
 
-            {/* 16 Years of Student Success Badge */}
+            {/* 16 Years of Student Success Badge
             <div
               className="bg-white/95 rounded-[5px] px-2.5 py-1 shadow-xs flex items-center gap-2"
               title="Blue Stars Admissions Consulting - 16 Years of Student Success"
@@ -306,7 +321,7 @@ export function Footer() {
               <span className="text-[10px] sm:text-[11px] font-extrabold text-[#07466F] font-heading leading-tight uppercase hidden sm:inline">
                 16 Years of<br />Student Success
               </span>
-            </div>
+            </div> */}
 
             {/* HECA */}
             <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">

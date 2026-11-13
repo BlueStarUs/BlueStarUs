@@ -7,12 +7,37 @@ import { BrandStar } from "@/components/ui/Icons";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { VideosListing } from "@/components/sections/VideosListing";
 import { ServiceFAQAccordion } from "@/components/sections/ServiceFAQAccordion";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Video Library & Masterclasses | College Tours & Strategy | Blue Stars Admissions Consulting",
+  title: "College Admissions Video Library & Campus Tours",
   description:
-    "Watch 41+ authentic admissions videos: college campus tours (Michigan, Amherst, Williams, Oberlin), alumni interviews, UC PIQ masterclasses, and recorded webinars by Dr. Amy Morgenstern.",
+    "Watch 41+ authentic admissions videos: college campus tours, alumni interviews, UC PIQ masterclasses, and strategy sessions with Dr. Amy Morgenstern.",
+  alternates: {
+    canonical: "https://bluestars.us/resources/videos",
+  },
+  openGraph: {
+    title: "College Admissions Video Library & Campus Tours | Blue Stars",
+    description:
+      "Watch 41+ authentic admissions videos: college campus tours, alumni interviews, UC PIQ masterclasses, and strategy sessions with Dr. Amy Morgenstern.",
+    url: "https://bluestars.us/resources/videos",
+    images: [
+      {
+        url: "/images/sub_images/Student_Videos.png",
+        width: 1200,
+        height: 630,
+        alt: "Blue Stars Admissions Consulting Video Library",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Admissions Video Library & Campus Tours | Blue Stars",
+    description:
+      "Watch 41+ authentic admissions videos: college campus tours, alumni interviews, UC PIQ masterclasses, and strategy sessions with Dr. Amy Morgenstern.",
+    images: ["/images/sub_images/Student_Videos.png"],
+  },
 };
 
 const VIDEO_FAQS = [
@@ -44,8 +69,15 @@ const VIDEO_FAQS = [
 ];
 
 export default function VideosPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Resources", url: "/resources" },
+    { name: "Videos", url: "/resources/videos" },
+  ];
+
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbs} />
       {/* Modern Breadcrumb Hero with Blue Stars Services Palette */}
       <BreadcrumbHero
         breadcrumbs={[

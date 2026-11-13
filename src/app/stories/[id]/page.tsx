@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
 import { CTA } from "@/components/sections/CTA";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SUCCESS_STORIES, getStoryById } from "@/lib/stories-data";
 import { cn } from "@/lib/utils";
 
@@ -40,17 +41,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!story) {
     return {
-      title: "Success Story Not Found | Blue Stars Admissions Consulting",
+      title: "Success Story Not Found",
     };
   }
 
-  const roleText = story.authorRole || story.highSchool || "Blue Stars Family";
+  const canonicalUrl = `https://bluestars.us/stories/${id}`;
+  const ogImage = story.image && story.image.startsWith("http") ? story.image : "/images/sub_images/ready_to_take.png";
+
   return {
-    title: `${story.name}'s Success Story – ${story.admittedTo || "Admissions Success"} | Blue Stars`,
+    title: `${story.name}'s Success Story – ${story.admittedTo || "Admissions Success"}`,
     description: story.quote.slice(0, 160),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${story.name}'s Story: ${story.title || story.admittedTo}`,
       description: story.quote.slice(0, 160),
+      url: canonicalUrl,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${story.name} - Blue Stars Admissions Success Story`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${story.name}'s Story: ${story.title || story.admittedTo}`,
+      description: story.quote.slice(0, 160),
+      images: [ogImage],
     },
   };
 }
@@ -84,8 +105,15 @@ export default async function StoryDetailPage({ params }: PageProps) {
     })
     .slice(0, 3);
 
+  const breadcrumbsList = [
+    { name: "Home", url: "/" },
+    { name: "Success Stories", url: "/stories" },
+    { name: `${story.name}'s Story`, url: `/stories/${story.id}` },
+  ];
+
   return (
     <div className="w-full bg-white">
+      <BreadcrumbJsonLd items={breadcrumbsList} />
       {/* 1. Breadcrumb Hero - matching Our Services style */}
       <BreadcrumbHero
         breadcrumbs={[
@@ -162,7 +190,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                     ))}
                   </div>
                   <span className="text-[11px] sm:text-xs font-bold text-amber-900 font-heading">
-                    5.0 Verified Review
+                    Verified Family Story
                   </span>
                 </div>
               </div>

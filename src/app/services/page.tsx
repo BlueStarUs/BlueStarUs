@@ -7,9 +7,33 @@ import { ServiceResourcesBanner } from "@/components/sections/ServiceResourcesBa
 import { ServicesCta } from "@/components/sections/ServicesCta";
 
 export const metadata: Metadata = {
-  title: "Our Services | Blue Stars Admissions Consulting",
+  title: "College Admissions Consulting & Strategy Services",
   description:
-    "Explore Blue Stars' personalized admissions consulting services: College Admissions Consulting, Multi-Year College Planning, Research & Internships, Application Strategy, Essay Guidance, and Art Admissions.",
+    "Explore Blue Stars' personalized admissions consulting services: College Admissions Consulting, Multi-Year Planning, Research & Internships, and Essay Guidance.",
+  alternates: {
+    canonical: "https://bluestars.us/services",
+  },
+  openGraph: {
+    title: "College Admissions Consulting & Strategy Services | Blue Stars",
+    description:
+      "Explore Blue Stars' personalized admissions consulting services: College Admissions Consulting, Multi-Year Planning, Research & Internships, and Essay Guidance.",
+    url: "https://bluestars.us/services",
+    images: [
+      {
+        url: "/images/sub_images/Admissions _img.png",
+        width: 1200,
+        height: 630,
+        alt: "Blue Stars Admissions Consulting Programs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "College Admissions Consulting & Strategy Services | Blue Stars",
+    description:
+      "Explore Blue Stars' personalized admissions consulting services: College Admissions Consulting, Multi-Year Planning, Research & Internships, and Essay Guidance.",
+    images: ["/images/sub_images/Admissions _img.png"],
+  },
 };
 
 const GENERAL_SERVICES_FAQS = [
@@ -31,7 +55,7 @@ const GENERAL_SERVICES_FAQS = [
   {
     question: "Are your services available remotely for non-California families?",
     answer:
-      "Yes. We serve families across the entire United States as well as international students worldwide through our interactive video counseling, shared Google Docs workspaces, and parent update portals.",
+      "Yes. We serve families across the entire United States as well as international students worldwide through our interactive video counseling, shared Google Docs workspaces, and regular parent progress updates and milestone check-ins.",
   },
 ];
 

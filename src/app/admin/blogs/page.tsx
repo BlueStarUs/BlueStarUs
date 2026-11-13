@@ -124,12 +124,12 @@ export default function AdminBlogsPage() {
   const handleOpenEditModal = (blog: BlogPost) => {
     setEditingBlog(blog);
     setFormData(blog);
-    setIntroText(blog.intro.join("\n\n"));
-    const allSections = blog.sections
-      .map((sec) => `## ${sec.heading}\n\n${sec.paragraphs.join("\n\n")}`)
+    setIntroText((blog.intro || []).join("\n\n"));
+    const allSections = (blog.sections || [])
+      .map((sec) => `## ${sec.heading}\n\n${(sec.paragraphs || []).join("\n\n")}`)
       .join("\n\n");
-    setBodyText(allSections);
-    setTagsText(blog.tags.join(", "));
+    setBodyText(allSections || (blog.contentHtml ? blog.contentHtml.replace(/<[^>]*>/g, " ").slice(0, 1000) : ""));
+    setTagsText((blog.tags || []).join(", "));
     setIsModalOpen(true);
   };
 
@@ -455,7 +455,7 @@ export default function AdminBlogsPage() {
                   </label>
                   <input
                     type="text"
-                    placeholder="how-to-choose-colleges"
+                    placeholder="e.g. college-admissions-strategy-guide"
                     value={formData.slug || ""}
                     onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                     className="w-full p-2.5 rounded-[5px] border border-brand-border bg-[#F8FBFE] text-brand-navy focus:bg-white focus:border-brand-blue"
