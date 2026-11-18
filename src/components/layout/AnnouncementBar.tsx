@@ -105,11 +105,11 @@ export function AnnouncementBar({
     <aside
       role="region"
       aria-label="Important Announcements"
-      className="relative z-50 bg-gradient-to-r from-[#063354] via-[#094c79] to-[#0b63b5] text-white border-b border-white/10 shadow-[0_2px_12px_rgba(7,61,99,0.25)] select-none overflow-hidden h-[38px] sm:h-[42px] flex items-center"
+      className="relative z-50 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#1166B0] text-white border-b border-white/10 shadow-[0_2px_12px_rgba(2,82,105,0.25)] select-none overflow-hidden h-[38px] sm:h-[42px] flex items-center"
     >
       {/* Left Edge Ambient Fade Mask */}
       <div
-        className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#063354] to-transparent z-10"
+        className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#013B4C] to-transparent z-10"
         aria-hidden="true"
       />
 
@@ -166,7 +166,7 @@ export function AnnouncementBar({
       </div>
 
       {/* Dismiss Button (Pinned on Right) */}
-      <div className="relative z-20 flex-shrink-0 pr-2 sm:pr-3 pl-1 bg-gradient-to-l from-[#0b63b5] via-[#0b63b5] to-transparent h-full flex items-center">
+      <div className="relative z-20 flex-shrink-0 pr-2 sm:pr-3 pl-1 bg-gradient-to-l from-[#1166B0] via-[#1166B0] to-transparent h-full flex items-center">
         <button
           type="button"
           onClick={handleDismiss}

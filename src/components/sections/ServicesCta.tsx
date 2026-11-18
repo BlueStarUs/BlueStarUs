@@ -131,7 +131,7 @@ export function ServicesCta() {
               >
                 <span className="inline-flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                  <span>Free 30-Min Discovery</span>
+                  <span>Free Initial Consultation</span>
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#3bd386] flex-shrink-0" />
@@ -149,53 +149,55 @@ export function ServicesCta() {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[10px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[10px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group cursor-pointer"
                 >
-                  <span>Book a Free Consultation</span>
-                  <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />
+                  <span>Book Your Initial Consultation</span>
+                  <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </motion.div>
             </div>
 
-            {/* Right Column: Student Cutout & Glowing Brand Stars */}
-            <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
-              {/* Radial Glow */}
-              <div
-                className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                aria-hidden="true"
-              />
-
-              {/* Cyan 4-Point Brand Star */}
-              <div
-                ref={starCyanRef}
-                className="absolute right-[28%] sm:right-[30%] lg:right-[26%] top-[26%] w-[76px] h-[76px] sm:w-[86px] sm:h-[86px] lg:w-[94px] lg:h-[94px] text-[#2ba3ea] opacity-85 pointer-events-none drop-shadow-[0_4px_16px_rgba(43,163,234,0.4)] z-0"
-                aria-hidden="true"
-              >
-                <BrandStar className="w-full h-full fill-current" />
-              </div>
-
-              {/* Mint Green 4-Point Brand Star */}
-              <div
-                ref={starGreenRef}
-                className="absolute right-[3%] sm:right-[5%] lg:right-[1%] top-[8%] w-[110px] h-[110px] sm:w-[126px] sm:h-[126px] lg:w-[136px] lg:h-[136px] text-[#3bd386] opacity-95 pointer-events-none drop-shadow-[0_6px_20px_rgba(59,211,134,0.45)] z-0"
-                aria-hidden="true"
-              >
-                <BrandStar className="w-full h-full fill-current" />
-              </div>
-
-              {/* Student Cutout Image */}
-              <div
-                ref={studentRef}
-                className="relative w-[260px] sm:w-[290px] lg:w-[320px] xl:w-[335px] h-[240px] sm:h-[280px] lg:h-[295px] z-10 flex-shrink-0"
-              >
-                <Image
-                  src="/images/sub_images/ready_to_take.png"
-                  alt="Student smiling with phone and backpack, ready for college success"
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 340px"
-                  className="object-contain object-bottom select-none pointer-events-none"
+            {/* Right Column: Student Cutout & Glowing Brand Stars (Mobile Responsive Unified Wrapper) */}
+            <div className="relative w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible pt-2 lg:pt-0">
+              <div className="relative w-[210px] sm:w-[260px] md:w-[290px] lg:w-[320px] xl:w-[335px] h-[190px] sm:h-[240px] md:h-[260px] lg:h-[280px] flex items-end justify-center">
+                {/* Radial Glow */}
+                <div
+                  className="absolute inset-0 bg-[#229ae3]/20 rounded-full blur-2xl pointer-events-none"
+                  aria-hidden="true"
                 />
+
+                {/* Cyan 4-Point Brand Star (Positioned relative to student) */}
+                <div
+                  ref={starCyanRef}
+                  className="absolute -left-3 sm:-left-6 top-8 sm:top-12 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-[#2ba3ea] opacity-85 pointer-events-none drop-shadow-[0_4px_16px_rgba(43,163,234,0.4)] z-0"
+                  aria-hidden="true"
+                >
+                  <BrandStar className="w-full h-full fill-current" />
+                </div>
+
+                {/* Mint Green 4-Point Brand Star (Positioned relative to student) */}
+                <div
+                  ref={starGreenRef}
+                  className="absolute -right-4 sm:-right-8 top-1 sm:top-2 w-16 h-16 sm:w-22 sm:h-22 lg:w-28 lg:h-28 text-[#3bd386] opacity-95 pointer-events-none drop-shadow-[0_6px_20px_rgba(59,211,134,0.45)] z-0"
+                  aria-hidden="true"
+                >
+                  <BrandStar className="w-full h-full fill-current" />
+                </div>
+
+                {/* Student Cutout Image */}
+                <div
+                  ref={studentRef}
+                  className="relative w-full h-full z-10 flex-shrink-0"
+                >
+                  <Image
+                    src="/images/sub_images/ready_to_take.png"
+                    alt="Student smiling with phone and backpack, ready for college success"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 210px, (max-width: 1024px) 290px, 340px"
+                    className="object-contain object-bottom select-none pointer-events-none"
+                  />
+                </div>
               </div>
             </div>
           </div>

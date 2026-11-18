@@ -411,10 +411,10 @@ export default function AdminAnnouncementsPage() {
             previewMode === "mobile" ? "max-w-[400px] shadow-md" : "w-full shadow-xs"
           )}
         >
-          <div className="bg-gradient-to-r from-[#063354] via-[#094c79] to-[#0b63b5] text-white h-[38px] sm:h-[42px] flex items-center relative overflow-hidden select-none">
+          <div className="bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#1166B0] text-white h-[38px] sm:h-[42px] flex items-center relative overflow-hidden select-none">
             {/* Left/Right Edge Fade Masks */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#063354] to-transparent z-10" />
-            <div className="pointer-events-none absolute right-9 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0b63b5] to-transparent z-10" />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#013B4C] to-transparent z-10" />
+            <div className="pointer-events-none absolute right-9 top-0 bottom-0 w-8 bg-gradient-to-l from-[#1166B0] to-transparent z-10" />
 
             <div className="flex-1 overflow-hidden h-full flex items-center">
               <div
@@ -452,7 +452,7 @@ export default function AdminAnnouncementsPage() {
               </div>
             </div>
 
-            <div className="relative z-20 flex-shrink-0 pr-3 pl-1 bg-gradient-to-l from-[#0b63b5] via-[#0b63b5] to-transparent h-full flex items-center">
+            <div className="relative z-20 flex-shrink-0 pr-3 pl-1 bg-gradient-to-l from-[#1166B0] via-[#1166B0] to-transparent h-full flex items-center">
               <span className="p-1 rounded text-white/70 hover:text-white cursor-pointer">
                 <X className="w-3.5 h-3.5" />
               </span>

@@ -89,7 +89,7 @@ function BlueCircleCheck({ className = "w-5 h-5 flex-shrink-0" }: { className?: 
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="10" cy="10" r="10" fill="#0B63B5" />
+      <circle cx="10" cy="10" r="10" fill="#1166B0" />
       <path
         d="M6 10.2L8.7 12.8L14 7.5"
         stroke="white"
@@ -377,7 +377,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {service.consultationBanner && (
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative rounded-[6px] bg-gradient-to-br from-[#07466f] via-[#0b63b5] to-[#0a3d6b] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_16px_44px_rgba(10,61,107,0.16)]">
+            <div className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_16px_44px_rgba(2,82,105,0.16)]">
               {/* Background Glow Ribbons */}
               <div
                 className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"
@@ -804,7 +804,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-8 text-xs sm:text-[13.5px] text-[#bfe2fa] font-medium font-sans">
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                    <span>Free 30-Min Discovery</span>
+                    <span>Free 30-Min Initial Consultation</span>
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#3bd386] flex-shrink-0" />
@@ -823,7 +823,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
-                  <span>Book a Free Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>

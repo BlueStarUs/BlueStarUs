@@ -62,10 +62,26 @@ const STRATEGIC_PILLARS = [
 ];
 
 const ACHIEVEMENTS_DATA = [
-  { value: "16+", label: "Years of Student Success", subtext: "Guiding families since 2010" },
-  { value: "100%", label: "Personalized Support", subtext: "The Calm Way to college success" },
-  { value: "Top 20", label: "Elite & UC Admissions", subtext: "Stanford, Ivy League & premier UCs" },
-  { value: "1-on-1", label: "Dedicated Mentorship", subtext: "Tailored to every student's spike" },
+  {
+    value: "16+",
+    label: "Years of Student Success",
+    subtext: "Guiding families since 2010",
+  },
+  {
+    value: "100%",
+    label: "Personalized Support",
+    subtext: "The Calm Way to college success",
+  },
+  {
+    value: "Top 20",
+    label: "Elite & UC Admissions",
+    subtext: "Stanford, Ivy League & premier UCs",
+  },
+  {
+    value: "1-on-1",
+    label: "Dedicated Mentorship",
+    subtext: "Tailored to every student's spike",
+  },
 ];
 
 const WHY_US_PILLARS = [
@@ -106,7 +122,8 @@ const TEAM_MEMBERS = [
   {
     name: "Helen Ingerson",
     role: "Senior Counselor & Editor",
-    credentials: "B.A. Harvard University (Magna Cum Laude, Phi Beta Kappa), MBA Simmons College",
+    credentials:
+      "B.A. Harvard University (Magna Cum Laude, Phi Beta Kappa), MBA Simmons College",
     bio: "A National Merit Scholar and Phi Beta Kappa, Magna Cum Laude graduate of Harvard University, Helen has worked for over a decade with students across the Bay Area as a tutor, coach, and admissions essay editor. Her students appreciate her ability to make them feel heard while preserving their authentic voice and producing concise, standout drafts that earn admission to top colleges. Helen holds California teaching credentials, was an administrator at St. Ann's in NYC (cited by The Wall Street Journal for unmatched admissions success), and brings senior leadership experience from venture capital.",
     image: "/images/teams/Helen-Ingerson-Upscaled.png",
     badge: "SENIOR COUNSELOR & EDITOR",
@@ -114,7 +131,8 @@ const TEAM_MEMBERS = [
   {
     name: "Wai Cheng",
     role: "Senior Counselor & Editor",
-    credentials: "Wharton MBA & M.A. University of Pennsylvania, B.A. Tufts University",
+    credentials:
+      "Wharton MBA & M.A. University of Pennsylvania, B.A. Tufts University",
     bio: "A native New Yorker, Wai brings over 10 years of college admissions experience to Blue Stars. Holding a Wharton MBA and Master of International Studies from UPenn and a B.A. in International Relations from Tufts, Wai has helped over 100 students majoring in engineering, natural sciences, and humanities enter dream universities like Yale, MIT, Stanford, Johns Hopkins, Amherst, and NYU. Having served on the Wharton Admissions Office team and in product management at Electronic Arts, Wai is celebrated for his warmth, humor, and empowering student-parent guidance.",
     image: "/images/teams/Wai-Cheng-Headshot.webp",
     badge: "SENIOR COUNSELOR & EDITOR",
@@ -133,21 +151,24 @@ const PROFESSIONAL_ACCREDITATIONS = [
   {
     name: "HECA",
     fullName: "Higher Education Consultants Association",
-    description: "Dedicated to advancing high professional standards, ethical counseling practices, and student advocacy in independent college admissions consulting.",
+    description:
+      "Dedicated to advancing high professional standards, ethical counseling practices, and student advocacy in independent college admissions consulting.",
     image: "/images/badges/heca.gif",
     tag: "Verified Member",
   },
   {
     name: "WACAC",
     fullName: "Western Association for College Admission Counseling",
-    description: "Regional affiliate of the National Association for College Admission Counseling (NACAC), upholding student-centered ethics across California, Nevada, and the West.",
+    description:
+      "Regional affiliate of the National Association for College Admission Counseling (NACAC), upholding student-centered ethics across California, Nevada, and the West.",
     image: "/images/badges/wacac.png",
     tag: "Professional Member",
   },
   {
     name: "IECA",
     fullName: "Independent Educational Consultants Association",
-    description: "The nation's premier professional association of experienced, vetted educational consultants committed to excellence, integrity, and whole-student mentorship.",
+    description:
+      "The nation's premier professional association of experienced, vetted educational consultants committed to excellence, integrity, and whole-student mentorship.",
     image: "/images/badges/ieca.png",
     tag: "Professional Member",
   },
@@ -164,11 +185,13 @@ const SUCCESS_PRINCIPLES = [
   },
   {
     step: "3",
-    title: "Practice a culture of deep, open, nonjudgmental conversation and active integrated listening.",
+    title:
+      "Practice a culture of deep, open, nonjudgmental conversation and active integrated listening.",
   },
   {
     step: "4",
-    title: "Where there is a teen, there are structured exercises leading to action plans tailor-made for them.",
+    title:
+      "Where there is a teen, there are structured exercises leading to action plans tailor-made for them.",
   },
   {
     step: "5",
@@ -187,43 +210,59 @@ const SUCCESS_PRINCIPLES = [
 const CORE_VALUES = [
   {
     title: "Adaptability",
-    description: "Fostering mental agility and resilience so students smoothly adapt, pivot, and excel through evolving college admissions criteria.",
+    description:
+      "Fostering mental agility and resilience so students smoothly adapt, pivot, and excel through evolving college admissions criteria.",
     icon: Compass,
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Ambition",
-    description: "Inspiring students to aim high, discover their true academic capabilities, and craft reach-school portfolios with bold confidence.",
+    description:
+      "Inspiring students to aim high, discover their true academic capabilities, and craft reach-school portfolios with bold confidence.",
     icon: Target,
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Authenticity",
-    description: "Uncovering each student's genuine voice so admissions committees connect with the real person behind the grades and test scores.",
+    description:
+      "Uncovering each student's genuine voice so admissions committees connect with the real person behind the grades and test scores.",
     icon: ShieldCheck,
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Caring",
-    description: "Providing warm, individualized mentorship that protects family harmony and supports students emotionally across high school.",
+    description:
+      "Providing warm, individualized mentorship that protects family harmony and supports students emotionally across high school.",
     icon: Heart,
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Compassion",
-    description: "Practicing integrated, nonjudgmental listening that honors every teen's unique background, personal story, and individual pace.",
+    description:
+      "Practicing integrated, nonjudgmental listening that honors every teen's unique background, personal story, and individual pace.",
     icon: Users2,
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Results",
-    description: "Delivering world-class admissions outcomes with personalized, holistic mentorship guiding students to top-choice universities nationwide.",
+    description:
+      "Delivering world-class admissions outcomes with personalized, holistic mentorship guiding students to top-choice universities nationwide.",
     icon: Trophy,
-    image: "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
-function BlueCircleCheck({ className = "w-5 h-5 flex-shrink-0" }: { className?: string }) {
+function BlueCircleCheck({
+  className = "w-5 h-5 flex-shrink-0",
+}: {
+  className?: string;
+}) {
   return (
     <svg
       className={className}
@@ -232,7 +271,7 @@ function BlueCircleCheck({ className = "w-5 h-5 flex-shrink-0" }: { className?: 
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="10" cy="10" r="10" fill="#0B63B5" />
+      <circle cx="10" cy="10" r="10" fill="#1166B0" />
       <path
         d="M6 10.2L8.7 12.8L14 7.5"
         stroke="white"
@@ -265,13 +304,17 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#9ed5ff] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-2.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
-                <span>SAVE TIME &bull; STRESS LESS &bull; ACHIEVE CONTINUOUSLY</span>
+                <span>
+                  SAVE TIME &bull; STRESS LESS &bull; ACHIEVE CONTINUOUSLY
+                </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight leading-[30px] sm:leading-[38px] mb-2">
                 Begin Your Journey With a Complimentary Consultation
               </h2>
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans">
-                Schedule a 30-minute introductory strategy session to evaluate where your student stands and map an actionable roadmap toward selective college acceptances.
+                Schedule a 30-minute introductory strategy session to evaluate
+                where your student stands and map an actionable roadmap toward
+                selective college acceptances.
               </p>
             </div>
 
@@ -281,7 +324,7 @@ export default function AboutPage() {
                   Free 30-Min
                 </span>
                 <span className="block text-xs sm:text-[13px] text-[#bfe2fa] font-sans mt-0.5">
-                  1-on-1 Strategic Discovery Session
+                  1-on-1 Initial Consultation
                 </span>
               </div>
               <Link
@@ -319,7 +362,10 @@ export default function AboutPage() {
             {/* Right: Content */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span
+                  className="w-6 h-[2px] bg-brand-blue rounded-full"
+                  aria-hidden="true"
+                />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   HOLISTIC DEVELOPMENT
                 </span>
@@ -330,11 +376,17 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                At Blue Stars, we believe higher education consulting should be transformative rather than transactional. Our personalized advising empowers high school students to build genuine self-reliance, academic vigor, and intellectual vitality.
+                At Blue Stars, we believe higher education consulting should be
+                transformative rather than transactional. Our personalized
+                advising empowers high school students to build genuine
+                self-reliance, academic vigor, and intellectual vitality.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                Guided by our signature &ldquo;The Calm Way&rdquo; methodology, we help teens eliminate application panic while uncovering their singular passions, resulting in cohesive, standout admissions profiles.
+                Guided by our signature &ldquo;The Calm Way&rdquo; methodology,
+                we help teens eliminate application panic while uncovering their
+                singular passions, resulting in cohesive, standout admissions
+                profiles.
               </p>
 
               <ul className="space-y-2.5 mb-8">
@@ -378,7 +430,10 @@ export default function AboutPage() {
             {/* Left: Text & Stats */}
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span
+                  className="w-6 h-[2px] bg-brand-blue rounded-full"
+                  aria-hidden="true"
+                />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   THE BLUE STARS DIFFERENCE
                 </span>
@@ -389,11 +444,20 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                The college-planning and application process is a deeply personal journey with long-lasting impact. Founded in 2010 by Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), Blue Stars provides proactive, comprehensive college admissions guidance customized to the individual goals of each teen and family.
+                The college-planning and application process is a deeply
+                personal journey with long-lasting impact. Founded in 2010 by
+                Dr. Amy Morgenstern (&ldquo;Dr. M&rdquo;), Blue Stars provides
+                proactive, comprehensive college admissions guidance customized
+                to the individual goals of each teen and family.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-8">
-                We’re not your ordinary admissions consulting service: we focus on enhancing your teen’s natural abilities while guiding their intellectual development. Our high-performance program integrates academic mentorship, community engagement, and personal development with experienced writers, editors, educators, and life coaches.
+                We’re not your ordinary admissions consulting service: we focus
+                on enhancing your teen’s natural abilities while guiding their
+                intellectual development. Our high-performance program
+                integrates academic mentorship, community engagement, and
+                personal development with experienced writers, editors,
+                educators, and life coaches.
               </p>
 
               {/* 4 Stats Cards Grid */}
@@ -444,7 +508,9 @@ export default function AboutPage() {
                 </h3>
               </div>
               <p className="text-xs sm:text-[14px] text-brand-text font-sans max-w-md">
-                A structured, whole-student approach ensuring every facet of your teen&apos;s application reflects authentic intellectual excellence.
+                A structured, whole-student approach ensuring every facet of
+                your teen&apos;s application reflects authentic intellectual
+                excellence.
               </p>
             </div>
 
@@ -504,7 +570,10 @@ export default function AboutPage() {
             {/* Right: Content */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span
+                  className="w-6 h-[2px] bg-brand-blue rounded-full"
+                  aria-hidden="true"
+                />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   NATIONWIDE &amp; INTERNATIONAL REACH
                 </span>
@@ -515,18 +584,27 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Headquartered in the San Francisco Bay Area, Blue Stars partners with families across the United States—from California to New York—as well as international students across Europe, Asia (Shanghai, Chengdu, Tokyo), and the Middle East.
+                Headquartered in the San Francisco Bay Area, Blue Stars partners
+                with families across the United States—from California to New
+                York—as well as international students across Europe, Asia
+                (Shanghai, Chengdu, Tokyo), and the Middle East.
               </p>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                We are proven experts at remote and online education. Through interactive 1-on-1 video counseling, shared digital workspaces, and proactive milestone tracking, distance is never an obstacle to transformative, personalized admissions mentoring.
+                We are proven experts at remote and online education. Through
+                interactive 1-on-1 video counseling, shared digital workspaces,
+                and proactive milestone tracking, distance is never an obstacle
+                to transformative, personalized admissions mentoring.
               </p>
 
               <div className="p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] mb-6">
                 <div className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-[14px] sm:text-[15px] text-brand-navy font-medium font-sans leading-relaxed">
-                    Whether you are attending a public high school in California, an East Coast boarding school, or an international baccalaureate academy abroad, our strategies adapt to your academic system.
+                    Whether you are attending a public high school in
+                    California, an East Coast boarding school, or an
+                    international baccalaureate academy abroad, our strategies
+                    adapt to your academic system.
                   </p>
                 </div>
               </div>
@@ -573,7 +651,11 @@ export default function AboutPage() {
 
             {/* Centered Description */}
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans mb-8 mt-4 max-w-2xl mx-auto">
-              At Blue Stars Admissions Consulting, our team blends former university faculty insight, Ivy League academic backgrounds, and executive functioning coaching. We listen deeply to student aspirations, helping them find joy and confidence in the admissions journey.
+              At Blue Stars Admissions Consulting, our team blends former
+              university faculty insight, Ivy League academic backgrounds, and
+              executive functioning coaching. We listen deeply to student
+              aspirations, helping them find joy and confidence in the
+              admissions journey.
             </p>
 
             {/* Centered 2-Column Responsive Highlights Grid */}
@@ -623,11 +705,17 @@ export default function AboutPage() {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-brand-blue rounded-full"
+                aria-hidden="true"
+              />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 LEADERSHIP &amp; STRATEGY
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-brand-blue rounded-full"
+                aria-hidden="true"
+              />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-3">
@@ -635,7 +723,8 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Dedicated mentors combining academic rigor, university admissions insight, and compassionate coaching.
+              Dedicated mentors combining academic rigor, university admissions
+              insight, and compassionate coaching.
             </p>
           </div>
 
@@ -654,12 +743,14 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy font-heading tracking-tight">
               Professional Accreditations &amp; Affiliations
             </h2>
-            <p className="text-xs sm:text-[14.5px] text-brand-text font-sans mt-1.5">
-              Blue Stars Admissions Consulting adheres to the strict ethical codes and industry-leading standards of the nation&apos;s foremost admissions associations.
+            <p className="text-[14px] sm:text-[16px] text-brand-text font-sans mt-1.5">
+              Blue Stars Admissions Consulting adheres to the strict ethical
+              codes and industry-leading standards of the nation&apos;s foremost
+              admissions associations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
             {PROFESSIONAL_ACCREDITATIONS.map((badge) => (
               <div
                 key={badge.name}
@@ -685,7 +776,7 @@ export default function AboutPage() {
                     {badge.fullName} ({badge.name})
                   </h3>
 
-                  <p className="text-xs sm:text-[13px] leading-[20px] text-brand-text font-sans">
+                  <p className="text-[14px] sm:text-[15px] leading-[22px] text-brand-text font-sans">
                     {badge.description}
                   </p>
                 </div>
@@ -711,11 +802,17 @@ export default function AboutPage() {
           {/* Centered Section Header */}
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-[#2F9E5C] rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-[#2F9E5C] rounded-full"
+                aria-hidden="true"
+              />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-[#2F9E5C] font-heading">
                 OUR PHILOSOPHY &amp; APPROACH
               </span>
-              <span className="w-6 h-[2px] bg-[#2F9E5C] rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-[#2F9E5C] rounded-full"
+                aria-hidden="true"
+              />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-3">
@@ -723,7 +820,8 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Our 7 developmental principles guiding students from self-awareness to lifelong collegiate achievement.
+              Our 7 developmental principles guiding students from
+              self-awareness to lifelong collegiate achievement.
             </p>
           </div>
 
@@ -756,7 +854,9 @@ export default function AboutPage() {
               href="/#contact"
               className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 rounded-[5px] text-xs sm:text-[14px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs hover:shadow-sm group"
             >
-              <span>Read more about our philosophy and what each stage accomplishes</span>
+              <span>
+                Read more about our philosophy and what each stage accomplishes
+              </span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -768,11 +868,17 @@ export default function AboutPage() {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-brand-blue rounded-full"
+                aria-hidden="true"
+              />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 GUIDING PRINCIPLES
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span
+                className="w-6 h-[2px] bg-brand-blue rounded-full"
+                aria-hidden="true"
+              />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-3">
@@ -780,7 +886,8 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Six foundational values shape every consultation, essay review, and strategic milestone at Blue Stars.
+              Six foundational values shape every consultation, essay review,
+              and strategic milestone at Blue Stars.
             </p>
           </div>
 
@@ -828,7 +935,10 @@ export default function AboutPage() {
       {/* 10. The Blue Star Manifesto Banner */}
       <section className="py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white relative overflow-hidden">
         {/* Luminous Glowing Waves in Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <div
+          className="absolute inset-0 pointer-events-none overflow-hidden z-0"
+          aria-hidden="true"
+        >
           <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
           <div className="absolute top-1/2 right-[12%] w-24 h-24 text-[#38bdf8] opacity-25 blur-xs">
@@ -839,7 +949,10 @@ export default function AboutPage() {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-4 shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse" aria-hidden="true" />
+              <span
+                className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse"
+                aria-hidden="true"
+              />
               <span>THE BLUE STAR MANIFESTO</span>
             </div>
 
@@ -847,15 +960,22 @@ export default function AboutPage() {
               More than just our business name,
             </h2>
             <h3 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-[#79c3f7] font-heading tracking-tight leading-[1.25] mb-6">
-              it&apos;s our guiding star. No star shines as bright as THE BLUE STAR.
+              it&apos;s our guiding star. No star shines as bright as THE BLUE
+              STAR.
             </h3>
 
             <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] font-sans mb-4">
-              In astronomy, blue stars burn the hottest, shine the brightest, and illuminate the farthest corners of space. In our counseling practice, we believe every student possesses a distinct, powerful spark.
+              In astronomy, blue stars burn the hottest, shine the brightest,
+              and illuminate the farthest corners of space. In our counseling
+              practice, we believe every student possesses a distinct, powerful
+              spark.
             </p>
 
             <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] font-sans mb-8">
-              Our mission is to help teens uncover, ignite, and project that spark into the world—creating college applications that burn brightly in selective admissions pools, and personal confidence that lasts a lifetime.
+              Our mission is to help teens uncover, ignite, and project that
+              spark into the world—creating college applications that burn
+              brightly in selective admissions pools, and personal confidence
+              that lasts a lifetime.
             </p>
 
             <div className="inline-block p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
@@ -885,7 +1005,10 @@ export default function AboutPage() {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-4">
           <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
             {/* Luminous Glow Waves */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+            <div
+              className="absolute inset-0 pointer-events-none overflow-hidden z-0"
+              aria-hidden="true"
+            >
               <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
               <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
@@ -893,7 +1016,10 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
               <div className="p-7 sm:p-10 lg:p-12 xl:p-14 flex flex-col items-start text-left">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse" aria-hidden="true" />
+                  <span
+                    className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse"
+                    aria-hidden="true"
+                  />
                   <span>READY TO GET STARTED?</span>
                 </div>
 
@@ -902,13 +1028,15 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
-                  Schedule your complimentary 30-minute introductory consultation to map your student&apos;s personalized admissions roadmap.
+                  Schedule your complimentary 30-minute introductory
+                  consultation to map your student&apos;s personalized
+                  admissions roadmap.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-8 text-xs sm:text-[13.5px] text-[#bfe2fa] font-medium font-sans">
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                    <span>Free 30-Min Discovery</span>
+                    <span>Free Initial Consultation</span>
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#3bd386] flex-shrink-0" />
@@ -926,7 +1054,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
-                  <span>Book a Free Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>

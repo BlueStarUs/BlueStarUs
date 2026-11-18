@@ -7,6 +7,16 @@ export interface RedirectRule {
 
 export const MIGRATION_REDIRECTS: RedirectRule[] = [
   {
+    source: "/making-college-campus-tours-worth-your-time",
+    destination: "/events/making-college-campus-tours-worth-your-time",
+    permanent: true,
+  },
+  {
+    source: "/legally-preparing-your-child-for-college-with-estate-planning",
+    destination: "/events/legally-preparing-your-child-for-college-with-estate-planning",
+    permanent: true,
+  },
+  {
     source: "/about-us",
     destination: "/about",
     permanent: true,
@@ -134,6 +144,16 @@ export const MIGRATION_REDIRECTS: RedirectRule[] = [
   {
     source: "/privacy-statement",
     destination: "/privacy-policy",
+    permanent: true,
+  },
+  {
+    source: "/terms",
+    destination: "/terms-of-service",
+    permanent: true,
+  },
+  {
+    source: "/terms-and-conditions",
+    destination: "/terms-of-service",
     permanent: true,
   },
   {

@@ -76,7 +76,7 @@ export function Footer() {
       </div>
 
       {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1390px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Newsletter Subscription Bar: Get College Admissions Updates */}
         <div className="pt-10 pb-8 sm:pt-12 sm:pb-10 border-b border-white/15 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left max-w-xl">
@@ -277,17 +277,17 @@ export function Footer() {
         </div>
 
         {/* Professional Accreditations & Affiliations Trust Banner */}
-        <div className="border-t border-white/15 pt-8 pb-7 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="border-t border-white/15 pt-8 pb-7 flex flex-col md:flex-row items-center justify-between gap-2">
           <div className="text-center md:text-left">
             <span className="block text-xs uppercase tracking-[0.14em] text-[#79c3f7] font-bold font-heading">
               Professional Memberships &amp; Ethical Standards
             </span>
             <span className="block text-xs sm:text-[13px] text-[#bfe2fa]/80 font-sans mt-0.5">
-              Proud members of HECA, WACAC, and IECA adhering to the highest admissions counseling ethics.
+              BBB Accredited Business &amp; proud members of HECA, WACAC, and IECA adhering to the highest admissions counseling ethics.
             </span>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap sm:flex-nowrap justify-center">
             {/* BBB Accredited Business Seal */}
             <a
               href="https://www.bbb.org/us/ca/san-francisco/profile/educational-consultant/blue-stars-admissions-consulting-1116-968560/#sealclick"
@@ -305,23 +305,6 @@ export function Footer() {
                 className="h-6 sm:h-7 w-auto object-contain"
               />
             </a>
-
-            {/* 16 Years of Student Success Badge
-            <div
-              className="bg-white/95 rounded-[5px] px-2.5 py-1 shadow-xs flex items-center gap-2"
-              title="Blue Stars Admissions Consulting - 16 Years of Student Success"
-            >
-              <Image
-                src="/images/badges/16-years-success.png"
-                alt="16 Years of Student Success"
-                width={36}
-                height={30}
-                className="h-7 w-auto object-contain"
-              />
-              <span className="text-[10px] sm:text-[11px] font-extrabold text-[#07466F] font-heading leading-tight uppercase hidden sm:inline">
-                16 Years of<br />Student Success
-              </span>
-            </div> */}
 
             {/* HECA */}
             <div className="bg-white/95 rounded-[5px] px-3.5 py-1.5 shadow-xs hover:bg-white transition-colors">
@@ -370,7 +353,7 @@ export function Footer() {
             </Link>
             <span className="text-[#1c6496]" aria-hidden="true">|</span>
             <Link
-              href="#"
+              href="/terms-of-service"
               className="hover:text-white underline-offset-4 hover:underline transition-colors"
             >
               Terms of Service

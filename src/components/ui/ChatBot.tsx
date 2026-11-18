@@ -11,147 +11,214 @@ import {
   Sparkles,
   ChevronRight,
   ArrowRight,
-  ThumbsUp,
   CornerDownLeft,
-  GraduationCap,
   Calendar,
   Compass,
   BookOpen,
+  GraduationCap,
+  Award,
 } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
+import { HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface ChatMessage {
   id: string;
-  sender: "amy" | "user";
-  senderName: string;
+  sender: "bot" | "user";
   timestamp: string;
   text: string;
-  quotedText?: string;
-  quotedAuthor?: string;
-  reactionCount?: number;
-  hasUserReacted?: boolean;
   actionLink?: {
     label: string;
     href: string;
   };
 }
 
-// Initial conversation seeds inspired by the reference chat screenshots
+// Exact 5 suggested questions from bluestars.us Chatbase bot
+const SUGGESTED_QUESTIONS = [
+  "How does Blue Stars help students with college admissions?",
+  "What college counseling services do you offer?",
+  "How can I schedule an Initial Consultation with Dr. Amy?",
+  "What does your college planning process include?",
+  "Can you tell me about your Research & Internship services?",
+];
+
+// Exact 3 initial greeting messages from bluestars.us Chatbase bot
 const INITIAL_MESSAGES: ChatMessage[] = [
   {
-    id: "msg-1",
-    sender: "amy",
-    senderName: "Amy Morgenstern",
-    timestamp: "3 min",
-    text: "Hello! I'm Dr. Amy Morgenstern from Blue Stars Admissions Consulting. Whether you're exploring Ivy League pathways, research spikes, art admissions, or essay guidance, I'm here to help. What questions can I answer for you or your student today?",
-    reactionCount: 1,
-    hasUserReacted: false,
+    id: "init-1",
+    sender: "bot",
+    timestamp: "Just now",
+    text: "Welcome to Blue Stars Admissions Consulting!",
+  },
+  {
+    id: "init-2",
+    sender: "bot",
+    timestamp: "Just now",
+    text: "I am Dr. Amy Morgenstern's virtual assistant. I can help you learn about our college admissions consulting services, understand how we support students, and find the right next step for your family.",
+  },
+  {
+    id: "init-3",
+    sender: "bot",
+    timestamp: "Just now",
+    text: "How can I help you today?",
   },
 ];
 
-// Quick suggestion chips
-const QUICK_PROMPTS = [
-  "🎓 Admissions Consulting",
-  "📝 Essay & Personal Statement",
-  "🔬 Research & Internships",
-  "🎨 Art Admissions Consulting",
-  "🏆 Student Outcomes & Results",
-  "📅 Book Free Strategy Session",
-];
-
-// Knowledge base for answering user questions intelligently
+// Intelligent responses matching Blue Stars offerings
 function getBotResponse(userText: string): {
   text: string;
   actionLink?: { label: string; href: string };
 } {
-  const query = userText.toLowerCase();
+  const query = userText.toLowerCase().trim();
 
-  if (query.includes("@") || (query.includes("email") && query.length > 10)) {
+  // 1. "How does Blue Stars help students with college admissions?"
+  if (
+    query.includes("how does blue stars help") ||
+    (query.includes("help") && query.includes("admissions"))
+  ) {
     return {
-      text: "Thank you for sharing your contact details! I have forwarded your inquiry directly to Dr. Amy Morgenstern and our senior counseling team. We will review your questions and reach out promptly. You can also book a live 30-minute consultation on Dr. Amy's calendar directly below:",
+      text: "At Blue Stars, we practice 'The Calm Way' to college admissions. We guide high school students to discover their authentic intellectual passions, develop impactful extracurricular and research spikes, craft genuine personal narratives, and build a strategic college list.\n\nOur students earn admission to top Ivy League, UC, and elite private universities while building lifelong confidence.",
       actionLink: {
-        label: "Schedule Free Consultation (HubSpot)",
-        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+        label: "Book Your Initial Consultation",
+        href: HUBSPOT_CONSULTATION_URL,
       },
     };
   }
 
-  if (query.includes("research") || query.includes("internship") || query.includes("academy")) {
+  // 2. "What college counseling services do you offer?"
+  if (
+    query.includes("what college counseling services") ||
+    query.includes("services do you offer") ||
+    query.includes("what services")
+  ) {
     return {
-      text: "Yes! At Blue Stars, we guide students in developing academic spikes through independent research projects, mentorship with university faculty, and prestigious summer internships. This provides compelling depth on college applications, especially for STEM, humanities, and pre-med tracks.",
-      actionLink: { label: "Learn About Application Strategy", href: "/services/application-strategy" },
+      text: "We offer tailored, holistic admissions consulting across all high school years:\n\n• 8th–11th Grade College Planning & Mentorship\n• Comprehensive Senior Application Strategy\n• Essay & Personal Statement Guidance\n• Research, Science & Competitive Summer Internships\n• Specialized Art Admissions Consulting & Portfolio Prep\n• Direct Strategy Consultation (75 Min)",
+      actionLink: {
+        label: "Explore All Services",
+        href: "/services",
+      },
     };
   }
 
-  if (query.includes("essay") || query.includes("statement") || query.includes("supplement")) {
+  // 3. "How can I schedule an Initial Consultation with Dr. Amy?"
+  if (
+    query.includes("schedule") ||
+    query.includes("initial consultation") ||
+    query.includes("dr. amy") ||
+    query.includes("consultation") ||
+    query.includes("book") ||
+    query.includes("appointment") ||
+    query.includes("calendar")
+  ) {
     return {
-      text: "Our Essay & Personal Statement Guidance focuses on discovering your genuine voice rather than writing cookie-cutter essays. We guide students through brainstorming, outlining, and iterative feedback so their stories stand out vividly to admissions officers.",
-      actionLink: { label: "Explore Essay Guidance", href: "/services/essay-guidance" },
+      text: "You can book a complimentary 30-minute Initial Consultation directly on Dr. Amy Morgenstern's calendar!\n\nDuring this video session, our counseling team will learn about your student's unique personality, academic profile, and college aspirations to recommend the ideal next steps.",
+      actionLink: {
+        label: "Book Your Initial Consultation (30 Min)",
+        href: HUBSPOT_CONSULTATION_URL,
+      },
     };
   }
 
-  if (query.includes("art") || query.includes("portfolio") || query.includes("risd") || query.includes("design")) {
+  // 4. "What does your college planning process include?"
+  if (
+    query.includes("college planning process") ||
+    query.includes("process include") ||
+    query.includes("how do you work") ||
+    query.includes("methodology")
+  ) {
     return {
-      text: "Our Art Admissions Consulting helps aspiring artists, architects, and designers build cohesive portfolios and articulate artist statements for top institutions like RISD, Pratt, Parsons, and Carnegie Mellon. Jeanie and Hye Won both secured RISD admissions with our coaching!",
-      actionLink: { label: "Art Admissions Program", href: "/services/art-admissions-consulting" },
+      text: "Our structured 4-step process is designed for clarity and stress-free success:\n\n1. Initial Consultation (30 Min) — Meet with us to understand your goals and explore fit.\n2. Strategy Consultation (75 Min) — Deep diagnostic review of transcripts, testing, activities, and a custom admissions roadmap.\n3. Partnership & Designated Counselor — One-on-one mentorship tailored to your teen's interests.\n4. Application Execution & Confidence — Exceptional essays, interviews, and strategic submissions.",
+      actionLink: {
+        label: "Read About Our Process",
+        href: "/#process",
+      },
     };
   }
 
+  // 5. "Can you tell me about your Research & Internship services?"
+  if (
+    query.includes("research") ||
+    query.includes("internship") ||
+    query.includes("summer program") ||
+    query.includes("lab") ||
+    query.includes("stem")
+  ) {
+    return {
+      text: "Our Research & Internship mentorship pairs high school students with PhD-level mentors and helps them secure spots at world-renowned programs like Stanford SIMR, SASI, COSMOS, and MIT RISE.\n\nStudents conduct original research, author academic papers, or lead passion projects that demonstrate rare intellectual initiative to admissions officers.",
+      actionLink: {
+        label: "View Research & Internships",
+        href: "/services/application-strategy",
+      },
+    };
+  }
+
+  // Art admissions
+  if (
+    query.includes("art") ||
+    query.includes("portfolio") ||
+    query.includes("risd") ||
+    query.includes("design") ||
+    query.includes("bfa")
+  ) {
+    return {
+      text: "Dr. Amy holds an MFA in contemporary art and provides piece-by-piece studio critique and artist statement coaching. Our students consistently gain admission with substantial merit scholarships to RISD, Pratt Institute, CalArts, Parsons, and university art supplements (Ivy League, UCLA, CMU).",
+      actionLink: {
+        label: "Art Admissions Program",
+        href: "/services/art-admissions-consulting",
+      },
+    };
+  }
+
+  // Essays
+  if (
+    query.includes("essay") ||
+    query.includes("personal statement") ||
+    query.includes("supplement")
+  ) {
+    return {
+      text: "Our Socratic narrative brainstorming helps students uncover their genuine story rather than writing cliché essays. We guide students through outline, voice development, and line editing so their applications stand out memorably to readers.",
+      actionLink: {
+        label: "Essay Guidance Details",
+        href: "/services/essay-guidance",
+      },
+    };
+  }
+
+  // Admissions outcomes & results
   if (
     query.includes("result") ||
-    query.includes("story") ||
     query.includes("acceptance") ||
+    query.includes("outcome") ||
     query.includes("stanford") ||
     query.includes("harvard") ||
     query.includes("ivy")
   ) {
     return {
-      text: "Blue Stars students earn admissions to prestigious universities nationwide. Our graduates have secured spots at Harvard, Stanford, Brown, Dartmouth, WashU, UPenn, UC Berkeley, UCLA, and received valuable merit scholarships!",
-      actionLink: { label: "Browse Student Success Stories", href: "/stories" },
-    };
-  }
-
-  if (query.includes("price") || query.includes("cost") || query.includes("fee") || query.includes("package")) {
-    return {
-      text: "We offer tailored, comprehensive consulting packages based on your student's current grade (8th–12th grade) and specific admissions goals. We start with a complimentary 30-minute strategic consultation to review your student's profile and recommend the ideal pathway.",
+      text: "Blue Stars students have achieved acceptances to Harvard, Stanford, Princeton, Brown, Dartmouth, Cornell ED, CMU School of Computer Science, Northwestern, UC Berkeley, UCLA, and many more, often with six-figure merit scholarships!",
       actionLink: {
-        label: "Schedule Free Consultation",
-        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+        label: "View Successes & Admits",
+        href: "/successes",
       },
     };
   }
 
-  if (
-    query.includes("contact") ||
-    query.includes("call") ||
-    query.includes("book") ||
-    query.includes("consultation") ||
-    query.includes("meet") ||
-    query.includes("appointment")
-  ) {
+  // Lead capture (email)
+  if (query.includes("@")) {
     return {
-      text: "I'd love to connect! You can book a complimentary 30-minute Strategic Admissions Consultation with our directors. We'll discuss your student's aspirations, GPA, extracurriculars, and recommend a personalized plan.",
+      text: "Thank you for sharing your email! Our senior counseling team has received your information and will reach out promptly. In the meantime, you can reserve an open slot on Dr. Amy's calendar directly:",
       actionLink: {
-        label: "Book Free Strategic Call",
-        href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+        label: "Book Your Initial Consultation",
+        href: HUBSPOT_CONSULTATION_URL,
       },
     };
   }
 
-  if (query.includes("service") || query.includes("program") || query.includes("planning") || query.includes("roadmap")) {
-    return {
-      text: "Blue Stars provides end-to-end guidance including 8th–11th Grade College Planning, Comprehensive Application Strategy, Essay Coaching, Art Admissions, and Merit Scholarship Guidance.",
-      actionLink: { label: "View All Services", href: "/services" },
-    };
-  }
-
-  // Friendly default answer
+  // Generic friendly fallback
   return {
-    text: "Thank you for reaching out! Every student's journey is unique. At Blue Stars, we tailor our mentoring to each student's authentic strengths. Would you like to explore our student success stories or book a free 30-minute strategic consultation with our team?",
+    text: "Thank you for reaching out! Every student's journey is unique. At Blue Stars, we provide personalized, compassionate mentorship to help your teen shine authentically. Would you like to schedule a free 30-minute Initial Consultation with our senior team?",
     actionLink: {
-      label: "Book Free Consultation",
-      href: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
+      label: "Book Your Initial Consultation",
+      href: HUBSPOT_CONSULTATION_URL,
     },
   };
 }
@@ -161,13 +228,12 @@ export function ChatBot() {
   const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [quotingMessage, setQuotingMessage] = useState<ChatMessage | null>(null);
-  const [showWelcomeTooltip, setShowWelcomeTooltip] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // Auto-scroll to bottom of conversation
+  // Auto-scroll to latest message
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -175,77 +241,62 @@ export function ChatBot() {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
-      setShowWelcomeTooltip(false);
-      // Focus input when opened on non-mobile
       if (window.innerWidth >= 640) {
         setTimeout(() => inputRef.current?.focus(), 150);
       }
     }
   }, [isOpen, messages, isTyping]);
 
-  // Hide initial welcome tooltip after 9 seconds if not clicked
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowWelcomeTooltip(false);
-    }, 9000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleSendMessage = (textToSend?: string) => {
     const text = (textToSend || inputValue).trim();
     if (!text) return;
 
+    setHasInteracted(true);
     const userMessage: ChatMessage = {
       id: `user-${Date.now()}`,
       sender: "user",
-      senderName: "You",
       timestamp: "Now",
       text,
-      quotedText: quotingMessage ? quotingMessage.text : undefined,
-      quotedAuthor: quotingMessage ? quotingMessage.senderName : undefined,
     };
 
     setMessages((prev) => [...prev, userMessage]);
     setInputValue("");
-    setQuotingMessage(null);
     setIsTyping(true);
 
-    // If user provided an email, forward automatically to admin leads & CRM
+    // If an email address is detected, log lead to admin backend
     if (text.includes("@")) {
-      const extractedEmail = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/)?.[0] || text;
+      const extractedEmail =
+        text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/)?.[0] || text;
       fetch("/api/admin/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          fullName: "Chat Widget Visitor",
+          fullName: "Chatbot Visitor",
           email: extractedEmail,
           phone: "Not provided",
-          interest: "Chatbot Admissions Inquiry",
-          serviceInterest: "Live Chat Assistance",
+          interest: "Admissions Consulting Inquiry",
+          serviceInterest: "Chatbase Virtual Assistant",
           message: text,
-          source: "Interactive Chat Widget",
+          source: "Floating Chatbot",
           formGuid: "557872d0-5bf5-45db-96d7-b07c4cc96c50",
         }),
       }).catch(() => {});
     }
 
-    // Simulate natural thinking delay
+    // Natural bot response delay
     setTimeout(() => {
       const response = getBotResponse(text);
       const botMessage: ChatMessage = {
-        id: `amy-${Date.now()}`,
-        sender: "amy",
-        senderName: "Amy Morgenstern",
+        id: `bot-${Date.now()}`,
+        sender: "bot",
         timestamp: "Now",
         text: response.text,
-        quotedText: text,
-        quotedAuthor: "You",
         actionLink: response.actionLink,
       };
 
       setMessages((prev) => [...prev, botMessage]);
       setIsTyping(false);
-    }, 950);
+    }, 700);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -255,150 +306,138 @@ export function ChatBot() {
     }
   };
 
-  const toggleReaction = (messageId: string) => {
-    setMessages((prev) =>
-      prev.map((msg) => {
-        if (msg.id === messageId) {
-          const hasReacted = msg.hasUserReacted;
-          const currentCount = msg.reactionCount || 0;
-          return {
-            ...msg,
-            hasUserReacted: !hasReacted,
-            reactionCount: hasReacted ? Math.max(0, currentCount - 1) : currentCount + 1,
-          };
-        }
-        return msg;
-      })
-    );
-  };
-
   const handleResetChat = () => {
     setMessages(INITIAL_MESSAGES);
-    setQuotingMessage(null);
+    setHasInteracted(false);
   };
 
   return (
     <>
-      {/* 1. Floating Tooltip Callout (auto-shows on desktop) */}
-      {!isOpen && showWelcomeTooltip && (
-        <div
-          role="status"
-          className="fixed bottom-[84px] sm:bottom-[94px] right-4 sm:right-6 z-50 animate-in fade-in slide-in-from-bottom-2 duration-300 max-w-[280px] sm:max-w-xs"
-        >
-          <div className="bg-white rounded-[8px] p-3 sm:p-3.5 shadow-[0_10px_30px_rgba(10,61,107,0.18)] border border-[#cde1f7] text-left relative">
-            <button
-              type="button"
-              onClick={() => setShowWelcomeTooltip(false)}
-              className="absolute top-2 right-2 text-brand-text/50 hover:text-brand-navy p-0.5 rounded-full"
-              aria-label="Dismiss message"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-            <div className="flex items-start gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center flex-shrink-0 relative">
-                <BrandStar className="w-4 h-4 text-white fill-white" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 absolute -top-0.5 -right-0.5 ring-2 ring-white" />
-              </div>
-              <div className="min-w-0 pr-2">
-                <div className="text-xs font-bold text-brand-navy font-heading">
-                  Dr. Amy Morgenstern
-                </div>
-                <p className="text-[11.5px] text-brand-text font-sans mt-0.5 leading-snug">
-                  Have questions about college admissions or research spikes? Let&apos;s chat!
-                </p>
-              </div>
+      {/* =========================================================================
+          1. FLOATING CHAT TRIGGER BUTTON (Replicates bluestars.us Chatbase Pill)
+          - Rounded pill button: [Chat Icon] Chat
+          - Uses BlueStars Brand Blue (#1166B0) and Montserrat Font
+          - Online pulsating green indicator
+          ========================================================================= */}
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        {!isOpen ? (
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open chat"
+            className={cn(
+              "group relative flex items-center gap-2.5 px-4 sm:px-5 py-3 rounded-full",
+              "bg-gradient-to-r from-brand-navy via-[#07466F] to-brand-blue text-white",
+              "shadow-[0_8px_25px_rgba(2,82,105,0.30)] hover:shadow-[0_12px_32px_rgba(2,82,105,0.40)]",
+              "hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer",
+              "font-heading font-bold text-sm tracking-wide focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
+            )}
+          >
+            {/* Live Green Status Badge */}
+            <span
+              className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#7BC144] ring-2 ring-white animate-pulse"
+              aria-hidden="true"
+            />
+
+            {/* Chat Speech Bubble with Brand Star */}
+            <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+              <MessageSquare className="w-5 h-5 text-white fill-white/20 transition-transform group-hover:scale-110" />
             </div>
-            {/* Arrow pointer */}
-            <div className="w-3 h-3 bg-white border-r border-b border-[#cde1f7] rotate-45 absolute -bottom-1.5 right-6" />
-          </div>
-        </div>
+
+            {/* "Chat" Text matching bluestars.us */}
+            <span className="font-heading font-bold text-[14.5px] leading-none text-white">
+              Chat
+            </span>
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close chat"
+            className={cn(
+              "w-12 h-12 rounded-full flex items-center justify-center",
+              "bg-brand-navy hover:bg-brand-darkNavy text-white shadow-lg",
+              "hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer",
+              "focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
+            )}
+          >
+            <X className="w-5 h-5 text-white" />
+          </button>
+        )}
+      </div>
+
+      {/* Mobile Backdrop Overlay (Tap to Dismiss on Small Screens) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 sm:hidden animate-in fade-in duration-200"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
       )}
 
-      {/* 2. Floating Trigger Button in Bottom Right */}
-      {!isOpen && (
-        <button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Blue Stars Chat Assistant"
-          className={cn(
-            "fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50",
-            // 5% smaller on mobile (53px), 20% smaller on desktop (52px)
-            "w-[53px] h-[53px] sm:w-[52px] sm:h-[52px] rounded-full",
-            "bg-gradient-to-br from-[#073D6B] via-[#094D85] to-brand-blue",
-            "text-white shadow-[0_8px_24px_rgba(10,61,107,0.32)] hover:shadow-[0_12px_30px_rgba(10,61,107,0.42)]",
-            "hover:scale-105 active:scale-95 transition-all duration-300",
-            "flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
-          )}
-        >
-          {/* Online green indicator badge */}
-          <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 rounded-full ring-2 ring-white animate-pulse" />
-
-          {/* Blue Stars Star Icon with Chat Glyph */}
-          <div className="relative w-7 h-7 sm:w-6.5 sm:h-6.5 flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
-            <BrandStar className="w-5.5 h-5.5 sm:w-5.5 sm:h-5.5 text-white fill-white drop-shadow-sm" />
-            <Sparkles className="w-3 h-3 text-[#9ee3b8] absolute -top-1 -right-1" />
-          </div>
-        </button>
-      )}
-
-      {/* 3. Modern Interactive Chat Window (Matches screenshot UI) */}
+      {/* =========================================================================
+          2. CHAT MODAL WINDOW (Replicates bluestars.us Chatbase UI & Structure)
+          - Border radius 20px (--cb-radius: 20px)
+          - Header: Blue Stars Admissions Consulting + controls
+          - Body: 3 initial messages + 5 suggested prompt cards
+          - Input: Pill input with "Message..." placeholder
+          ========================================================================= */}
       {isOpen && (
         <div
           role="dialog"
-          aria-label="Blue Stars Chat Assistant"
+          aria-label="Blue Stars Admissions Consulting Chat"
           className={cn(
-            "fixed z-50 flex flex-col overflow-hidden bg-white shadow-[0_20px_50px_rgba(10,61,107,0.25)] border border-[#d6e5f3]",
-            // Mobile: 5% scaled (inset-x-3.5 bottom-3.5 top-14), Desktop: 20% smaller (350px x 490px)
-            "inset-x-3.5 bottom-3.5 top-14 rounded-[14px] sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[420px] sm:h-[590px] sm:max-h-[82vh] sm:rounded-[14px]",
-            "animate-in fade-in zoom-in-95 duration-200"
+            "fixed z-50 flex flex-col overflow-hidden bg-white shadow-[0_20px_60px_rgba(2,82,105,0.22)]",
+            "border border-brand-border/90",
+            // Mobile: full viewport sheet with generous touch targets | Desktop: elegant floating box
+            "inset-x-3 bottom-[76px] top-16 rounded-[12px] sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[410px] sm:h-[610px] sm:max-h-[82vh]",
+            "animate-in fade-in zoom-in-95 duration-200 font-sans"
           )}
         >
-          {/* Header (Brand Navy Gradient with Amy Morgenstern info) */}
-          <header className="p-3 sm:p-3.5 bg-gradient-to-r from-brand-navy via-[#084877] to-brand-blue text-white flex items-center justify-between gap-2.5 flex-shrink-0 shadow-xs relative overflow-hidden">
-            {/* Subtle background glow */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none" />
+          {/* Header */}
+          <header className="px-4 py-3.5 bg-gradient-to-r from-brand-navy via-[#07466F] to-brand-blue text-white flex items-center justify-between gap-3 flex-shrink-0 relative overflow-hidden">
+            {/* Ambient Star Glow */}
+            <div
+              className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"
+              aria-hidden="true"
+            />
 
-            <div className="flex items-center gap-2 min-w-0 z-10">
-              {/* Circular Avatar matching reference image (Blue circle with Blue Stars star) */}
-              <div className="w-9 h-9 sm:w-9.5 sm:h-9.5 rounded-full bg-gradient-to-br from-[#073D6B] to-[#0d4f82] border-2 border-white/40 flex items-center justify-center flex-shrink-0 relative shadow-sm">
-                <BrandStar className="w-5 h-5 sm:w-5 sm:h-5 text-white fill-white drop-shadow-xs" />
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute -bottom-0.5 -right-0.5 ring-2 ring-brand-navy" />
+            <div className="flex items-center gap-2.5 min-w-0 z-10">
+              {/* Profile Avatar with Brand Star */}
+              <div className="w-9 h-9 rounded-full bg-white/15 border border-white/30 flex items-center justify-center flex-shrink-0 relative shadow-xs">
+                <BrandStar className="w-5 h-5 text-white fill-white" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#7BC144] absolute -bottom-0.5 -right-0.5 ring-2 ring-brand-navy" />
               </div>
 
               <div className="min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <h3 className="text-xs sm:text-[13px] font-bold font-heading truncate leading-tight text-white">
-                    Amy Morgenstern
-                  </h3>
-                  <span className="text-[9.5px] font-bold px-1 py-0.2 rounded-[3px] bg-white/20 text-white/90">
-                    Ph.D.
-                  </span>
-                </div>
-                <div className="text-[10.5px] text-white/80 font-sans truncate flex items-center gap-1 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Admissions Assistant • Dr. Amy &amp; Team</span>
+                <h3 className="text-[14px] sm:text-[14.5px] font-bold font-heading truncate leading-tight text-white">
+                  Blue Stars Admissions Consulting
+                </h3>
+                <div className="text-[11px] text-[#D8EAEE] font-sans truncate flex items-center gap-1.5 mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7BC144] animate-pulse" />
+                  <span>Dr. Amy Morgenstern&apos;s Assistant</span>
                 </div>
               </div>
             </div>
 
-            {/* Header Controls */}
-            <div className="flex items-center gap-2 sm:gap-[2px] z-10 flex-shrink-0">
+            {/* Header Action Controls */}
+            <div className="flex items-center gap-1 z-10 flex-shrink-0">
               <button
                 type="button"
                 onClick={handleResetChat}
                 title="Restart conversation"
-                className="w-8 h-8 rounded-[5px] text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Restart conversation"
+                className="w-7 h-7 rounded-[6px] text-white/80 hover:text-white hover:bg-white/15 flex items-center justify-center transition-colors cursor-pointer"
               >
-                <RotateCcw className="w-3 h-3" />
+                <RotateCcw className="w-3.5 h-3.5" />
               </button>
 
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
                 title="Minimize chat"
-                className="w-8 h-8 rounded-[5px] text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Minimize chat"
+                className="w-7 h-7 rounded-[6px] text-white/80 hover:text-white hover:bg-white/15 flex items-center justify-center transition-colors cursor-pointer"
               >
                 <Minus className="w-3.5 h-3.5" />
               </button>
@@ -407,8 +446,8 @@ export function ChatBot() {
                 type="button"
                 onClick={() => setIsOpen(false)}
                 title="Close chat"
-                className="w-8 h-8 rounded-[5px] text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Close chat"
+                className="w-7 h-7 rounded-[6px] text-white/80 hover:text-white hover:bg-white/15 flex items-center justify-center transition-colors cursor-pointer"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -416,14 +455,15 @@ export function ChatBot() {
           </header>
 
           {/* Conversation Body */}
-          <div className="flex-1 overflow-y-auto custom-scrollbar p-3.5 sm:p-4 space-y-4 bg-[#f8fbfe] font-sans">
-            {/* Start of chat timestamp */}
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-3.5 sm:p-4 space-y-3.5 bg-brand-bg font-sans">
+            {/* Timestamp Badge */}
             <div className="text-center my-1">
-              <span className="text-[10.5px] font-bold uppercase tracking-wider text-brand-text/50 font-heading bg-white px-2.5 py-1 rounded-full border border-[#e4edf6]">
-                Blue Stars Admissions Advisor
+              <span className="text-[11px] font-semibold text-brand-gray/80 font-heading bg-white px-3 py-1 rounded-full border border-brand-border shadow-2xs">
+                Today
               </span>
             </div>
 
+            {/* Rendered Messages */}
             {messages.map((message) => {
               const isUser = message.sender === "user";
 
@@ -435,63 +475,59 @@ export function ChatBot() {
                     isUser ? "items-end" : "items-start"
                   )}
                 >
-                  {/* Sender Header Line (Exactly matching screenshot) */}
-                  <div className="flex items-center gap-2 mb-1 px-1">
+                  <div className="flex items-end gap-2 max-w-[88%] sm:max-w-[85%]">
+                    {/* Bot Avatar Icon */}
                     {!isUser && (
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-br from-[#073D6B] to-brand-blue border border-[#0d4f82]/20 flex items-center justify-center flex-shrink-0 shadow-2xs">
-                        <BrandStar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white fill-white drop-shadow-xs" />
+                      <div className="w-6 h-6 rounded-full bg-brand-navy flex items-center justify-center flex-shrink-0 shadow-2xs mb-0.5">
+                        <BrandStar className="w-3.5 h-3.5 text-white fill-white" />
                       </div>
                     )}
-                    <span className="text-xs sm:text-[13px] font-bold text-brand-navy font-heading">
-                      {message.senderName}
-                    </span>
-                    <span className="text-[11px] text-brand-text/55 font-sans">
-                      {message.timestamp}
-                    </span>
-                  </div>
 
-                  {/* Message Bubble Container */}
-                  <div className="relative max-w-[88%] sm:max-w-[84%]">
+                    {/* Bubble with Chatbase radii: 20px rounded, 4px tail */}
                     <div
                       className={cn(
-                        "rounded-[12px] p-2.5 sm:p-3 text-xs sm:text-[12.5px] leading-[18px] sm:leading-[19px] shadow-2xs font-sans transition-all",
+                        "rounded-[20px] p-3 text-[13px] sm:text-[13.5px] leading-[19px] sm:leading-[20px] font-sans shadow-2xs transition-all",
                         isUser
-                          ? "bg-[#dcebfb] border border-[#c8e0fa] text-brand-navy rounded-tr-[3px]"
-                          : "bg-white border border-[#e4edf6] text-brand-navy rounded-tl-[3px]"
+                          ? "bg-brand-blue !text-white rounded-tr-[4px]"
+                          : "bg-white border border-brand-border text-brand-navy rounded-tl-[4px]"
                       )}
                     >
-                      {/* Quoted Message Sub-Box (Signature visual element from the screenshot) */}
-                      {message.quotedText && (
-                        <div
-                          className={cn(
-                            "rounded-[8px] p-2.5 mb-2 border transition-colors",
-                            isUser
-                              ? "bg-white/80 border-[#b8d6f8]"
-                              : "bg-[#f2f7fc] border-[#d8e6f5]"
-                          )}
-                        >
-                          <div className="flex items-center gap-1.5 text-brand-blue font-bold text-[11px] font-heading mb-0.5">
-                            <span className="text-sm font-serif leading-none">“</span>
-                            <span>{message.quotedAuthor || "You"}</span>
-                          </div>
-                          <p className="line-clamp-2 italic text-brand-navy/85 text-[11.5px] font-sans">
-                            {message.quotedText}
-                          </p>
-                        </div>
-                      )}
-
-                      {/* Main Message Body */}
-                      <p className="whitespace-pre-line text-brand-navy font-medium">
+                      <p
+                        className={cn(
+                          "whitespace-pre-line font-[500] text-[13px] sm:text-[13.5px] leading-[19px] sm:leading-[20px]",
+                          isUser ? "text-white !text-white" : "text-brand-navy"
+                        )}
+                        style={isUser ? { color: "#ffffff" } : { color: "#025269" }}
+                      >
                         {message.text}
                       </p>
 
-                      {/* Action Link (e.g. Schedule Consultation / Read Stories) */}
+                      {/* Attached Action Link */}
                       {message.actionLink && (
-                        <div className="mt-2.5 pt-2 border-t border-[#e8f1fa]">
+                        <div className="mt-3 pt-2.5 border-t border-brand-border/60">
                           <Link
                             href={message.actionLink.href}
-                            onClick={() => setIsOpen(false)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-[11.5px] font-bold font-heading transition-colors shadow-2xs"
+                            target={
+                              message.actionLink.href.startsWith("http")
+                                ? "_blank"
+                                : "_self"
+                            }
+                            rel={
+                              message.actionLink.href.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            onClick={() => {
+                              if (!message.actionLink?.href.startsWith("http")) {
+                                setIsOpen(false);
+                              }
+                            }}
+                            className={cn(
+                              "inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold font-heading transition-all shadow-xs",
+                              isUser
+                                ? "bg-white text-brand-blue hover:bg-[#F3F8FD]"
+                                : "bg-brand-blue hover:bg-brand-navy text-white"
+                            )}
                           >
                             <span>{message.actionLink.label}</span>
                             <ArrowRight className="w-3 h-3" />
@@ -499,62 +535,49 @@ export function ChatBot() {
                         </div>
                       )}
                     </div>
-
-                    {/* Reaction Badge (Thumbs Up 👍 1 pill matching screenshot) */}
-                    {(message.reactionCount || 0) > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => toggleReaction(message.id)}
-                        className={cn(
-                          "absolute -bottom-2.5 right-2 px-1.5 py-0.5 rounded-full text-[11px] font-sans flex items-center gap-1 bg-white border border-[#d6e5f3] shadow-xs cursor-pointer transition-transform hover:scale-105",
-                          message.hasUserReacted
-                            ? "bg-[#e8f3fc] border-brand-blue/40 text-brand-blue font-bold"
-                            : "text-brand-text hover:text-brand-navy"
-                        )}
-                        aria-label="Thumbs up reaction"
-                      >
-                        <span>👍</span>
-                        <span>{message.reactionCount}</span>
-                      </button>
-                    )}
                   </div>
-
-                  {/* Inline Action Trigger: Quote This Message */}
-                  {!isUser && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setQuotingMessage(message);
-                        inputRef.current?.focus();
-                      }}
-                      className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity mt-1 text-[11px] font-bold text-brand-blue hover:text-brand-navy font-heading flex items-center gap-1 cursor-pointer pl-1"
-                    >
-                      <CornerDownLeft className="w-3 h-3" />
-                      <span>Quote &amp; Reply</span>
-                    </button>
-                  )}
                 </div>
               );
             })}
 
-            {/* Amy Typing Indicator */}
-            {isTyping && (
-              <div className="flex flex-col items-start animate-in fade-in duration-200">
-                <div className="flex items-center gap-2 mb-1 px-1">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-br from-[#073D6B] to-brand-blue border border-[#0d4f82]/20 flex items-center justify-center flex-shrink-0 shadow-2xs">
-                    <BrandStar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white fill-white drop-shadow-xs" />
-                  </div>
-                  <span className="text-xs sm:text-[13px] font-bold text-brand-navy font-heading">
-                    Amy Morgenstern
-                  </span>
-                  <span className="text-[11px] text-brand-text/50 font-sans">
-                    Typing...
-                  </span>
+            {/* Suggested Prompt Cards (Replicates bluestars.us Chatbase suggested messages) */}
+            {!hasInteracted && (
+              <div className="pt-2 space-y-2 animate-in fade-in duration-300">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-brand-navy/60 font-heading px-1">
+                  Suggested Questions
                 </div>
-                <div className="bg-white border border-[#e4edf6] rounded-[14px] rounded-tl-[3px] p-3 text-xs shadow-2xs flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-brand-blue animate-bounce" />
-                  <span className="w-2 h-2 rounded-full bg-brand-blue animate-bounce [animation-delay:0.15s]" />
-                  <span className="w-2 h-2 rounded-full bg-brand-blue animate-bounce [animation-delay:0.3s]" />
+                <div className="flex flex-col gap-1.5">
+                  {SUGGESTED_QUESTIONS.map((question) => (
+                    <button
+                      key={question}
+                      type="button"
+                      onClick={() => handleSendMessage(question)}
+                      className={cn(
+                        "w-full text-left px-3.5 py-2.5 rounded-[12px] bg-white hover:bg-brand-sky",
+                        "border border-brand-border hover:border-brand-blue/40",
+                        "text-[12.5px] sm:text-[13px] font-[500] text-brand-navy font-heading",
+                        "transition-all duration-150 shadow-2xs hover:shadow-xs",
+                        "flex items-center justify-between gap-2 group cursor-pointer"
+                      )}
+                    >
+                      <span className="flex-1 leading-snug">{question}</span>
+                      <ChevronRight className="w-4 h-4 text-brand-blue/60 group-hover:text-brand-blue group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="flex items-end gap-2 animate-in fade-in duration-200">
+                <div className="w-6 h-6 rounded-full bg-brand-navy flex items-center justify-center flex-shrink-0 shadow-2xs mb-0.5">
+                  <BrandStar className="w-3.5 h-3.5 text-white fill-white" />
+                </div>
+                <div className="bg-white border border-brand-border rounded-[20px] rounded-tl-[4px] px-3.5 py-2.5 text-xs shadow-2xs flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce [animation-delay:0.15s]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce [animation-delay:0.3s]" />
                 </div>
               </div>
             )}
@@ -562,70 +585,57 @@ export function ChatBot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Prompts Carousel Bar */}
-          <div className="px-3 py-2 bg-white border-t border-[#edf4fb] flex items-center gap-1.5 overflow-x-auto scrollbar-none">
-            {QUICK_PROMPTS.map((prompt) => (
-              <button
-                key={prompt}
-                type="button"
-                onClick={() => handleSendMessage(prompt)}
-                className="px-2.5 py-1 rounded-full text-[11px] font-bold font-heading whitespace-nowrap bg-[#f0f6fc] hover:bg-brand-blue text-brand-navy hover:text-white border border-[#dce8f5] transition-all flex-shrink-0 cursor-pointer shadow-2xs"
-              >
-                {prompt}
-              </button>
-            ))}
-          </div>
-
-          {/* Quoting Preview Banner (when user quotes a previous message) */}
-          {quotingMessage && (
-            <div className="px-3 py-2 bg-[#eef6fd] border-t border-[#d8e8fa] flex items-center justify-between gap-2 text-xs">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="text-base text-brand-blue font-serif leading-none">“</span>
-                <span className="truncate text-brand-navy font-sans text-[11.5px]">
-                  Quoting <strong>{quotingMessage.senderName}</strong>: &quot;{quotingMessage.text}&quot;
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setQuotingMessage(null)}
-                className="text-brand-text hover:text-brand-navy p-1 flex-shrink-0"
-                aria-label="Cancel quote"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
+          {/* Quick Prompts Bar (when user has already interacted, keeps chips handy) */}
+          {hasInteracted && (
+            <div className="px-3 py-1.5 bg-white border-t border-brand-border/60 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+              {SUGGESTED_QUESTIONS.map((question) => (
+                <button
+                  key={question}
+                  type="button"
+                  onClick={() => handleSendMessage(question)}
+                  className="px-2.5 py-1 rounded-full text-[11px] font-[500] font-heading whitespace-nowrap bg-brand-bg hover:bg-brand-blue text-brand-navy hover:text-white border border-brand-border transition-all flex-shrink-0 cursor-pointer shadow-2xs"
+                >
+                  {question.length > 32 ? question.slice(0, 32) + "..." : question}
+                </button>
+              ))}
             </div>
           )}
 
-          {/* Input Bar */}
-          <footer className="p-2.5 sm:p-3 bg-white border-t border-[#e2eef9] flex items-center gap-2">
-            <input
-              ref={inputRef}
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Ask about admissions, essays, results..."
-              className="flex-1 px-3.5 py-2 sm:py-2 rounded-[20px] bg-[#f5f9fd] border border-[#d6e5f3] text-xs sm:text-[13px] text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:border-brand-blue focus:bg-white font-sans transition-all"
-            />
+          {/* Message Input Footer (Replicates bluestars.us Chatbase footer) */}
+          <footer className="p-3 bg-white border-t border-brand-border flex items-center gap-2">
+            <div className="flex-1 relative flex items-center">
+              <input
+                ref={inputRef}
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Message..."
+                className={cn(
+                  "w-full pl-4 pr-10 py-2.5 rounded-full bg-brand-bg border border-brand-border",
+                  "text-xs sm:text-[13px] text-brand-navy placeholder:text-brand-gray/60",
+                  "focus:outline-none focus:border-brand-blue focus:bg-white font-sans transition-all"
+                )}
+              />
 
-            <button
-              type="button"
-              onClick={() => handleSendMessage()}
-              disabled={!inputValue.trim()}
-              aria-label="Send message"
-              className={cn(
-                "w-8.5 h-8.5 sm:w-8.5 sm:h-8.5 rounded-full flex items-center justify-center transition-all flex-shrink-0 cursor-pointer shadow-2xs",
-                inputValue.trim()
-                  ? "bg-brand-blue hover:bg-brand-navy text-white hover:scale-105 active:scale-95"
-                  : "bg-[#e5eff8] text-brand-text/40 cursor-not-allowed"
-              )}
-            >
-              <Send className="w-3.5 h-3.5 ml-0.5" />
-            </button>
+              <button
+                type="button"
+                onClick={() => handleSendMessage()}
+                disabled={!inputValue.trim()}
+                aria-label="Send message"
+                className={cn(
+                  "absolute right-1.5 w-7 h-7 rounded-full flex items-center justify-center transition-all",
+                  inputValue.trim()
+                    ? "bg-brand-blue hover:bg-brand-navy text-white cursor-pointer shadow-2xs hover:scale-105"
+                    : "bg-transparent text-brand-gray/40 cursor-not-allowed"
+                )}
+              >
+                <Send className="w-3.5 h-3.5 ml-0.5" />
+              </button>
+            </div>
           </footer>
         </div>
       )}
     </>
   );
 }
-

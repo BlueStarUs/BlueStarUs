@@ -51,15 +51,15 @@ export default function AdminResourcesPage() {
     description: "",
     pages: 35,
     readTime: "20 min read",
-    downloadCount: "1,200+",
+    format: "Free PDF Download",
   });
 
   // New Webinar Form
   const [webinarForm, setWebinarForm] = useState({
     title: "",
     subtitle: "",
-    date: "November 20, 2026",
-    time: "5:00 PM PST",
+    date: "Wednesday, April 22, 2026",
+    time: "5:30 PM PST",
     speakerName: "Dr. Amy Morgenstern",
     speakerRole: "Founder & Master Consultant",
     category: "Ivy League Admissions",
@@ -74,7 +74,7 @@ export default function AdminResourcesPage() {
       id: `guide-${Date.now()}`,
       slug: guideForm.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
       coverImage: "/images/resources/guides/Ivy_League_Top_20_Admissions_Playbook.png",
-      updatedAt: "Fall 2026",
+      updatedAt: "Spring 2026",
       highlights: ["Strategic admissions frameworks", "Interactive worksheets & checklists"],
       tableOfContents: ["1. Overview", "2. Core Strategy", "3. Step-by-Step Implementation"],
       targetAudience: "High school families targeting top 30 universities.",
@@ -89,7 +89,7 @@ export default function AdminResourcesPage() {
       description: "",
       pages: 35,
       readTime: "20 min read",
-      downloadCount: "1,200+",
+      format: "Free PDF Download",
     });
   };
 
@@ -230,7 +230,7 @@ export default function AdminResourcesPage() {
                   <th className="py-3.5 px-4">Guide Title &amp; Subtitle</th>
                   <th className="py-3.5 px-4">Category</th>
                   <th className="py-3.5 px-4">Pages / Read</th>
-                  <th className="py-3.5 px-4">Downloads</th>
+                  <th className="py-3.5 px-4">Access Format</th>
                   <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
@@ -256,8 +256,8 @@ export default function AdminResourcesPage() {
                       {guide.pages} pages • {guide.readTime}
                     </td>
 
-                    <td className="py-3.5 px-4 font-bold text-[#2F9E5C] font-heading">
-                      {guide.downloadCount}
+                    <td className="py-3.5 px-4 font-semibold text-[#2F9E5C] font-heading">
+                      Free PDF
                     </td>
 
                     <td className="py-3.5 px-4 text-right">

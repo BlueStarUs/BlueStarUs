@@ -24,7 +24,7 @@ import {
   YoutubeIcon,
   WhatsAppIcon,
 } from "@/components/ui/Icons";
-import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_DISCOVERY_URL } from "@/lib/constants";
+import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
 import { ContactFormData } from "@/types";
 import { cn } from "@/lib/utils";
@@ -274,7 +274,7 @@ export default function ContactPage() {
                   </span>
                 </div>
                 <p className="text-xs sm:text-[13px] text-brand-navy/90 font-sans">
-                  Choose a live time slot directly on Dr. Amy Morgenstern&apos;s calendar:
+                  Start with your Initial Consultation (30 Min), followed by our comprehensive 75-Min Strategy Consultation:
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                   <a
@@ -283,16 +283,16 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-[13px] font-bold font-heading transition-all shadow-xs"
                   >
-                    <span>30-Min Initial Consultation</span>
+                    <span>Book Your Initial Consultation (30 Min)</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                   <a
-                    href={HUBSPOT_DISCOVERY_URL}
+                    href={HUBSPOT_STRATEGY_CONSULTATION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy text-xs sm:text-[13px] font-bold font-heading border border-brand-border transition-all shadow-xs"
                   >
-                    <span>90-Min Discovery Session</span>
+                    <span>75-Min Strategy Consultation</span>
                     <ArrowRight className="w-3.5 h-3.5 text-brand-blue" />
                   </a>
                 </div>
@@ -377,7 +377,7 @@ export default function ContactPage() {
                       Message Received!
                     </h4>
                     <p className="text-xs sm:text-[13px] text-[#1e6f40] max-w-md mx-auto leading-relaxed">
-                      Thank you for contacting Blue Stars Admissions Consulting. A member of our senior counseling team will review your inquiry and follow up with you within 24 hours.
+                      Thank you for contacting Blue Stars Admissions Consulting. A member of our senior counseling team will review your inquiry and follow up with you within 24 hours to schedule your Initial Consultation.
                     </p>
                     <button
                       type="button"
@@ -397,10 +397,11 @@ export default function ContactPage() {
 
                     {/* 1. Full Name */}
                     <div>
-                      <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
+                      <label htmlFor="contact-fullName" className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
                         Full Name <span className="text-rose-500">*</span>
                       </label>
                       <input
+                        id="contact-fullName"
                         type="text"
                         name="fullName"
                         required
@@ -414,10 +415,11 @@ export default function ContactPage() {
                     {/* 2. Email & Phone (2 Columns) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
+                        <label htmlFor="contact-email" className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
                           Email Address <span className="text-rose-500">*</span>
                         </label>
                         <input
+                          id="contact-email"
                           type="email"
                           name="email"
                           required
@@ -429,10 +431,11 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
+                        <label htmlFor="contact-phone" className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
                           Phone / WhatsApp <span className="text-brand-text/60 lowercase font-normal">(optional)</span>
                         </label>
                         <input
+                          id="contact-phone"
                           type="tel"
                           name="phone"
                           value={formData.phone || ""}
@@ -445,11 +448,12 @@ export default function ContactPage() {
 
                     {/* 3. Program of Interest */}
                     <div>
-                      <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
+                      <label htmlFor="contact-interest" className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
                         Program of Interest
                       </label>
                       <div className="relative">
                         <select
+                          id="contact-interest"
                           name="interest"
                           value={formData.interest}
                           onChange={handleChange}
@@ -468,10 +472,11 @@ export default function ContactPage() {
 
                     {/* 4. Message */}
                     <div>
-                      <label className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
+                      <label htmlFor="contact-message" className="block text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-1.5">
                         Your Message / Questions <span className="text-rose-500">*</span>
                       </label>
                       <textarea
+                        id="contact-message"
                         rows={4}
                         name="message"
                         required
@@ -536,7 +541,7 @@ export default function ContactPage() {
                 <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
                   Telephone &amp; WhatsApp
                 </h3>
-                <p className="text-xs text-brand-text mb-2">
+                <p className="text-[14px] sm:text-[15px] text-brand-text mb-2">
                   Monday – Friday, 9:00 AM – 6:00 PM PST
                 </p>
                 <a
@@ -577,7 +582,7 @@ export default function ContactPage() {
               <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
                 Email Advisory
               </h3>
-              <p className="text-xs text-brand-text mb-2">
+              <p className="text-[14px] sm:text-[15px] text-brand-text mb-2">
                 Response within 24 business hours
               </p>
               <a
@@ -596,7 +601,7 @@ export default function ContactPage() {
               <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
                 Head Office & Consultations
               </h3>
-              <p className="text-xs text-brand-text mb-2">
+              <p className="text-[14px] sm:text-[15px]s text-brand-text mb-2">
                 San Francisco, CA & Zoom Video Worldwide
               </p>
               <span className="inline-block text-brand-navy font-heading font-bold text-sm">

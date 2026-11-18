@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import { GA_TRACKING_ID } from "@/lib/analytics";
@@ -8,20 +7,6 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatBot } from "@/components/ui/ChatBot";
 import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -93,12 +78,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
         <OrganizationJsonLd />
         <WebSiteJsonLd />
       </head>
       <body className="antialiased text-brand-text bg-white selection:bg-brand-sky selection:text-brand-navy min-h-screen flex flex-col font-sans">
+        {/* WCAG 2.4.1 Accessible Skip to Main Content Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2.5 focus:bg-[#0A3D6B] focus:text-white focus:font-bold focus:rounded-[5px] focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#38bdf8] font-heading text-xs"
+        >
+          Skip to main content
+        </a>
+
         {/* Google Analytics GA4 */}
         <Script
           strategy="afterInteractive"

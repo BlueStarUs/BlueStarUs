@@ -16,7 +16,11 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
-import { NAV_SERVICES, NAV_RESOURCES, HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
+import {
+  NAV_SERVICES,
+  NAV_RESOURCES,
+  HUBSPOT_CONSULTATION_URL,
+} from "@/lib/constants";
 import { BLOG_POSTS } from "@/lib/blogs-data";
 
 interface SearchItem {
@@ -77,7 +81,8 @@ export function SiteSearchModal({
         title: "Home",
         category: "Page",
         href: "/",
-        description: "Personalized admissions consulting to help high school students reach dream colleges.",
+        description:
+          "Personalized admissions consulting to help high school students reach dream colleges.",
         icon: Sparkles,
       },
       {
@@ -85,7 +90,8 @@ export function SiteSearchModal({
         title: "About Us & Why Blue Stars",
         category: "Page",
         href: "/about",
-        description: "Founded by Dr. Amy Morgenstern. Discover our 16+ years of admissions track record and whole-student philosophy.",
+        description:
+          "Founded by Dr. Amy Morgenstern. Discover our 16+ years of admissions track record and whole-student philosophy.",
         icon: Users,
       },
       {
@@ -93,7 +99,8 @@ export function SiteSearchModal({
         title: "Why Choose Blue Stars Admissions Consulting?",
         category: "Page",
         href: "/about#why-us",
-        description: "Our 3 core pillars: expert strategic planning, balanced school lists, and standout essay development.",
+        description:
+          "Our 3 core pillars: expert strategic planning, balanced school lists, and standout essay development.",
         icon: Award,
       },
       {
@@ -101,7 +108,8 @@ export function SiteSearchModal({
         title: "Admissions Successes & Outcomes",
         category: "Page",
         href: "/successes",
-        description: "Stanford, Harvard, MIT, Ivy League, UC Berkeley, and merit scholarship admissions track record.",
+        description:
+          "Stanford, Harvard, MIT, Ivy League, UC Berkeley, and merit scholarship admissions track record.",
         icon: Award,
       },
       {
@@ -109,15 +117,17 @@ export function SiteSearchModal({
         title: "Client Testimonials & Stories",
         category: "Page",
         href: "/stories",
-        description: "Explore 55 authentic reviews and personal transformations from parents and students.",
+        description:
+          "Explore 55 authentic reviews and personal transformations from parents and students.",
         icon: Award,
       },
       {
         id: "free-consultation",
-        title: "Book a Free 30-Min Consultation",
+        title: "Book Free Initial Consultation (30-Min)",
         category: "Page",
         href: HUBSPOT_CONSULTATION_URL,
-        description: "Schedule a 1-on-1 discovery session with Dr. Amy Morgenstern and our senior counseling team.",
+        description:
+          "Schedule a 1-on-1 Initial Consultation with Dr. Amy Morgenstern and our senior counseling team.",
         icon: Calendar,
       },
       {
@@ -125,9 +135,10 @@ export function SiteSearchModal({
         title: "Contact Us",
         category: "Page",
         href: "/contact",
-        description: "Get in touch with Blue Stars headquarters in San Francisco, CA. Phone: 415-426-9444.",
+        description:
+          "Get in touch with Blue Stars headquarters in San Francisco, CA. Phone: 415-426-9444.",
         icon: Users,
-      }
+      },
     );
 
     // Services
@@ -179,7 +190,7 @@ export function SiteSearchModal({
       (item) =>
         item.title.toLowerCase().includes(q) ||
         item.description.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q)
+        item.category.toLowerCase().includes(q),
     );
   }, [allItems, query]);
 
@@ -244,16 +255,26 @@ export function SiteSearchModal({
         {/* Results List */}
         <div className="max-h-[60vh] overflow-y-auto p-3 sm:p-4 space-y-1.5 divide-y divide-[#f0f6fc]">
           <div className="px-3 py-1.5 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-brand-blue font-heading">
-            <span>{query.trim() ? `Search Results (${results.length})` : "Quick Suggestions"}</span>
-            <span className="text-brand-text/70 lowercase font-sans">{results.length} matches</span>
+            <span>
+              {query.trim()
+                ? `Search Results (${results.length})`
+                : "Quick Suggestions"}
+            </span>
+            <span className="text-brand-text/70 lowercase font-sans">
+              {results.length} matches
+            </span>
           </div>
 
           {results.length === 0 ? (
             <div className="py-12 text-center">
               <Search className="w-8 h-8 text-brand-blue/40 mx-auto mb-2" />
-              <p className="text-brand-navy font-bold font-heading text-base">No results found for &ldquo;{query}&rdquo;</p>
+              <p className="text-brand-navy font-bold font-heading text-base">
+                No results found for &ldquo;{query}&rdquo;
+              </p>
               <p className="text-brand-text text-xs sm:text-[13px] font-sans mt-1">
-                Try searching for &ldquo;consulting&rdquo;, &ldquo;workbook&rdquo;, &ldquo;essays&rdquo;, or &ldquo;webinars&rdquo;.
+                Try searching for &ldquo;consulting&rdquo;,
+                &ldquo;workbook&rdquo;, &ldquo;essays&rdquo;, or
+                &ldquo;webinars&rdquo;.
               </p>
             </div>
           ) : (
@@ -291,7 +312,15 @@ export function SiteSearchModal({
 
         {/* Footer info bar */}
         <div className="px-5 py-3 bg-[#f8fbfe] border-t border-[#e2eef9] flex items-center justify-between text-xs text-brand-text font-sans">
-          <span>Need direct assistance? Call <a href="tel:4154269444" className="font-bold text-brand-blue hover:underline">415-426-9444</a></span>
+          <span>
+            Need direct assistance? Call{" "}
+            <a
+              href="tel:4154269444"
+              className="font-bold text-brand-blue hover:underline"
+            >
+              415-426-9444
+            </a>
+          </span>
           <Link
             href={HUBSPOT_CONSULTATION_URL}
             target="_blank"
@@ -299,11 +328,10 @@ export function SiteSearchModal({
             onClick={onClose}
             className="font-bold text-brand-blue hover:text-brand-navy font-heading"
           >
-            Book Free Consultation &rarr;
+            Book Free Initial Consultation &rarr;
           </Link>
         </div>
       </div>
     </div>
   );
 }
-

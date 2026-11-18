@@ -30,6 +30,7 @@ import {
   getDefaultBlogImage,
   BLOG_POSTS,
 } from "@/lib/blogs-data";
+import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface PageProps {
@@ -111,13 +112,291 @@ function extractHeadingsFromHtml(html?: string): TocItem[] {
     .filter((h) => h.title.length > 3 && h.title.length < 120);
 }
 
-function injectHeadingIdsIntoHtml(html?: string): string {
+function processBlogContentHtml(html?: string): string {
   if (!html) return "";
+
+  let cleaned = html;
+
+  // 1. Clean nested double <p><p> and empty paragraphs that create huge gaps
+  cleaned = cleaned.replace(/<p>\s*<p>/gi, "<p>");
+  cleaned = cleaned.replace(/<\/p>\s*<\/p>/gi, "</p>");
+  cleaned = cleaned.replace(/<p>\s*(?:&nbsp;|<br\s*\/?>)?\s*<\/p>/gi, "");
+
+  // 2. Clean and repair <img> tags: strip dummy transparent SVGs and link real/local images
+  cleaned = cleaned.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+    const getAttr = (name: string) => {
+      const m = attrs.match(new RegExp(`${name}=["']([^"']*)["']`, "i"));
+      return m ? m[1] : null;
+    };
+
+    let src = getAttr("src");
+    const dataOrigSrc = getAttr("data-orig-src");
+    const dataSrc = getAttr("data-src");
+    const dataSrcset = getAttr("data-srcset");
+    const alt = getAttr("alt") || "";
+    const width = getAttr("width");
+    const height = getAttr("height");
+    const id = getAttr("id");
+    const ariaDescribedby = getAttr("aria-describedby");
+
+    // If src is a transparent data SVG or empty, recover the real image URL
+    if (!src || src.startsWith("data:image/svg+xml") || src.startsWith("data:")) {
+      if (dataOrigSrc && !dataOrigSrc.startsWith("data:")) {
+        src = dataOrigSrc;
+      } else if (dataSrc && !dataSrc.startsWith("data:")) {
+        src = dataSrc;
+      } else if (dataSrcset && !dataSrcset.startsWith("data:")) {
+        const first = dataSrcset.split(",")[0].trim().split(" ")[0];
+        if (first && !first.startsWith("data:")) src = first;
+      }
+    }
+
+    // Map known team member images to sharp local assets
+    if (src) {
+      if (src.includes("Helen-Ingerson")) {
+        src = "/images/teams/Helen-Ingerson-Upscaled.png";
+      } else if (src.includes("Dr-M-Upscaled") || src.includes("Dr-Amy-Morgenstern")) {
+        src = "/images/teams/Dr_Amy_Morgenstern.png";
+      } else if (src.includes("Samuel-Ori") || src.includes("Samuel-Ortiz")) {
+        src = "/images/teams/Samuel-Ortiz.png";
+      } else if (src.includes("Wai-Cheng")) {
+        src = "/images/teams/Wai-Cheng-Headshot.webp";
+      }
+    }
+
+    const existingClass = getAttr("class");
+    let imgClass = "blog-inline-img rounded-[5px] mx-auto my-3 object-contain max-h-[460px] shadow-xs";
+    if (existingClass) {
+      if (existingClass.includes("rounded-full")) {
+        imgClass = existingClass;
+      } else if (existingClass.includes("w-full") || existingClass.includes("object-cover")) {
+        imgClass = existingClass;
+      }
+    }
+
+    let newImg = `<img src="${src || "/images/blogs/blogs1.png"}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async"`;
+    if (width) newImg += ` width="${width}"`;
+    if (height) newImg += ` height="${height}"`;
+    if (id) newImg += ` id="${id}"`;
+    if (ariaDescribedby) newImg += ` aria-describedby="${ariaDescribedby}"`;
+    newImg += ` class="${imgClass}"`;
+    newImg += ` onerror="this.onerror=null; this.src='/images/blogs/blogs1.png';"`;
+    newImg += ` />`;
+
+    return newImg;
+  });
+
+  // 3. Format side figures with matching captions: float neatly to the side
+  cleaned = cleaned.replace(
+    /(<img\b[^>]*aria-describedby="([^"]+)"[^>]*>)\s*(<p\b[^>]*id="\2"[^>]*>([\s\S]*?)<\/p>)/gi,
+    (match, imgTag, captionId, pTag, captionText) => {
+      const srcMatch = imgTag.match(/src="([^"]+)"/i);
+      const altMatch = imgTag.match(/alt="([^"]+)"/i);
+      const src = srcMatch ? srcMatch[1] : "/images/blogs/blogs1.png";
+      const alt = altMatch ? altMatch[1] : "";
+
+      return `<figure class="blog-side-figure float-none sm:float-right sm:ml-5 mb-3.5 max-w-[175px] sm:max-w-[210px] mx-auto text-center clear-right">
+  <img src="${src}" alt="${alt}" class="w-full h-auto rounded-[6px] shadow-xs object-cover border border-brand-border/70" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/images/blogs/blogs1.png';" />
+  <figcaption class="text-xs sm:text-[13px] text-brand-text/75 italic mt-1.5 leading-snug">${captionText}</figcaption>
+</figure>`;
+    }
+  );
+
+  // 4. Format interview & Q&A turns: colored line on the left (in 1 line), small avatar on side, responsive text
+  cleaned = cleaned.replace(
+    /(<img\b[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>)\s*(<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>)/gi,
+    (match, imgTag, src, alt, bqTag, bqContent) => {
+      const lowerAlt = alt.toLowerCase();
+      const lowerContent = bqContent.toLowerCase();
+
+      let borderColor = "border-brand-blue";
+      let bgColor = "bg-brand-sky/25";
+      let imgBorder = "border-brand-blue/30";
+      let speakerHighlight = "text-brand-blue";
+
+      if (lowerAlt.includes("amy") || lowerAlt.includes("morgenstern") || lowerContent.includes("drm:") || lowerContent.includes("dr. m:")) {
+        borderColor = "border-brand-blue";
+        bgColor = "bg-brand-sky/25";
+        imgBorder = "border-brand-blue/30";
+        speakerHighlight = "text-brand-blue";
+      } else if (lowerAlt.includes("helen") || lowerContent.includes("helen:")) {
+        borderColor = "border-emerald-500";
+        bgColor = "bg-emerald-50/30";
+        imgBorder = "border-emerald-500/30";
+        speakerHighlight = "text-emerald-700";
+      } else if (lowerAlt.includes("samuel") || lowerContent.includes("samuel:")) {
+        borderColor = "border-indigo-500";
+        bgColor = "bg-indigo-50/30";
+        imgBorder = "border-indigo-500/30";
+        speakerHighlight = "text-indigo-700";
+      } else if (lowerAlt.includes("wai") || lowerContent.includes("wai:")) {
+        borderColor = "border-amber-500";
+        bgColor = "bg-amber-50/30";
+        imgBorder = "border-amber-500/30";
+        speakerHighlight = "text-amber-700";
+      } else {
+        borderColor = "border-slate-300";
+        bgColor = "bg-slate-50/50";
+        imgBorder = "border-slate-300";
+        speakerHighlight = "text-brand-navy";
+      }
+
+      let cleanedText = bqContent.trim();
+      cleanedText = cleanedText.replace(/<strong>\s*(Dr\.?\s*M:?|DrM:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">DrM: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Helen:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Helen: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Samuel:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Samuel: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Wai:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Wai: </strong>`);
+
+      return `<div class="blog-speaker-row border-l-4 ${borderColor} ${bgColor} rounded-r-lg p-2.5 sm:p-3.5 my-3 sm:my-3.5 clear-both">
+  <div class="flex items-start gap-2.5 sm:gap-3">
+    <img src="${src}" alt="${alt.replace(/"/g, '&quot;')}" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover shrink-0 border ${imgBorder} shadow-2xs mt-0.5" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/images/blogs/blogs1.png';" />
+    <div class="flex-1 min-w-0 blog-speaker-text text-[15px] sm:text-[16px] text-brand-navy leading-relaxed">
+      ${cleanedText}
+    </div>
+  </div>
+</div>`;
+    }
+  );
+
+  // 4b. Also normalize any existing legacy speaker row structures into the new unified format
+  cleaned = cleaned.replace(
+    /<div class="blog-speaker-row flex items-start[^"]*">([\s\S]*?)<\/blockquote>\s*<\/div>\s*<\/div>/gi,
+    (match, inner) => {
+      const imgMatch = inner.match(/<img\b([^>]*)>/i);
+      const bqMatch = inner.match(/<blockquote\b[^>]*>([\s\S]*?)$/i);
+      const imgAttrs = imgMatch ? imgMatch[1] : "";
+      let bqContent = bqMatch ? bqMatch[1] : "";
+
+      const srcMatch = imgAttrs.match(/src="([^"]*)"/i);
+      const altMatch = imgAttrs.match(/alt="([^"]*)"/i);
+      const src = srcMatch ? srcMatch[1] : "/images/blogs/blogs1.png";
+      const alt = altMatch ? altMatch[1] : "";
+
+      const lowerAlt = alt.toLowerCase();
+      const lowerContent = bqContent.toLowerCase();
+
+      let borderColor = "border-brand-blue";
+      let bgColor = "bg-brand-sky/25";
+      let imgBorder = "border-brand-blue/30";
+      let speakerHighlight = "text-brand-blue";
+
+      if (lowerAlt.includes("amy") || lowerAlt.includes("morgenstern") || lowerContent.includes("drm:") || lowerContent.includes("dr. m:")) {
+        borderColor = "border-brand-blue";
+        bgColor = "bg-brand-sky/25";
+        imgBorder = "border-brand-blue/30";
+        speakerHighlight = "text-brand-blue";
+      } else if (lowerAlt.includes("helen") || lowerContent.includes("helen:")) {
+        borderColor = "border-emerald-500";
+        bgColor = "bg-emerald-50/30";
+        imgBorder = "border-emerald-500/30";
+        speakerHighlight = "text-emerald-700";
+      } else if (lowerAlt.includes("samuel") || lowerContent.includes("samuel:")) {
+        borderColor = "border-indigo-500";
+        bgColor = "bg-indigo-50/30";
+        imgBorder = "border-indigo-500/30";
+        speakerHighlight = "text-indigo-700";
+      } else if (lowerAlt.includes("wai") || lowerContent.includes("wai:")) {
+        borderColor = "border-amber-500";
+        bgColor = "bg-amber-50/30";
+        imgBorder = "border-amber-500/30";
+        speakerHighlight = "text-amber-700";
+      } else {
+        borderColor = "border-slate-300";
+        bgColor = "bg-slate-50/50";
+        imgBorder = "border-slate-300";
+        speakerHighlight = "text-brand-navy";
+      }
+
+      let cleanedText = bqContent.trim();
+      cleanedText = cleanedText.replace(/<strong>\s*(Dr\.?\s*M:?|DrM:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">DrM: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Helen:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Helen: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Samuel:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Samuel: </strong>`);
+      cleanedText = cleanedText.replace(/<strong>\s*(Wai:?)\s*<\/strong>/gi, `<strong class="${speakerHighlight} font-bold">Wai: </strong>`);
+
+      return `<div class="blog-speaker-row border-l-4 ${borderColor} ${bgColor} rounded-r-lg p-2.5 sm:p-3.5 my-3 sm:my-3.5 clear-both">
+  <div class="flex items-start gap-2.5 sm:gap-3">
+    <img src="${src}" alt="${alt.replace(/"/g, '&quot;')}" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover shrink-0 border ${imgBorder} shadow-2xs mt-0.5" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/images/blogs/blogs1.png';" />
+    <div class="flex-1 min-w-0 blog-speaker-text text-[15px] sm:text-[16px] text-brand-navy leading-relaxed">
+      ${cleanedText}
+    </div>
+  </div>
+</div>`;
+    }
+  );
+
+  // 4c. Convert legacy accordion WordPress markups (h2 followed by 512px plus SVG) into accessible <details class="blog-accordion"> cards
+  if (cleaned.includes("Capa_1") || cleaned.includes("512 512") || cleaned.includes('viewBox="0 0 512 512"')) {
+    const headerRegex = /<h2\b[^>]*>([\s\S]*?)<\/h2>\s*<svg[\s\S]*?<\/svg>/gi;
+    const matches = [...cleaned.matchAll(headerRegex)];
+
+    if (matches.length > 0) {
+      let result = cleaned;
+      interface AccordionSlice {
+        start: number;
+        end: number;
+        replacement: string;
+      }
+      const slices: AccordionSlice[] = [];
+
+      for (let i = 0; i < matches.length; i++) {
+        const curMatch = matches[i];
+        const headingText = curMatch[1].trim();
+        const startIndex = curMatch.index;
+        const headerEndIndex = startIndex + curMatch[0].length;
+
+        let endIndex: number;
+        if (i < matches.length - 1) {
+          endIndex = matches[i + 1].index;
+        } else {
+          const remainder = cleaned.substring(headerEndIndex);
+          const nextSectionMatch = remainder.match(/<(h[34]|footer)\b/i);
+          if (nextSectionMatch && nextSectionMatch.index !== undefined) {
+            endIndex = headerEndIndex + nextSectionMatch.index;
+          } else {
+            endIndex = cleaned.length;
+          }
+        }
+
+        const bodyContent = cleaned.substring(headerEndIndex, endIndex).trim();
+        const isOpen = i === 0 ? " open" : "";
+
+        const accordionHtml = `<details class="blog-accordion group my-4 rounded-xl border border-brand-border bg-white shadow-2xs overflow-hidden transition-all duration-200"${isOpen}>
+  <summary class="flex items-center justify-between gap-4 p-4 sm:p-5 cursor-pointer select-none bg-brand-sky/25 hover:bg-brand-sky/45 transition-colors list-none">
+    <h3 class="font-heading font-bold text-[16px] sm:text-[18px] text-brand-navy group-hover:text-brand-blue transition-colors flex-1 pr-2 m-0!">
+      ${headingText}
+    </h3>
+    <span class="shrink-0 w-8 h-8 rounded-full bg-white border border-brand-border flex items-center justify-center text-brand-blue shadow-2xs transition-transform duration-300 group-open:rotate-45">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+    </span>
+  </summary>
+  <div class="blog-accordion-body p-4 sm:p-6 border-t border-brand-border/60 text-brand-text leading-relaxed font-sans space-y-3 sm:space-y-4">
+    ${bodyContent}
+  </div>
+</details>`;
+
+        slices.push({
+          start: startIndex,
+          end: endIndex,
+          replacement: accordionHtml,
+        });
+      }
+
+      for (let i = slices.length - 1; i >= 0; i--) {
+        const s = slices[i];
+        result = result.substring(0, s.start) + s.replacement + result.substring(s.end);
+      }
+      cleaned = result;
+    }
+  }
+
+  // 5. Inject heading IDs for the TOC
   let idx = 0;
-  return html.replace(/<(h[23])([^>]*)>(.*?)<\/\1>/gi, (match, tag, attrs, content) => {
+  cleaned = cleaned.replace(/<(h[23])([^>]*)>(.*?)<\/\1>/gi, (match, tag, attrs, content) => {
     idx++;
     return `<${tag} id="heading-${idx}" class="scroll-mt-28" ${attrs}>${content}</${tag}>`;
   });
+
+  return cleaned;
 }
 
 export default async function SingleBlogPage({ params }: PageProps) {
@@ -128,14 +407,14 @@ export default async function SingleBlogPage({ params }: PageProps) {
     notFound();
   }
 
+  const processedContentHtml = post.contentHtml
+    ? processBlogContentHtml(post.contentHtml)
+    : undefined;
+
   const relatedPosts = getRelatedPosts(post.slug, 3);
   const headings: TocItem[] = post.sections && post.sections.length > 0
     ? post.sections.map((s, idx) => ({ id: `section-${idx + 1}`, title: s.heading }))
-    : extractHeadingsFromHtml(post.contentHtml);
-
-  const processedContentHtml = post.contentHtml
-    ? injectHeadingIdsIntoHtml(post.contentHtml)
-    : undefined;
+    : extractHeadingsFromHtml(processedContentHtml || post.contentHtml);
 
   const fallbackImage = getDefaultBlogImage(post.category, post.title);
   const effectiveCoverImage = post.coverImage || fallbackImage;
@@ -169,54 +448,54 @@ export default async function SingleBlogPage({ params }: PageProps) {
           {/* Main Article Body (8 cols) */}
           <div className="lg:col-span-8 min-w-0">
             {/* 1. Breadcrumbs Trail */}
-            <nav aria-label="Breadcrumbs" className="flex items-center gap-1.5 text-xs text-brand-text mb-2.5 flex-wrap">
+            <nav aria-label="Breadcrumbs" className="flex items-center gap-1.5 text-xs sm:text-sm text-brand-text mb-3 flex-wrap">
               <Link href="/" className="hover:text-brand-blue transition-colors">
                 Home
               </Link>
-              <ChevronRight className="w-3 h-3 text-brand-text/50 flex-shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-brand-text/50 flex-shrink-0" />
               <Link href="/blogs" className="hover:text-brand-blue transition-colors">
                 Blogs
               </Link>
-              <ChevronRight className="w-3 h-3 text-brand-text/50 flex-shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-brand-text/50 flex-shrink-0" />
               <Link
                 href={`/blogs?category=${encodeURIComponent(post.category)}`}
-                className="text-brand-blue font-semibold hover:underline truncate max-w-[220px] sm:max-w-none"
+                className="text-brand-blue font-semibold hover:underline truncate max-w-[240px] sm:max-w-none"
               >
                 {post.category}
               </Link>
             </nav>
 
             {/* 2. Category Badge */}
-            <div className="mb-2">
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-[5px] text-[11px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue border border-brand-blue/20">
+            <div className="mb-2.5">
+              <span className="inline-flex items-center px-3 py-1 rounded-[5px] text-xs sm:text-[13px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue border border-brand-blue/20 shadow-2xs">
                 {post.category}
               </span>
             </div>
 
             {/* 3. Article Title (Heading) */}
-            <h1 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-brand-navy font-heading tracking-tight leading-tight sm:leading-[1.22] mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-brand-navy font-heading tracking-tight leading-tight sm:leading-[1.22] mb-3.5">
               {post.title}
             </h1>
 
-            {/* 4. Article Subtitle / Excerpt (Clean, compact, no excessive space) */}
+            {/* 4. Article Subtitle / Excerpt (Clean, compact, readable typography) */}
             {post.excerpt && (
-              <p className="text-[15px] sm:text-base md:text-[17px] text-brand-text font-sans leading-relaxed mb-4 sm:mb-5">
+              <p className="text-base sm:text-[17px] md:text-lg text-brand-navy/85 font-sans leading-relaxed mb-5">
                 {post.excerpt}
               </p>
             )}
 
             {/* 5. Responsive Meta Bar: Author, Role, Date, Read Time & Social Share */}
-            <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-brand-border/80 mb-5 sm:mb-6">
+            <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-brand-border/80 mb-5 sm:mb-6 shadow-2xs">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
                 {/* Author Info + Date & Read Time */}
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-brand-sky text-brand-blue border border-brand-blue/30 flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-brand-sky text-brand-blue border border-brand-blue/30 flex items-center justify-center flex-shrink-0 shadow-xs">
                     {post.author?.avatar ? (
                       <Image
                         src={post.author.avatar}
                         alt={post.author.name}
                         fill
-                        sizes="44px"
+                        sizes="48px"
                         className="object-cover"
                       />
                     ) : (
@@ -227,17 +506,17 @@ export default async function SingleBlogPage({ params }: PageProps) {
                     <div className="font-heading font-bold text-sm sm:text-base text-brand-navy leading-tight truncate">
                       {post.author?.name || "Dr. Amy Morgenstern"}
                     </div>
-                    <div className="text-xs text-brand-text font-sans truncate mb-0.5">
+                    <div className="text-xs sm:text-sm text-brand-text font-sans truncate mb-0.5">
                       {post.author?.role || "Admissions Strategist"}
                     </div>
-                    <div className="flex items-center gap-2 text-[11px] sm:text-xs text-brand-text/90 font-sans">
+                    <div className="flex items-center gap-2.5 text-xs sm:text-sm text-brand-text/90 font-sans">
                       <span className="inline-flex items-center gap-1 font-medium">
-                        <Calendar className="w-3 h-3 text-brand-blue flex-shrink-0" />
+                        <Calendar className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" />
                         {post.publishedAt}
                       </span>
                       <span className="text-brand-border">•</span>
                       <span className="inline-flex items-center gap-1 font-medium">
-                        <Clock className="w-3 h-3 text-brand-blue flex-shrink-0" />
+                        <Clock className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" />
                         {post.readTime}
                       </span>
                     </div>
@@ -253,7 +532,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
             {/* 6. Featured Hero Image (with fallback) */}
             {effectiveCoverImage && (
-              <div className="relative w-full h-[220px] sm:h-[320px] md:h-[380px] rounded-[5px] overflow-hidden shadow-card border border-brand-border mb-6 bg-brand-sky">
+              <div className="relative w-full h-[220px] sm:h-[320px] md:h-[380px] lg:h-[420px] rounded-[5px] overflow-hidden shadow-card border border-brand-border mb-6 bg-brand-sky">
                 <BlogImageWithFallback
                   src={effectiveCoverImage}
                   fallbackSrc={fallbackImage}
@@ -282,7 +561,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   {post.keyTakeaways.map((takeaway, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5" />
-                      <span className="text-[13px] sm:text-[14px] text-brand-navy/90 font-medium leading-relaxed">
+                      <span className="text-sm sm:text-base text-brand-navy/90 font-medium leading-relaxed">
                         {takeaway}
                       </span>
                     </li>
@@ -291,23 +570,26 @@ export default async function SingleBlogPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* 8. Rich Article Body Content (Clean, tight spacing) */}
+            {/* 8. Rich Article Body Content (Optimized typography, tight spacing, contained images) */}
             {processedContentHtml ? (
               <div
-                className="blog-content prose max-w-none text-brand-text font-sans text-[15px] sm:text-[16px] leading-[1.7] sm:leading-[1.75]
-                  prose-headings:font-heading prose-headings:text-brand-navy prose-headings:font-extrabold prose-headings:tracking-tight
-                  prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-2.5 prose-h2:border-b prose-h2:border-brand-border/70 prose-h2:pb-2
-                  prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-5 prose-h3:mb-2 prose-h3:text-brand-navy
-                  prose-h4:text-base sm:prose-h4:text-lg prose-h4:mt-4 prose-h4:mb-1.5
-                  prose-p:mt-0 prose-p:mb-3.5
+                className="blog-content prose max-w-none text-brand-text font-sans text-[16px] sm:text-[17px] leading-[1.75] sm:leading-[1.8]
+                  prose-headings:font-heading prose-headings:text-brand-blue prose-headings:font-extrabold prose-headings:tracking-tight
+                  prose-h2:text-xl sm:prose-h2:text-2xl md:prose-h2:text-[26px] prose-h2:mt-7 sm:prose-h2:mt-9 prose-h2:mb-3 prose-h2:border-b prose-h2:border-brand-border/70 prose-h2:pb-2 prose-h2:text-brand-blue
+                  prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-[22px] prose-h3:mt-6 sm:prose-h3:mt-7 prose-h3:mb-2.5 prose-h3:text-brand-blue
+                  prose-h4:text-base sm:prose-h4:text-lg md:prose-h4:text-[19px] prose-h4:mt-4 sm:prose-h4:mt-5 prose-h4:mb-2 prose-h4:text-brand-blue
+                  prose-p:mt-0 prose-p:mb-3.5 sm:prose-p:mb-4
                   prose-strong:text-brand-navy prose-strong:font-bold
                   prose-b:text-brand-navy prose-b:font-bold
                   prose-a:text-brand-blue prose-a:font-semibold hover:prose-a:underline
                   prose-ul:my-2.5 prose-ul:space-y-1.5 prose-ul:list-disc prose-ul:pl-5
                   prose-ol:my-2.5 prose-ol:space-y-1.5 prose-ol:list-decimal prose-ol:pl-5
-                  prose-li:text-brand-text prose-li:my-0.5
-                  prose-blockquote:my-4 prose-blockquote:border-l-4 prose-blockquote:border-brand-blue prose-blockquote:bg-brand-sky/40 prose-blockquote:py-2.5 prose-blockquote:px-4 prose-blockquote:rounded-r-[5px] prose-blockquote:italic prose-blockquote:text-brand-navy
-                  prose-img:rounded-[5px] prose-img:shadow-sm prose-img:my-4 prose-img:w-full prose-img:h-auto
+                  prose-li:text-brand-text prose-li:my-0.5 prose-li:text-[15px] sm:prose-li:text-[16px]
+                  prose-blockquote:my-4 prose-blockquote:border-l-4 prose-blockquote:border-brand-blue prose-blockquote:bg-brand-sky/40 prose-blockquote:py-3 prose-blockquote:px-4 sm:prose-blockquote:px-5 prose-blockquote:rounded-r-[5px] prose-blockquote:italic prose-blockquote:text-brand-navy
+                  prose-img:rounded-[5px] prose-img:shadow-xs prose-img:my-3 sm:prose-img:my-4 prose-img:mx-auto prose-img:max-w-full prose-img:w-auto prose-img:h-auto prose-img:max-h-[460px] prose-img:object-contain prose-img:block
+                  [&_p[id^='caption']]:text-center [&_p[id^='caption']]:text-xs sm:[&_p[id^='caption']]:text-sm [&_p[id^='caption']]:text-brand-text/80 [&_p[id^='caption']]:italic [&_p[id^='caption']]:-mt-1.5 [&_p[id^='caption']]:mb-4
+                  [&_figcaption]:text-center [&_figcaption]:text-xs sm:[&_figcaption]:text-sm [&_figcaption]:text-brand-text/80 [&_figcaption]:italic [&_figcaption]:mt-1.5 [&_figcaption]:mb-4
+                  [&_blockquote_p]:my-0 [&_blockquote_p]:text-[15px] sm:[&_blockquote_p]:text-[16.5px] [&_blockquote_p]:leading-relaxed
                   [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-[5px] [&_iframe]:my-4 [&_iframe]:shadow-sm"
                 dangerouslySetInnerHTML={{ __html: processedContentHtml }}
               />
@@ -319,7 +601,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                     {post.intro.map((paragraph, idx) => (
                       <p
                         key={idx}
-                        className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-brand-navy/90 font-sans"
+                        className="text-[16px] sm:text-[17px] leading-[28px] sm:leading-[30px] text-brand-navy/90 font-sans"
                       >
                         {paragraph}
                       </p>
@@ -344,7 +626,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                             {section.paragraphs.map((p, pIdx) => (
                               <p
                                 key={pIdx}
-                                className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-brand-text font-sans"
+                                className="text-[16px] sm:text-[17px] leading-[28px] sm:leading-[30px] text-brand-text font-sans"
                               >
                                 {p}
                               </p>
@@ -356,7 +638,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                               {section.bullets.map((bullet, bIdx) => (
                                 <li key={bIdx} className="flex items-start gap-2.5">
                                   <span className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
-                                  <span className="text-sm leading-relaxed text-brand-navy/90 font-medium font-sans">
+                                  <span className="text-sm sm:text-base leading-relaxed text-brand-navy/90 font-medium font-sans">
                                     {bullet}
                                   </span>
                                 </li>
@@ -378,7 +660,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                                       {section.callout.title}
                                     </div>
                                   )}
-                                  <p className="text-xs sm:text-sm leading-relaxed text-brand-navy/90 font-sans italic">
+                                  <p className="text-sm sm:text-base leading-relaxed text-brand-navy/90 font-sans italic">
                                     {section.callout.text}
                                   </p>
                                 </div>
@@ -401,7 +683,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                       {post.conclusion.map((c, idx) => (
                         <p
                           key={idx}
-                          className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-brand-text font-sans"
+                          className="text-[16px] sm:text-[17px] leading-[28px] sm:leading-[30px] text-brand-text font-sans"
                         >
                           {c}
                         </p>
@@ -416,14 +698,14 @@ export default async function SingleBlogPage({ params }: PageProps) {
             <div className="mt-8 pt-5 border-t border-brand-border">
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap items-center gap-1.5 mb-5">
-                  <span className="text-xs font-bold text-brand-navy/70 uppercase tracking-wider font-heading mr-1 flex items-center gap-1">
+                  <span className="text-xs sm:text-sm font-bold text-brand-navy/80 uppercase tracking-wider font-heading mr-1 flex items-center gap-1">
                     <Tag className="w-3.5 h-3.5 text-brand-blue" />
                     Tags:
                   </span>
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-semibold text-brand-navy bg-brand-bg hover:bg-brand-sky px-2.5 py-1 rounded-[5px] border border-brand-border/80 transition-colors"
+                      className="text-xs sm:text-sm font-semibold text-brand-navy bg-brand-bg hover:bg-brand-sky px-2.5 py-1 rounded-[5px] border border-brand-border/80 transition-colors"
                     >
                       {tag}
                     </span>
@@ -433,7 +715,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
               {/* Bottom Social Share Bar */}
               <div className="pt-3 border-t border-brand-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <span className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider">
+                <span className="text-xs sm:text-sm font-bold text-brand-navy font-heading uppercase tracking-wider">
                   Enjoyed this article? Share it with family &amp; friends:
                 </span>
                 <BlogShareButtons title={post.title} />
@@ -457,13 +739,13 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   )}
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-brand-blue font-heading mb-0.5">
+                  <div className="text-xs font-bold uppercase tracking-wider text-brand-blue font-heading mb-0.5">
                     WRITTEN BY
                   </div>
                   <h3 className="font-heading font-extrabold text-base sm:text-lg text-brand-navy leading-tight">
                     {post.author?.name || "Dr. Amy Morgenstern"}
                   </h3>
-                  <div className="text-xs sm:text-[13px] font-medium text-brand-text font-sans">
+                  <div className="text-xs sm:text-sm font-medium text-brand-text font-sans">
                     {post.author?.role || "Founder & Principal Consultant"}
                   </div>
                 </div>
@@ -497,7 +779,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
               <div className="p-5 sm:p-6 rounded-[5px] bg-white border border-brand-border shadow-xs">
                 <div className="flex items-center gap-2 mb-3.5 pb-2.5 border-b border-brand-border">
                   <BookOpen className="w-4 h-4 text-brand-blue" />
-                  <h3 className="font-heading font-bold text-xs sm:text-sm uppercase tracking-wider text-brand-navy">
+                  <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-brand-navy">
                     Table of Contents
                   </h3>
                 </div>
@@ -507,7 +789,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="block text-xs sm:text-[13.5px] text-brand-text hover:text-brand-blue hover:translate-x-0.5 transition-all py-1 leading-snug line-clamp-1"
+                      className="block text-xs sm:text-sm text-brand-text hover:text-brand-blue hover:translate-x-0.5 transition-all py-1.5 leading-snug line-clamp-1"
                     >
                       {item.title}
                     </a>
@@ -525,16 +807,16 @@ export default async function SingleBlogPage({ params }: PageProps) {
                 <h3 className="font-heading font-extrabold text-base sm:text-lg text-white mb-2 leading-tight">
                   Ready to Plan Your Student&apos;s Admissions Journey?
                 </h3>
-                <p className="text-xs sm:text-[13px] leading-relaxed text-[#cbe5fb] font-sans mb-4">
-                  Schedule a complimentary 30-minute discovery consultation with Dr. Amy Morgenstern and our senior counseling team.
+                <p className="text-xs sm:text-sm leading-relaxed text-[#cbe5fb] font-sans mb-4">
+                  Schedule a complimentary 30-minute initial consultation with Dr. Amy Morgenstern and our senior counseling team.
                 </p>
                 <a
-                  href="https://meetings.hubspot.com/dr-amy-morgenstern/discovery-session"
+                  href={HUBSPOT_CONSULTATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-sm font-heading shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <span>Book Free Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5 text-brand-navy" />
                 </a>
               </div>
@@ -542,14 +824,14 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
             {/* Free Workbook Lead Magnet Card */}
             <div className="p-5 sm:p-6 rounded-[5px] bg-white border border-brand-border shadow-xs">
-              <div className="flex items-center gap-2 mb-2 text-brand-blue font-bold text-xs uppercase tracking-wider font-heading">
+              <div className="flex items-center gap-2 mb-2 text-brand-blue font-bold text-xs sm:text-[13px] uppercase tracking-wider font-heading">
                 <FileText className="w-4 h-4" />
                 <span>Free Downloadable Toolkit</span>
               </div>
               <h4 className="font-heading font-bold text-sm sm:text-base text-brand-navy mb-2 leading-snug">
                 College Planning Foundations Workbook (PDF)
               </h4>
-              <p className="text-xs text-brand-text font-sans leading-relaxed mb-4">
+              <p className="text-xs sm:text-sm text-brand-text font-sans leading-relaxed mb-4">
                 Essential self-reflection exercises, 4-year high school milestones, and extracurricular spike planner.
               </p>
               <Link

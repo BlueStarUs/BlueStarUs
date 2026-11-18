@@ -237,7 +237,7 @@ export function VideosListing() {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-stretch">
               {/* Left Video Thumbnail with Big Play Button */}
               <div
-                className="relative aspect-[16/9] lg:aspect-auto min-h-[260px] sm:min-h-[340px] w-full bg-[#0a3d6b] cursor-pointer overflow-hidden"
+                className="relative aspect-[16/9] lg:aspect-auto min-h-[260px] sm:min-h-[340px] w-full bg-brand-navy cursor-pointer overflow-hidden"
                 onClick={() => setActiveVideo(featuredVideo)}
               >
                 <Image
@@ -259,7 +259,7 @@ export function VideosListing() {
                 </div>
 
                 {/* Badges */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-[#0A3D6B]/90 backdrop-blur-xs text-white text-xs font-bold uppercase tracking-wider font-heading border border-white/20">
+                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-brand-navy/90 backdrop-blur-xs text-white text-xs font-bold uppercase tracking-wider font-heading border border-white/20">
                   <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
                   <span>Featured Masterclass</span>
                 </div>
@@ -464,7 +464,7 @@ export function VideosListing() {
                           </div>
 
                           {/* Playlist / Category Pill */}
-                          <div className="absolute top-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-[5px] bg-[#0A3D6B]/90 backdrop-blur-xs text-white text-[10.5px] font-bold uppercase tracking-wider font-heading border border-white/20">
+                          <div className="absolute top-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-[5px] bg-brand-navy/90 backdrop-blur-xs text-white text-[10.5px] font-bold uppercase tracking-wider font-heading border border-white/20">
                             <Video className="w-3 h-3 text-[#38bdf8]" />
                             <span>{playlistCat}</span>
                           </div>
@@ -547,7 +547,7 @@ export function VideosListing() {
                     >
                       {/* Left: Thumbnail with Play Overlay */}
                       <div
-                        className="relative w-full sm:w-[260px] md:w-[290px] shrink-0 aspect-[16/10] sm:aspect-auto overflow-hidden bg-[#0A3D6B] cursor-pointer"
+                        className="relative w-full sm:w-[260px] md:w-[290px] shrink-0 aspect-[16/10] sm:aspect-auto overflow-hidden bg-brand-navy cursor-pointer"
                         onClick={() => setActiveVideo(video)}
                       >
                         <Image
@@ -568,7 +568,7 @@ export function VideosListing() {
                         </div>
 
                         {/* Playlist Pill */}
-                        <div className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-[4px] bg-[#0A3D6B]/90 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-wider font-heading border border-white/20">
+                        <div className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-[4px] bg-brand-navy/90 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-wider font-heading border border-white/20">
                           <Video className="w-2.5 h-2.5 text-[#38bdf8]" />
                           <span>{playlistCat}</span>
                         </div>
@@ -740,7 +740,7 @@ export function VideosListing() {
         )}
 
         {/* Free Workbook CTA Spotlight Banner (Connecting Videos to Workbook) */}
-        <div className="mt-14 p-6 sm:p-8 rounded-[5px] bg-gradient-to-r from-[#0A3D6B] to-[#0B63B5] text-white shadow-[0_15px_40px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 p-6 sm:p-8 rounded-[5px] bg-gradient-to-r from-[#025269] to-[#1166B0] text-white shadow-[0_15px_40px_rgba(2,82,105,0.18)] border border-[#0199BB]/40 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-[5px] bg-white/10 border border-white/20 grid place-items-center flex-shrink-0 text-white">
               <BookOpen className="w-7 h-7 text-[#79c3f7]" />

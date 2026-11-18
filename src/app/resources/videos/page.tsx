@@ -175,7 +175,7 @@ export default function VideosPage() {
                 </h2>
 
                 <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
-                  While our video library offers great frameworks, every student’s journey is distinct. Book a free 30-minute diagnostic session with Dr. Amy Morgenstern and our senior counseling team.
+                  While our video library offers great frameworks, every student’s journey is distinct. Book a free 30-minute Initial Consultation with Dr. Amy Morgenstern and our senior counseling team.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5">
@@ -185,7 +185,7 @@ export default function VideosPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
                   >
-                    <span>Book Free Diagnostic Session</span>
+                    <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
                   </Link>
                   <Link

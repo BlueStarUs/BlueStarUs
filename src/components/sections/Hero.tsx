@@ -45,12 +45,12 @@ export async function Hero({ customConfig }: HeroProps = {}) {
         <div className="w-full flex justify-center lg:justify-end py-8 sm:py-10 lg:py-12 xl:py-14 px-5 sm:px-8 lg:px-0 z-10">
           <div className="w-full max-w-[560px] lg:max-w-[580px] xl:max-w-[600px] lg:mr-6 xl:mr-14 2xl:mr-20 lg:pl-6">
             {/* Kicker */}
-            <div className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue mb-2.5 sm:mb-3 font-heading">
+            <div className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue mb-2.5 sm:mb-3 font-heading lg:text-left text-center">
               {heroConfig.kicker}
             </div>
 
             {/* Main Heading (Original 3-line breakdown) */}
-            <h1 className="text-[32px] xs:text-[36px] sm:text-[42px] md:text-[46px] lg:text-[48px] xl:text-[54px] 2xl:text-[58px] font-extrabold text-brand-navy mb-4 sm:mb-5 tracking-tight leading-[1.1] font-heading">
+            <h1 className="text-[32px] xs:text-[36px] sm:text-[42px] md:text-[46px] lg:text-[48px] xl:text-[54px] 2xl:text-[58px] font-[700] text-brand-navy mb-4 sm:mb-5 tracking-tight leading-[1.12] font-heading lg:text-left text-center lg:py-0 py-4">
               {heroConfig.headingLine1}
               <br className="hidden sm:inline" />{" "}
               {heroConfig.headingLine2}
@@ -59,7 +59,7 @@ export async function Hero({ customConfig }: HeroProps = {}) {
             </h1>
 
             {/* Description */}
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text mb-6 sm:mb-7 font-sans max-w-[480px]">
+            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text mb-6 sm:mb-7 font-sans max-w-[480px] lg:text-left text-center">
               {heroConfig.description}
             </p>
 

@@ -29,20 +29,20 @@ const GET_STARTED_STEPS: ProcessStepItem[] = [
   {
     step: "Step 1",
     stepNumber: "01",
-    title: "Book a free 30-min consultation",
+    title: "Complimentary 30-Min Initial Consultation",
     description:
-      "Let’s get together and talk about what Blue Stars can do for your teen and family. Meet one of our counselors and get to know us. If it feels right and we’re a good fit, we’ll set up the next step.",
+      "Let’s get together to discuss your teen's background, ambitions, and family goals. Meet one of our expert counselors and get to know our philosophy. If there is strong mutual fit, we schedule the next step: a comprehensive 75-minute Strategy Consultation.",
     icon: Calendar,
     accent: "blue",
-    ctaText: "Book Free Session",
+    ctaText: "Book Your Initial Consultation",
     ctaHref: HUBSPOT_CONSULTATION_URL,
   },
   {
     step: "Step 2",
     stepNumber: "02",
-    title: "Get ready for College Admissions with a strategic plan",
+    title: "75-Minute In-Depth Strategy Consultation",
     description:
-      "We’ll meet for a 90-min in-depth consultation. Our lead counselor will assess your teen’s career path and create a detailed proposal showcasing their path to successful college admission and beyond.",
+      "Following your Initial Consultation, we meet for an in-depth 75-minute diagnostic Strategy Consultation. Our lead counselor evaluates transcripts, extracurricular themes, and target colleges to create an actionable, bespoke admissions roadmap.",
     icon: Compass,
     accent: "green",
   },
@@ -104,7 +104,7 @@ export function Process() {
         <div className="relative">
           {/* Subtle Stepper Line Behind Cards (Desktop) */}
           <div
-            className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#2A8FD6]/20 via-[#0B63B5]/40 to-[#2F9E5C]/30 z-0"
+            className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#0199BB]/20 via-[#1166B0]/40 to-[#7BC144]/30 z-0"
             aria-hidden="true"
           />
 

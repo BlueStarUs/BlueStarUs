@@ -656,7 +656,7 @@ export default function ResourcesPage() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all duration-200"
                   >
-                    <span>Schedule Free Consultation</span>
+                    <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
                   </Link>
 

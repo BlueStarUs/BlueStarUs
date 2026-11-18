@@ -156,6 +156,18 @@
     "note": "Legacy Privacy Statement URL"
   },
   {
+    "source": "/terms",
+    "destination": "/terms-of-service",
+    "permanent": true,
+    "note": "Terms Alias"
+  },
+  {
+    "source": "/terms-and-conditions",
+    "destination": "/terms-of-service",
+    "permanent": true,
+    "note": "Legacy Terms URL"
+  },
+  {
     "source": "/faq",
     "destination": "/resources/faq",
     "permanent": true,

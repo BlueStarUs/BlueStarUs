@@ -7,6 +7,7 @@ export interface CollegeAcceptanceItem {
 
 export interface SummerProgramItem {
   name: string;
+  count?: number;
   category?: string;
   highlight?: string;
 }

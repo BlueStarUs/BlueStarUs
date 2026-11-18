@@ -52,7 +52,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
         <Hero />
         <RecentAdmissionsLogos />
         <Services />

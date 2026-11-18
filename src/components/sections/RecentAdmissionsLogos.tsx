@@ -52,7 +52,7 @@ const RECENT_ADMISSIONS_LOGOS: UniversityLogoItem[] = [
 export function RecentAdmissionsLogos() {
   return (
     <section
-      className="relative w-full py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0A3D6B] text-white border-y border-[#1a5b88]/50 overflow-hidden"
+      className="relative w-full py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#0199BB] text-white border-y border-[#8FD2C8]/30 overflow-hidden"
       id="recent-admissions"
       aria-label="Recent Admissions"
     >

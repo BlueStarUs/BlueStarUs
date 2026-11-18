@@ -52,7 +52,7 @@ export function FounderVision() {
             <div className="relative w-full max-w-[420px] mx-auto lg:mx-0">
               {/* Decorative Brand Frame Background */}
               <div
-                className="absolute -top-3 -left-3 w-full h-full rounded-[12px] bg-gradient-to-br from-[#0B63B5]/20 via-[#0A3D6B]/15 to-transparent -z-10 transform -rotate-1 sm:-rotate-2"
+                className="absolute -top-3 -left-3 w-full h-full rounded-[12px] bg-gradient-to-br from-[#1166B0]/20 via-[#025269]/15 to-transparent -z-10 transform -rotate-1 sm:-rotate-2"
                 aria-hidden="true"
               />
 
@@ -78,7 +78,7 @@ export function FounderVision() {
                   </div>
 
                   {/* Glassmorphism Title Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-[6px] bg-[#07466f]/90 backdrop-blur-md text-white border border-white/20">
+                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-[6px] bg-[#025269]/90 backdrop-blur-md text-white border border-white/20">
                     <div className="text-sm sm:text-base font-extrabold font-heading">
                       Dr. Amy Morgenstern
                     </div>
@@ -96,19 +96,19 @@ export function FounderVision() {
                     </div>
                     <div>
                       <div className="text-xs font-extrabold text-brand-navy font-heading">Ph.D. &amp; MFA</div>
-                      <div className="text-[11px] text-brand-text font-sans">Former University Faculty</div>
+                      <div className="text-[12px] text-brand-text font-sans">Former University Faculty</div>
                     </div>
                   </div>
 
                   <div className="h-7 w-[1px] bg-[#dbe7f3]" aria-hidden="true" />
 
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full bg-[#e3f5ea] text-[#2F9E5C] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-brand-green text-brand-greenDark flex items-center justify-center flex-shrink-0">
                       <Sparkles className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="text-xs font-extrabold text-brand-navy font-heading">16+ Years</div>
-                      <div className="text-[11px] text-brand-text font-sans">Boutique Leadership</div>
+                      <div className="text-[12px] text-brand-text font-sans">Boutique Leadership</div>
                     </div>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export function FounderVision() {
                   <BarChart3 className="w-6 h-6" />
                 </div>
                 <div className="text-[16.5px] sm:text-[17.5px]  font-extrabold text-brand-navy font-heading mb-1">
-                  Data Drivenc
+                  Data Driven
                 </div>
                 <div className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-brand-text leading-[18px] font-sans">
                   Deep admissions committee analytics and holistic scoring rubrics across top-tier colleges.
@@ -187,7 +187,7 @@ export function FounderVision() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-md hover:shadow-lg transition-all duration-200"
               >
-                <span>Book a Free 30 Minute Consultation</span>
+                <span>Book Your Initial Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </Link> 
               <Link

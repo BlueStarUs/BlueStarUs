@@ -408,7 +408,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy font-bold text-xs sm:text-[13.5px] font-heading transition-all duration-200 shadow-sm group"
                 >
-                  <span>Book Free Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>

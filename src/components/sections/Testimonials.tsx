@@ -163,7 +163,7 @@ export function Testimonials() {
                       {story.tags.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-0.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[11px] font-sans font-medium text-brand-text"
+                          className="px-2 py-0.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[13px] font-sans font-medium text-brand-text"
                         >
                           {t}
                         </span>

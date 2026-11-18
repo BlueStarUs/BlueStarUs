@@ -39,7 +39,7 @@ function BlueCircleCheck({ className = "w-5 h-5 flex-shrink-0" }: { className?: 
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="10" cy="10" r="10" fill="#0B63B5" />
+      <circle cx="10" cy="10" r="10" fill="#1166B0" />
       <path
         d="M6 10.2L8.7 12.8L14 7.5"
         stroke="white"
@@ -317,7 +317,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
                 >
-                  <span>Book a Free 30-Min Creative Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -488,7 +488,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs font-heading group-hover:scale-[1.01]"
                 >
-                  <span>Schedule Consultation</span>
+                  <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </motion.div>
@@ -524,7 +524,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 className="bg-white/10 backdrop-blur-md rounded-[5px] p-5 border border-white/15 hover:bg-white/15 transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-[5px] bg-[#38bdf8] text-[#0A3D6B] font-extrabold text-xl font-heading grid place-items-center mb-3 shadow-xs">
+                  <div className="w-10 h-10 rounded-[5px] bg-[#38bdf8] text-brand-navy font-extrabold text-xl font-heading grid place-items-center mb-3 shadow-xs">
                     {s.letter}
                   </div>
                   <span className="inline-block px-2 py-0.5 rounded-[4px] bg-white/20 text-[#bfe2fa] text-[10px] font-bold font-heading mb-2">
@@ -604,7 +604,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 STEP 01
               </span>
               <h3 className="text-base font-bold text-brand-navy font-heading mb-2">
-                Free 30-Min Consultation
+                Free 30-Min Initial Consultation
               </h3>
               <p className="text-xs sm:text-[13px] text-brand-text font-sans leading-relaxed">
                 Connect with our team to discuss your teen&apos;s artistic aspirations, target colleges, and current creative body of work.
@@ -616,10 +616,10 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 STEP 02
               </span>
               <h3 className="text-base font-bold text-brand-navy font-heading mb-2">
-                Strategic Studio Assessment
+                75-Minute Strategy Consultation
               </h3>
               <p className="text-xs sm:text-[13px] text-brand-text font-sans leading-relaxed">
-                A 90-minute deep-dive diagnostic evaluating sketchbook work, medium breadth, thematic strengths, and target BFA/BA/MFA programs.
+                A 75-minute deep-dive Strategy Consultation evaluating sketchbook work, medium breadth, thematic strengths, and target BFA/BA/MFA programs.
               </p>
             </div>
 
@@ -677,7 +677,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-brand-blue hover:text-brand-navy font-heading transition-colors"
                 >
-                  <span>Need custom advice? Book a free consultation</span>
+                  <span>Need custom advice? Book your initial consultation</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -729,10 +729,10 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
-                  <span>Book Free Creative Consultation</span>
-                  <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />
+                  <span>Book Your Initial Consultation</span>
+                  <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
 

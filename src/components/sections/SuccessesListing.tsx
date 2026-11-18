@@ -270,16 +270,14 @@ export function SuccessesListing() {
                           </h4>
                         </div>
 
-                        {item.count && item.count > 1 && (
-                          <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue border border-[#0B63B5]/20 text-[11px] sm:text-xs font-heading font-bold">
-                            {item.count} Admits
-                          </span>
-                        )}
+                        <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue border border-brand-blue/20 text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
+                          {item.count && item.count > 1 ? `${item.count} Admits` : "1 Admit"}
+                        </span>
                       </div>
 
                       {/* Special Highlight Ribbon */}
                       {item.highlight && (
-                        <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#e2f7eb] border border-[#2F9E5C]/30 text-[#2F9E5C] text-xs sm:text-[12.5px] font-heading font-semibold leading-tight">
+                        <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#F0F8EC] border border-[#7BC144]/30 text-[#7BC144] text-xs sm:text-[12.5px] font-heading font-semibold leading-tight">
                           <Award className="w-3.5 h-3.5 flex-shrink-0" />
                           <span>{item.highlight}</span>
                         </div>
@@ -334,13 +332,20 @@ export function SuccessesListing() {
                     className="group relative bg-white rounded-[5px] border border-[#e2eef9] hover:border-brand-blue/60 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_12px_28px_rgba(10,61,107,0.10)] hover:-translate-y-0.5 p-3.5 sm:p-4 transition-all duration-200 flex flex-col justify-between"
                   >
                     <div>
-                      <div className="flex items-start gap-2.5 min-w-0 mb-1.5">
-                        <div className="w-6 h-6 rounded-[5px] bg-[#e2f7eb] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white transition-colors duration-200">
-                          <BookOpen className="w-3.5 h-3.5" />
+                      {/* Top Row: Summer Program Name & Admits Badge */}
+                      <div className="flex items-start justify-between gap-2.5 mb-2">
+                        <div className="flex items-start gap-2.5 min-w-0">
+                          <div className="w-6 h-6 rounded-[5px] bg-[#e2f7eb] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white transition-colors duration-200">
+                            <BookOpen className="w-3.5 h-3.5" />
+                          </div>
+                          <h4 className="text-[13.5px] sm:text-[14.5px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
+                            {prog.name}
+                          </h4>
                         </div>
-                        <h4 className="text-[13.5px] sm:text-[14.5px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
-                          {prog.name}
-                        </h4>
+
+                        <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#e2f7eb] text-[#2F9E5C] border border-[#2F9E5C]/25 text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
+                          {prog.count && prog.count > 1 ? `${prog.count} Admits` : "1 Admit"}
+                        </span>
                       </div>
 
                       {prog.highlight && (

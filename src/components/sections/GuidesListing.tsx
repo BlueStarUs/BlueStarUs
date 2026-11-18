@@ -141,29 +141,29 @@ export function GuidesListing() {
                     {guide.title}
                   </h3>
 
-                  <p className="text-[13.5px] font-semibold text-brand-navy/80 font-sans mb-3">
+                  <p className="text-[15px] sm:text-[16px]font-semibold text-brand-navy/80 font-sans mb-3">
                     {guide.subtitle}
                   </p>
 
-                  <p className="text-[14px] leading-[22px] text-brand-text font-sans mb-5 line-clamp-3">
+                  <p className="text-[15px] sm:text-[16px]  leading-[22px] text-brand-text font-sans mb-5 line-clamp-3">
                     {guide.description}
                   </p>
 
                   {/* Key Highlights */}
                   <div className="space-y-2 pt-4 border-t border-[#edf4fb] mb-5">
-                    <div className="text-[11px] font-bold tracking-wider uppercase text-brand-navy font-heading">
+                    <div className="text-[14px] font-bold tracking-wider uppercase text-brand-navy font-heading">
                       What&apos;s Inside:
                     </div>
                     {guide.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-brand-navy/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue flex-shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-[13.5px] text-brand-navy/90">
+                        <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5" />
                         <span className="line-clamp-1">{h}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Target Audience */}
-                  <div className="p-3 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs text-brand-text mb-2">
+                  <div className="p-3 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[13.5px] text-brand-text mb-2">
                     <span className="font-bold text-brand-navy font-heading">Best For: </span>
                     {guide.targetAudience}
                   </div>

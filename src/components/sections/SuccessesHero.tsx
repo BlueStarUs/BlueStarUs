@@ -93,7 +93,7 @@ export function SuccessesHero() {
               href={HUBSPOT_CONSULTATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[5px] bg-gradient-to-r from-[#0B63B5] to-[#2A8FD6] hover:from-[#095296] hover:to-[#1b7ec5] text-white font-heading font-semibold text-sm sm:text-base shadow-md transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[5px] bg-gradient-to-r from-[#1166B0] to-[#0199BB] hover:from-[#0d528f] hover:to-[#0185a3] text-white font-heading font-semibold text-sm sm:text-base shadow-md transition-all duration-200"
             >
               <Calendar className="w-4 h-4" />
               <span>Book a Free Consultation</span>

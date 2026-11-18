@@ -347,7 +347,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                   <div>
                     {/* Category & Metadata */}
                     <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-semibold text-brand-text mb-3 flex-wrap">
-                      <span className="px-2.5 py-0.5 rounded-[5px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue text-[10.5px]">
+                      <span className="px-2.5 py-1 rounded-[5px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue text-xs">
                         {featuredPost.category}
                       </span>
                       <span>•</span>
@@ -377,7 +377,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-[14.5px] sm:text-[15.5px] leading-relaxed text-brand-text font-sans mb-5 line-clamp-3">
+                    <p className="text-[15px] sm:text-[16px] leading-relaxed text-brand-text font-sans mb-5 line-clamp-3">
                       {featuredPost.excerpt}
                     </p>
 
@@ -387,9 +387,9 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         {featuredPost.tags.slice(0, 3).map((tag) => (
                           <span
                             key={tag}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-[5px] bg-white border border-brand-border text-[11px] font-medium text-brand-text"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-[5px] bg-white border border-brand-border text-xs font-semibold text-brand-text"
                           >
-                            <Tag className="w-2.5 h-2.5 text-brand-blue" />
+                            <Tag className="w-3 h-3 text-brand-blue" />
                             {tag}
                           </span>
                         ))}
@@ -400,13 +400,13 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                   {/* Author & Read More Button */}
                   <div className="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="relative w-8 h-8 rounded-full overflow-hidden bg-brand-sky border border-brand-blue/30 flex items-center justify-center">
+                      <div className="relative w-9 h-9 rounded-full overflow-hidden bg-brand-sky border border-brand-blue/30 flex items-center justify-center">
                         {featuredPost.author?.avatar ? (
                           <Image
                             src={featuredPost.author.avatar}
                             alt={featuredPost.author.name}
                             fill
-                            sizes="32px"
+                            sizes="36px"
                             className="object-cover"
                           />
                         ) : (
@@ -414,10 +414,10 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         )}
                       </div>
                       <div>
-                        <span className="block text-xs font-bold text-brand-navy font-heading leading-none">
+                        <span className="block text-xs sm:text-sm font-bold text-brand-navy font-heading leading-tight">
                           {featuredPost.author?.name || "Dr. Amy Morgenstern"}
                         </span>
-                        <span className="block text-[10.5px] text-brand-text/75 font-sans mt-0.5">
+                        <span className="block text-xs text-brand-text font-sans mt-0.5">
                           {featuredPost.author?.role || "Admissions Consultant"}
                         </span>
                       </div>
@@ -430,7 +430,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                           trackSearchResultClick(featuredPost.slug, featuredPost.title, debouncedQuery);
                         }
                       }}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-brand-blue text-white text-xs font-bold font-heading group-hover:bg-brand-navy transition-all duration-200 shadow-xs"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-brand-blue text-white text-xs sm:text-sm font-bold font-heading group-hover:bg-brand-navy transition-all duration-200 shadow-xs"
                     >
                       <span>Read Article</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -475,7 +475,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute top-3 left-3 z-10">
-                        <span className="px-2 py-0.5 rounded-[5px] text-[10px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue shadow-xs">
+                        <span className="px-2.5 py-1 rounded-[5px] text-xs font-bold uppercase tracking-wider font-heading bg-white/95 text-brand-blue shadow-xs backdrop-blur-xs">
                           {post.category}
                         </span>
                       </div>
@@ -485,7 +485,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                       <div>
                         {/* Meta: Date & Read Time */}
-                        <div className="flex items-center gap-2 text-[11px] sm:text-xs text-brand-text mb-2.5 font-sans">
+                        <div className="flex items-center gap-2 text-xs text-brand-text mb-2.5 font-sans">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3 h-3 text-brand-blue" />
                             {post.publishedAt}
@@ -512,7 +512,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-[13px] sm:text-[13.5px] leading-relaxed text-brand-text font-sans line-clamp-3 mb-4">
+                        <p className="text-sm leading-relaxed text-brand-text/90 font-sans line-clamp-3 mb-4">
                           {post.excerpt}
                         </p>
                       </div>
@@ -533,7 +533,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                               <User className="w-3 h-3 text-brand-blue" />
                             )}
                           </div>
-                          <span className="text-xs font-semibold text-brand-navy truncate">
+                          <span className="text-xs sm:text-[13px] font-semibold text-brand-navy truncate">
                             {post.author?.name || "Dr. Amy Morgenstern"}
                           </span>
                         </div>

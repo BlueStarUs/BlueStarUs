@@ -347,7 +347,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-[#E3F1FC] text-brand-blue hover:bg-brand-blue hover:text-white transition-all"
                   >
-                    <span>Book a Free 30-Minute Strategy Session</span>
+                    <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

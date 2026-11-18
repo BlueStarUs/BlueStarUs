@@ -13,7 +13,7 @@ function BlueCircleCheck({ className = "w-5 h-5 flex-shrink-0" }: { className?: 
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="10" cy="10" r="10" fill="#0B63B5" />
+      <circle cx="10" cy="10" r="10" fill="#1166B0" />
       <path
         d="M6 10.2L8.7 12.8L14 7.5"
         stroke="white"

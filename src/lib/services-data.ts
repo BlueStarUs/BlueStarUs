@@ -143,9 +143,9 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free 30-Min Consultation & 90-Min Assessment",
+        title: "Free 30-Min Initial Consultation & 75-Min Strategy Consultation",
         description:
-          "We begin with a complimentary 30-minute discovery consultation, followed by a comprehensive 90-minute strategic assessment analyzing transcripts, diagnostic testing, extracurriculars, and personal values to map your roadmap 'The Calm Way'.",
+          "We begin with a complimentary 30-minute Initial Consultation, followed by a comprehensive 75-minute Strategy Consultation analyzing transcripts, diagnostic testing, extracurriculars, and personal values to map your roadmap 'The Calm Way'.",
       },
       {
         stepNumber: "02",
@@ -659,15 +659,15 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free 30-Minute Consultation",
+        title: "Free 30-Minute Initial Consultation",
         description:
-          "Initial discovery conversation to understand your student's unique personality, academic trajectory, and your family's college goals.",
+          "Initial consultation conversation to understand your student's unique personality, academic trajectory, and your family's college goals.",
       },
       {
         stepNumber: "02",
-        title: "90-Minute Strategic Assessment & Roadmap",
+        title: "75-Minute Strategy Consultation & Roadmap",
         description:
-          "Comprehensive diagnostic evaluation of transcripts, testing benchmarks, and extracurriculars to build a customized multi-year roadmap.",
+          "Comprehensive 75-minute diagnostic evaluation of transcripts, testing benchmarks, and extracurriculars to build a customized multi-year roadmap.",
       },
       {
         stepNumber: "03",
@@ -716,14 +716,14 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       kicker: "MAKE ADMISSIONS STRESS-FREE",
       heading: "Make College Admissions Stress-Free & Exciting",
       description:
-        "Schedule your free discovery session to understand where your student stands and chart an actionable roadmap toward dream college acceptances.",
+        "Schedule your free Initial Consultation to understand where your student stands and chart an actionable roadmap toward dream college acceptances.",
       bullets: [
-        "Free 30-minute one-on-one consultation with senior advisors",
+        "Free 30-minute one-on-one Initial Consultation with senior advisors",
         "Assessment of student strengths, extracurricular profile, and goals",
         "Actionable roadmap tailored specifically to your family's timeline",
         "No pressure, transparent advising built on 'The Calm Way'",
       ],
-      ctaText: "Schedule Free Consultation",
+      ctaText: "Book Your Initial Consultation",
       ctaHref: "/#contact",
     },
     stories: [
@@ -738,7 +738,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
         image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
         alt: "High school student feeling confident about college admissions",
         imagePosition: "left",
-        ctaText: "Schedule a Consultation",
+        ctaText: "Book Your Initial Consultation",
         ctaHref: "/#contact",
       },
       {
@@ -776,7 +776,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
         "Strategic Positioning",
         "Flawless Execution",
       ],
-      ctaText: "Book Your 30-Min Consultation",
+      ctaText: "Book Your Initial Consultation",
       ctaHref: "/#contact",
     },
     testimonials: [
@@ -869,13 +869,13 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free Portfolio Diagnostic & Consultation",
+        title: "Free Portfolio Diagnostic & Initial Consultation",
         description:
           "We review existing artwork, sketchbook studies, and creative ambitions to assess technical foundation and conceptual direction.",
       },
       {
         stepNumber: "02",
-        title: "90-Minute Creative Strategy Assessment",
+        title: "75-Minute Strategy Consultation",
         description:
           "Evaluating target art schools and university programs, identifying portfolio thematic gaps, and setting production milestones.",
       },
@@ -948,7 +948,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
         image: "/images/services/others_images/Dream_art_Programs.png",
         alt: "Young artist in ceramic and painting studio working on portfolio artwork",
         imagePosition: "left",
-        ctaText: "Schedule an Art Consultation",
+        ctaText: "Book Your Initial Consultation",
         ctaHref: "/#contact",
       },
       {

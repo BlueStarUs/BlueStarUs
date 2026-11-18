@@ -51,13 +51,13 @@ export function ServiceFAQAccordion({
                 </span>
 
                 {/* Interactive Plus / Rotate Icon */}
-                <span className="flex-shrink-0 text-[#0A3D6B] w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300">
+                <span className="flex-shrink-0 text-brand-navy w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300">
                   <Plus
                     className={cn(
                       "w-4 h-4 sm:w-[18px] sm:h-[18px] stroke-[2.6] transition-transform duration-300",
                       isOpen
                         ? "rotate-45 text-brand-blue scale-110"
-                        : "text-[#0A3D6B] group-hover:text-brand-blue"
+                        : "text-brand-navy group-hover:text-brand-blue"
                     )}
                   />
                 </span>

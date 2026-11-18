@@ -97,7 +97,7 @@ export default function FAQPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
                   >
-                    <span>Book a Free Consultation</span>
+                    <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
                   </a>
                   <Link

@@ -3,18 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --navy: #0a3d6b;
-  --navy-dark: #07466f;
-  --blue: #0b63b5;
-  --blue-light: #2a8fd6;
-  --sky: #e8f3fc;
-  --bg: #f3f8fd;
-  --text: #4b5d70;
-  --heading: #0a3d6b;
-  --green: #e3f5ea;
-  --line: #dbe7f3;
+  /* ==============================================================================
+     OFFICIAL BLUESTARS BRAND PALETTE (RGB, HEX, CMYK SPEC)
+     ============================================================================== */
+  --brand-teal: #0199bb;         /* RGB: 1-153-187 | HEX: 0199BB | CMYK: 79-23-18-0 */
+  --brand-mint: #8fd2c8;         /* RGB: 143-210-200 | HEX: 8FD2C8 | CMYK: 43-0-25-0 */
+  --brand-blue: #1166b0;         /* RGB: 17-102-176 | HEX: 1166B0 | CMYK: 91-62-1-0 */
+  --brand-navy: #025269;         /* RGB: 2-82-105 | HEX: 025269 | CMYK: 95-60-42-23 */
+  --brand-green: #7bc144;        /* RGB: 123-193-68 | HEX: 7BC144 | CMYK: 57-0-99-0 */
+  --brand-slate-teal: #65a1ac;   /* RGB: 101-161-172 | HEX: 65A1AC | CMYK: 62-23-29-0 */
+  --brand-turquoise: #2fbebc;    /* RGB: 47-190-188 | HEX: 2FBEBC | CMYK: 69-0-31-0 */
+  --brand-gray: #646464;         /* RGB: 100-100-100 | HEX: 646464 | CMYK: 60-52-51-21 */
+
+  /* Semantic Theme Mappings */
+  --navy: #025269;
+  --navy-dark: #013b4c;
+  --blue: #1166b0;
+  --blue-light: #0199bb;
+  --sky: #ebf5f7;
+  --bg: #f4f9fb;
+  --text: #646464;
+  --heading: #1166b0;
+  --green: #7bc144;
+  --line: #d8eaee;
   --radius: 14px;
-  --shadow: 0 8px 28px rgba(10, 61, 107, 0.08);
+  --shadow: 0 8px 28px rgba(2, 82, 105, 0.08);
+
+  --font-montserrat: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-jakarta: var(--font-montserrat);
+  --font-inter: var(--font-montserrat);
 }
 
 * {
@@ -22,39 +39,56 @@
 }
 
 html {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
   background-color: #ffffff;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 400; /* Montserrat Regular */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings: Plus Jakarta Sans */
+/* Headings: Montserrat Bold (700) with brand primary color #1166B0 */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--heading);
-  letter-spacing: -0.02em;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1166b0;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
+/* Ensure all website headings render in #1166B0 across all viewport sizes unless explicitly inverted/white for dark banners */
+h1:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h2:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h3:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h4:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h5:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h6:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h1.text-brand-navy,
+h2.text-brand-navy,
+h3.text-brand-navy,
+h4.text-brand-navy,
+h5.text-brand-navy,
+h6.text-brand-navy {
+  color: #1166b0 !important;
 }
 
 h1 {
-  font-weight: 800;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.18;
 }
 
 h2 {
-  font-weight: 800;
-  line-height: 1.22;
+  font-weight: 700;
+  line-height: 1.24;
 }
 
 h3 {
@@ -69,13 +103,16 @@ h3 {
 }
 
 p {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
   font-size: 15px;
-  line-height: 24px;
+  line-height: 25px;
+  font-weight: 400; /* Montserrat Regular */
+  color: var(--text);
 }
 @media (min-width: 640px) {
   p {
     font-size: 16px;
-    line-height: 26px;
+    line-height: 27px;
   }
 }
 
@@ -86,50 +123,63 @@ h6 {
   line-height: 1.35;
 }
 
-/* Navigation elements: Plus Jakarta Sans */
+/* Navigation elements: Montserrat Medium (500) & SemiBold (600) */
 nav,
 nav a,
 [role="navigation"],
 .nav-link {
-  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  font-weight: 500;
 }
 
-/* Buttons and interactive submit controls: Plus Jakarta Sans */
+/* Buttons and interactive submit controls: Montserrat SemiBold (600) */
 button,
 .btn,
 [role="button"],
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
   font-weight: 600;
 }
 
-/* Section titles, kickers, badges, and labels: Plus Jakarta Sans */
+/* Section titles, kickers, badges, and labels: Montserrat SemiBold / Bold */
 .section-title,
 .section-subtitle,
 .section-kicker,
 .font-heading,
 label {
-  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
 }
 
-/* Body text, descriptions, and paragraphs: Inter */
+/* Body text, descriptions, lists, tables: Montserrat Regular (400) */
 p,
 li,
 dd,
 blockquote,
 figcaption,
+caption,
+table,
+th,
+td,
 .body-text,
 .font-sans {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
 }
 
-/* Form input elements use Inter for legibility */
+/* Captions and footnotes: Montserrat Light (300) / Regular (400) */
+figcaption,
+caption,
+.caption-text {
+  font-weight: 300; /* Montserrat Light */
+  color: var(--brand-gray);
+}
+
+/* Form input elements use Montserrat */
 input:not([type="submit"]):not([type="button"]):not([type="reset"]),
 textarea,
 select {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
 }
 
 /* Custom image mask utilities matching original design */
@@ -206,7 +256,7 @@ select {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #bcd5eb;
+  background-color: #8fd2c8;
   border-radius: 9999px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -214,12 +264,12 @@ select {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0b63b5; /* Brand Blue */
+  background-color: #1166b0; /* Primary Brand Blue */
   border: 1px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #07466f; /* Brand Dark Navy */
+  background-color: #025269; /* Brand Deep Navy */
 }
 
 ::-webkit-scrollbar-corner {
@@ -230,7 +280,7 @@ select {
 .custom-scrollbar,
 [data-scrollbar="custom"] {
   scrollbar-width: thin;
-  scrollbar-color: #c7dcf0 transparent;
+  scrollbar-color: #8fd2c8 transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar,
@@ -241,7 +291,7 @@ select {
 
 .custom-scrollbar::-webkit-scrollbar-thumb,
 [data-scrollbar="custom"]::-webkit-scrollbar-thumb {
-  background-color: #c7dcf0;
+  background-color: #8fd2c8;
   border-radius: 9999px;
   border: 1.5px solid transparent;
   background-clip: content-box;
@@ -249,7 +299,7 @@ select {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover,
 [data-scrollbar="custom"]::-webkit-scrollbar-thumb:hover {
-  background-color: #0b63b5;
+  background-color: #1166b0;
 }
 
 /* Dark Containers (e.g., Code blocks, SQL view, dark cards) */
@@ -287,3 +337,242 @@ pre::-webkit-scrollbar-thumb:hover,
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ==============================================================================
+   BLOG RICH ARTICLE CONTENT & INLINE MEDIA SYSTEM
+   ============================================================================== */
+.blog-content {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Inline images: Centered, responsive, capped height, no giant gaps */
+.blog-content img,
+.blog-content .blog-inline-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-top: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+/* Captions directly under images: Tight spacing, legible size */
+.blog-content p[id^="caption"],
+.blog-content .wp-caption-text,
+.blog-content figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #646464;
+  font-style: italic;
+  margin-top: -0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Prevent empty paragraphs from generating huge blank spaces */
+.blog-content p:empty {
+  display: none !important;
+}
+
+/* Blockquotes tight spacing */
+.blog-content blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content blockquote p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Speaker interview turns: Left colored accent line, small avatar on the side, responsive layout */
+.blog-content .blog-speaker-row {
+  display: block;
+  width: 100%;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  clear: both;
+}
+
+@media (min-width: 640px) {
+  .blog-content .blog-speaker-row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.blog-content .blog-speaker-row img {
+  width: 2rem !important;
+  height: 2rem !important;
+  min-width: 2rem !important;
+  max-width: 2rem !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .blog-content .blog-speaker-row img {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    min-width: 2.25rem !important;
+    max-width: 2.25rem !important;
+  }
+}
+
+.blog-content .blog-speaker-row blockquote {
+  margin: 0 !important;
+  border-left: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.blog-content .blog-speaker-row .blog-speaker-text p,
+.blog-content .blog-speaker-row blockquote p {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-content .blog-speaker-row .blog-speaker-text p:last-child,
+.blog-content .blog-speaker-row blockquote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .blog-content .blog-speaker-row .blog-speaker-text p,
+  .blog-content .blog-speaker-row blockquote p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+/* Side-aligned figure with caption: small, compact, clean float */
+.blog-content .blog-side-figure {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  clear: right;
+  max-width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .blog-content .blog-side-figure {
+    float: right;
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+    max-width: 210px;
+  }
+}
+
+.blog-content .blog-side-figure img {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ==============================================================================
+   BLOG ACCORDION DISCLOSURE CARDS
+   ============================================================================== */
+.blog-accordion {
+  border: 1px solid #dbe7f3;
+  border-radius: 12px;
+  background-color: #ffffff;
+  margin-top: 1.15rem;
+  margin-bottom: 1.15rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(10, 61, 107, 0.04);
+  transition: all 0.2s ease;
+}
+
+.blog-accordion summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.25rem !important;
+  background-color: rgba(232, 243, 252, 0.35) !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  list-style: none !important;
+  border: none !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.blog-accordion summary:hover {
+  background-color: rgba(232, 243, 252, 0.6) !important;
+}
+
+.blog-accordion summary::-webkit-details-marker,
+.blog-accordion summary::marker {
+  display: none !important;
+}
+
+.blog-accordion summary h3,
+.blog-accordion summary h2 {
+  margin: 0 !important;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.025rem !important;
+  line-height: 1.4 !important;
+  color: #1166b0 !important;
+}
+
+@media (min-width: 640px) {
+  .blog-accordion summary h3,
+  .blog-accordion summary h2 {
+    font-size: 1.125rem !important;
+  }
+}
+
+.blog-accordion[open] summary {
+  border-bottom: 1px solid rgba(216, 234, 238, 0.8) !important;
+}
+
+.blog-accordion .blog-accordion-body {
+  padding: 1.25rem 1.25rem !important;
+  color: #646464 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
+@media (min-width: 640px) {
+  .blog-accordion .blog-accordion-body {
+    padding: 1.5rem 1.75rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+.blog-accordion .blog-accordion-body p {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.blog-accordion .blog-accordion-body p:first-child {
+  margin-top: 0 !important;
+}
+
+.blog-accordion .blog-accordion-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.blog-accordion .blog-accordion-body img {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  border-radius: 8px !important;
+}
+
+

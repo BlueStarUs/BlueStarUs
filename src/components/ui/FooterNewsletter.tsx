@@ -84,7 +84,7 @@ export function FooterNewsletter() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[5px] bg-[#0B63B5] hover:bg-[#0A3D6B] active:scale-[0.98] text-white text-xs sm:text-[13.5px] font-bold font-heading tracking-wide transition-all shadow-md hover:shadow-lg disabled:opacity-70 flex-shrink-0 cursor-pointer border border-[#38bdf8]/30"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[5px] bg-[#1166B0] hover:bg-[#025269] active:scale-[0.98] text-white text-xs sm:text-[13.5px] font-bold font-heading tracking-wide transition-all shadow-md hover:shadow-lg disabled:opacity-70 flex-shrink-0 cursor-pointer border border-[#38bdf8]/30"
           >
             {status === "submitting" ? (
               <>
@@ -105,7 +105,7 @@ export function FooterNewsletter() {
         <p className="text-red-300 text-xs mt-1.5 pl-1 font-sans">{errorMessage}</p>
       )}
 
-      <p className="text-[11px] sm:text-[11.5px] text-[#93c7ec]/80 mt-2 font-sans pl-1">
+      <p className="text-[13x] sm:text-[14px] text-[#93c7ec]/90 mt-2 font-sans pl-1">
         No spam, ever. Unsubscribe with a single click at any time.
       </p>
     </div>

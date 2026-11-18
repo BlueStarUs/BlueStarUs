@@ -124,7 +124,7 @@ export default function FreeWorkbookPage() {
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
                 Socratic Narrative Prompts
               </h3>
-              <p className="text-xs sm:text-[13.5px] leading-[22px] text-brand-text font-sans">
+              <p className="text-[14.5px] sm:text-[15.5px] leading-[24px] text-brand-text font-sans">
                 Move past generic resume bullet points. Uncover personal values, core intellectual interests, and the unique personal spark that top admissions committees look for.
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function FreeWorkbookPage() {
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
                 4-Year Roadmap Architecture
               </h3>
-              <p className="text-xs sm:text-[13.5px] leading-[22px] text-brand-text font-sans">
+              <p className="text-[14.5px] sm:text-[15.5px] leading-[24px] text-brand-text font-sans">
                 A grade-by-grade blueprint covering AP/IB course rigor, summer research opportunities, leadership capstones, and balanced testing schedules.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function FreeWorkbookPage() {
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
                 16+ Years of Proven Results
               </h3>
-              <p className="text-xs sm:text-[13.5px] leading-[22px] text-brand-text font-sans">
+              <p className="text-[14.5px] sm:text-[15.5px] leading-[24px] text-brand-text font-sans">
                 Created by Dr. Amy Morgenstern, this signature toolkit helps students and families gain clarity and guide their path into Stanford, Harvard, MIT, and premier colleges nationwide.
               </p>
             </div>
@@ -183,7 +183,7 @@ export default function FreeWorkbookPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md transition-all"
               >
-                <span>Book Free Diagnostic Session</span>
+                <span>Book Your Initial Consultation</span>
                 <ArrowRight className="w-4 h-4 text-[#07466f]" />
               </Link>
               <Link

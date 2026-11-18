@@ -6,6 +6,9 @@ export const HUBSPOT_CONSULTATION_URL =
 export const HUBSPOT_DISCOVERY_URL =
   "https://meetings-na2.hubspot.com/bluestars/discovery-session";
 
+export const HUBSPOT_STRATEGY_CONSULTATION_URL =
+  "https://meetings-na2.hubspot.com/bluestars/discovery-session";
+
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
   kicker: "EXPERT GUIDANCE. BRIGHTER OPPORTUNITIES.",
   headingLine1: "Your Future Starts",
@@ -13,7 +16,7 @@ export const DEFAULT_HERO_CONFIG: HeroConfig = {
   headingLine3: "College Plan",
   description:
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
-  primaryBtnText: "Book a Free Consultation",
+  primaryBtnText: "Book Your Initial Consultation",
   primaryBtnHref: HUBSPOT_CONSULTATION_URL,
   secondaryBtnText: "Explore Our Services",
   secondaryBtnHref: "/#services",
@@ -34,7 +37,9 @@ export const SITE_CONFIG = {
     "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
   url: "https://bluestars.us",
   consultationUrl: HUBSPOT_CONSULTATION_URL,
+  initialConsultationUrl: HUBSPOT_CONSULTATION_URL,
   discoveryUrl: HUBSPOT_DISCOVERY_URL,
+  strategyConsultationUrl: HUBSPOT_STRATEGY_CONSULTATION_URL,
   contact: {
     email: "info@bluestars.us",
     phone: "415-426-9444",
@@ -376,7 +381,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
 export const FAQS: FAQItem[] = [
   {
     question: "How does the consultation process work?",
-    answer: "You book a free consultation, we learn about your goals and profile, and then we recommend a clear plan and next steps tailored to you.",
+    answer: "You start by booking a complimentary 30-minute Initial Consultation so we can learn about your student's profile and family goals. This is followed by a 75-minute in-depth Strategy Consultation where we diagnose strengths, evaluate transcripts, and present an actionable college roadmap.",
   },
   {
     question: "Do you help with international college applications?",
@@ -398,7 +403,7 @@ export const DEFAULT_ANNOUNCEMENTS: Announcement[] = [
     title: "Class of 2026 & 2027 Admissions Cohort",
     message: "Now accepting high school students for comprehensive 1-on-1 college admissions mentoring. Limited advisory spots available.",
     badge: "LIMITED SPOTS",
-    linkText: "Schedule Free 30-Min Consultation",
+    linkText: "Book Your Initial Consultation",
     linkUrl: "/contact",
     type: "banner",
     isActive: true,

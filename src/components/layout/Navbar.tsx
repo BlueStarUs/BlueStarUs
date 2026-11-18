@@ -33,7 +33,7 @@ import {
   NAV_RESOURCES,
   SITE_CONFIG,
   HUBSPOT_CONSULTATION_URL,
-  HUBSPOT_DISCOVERY_URL,
+  HUBSPOT_STRATEGY_CONSULTATION_URL,
 } from "@/lib/constants";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { SiteSearchModal } from "@/components/ui/SiteSearchModal";
@@ -307,7 +307,7 @@ export function Navbar() {
       <AnnouncementBar />
 
       {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] sm:h-[80px] flex items-center justify-between gap-4">
+      <div className="max-w-[1390px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] sm:h-[80px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -669,10 +669,10 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsSearchOpen(true)}
-            className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-xs sm:text-[13px] font-medium font-sans text-brand-navy/75 hover:text-brand-blue bg-[#f0f6fc] hover:bg-[#e4effa] border border-[#d6e5f5] hover:border-brand-blue/30 transition-all shadow-2xs group"
+            className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-xs sm:text-[16px] font-medium font-sans text-brand-navy/75 hover:text-brand-blue bg-[#f0f6fc] hover:bg-[#e4effa] border border-[#d6e5f5] hover:border-brand-blue/30 transition-all shadow-2xs group"
             aria-label="Search website"
           >
-            <Search className="w-3.5 h-3.5 text-brand-blue group-hover:scale-110 transition-transform" />
+            <Search className="w-3 h-3 text-brand-blue group-hover:scale-110 transition-transform" />
             <span className="hidden lg:inline text-brand-navy/80">Search...</span>
             <kbd className="hidden xl:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white text-brand-navy/60 border border-brand-border/80 shadow-2xs">
               ⌘K
@@ -693,22 +693,22 @@ export function Navbar() {
           {/* Mobile Site Search Button */}
           <button
             type="button"
-            className="md:hidden w-8 h-8 rounded-[2px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+            className="md:hidden w-8 h-8 min-w-[42px] min-h-[42px] rounded-[5px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
             onClick={() => setIsSearchOpen(true)}
             aria-label="Open search dialog"
           >
-            <Search className="w-4 h-4 text-brand-blue stroke-[2.2]" />
+            <Search className="w-4.5 h-4.5 text-brand-blue stroke-[2.2]" />
           </button>
 
           {/* Mobile Menu Hamburger Button */}
           <button
             type="button"
-            className="md:hidden w-8 h-8 rounded-[2px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+            className="md:hidden w-8 h-8 min-w-[42px] min-h-[42px] rounded-[5px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-6 h-6 stroke-[2.4]" /> : <Menu className="w-6 h-6 stroke-[2.4]" />}
+            {isOpen ? <X className="w-6 h-6 stroke-[2]" /> : <Menu className="w-6 h-6 stroke-[2]" />}
           </button>
         </div>
       </div>
@@ -965,18 +965,18 @@ export function Navbar() {
                 onClick={handleNavClick}
                 className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all shadow-sm flex items-center justify-center gap-2"
               >
-                <span>Book Initial Consultation</span>
+                <span>Book Your Initial Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href={HUBSPOT_DISCOVERY_URL}
+                href={HUBSPOT_STRATEGY_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
                 className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-bold font-heading text-brand-blue bg-[#E3F1FC] hover:bg-brand-blue hover:text-white transition-all shadow-xs flex items-center justify-center gap-2"
               >
-                <span>Schedule Discovery Session</span>
+                <span>Schedule Strategy Consultation (75 Min)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
