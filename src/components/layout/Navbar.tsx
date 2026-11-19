@@ -311,7 +311,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center cursor-pointer focus:outline-none select-none py-1"
+          className="flex items-center cursor-pointer focus:outline-none select-none bg-[#1166B0] hover:bg-[#0e5594] px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-[8px] transition-all duration-300 shadow-xs hover:shadow-md group"
           aria-label={SITE_CONFIG.name}
           onClick={() => {
             setIsOpen(false);
@@ -319,12 +319,12 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/images/BlueStars_Admission_Consulting_Logo.webp"
+            src="/images/BlueStars_Reverse-logo.webp"
             alt="Blue Stars Admissions Consulting"
             width={220}
-            height={120}
+            height={106}
             priority
-            className="h-[57px] sm:h-[62px] w-auto object-contain transition-transform duration-300"
+            className="h-[36px] sm:h-[42px] md:h-[46px] lg:h-[50px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </Link>
 

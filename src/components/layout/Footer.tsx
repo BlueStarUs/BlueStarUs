@@ -106,11 +106,11 @@ export function Footer() {
               aria-label={SITE_CONFIG.name}
             >
               <Image
-                src="/images/BlueStars_Admission_Consulting_Logo.webp"
+                src="/images/BlueStars_Reverse-logo.webp"
                 alt="Blue Stars Admissions Consulting"
-                width={220}
-                height={120}
-                className="h-10 sm:h-[85px] w-auto object-contain brightness-0 invert opacity-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-[1.03] drop-shadow-[0_2px_12px_rgba(255,255,255,0.18)]"
+                width={270}
+                height={134}
+                className="h-12 sm:h-14 md:h-16 lg:h-[70px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-[0_2px_12px_rgba(255,255,255,0.18)]"
               />
             </Link>
 
