@@ -84,8 +84,8 @@ export function CTA() {
               {/* Student Cutout Image (ready_to_take.png grounded at bottom) */}
               <div className="relative w-full h-full z-10 flex-shrink-0">
                 <Image
-                  src="/images/sub_images/ready_to_take.png"
-                  alt="Student smiling with phone and backpack, ready for college success"
+                  src="/images/teams/dr-amy-morgenstern-cutout.webp"
+                  alt="Dr. Amy Morgenstern, founder of Blue Stars Admissions Consulting"
                   fill
                   priority
                   sizes="(max-width: 640px) 210px, (max-width: 1024px) 290px, 350px"

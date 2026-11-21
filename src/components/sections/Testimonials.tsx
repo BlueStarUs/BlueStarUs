@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Star, GraduationCap, Quote } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 interface StudentStoryItem {
   id: string;
@@ -47,167 +46,66 @@ const TESTIMONIALS_DATA: StudentStoryItem[] = [
 ];
 
 export function Testimonials() {
+  const [featured, ...others] = TESTIMONIALS_DATA;
+
   return (
-    <section
-      className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden border-t border-[#e2eef9]"
-      id="stories"
-    >
-      {/* Subtle Ambient Background Gradients */}
-      <div
-        className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/50 via-[#edf6fd]/20 to-transparent rounded-br-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#e5f2fc]/50 via-[#eef6fe]/20 to-transparent rounded-tl-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Row: Title & View More Stories Pill Button */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-5 mb-8 sm:mb-12">
+    <section id="stories" className="relative w-full bg-white py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[1160px] px-6 sm:px-10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
           <div>
-            {/* Pill Kicker */}
-            <div className="flex items-center gap-3 mb-2.5">
-              <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                STUDENT SUCCESS STORIES
-              </span>
-              <span className="w-10 sm:w-14 h-[1.5px] bg-brand-navy/30 rounded-full" aria-hidden="true" />
-            </div>
-
-            {/* Main Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
-              Real Students.{" "}
-              <span className="text-brand-blue relative inline-block">
-                Real Journeys.
-                {/* Curved Arc Highlight Underneath */}
-                <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                  <svg
-                    className="w-36 sm:w-44 h-2.5 text-[#79bbf0] opacity-85"
-                    viewBox="0 0 200 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 9.5C55 2.5 145 2.5 198 9.5"
-                      stroke="currentColor"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </h2>
+            <p className="text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4">
+              Families in their own words
+            </p>
+            <h2 className="text-[32px] sm:text-[42px] leading-[1.1] text-brand-ink">Real students. Real journeys.</h2>
           </div>
-
-          {/* View More Stories Pill Button */}
           <Link
             href="/stories"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[14px] font-heading transition-all duration-200 shadow-xs flex-shrink-0 group"
+            className="inline-flex items-center gap-2 text-[14px] font-semibold text-brand-ink hover:text-brand-blue"
           >
-            <span>View More Stories</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+            More family stories <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* 3 Story Cards Grid (Responsive, Modern, Image-free) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {TESTIMONIALS_DATA.map((story) => {
-            const isBlue = story.accent === "blue";
-
-            return (
-              <article
-                key={story.id}
-                className={cn(
-                  "relative bg-white rounded-[5px] p-5 sm:p-6 shadow-[0_4px_16px_rgba(10,61,107,0.05)] border border-[#e2eef9] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(10,61,107,0.10)] hover:border-brand-blue/40 flex flex-col justify-between group",
-                  "md:max-lg:last:col-span-2 md:max-lg:last:max-w-md md:max-lg:last:mx-auto md:max-lg:last:w-full"
-                )}
+        {featured && (
+          <figure className="border-t border-[#e6dfd3] pt-12 pb-14 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px] gap-8 lg:gap-16">
+            <blockquote className="font-display text-[24px] sm:text-[30px] leading-[1.45] text-brand-ink">
+              &ldquo;{featured.quote}&rdquo;
+            </blockquote>
+            <figcaption className="lg:pt-2">
+              <span className="block font-display text-[20px] text-brand-ink">{featured.name}</span>
+              <span className="block text-[13px] text-[#7a7f88] mt-1">{featured.role}</span>
+              <span className="block text-[13.5px] font-semibold text-brand-blue mt-4">{featured.admittedTo}</span>
+              <Link
+                href={`/stories/${featured.id}`}
+                className="inline-block mt-5 text-[13.5px] font-semibold text-brand-ink underline decoration-brand-mint decoration-2 underline-offset-[6px] hover:text-brand-blue"
               >
-                {/* Top Section */}
-                <div>
-                  {/* Top Bar: Admitted Badge & 5 Stars */}
-                  <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#eef5fb]">
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-[11.5px] sm:text-xs font-heading font-bold max-w-[70%] truncate">
-                      <GraduationCap className="w-3.5 h-3.5 flex-shrink-0 text-brand-blue" />
-                      <span className="truncate">{story.admittedTo}</span>
-                    </div>
+                Read the full story
+              </Link>
+            </figcaption>
+          </figure>
+        )}
 
-                    {/* 5 Rating Stars */}
-                    <div className="flex items-center gap-0.5 flex-shrink-0" aria-label="5 out of 5 stars">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]"
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Quote Icon & Text */}
-                  <div className="mb-5">
-                    <Quote
-                      className={cn(
-                        "w-6 h-6 mb-2.5",
-                        isBlue ? "text-brand-blue/30" : "text-[#2F9E5C]/30"
-                      )}
-                    />
-                    <p className="text-[14px] sm:text-[15px] leading-[23px] sm:leading-[25px] text-brand-navy font-normal font-sans">
-                      &ldquo;{story.quote}&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-                  {story.tags && (
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {story.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="px-2 py-0.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[13px] font-sans font-medium text-brand-text"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Bottom Section: Author Info & Read Link */}
-                <div className="pt-4 border-t border-[#eef5fb] flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3 min-w-0">
-                    {/* Monogram Initial Avatar */}
-                    <div
-                      className={cn(
-                        "w-9 h-9 rounded-[5px] flex items-center justify-center font-heading font-extrabold text-sm flex-shrink-0 border",
-                        isBlue
-                          ? "bg-[#E3F1FC] text-brand-blue border-brand-blue/20"
-                          : "bg-[#e2f7eb] text-[#2F9E5C] border-[#2F9E5C]/20"
-                      )}
-                    >
-                      {story.name.charAt(0)}
-                    </div>
-
-                    <div className="min-w-0">
-                      <h4 className="text-[14.5px] sm:text-[15px] font-heading font-bold text-brand-navy leading-tight truncate">
-                        {story.name}
-                      </h4>
-                      <p className="text-[11.5px] sm:text-xs text-brand-text font-sans truncate">
-                        {story.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`/stories/${story.id}`}
-                    className="inline-flex items-center gap-1 text-xs sm:text-[13px] font-heading font-bold text-brand-blue hover:text-brand-navy transition-colors flex-shrink-0 group/link"
-                  >
-                    <span>Story</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 border-t border-[#e6dfd3]">
+          {others.map((story) => (
+            <figure key={story.id} className="pt-10 pb-4">
+              <blockquote className="font-display italic text-[18px] sm:text-[19px] leading-[1.6] text-[#3f4a5a] mb-6">
+                &ldquo;{story.quote}&rdquo;
+              </blockquote>
+              <figcaption className="flex flex-wrap items-baseline justify-between gap-3">
+                <span>
+                  <span className="block font-display text-[18px] text-brand-ink">{story.name}</span>
+                  <span className="block text-[13px] text-[#7a7f88] mt-0.5">{story.role}</span>
+                  <span className="block text-[13px] font-semibold text-brand-blue mt-2">{story.admittedTo}</span>
+                </span>
+                <Link
+                  href={`/stories/${story.id}`}
+                  className="text-[13px] font-semibold text-brand-ink hover:text-brand-blue inline-flex items-center gap-1"
+                >
+                  Story <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

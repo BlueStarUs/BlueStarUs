@@ -171,12 +171,12 @@ export function Contact() {
 
             <div className="relative w-full h-full min-h-[260px] sm:min-h-[300px] lg:min-h-[360px]">
               <Image
-                src="/images/sub_images/bottoms.png"
-                alt="Family consulting with Blue Stars admissions advisor"
+                src="/images/teams/blue-stars-team-montage.webp"
+                alt="Dr. Amy Morgenstern with Blue Stars counselors Helen Ingerson, Samuel Ortiz and Wai Cheng"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 480px"
-                className="object-cover object-center lg:object-right"
+                className="object-contain object-bottom"
               />
             </div>
 

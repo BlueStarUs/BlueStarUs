@@ -1,245 +1,109 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import {
-  UniversityCampusIcon,
-  ServiceDocIcon,
-  ServicePencilIcon,
-  ServiceCompassIcon,
-  ServicePaletteIcon,
-  ServiceResearchIcon,
-  ServiceSparklesIcon,
-} from "@/components/ui/Icons";
 
-interface ServiceCardData {
-  id: string;
+interface ServiceRow {
+  number: string;
   title: string;
+  when: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
-  iconBg: string;
-  cornerColor: string;
-  linkHref: string;
+  href: string;
 }
 
-const HOME_SERVICES_DATA: ServiceCardData[] = [
+const PRIMARY_SERVICES: ServiceRow[] = [
   {
-    id: "college-admissions-consulting",
-    title: "College Admissions\nConsulting",
-    description: "Individually tailored advising, coaching, and mentoring to ignite curiosity and build authentic applications.",
-    icon: ServiceCompassIcon,
-    iconBg: "bg-[#e5f1fc]",
-    cornerColor: "#dbeefc",
-    linkHref: "/services/college-admissions-consulting",
+    number: "01",
+    title: "College Planning",
+    when: "From 8th grade",
+    description:
+      "Find the right colleges for your goals, interests and profile with a multi-year Calm Way roadmap: courses, activities, summers and research, planned well before senior year.",
+    href: "/services/college-planning",
   },
   {
-    id: "research-internships",
-    title: "Research &\nInternships",
-    description: "Mentorship for lab placements, Ivy League faculty outreach, original research papers, and prestigious summer programs.",
-    icon: ServiceResearchIcon,
-    iconBg: "bg-[#e2f7eb]",
-    cornerColor: "#e0f6ea",
-    linkHref: "/services/research-internships",
+    number: "02",
+    title: "College Admissions",
+    when: "Junior & senior year",
+    description:
+      "Individually tailored advising, coaching and mentoring: a balanced college list, application strategy and positioning, essays, interviews and deadlines.",
+    href: "/services/college-admissions-consulting",
   },
   {
-    id: "college-planning",
-    title: "College & University\nPlanning",
-    description: "Find the right colleges that match your goals, interests and profile with a multi-year Calm Way roadmap.",
-    icon: UniversityCampusIcon,
-    iconBg: "bg-[#e5f1fc]",
-    cornerColor: "#dbeefc",
-    linkHref: "/services/college-planning",
-  },
-  {
-    id: "application-strategy",
-    title: "Application Strategy\n& Positioning",
-    description: "Build a strong application with the right strategy, balanced college lists, and deadline execution.",
-    icon: ServiceDocIcon,
-    iconBg: "bg-[#e5f1fc]",
-    cornerColor: "#dbeefc",
-    linkHref: "/services/application-strategy",
-  },
-  {
-    id: "essay-guidance",
-    title: "Essay & Personal\nStatement Guidance",
-    description: "Tell your authentic story effectively with expert brainstorming, structural feedback, and line editing.",
-    icon: ServicePencilIcon,
-    iconBg: "bg-[#e2f7eb]",
-    cornerColor: "#e0f6ea",
-    linkHref: "/services/essay-guidance",
-  },
-  {
-    id: "art-admissions-consulting",
-    title: "Art Admissions\nConsulting",
-    description: "Build a stunning visual art portfolio and compelling artist statement for top BFA, MFA, and design programs.",
-    icon: ServicePaletteIcon,
-    iconBg: "bg-[#e5f1fc]",
-    cornerColor: "#dbeefc",
-    linkHref: "/services/art-admissions-consulting",
+    number: "03",
+    title: "Art Admissions",
+    when: "BFA, MFA & design programs",
+    description:
+      "Portfolio mentorship and a compelling artist statement for top art and design schools, guided by a founder who holds an MFA in contemporary art.",
+    href: "/services/art-admissions-consulting",
   },
 ];
 
-const ART_ADMISSIONS_SERVICE: ServiceCardData = {
-  id: "art-admissions-consulting",
-  title: "Art Admissions\nConsulting",
-  description: "Build a stunning art portfolio and create a captivating artist statement for top art & design programs.",
-  icon: ServicePaletteIcon,
-  iconBg: "bg-[#e2f7eb]",
-  cornerColor: "#e0f6ea",
-  linkHref: "/services/art-admissions-consulting",
-};
+const ALSO_INCLUDED = [
+  { label: "Research & internships", href: "/services/research-internships" },
+  { label: "Application strategy & positioning", href: "/services/application-strategy" },
+  { label: "Essay & personal statement guidance", href: "/services/essay-guidance" },
+];
 
-export interface ServicesProps {
-  kicker?: string;
-  title?: React.ReactNode;
-  description?: string;
-  showViewAllLink?: boolean;
-  showArtAdmissions?: boolean;
-  id?: string;
-}
-
-export function Services({
-  kicker = "OUR SERVICES",
-  title,
-  description = "From choosing the right colleges to crafting a compelling application, we provide end-to-end guidance tailored to your unique goals.",
-  showViewAllLink = true,
-  showArtAdmissions = false,
-  id = "services",
-}: ServicesProps = {}) {
-  // If on sub-page (showArtAdmissions=true), display all services including Art Admissions
-  const displayedServices = showArtAdmissions
-    ? [...HOME_SERVICES_DATA, ART_ADMISSIONS_SERVICE]
-    : HOME_SERVICES_DATA;
+/** Three ways we work with families, set as editorial rows rather than a card grid. */
+export function Services() {
   return (
-    <section
-      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
-      id={id}
-    >
-      {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
-      <div
-        className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#e5f2fc]/70 via-[#eef6fe]/30 to-transparent rounded-tr-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header: Centered & Responsive */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
-          {/* Centered Kicker */}
-          <div className="flex items-center justify-center gap-2.5 mb-2.5">
-            <span className="w-6 sm:w-8 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
-            <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-              {kicker}
-            </span>
-            <span className="w-6 sm:w-8 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
-          </div>
-
-          {/* Centered Main Title with Responsive Scaling */}
-          <div className="relative inline-block mb-3.5">
-            {title ? (
-              title
-            ) : (
-              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
-                Comprehensive Support for{" "}
-                <span className="text-brand-blue relative inline-block">
-                  Your College Journey
-                  {/* Centered Curved Arc Highlight Underneath Title */}
-                  <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                    <svg
-                      className="w-44 sm:w-56 h-3 text-[#79bbf0] opacity-85"
-                      viewBox="0 0 240 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M2 9.5C65 2.5 175 2.5 238 9.5"
-                        stroke="currentColor"
-                        strokeWidth="2.8"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </h2>
-            )}
-          </div>
-
-          {/* Centered Description */}
-          {description && (
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text max-w-2xl font-sans mb-3 sm:mb-3.5 mt-1">
-              {description}
+    <section id="services" className="relative w-full bg-white py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[1160px] px-6 sm:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-10 lg:gap-20">
+          <div className="lg:sticky lg:top-28 self-start">
+            <p className="text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4">
+              How we help
             </p>
-          )}
-
-          {/* Centered View All Services Link */}
-          {showViewAllLink && (
+            <h2 className="text-[32px] sm:text-[42px] leading-[1.1] text-brand-ink mb-5">
+              Three ways we work with families
+            </h2>
+            <p className="text-[16px] leading-[1.7] text-[#5b6472] mb-8">
+              Every plan is built one student at a time. Most families begin early and stay with the same counselor
+              through every application.
+            </p>
             <Link
               href="/services"
-              className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-[13px] text-brand-blue hover:text-brand-navy transition-colors font-heading group"
+              className="inline-flex items-center gap-2 text-[14px] font-semibold text-brand-ink underline decoration-brand-mint decoration-2 underline-offset-[6px] hover:text-brand-blue"
             >
-              <span>View All Services</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+              View all services
             </Link>
-          )}
-        </div>
+          </div>
 
-        {/* Cards Grid (Responsive 3-Column on Desktop, 2-Column on Tablet, 1-Column on Mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-7" id="planning">
-          {displayedServices.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.id}
-                className="bg-white rounded-[5px] border border-[#e7f0f9] shadow-[0_10px_30px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_42px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group min-h-[290px]"
-              >
-                {/* Top-Right Decorative Colored Corner Arc (Matching reference screenshot) */}
-                <svg
-                  className="absolute top-0 right-0 w-28 h-28 pointer-events-none transition-transform duration-300 group-hover:scale-105"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path d="M100 0H28C28 39.76 60.24 72 100 72V0Z" fill={service.cornerColor} />
-                </svg>
-
-                {/* Card Content Top */}
-                <div className="relative z-10">
-                  {/* Icon Squircle Badge */}
-                  <div
-                    className={`w-[60px] h-[60px] rounded-[18px] ${service.iconBg} grid place-items-center mb-6 transition-transform duration-300 group-hover:scale-105 shadow-xs`}
-                  >
-                    <Icon className="w-7 h-7" />
-                  </div>
-
-                  {/* Card Title */}
-                  <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-2.5 font-heading leading-snug sm:mb-4">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[26px] text-brand-text mb-6 font-sans">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Bottom Pill Button: [ Learn More → ] (Matching reference) */}
-                <div className="relative z-10 pt-2">
-                  <Link
-                    href={service.linkHref}
-                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
-                  >
-                    <span>Read More</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          <div>
+            <ol className="border-t border-[#e6dfd3]">
+              {PRIMARY_SERVICES.map((s) => (
+                <li key={s.number} className="border-b border-[#e6dfd3]">
+                  <Link href={s.href} className="group grid grid-cols-[48px_minmax(0,1fr)_24px] gap-4 sm:gap-6 py-8 sm:py-10">
+                    <span className="font-display text-[18px] text-brand-blue pt-1.5">{s.number}</span>
+                    <span>
+                      <span className="block font-display text-[26px] sm:text-[30px] text-brand-ink leading-tight group-hover:text-brand-blue transition-colors">
+                        {s.title}
+                      </span>
+                      <span className="block text-[11.5px] font-semibold tracking-[0.18em] uppercase text-[#7a7f88] mt-2 mb-3">
+                        {s.when}
+                      </span>
+                      <span className="block text-[15px] leading-[1.7] text-[#5b6472]">{s.description}</span>
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-brand-ink mt-2 transition-transform group-hover:translate-x-1" />
                   </Link>
-                </div>
-              </div>
-            );
-          })}
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-8">
+              <p className="text-[12px] font-semibold tracking-[0.18em] uppercase text-[#7a7f88] mb-3">
+                Included where your student needs it
+              </p>
+              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                {ALSO_INCLUDED.map((a) => (
+                  <li key={a.href}>
+                    <Link href={a.href} className="text-[14.5px] text-brand-ink hover:text-brand-blue underline-offset-4 hover:underline">
+                      {a.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

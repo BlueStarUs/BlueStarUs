@@ -32,7 +32,11 @@
   --font-montserrat: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-jakarta: var(--font-montserrat);
   --font-inter: var(--font-montserrat);
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --ivory: #faf7f2;
+  --ink: #12305a;
 }
+
 
 * {
   box-sizing: border-box;
@@ -66,12 +70,12 @@ h6 {
 }
 
 /* Ensure all website headings render in #1166B0 across all viewport sizes unless explicitly inverted/white for dark banners */
-h1:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
-h2:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
-h3:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
-h4:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
-h5:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
-h6:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]),
+h1:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
+h2:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
+h3:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
+h4:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
+h5:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
+h6:not([class*="text-white"]):not([class*="text-slate-"]):not([class*="text-gray-"]):not([class*="text-[#"]):not([class*="text-emerald-"]):not([class*="text-brand-green"]):not([class*="text-brand-teal"]):not([class*="text-brand-ink"]),
 h1.text-brand-navy,
 h2.text-brand-navy,
 h3.text-brand-navy,
@@ -575,4 +579,19 @@ pre::-webkit-scrollbar-thumb:hover,
   border-radius: 8px !important;
 }
 
-
+/* ==============================================================================
+   BOUTIQUE EDITORIAL TYPOGRAPHY
+   Page and section titles (h1/h2) use a refined serif so the site reads like a
+   private advisory practice rather than a software product. Small UI labels,
+   buttons and body copy stay in Montserrat.
+   ============================================================================== */
+h1,
+h2,
+h1.font-heading,
+h2.font-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  font-optical-sizing: auto;
+}
