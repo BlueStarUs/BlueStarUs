@@ -10,17 +10,17 @@ export const HUBSPOT_STRATEGY_CONSULTATION_URL =
   "https://meetings-na2.hubspot.com/bluestars/discovery-session";
 
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
-  kicker: "EXPERT GUIDANCE. BRIGHTER OPPORTUNITIES.",
-  headingLine1: "Your Future Starts",
-  headingLine2: "With the Right",
-  headingLine3: "College Plan",
+  kicker: "Boutique College Counseling \u00b7 Since 2010",
+  headingLine1: "A small team.",
+  headingLine2: "Your student\u2019s",
+  headingLine3: "whole story.",
   description:
-    "Personalized admissions consulting to help you find the right colleges, build a strong application and achieve your academic goals with confidence.",
-  primaryBtnText: "Book Your Initial Consultation",
+    "Blue Stars is a boutique practice led by Dr. Amy Morgenstern, Ph.D., MFA. Every family works with one dedicated counselor, often from 8th grade through the final decision, with a plan that is personalized, data driven, and results oriented.",
+  primaryBtnText: "Book a Free 30-Minute Consultation",
   primaryBtnHref: HUBSPOT_CONSULTATION_URL,
-  secondaryBtnText: "Explore Our Services",
-  secondaryBtnHref: "/#services",
-  image: "/images/sub_images/Students_hero.png",
+  secondaryBtnText: "Meet Our Team",
+  secondaryBtnHref: "/#team",
+  image: "/images/teams/blue-stars-team-montage.webp",
   feature1: "Personalized\nGuidance",
   feature2: "Clear Application\nStrategy",
   feature3: "Support at\nEvery Step",

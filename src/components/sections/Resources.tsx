@@ -78,23 +78,6 @@ export function Resources() {
               Helpful Resources for Your{" "}
               <span className="text-brand-blue relative inline-block">
                 Journey
-                {/* Curved Arc Highlight Underneath "Journey" */}
-                <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                  <svg
-                    className="w-28 sm:w-36 h-2.5 text-[#79bbf0] opacity-85"
-                    viewBox="0 0 160 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 9.5C45 2.5 115 2.5 158 9.5"
-                      stroke="currentColor"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
               </span>
             </h2>
           </div>

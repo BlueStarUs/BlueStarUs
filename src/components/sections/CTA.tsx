@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
 import { HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
+import { BrandTagline } from "@/components/ui/BrandTagline";
 
 export function CTA() {
   return (
@@ -32,14 +33,14 @@ export function CTA() {
             </p>
 
             {/* Primary Initial & Strategy Consultation Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <Link
                 href={HUBSPOT_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-[8px] bg-white hover:bg-[#f0f7fe] text-brand-navy text-xs sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-[#f0f7fe] text-brand-navy text-[12.5px] sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
               >
-                <span>Book Your Initial Consultation (30 Min)</span>
+                <span className="whitespace-nowrap">Book Your Initial Consultation (30 Min)</span>
                 <ArrowRight className="w-4 h-4 text-brand-navy shrink-0" />
               </Link>
 
@@ -47,12 +48,14 @@ export function CTA() {
                 href={HUBSPOT_STRATEGY_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-[8px] bg-white/10 hover:bg-white/20 text-white text-xs sm:text-[14.5px] font-bold font-heading border border-white/40 hover:border-white shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 backdrop-blur-xs text-center"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[12.5px] sm:text-[14.5px] font-bold font-heading border border-white/40 hover:border-white shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 backdrop-blur-xs text-center"
               >
-                <span>Schedule Strategy Consultation (75 Min)</span>
+                <span className="whitespace-nowrap">Schedule Strategy Consultation (75 Min)</span>
                 <ArrowRight className="w-4 h-4 text-white shrink-0" />
               </Link>
             </div>
+
+            <BrandTagline className="mt-5 text-[#bfe2fa]" />
           </div>
 
           {/* Right Column: Student Image & Decorative Brand Stars (Grounded on Desktop & Mobile) */}
@@ -84,8 +87,8 @@ export function CTA() {
               {/* Student Cutout Image (ready_to_take.png grounded at bottom) */}
               <div className="relative w-full h-full z-10 flex-shrink-0">
                 <Image
-                  src="/images/sub_images/ready_to_take.png"
-                  alt="Student smiling with phone and backpack, ready for college success"
+                  src="/images/teams/dr-amy-morgenstern-cutout.webp"
+                  alt="Dr. Amy Morgenstern, founder of Blue Stars Admissions Consulting"
                   fill
                   priority
                   sizes="(max-width: 640px) 210px, (max-width: 1024px) 290px, 350px"

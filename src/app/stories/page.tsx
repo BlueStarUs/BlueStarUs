@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://bluestars.us/stories",
     images: [
       {
-        url: "/images/sub_images/ready_to_take.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Blue Stars Student Success Stories",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Student Success Stories & Admissions Journeys | Blue Stars",
     description:
       "Explore genuine college acceptance stories, student profiles, full-tuition scholarship wins, and testimonials from Blue Stars families across the United States.",
-    images: ["/images/sub_images/ready_to_take.png"],
+    images: ["/images/og-image.png"],
   },
 };
 

@@ -16,6 +16,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
+import { ContactBoutique } from "@/components/sections/ContactBoutique";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -515,6 +516,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Boutique promise: who is behind the inbox and what happens next (below the form) */}
+      <ContactBoutique />
 
       {/* Direct Quick Reach Cards */}
       <section className="relative w-full py-12 sm:py-14 bg-white border-t border-[#e2eef9]">

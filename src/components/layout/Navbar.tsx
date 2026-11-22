@@ -16,7 +16,6 @@ import {
   HelpCircle,
   Newspaper,
   Award,
-  Search,
 } from "lucide-react";
 import {
   ServiceCompassIcon,
@@ -36,7 +35,6 @@ import {
   HUBSPOT_STRATEGY_CONSULTATION_URL,
 } from "@/lib/constants";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
-import { SiteSearchModal } from "@/components/ui/SiteSearchModal";
 import { cn } from "@/lib/utils";
 
 // Map service icon names to custom Blue Stars SVG icon components
@@ -83,21 +81,6 @@ export function Navbar() {
   const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const resourcesDropdownRef = useRef<HTMLDivElement | null>(null);
   const resourcesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Site Search state
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  // Global search shortcut (Cmd+K / Ctrl+K)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        setIsSearchOpen((prev) => !prev);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
 
   // Clear debounce timeouts on unmount
   useEffect(() => {
@@ -665,20 +648,6 @@ export function Navbar() {
 
         {/* Action Buttons & Mobile Menu Trigger */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Header Site Search Trigger (Desktop) */}
-          <button
-            type="button"
-            onClick={() => setIsSearchOpen(true)}
-            className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-xs sm:text-[16px] font-medium font-sans text-brand-navy/75 hover:text-brand-blue bg-[#f0f6fc] hover:bg-[#e4effa] border border-[#d6e5f5] hover:border-brand-blue/30 transition-all shadow-2xs group"
-            aria-label="Search website"
-          >
-            <Search className="w-3 h-3 text-brand-blue group-hover:scale-110 transition-transform" />
-            <span className="hidden lg:inline text-brand-navy/80">Search...</span>
-            <kbd className="hidden xl:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white text-brand-navy/60 border border-brand-border/80 shadow-2xs">
-              ⌘K
-            </kbd>
-          </button>
-
           {/* Primary Consultation Booking CTA (HubSpot Direct) */}
           <a
             href={HUBSPOT_CONSULTATION_URL}
@@ -689,16 +658,6 @@ export function Navbar() {
             <span>Book Consultation</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
-
-          {/* Mobile Site Search Button */}
-          <button
-            type="button"
-            className="md:hidden w-8 h-8 min-w-[42px] min-h-[42px] rounded-[5px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
-            onClick={() => setIsSearchOpen(true)}
-            aria-label="Open search dialog"
-          >
-            <Search className="w-4.5 h-4.5 text-brand-blue stroke-[2.2]" />
-          </button>
 
           {/* Mobile Menu Hamburger Button */}
           <button
@@ -997,8 +956,6 @@ export function Navbar() {
         </div>
       )}
 
-      {/* Global Site Search Modal */}
-      <SiteSearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }

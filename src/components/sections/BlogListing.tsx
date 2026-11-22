@@ -21,6 +21,7 @@ import {
 import { BlogPost } from "@/types";
 import { BLOG_CATEGORIES, getDefaultBlogImage } from "@/lib/blogs-data";
 import { BlogImageWithFallback } from "@/components/ui/BlogImageWithFallback";
+import { Constellation } from "@/components/ui/Constellation";
 import { trackBlogSearch, trackSearchResultClick } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
@@ -225,24 +226,19 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
   }, [currentPage, totalPages]);
 
   return (
-    <section className="relative w-full py-10 sm:py-14 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div
-        className="absolute top-0 right-0 w-[450px] h-[350px] bg-gradient-to-bl from-brand-sky/60 via-[#edf6fd]/30 to-transparent rounded-bl-[260px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-10 left-0 w-[400px] h-[320px] bg-gradient-to-tr from-brand-green/40 via-[#edf8f1]/20 to-transparent rounded-tr-[240px] pointer-events-none"
-        aria-hidden="true"
-      />
+    <section className="relative w-full py-12 sm:py-16 bg-brand-ivory overflow-hidden">
+      {/* Brand constellation motif */}
+      <div className="absolute -top-6 right-0 w-[420px] h-[300px] text-brand-blue opacity-[0.07] pointer-events-none" aria-hidden="true">
+        <Constellation variant={2} />
+      </div>
 
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 relative z-10">
         {/* Controls Bar: Search & Category Pills */}
         <div className="mb-8 sm:mb-12 space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             {/* Search Input Box */}
             <div className="relative w-full md:max-w-md" role="search">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-text/60" aria-hidden="true" />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-text/60" aria-hidden="true" />
               <input
                 ref={searchInputRef}
                 type="text"
@@ -255,7 +251,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                 }}
                 placeholder="Search articles by keyword, topic, or school..."
                 aria-label="Search articles by keyword, topic, or school"
-                className="w-full pl-11 pr-10 py-3 rounded-[5px] bg-white border border-brand-border text-sm text-brand-navy placeholder:text-brand-text/60 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue shadow-xs transition-all font-sans"
+                className="w-full pl-12 pr-11 py-3.5 rounded-full bg-white border border-[#e3dccf] text-sm text-brand-ink placeholder:text-brand-text/60 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-all font-sans"
               />
               {searchInput && (
                 <button
@@ -271,10 +267,9 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
 
             {/* Post Count Pill with aria-live */}
             <div
-              className="flex items-center gap-2 text-xs sm:text-[13px] font-bold text-brand-navy/70 font-heading self-start md:self-auto"
+              className="flex items-center gap-2 text-[12.5px] font-medium text-brand-ink/65 font-sans self-start md:self-auto"
               aria-live="polite"
             >
-              <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" aria-hidden="true" />
               <span>
                 Showing {filteredPosts.length} {filteredPosts.length === 1 ? "article" : "articles"}
                 {totalPages > 1 && ` • Page ${currentPage} of ${totalPages}`}
@@ -299,10 +294,10 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                   aria-selected={isSelected}
                   onClick={() => setSelectedCategory(category)}
                   className={cn(
-                    "px-3.5 sm:px-4 py-2 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading whitespace-nowrap transition-all duration-200 shadow-xs flex-shrink-0",
+                    "px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold font-sans whitespace-nowrap transition-colors duration-200 flex-shrink-0",
                     isSelected
-                      ? "bg-brand-blue text-white shadow-sm scale-[1.02]"
-                      : "bg-white text-brand-navy hover:text-brand-blue hover:bg-brand-sky/60 border border-brand-border/80"
+                      ? "bg-brand-ink text-white"
+                      : "bg-white text-brand-ink/80 hover:text-brand-ink hover:border-brand-ink/40 border border-[#e3dccf]"
                   )}
                 >
                   {category}
@@ -318,7 +313,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
         {/* Featured Post Card (Hero Banner on Page 1 Default) */}
         {featuredPost && (
           <div className="mb-10 sm:mb-14">
-            <div className="group relative rounded-[5px] bg-white border border-brand-border overflow-hidden shadow-[0_12px_40px_rgba(10,61,107,0.08)] hover:shadow-[0_22px_54px_rgba(10,61,107,0.13)] transition-all duration-300">
+            <div className="group relative rounded-[22px] bg-white border border-[#ece6db] overflow-hidden shadow-[0_14px_44px_rgba(18,48,90,0.08)] hover:shadow-[0_24px_60px_rgba(18,48,90,0.14)] transition-shadow duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                 {/* Image side */}
                 <div className="lg:col-span-6 relative min-h-[260px] sm:min-h-[340px] lg:min-h-[400px] overflow-hidden bg-brand-sky">
@@ -335,19 +330,19 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                   
                   {/* Floating Badge */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-bold uppercase tracking-wider font-heading bg-white/95 text-brand-blue shadow-md backdrop-blur-sm border border-brand-border">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] font-sans bg-white/95 text-brand-ink shadow-md backdrop-blur-sm">
                       <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
-                      <span>Featured Post</span>
+                      <span>Featured</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Content side */}
-                <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-white via-[#fcfdfe] to-[#f4f9fd]">
+                <div className="lg:col-span-6 p-7 sm:p-10 lg:p-12 flex flex-col justify-between bg-white">
                   <div>
                     {/* Category & Metadata */}
-                    <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-semibold text-brand-text mb-3 flex-wrap">
-                      <span className="px-2.5 py-1 rounded-[5px] font-bold uppercase tracking-wider font-heading bg-brand-sky text-brand-blue text-xs">
+                    <div className="flex items-center gap-2.5 text-[12.5px] font-medium text-[#6b7280] mb-4 flex-wrap">
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] font-sans text-brand-blue">
                         {featuredPost.category}
                       </span>
                       <span>•</span>
@@ -363,7 +358,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-brand-navy font-heading leading-tight tracking-tight mb-3 group-hover:text-brand-blue transition-colors">
+                    <h2 className="text-[26px] sm:text-[32px] leading-[1.15] text-brand-ink mb-4 group-hover:text-brand-blue transition-colors">
                       <Link
                         href={`/blogs/${featuredPost.slug}`}
                         onClick={() => {
@@ -377,7 +372,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-[15px] sm:text-[16px] leading-relaxed text-brand-text font-sans mb-5 line-clamp-3">
+                    <p className="text-[15.5px] sm:text-[16px] leading-[1.75] text-[#5b6472] font-sans mb-6 line-clamp-3">
                       {featuredPost.excerpt}
                     </p>
 
@@ -387,7 +382,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         {featuredPost.tags.slice(0, 3).map((tag) => (
                           <span
                             key={tag}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-[5px] bg-white border border-brand-border text-xs font-semibold text-brand-text"
+                            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-ivory border border-[#ece6db] text-xs font-medium text-[#5b6472]"
                           >
                             <Tag className="w-3 h-3 text-brand-blue" />
                             {tag}
@@ -398,7 +393,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                   </div>
 
                   {/* Author & Read More Button */}
-                  <div className="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-4">
+                  <div className="pt-5 border-t border-[#ece6db] flex items-center justify-between gap-4">
                     <div className="flex items-center gap-2.5">
                       <div className="relative w-9 h-9 rounded-full overflow-hidden bg-brand-sky border border-brand-blue/30 flex items-center justify-center">
                         {featuredPost.author?.avatar ? (
@@ -414,7 +409,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         )}
                       </div>
                       <div>
-                        <span className="block text-xs sm:text-sm font-bold text-brand-navy font-heading leading-tight">
+                        <span className="block text-[13.5px] font-semibold text-brand-ink font-sans leading-tight">
                           {featuredPost.author?.name || "Dr. Amy Morgenstern"}
                         </span>
                         <span className="block text-xs text-brand-text font-sans mt-0.5">
@@ -430,7 +425,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                           trackSearchResultClick(featuredPost.slug, featuredPost.title, debouncedQuery);
                         }
                       }}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-brand-blue text-white text-xs sm:text-sm font-bold font-heading group-hover:bg-brand-navy transition-all duration-200 shadow-xs"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold tracking-wide group-hover:bg-brand-blue transition-colors duration-200"
                     >
                       <span>Read Article</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -454,7 +449,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                 return (
                   <article
                     key={post.slug}
-                    className="group bg-white rounded-[5px] border border-brand-border hover:border-brand-blue/40 shadow-xs hover:shadow-[0_12px_32px_rgba(10,61,107,0.10)] transition-all duration-300 flex flex-col overflow-hidden"
+                    className="group bg-white rounded-[18px] border border-[#ece6db] hover:border-brand-blue/30 hover:shadow-[0_16px_40px_rgba(18,48,90,0.12)] transition-all duration-300 flex flex-col overflow-hidden"
                   >
                     {/* Post Cover Image */}
                     <Link
@@ -475,17 +470,17 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute top-3 left-3 z-10">
-                        <span className="px-2.5 py-1 rounded-[5px] text-xs font-bold uppercase tracking-wider font-heading bg-white/95 text-brand-blue shadow-xs backdrop-blur-xs">
+                        <span className="px-3 py-1 rounded-full text-[10.5px] font-semibold uppercase tracking-[0.14em] font-sans bg-white/95 text-brand-ink shadow-xs backdrop-blur-xs">
                           {post.category}
                         </span>
                       </div>
                     </Link>
 
                     {/* Content Section */}
-                    <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                    <div className="p-6 flex-1 flex flex-col justify-between">
                       <div>
                         {/* Meta: Date & Read Time */}
-                        <div className="flex items-center gap-2 text-xs text-brand-text mb-2.5 font-sans">
+                        <div className="flex items-center gap-2 text-[12px] text-[#6b7280] mb-3 font-sans">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3 h-3 text-brand-blue" />
                             {post.publishedAt}
@@ -498,7 +493,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-heading font-extrabold text-[17px] sm:text-[18px] text-brand-navy group-hover:text-brand-blue transition-colors line-clamp-2 leading-snug mb-2.5">
+                        <h3 className="font-display text-[20px] sm:text-[21px] !font-medium text-brand-ink group-hover:text-brand-blue transition-colors line-clamp-2 leading-[1.25] mb-3">
                           <Link
                             href={`/blogs/${post.slug}`}
                             onClick={() => {
@@ -512,13 +507,13 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-sm leading-relaxed text-brand-text/90 font-sans line-clamp-3 mb-4">
+                        <p className="text-[14px] leading-[1.7] text-[#5b6472] font-sans line-clamp-3 mb-5">
                           {post.excerpt}
                         </p>
                       </div>
 
                       {/* Author & Link footer */}
-                      <div className="pt-3.5 border-t border-brand-border/70 flex items-center justify-between gap-3">
+                      <div className="pt-4 border-t border-[#ece6db] flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2 min-w-0">
                           <div className="relative w-6 h-6 rounded-full overflow-hidden bg-brand-sky flex-shrink-0 flex items-center justify-center">
                             {post.author?.avatar ? (
@@ -533,7 +528,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                               <User className="w-3 h-3 text-brand-blue" />
                             )}
                           </div>
-                          <span className="text-xs sm:text-[13px] font-semibold text-brand-navy truncate">
+                          <span className="text-[12.5px] font-medium text-brand-ink/80 truncate">
                             {post.author?.name || "Dr. Amy Morgenstern"}
                           </span>
                         </div>
@@ -545,7 +540,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                               trackSearchResultClick(post.slug, post.title, debouncedQuery);
                             }
                           }}
-                          className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue group-hover:text-brand-navy font-heading flex-shrink-0"
+                          className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-brand-ink underline decoration-brand-mint decoration-2 underline-offset-[5px] group-hover:text-brand-blue font-sans flex-shrink-0"
                           aria-label={`Read article: ${post.title}`}
                         >
                           <span>Read</span>
@@ -560,7 +555,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-brand-border">
+              <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#e3dccf]">
                 <div className="text-xs sm:text-sm text-brand-text font-sans">
                   Showing{" "}
                   <span className="font-bold text-brand-navy">
@@ -583,7 +578,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     type="button"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="inline-flex items-center gap-1 px-3 py-2 rounded-[5px] border border-brand-border bg-white text-xs sm:text-sm font-bold font-heading text-brand-navy hover:bg-brand-sky hover:text-brand-blue disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-[#e3dccf] bg-white text-[13px] font-semibold font-sans text-brand-ink hover:bg-brand-ink hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-ink transition-colors"
                     aria-label="Previous page"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -612,10 +607,10 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                         type="button"
                         onClick={() => handlePageChange(pageNum)}
                         className={cn(
-                          "w-8 h-8 sm:w-9 sm:h-9 rounded-[5px] text-xs sm:text-sm font-bold font-heading transition-all",
+                          "w-9 h-9 rounded-full text-[13px] font-semibold font-sans transition-colors",
                           isActive
-                            ? "bg-brand-blue text-white shadow-sm"
-                            : "bg-white text-brand-navy border border-brand-border hover:bg-brand-sky hover:text-brand-blue"
+                            ? "bg-brand-ink text-white"
+                            : "bg-white text-brand-ink border border-[#e3dccf] hover:border-brand-ink/50"
                         )}
                         aria-current={isActive ? "page" : undefined}
                       >
@@ -629,7 +624,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                     type="button"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="inline-flex items-center gap-1 px-3 py-2 rounded-[5px] border border-brand-border bg-white text-xs sm:text-sm font-bold font-heading text-brand-navy hover:bg-brand-sky hover:text-brand-blue disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-[#e3dccf] bg-white text-[13px] font-semibold font-sans text-brand-ink hover:bg-brand-ink hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-ink transition-colors"
                     aria-label="Next page"
                   >
                     <span className="hidden sm:inline">Next</span>
@@ -641,11 +636,11 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
           </div>
         ) : (
           /* Responsive Empty Search & Filter State */
-          <div className="text-center py-16 px-4 bg-white rounded-[5px] border border-brand-border shadow-xs max-w-2xl mx-auto my-6">
+          <div className="text-center py-16 px-6 bg-white rounded-[22px] border border-[#ece6db] max-w-2xl mx-auto my-6">
             <div className="w-14 h-14 rounded-full bg-brand-sky/80 text-brand-blue grid place-items-center mx-auto mb-4 border border-brand-blue/20">
               <FilterX className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-brand-navy font-heading mb-2">
+            <h3 className="font-display text-[24px] !font-medium text-brand-ink mb-2">
               No matching articles found
             </h3>
             <p className="text-sm text-brand-text max-w-md mx-auto mb-6 leading-relaxed">
@@ -663,7 +658,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                 <button
                   type="button"
                   onClick={handleClearSearch}
-                  className="px-4 py-2 rounded-[5px] border border-brand-border bg-white text-brand-navy font-bold text-xs sm:text-sm font-heading hover:bg-brand-sky hover:text-brand-blue transition-all"
+                  className="px-5 py-2.5 rounded-full border border-[#e3dccf] bg-white text-brand-ink font-semibold text-[13px] hover:border-brand-ink/50 transition-colors"
                 >
                   Clear Search Query
                 </button>
@@ -671,7 +666,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
               <button
                 type="button"
                 onClick={handleResetAll}
-                className="px-5 py-2.5 rounded-[5px] bg-brand-blue text-white font-bold text-xs sm:text-sm font-heading hover:bg-brand-navy transition-all shadow-xs"
+                className="px-6 py-2.5 rounded-full bg-brand-ink text-white font-semibold text-[13px] hover:bg-brand-blue transition-colors"
               >
                 Reset All Filters
               </button>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://bluestars.us/successes",
     images: [
       {
-        url: "/images/sub_images/ready_to_take.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Blue Stars Admissions Successes",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "College Admissions Results & Ivy League Acceptances | Blue Stars",
     description:
       "Explore Blue Stars' verified student college acceptances across the Ivy League, Stanford, UC Regents Honors, selective research, and merit scholarships.",
-    images: ["/images/sub_images/ready_to_take.png"],
+    images: ["/images/og-image.png"],
   },
 };
 

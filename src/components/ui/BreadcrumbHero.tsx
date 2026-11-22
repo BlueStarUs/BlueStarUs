@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
+import { Constellation } from "@/components/ui/Constellation";
+import { BRAND_TAGLINE, BRAND_TAGLINE_PARTS } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 export interface BreadcrumbItem {
@@ -15,6 +17,8 @@ interface BreadcrumbHeroProps {
   badge?: string;
   description?: string;
   variant?: "dark" | "light";
+  /** Original look: no constellation lines and no tagline row. */
+  classic?: boolean;
 }
 
 export function BreadcrumbHero({
@@ -23,6 +27,7 @@ export function BreadcrumbHero({
   badge,
   description,
   variant = "dark",
+  classic = false,
 }: BreadcrumbHeroProps) {
   const isDark = variant === "dark";
 
@@ -46,6 +51,13 @@ export function BreadcrumbHero({
             className="absolute bottom-0 left-10 w-72 h-32 bg-[#2ba3ea]/15 rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
+
+          {/* Constellation motif */}
+          {!classic && (
+            <div className="absolute inset-0 text-white opacity-[0.1] pointer-events-none" aria-hidden="true">
+              <Constellation variant={title.length} />
+            </div>
+          )}
 
           {/* Subtle 4-Point Brand Stars Watermark */}
           <div
@@ -196,6 +208,31 @@ export function BreadcrumbHero({
             >
               {description}
             </p>
+          )}
+
+          {!classic && (
+            <>
+          {/* Brand tagline, shown on every inner-page hero */}
+            <ul
+              aria-label={BRAND_TAGLINE}
+              className={cn(
+                "mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10.5px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase font-sans",
+                isDark ? "text-[#bfe2fa]" : "text-brand-blue",
+              )}
+            >
+              {BRAND_TAGLINE_PARTS.map((part, i) => (
+                <li key={part} className="inline-flex items-center gap-3">
+                  {i > 0 && (
+                    <BrandStar
+                      className={cn("w-2.5 h-2.5", isDark ? "text-brand-mint" : "text-brand-turquoise")}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span>{part}</span>
+                </li>
+              ))}
+            </ul>
+            </>
           )}
         </div>
       </div>

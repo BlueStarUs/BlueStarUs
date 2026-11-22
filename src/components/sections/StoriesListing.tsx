@@ -7,12 +7,12 @@ import {
   GraduationCap,
   ArrowRight,
   Search,
-  User,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 import { SuccessStory } from "@/types";
 import { STORY_CATEGORIES, UNIVERSITY_ACCEPTANCES } from "@/lib/stories-data";
+import { Constellation } from "@/components/ui/Constellation";
 import { cn } from "@/lib/utils";
 
 interface StoriesListingProps {
@@ -22,6 +22,13 @@ interface StoriesListingProps {
 // 4 rows in desktop grid (3 cols = 12), and exactly 6 on mobile as requested
 const DESKTOP_ITEMS_PER_PAGE = 12;
 const MOBILE_ITEMS_PER_PAGE = 6;
+
+const METRICS = [
+  { value: "16+", label: "Years mentoring" },
+  { value: "Top 20", label: "& UC admits" },
+  { value: "55+", label: "Success stories" },
+  { value: "100%", label: "Personalized" },
+];
 
 function QuoteIcon({ className }: { className?: string }) {
   return (
@@ -105,74 +112,46 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
   };
 
   return (
-    <section className="relative w-full py-10 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden">
-      {/* Decorative Organic Wave Shapes in Background */}
-      <div
-        className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/60 via-[#edf6fd]/25 to-transparent rounded-br-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#e5f2fc]/60 via-[#eef6fe]/25 to-transparent rounded-tl-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
+    <section className="relative w-full py-14 sm:py-18 lg:py-22 bg-brand-ivory overflow-hidden">
+      <div className="absolute -top-6 left-0 w-[420px] h-[300px] text-brand-blue opacity-[0.07] pointer-events-none" aria-hidden="true">
+        <Constellation variant={4} />
+      </div>
 
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Section Intro & Key Metrics Bar matching Services Page */}
-        <div className="mb-10 sm:mb-12">
-          <div className="flex items-center gap-2.5 mb-2.5">
-            <span className="w-6 h-[2px] bg-brand-blue rounded-[5px]" aria-hidden="true" />
-            <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-              TESTIMONIALS &amp; SUCCESS STORIES
-            </span>
-          </div>
+      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Intro & key figures */}
+        <div className="mb-12 sm:mb-14">
+          <p className="inline-flex items-center gap-3 text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4 font-sans">
+            <span className="h-px w-8 bg-brand-blue" aria-hidden="true" />
+            Testimonials &amp; success stories
+          </p>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px] mb-3">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 lg:gap-14 items-end">
+            <div>
+              <h2 className="text-[30px] sm:text-[40px] leading-[1.1] text-brand-ink mb-5">
                 Inspiring Journeys from Blue Stars Families &amp; Students
               </h2>
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-                Read firsthand accounts of how structured guidance, calm timelines, and authentic storytelling opened doors to the nation’s most competitive universities and merit scholarships.
+              <p className="text-[16px] leading-[1.7] text-[#5b6472] max-w-[560px]">
+                Read firsthand accounts of how structured guidance, calm timelines, and authentic storytelling opened doors to the nation&rsquo;s most competitive universities and merit scholarships.
               </p>
             </div>
 
-            {/* Quick Metrics Cards - Strictly rounded-[5px] */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 flex-shrink-0">
-              <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">16+</div>
-                <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  Years Mentoring
-                </div>
-              </div>
-              <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">Top 20</div>
-                <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  & UC Admits
-                </div>
-              </div>
-              <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">55+</div>
-                <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  Success Stories
-                </div>
-              </div>
-              <div className="p-3 sm:p-3.5 rounded-[5px] bg-white border border-[#e2eef9] text-center shadow-xs">
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading">100%</div>
-                <div className="text-[11px] sm:text-xs font-semibold text-brand-navy font-heading mt-0.5">
-                  Personalized
-                </div>
-              </div>
-            </div>
+            <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6 items-start lg:border-l lg:border-[#e3dccf] lg:pl-10">
+              {METRICS.map((m) => (
+                <li key={m.label}>
+                  <span className="block whitespace-nowrap font-display text-[32px] sm:text-[34px] leading-none text-brand-blue">{m.value}</span>
+                  <span className="block mt-2 text-[12.5px] leading-snug text-[#5b6472] whitespace-nowrap">{m.label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Anchor for smooth scroll on pagination */}
         <div id="stories-grid-top" className="scroll-mt-24" />
 
-        {/* Filter and Search Controls Bar */}
-        <div className="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4 p-2.5 sm:p-3 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs">
-          {/* Category Tabs - Strictly rounded-[5px] */}
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+        {/* Filter and search controls */}
+        <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             {STORY_CATEGORIES.map((category) => {
               const isSelected = selectedCategory === category;
 
@@ -181,11 +160,12 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                   key={category}
                   type="button"
                   onClick={() => setSelectedCategory(category)}
+                  aria-pressed={isSelected}
                   className={cn(
-                    "px-3.5 sm:px-4 py-2 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading whitespace-nowrap transition-all duration-200 cursor-pointer",
+                    "px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold font-sans whitespace-nowrap transition-colors duration-200 cursor-pointer flex-shrink-0",
                     isSelected
-                      ? "bg-brand-blue text-white shadow-xs"
-                      : "bg-[#f8fbfe] text-brand-navy hover:text-brand-blue hover:bg-brand-sky border border-[#e2eef9]"
+                      ? "bg-brand-ink text-white"
+                      : "bg-white text-brand-ink/80 hover:text-brand-ink hover:border-brand-ink/40 border border-[#e3dccf]"
                   )}
                 >
                   {category}
@@ -194,23 +174,23 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
             })}
           </div>
 
-          {/* Search Box - Strictly rounded-[5px] */}
-          <div className="relative w-full md:w-64 sm:flex-shrink-0">
-            <Search className="w-4 h-4 text-brand-text/60 absolute left-3 top-1/2 -translate-y-1/2" />
+          <div className="relative w-full md:w-72 md:flex-shrink-0">
+            <Search className="w-4 h-4 text-brand-text/60 absolute left-4 top-1/2 -translate-y-1/2" aria-hidden="true" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search stories, schools..."
-              className="w-full pl-9 pr-3 py-1.5 sm:py-2 rounded-[5px] text-xs sm:text-[13px] bg-[#f8fbfe] border border-[#e2eef9] text-brand-navy placeholder:text-brand-text/50 focus:outline-hidden focus:border-brand-blue focus:bg-white font-sans transition-all"
+              aria-label="Search stories and schools"
+              className="w-full pl-11 pr-4 py-3 rounded-full text-[13px] bg-white border border-[#e3dccf] text-brand-ink placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue font-sans transition-all"
             />
           </div>
         </div>
 
         {/* Stories Cards Grid (4 Rows = 12 Cards per Page) */}
         {filteredStories.length === 0 ? (
-          <div className="text-center py-16 px-4 bg-white rounded-[5px] border border-[#e2eef9] shadow-xs">
-            <p className="text-base text-brand-navy font-bold font-heading mb-1">
+          <div className="text-center py-16 px-6 bg-white rounded-[22px] border border-[#ece6db]">
+            <p className="font-display text-[22px] text-brand-ink mb-1">
               No matching stories found
             </p>
             <p className="text-sm text-brand-text font-sans mb-4">
@@ -222,7 +202,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                 setSelectedCategory("All Stories");
                 setSearchQuery("");
               }}
-              className="px-4 py-2 rounded-[5px] bg-brand-blue text-white text-xs font-bold font-heading hover:bg-brand-darkNavy transition-colors cursor-pointer"
+              className="px-6 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold hover:bg-brand-blue transition-colors cursor-pointer"
             >
               Reset Filters
             </button>
@@ -231,121 +211,74 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {paginatedStories.map((story) => {
-                const isBlue = story.accent !== "green";
                 const authorRole =
                   story.authorRole ||
                   story.highSchool ||
                   story.schoolOrRole ||
                   "Blue Stars Family";
+                const initial = story.name.trim().charAt(0).toUpperCase() || "B";
 
                 return (
                   <article
                     key={story.id}
-                    className="relative bg-white rounded-[5px] p-5 sm:p-6 shadow-[0_6px_24px_rgba(10,61,107,0.05)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(10,61,107,0.1)] flex flex-col justify-between group"
+                    className="group relative flex flex-col justify-between rounded-[20px] bg-white border border-[#ece6db] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgba(18,48,90,0.12)]"
                   >
-                    {/* Card Header: Category + Admitted School Badge */}
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex flex-wrap items-center gap-1.5">
-                          {story.category && (
-                            <span
-                              className={cn(
-                                "px-2.5 py-0.5 rounded-[5px] text-[11px] font-bold font-heading tracking-wide uppercase",
-                                isBlue
-                                  ? "bg-brand-sky text-brand-blue border border-brand-border/60"
-                                  : "bg-[#e2f7eb] text-[#1e9e5a] border border-[#c4eed6]"
-                              )}
-                            >
-                              {story.category}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* 5-Star Rating */}
-                        <div className="flex items-center gap-0.5" aria-label="5 stars">
+                      <div className="flex items-start justify-between gap-3 mb-5">
+                        <QuoteIcon className="w-7 h-6 text-brand-mint flex-shrink-0" />
+                        <div className="flex items-center gap-0.5 pt-1" aria-label="5 stars">
                           {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                              aria-hidden="true"
-                            />
+                            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
                           ))}
                         </div>
                       </div>
 
-                      {/* Admitted To Highlight Badge */}
-                      {story.admittedTo && (
-                        <div className="mb-3">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs font-bold text-brand-navy font-heading">
-                            <GraduationCap className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" />
-                            <span className="truncate">{story.admittedTo}</span>
-                          </span>
-                        </div>
+                      {story.category && (
+                        <p className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-brand-blue mb-2.5 font-sans">
+                          {story.category}
+                        </p>
                       )}
 
-                      {/* Headline / Title */}
-                      <h3 className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug mb-2.5 group-hover:text-brand-blue transition-colors line-clamp-2">
-                        <Link href={`/stories/${story.id}`} className="hover:underline">
-                          {story.title || "Admissions Consulting Success"}
-                        </Link>
+                      <h3 className="font-display text-[21px] sm:text-[22px] !font-medium leading-[1.25] text-brand-ink mb-3 group-hover:text-brand-blue transition-colors line-clamp-3">
+                        <Link href={`/stories/${story.id}`}>{story.title || "Admissions Consulting Success"}</Link>
                       </h3>
 
-                      {/* Quote Preview - Clamped with Ellipsis */}
-                      <p className="text-[14px] sm:text-[14.5px] leading-[22px] sm:leading-[24px] text-brand-text font-sans line-clamp-3">
+                      <p className="font-display italic text-[15.5px] leading-[1.65] text-[#4a5568] line-clamp-4">
                         &ldquo;{story.quote}&rdquo;
                       </p>
                     </div>
 
-                    {/* Card Bottom: Modern Person Icon + Author Info + Bottom Read More Button */}
-                    <div className="mt-5 pt-4 border-t border-[#eef4fa] flex flex-col gap-3.5">
-                      {/* Author Info Row */}
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          {/* Modern Person Icon - strictly rounded-[5px] */}
-                          <div
-                            className={cn(
-                              "w-10 h-10 rounded-[5px] flex items-center justify-center flex-shrink-0 shadow-xs border transition-colors",
-                              isBlue
-                                ? "bg-gradient-to-br from-[#E3F1FC] to-[#d6ebfb] border-[#c4e0f7] text-brand-blue"
-                                : "bg-gradient-to-br from-[#e2f7eb] to-[#d2f3e0] border-[#c0ebd2] text-[#1e9e5a]"
-                            )}
-                          >
-                            <User className="w-5 h-5 stroke-[2.2]" />
-                          </div>
+                    <div className="mt-6">
+                      {story.admittedTo && (
+                        <span className="mb-5 inline-flex max-w-full items-center gap-1.5 rounded-full bg-brand-ivory border border-[#ece6db] px-3 py-1.5 text-[12px] font-semibold text-brand-ink font-sans">
+                          <GraduationCap className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" aria-hidden="true" />
+                          <span className="truncate">{story.admittedTo}</span>
+                        </span>
+                      )}
 
-                          {/* Author Name and Role */}
+                      <div className="pt-5 border-t border-[#ece6db] flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div
+                            className="w-10 h-10 rounded-full bg-brand-ink text-white grid place-items-center flex-shrink-0 font-display text-[18px]"
+                            aria-hidden="true"
+                          >
+                            {initial}
+                          </div>
                           <div className="min-w-0">
-                            <div className="text-base sm:text-[17px] font-bold text-brand-navy font-heading truncate">
-                              {story.name}
-                            </div>
-                            <div className="text-[14px] sm:text-[14.5px] leading-[22px] text-brand-text truncate font-sans">
-                              {authorRole}
-                            </div>
+                            <div className="text-[14.5px] font-semibold text-brand-ink font-sans truncate">{story.name}</div>
+                            <div className="text-[12.5px] leading-snug text-[#6b7280] truncate font-sans">{authorRole}</div>
                           </div>
                         </div>
 
-                        {/* Tiny Quote Indicator */}
-                        <QuoteIcon
-                          className={cn(
-                            "w-4 h-4 flex-shrink-0 opacity-70",
-                            isBlue ? "text-[#7ebbf0]" : "text-[#58d492]"
-                          )}
-                        />
+                        <Link
+                          href={`/stories/${story.id}`}
+                          className="inline-flex items-center gap-1 flex-shrink-0 text-[12.5px] font-semibold text-brand-ink underline decoration-brand-mint decoration-2 underline-offset-[5px] hover:text-brand-blue font-sans"
+                          aria-label={`Read full story: ${story.title || story.name}`}
+                        >
+                          <span>Read story</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                        </Link>
                       </div>
-
-                      {/* Dedicated Bottom Read Full Story Button - Responsive and Mobile-friendly */}
-                      <Link
-                        href={`/stories/${story.id}`}
-                        className={cn(
-                          "w-full py-2.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-2xs border text-center",
-                          isBlue
-                            ? "bg-brand-blue hover:bg-[#f8fbfe] text-white hover:text-brand-blue border-brand-blue hover:border-brand-blue"
-                            : "bg-[#1e9e5a] hover:bg-[#f6fcf8] text-white hover:text-[#1e9e5a] border-[#1e9e5a] hover:border-[#1e9e5a]"
-                        )}
-                      >
-                        <span>Read Full Story</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                      </Link>
                     </div>
                   </article>
                 );
@@ -354,7 +287,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
 
             {/* Modern Pagination Controls - strictly rounded-[5px] & mobile responsive */}
             {totalPages > 1 && (
-              <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs">
+              <div className="mt-12 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#e3dccf]">
                 {/* Result Counter Info */}
                 <div className="text-xs sm:text-[13px] font-sans text-brand-text order-2 sm:order-1 text-center sm:text-left">
                   Showing <span className="font-bold text-brand-navy">{startIndex + 1}</span> to{" "}
@@ -370,10 +303,10 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                     disabled={currentPage === 1}
                     onClick={() => handlePageChange(currentPage - 1)}
                     className={cn(
-                      "inline-flex items-center gap-1 px-3 sm:px-3.5 py-2 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading border transition-colors select-none",
+                      "inline-flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-semibold font-sans border transition-colors select-none",
                       currentPage === 1
-                        ? "bg-[#f8fbfe] text-brand-text/40 border-[#eef4fa] cursor-not-allowed"
-                        : "bg-white hover:bg-brand-sky text-brand-navy hover:text-brand-blue border-[#e2eef9] cursor-pointer shadow-2xs"
+                        ? "bg-white text-brand-text/40 border-[#ece6db] cursor-not-allowed"
+                        : "bg-white hover:bg-brand-ink text-brand-ink hover:text-white border-[#e3dccf] cursor-pointer"
                     )}
                     aria-label="Previous page"
                   >
@@ -382,7 +315,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                   </button>
 
                   {/* Mobile Compact Page Indicator */}
-                  <div className="flex sm:hidden items-center px-3 py-1.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs font-bold text-brand-navy font-heading">
+                  <div className="flex sm:hidden items-center px-4 py-2 rounded-full bg-white border border-[#e3dccf] text-[13px] font-semibold text-brand-ink font-sans">
                     <span>{currentPage} / {totalPages}</span>
                   </div>
 
@@ -396,10 +329,10 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                           type="button"
                           onClick={() => handlePageChange(pageNum)}
                           className={cn(
-                            "w-8 h-8 sm:w-9 sm:h-9 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading flex items-center justify-center transition-all cursor-pointer select-none",
+                            "w-9 h-9 rounded-full text-[13px] font-semibold font-sans flex items-center justify-center transition-colors cursor-pointer select-none",
                             isActive
-                              ? "bg-brand-blue text-white shadow-xs"
-                              : "bg-white hover:bg-brand-sky text-brand-navy hover:text-brand-blue border border-[#e2eef9]"
+                              ? "bg-brand-ink text-white"
+                              : "bg-white text-brand-ink border border-[#e3dccf] hover:border-brand-ink/50"
                           )}
                           aria-current={isActive ? "page" : undefined}
                           aria-label={`Page ${pageNum}`}
@@ -416,10 +349,10 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                     disabled={currentPage === totalPages}
                     onClick={() => handlePageChange(currentPage + 1)}
                     className={cn(
-                      "inline-flex items-center gap-1 px-3 sm:px-3.5 py-2 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading border transition-colors select-none",
+                      "inline-flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-semibold font-sans border transition-colors select-none",
                       currentPage === totalPages
-                        ? "bg-[#f8fbfe] text-brand-text/40 border-[#eef4fa] cursor-not-allowed"
-                        : "bg-white hover:bg-brand-sky text-brand-navy hover:text-brand-blue border-[#e2eef9] cursor-pointer shadow-2xs"
+                        ? "bg-white text-brand-text/40 border-[#ece6db] cursor-not-allowed"
+                        : "bg-white hover:bg-brand-ink text-brand-ink hover:text-white border-[#e3dccf] cursor-pointer"
                     )}
                     aria-label="Next page"
                   >
@@ -433,18 +366,15 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
         )}
 
         {/* University Acceptances Wall - Strictly rounded-[5px] */}
-        <div className="mt-14 sm:mt-20 p-6 sm:p-8 lg:p-10 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs">
+        <div className="mt-16 sm:mt-24 p-8 sm:p-12 rounded-[22px] bg-white border border-[#ece6db]">
           <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-[5px] bg-brand-blue" />
-              <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                PROVEN ADMISSIONS DESTINATIONS
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-[28px] font-extrabold text-brand-navy font-heading tracking-tight leading-tight mb-2.5">
+            <p className="text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4 font-sans">
+              Proven admissions destinations
+            </p>
+            <h2 className="text-[28px] sm:text-[36px] leading-[1.12] text-brand-ink mb-4">
               Where Our Students Learn &amp; Lead
             </h2>
-            <p className="text-sm sm:text-[15px] leading-relaxed text-brand-text font-sans">
+            <p className="text-[15px] leading-[1.7] text-[#5b6472] font-sans">
               From Ivy League campuses to top-ranked engineering universities and premier art institutes, Blue Stars students earn admissions offers at America&apos;s most selective institutions.
             </p>
           </div>
@@ -453,7 +383,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
             {UNIVERSITY_ACCEPTANCES.map((university) => (
               <div
                 key={university}
-                className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[5px] bg-[#f8fbfe] hover:bg-brand-sky border border-[#e2eef9] text-xs sm:text-[13px] font-bold font-heading text-brand-navy hover:text-brand-blue shadow-xs transition-colors"
+                className="px-4 py-2 rounded-full bg-brand-ivory hover:bg-white border border-[#ece6db] text-[13px] font-medium font-sans text-brand-ink hover:border-brand-blue/40 transition-colors"
               >
                 {university}
               </div>

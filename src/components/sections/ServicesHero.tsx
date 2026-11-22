@@ -7,6 +7,7 @@ import { ChevronRight, Home, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BrandTagline } from "@/components/ui/BrandTagline";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -182,6 +183,8 @@ export function ServicesHero() {
                 </Link>
               </motion.div>
             </motion.div>
+
+            <BrandTagline className="mt-4 justify-center text-[#bfe2fa] lg:justify-start" />
           </motion.div>
 
           {/* Right Column: Hero Image (Graduation Cap, Books, Diploma with GSAP Float) */}

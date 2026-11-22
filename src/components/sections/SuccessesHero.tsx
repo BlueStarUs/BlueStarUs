@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Home, Calendar, GraduationCap } from "lucide-react";
 import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
+import { BrandTagline } from "@/components/ui/BrandTagline";
 
 export function SuccessesHero() {
   return (
@@ -107,6 +108,8 @@ export function SuccessesHero() {
               <span>Explore Yearly Acceptances</span>
             </a>
           </div>
+
+          <BrandTagline className="mt-6 justify-center text-[#bfe2fa]" />
         </div>
       </div>
     </section>

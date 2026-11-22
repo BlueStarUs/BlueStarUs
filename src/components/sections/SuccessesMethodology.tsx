@@ -60,48 +60,56 @@ const METHODOLOGY_PILLARS = [
 
 export function SuccessesMethodology() {
   return (
-    <section className="w-full py-12 sm:py-20 bg-white border-t border-brand-border/70">
+    <section className="w-full py-14 sm:py-24 bg-white border-t border-brand-border/70">
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sky text-brand-blue text-xs font-semibold uppercase tracking-wider font-heading mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#dcedfb] text-[#0b4f94] text-[11.5px] font-semibold uppercase tracking-[0.16em] font-heading mb-5">
             <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
             <span>The Blue Stars Advantage</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-brand-navy tracking-tight">
-            Why Blue Stars Students Consistently Stand Out
+          <h2 className="text-[30px] sm:text-[42px] leading-[1.1] text-brand-ink text-balance">
+            Why Blue Stars Students <span className="italic text-brand-blue">Consistently Stand Out</span>
           </h2>
-          <p className="text-sm sm:text-base font-sans text-brand-text mt-3 leading-relaxed">
+          <p className="text-[15.5px] sm:text-[17px] font-sans text-[#4a5568] mt-4 leading-[1.7] text-balance">
             Behind every Ivy League acceptance, full-ride merit award, and UC Regents scholarship is a deliberate, highly personalized admissions roadmap focused on authenticity, rigor, and peace of mind.
           </p>
         </div>
 
         {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7 mb-12">
           {METHODOLOGY_PILLARS.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={idx}
-                className="rounded-[5px] border border-brand-border/80 bg-brand-bg/40 p-4 sm:p-6 hover:bg-white hover:border-brand-blue/30 hover:shadow-card transition-all duration-200"
+                className="group relative rounded-[22px] border border-[#dbe9f8] bg-white p-6 sm:p-8 shadow-[0_10px_30px_rgba(10,61,107,0.06)] hover:border-brand-blue/40 hover:shadow-[0_20px_46px_rgba(10,61,107,0.12)] hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-[5px] bg-brand-sky flex items-center justify-center text-brand-navy mb-3.5">
-                  <Icon className="w-5 h-5 text-brand-blue" />
+                <span
+                  className="absolute right-6 top-5 font-display text-[52px] leading-none text-brand-blue/15 group-hover:text-brand-blue/30 transition-colors duration-300"
+                  aria-hidden="true"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <div className="w-14 h-14 rounded-[16px] bg-[#e6f1fc] flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6 text-brand-blue" />
                 </div>
-                <h3 className="text-base sm:text-lg font-heading font-bold text-brand-navy mb-1.5">
+                <h3 className="font-display text-[22px] sm:text-[24px] !font-medium leading-snug !text-brand-ink mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-xs sm:text-sm font-sans text-brand-text leading-relaxed mb-3">
+                <p className="text-[15px] font-sans text-[#4a5568] leading-[1.7] mb-5">
                   {pillar.description}
                 </p>
 
-                <ul className="space-y-1.5 pt-2 border-t border-brand-border/60">
+                <ul className="space-y-3 pt-5 border-t border-[#e3eef9]">
                   {pillar.points.map((pt, pIdx) => (
                     <li
                       key={pIdx}
-                      className="flex items-start gap-1.5 text-xs sm:text-[13px] font-sans text-brand-navy"
+                      className="flex items-start gap-3 text-[14px] font-sans font-medium text-brand-ink leading-snug"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#2F9E5C] flex-shrink-0 mt-0.5" />
+                      <span className="mt-0.5 grid h-5 w-5 flex-shrink-0 place-items-center rounded-full bg-[#e6f1fc] text-brand-blue">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </span>
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -112,12 +120,12 @@ export function SuccessesMethodology() {
         </div>
 
         {/* Bottom Banner linking to Consultation & Services */}
-        <div className="rounded-[5px] bg-gradient-to-r from-brand-navy via-brand-darkNavy to-brand-navy text-white p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-5 shadow-card">
+        <div className="rounded-[24px] bg-gradient-to-r from-brand-navy via-brand-darkNavy to-brand-navy text-white p-7 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_22px_50px_rgba(2,59,76,0.25)]">
           <div className="max-w-2xl text-center md:text-left">
-            <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-1.5">
+            <h3 className="text-[22px] sm:text-[28px] leading-snug text-white mb-2">
               Ready to write your family’s admissions success story?
             </h3>
-            <p className="text-xs sm:text-sm font-sans text-[#cfe6fa] leading-relaxed">
+            <p className="text-[14.5px] sm:text-[15.5px] font-sans text-[#cfe6fa] leading-[1.7]">
               Schedule an introductory consultation with Dr. Amy Morgenstern and our senior counseling team to review your student’s profile and goals.
             </p>
           </div>
@@ -127,7 +135,7 @@ export function SuccessesMethodology() {
               href={HUBSPOT_CONSULTATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] bg-gradient-to-r from-brand-blue to-brand-lightBlue hover:from-[#095296] hover:to-[#1b7ec5] text-white font-heading font-semibold text-xs sm:text-sm shadow-md transition-all whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-lightBlue hover:from-[#095296] hover:to-[#1b7ec5] text-white font-heading font-semibold text-[14px] shadow-md transition-all whitespace-nowrap"
             >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -135,7 +143,7 @@ export function SuccessesMethodology() {
 
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-white/10 hover:bg-white/20 border border-white/20 text-white font-heading font-medium text-xs sm:text-sm transition-all whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white font-heading font-medium text-[14px] transition-all whitespace-nowrap"
             >
               <span>Explore Our Services</span>
             </Link>

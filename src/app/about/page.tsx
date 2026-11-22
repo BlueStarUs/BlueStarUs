@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import {
   ArrowRight,
+  BookOpen,
+  CalendarCheck,
   CheckCircle2,
   Award,
   Globe2,
@@ -13,14 +15,23 @@ import {
   Heart,
   Lightbulb,
   Compass,
+  Flag,
+  Flower2,
+  Laptop,
+  Layers,
   ShieldCheck,
+  Star,
   Target,
   Trophy,
   ExternalLink,
 } from "lucide-react";
-import { BreadcrumbHero } from "@/components/ui/BreadcrumbHero";
+import { AboutHero } from "@/components/sections/AboutHero";
+import { AboutBoutique } from "@/components/sections/AboutBoutique";
 import { BrandStar } from "@/components/ui/Icons";
+import { Constellation } from "@/components/ui/Constellation";
+import { DifferencePanel } from "@/components/ui/DifferencePanel";
 import { TeamMembersGrid } from "@/components/sections/TeamMembersGrid";
+import { TEAM_MEMBERS } from "@/lib/team-data";
 
 export const metadata: Metadata = {
   title: "About Us & Expert College Counselors",
@@ -66,21 +77,25 @@ const ACHIEVEMENTS_DATA = [
     value: "16+",
     label: "Years of Student Success",
     subtext: "Guiding families since 2010",
+    icon: CalendarCheck,
   },
   {
     value: "100%",
     label: "Personalized Support",
     subtext: "The Calm Way to college success",
+    icon: Users2,
   },
   {
     value: "Top 20",
     label: "Elite & UC Admissions",
     subtext: "Stanford, Ivy League & premier UCs",
+    icon: Trophy,
   },
   {
     value: "1-on-1",
     label: "Dedicated Mentorship",
     subtext: "Tailored to every student's spike",
+    icon: GraduationCap,
   },
 ];
 
@@ -105,55 +120,13 @@ const WHY_US_PILLARS = [
   },
 ];
 
-const TEAM_MEMBERS = [
-  {
-    name: "Dr. Amy Morgenstern",
-    role: "Founder & Principal Consultant",
-    credentials: "Ph.D. in Philosophy, MFA in Contemporary Art",
-    bio: "Dr. Amy Morgenstern (“Dr. M”) is the Founder of Blue Stars Admissions Consulting, established in 2010 to serve students and families navigating complex and competitive college admissions landscapes. A first-generation college student, Dr. M holds a Ph.D. in philosophy and an MFA in contemporary art. She is a former professor of philosophy, honors program associate director, and assistant to the director of an international academic and cultural studies program. Fluent in German, she served as a dissertation fellow in Germany for two years. As an award-winning writer, cultural theorist, and interdisciplinary artist, she brings deep institutional insight to selective admissions, combining structural analysis with careful narrative development so each student’s application is coherent, intentional, and strategically positioned.",
-    image: "/images/teams/Dr_Amy_Morgenstern.png",
-    badge: "FOUNDER & PRINCIPAL CONSULTANT",
-    affiliations: [
-      { name: "HECA", image: "/images/badges/heca.gif" },
-      { name: "WACAC", image: "/images/badges/wacac.png" },
-      { name: "IECA", image: "/images/badges/ieca.png" },
-    ],
-  },
-  {
-    name: "Helen Ingerson",
-    role: "Senior Counselor & Editor",
-    credentials:
-      "B.A. Harvard University (Magna Cum Laude, Phi Beta Kappa), MBA Simmons College",
-    bio: "A National Merit Scholar and Phi Beta Kappa, Magna Cum Laude graduate of Harvard University, Helen has worked for over a decade with students across the Bay Area as a tutor, coach, and admissions essay editor. Her students appreciate her ability to make them feel heard while preserving their authentic voice and producing concise, standout drafts that earn admission to top colleges. Helen holds California teaching credentials, was an administrator at St. Ann's in NYC (cited by The Wall Street Journal for unmatched admissions success), and brings senior leadership experience from venture capital.",
-    image: "/images/teams/Helen-Ingerson-Upscaled.png",
-    badge: "SENIOR COUNSELOR & EDITOR",
-  },
-  {
-    name: "Wai Cheng",
-    role: "Senior Counselor & Editor",
-    credentials:
-      "Wharton MBA & M.A. University of Pennsylvania, B.A. Tufts University",
-    bio: "A native New Yorker, Wai brings over 10 years of college admissions experience to Blue Stars. Holding a Wharton MBA and Master of International Studies from UPenn and a B.A. in International Relations from Tufts, Wai has helped over 100 students majoring in engineering, natural sciences, and humanities enter dream universities like Yale, MIT, Stanford, Johns Hopkins, Amherst, and NYU. Having served on the Wharton Admissions Office team and in product management at Electronic Arts, Wai is celebrated for his warmth, humor, and empowering student-parent guidance.",
-    image: "/images/teams/Wai-Cheng-Headshot.webp",
-    badge: "SENIOR COUNSELOR & EDITOR",
-  },
-  {
-    name: "Samuel Ortiz",
-    role: "College Admissions Counselor & STEM Specialist",
-    credentials: "B.A. & M.A. in English, Former Professor of English",
-    bio: "Samuel has advised students who have gone on to attend highly selective universities, including Stanford, UC Berkeley, Yale, Columbia, Duke, Johns Hopkins, Northwestern, and Rice. In the past cycle alone, two of his students were admitted to Stanford in competitive STEM fields (Symbolic Systems, CS, Data Science, and Engineering). Drawing on his background as a college admissions counselor and former professor of English, Samuel helps students discover their unique strengths, build compelling extracurricular profiles, and articulate their intellectual interests through powerful, authentic essays.",
-    image: "/images/teams/Samuel-Ortiz.png",
-    badge: "COLLEGE ADMISSIONS COUNSELOR",
-  },
-];
-
 const PROFESSIONAL_ACCREDITATIONS = [
   {
     name: "HECA",
     fullName: "Higher Education Consultants Association",
     description:
       "Dedicated to advancing high professional standards, ethical counseling practices, and student advocacy in independent college admissions consulting.",
-    image: "/images/badges/heca.gif",
+    image: "/images/badges/heca-v2.webp",
     tag: "Verified Member",
   },
   {
@@ -161,7 +134,7 @@ const PROFESSIONAL_ACCREDITATIONS = [
     fullName: "Western Association for College Admission Counseling",
     description:
       "Regional affiliate of the National Association for College Admission Counseling (NACAC), upholding student-centered ethics across California, Nevada, and the West.",
-    image: "/images/badges/wacac.png",
+    image: "/images/badges/wacac-v2.webp",
     tag: "Professional Member",
   },
   {
@@ -169,7 +142,7 @@ const PROFESSIONAL_ACCREDITATIONS = [
     fullName: "Independent Educational Consultants Association",
     description:
       "The nation's premier professional association of experienced, vetted educational consultants committed to excellence, integrity, and whole-student mentorship.",
-    image: "/images/badges/ieca.png",
+    image: "/images/badges/ieca-v2.webp",
     tag: "Professional Member",
   },
 ];
@@ -213,202 +186,196 @@ const CORE_VALUES = [
     description:
       "Fostering mental agility and resilience so students smoothly adapt, pivot, and excel through evolving college admissions criteria.",
     icon: Compass,
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/adaptability-v2.webp",
   },
   {
     title: "Ambition",
     description:
       "Inspiring students to aim high, discover their true academic capabilities, and craft reach-school portfolios with bold confidence.",
     icon: Target,
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/ambition.webp",
   },
   {
     title: "Authenticity",
     description:
       "Uncovering each student's genuine voice so admissions committees connect with the real person behind the grades and test scores.",
     icon: ShieldCheck,
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/authenticity.webp",
   },
   {
     title: "Caring",
     description:
       "Providing warm, individualized mentorship that protects family harmony and supports students emotionally across high school.",
     icon: Heart,
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/caring.webp",
   },
   {
     title: "Compassion",
     description:
       "Practicing integrated, nonjudgmental listening that honors every teen's unique background, personal story, and individual pace.",
     icon: Users2,
-    image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/compassion.webp",
   },
   {
     title: "Results",
     description:
       "Delivering world-class admissions outcomes with personalized, holistic mentorship guiding students to top-choice universities nationwide.",
     icon: Trophy,
-    image:
-      "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=800&auto=format&fit=crop",
+    image: "/images/abouts/values/results.webp",
   },
 ];
 
-function BlueCircleCheck({
-  className = "w-5 h-5 flex-shrink-0",
-}: {
-  className?: string;
-}) {
+function BarsGlyph({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <circle cx="10" cy="10" r="10" fill="#1166B0" />
-      <path
-        d="M6 10.2L8.7 12.8L14 7.5"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <rect x="4" y="11" width="4" height="9" rx="1" />
+      <rect x="10" y="4" width="4" height="16" rx="1" />
+      <rect x="16" y="8" width="4" height="12" rx="1" />
     </svg>
   );
 }
 
+/** One icon per STRATEGIC_PILLARS entry, same order. */
+const PILLAR_ICONS = [GraduationCap, Flag, BookOpen, BarsGlyph, Layers, Flower2];
+
+const TEAM_HIGHLIGHTS = [
+  { icon: GraduationCap, label: "Admissions Expertise" },
+  { icon: Users2, label: "Personalized Mentorship" },
+  { icon: BarsGlyph, label: "Proven Student Outcomes" },
+];
+
+/** Reach highlights shown on the photo card. Wording follows the approved design: confirm both claims are accurate. */
+const REACH_BADGE = "Students Across 5+ Continents";
+const REACH_STATS = [
+  { icon: Users2, line1: "U.S. Students", line2: "(All 50 States)" },
+  { icon: Globe2, line1: "International", line2: "Students" },
+  { icon: Laptop, line1: "Remote & Online", line2: "Counseling" },
+];
+
+/** Extra display data for PROFESSIONAL_ACCREDITATIONS, matched by index. */
+const ACCREDITATION_EXTRAS = [
+  { statusIcon: ShieldCheck, highlightIcon: Award, highlight: "Ethical Standards & Student Advocacy" },
+  { statusIcon: Users2, highlightIcon: Users2, highlight: "Regional Expertise & Professional Collaboration" },
+  { statusIcon: Star, highlightIcon: Layers, highlight: "Excellence, Integrity & Holistic Mentorship" },
+];
+
+const COUNSELOR_HIGHLIGHTS = [
+  { icon: GraduationCap, text: "Former university faculty & admissions advisors" },
+  { icon: BookOpen, text: "Published authors & MFA writing coaches" },
+  { icon: Users2, text: "Dedicated student mentors who listen deeply" },
+  { icon: BarsGlyph, text: "Executive function & resilience advisors" },
+];
+
 export default function AboutPage() {
   return (
     <div className="w-full bg-white">
-      {/* 1. Modern Breadcrumb Hero */}
-      <BreadcrumbHero
-        breadcrumbs={[{ label: "About Us" }]}
-        badge="OUR STORY &amp; PHILOSOPHY"
-        title="Navigating Futures, Crafting Success Stories"
-        description="16+ years of dedicated admissions consulting partnering with teens and families to make higher education admissions an empowering, transformative milestone."
-      />
+      {/* 1. Hero + consultation card */}
+      <AboutHero />
 
-      {/* 2. Elevated Consultation Highlight Card */}
-      <section className="relative mt-8 z-20 max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[6px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white p-6 sm:p-8 lg:p-10 shadow-[0_16px_44px_rgba(10,61,107,0.22)] border border-[#2072a7]/40 relative overflow-hidden">
-          {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#38bdf8]/15 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 items-center relative z-10">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#9ed5ff] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-2.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
-                <span>
-                  SAVE TIME &bull; STRESS LESS &bull; ACHIEVE CONTINUOUSLY
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight leading-[30px] sm:leading-[38px] mb-2">
-                Begin Your Journey With a Complimentary Consultation
-              </h2>
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans">
-                Schedule a 30-minute introductory strategy session to evaluate
-                where your student stands and map an actionable roadmap toward
-                selective college acceptances.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-4 bg-white/10 backdrop-blur-md p-6 rounded-[6px] border border-white/20">
-              <div className="text-center">
-                <span className="block text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                  Free 30-Min
-                </span>
-                <span className="block text-xs sm:text-[13px] text-[#bfe2fa] font-sans mt-0.5">
-                  1-on-1 Initial Consultation
-                </span>
-              </div>
-              <Link
-                href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
-              >
-                <span>Get Started Now</span>
-                <ArrowRight className="w-4 h-4 text-brand-navy" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 2b. Boutique story: founder's note, boutique vs. large agency, family voices */}
+      <AboutBoutique />
 
       {/* 3. Paving the Way for Personal & Academic Excellence */}
-      <section className="py-14 sm:py-18 lg:py-22 bg-white">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
-            {/* Left: Image with Petal Accent */}
-            <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#f3f8fe] via-white to-[#e9f3fd] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+        <svg
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full text-[#d9eafb]"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M0 160V90C200 40 420 60 640 100C860 140 1100 140 1440 70V160Z" opacity="0.75" />
+          <path d="M0 160V120C260 90 520 120 760 140C1000 160 1240 130 1440 100V160Z" opacity="0.9" />
+        </svg>
+
+        <div className="relative z-10 mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] lg:gap-16 lg:px-8">
+          {/* Left: tilted photo card with a floating note */}
+          <div className="relative mx-auto w-full max-w-[640px] pb-24 sm:pb-28">
+            <div
+              className="pointer-events-none absolute -top-8 left-[22%] h-[40%] w-[55%] rounded-[50%] bg-gradient-to-br from-[#6cb7f4] to-[#2f86e0]"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -bottom-2 -right-4 h-[58%] w-[44%] rounded-[50%] bg-gradient-to-br from-[#7ebff5] to-[#3a8fe3] opacity-90"
+              aria-hidden="true"
+            />
+
+            <div className="group relative -rotate-[3deg] overflow-hidden rounded-[36px] border-[5px] border-white shadow-[0_30px_70px_rgba(11,99,181,0.28)]">
+              <div className="relative aspect-[1/1.02] w-full">
                 <Image
-                  src="/images/abouts/Academic_Excellence.png"
-                  alt="Paving the Way for Personal & Academic Excellence - Blue Stars Admissions Consulting"
+                  src="/images/abouts/paving-way.webp"
+                  alt="A student looks toward a university building, beside signposts reading Self-Reliance, Academic Vigor, Intellectual Vitality and The Calm Way"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
-            {/* Right: Content */}
-            <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <span
-                  className="w-6 h-[2px] bg-brand-blue rounded-full"
-                  aria-hidden="true"
-                />
-                <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                  HOLISTIC DEVELOPMENT
-                </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[42px] mb-4">
-                Paving the Way for Personal and Academic Excellence
-              </h2>
-
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                At Blue Stars, we believe higher education consulting should be
-                transformative rather than transactional. Our personalized
-                advising empowers high school students to build genuine
-                self-reliance, academic vigor, and intellectual vitality.
+            <div className="absolute -bottom-0 left-[16%] w-[72%] max-w-[420px] rounded-[22px] border border-sky-200 bg-white/95 p-5 shadow-[0_18px_44px_rgba(11,99,181,0.22)] backdrop-blur-sm sm:left-[22%] sm:p-6">
+              <p className="mb-1.5 flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-brand-blue">
+                <BrandStar className="h-4 w-4" aria-hidden="true" />
+                Our signature method
               </p>
-
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                Guided by our signature &ldquo;The Calm Way&rdquo; methodology,
-                we help teens eliminate application panic while uncovering their
-                singular passions, resulting in cohesive, standout admissions
-                profiles.
+              <p className="font-display text-[30px] leading-none text-brand-ink sm:text-[34px]">The Calm Way</p>
+              <p className="mt-2.5 text-[14.5px] leading-[1.5] text-[#4a5568]">
+                Less application panic, more clarity about who your student really is.
               </p>
+            </div>
+          </div>
 
-              <ul className="space-y-2.5 mb-8">
-                {STRATEGIC_PILLARS.map((pillar) => (
-                  <li key={pillar} className="flex items-start gap-2.5">
-                    <BlueCircleCheck className="w-4 h-4 flex-shrink-0 mt-1" />
-                    <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                      {pillar}
+          {/* Right: content */}
+          <div className="flex flex-col justify-center">
+            <p className="mb-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#dcedfb] px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-[#0b63b5]">
+              <BrandStar className="h-3.5 w-3.5" aria-hidden="true" />
+              Our approach
+            </p>
+
+            <h2 className="mb-6 text-[32px] leading-[1.1] text-brand-ink sm:text-[44px] lg:text-[clamp(36px,5.6vh,52px)]">
+              Paving the Way for Personal and{" "}
+              <span className="relative inline-block text-brand-blue">
+                Academic Excellence
+              </span>
+            </h2>
+
+            <p className="mb-4 mt-2 text-[17px] leading-[1.65] text-[#1f2d44] sm:text-[18px] lg:text-[clamp(16px,2.1vh,19px)]">
+              At Blue Stars, we believe higher education consulting should be transformative rather than
+              transactional. Our personalized advising empowers high school students to build genuine
+              self-reliance, academic vigor, and intellectual vitality.
+            </p>
+
+            <p className="mb-7 text-[15.5px] leading-[1.7] text-[#4a5568] lg:text-[clamp(14.5px,1.9vh,16.5px)]">
+              Guided by our signature{" "}
+              <strong className="font-semibold text-brand-blue">&ldquo;The Calm Way&rdquo;</strong> methodology, we
+              help teens eliminate application panic while uncovering their singular passions, resulting in cohesive,
+              standout admissions profiles.
+            </p>
+
+            <ul className="mb-8 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+              {STRATEGIC_PILLARS.map((pillar, i) => {
+                const PillarIcon = PILLAR_ICONS[i % PILLAR_ICONS.length];
+                return (
+                  <li
+                    key={pillar}
+                    className="flex items-center gap-4 rounded-[18px] bg-white px-4 py-3.5 shadow-[0_8px_24px_rgba(11,99,181,0.1)] ring-1 ring-[#e3eef9]"
+                  >
+                    <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-full bg-[#e6f1fc] text-brand-blue">
+                      <PillarIcon className="h-[22px] w-[22px]" />
                     </span>
+                    <span className="text-[14.5px] font-semibold leading-snug text-brand-ink">{pillar}</span>
                   </li>
-                ))}
-              </ul>
+                );
+              })}
+            </ul>
 
-              <div>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
-                >
-                  <span>Learn More About Our Approach</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+            <div>
+              <Link
+                href="/services"
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0b63b5] to-[#06335f] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(11,99,181,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+              >
+                <span>Learn More About Our Approach</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
@@ -417,11 +384,11 @@ export default function AboutPage() {
       {/* 4. Why Choose Blue Stars Admissions Consulting */}
       <section
         id="why-us"
-        className="scroll-mt-24 sm:scroll-mt-28 py-14 sm:py-18 lg:py-22 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden"
+        className="scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#f3f8fe] via-white to-[#e8f2fc] border-y border-[#dfeaf6] relative overflow-hidden"
       >
         {/* Ambient Organic Waves */}
         <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
+          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#dcebfb]/70 via-[#eaf3fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
           aria-hidden="true"
         />
 
@@ -429,18 +396,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
             {/* Left: Text & Stats */}
             <div>
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <span
-                  className="w-6 h-[2px] bg-brand-blue rounded-full"
-                  aria-hidden="true"
-                />
-                <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                  THE BLUE STARS DIFFERENCE
-                </span>
-              </div>
+              <p className="inline-flex items-center gap-2 rounded-full bg-[#dcedfb] px-4 py-2 text-[11.5px] font-semibold tracking-[0.16em] uppercase text-[#0b63b5] font-sans mb-5">
+                <BrandStar className="h-3.5 w-3.5" aria-hidden="true" />
+                The Blue Stars Difference
+              </p>
 
-              <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[42px] mb-4">
-                Why Choose Blue Stars Admissions Consulting?
+              <h2 className="relative text-[32px] sm:text-[44px] leading-[1.08] text-brand-ink mb-6">
+                Why Choose Blue Stars
+                <span className="block text-brand-blue">Admissions Consulting?</span>
               </h2>
 
               <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
@@ -461,479 +424,577 @@ export default function AboutPage() {
               </p>
 
               {/* 4 Stats Cards Grid */}
-              <div className="grid grid-cols-2 gap-3.5 sm:gap-4">
-                {ACHIEVEMENTS_DATA.map((item) => (
-                  <div
-                    key={item.label}
-                    className="p-4 sm:p-5 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs hover:shadow-card transition-shadow"
-                  >
-                    <div className="text-2xl sm:text-3xl font-extrabold text-brand-blue font-heading tracking-tight">
-                      {item.value}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {ACHIEVEMENTS_DATA.map((item) => {
+                  const StatIcon = item.icon;
+                  return (
+                    <div
+                      key={item.label}
+                      className="flex items-start gap-4 rounded-[18px] bg-white border border-[#e3eef9] p-5 shadow-[0_10px_30px_rgba(11,99,181,0.08)] transition-shadow hover:shadow-[0_16px_40px_rgba(11,99,181,0.14)]"
+                    >
+                      <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-[14px] bg-[#e6f1fc] text-brand-blue">
+                        <StatIcon className="h-6 w-6" aria-hidden="true" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="whitespace-nowrap font-display text-[32px] sm:text-[38px] leading-none text-brand-blue">
+                          {item.value}
+                        </div>
+                        <div className="mt-1.5 text-[15px] font-semibold text-brand-ink font-heading leading-snug">
+                          {item.label}
+                        </div>
+                        <div className="mt-0.5 text-[13.5px] leading-snug text-[#5b6472] font-sans">{item.subtext}</div>
+                      </div>
                     </div>
-                    <div className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading mt-1 leading-snug">
-                      {item.label}
-                    </div>
-                    <div className="text-[14px] sm:text-[14.5px] text-brand-text font-sans mt-0.5">
-                      {item.subtext}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             {/* Right: Modern Framed Image */}
-            <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
-                <Image
-                  src="/images/abouts/THE_BLUESTARS_DIFFERENCE.png"
-                  alt="The Blue Stars Difference - Admissions Consulting"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
-              </div>
-            </div>
+            <DifferencePanel />
           </div>
 
-          {/* 3 Core Pillars From Why-Us */}
-          <div className="mt-12 sm:mt-14 pt-8 sm:pt-10 border-t border-[#dbe7f3]">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
+          {/* 3 Core Pillars: stars joined by a constellation line */}
+          <div className="mt-16 border-t border-[#dbe7f3] pt-12 sm:mt-20 sm:pt-14">
+            <div className="mb-12 grid gap-4 sm:mb-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:items-end lg:gap-14">
               <div>
-                <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-1">
-                  OUR 3 CORE PILLARS
-                </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading tracking-tight">
-                  How We Guide Your Teen to Admissions Success
+                <p className="mb-4 inline-flex items-center gap-3 font-sans text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-blue">
+                  <span className="h-0.5 w-8 bg-brand-blue" aria-hidden="true" />
+                  Our 3 core pillars
+                </p>
+                <h3 className="text-[28px] leading-[1.12] text-brand-ink sm:text-[38px]">
+                  How We Guide Your Teen to <span className="text-brand-blue">Admissions Success</span>
                 </h3>
               </div>
-              <p className="text-xs sm:text-[14px] text-brand-text font-sans max-w-md">
-                A structured, whole-student approach ensuring every facet of
-                your teen&apos;s application reflects authentic intellectual
-                excellence.
+              <p className="max-w-[520px] font-sans text-[15.5px] leading-[1.7] text-[#4a5568]">
+                A structured, whole-student approach ensuring every facet of your teen&apos;s application reflects
+                authentic intellectual excellence.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-              {WHY_US_PILLARS.map((pillar) => {
-                const Icon = pillar.icon;
-                return (
-                  <div
-                    key={pillar.title}
-                    className="p-5 sm:p-6 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs hover:shadow-card hover:border-brand-blue/40 transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="w-10 h-10 rounded-[5px] bg-[#E3F1FC] text-brand-blue flex items-center justify-center mb-4">
-                        <Icon className="w-5 h-5" />
+            <div className="relative">
+              <div
+                className="pointer-events-none absolute left-[16.6%] right-[16.6%] top-0 hidden border-t-2 border-dashed border-brand-blue/35 md:block"
+                aria-hidden="true"
+              />
+
+              <ol className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6 lg:gap-8">
+                {WHY_US_PILLARS.map((pillar, i) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <li
+                      key={pillar.title}
+                      className="group relative rounded-[24px] bg-white p-7 pt-11 shadow-[0_12px_34px_rgba(11,99,181,0.09)] ring-1 ring-[#e3eef9] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,99,181,0.16)] sm:p-8 sm:pt-12"
+                    >
+                      <span className="absolute -top-4 left-1/2 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full bg-white text-brand-blue shadow-sm ring-1 ring-[#cfe3f8]">
+                        <BrandStar className="h-4 w-4" aria-hidden="true" />
+                      </span>
+
+                      <span
+                        className="absolute right-6 top-6 font-display text-[56px] leading-none text-brand-blue/15 transition-colors duration-300 group-hover:text-brand-blue/30"
+                        aria-hidden="true"
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+
+                      <div className="mb-5 grid h-14 w-14 place-items-center rounded-[16px] bg-[#e6f1fc] text-brand-blue">
+                        <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <h4 className="text-[17px] sm:text-[18px] font-extrabold text-brand-navy font-heading mb-2 leading-snug">
-                        {pillar.title}
+
+                      <h4 className="mb-3 font-display text-[22px] !font-medium leading-snug text-brand-ink sm:text-[24px]">
+                        {pillar.title.replace(/^\d+\.\s*/, "")}
                       </h4>
-                      <p className="text-[14px] sm:text-[15px] leading-[22px] sm:leading-[24px] text-brand-text font-sans">
-                        {pillar.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+                      <p className="font-sans text-[15px] leading-[1.7] text-[#4a5568]">{pillar.description}</p>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
           </div>
         </div>
       </section>
 
       {/* 5. We Work With Students All Over the World */}
-      <section className="py-14 sm:py-18 lg:py-22 bg-white">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
-            {/* Left: Global Crystal Earth / World Visual */}
-            <div className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-slate-900 group">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
-                <Image
-                  src="/images/abouts/Nationwide_International_Reach.png"
-                  alt="We Work With Students All Over the World - Nationwide and International Reach"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#073d63]/80 via-transparent to-transparent pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#f1f7fe] via-white to-[#e6f1fc] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+        {/* Faint dotted "map" texture and waves (decorative) */}
+        <div
+          className="pointer-events-none absolute -right-10 top-8 hidden h-64 w-[34rem] opacity-30 lg:block"
+          style={{
+            backgroundImage: "radial-gradient(circle, #7ea6cf 1.3px, transparent 1.6px)",
+            backgroundSize: "9px 9px",
+            WebkitMaskImage: "radial-gradient(ellipse at 60% 45%, #000 20%, transparent 68%)",
+            maskImage: "radial-gradient(ellipse at 60% 45%, #000 20%, transparent 68%)",
+          }}
+          aria-hidden="true"
+        />
+        <svg
+          viewBox="0 0 1440 200"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 w-full text-[#bcd9f6]"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M0 200V150C160 120 300 150 420 175C520 195 560 200 600 200Z" opacity="0.5" />
+          <path d="M700 200C900 190 1120 120 1440 60V200Z" opacity="0.85" />
+        </svg>
 
-                {/* Floating Global Reach Pill */}
-                <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#07466f]/90 backdrop-blur-md border border-white/20 text-white shadow-sm">
-                  <Globe2 className="w-4 h-4 text-[#38bdf8]" />
-                  <span className="text-xs sm:text-[13px] font-bold font-heading">
-                    Serving Students Across the Bay Area &amp; Globally
-                  </span>
+        <div className="relative z-10 mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.47fr)_minmax(0,0.53fr)] lg:gap-14 lg:px-8">
+          {/* Left: tilted photo card with floating badge and stat bar */}
+          <div className="relative mx-auto w-full max-w-[760px] pb-14 pt-6">
+            <div className="relative">
+              <div className="overflow-hidden rounded-[38px] border-[4px] border-white shadow-[0_30px_70px_rgba(11,99,181,0.28)] [transform:skewX(-5deg)_skewY(-3deg)]">
+                <div className="relative aspect-[1.22/1] w-full [transform:skewY(3deg)_skewX(5deg)] scale-[1.18]">
+                  <Image
+                    src="/images/abouts/global-reach.webp"
+                    alt="A student on a video call with a Blue Stars counselor, with a glowing globe connecting the Bay Area, New York, Europe, the Middle East and Asia"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 760px"
+                    className="object-cover object-center"
+                  />
                 </div>
               </div>
-            </div>
 
-            {/* Right: Content */}
-            <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <span
-                  className="w-6 h-[2px] bg-brand-blue rounded-full"
-                  aria-hidden="true"
-                />
-                <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                  NATIONWIDE &amp; INTERNATIONAL REACH
+              <div className="absolute -top-5 left-[2%] flex items-center gap-3 rounded-[20px] border border-sky-300/40 bg-[#0b2f5c]/95 px-4 py-3 shadow-[0_14px_34px_rgba(6,38,74,0.35)] backdrop-blur-md sm:px-5">
+                <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-full bg-white/10 text-sky-200 ring-1 ring-white/15">
+                  <Globe2 className="h-6 w-6" aria-hidden="true" />
                 </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[42px] mb-4">
-                We Work With Students All Over the World
-              </h2>
-
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-4">
-                Headquartered in the San Francisco Bay Area, Blue Stars partners
-                with families across the United States—from California to New
-                York—as well as international students across Europe, Asia
-                (Shanghai, Chengdu, Tokyo), and the Middle East.
-              </p>
-
-              <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans mb-6">
-                We are proven experts at remote and online education. Through
-                interactive 1-on-1 video counseling, shared digital workspaces,
-                and proactive milestone tracking, distance is never an obstacle
-                to transformative, personalized admissions mentoring.
-              </p>
-
-              <div className="p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] mb-6">
-                <div className="flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                  <p className="text-[14px] sm:text-[15px] text-brand-navy font-medium font-sans leading-relaxed">
-                    Whether you are attending a public high school in
-                    California, an East Coast boarding school, or an
-                    international baccalaureate academy abroad, our strategies
-                    adapt to your academic system.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
-                >
-                  <span>Connect With Our Global Team</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <span className="max-w-[10.5rem] text-[14.5px] font-semibold leading-snug text-white">{REACH_BADGE}</span>
               </div>
             </div>
+
+            <ul className="absolute bottom-0 left-[6%] right-[4%] flex items-center justify-between gap-2 rounded-[22px] border border-white/60 bg-[#0e3563]/95 px-3 py-3 shadow-[0_18px_44px_rgba(6,38,74,0.4)] backdrop-blur-md sm:gap-3 sm:px-5">
+              {REACH_STATS.map((stat, i) => {
+                const StatIcon = stat.icon;
+                return (
+                  <li
+                    key={stat.line1}
+                    className={
+                      i > 0
+                        ? "flex items-center gap-2.5 border-l border-white/20 pl-2 sm:gap-3 sm:pl-4"
+                        : "flex items-center gap-2.5 sm:gap-3"
+                    }
+                  >
+                    <span className="hidden h-10 w-10 flex-shrink-0 place-items-center rounded-full bg-white/10 text-sky-200 ring-1 ring-white/15 sm:grid">
+                      <StatIcon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <span className="text-[12px] font-medium leading-snug text-white sm:text-[13.5px]">
+                      {stat.line1}
+                      <br />
+                      {stat.line2}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-        </div>
-      </section>
 
-      {/* 6. Who We Are (Counselors Make All the Difference) - Centered & Fully Responsive */}
-      <section className="relative py-14 sm:py-18 lg:py-22 bg-[#073d63] text-white overflow-hidden">
-        {/* Background Overlay Image */}
-        <div className="absolute inset-0 z-0 opacity-15">
-          <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
-            alt="University campus students and counselors"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#073d63] via-[#094c79]/95 to-[#0c5989]/90 z-0" />
-
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
-            {/* Centered Glowing Pill Kicker */}
-            <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#9ed5ff] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3.5 shadow-xs">
-              <Users2 className="w-3.5 h-3.5 text-[#38bdf8]" />
-              <span>EXPERIENCED COUNSELORS</span>
-            </div>
-
-            {/* Centered Main Heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold text-white font-heading tracking-tight leading-[32px] sm:leading-[38px] md:leading-[42px] lg:!leading-[46px] mb-4 max-w-3xl mx-auto">
-              Our College Counselors Make All the Difference
-            </h2>
-
-            {/* Centered Description */}
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans mb-8 mt-4 max-w-2xl mx-auto">
-              At Blue Stars Admissions Consulting, our team blends former
-              university faculty insight, Ivy League academic backgrounds, and
-              executive functioning coaching. We listen deeply to student
-              aspirations, helping them find joy and confidence in the
-              admissions journey.
+          {/* Right: content */}
+          <div className="flex flex-col justify-center">
+            <p className="mb-5 flex items-center gap-4 text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-blue">
+              <span className="h-0.5 w-10 bg-brand-blue" aria-hidden="true" />
+              Nationwide &amp; international reach
             </p>
 
-            {/* Centered 2-Column Responsive Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-7xl w-full mx-auto mb-9 text-left mt-4">
-              <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
-                <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
-                <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
-                  Former university faculty &amp; admissions advisors
+            <h2 className="mb-7 text-[32px] leading-[1.1] text-brand-ink sm:text-[46px] lg:text-[clamp(36px,5.8vh,56px)]">
+              We Work With Students
+              <span className="block">
+                All Over{" "}
+                <span className="relative inline-block italic text-brand-blue">
+                  the World
                 </span>
-              </div>
-              <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
-                <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
-                <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
-                  Published authors &amp; MFA writing coaches
-                </span>
-              </div>
-              <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
-                <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
-                <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
-                  Dedicated student mentors who listen deeply
-                </span>
-              </div>
-              <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-colors">
-                <CheckCircle2 className="w-4.5 h-4.5 text-[#38bdf8] flex-shrink-0" />
-                <span className="text-[14px] sm:text-[15px] text-white/95 font-sans leading-snug">
-                  Executive function &amp; resilience advisors
-                </span>
-              </div>
+              </span>
+            </h2>
+
+            <p className="mb-4 mt-2 text-[16px] leading-[1.7] text-[#1f2d44] lg:text-[clamp(15px,2vh,18px)]">
+              Headquartered in the San Francisco Bay Area, Blue Stars partners with families across the United
+              States&mdash;from California to New York&mdash;as well as international students across Europe, Asia
+              (Shanghai, Chengdu, Tokyo), and the Middle East.
+            </p>
+
+            <p className="mb-7 text-[16px] leading-[1.7] text-[#1f2d44] lg:text-[clamp(15px,2vh,18px)]">
+              We are proven experts at remote and online education. Through interactive 1-on-1 video counseling,
+              shared digital workspaces, and proactive milestone tracking, distance is never an obstacle to
+              transformative, personalized admissions mentoring.
+            </p>
+
+            <div className="mb-8 flex items-center gap-5 rounded-[20px] bg-[#eaf3fd]/80 p-5 ring-1 ring-[#dbe9f8] sm:gap-6 sm:p-6">
+              <GraduationCap className="h-11 w-11 flex-shrink-0 text-brand-ink" aria-hidden="true" />
+              <span className="hidden h-14 w-px bg-brand-ink/30 sm:block" aria-hidden="true" />
+              <p className="text-[15px] font-medium leading-[1.65] text-brand-ink sm:text-[16px]">
+                Whether you are attending a public high school in California, an East Coast boarding school, or an
+                international baccalaureate academy abroad, our strategies adapt to your academic system.
+              </p>
             </div>
 
-            {/* Centered CTA Button */}
-            <div className="flex justify-center w-full">
+            <div>
               <Link
-                href="#team"
-                className="inline-flex items-center justify-center sm:mt-4 gap-2 px-7 py-3.5 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                href="/contact"
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
               >
-                <span>Meet Our Full Team Below</span>
-                <ArrowRight className="w-4 h-4 text-brand-navy" />
+                <span>Connect With Our Global Team</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. Meet Our Team */}
-      <section id="team" className="py-14 sm:py-18 lg:py-22 bg-white">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <span
-                className="w-6 h-[2px] bg-brand-blue rounded-full"
-                aria-hidden="true"
-              />
-              <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                LEADERSHIP &amp; STRATEGY
-              </span>
-              <span
-                className="w-6 h-[2px] bg-brand-blue rounded-full"
-                aria-hidden="true"
-              />
+      {/* 6. Who We Are (Counselors Make All the Difference) */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fafcff] to-[#eef5fd] pb-32 pt-16 sm:pt-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:pb-40 lg:pt-14">
+        <div className="pointer-events-none absolute -left-40 -top-24 h-80 w-[34rem] rounded-full bg-[#e8f1fc]/80" aria-hidden="true" />
+
+        {/* Blue waves at the bottom (no gold accents) */}
+        <svg
+          viewBox="0 0 1440 220"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full lg:h-40"
+          aria-hidden="true"
+        >
+          <path d="M0 220V120C220 80 420 60 640 100C900 150 1150 150 1440 70V220Z" fill="#b9d6f5" opacity="0.7" />
+          <path d="M0 220V160C260 120 520 150 760 185C1000 215 1240 190 1440 130V220Z" fill="#1d5fb4" />
+        </svg>
+
+        <div className="relative z-10 mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+            <div className="mb-6 flex items-center justify-center gap-4">
+              <span className="hidden h-px w-24 bg-brand-blue/40 sm:block" aria-hidden="true" />
+              <p className="inline-flex items-center gap-2.5 rounded-full border border-brand-blue/60 bg-white px-5 py-2.5 font-sans text-[11.5px] font-semibold uppercase tracking-[0.2em] text-brand-ink">
+                <Users2 className="h-4 w-4 text-brand-blue" aria-hidden="true" />
+                Experienced counselors
+              </p>
+              <span className="hidden h-px w-24 bg-brand-blue/40 sm:block" aria-hidden="true" />
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-3">
-              Meet Our Senior Advisory Team
+            <h2 className="mb-6 text-[32px] leading-[1.08] text-brand-ink sm:text-[48px] lg:text-[clamp(36px,6.4vh,60px)]">
+              Our College Counselors Make All the{" "}
+              <span className="relative inline-block italic text-brand-blue">
+                Difference
+              </span>
             </h2>
 
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Dedicated mentors combining academic rigor, university admissions
-              insight, and compassionate coaching.
+            <p className="mb-9 mt-3 max-w-3xl font-sans text-[16px] leading-[1.7] text-[#344155] lg:text-[clamp(15px,2.1vh,19px)]">
+              At Blue Stars Admissions Consulting, our team blends former university faculty insight, Ivy League
+              academic backgrounds, and executive functioning coaching. We listen deeply to student aspirations,
+              helping them find joy and confidence in the admissions journey.
             </p>
           </div>
+
+          <ul className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+            {COUNSELOR_HIGHLIGHTS.map((item) => {
+              const HighlightIcon = item.icon;
+              return (
+                <li
+                  key={item.text}
+                  className="relative flex items-center gap-4 rounded-[18px] bg-white px-5 py-6 shadow-[0_10px_30px_rgba(11,99,181,0.08)] ring-1 ring-[#e0ebf8] transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <span className="grid h-16 w-16 flex-shrink-0 place-items-center rounded-[16px] bg-[#e9f2fd] text-brand-blue">
+                    <HighlightIcon className="h-7 w-7" aria-hidden="true" />
+                  </span>
+                  <span className="font-sans text-[16px] font-semibold leading-snug text-brand-ink">{item.text}</span>
+                  <span
+                    className="absolute bottom-0 left-1/2 h-1 w-[34%] -translate-x-1/2 rounded-t-full bg-brand-blue"
+                    aria-hidden="true"
+                  />
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="flex justify-center">
+            <Link
+              href="#team"
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-9 text-[16px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <span>Meet Our Full Team Below</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Meet Our Team */}
+      <section
+        id="team"
+        className="relative overflow-hidden bg-gradient-to-b from-[#e9f3fd] via-[#f3f8fe] to-[#e9f3fd] py-14 sm:py-18 lg:py-20"
+      >
+        <div className="pointer-events-none absolute -left-44 -top-10 h-[28rem] w-[28rem] rounded-full bg-white/60" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-48 top-48 h-[30rem] w-[30rem] rounded-full bg-[#cfe3f8]/45" aria-hidden="true" />
+
+        <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center sm:mb-10">
+            <p className="mb-3 flex items-center gap-4 font-sans text-[11.5px] font-semibold uppercase tracking-[0.24em] text-[#0b4f94]">
+              <span className="h-0.5 w-9 bg-[#0b4f94]" aria-hidden="true" />
+              Leadership &amp; strategy
+              <span className="h-0.5 w-9 bg-[#0b4f94]" aria-hidden="true" />
+            </p>
+
+            <h2 className="mb-4 text-[32px] leading-[1.1] text-brand-ink sm:text-[46px]">
+              Meet Our <span className="text-brand-blue">Senior Advisory Team</span>
+            </h2>
+
+            <p className="font-sans text-[15.5px] leading-[1.6] text-[#344155] sm:text-[17px]">
+              Dedicated mentors combining academic rigor, university admissions insight, and compassionate coaching.
+            </p>
+          </div>
+
+          <ul className="mx-auto mb-10 flex max-w-4xl flex-wrap items-center justify-center gap-3 sm:gap-5">
+            {TEAM_HIGHLIGHTS.map((item) => {
+              const HighlightIcon = item.icon;
+              return (
+                <li
+                  key={item.label}
+                  className="flex items-center gap-3 rounded-full bg-white px-6 py-3 shadow-[0_8px_22px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8]"
+                >
+                  <HighlightIcon className="h-5 w-5 text-brand-blue" aria-hidden="true" />
+                  <span className="font-sans text-[14.5px] font-semibold text-brand-ink">{item.label}</span>
+                </li>
+              );
+            })}
+          </ul>
 
           <TeamMembersGrid members={TEAM_MEMBERS} />
         </div>
       </section>
 
       {/* 7b. Professional Accreditations & Affiliations (HECA / WACAC / IECA Badges) */}
-      <section className="py-12 sm:py-16 bg-[#f8fbfe] border-y border-[#e2eef9] relative overflow-hidden">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs font-bold tracking-[0.14em] uppercase font-heading mb-2">
-              <ShieldCheck className="w-3.5 h-3.5 text-brand-blue" />
-              <span>ETHICS &amp; PROFESSIONAL STANDARDS</span>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f2f8fe] via-[#eef6fd] to-[#e4f0fc] py-14 sm:py-18 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+        <div className="pointer-events-none absolute -left-40 -top-24 h-[24rem] w-[24rem] rounded-full bg-white/70" aria-hidden="true" />
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 w-full text-[#c6dff7]"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M0 120V80C140 100 320 110 480 120Z" opacity="0.8" />
+          <path d="M1000 120C1200 100 1340 70 1440 60V120Z" opacity="0.8" />
+        </svg>
+
+        <div className="relative mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto mb-10 max-w-5xl text-center sm:mb-12">
+
+            <div className="mb-4 flex items-center justify-center gap-4">
+              <span className="hidden h-0.5 w-16 bg-brand-blue/70 sm:block" aria-hidden="true" />
+              <p className="inline-flex items-center gap-2.5 rounded-full bg-[#dcedfb] px-5 py-2.5 font-sans text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#0b4f94] shadow-sm">
+                <ShieldCheck className="h-4 w-4" aria-hidden="true" />
+                Ethics &amp; professional standards
+              </p>
+              <span className="hidden h-0.5 w-16 bg-brand-blue/70 sm:block" aria-hidden="true" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy font-heading tracking-tight">
-              Professional Accreditations &amp; Affiliations
+
+            <h2 className="mb-3 text-[30px] leading-[1.1] text-brand-ink sm:text-[44px] lg:text-[clamp(32px,5.2vh,50px)]">
+              <span className="sm:whitespace-nowrap">Professional Accreditations</span>{" "}
+              <span className="text-brand-blue sm:whitespace-nowrap">&amp; Affiliations</span>
             </h2>
-            <p className="text-[14px] sm:text-[16px] text-brand-text font-sans mt-1.5">
-              Blue Stars Admissions Consulting adheres to the strict ethical
-              codes and industry-leading standards of the nation&apos;s foremost
-              admissions associations.
+            <p className="mx-auto max-w-[560px] font-sans text-[15.5px] leading-[1.6] text-[#344155] sm:text-[17px]">
+              Blue Stars adheres to the ethical codes and standards of the nation&apos;s foremost admissions
+              associations.
             </p>
+            <span className="mx-auto mt-5 block h-1 w-20 rounded-full bg-brand-blue" aria-hidden="true" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
-            {PROFESSIONAL_ACCREDITATIONS.map((badge) => (
-              <div
-                key={badge.name}
-                className="bg-white rounded-[5px] border border-[#e2eef9] p-6 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_12px_28px_rgba(10,61,107,0.08)] hover:border-brand-blue/40 transition-all duration-200 flex flex-col items-center text-center justify-between group"
-              >
-                <div>
-                  {/* Badge Logo Container */}
-                  <div className="h-20 w-full flex items-center justify-center mb-4 p-2">
+          <ul className="grid grid-cols-1 gap-7 md:grid-cols-3 lg:gap-8">
+            {PROFESSIONAL_ACCREDITATIONS.map((badge, i) => {
+              const extra = ACCREDITATION_EXTRAS[i % ACCREDITATION_EXTRAS.length];
+              const StatusIcon = extra.statusIcon;
+              const HighlightIcon = extra.highlightIcon;
+              return (
+                <li
+                  key={badge.name}
+                  className="group flex flex-col overflow-hidden rounded-[32px] border-b-[5px] border-b-[#1b5fb8] bg-white shadow-[0_24px_60px_rgba(11,99,181,0.16)] ring-1 ring-[#dbe9f8] transition-transform duration-300 hover:-translate-y-1"
+                >
+                  {/* Logo on a soft wave */}
+                  <div className="relative flex h-44 items-center justify-center px-6 pt-5">
                     <Image
                       src={badge.image}
                       alt={`${badge.name} - ${badge.fullName}`}
-                      width={220}
-                      height={90}
-                      className="max-h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                      width={260}
+                      height={110}
+                      className="relative z-10 max-h-[8.5rem] w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
 
-                  <span className="inline-block px-2.5 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-[11px] font-bold font-heading mb-2">
-                    {badge.tag}
-                  </span>
+                  <div className="flex flex-1 flex-col items-center px-6 pb-5 text-center sm:px-7">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#1b5fb8] px-5 py-2 font-sans text-[11.5px] font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_18px_rgba(27,95,184,0.35)]">
+                      <StatusIcon className="h-4 w-4" aria-hidden="true" />
+                      {badge.tag}
+                    </span>
 
-                  <h3 className="text-base sm:text-[17px] font-extrabold text-brand-navy font-heading mb-1.5">
-                    {badge.fullName} ({badge.name})
-                  </h3>
+                    <h3 className="mt-4 font-display text-[24px] leading-[1.15] !font-semibold text-brand-ink sm:text-[26px]">
+                      {badge.fullName}
+                    </h3>
 
-                  <p className="text-[14px] sm:text-[15px] leading-[22px] text-brand-text font-sans">
-                    {badge.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <p className="mt-3 flex items-center gap-3 font-sans text-[14px] font-bold tracking-[0.2em] text-brand-blue">
+                      <span className="h-px w-8 bg-brand-blue/50" aria-hidden="true" />
+                      {badge.name}
+                      <span className="h-px w-8 bg-brand-blue/50" aria-hidden="true" />
+                    </p>
+
+                    <p className="mt-3 font-sans text-[15px] leading-[1.6] text-[#344155]">{badge.description}</p>
+
+                    <div className="mt-auto flex w-full items-center gap-4 border-t border-[#e3eef9] pt-4 text-left">
+                      <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-[14px] bg-[#e6f1fc] text-brand-blue">
+                        <HighlightIcon className="h-6 w-6" aria-hidden="true" />
+                      </span>
+                      <span className="font-sans text-[14.5px] font-bold leading-snug text-brand-ink">
+                        {extra.highlight}
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 
       {/* 8. Leading Hundreds of College-Bound Teens to Success (7 Core Principles) */}
-      <section className="py-14 sm:py-18 lg:py-22 bg-gradient-to-b from-[#eaf6f0] via-[#f5fbf7] to-[#eef7f2] border-y border-[#d2ebdc] relative overflow-hidden">
-        {/* Decorative Ambient Background Wave */}
-        <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#2F9E5C]/10 via-transparent to-transparent rounded-bl-[220px] pointer-events-none"
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fafcff] to-[#f0f6fd] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+        <div className="pointer-events-none absolute -left-32 -top-24 h-72 w-96 rounded-full bg-[#e6f0fc]/70" aria-hidden="true" />
+        <svg
+          viewBox="0 0 1440 140"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full text-[#dbe9f9]"
+          fill="currentColor"
           aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[380px] h-[300px] bg-gradient-to-tr from-[#0B63B5]/10 via-transparent to-transparent rounded-tr-[200px] pointer-events-none"
-          aria-hidden="true"
-        />
+        >
+          <path d="M0 140V90C160 70 340 90 520 140Z" opacity="0.6" />
+          <path d="M900 140C1100 120 1300 80 1440 50V140Z" opacity="0.8" />
+        </svg>
 
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Centered Section Header */}
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <span
-                className="w-6 h-[2px] bg-[#2F9E5C] rounded-full"
-                aria-hidden="true"
-              />
-              <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-[#2F9E5C] font-heading">
-                OUR PHILOSOPHY &amp; APPROACH
+        <div className="relative z-10 mx-auto grid w-full max-w-[1360px] grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_1px_minmax(0,1.25fr)] lg:gap-12 lg:px-8">
+          {/* Left */}
+          <div className="flex flex-col justify-center">
+            <p className="mb-5 flex items-center gap-4 font-sans text-[11.5px] font-semibold uppercase tracking-[0.2em] text-brand-blue">
+              <span className="h-0.5 w-12 bg-brand-blue" aria-hidden="true" />
+              Our philosophy &amp; approach
+            </p>
+
+            <h2 className="mb-6 text-[32px] leading-[1.08] text-brand-ink sm:text-[46px] lg:text-[clamp(36px,6vh,58px)]">
+              Leading Hundreds of College-Bound Teens to{" "}
+              <span className="relative inline-block italic text-brand-blue">
+                Success
               </span>
-              <span
-                className="w-6 h-[2px] bg-[#2F9E5C] rounded-full"
-                aria-hidden="true"
-              />
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-3">
-              Leading Hundreds of College-Bound Teens to Success
             </h2>
 
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Our 7 developmental principles guiding students from
-              self-awareness to lifelong collegiate achievement.
+            <p className="mb-8 mt-3 max-w-[470px] font-sans text-[16px] leading-[1.7] text-[#4a5568] lg:text-[clamp(15px,2.1vh,19px)]">
+              Our 7 developmental principles guide students from self-awareness to lifelong collegiate achievement.
             </p>
-          </div>
 
-          {/* 7 Modern Principles in Clean Vertical Responsive Stack */}
-          <div className="space-y-3 sm:space-y-3.5 max-w-3xl mx-auto">
-            {SUCCESS_PRINCIPLES.map((item) => (
-              <div
-                key={item.step}
-                className="bg-white rounded-[6px] border border-[#d6ecdf] hover:border-[#2F9E5C]/60 p-4 sm:p-5 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_8px_24px_rgba(47,158,92,0.12)] transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-4 sm:gap-5 group"
+            <div>
+              <Link
+                href="/#contact"
+                className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
               >
-                {/* Number Badge */}
-                <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-[8px] bg-gradient-to-br from-[#0B63B5] to-[#0A3D6B] text-white font-extrabold text-sm sm:text-[15px] font-heading grid place-items-center shadow-xs flex-shrink-0 group-hover:from-[#2F9E5C] group-hover:to-[#1e7e44] transition-all">
-                  {item.step}
-                </div>
+                <span>Read More About Our Philosophy</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
 
-                {/* Principle Title */}
-                <p className="text-[15px] sm:text-[16.5px] font-bold text-brand-navy font-heading leading-snug group-hover:text-brand-blue transition-colors flex-1">
-                  {item.title}
+          {/* Divider */}
+          <div className="hidden bg-[#e0e8f3] lg:block" aria-hidden="true" />
+
+          {/* Principles */}
+          <ol className="flex flex-col justify-center gap-3.5 sm:gap-4">
+            {SUCCESS_PRINCIPLES.map((item) => (
+              <li
+                key={item.step}
+                className="group flex items-center gap-4 rounded-[34px] bg-white/85 px-4 py-3.5 shadow-[0_10px_30px_rgba(11,99,181,0.07)] ring-1 ring-[#dfe9f7] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(11,99,181,0.14)] sm:gap-5 sm:px-5 sm:py-4"
+              >
+                <span className="grid h-[3.8rem] w-[3.8rem] flex-shrink-0 place-items-center rounded-[18px] bg-[#e6effb] font-sans text-[26px] font-bold text-brand-blue sm:h-[4.4rem] sm:w-[4.4rem] sm:text-[30px]">
+                  {String(item.step).padStart(2, "0")}
+                </span>
+                <span className="h-11 w-px flex-shrink-0 bg-[#d3dff0]" aria-hidden="true" />
+                <p className="font-display text-[18px] leading-[1.3] text-brand-ink sm:text-[21px]">
+                  {item.title.endsWith(".") ? item.title : `${item.title}.`}
                 </p>
-
-                {/* Checkmark Accent */}
-                <CheckCircle2 className="w-5 h-5 text-[#2F9E5C] flex-shrink-0 ml-auto transition-transform group-hover:scale-110" />
-              </div>
+              </li>
             ))}
-          </div>
-
-          {/* Centered Read More Action Link */}
-          <div className="mt-10 sm:mt-12 text-center">
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 rounded-[5px] text-xs sm:text-[14px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs hover:shadow-sm group"
-            >
-              <span>
-                Read more about our philosophy and what each stage accomplishes
-              </span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* 9. Our Commitment to Your Teen and Your Family (6 Core Values) */}
-      <section className="py-14 sm:py-18 lg:py-22 bg-white">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <span
-                className="w-6 h-[2px] bg-brand-blue rounded-full"
-                aria-hidden="true"
-              />
-              <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
-                GUIDING PRINCIPLES
-              </span>
-              <span
-                className="w-6 h-[2px] bg-brand-blue rounded-full"
-                aria-hidden="true"
-              />
-            </div>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f2f8fe] via-white to-[#eaf3fd] py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute -right-40 -top-24 h-[26rem] w-[26rem] rounded-full bg-[#dcebfb]/70" aria-hidden="true" />
+        <div className="pointer-events-none absolute -left-44 bottom-10 h-[24rem] w-[24rem] rounded-full bg-white/80" aria-hidden="true" />
 
-            <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-3">
-              Our Commitment to Your Teen and Your Family
+        <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-12 flex max-w-3xl flex-col items-center text-center sm:mb-14">
+            <p className="mb-4 flex items-center gap-4 font-sans text-[11.5px] font-semibold uppercase tracking-[0.24em] text-[#0b4f94]">
+              <span className="h-0.5 w-9 bg-[#0b4f94]" aria-hidden="true" />
+              Guiding principles
+              <span className="h-0.5 w-9 bg-[#0b4f94]" aria-hidden="true" />
+            </p>
+
+            <h2 className="mb-4 text-[30px] leading-[1.1] text-brand-ink sm:text-[44px]">
+              Our Commitment to Your Teen and{" "}
+              <span className="italic text-brand-blue">Your Family</span>
             </h2>
 
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text font-sans">
-              Six foundational values shape every consultation, essay review,
-              and strategic milestone at Blue Stars.
+            <p className="font-sans text-[15.5px] leading-[1.65] text-[#344155] sm:text-[17px]">
+              Six foundational values shape every consultation, essay review, and strategic milestone at Blue Stars.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {CORE_VALUES.map((val) => {
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {CORE_VALUES.map((val, idx) => {
               const Icon = val.icon;
               return (
-                <div
+                <li
                   key={val.title}
-                  className="bg-white rounded-[6px] border border-[#e5f0fa] shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+                  className="group relative flex flex-col overflow-hidden rounded-[26px] bg-white shadow-[0_18px_46px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_60px_rgba(11,99,181,0.2)]"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={val.image}
-                      alt={val.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#073d63]/85 via-black/30 to-transparent pointer-events-none" />
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    {"image" in val && val.image ? (
+                      <Image
+                        src={val.image}
+                        alt={`${val.title}: illustration`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#0a2f5c] via-[#14509a] to-[#3a8fe3]" />
+                        <div className="absolute inset-0 text-white opacity-90">
+                          <Constellation variant={idx} />
+                        </div>
+                      </>
+                    )}
 
-                    <div className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#07466f]/90 backdrop-blur-md border border-white/20 text-white shadow-sm">
-                      <Icon className="w-3.5 h-3.5 text-[#38bdf8]" />
-                      <span className="text-xs sm:text-[13px] font-bold font-heading tracking-wide">
-                        {val.title}
-                      </span>
+                    <div className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/95 text-brand-blue shadow-md">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
+                    <span
+                      className="absolute right-5 top-3 font-display text-[40px] leading-none text-white/60"
+                      aria-hidden="true"
+                    >
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-[19px] sm:text-[20px] font-bold text-brand-navy font-heading mb-2">
+                  <div className="flex flex-1 flex-col px-7 pb-8 pt-6">
+                    <h3 className="mb-3 font-display text-[24px] leading-snug !font-medium text-brand-ink sm:text-[26px]">
                       {val.title}
                     </h3>
-                    <p className="text-[14.5px] sm:text-[15.5px] leading-[23px] sm:leading-[25px] text-brand-text font-sans">
-                      {val.description}
-                    </p>
+                    <p className="font-sans text-[15.5px] leading-[1.7] text-[#344155]">{val.description}</p>
                   </div>
-                </div>
+
+                  <span
+                    className="absolute bottom-0 left-7 h-1 w-14 rounded-t-full bg-brand-blue transition-all duration-300 group-hover:w-24"
+                    aria-hidden="true"
+                  />
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* 10. The Blue Star Manifesto Banner */}
-      <section className="py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-brand-ink text-white relative overflow-hidden">
         {/* Luminous Glowing Waves in Background */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden z-0"
@@ -941,14 +1002,11 @@ export default function AboutPage() {
         >
           <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 right-[12%] w-24 h-24 text-[#38bdf8] opacity-25 blur-xs">
-            <BrandStar className="w-full h-full fill-current" />
-          </div>
         </div>
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-4 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-brand-mint text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-4 shadow-xs">
               <span
                 className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse"
                 aria-hidden="true"
@@ -956,10 +1014,10 @@ export default function AboutPage() {
               <span>THE BLUE STAR MANIFESTO</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-extrabold text-white font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[46px] mb-2">
+            <h2 className="text-[32px] sm:text-[46px] leading-[1.08] text-white mb-3">
               More than just our business name,
             </h2>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-[#79c3f7] font-heading tracking-tight leading-[1.25] mb-6">
+            <h3 className="font-display italic text-[22px] sm:text-[28px] !font-normal !text-brand-mint leading-[1.3] mb-8">
               it&apos;s our guiding star. No star shines as bright as THE BLUE
               STAR.
             </h3>
@@ -973,12 +1031,12 @@ export default function AboutPage() {
 
             <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] font-sans mb-8">
               Our mission is to help teens uncover, ignite, and project that
-              spark into the world—creating college applications that burn
+              spark into the world&mdash;creating college applications that burn
               brightly in selective admissions pools, and personal confidence
               that lasts a lifetime.
             </p>
 
-            <div className="inline-block p-4 rounded-[6px] bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+            <div className="inline-block px-6 py-4 rounded-[12px] bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
               <span className="block text-base sm:text-[17px] font-bold text-[#bfe2fa] tracking-wider uppercase font-heading">
                 &mdash; DR. AMY MORGENSTERN, PH.D.
               </span>
@@ -990,7 +1048,7 @@ export default function AboutPage() {
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-white hover:bg-brand-mint text-brand-ink font-semibold tracking-wide text-[14.5px] shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 <span>Begin Your Blue Stars Journey</span>
                 <ArrowRight className="w-4 h-4 text-[#0A3D6B]" />
@@ -1000,96 +1058,93 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 11. Modern Elevated Final CTA Banner */}
-      <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-4">
-          <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
-            {/* Luminous Glow Waves */}
+      {/* 11. Final CTA banner */}
+      <section className="relative w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#031a3a] via-[#06306a] to-[#0a4fa8] text-white shadow-[0_30px_70px_rgba(6,38,74,0.3)]">
+            {/* Glow and sweeping curves (decorative) */}
             <div
-              className="absolute inset-0 pointer-events-none overflow-hidden z-0"
+              className="pointer-events-none absolute inset-0"
+              style={{ background: "radial-gradient(ellipse at 85% 40%, rgba(56,140,248,0.45), transparent 55%)" }}
+              aria-hidden="true"
+            />
+            <svg
+              viewBox="0 0 1000 400"
+              preserveAspectRatio="none"
+              className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[55%] lg:block"
+              fill="none"
               aria-hidden="true"
             >
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
-            </div>
+              <path d="M1000 0V400H300C520 380 760 260 820 0Z" fill="#1c6fdc" opacity="0.35" />
+              <path d="M1000 120V400H520C760 360 900 250 1000 120Z" fill="#2d86e8" opacity="0.45" />
+            </svg>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
-              <div className="p-7 sm:p-10 lg:p-12 xl:p-14 flex flex-col items-start text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
-                  <span
-                    className="w-1.5 h-1.5 rounded-[5px] bg-[#38bdf8] animate-pulse"
-                    aria-hidden="true"
-                  />
-                  <span>READY TO GET STARTED?</span>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[36px] font-extrabold text-white mb-3 font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[44px]">
-                  Make College Admissions Less Stressful and More Successful
-                </h2>
-
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
-                  Schedule your complimentary 30-minute introductory
-                  consultation to map your student&apos;s personalized
-                  admissions roadmap.
+            <div className="relative z-10 grid grid-cols-1 items-center lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.9fr)]">
+              <div className="flex flex-col items-start p-7 sm:p-10 lg:p-12 xl:p-14">
+                <p className="mb-6 inline-flex items-center gap-3 rounded-full border-2 border-sky-400/60 bg-white/5 px-5 py-2.5 font-sans text-[13px] font-bold uppercase tracking-[0.06em] text-white shadow-[0_0_24px_rgba(56,140,248,0.35)]">
+                  <CalendarCheck className="h-5 w-5 text-sky-300" aria-hidden="true" />
+                  Ready to get started?
                 </p>
 
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-8 text-xs sm:text-[13.5px] text-[#bfe2fa] font-medium font-sans">
-                  <span className="inline-flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                    <span>Free Initial Consultation</span>
+                <h2 className="mb-5 text-[30px] leading-[1.1] text-white sm:text-[44px] lg:text-[clamp(34px,5.4vh,54px)]">
+                  Make College Admissions Less Stressful and{" "}
+                  <span className="relative inline-block italic text-[#5cc7f5]">
+                    More Successful
                   </span>
-                  <span className="inline-flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#3bd386] flex-shrink-0" />
-                    <span>Whole-Student Mentorship</span>
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                    <span>No Obligation</span>
-                  </span>
-                </div>
+                </h2>
+
+                <p className="mb-7 mt-3 max-w-xl font-sans text-[16px] leading-[1.65] text-white/85 sm:text-[18px]">
+                  Schedule your complimentary 30-minute introductory consultation to map your student&apos;s
+                  personalized admissions roadmap.
+                </p>
+
+                <ul className="mb-8 flex flex-wrap items-center gap-3">
+                  <li className="flex items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 ring-1 ring-white/15">
+                    <CalendarCheck className="h-6 w-6 text-sky-300" aria-hidden="true" />
+                    <span className="font-sans text-[14.5px] font-medium text-white">Free Initial Consultation</span>
+                  </li>
+                  <li className="flex items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 ring-1 ring-white/15">
+                    <Users2 className="h-6 w-6 text-sky-300" aria-hidden="true" />
+                    <span className="font-sans text-[14.5px] font-medium text-white">Whole-Student Mentorship</span>
+                  </li>
+                  <li className="flex items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 ring-1 ring-white/15">
+                    <ShieldCheck className="h-6 w-6 text-sky-300" aria-hidden="true" />
+                    <span className="font-sans text-[14.5px] font-medium text-white">No Obligation</span>
+                  </li>
+                </ul>
 
                 <Link
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                  className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-4 py-4 text-center sm:inline-flex sm:w-auto sm:gap-3 sm:px-9 font-sans text-[14.5px] sm:text-[16px] font-semibold tracking-normal sm:tracking-wide text-[#0a2f5c] shadow-[0_14px_34px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:scale-[1.02]"
                 >
-                  <span>Book Your Initial Consultation</span>
-                  <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="whitespace-nowrap">Book Your Initial Consultation</span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
 
-              {/* Student Cutout & Glowing Brand Stars */}
-              <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
+              {/* Students inside a glowing circle */}
+              <div className="relative h-[300px] w-full sm:h-[380px] lg:h-full lg:min-h-[28rem]">
                 <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
+                  className="pointer-events-none absolute bottom-[-18%] left-1/2 aspect-square w-[88%] -translate-x-1/2 rounded-full bg-gradient-to-br from-[#2d86e8] to-[#0a4fa8] opacity-80 lg:left-[52%] lg:w-[92%]"
                   aria-hidden="true"
                 />
-
                 <div
-                  className="absolute right-[28%] sm:right-[30%] lg:right-[26%] top-[26%] w-[76px] h-[76px] sm:w-[86px] sm:h-[86px] lg:w-[94px] lg:h-[94px] text-[#2ba3ea] opacity-85 pointer-events-none drop-shadow-[0_4px_16px_rgba(43,163,234,0.4)] z-0"
+                  className="pointer-events-none absolute bottom-[-12%] left-1/2 aspect-square w-[88%] -translate-x-1/2 rounded-full border-2 border-sky-300/50 lg:left-[48%] lg:w-[92%]"
                   aria-hidden="true"
-                >
-                  <BrandStar className="w-full h-full fill-current" />
-                </div>
-
-                <div
-                  className="absolute right-[3%] sm:right-[5%] lg:right-[1%] top-[8%] w-[110px] h-[110px] sm:w-[126px] sm:h-[126px] lg:w-[136px] lg:h-[136px] text-[#3bd386] opacity-95 pointer-events-none drop-shadow-[0_6px_20px_rgba(59,211,134,0.45)] z-0"
+                />
+                <BrandStar
+                  className="pointer-events-none absolute right-[6%] top-[12%] h-12 w-12 text-sky-200 drop-shadow-[0_0_16px_rgba(125,211,252,0.8)]"
                   aria-hidden="true"
-                >
-                  <BrandStar className="w-full h-full fill-current" />
-                </div>
-
-                <div className="relative w-[260px] sm:w-[290px] lg:w-[320px] xl:w-[335px] h-[240px] sm:h-[280px] lg:h-[295px] z-10 flex-shrink-0">
-                  <Image
-                    src="/images/sub_images/ready_to_take.png"
-                    alt="Student smiling with phone and backpack, ready for college success"
-                    fill
-                    priority
-                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 340px"
-                    className="object-contain object-bottom select-none pointer-events-none"
-                  />
-                </div>
+                />
+                <Image
+                  src="/images/about/students-cutout.webp"
+                  alt="Two smiling students with a notebook and a laptop"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  className="relative z-10 object-contain object-bottom select-none pointer-events-none"
+                />
               </div>
             </div>
           </div>

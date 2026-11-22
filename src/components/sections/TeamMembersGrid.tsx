@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, ChevronUp, GraduationCap, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface TeamMember {
@@ -13,6 +13,8 @@ export interface TeamMember {
   bio: string;
   image: string;
   badge: string;
+  /** Optional: when set, a LinkedIn button is shown on the photo. */
+  linkedin?: string;
   affiliations?: { name: string; image: string }[];
 }
 
@@ -31,114 +33,111 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-start">
+    <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5 xl:gap-7">
       {members.map((member) => {
         const isExpanded = !!expandedMembers[member.name];
+        const bioId = `bio-${member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
         return (
-          <div
+          <article
             key={member.name}
-            className="bg-white rounded-[5px] border border-[#e2eef9] shadow-[0_6px_24px_rgba(10,61,107,0.06)] hover:shadow-[0_16px_36px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between group h-full"
+            className="group flex flex-col rounded-[28px] bg-white p-3 shadow-[0_20px_50px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8] transition-shadow duration-300 hover:shadow-[0_26px_60px_rgba(11,99,181,0.2)]"
           >
-            <div>
-              {/* Photo with Overlay Badge */}
-              <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
+            {/* Photo on a blue panel */}
+            <div className="relative aspect-[1/0.88] w-full overflow-hidden rounded-[22px] bg-gradient-to-br from-[#3a8fe3] via-[#1d63b9] to-[#0c3f86]">
+              <div className="pointer-events-none absolute -right-10 -top-12 h-52 w-52 rounded-full bg-white/10" aria-hidden="true" />
+              <Image
+                src={member.image}
+                alt={member.name}
+                fill
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 340px"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                  className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-lg bg-white/25 text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-[#0b4f94]"
+                >
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
+            </div>
 
-                <div className="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-[4px] bg-[#07466f]/90 backdrop-blur-md text-white text-[10px] sm:text-[10.5px] font-bold font-heading border border-white/20 tracking-wider">
-                  {member.badge}
-                </div>
+            <div className="flex flex-1 flex-col px-2.5 pb-1 pt-3.5">
+              <h3 className="font-display text-[25px] leading-tight !font-medium text-brand-ink">{member.name}</h3>
+
+              <div className="mt-2.5 lg:min-h-[3.1rem]">
+                <span className="inline-flex rounded-full bg-[#e3effc] px-3.5 py-1.5 font-sans text-[12px] font-bold uppercase leading-snug tracking-[0.07em] text-[#0b4f94]">
+                  {member.role}
+                </span>
               </div>
 
-              {/* Body Content */}
-              <div className="p-4 sm:p-5">
-                <h3 className="text-[18px] sm:text-[19px] font-extrabold text-brand-navy font-heading mb-1 leading-snug group-hover:text-brand-blue transition-colors">
-                  {member.name}
-                </h3>
-                <div className="text-xs sm:text-[12.5px] font-bold text-brand-blue font-heading mb-1">
-                  {member.role}
-                </div>
-                <div className="text-[11.5px] text-brand-text/80 font-sans italic mb-3">
-                  {member.credentials}
-                </div>
+              <div className="mt-2.5 flex items-start gap-3 lg:min-h-[4.1rem]">
+                <GraduationCap className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-ink" aria-hidden="true" />
+                <p className="font-sans text-[14.5px] font-medium leading-[1.4] text-brand-ink">{member.credentials}</p>
+              </div>
 
-                {/* Professional Accreditation Badges (HECA, WACAC, IECA) */}
+              <div className="mt-2.5 mb-3">
+                <p
+                  id={bioId}
+                  className={cn("font-sans text-[14.5px] leading-[1.55] text-[#344155]", !isExpanded && "line-clamp-2")}
+                >
+                  {member.bio}
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => toggleMember(member.name)}
+                  className="mt-2 inline-flex cursor-pointer select-none items-center gap-1.5 font-sans text-[14.5px] font-semibold text-[#0b4f94] underline underline-offset-4 transition-colors hover:text-brand-ink"
+                  aria-expanded={isExpanded}
+                  aria-controls={bioId}
+                >
+                  <span>{isExpanded ? "Read less" : "Read more"}</span>
+                  {isExpanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ArrowRight className="h-3.5 w-3.5" />}
+                </button>
+              </div>
+
+              <div className="mt-auto">
                 {member.affiliations && member.affiliations.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-1.5 mb-3 pt-2 border-t border-[#e2eef9]">
-                    <span className="text-[10px] font-bold text-brand-navy/70 uppercase tracking-wider font-heading mr-0.5">
-                      Accredited:
-                    </span>
+                  <div className="mb-3 flex flex-wrap items-center gap-2 border-t border-[#e3eef9] pt-2.5">
+                    <span className="font-sans text-[14.5px] font-bold text-brand-ink">Accredited</span>
                     {member.affiliations.map((aff) => (
                       <div
                         key={aff.name}
-                        className="h-6 px-1.5 py-0.5 rounded-[3px] bg-[#f0f6fc] border border-[#dce8f5] flex items-center justify-center shadow-2xs"
+                        className="flex h-9 items-center justify-center rounded-full bg-white px-3 shadow-[0_4px_12px_rgba(11,99,181,0.12)] ring-1 ring-[#e3eef9]"
                         title={aff.name}
                       >
                         <Image
                           src={aff.image}
                           alt={aff.name}
-                          width={36}
-                          height={16}
-                          className="max-h-3.5 w-auto object-contain"
+                          width={40}
+                          height={18}
+                          className="max-h-4 w-auto object-contain"
                         />
                       </div>
                     ))}
                   </div>
                 )}
 
-                {/* Bio text with 4-line clamp & modern Read More / Read Less toggle */}
-                <div>
-                  <p
-                    className={cn(
-                      "text-[13px] sm:text-[13.5px] leading-[20px] sm:leading-[22px] text-brand-text font-sans transition-all duration-200",
-                      !isExpanded && "line-clamp-4"
-                    )}
+                <div className="border-t border-[#e3eef9] px-1 pb-1 pt-4 sm:px-0 sm:pb-0 sm:pt-3">
+                  <Link
+                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-[#2b6cb8]/45 px-5 py-3 text-center font-sans text-[13.5px] font-bold leading-tight sm:py-2.5 sm:px-4 sm:text-[14px] text-brand-ink transition-colors duration-200 hover:border-brand-ink hover:bg-brand-ink hover:text-white"
                   >
-                    {member.bio}
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={() => toggleMember(member.name)}
-                    className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-bold text-brand-blue hover:text-brand-navy font-heading transition-colors cursor-pointer select-none group/btn"
-                    aria-expanded={isExpanded}
-                  >
-                    <span>{isExpanded ? "Read Less" : "Read More"}</span>
-                    {isExpanded ? (
-                      <ChevronUp className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:-translate-y-0.5" />
-                    ) : (
-                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-y-0.5" />
-                    )}
-                  </button>
+                    <span className="whitespace-nowrap">Book Free 30-Min Consultation</span>
+                    <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" />
+                  </Link>
                 </div>
               </div>
             </div>
-
-            {/* Bottom Action */}
-            <div className="p-4 sm:p-5 pt-0">
-              <div className="pt-3 border-t border-[#edf4fb]">
-                <Link
-                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full gap-2 py-2.5 px-3 rounded-[5px] text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm font-heading group-hover:scale-[1.01]"
-                >
-                  <span>Book Free 30-Min Consultation</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
+          </article>
         );
       })}
     </div>
   );
 }
-

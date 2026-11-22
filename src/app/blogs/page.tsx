@@ -48,6 +48,7 @@ export default function BlogsPage() {
       {/* Short, Compact Breadcrumb Hero */}
       <BreadcrumbHero
         breadcrumbs={[{ label: "Blogs & Insights" }]}
+        classic
         badge="EXPERT ADMISSIONS INSIGHTS"
         title="Admissions Insights, Guides & Strategies"
         description="Explore proven frameworks, multi-year high school roadmaps, essay brainstorming methods, and merit scholarship guidance crafted by Dr. Amy Morgenstern and our senior admissions team."

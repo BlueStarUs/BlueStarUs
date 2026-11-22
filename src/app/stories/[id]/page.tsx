@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const canonicalUrl = `https://bluestars.us/stories/${id}`;
-  const ogImage = story.image && story.image.startsWith("http") ? story.image : "/images/sub_images/ready_to_take.png";
+  const ogImage = story.image && story.image.startsWith("http") ? story.image : "/images/og-image.png";
 
   return {
     title: `${story.name}'s Success Story – ${story.admittedTo || "Admissions Success"}`,

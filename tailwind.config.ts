@@ -35,11 +35,14 @@ const config: Config = {
           sky: "#EBF5F7",        // Luminous soft tint derived from #8FD2C8
           bg: "#F4F9FB",         // Neutral soft background
           border: "#D8EAEE",     // Harmonized border line
+          ivory: "#FAF7F2",      // Boutique warm off-white background
+          ink: "#12305A",        // Deep editorial navy for display headings
         },
       },
       fontFamily: {
         sans: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
         heading: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
+        display: ["Fraunces", "Georgia", "'Times New Roman'", "serif"],
         montserrat: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
         jakarta: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
         inter: ["Montserrat", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],

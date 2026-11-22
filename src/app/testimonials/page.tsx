@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://bluestars.us/testimonials",
     images: [
       {
-        url: "/images/sub_images/ready_to_take.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Blue Stars Admissions Consulting Testimonials",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Parent & Student Admissions Reviews | Blue Stars",
     description:
       "Read firsthand testimonials from parents and students admitted to Stanford, Harvard, Brown, WashU, RISD, UC Berkeley, and other top-tier universities.",
-    images: ["/images/sub_images/ready_to_take.png"],
+    images: ["/images/og-image.png"],
   },
 };
 

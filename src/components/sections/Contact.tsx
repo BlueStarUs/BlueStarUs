@@ -88,23 +88,6 @@ export function Contact() {
                 Let&apos;s Discuss<br />
                 <span className="text-brand-blue relative inline-block">
                   Your College Goals
-                  {/* Centered Curved Arc Highlight Underneath (Same as Services) */}
-                  <span className="absolute -bottom-2 left-0 right-0 flex justify-center pointer-events-none">
-                    <svg
-                      className="w-44 sm:w-56 h-3 text-[#79bbf0] opacity-85"
-                      viewBox="0 0 240 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M2 9.5C65 2.5 175 2.5 238 9.5"
-                        stroke="currentColor"
-                        strokeWidth="2.8"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
                 </span>
               </h2>
             </div>
@@ -171,12 +154,12 @@ export function Contact() {
 
             <div className="relative w-full h-full min-h-[260px] sm:min-h-[300px] lg:min-h-[360px]">
               <Image
-                src="/images/sub_images/bottoms.png"
-                alt="Family consulting with Blue Stars admissions advisor"
+                src="/images/teams/blue-stars-team-montage.webp"
+                alt="Dr. Amy Morgenstern with Blue Stars counselors Helen Ingerson, Samuel Ortiz and Wai Cheng"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 480px"
-                className="object-cover object-center lg:object-right"
+                className="object-contain object-bottom"
               />
             </div>
 

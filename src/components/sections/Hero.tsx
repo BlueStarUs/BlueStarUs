@@ -1,15 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import {
-  GraduationCapHeroIcon,
-  TeamGroupHeroIcon,
-  GrowthChartHeroIcon,
-  HeroUsersIcon,
-  HeroDocIcon,
-  HeroHeartIcon,
-} from "@/components/ui/Icons";
 import { getHeroConfig } from "@/lib/admin-store";
 import { DEFAULT_HERO_CONFIG } from "@/lib/constants";
 import { HeroConfig } from "@/types";
@@ -18,6 +10,16 @@ export interface HeroProps {
   customConfig?: Partial<HeroConfig>;
 }
 
+const TEAM_MONTAGE = "/images/teams/blue-stars-team-montage.webp";
+// The previous stock hero photo. If the admin panel still points at it, show the team instead.
+const LEGACY_STOCK_HERO = "Students_hero";
+
+const CREDENTIALS = ["Ph.D. & MFA", "Former University Faculty", "Since 2010", "HECA", "IECA", "WACAC"];
+
+/**
+ * Boutique hero: the founder and counselors are the first thing a family sees.
+ * Copy (kicker, three heading lines, description, buttons) stays editable in Admin → Hero.
+ */
 export async function Hero({ customConfig }: HeroProps = {}) {
   let heroConfig: HeroConfig = { ...DEFAULT_HERO_CONFIG };
 
@@ -28,138 +30,75 @@ export async function Hero({ customConfig }: HeroProps = {}) {
     heroConfig = { ...heroConfig, ...customConfig };
   }
 
+  const heroImage =
+    heroConfig.image && !heroConfig.image.includes(LEGACY_STOCK_HERO) ? heroConfig.image : TEAM_MONTAGE;
+  const primaryIsExternal = /^https?:\/\//.test(heroConfig.primaryBtnHref || "");
+
   return (
-    <section
-      className="relative w-full bg-gradient-to-b from-[#f3f9ff] via-[#f8fbff] to-white overflow-hidden"
-      id="home"
-    >
-      {/* Subtle modern ambient background glow */}
-      <div
-        className="absolute top-0 left-0 w-[420px] h-[420px] bg-brand-sky/60 rounded-full blur-3xl pointer-events-none -translate-x-1/3 -translate-y-1/3"
-        aria-hidden="true"
-      />
-
-      {/* Full-width responsive 2-column grid (Original Layout) */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 items-center min-h-[480px] lg:min-h-[520px] xl:min-h-[560px]">
-        {/* Left Text Column: Exact original font sizes with fluid responsive scaling */}
-        <div className="w-full flex justify-center lg:justify-end py-8 sm:py-10 lg:py-12 xl:py-14 px-5 sm:px-8 lg:px-0 z-10">
-          <div className="w-full max-w-[560px] lg:max-w-[580px] xl:max-w-[600px] lg:mr-6 xl:mr-14 2xl:mr-20 lg:pl-6">
-            {/* Kicker */}
-            <div className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue mb-2.5 sm:mb-3 font-heading lg:text-left text-center">
+    <section className="relative w-full bg-brand-ivory overflow-hidden lg:min-h-[calc(100svh-9rem)] flex" id="home">
+      <div className="mx-auto w-full max-w-[1440px] grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] items-stretch">
+        {/* Copy */}
+        <div className="relative z-10 flex items-center px-6 sm:px-10 lg:pl-16 xl:pl-24 lg:pr-6 pt-12 pb-8 sm:pt-16 lg:py-[clamp(1.5rem,4vh,4rem)]">
+          <div className="w-full max-w-[560px] mx-auto lg:mx-0">
+            <p className="text-[11.5px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-brand-blue mb-5 font-sans">
               {heroConfig.kicker}
-            </div>
+            </p>
 
-            {/* Main Heading (Original 3-line breakdown) */}
-            <h1 className="text-[32px] xs:text-[36px] sm:text-[42px] md:text-[46px] lg:text-[48px] xl:text-[54px] 2xl:text-[58px] font-[700] text-brand-navy mb-4 sm:mb-5 tracking-tight leading-[1.12] font-heading lg:text-left text-center lg:py-0 py-4">
-              {heroConfig.headingLine1}
-              <br className="hidden sm:inline" />{" "}
-              {heroConfig.headingLine2}
-              <br className="hidden sm:inline" />{" "}
-              {heroConfig.headingLine3}
+            <h1 className="text-[40px] sm:text-[52px] lg:text-[clamp(40px,6.2vh,64px)] leading-[1.04] text-brand-ink mb-6 lg:mb-[clamp(1rem,2.6vh,1.5rem)]">
+              <span className="block">{heroConfig.headingLine1}</span>
+              <span className="block italic text-brand-blue">
+                {heroConfig.headingLine2} {heroConfig.headingLine3}
+              </span>
             </h1>
 
-            {/* Description */}
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-brand-text mb-6 sm:mb-7 font-sans max-w-[480px] lg:text-left text-center">
+            <p className="text-[16px] sm:text-[17px] lg:text-[clamp(15px,1.85vh,17px)] leading-[1.7] text-[#4a5568] mb-8 lg:mb-[clamp(1rem,3vh,2rem)] max-w-[500px]">
               {heroConfig.description}
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-3.5 mb-7 sm:mb-8">
-              <Button
-                variant="primary"
-                size="md"
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-10 lg:mb-[clamp(1.25rem,3.5vh,2.5rem)]">
+              <a
                 href={heroConfig.primaryBtnHref || "/#contact"}
-                className="shadow-[0_4px_14px_rgba(11,99,181,0.24)] hover:shadow-[0_8px_20px_rgba(11,99,181,0.34)] hover:-translate-y-0.5 transition-all duration-200 font-heading font-semibold text-xs sm:text-sm py-3 px-6 justify-center"
+                {...(primaryIsExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-ink hover:bg-brand-blue text-white px-7 py-3.5 text-[14px] font-semibold tracking-wide transition-colors duration-200"
               >
-                <span>{heroConfig.primaryBtnText}</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-              <Button
-                variant="outline"
-                size="md"
-                href={heroConfig.secondaryBtnHref || "/#services"}
-                className="font-heading font-semibold text-xs sm:text-sm py-3 px-6 hover:bg-brand-sky/60 hover:-translate-y-0.5 transition-all duration-200 justify-center"
+                {heroConfig.primaryBtnText}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <Link
+                href={heroConfig.secondaryBtnHref || "/#team"}
+                className="inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold text-brand-ink underline decoration-brand-mint decoration-2 underline-offset-[6px] hover:text-brand-blue transition-colors"
               >
                 {heroConfig.secondaryBtnText}
-              </Button>
+              </Link>
             </div>
 
-            {/* Feature Highlights Row: 1 Row with 3 Columns & Centered on Mobile */}
-            <div className="grid grid-cols-3 items-center justify-items-center gap-2 sm:gap-6 lg:gap-8 pt-4 sm:pt-5 border-t border-brand-border/60 w-full">
-              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
-                <HeroUsersIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
-                <span className="whitespace-pre-line">{heroConfig.feature1}</span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
-                <HeroDocIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
-                <span className="whitespace-pre-line">{heroConfig.feature2}</span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-[12.5px] lg:text-[13px] font-bold text-brand-navy leading-tight sm:leading-snug font-heading group">
-                <HeroHeartIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] flex-shrink-0 transition-transform group-hover:scale-105" />
-                <span className="whitespace-pre-line">{heroConfig.feature3}</span>
-              </div>
-            </div>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 pt-6 border-t border-[#e6dfd3] text-[11px] font-semibold tracking-[0.16em] uppercase text-[#7a7f88]">
+              {CREDENTIALS.map((c, i) => (
+                <li key={c} className="flex items-center gap-4">
+                  {i > 0 && <span className="text-brand-mint" aria-hidden="true">&#9733;</span>}
+                  {c}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Right Column: Full-Width Hero Image (Original Edge-to-Edge with Gradient Mask) */}
-        <div className="relative w-full h-[300px] sm:h-[400px] lg:h-full lg:min-h-[480px]">
-          <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[480px]">
+        {/* Team montage */}
+        <figure className="relative flex flex-col justify-end min-h-[320px] sm:min-h-[460px] lg:min-h-0">
+          <div className="relative w-full aspect-[995/800] lg:absolute lg:inset-0 lg:aspect-auto">
             <Image
-              src={heroConfig.image || "/images/sub_images/Students_hero.png"}
-              alt="Smiling college students collaborating together on university campus"
+              src={heroImage}
+              alt="Dr. Amy Morgenstern, founder of Blue Stars, with senior counselors Helen Ingerson, Samuel Ortiz and Wai Cheng"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center hero-img-mask"
-            />
-            {/* Seamless gradient fade on left edge for desktop */}
-            <div
-              className="absolute inset-y-0 left-0 w-24 sm:w-32 lg:w-44 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10 hidden sm:block"
-              aria-hidden="true"
-            />
-            {/* Seamless gradient fade on top edge for mobile */}
-            <div
-              className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-white via-white/70 to-transparent pointer-events-none z-10 sm:hidden"
-              aria-hidden="true"
+              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="object-contain object-right-bottom"
             />
           </div>
-
-          {/* Floating Glassmorphic Card Above Image (Original 3 Columns) */}
-          <div className="absolute left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-6 lg:right-12 bottom-3 sm:bottom-10 z-20 w-[98%] sm:w-auto max-w-[650px]">
-            <div className="bg-white/95 backdrop-blur-md rounded-[5px] shadow-[0_10px_30px_rgba(10,61,107,0.12)] border border-[#e2edf7] px-4 sm:px-5 py-3 sm:py-3.5 flex items-center justify-between sm:justify-between gap-0 transition-transform duration-200 hover:-translate-y-0.5">
-              {/* Column 1: Personalized Guidance */}
-              <div className="flex-1 sm:flex-initial flex flex-col items-center text-center px-2 sm:px-3.5">
-                <GraduationCapHeroIcon className="w-5 h-5 sm:w-6 sm:h-6 mb-1 transition-transform group-hover:scale-105" />
-                <span className="text-[10px] sm:text-[11px] font-bold text-brand-navy font-heading leading-tight whitespace-nowrap whitespace-pre-line">
-                  {heroConfig.card1}
-                </span>
-              </div>
-
-              {/* Divider 1 */}
-              <div className="w-px h-8 sm:h-9 bg-[#e2edf7] self-center flex-shrink-0" aria-hidden="true" />
-
-              {/* Column 2: Holistic Approach */}
-              <div className="flex-1 sm:flex-initial flex flex-col items-center text-center px-2 sm:px-3.5">
-                <TeamGroupHeroIcon className="w-5 h-5 sm:w-6 sm:h-6 mb-1 transition-transform group-hover:scale-105" />
-                <span className="text-[10px] sm:text-[11px] font-bold text-brand-navy font-heading leading-tight whitespace-nowrap whitespace-pre-line">
-                  {heroConfig.card2}
-                </span>
-              </div>
-
-              {/* Divider 2 */}
-              <div className="w-px h-8 sm:h-9 bg-[#e2edf7] self-center flex-shrink-0" aria-hidden="true" />
-
-              {/* Column 3: Student-Centric Support */}
-              <div className="flex-1 sm:flex-initial flex flex-col items-center text-center px-2 sm:px-3.5">
-                <GrowthChartHeroIcon className="w-5 h-5 sm:w-6 sm:h-6 mb-1 transition-transform group-hover:scale-105" />
-                <span className="text-[10px] sm:text-[11px] font-bold text-brand-navy font-heading leading-tight whitespace-nowrap whitespace-pre-line">
-                  {heroConfig.card3}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+          <figcaption className="relative z-10 px-6 sm:px-10 pb-4 pt-2 lg:absolute lg:bottom-5 lg:left-16 xl:left-20 lg:px-0 lg:pb-0 text-[12px] sm:text-[13px] text-[#6b7280] lg:text-white/85 italic font-display text-right lg:text-left">
+            Dr. Amy Morgenstern with Helen Ingerson, Samuel Ortiz &amp; Wai Cheng
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

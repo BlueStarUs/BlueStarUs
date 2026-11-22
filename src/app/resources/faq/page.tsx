@@ -136,8 +136,8 @@ export default function FAQPage() {
                 {/* Student Cutout Image */}
                 <div className="relative w-[260px] sm:w-[290px] lg:w-[320px] xl:w-[340px] h-[240px] sm:h-[280px] lg:h-[295px] z-10 flex-shrink-0">
                   <Image
-                    src="/images/sub_images/ready_to_take.png"
-                    alt="Student smiling with phone and backpack, ready for college success"
+                    src="/images/teams/dr-amy-morgenstern-cutout.webp"
+                    alt="Dr. Amy Morgenstern, founder of Blue Stars Admissions Consulting"
                     fill
                     priority
                     sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 340px"

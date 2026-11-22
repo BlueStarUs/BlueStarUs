@@ -252,32 +252,32 @@ export function SuccessesListing() {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
                 {filteredAdmissions.map((item, index) => (
                   <div
                     key={`${item.institution}-${index}`}
-                    className="group relative bg-white rounded-[5px] border border-[#e2eef9] hover:border-brand-blue/60 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_12px_28px_rgba(10,61,107,0.10)] hover:-translate-y-0.5 p-3.5 sm:p-4 transition-all duration-200 flex flex-col justify-between"
+                    className="group relative bg-white rounded-[14px] border border-[#e2eef9] hover:border-brand-blue/50 shadow-[0_6px_20px_rgba(10,61,107,0.05)] hover:shadow-[0_16px_34px_rgba(10,61,107,0.12)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
                   >
                     <div>
                       {/* Top Row: Institution Name & Optional Count */}
-                      <div className="flex items-start justify-between gap-2.5 mb-2">
-                        <div className="flex items-start gap-2.5 min-w-0">
-                          <div className="w-6 h-6 rounded-[5px] bg-[#E3F1FC] flex items-center justify-center flex-shrink-0 mt-0.5 text-brand-blue group-hover:bg-brand-navy group-hover:text-white transition-colors duration-200">
-                            <GraduationCap className="w-3.5 h-3.5" />
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <div className="flex items-start gap-3 min-w-0">
+                          <div className="w-9 h-9 rounded-[10px] bg-[#E3F1FC] flex items-center justify-center flex-shrink-0 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors duration-200">
+                            <GraduationCap className="w-[18px] h-[18px]" />
                           </div>
-                          <h4 className="text-[14px] sm:text-[15px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
+                          <h4 className="text-[15px] sm:text-[16px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
                             {item.institution}
                           </h4>
                         </div>
 
-                        <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue border border-brand-blue/20 text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
+                        <span className="flex-shrink-0 px-2.5 py-1 rounded-full bg-[#E3F1FC] text-brand-blue text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
                           {item.count && item.count > 1 ? `${item.count} Admits` : "1 Admit"}
                         </span>
                       </div>
 
                       {/* Special Highlight Ribbon */}
                       {item.highlight && (
-                        <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#F0F8EC] border border-[#7BC144]/30 text-[#7BC144] text-xs sm:text-[12.5px] font-heading font-semibold leading-tight">
+                        <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0F8EC] border border-[#7BC144]/30 text-[#7BC144] text-xs sm:text-[12.5px] font-heading font-semibold leading-tight">
                           <Award className="w-3.5 h-3.5 flex-shrink-0" />
                           <span>{item.highlight}</span>
                         </div>
@@ -286,11 +286,11 @@ export function SuccessesListing() {
 
                     {/* Bottom Tags */}
                     {item.tags && item.tags.length > 0 && (
-                      <div className="pt-2.5 border-t border-[#e2eef9]/80 flex items-center gap-1.5 flex-wrap mt-3">
+                      <div className="pt-3.5 border-t border-[#e2eef9]/80 flex items-center gap-1.5 flex-wrap mt-4">
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[11px] font-sans font-medium text-brand-text"
+                            className="px-2.5 py-1 rounded-full bg-[#f3f8fd] text-[11px] font-sans font-medium text-brand-text"
                           >
                             {tag}
                           </span>
@@ -325,11 +325,11 @@ export function SuccessesListing() {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
                 {filteredSummerPrograms.map((prog, index) => (
                   <div
                     key={`${prog.name}-${index}`}
-                    className="group relative bg-white rounded-[5px] border border-[#e2eef9] hover:border-brand-blue/60 shadow-[0_4px_16px_rgba(10,61,107,0.04)] hover:shadow-[0_12px_28px_rgba(10,61,107,0.10)] hover:-translate-y-0.5 p-3.5 sm:p-4 transition-all duration-200 flex flex-col justify-between"
+                    className="group relative bg-white rounded-[14px] border border-[#e2eef9] hover:border-brand-blue/50 shadow-[0_6px_20px_rgba(10,61,107,0.05)] hover:shadow-[0_16px_34px_rgba(10,61,107,0.12)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
                   >
                     <div>
                       {/* Top Row: Summer Program Name & Admits Badge */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { BRAND_TAGLINE } from "@/lib/brand";
 
 interface OrganizationJsonLdProps {
   url?: string;
@@ -17,6 +18,7 @@ export function OrganizationJsonLd({ url = SITE_CONFIG.url }: OrganizationJsonLd
     logo: `${SITE_CONFIG.url}/images/BlueStars_Admission_Consulting_Logo.webp`,
     image: `${SITE_CONFIG.url}/images/og-image.png`,
     description: SITE_CONFIG.description,
+    slogan: BRAND_TAGLINE,
     telephone: `+1-${SITE_CONFIG.contact.phone}`,
     email: SITE_CONFIG.contact.email,
     address: {

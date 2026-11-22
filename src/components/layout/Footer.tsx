@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/Icons";
 import { FooterNewsletter } from "@/components/ui/FooterNewsletter";
 import { SITE_CONFIG } from "@/lib/constants";
+import { BrandTagline } from "@/components/ui/BrandTagline";
 
 const QUICK_LINKS = [
   { name: "Home", href: "/", icon: Home },
@@ -118,6 +119,8 @@ export function Footer() {
             <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[26px] text-[#d0e6f7] max-w-[340px] font-sans mb-6">
               Personalized college admissions consulting to help you achieve your academic goals and build a brighter future.
             </p>
+
+            <BrandTagline className="mb-6 max-w-[340px] text-[#9ed5ff]" />
 
             {/* Glassmorphic Social Buttons */}
             <div className="flex flex-wrap items-center gap-2.5">
