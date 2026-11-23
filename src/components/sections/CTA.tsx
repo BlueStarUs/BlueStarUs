@@ -9,7 +9,7 @@ import { BrandTagline } from "@/components/ui/BrandTagline";
 export function CTA() {
   return (
     <section
-      className="relative w-full bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden mb-0"
+      className="relative w-full bg-brand-ink text-white overflow-hidden mb-0"
       id="consultation"
     >
       {/* 1360px Max Width Container */}
@@ -28,7 +28,7 @@ export function CTA() {
             </h2>
 
             {/* Description */}
-            <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#d8ebf9] mb-4 sm:mb-6 max-w-2xl font-sans">
+            <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#f3eee5] mb-4 sm:mb-6 max-w-2xl font-sans">
               Book a free initial consultation and get personalized guidance for your college journey.
             </p>
 
@@ -38,7 +38,7 @@ export function CTA() {
                 href={HUBSPOT_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-[#f0f7fe] text-brand-navy text-[12.5px] sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-[#f3eee5] text-brand-navy text-[12.5px] sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
               >
                 <span className="whitespace-nowrap">Book Your Initial Consultation (30 Min)</span>
                 <ArrowRight className="w-4 h-4 text-brand-navy shrink-0" />

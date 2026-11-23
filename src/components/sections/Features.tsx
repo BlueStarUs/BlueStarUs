@@ -32,7 +32,7 @@ export function Features() {
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-start">
           {/* Left Column: Image with Rounded Corners & Subtle Elevation */}
-          <div className="relative w-full aspect-[4/3] sm:aspect-[1.3/1] lg:aspect-[1.28/1] rounded-[5px] overflow-hidden shadow-[0_12px_36px_rgba(10,61,107,0.1)] border border-brand-border/60">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[1.3/1] lg:aspect-[1.28/1] rounded-[5px] overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-brand-border/60">
             <Image
               src="/images/sub_images/choose.png"
               alt="Guidance That Puts Your Goals First - Blue Stars Admissions Consulting"
@@ -78,7 +78,7 @@ export function Features() {
             <Link
               href="/about"
               target="_blank"
-              className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-sm font-semibold font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-[5px] bg-brand-ink hover:bg-brand-blue text-white text-xs sm:text-sm font-semibold font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               <span>Learn More About Us</span>
               <ArrowRight className="w-4 h-4" />

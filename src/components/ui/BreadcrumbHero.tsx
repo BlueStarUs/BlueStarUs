@@ -1,10 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
-import { Constellation } from "@/components/ui/Constellation";
 import { BRAND_TAGLINE, BRAND_TAGLINE_PARTS } from "@/lib/brand";
-import { cn } from "@/lib/utils";
 
 export interface BreadcrumbItem {
   label: string;
@@ -16,223 +13,90 @@ interface BreadcrumbHeroProps {
   title: string;
   badge?: string;
   description?: string;
+  /** Kept for backwards compatibility. Every inner page now uses the same ivory editorial hero. */
   variant?: "dark" | "light";
-  /** Original look: no constellation lines and no tagline row. */
+  /** Hide the brand tagline row. */
   classic?: boolean;
+  /** Optional buttons or links shown under the description. */
+  actions?: React.ReactNode;
 }
 
+/**
+ * Shared inner-page hero. Matches the homepage: ivory background, serif ink title,
+ * quiet breadcrumbs and the brand tagline, so every page reads as one boutique site.
+ */
 export function BreadcrumbHero({
   breadcrumbs,
   title,
   badge,
   description,
-  variant = "dark",
   classic = false,
+  actions,
 }: BreadcrumbHeroProps) {
-  const isDark = variant === "dark";
-
   return (
-    <section
-      className={cn(
-        "relative w-full py-6 sm:py-8 lg:py-9 overflow-hidden transition-colors",
-        isDark
-          ? "bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white border-b border-[#0d4f7c]"
-          : "bg-gradient-to-r from-[#e8f3fc] via-[#edf6fd] to-[#f4f9fd] text-brand-navy border-b border-[#dbe7f3]",
-      )}
-    >
-      {/* Ambient Radial Soft Glows & Brand Watermarks */}
-      {isDark ? (
-        <>
-          <div
-            className="absolute top-0 right-1/4 w-96 h-40 bg-[#00b4d8]/15 rounded-full blur-3xl pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute bottom-0 left-10 w-72 h-32 bg-[#2ba3ea]/15 rounded-full blur-3xl pointer-events-none"
-            aria-hidden="true"
-          />
+    <section className="relative w-full bg-brand-ivory border-b border-[#ece6db] overflow-hidden">
+      <div
+        className="hidden md:block absolute right-10 top-10 w-16 h-16 text-brand-mint/40 pointer-events-none"
+        aria-hidden="true"
+      >
+        <BrandStar className="w-full h-full fill-current" />
+      </div>
 
-          {/* Constellation motif */}
-          {!classic && (
-            <div className="absolute inset-0 text-white opacity-[0.1] pointer-events-none" aria-hidden="true">
-              <Constellation variant={title.length} />
-            </div>
-          )}
-
-          {/* Subtle 4-Point Brand Stars Watermark */}
-          <div
-            className="hidden sm:block absolute right-6 top-1/2 -translate-y-1/2 w-24 h-24 text-white opacity-[0.06] pointer-events-none select-none"
-            aria-hidden="true"
-          >
-            <BrandStar className="w-full h-full fill-current" />
-          </div>
-          <div
-            className="hidden sm:block absolute left-4 bottom-2 w-14 h-14 text-white opacity-[0.04] pointer-events-none select-none"
-            aria-hidden="true"
-          >
-            <BrandStar className="w-full h-full fill-current" />
-          </div>
-        </>
-      ) : (
-        <>
-          <div
-            className="absolute top-0 right-0 w-80 h-32 bg-gradient-to-bl from-[#e3f1fc]/80 to-transparent rounded-bl-full pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute bottom-0 left-0 w-64 h-24 bg-gradient-to-tr from-[#e5f2fc]/60 to-transparent rounded-tr-full pointer-events-none"
-            aria-hidden="true"
-          />
-        </>
-      )}
-
-      {/* 1360px Max Width Container */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Row 1: Short, Compact Breadcrumbs (Aligned to LEFT) */}
-        <div className="flex justify-start mb-3 sm:mb-4">
-          <nav aria-label="Breadcrumb">
-            <ol
-              className={cn(
-                "inline-flex items-center flex-wrap gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs sm:text-[12.5px] font-sans shadow-xs transition-colors",
-                isDark
-                  ? "bg-white/10 backdrop-blur-md border border-white/15 text-[#d0e6f7]"
-                  : "bg-white/80 backdrop-blur-sm border border-[#dbe7f3] text-brand-text",
-              )}
-            >
-              <li className="inline-flex items-center">
-                <Link
-                  href="/"
-                  className={cn(
-                    "inline-flex items-center gap-1.5 font-medium transition-colors",
-                    isDark
-                      ? "text-[#bfe2fa] hover:text-white"
-                      : "text-brand-text hover:text-brand-blue",
+      <div className="max-w-[1160px] mx-auto px-6 sm:px-10 pt-10 pb-12 sm:pt-12 sm:pb-16 relative">
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="flex flex-wrap items-center gap-2 text-[12.5px] text-[#7a7f88]">
+            <li>
+              <Link href="/" className="hover:text-brand-ink transition-colors">
+                Home
+              </Link>
+            </li>
+            {breadcrumbs.map((crumb, idx) => {
+              const isLast = idx === breadcrumbs.length - 1;
+              return (
+                <li key={crumb.label} className="inline-flex items-center gap-2">
+                  <span aria-hidden="true" className="text-[#c9c1b3]">
+                    /
+                  </span>
+                  {isLast || !crumb.href ? (
+                    <span className="text-brand-ink font-medium" aria-current={isLast ? "page" : undefined}>
+                      {crumb.label}
+                    </span>
+                  ) : (
+                    <Link href={crumb.href} className="hover:text-brand-ink transition-colors">
+                      {crumb.label}
+                    </Link>
                   )}
-                >
-                  <Home
-                    className={cn(
-                      "w-3.5 h-3.5",
-                      isDark ? "text-[#79c3f7]" : "text-brand-blue/70",
-                    )}
-                  />
-                  <span>Home</span>
-                </Link>
-              </li>
+                </li>
+              );
+            })}
+          </ol>
+        </nav>
 
-              {breadcrumbs.map((crumb, idx) => {
-                const isLast = idx === breadcrumbs.length - 1;
-
-                return (
-                  <li
-                    key={crumb.label}
-                    className="inline-flex items-center gap-1.5 sm:gap-2"
-                  >
-                    <ChevronRight
-                      className={cn(
-                        "w-3 h-3 flex-shrink-0",
-                        isDark ? "text-[#79c3f7]/60" : "text-brand-navy/30",
-                      )}
-                    />
-                    {isLast || !crumb.href ? (
-                      <span
-                        className={cn(
-                          "font-bold font-heading",
-                          isDark ? "text-white" : "text-brand-blue",
-                        )}
-                      >
-                        <span className="sm:hidden">
-                          {crumb.label.length > 20
-                            ? `${crumb.label.slice(0, 20)}...`
-                            : crumb.label}
-                        </span>
-
-                        <span className="hidden sm:inline">{crumb.label}</span>
-                      </span>
-                    ) : (
-                      <Link
-                        href={crumb.href}
-                        className={cn(
-                          "font-medium transition-colors truncate max-w-[160px] sm:max-w-none",
-                          isDark
-                            ? "text-[#bfe2fa] hover:text-white"
-                            : "text-brand-text hover:text-brand-blue",
-                        )}
-                      >
-                        {crumb.label}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ol>
-          </nav>
-        </div>
-
-        {/* Row 2: Hero Content (Centered) */}
-        <div className="flex flex-col items-center justify-center text-center mx-auto max-w-3xl">
+        <div className="max-w-[760px]">
           {badge && (
-            <div
-              className={cn(
-                "inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-2.5 shadow-xs transition-colors",
-                isDark
-                  ? "bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7]"
-                  : "bg-brand-sky border border-brand-border text-brand-blue",
-              )}
-            >
-              <span
-                className={cn(
-                  "w-1.5 h-1.5 rounded-full animate-pulse",
-                  isDark ? "bg-[#38bdf8]" : "bg-brand-blue",
-                )}
-                aria-hidden="true"
-              />
-              <span>{badge}</span>
-            </div>
+            <p className="text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4">{badge}</p>
           )}
 
-          <h1
-            className={cn(
-              "text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-extrabold font-heading tracking-tight leading-[1.2]",
-              isDark ? "text-white" : "text-brand-navy",
-            )}
-          >
-            {title}
-          </h1>
+          <h1 className="text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.08] text-brand-ink">{title}</h1>
 
           {description && (
-            <p
-              className={cn(
-                "text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-sans mt-2.5 max-w-2xl leading-relaxed text-center",
-                isDark ? "text-[#d4e8f8]" : "text-brand-text",
-              )}
-            >
-              {description}
-            </p>
+            <p className="mt-5 text-[16px] sm:text-[17px] leading-[1.7] text-[#5b6472] max-w-[640px]">{description}</p>
           )}
 
+          {actions && <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">{actions}</div>}
+
           {!classic && (
-            <>
-          {/* Brand tagline, shown on every inner-page hero */}
             <ul
               aria-label={BRAND_TAGLINE}
-              className={cn(
-                "mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10.5px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase font-sans",
-                isDark ? "text-[#bfe2fa]" : "text-brand-blue",
-              )}
+              className="mt-8 pt-6 border-t border-[#e6dfd3] flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#7a7f88]"
             >
               {BRAND_TAGLINE_PARTS.map((part, i) => (
-                <li key={part} className="inline-flex items-center gap-3">
-                  {i > 0 && (
-                    <BrandStar
-                      className={cn("w-2.5 h-2.5", isDark ? "text-brand-mint" : "text-brand-turquoise")}
-                      aria-hidden="true"
-                    />
-                  )}
+                <li key={part} className="inline-flex items-center gap-4">
+                  {i > 0 && <BrandStar className="w-2.5 h-2.5 text-brand-mint" aria-hidden="true" />}
                   <span>{part}</span>
                 </li>
               ))}
             </ul>
-            </>
           )}
         </div>
       </div>

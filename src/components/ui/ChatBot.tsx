@@ -328,7 +328,7 @@ export function ChatBot() {
             className={cn(
               "group relative flex items-center gap-2.5 px-4 sm:px-5 py-3 rounded-full",
               "bg-gradient-to-r from-brand-navy via-[#07466F] to-brand-blue text-white",
-              "shadow-[0_8px_25px_rgba(2,82,105,0.30)] hover:shadow-[0_12px_32px_rgba(2,82,105,0.40)]",
+              "shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)]",
               "hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer",
               "font-heading font-bold text-sm tracking-wide focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
             )}
@@ -387,7 +387,7 @@ export function ChatBot() {
           role="dialog"
           aria-label="Blue Stars Admissions Consulting Chat"
           className={cn(
-            "fixed z-50 flex flex-col overflow-hidden bg-white shadow-[0_20px_60px_rgba(2,82,105,0.22)]",
+            "fixed z-50 flex flex-col overflow-hidden bg-white shadow-[0_1px_3px_rgba(18,48,90,0.05)]",
             "border border-brand-border/90",
             // Mobile: full viewport sheet with generous touch targets | Desktop: elegant floating box
             "inset-x-3 bottom-[76px] top-16 rounded-[12px] sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[410px] sm:h-[610px] sm:max-h-[82vh]",
@@ -413,7 +413,7 @@ export function ChatBot() {
                 <h3 className="text-[14px] sm:text-[14.5px] font-bold font-heading truncate leading-tight text-white">
                   Blue Stars Admissions Consulting
                 </h3>
-                <div className="text-[11px] text-[#D8EAEE] font-sans truncate flex items-center gap-1.5 mt-0.5">
+                <div className="text-[11px] text-[#f3eee5] font-sans truncate flex items-center gap-1.5 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#7BC144] animate-pulse" />
                   <span>Dr. Amy Morgenstern&apos;s Assistant</span>
                 </div>
@@ -488,7 +488,7 @@ export function ChatBot() {
                       className={cn(
                         "rounded-[20px] p-3 text-[13px] sm:text-[13.5px] leading-[19px] sm:leading-[20px] font-sans shadow-2xs transition-all",
                         isUser
-                          ? "bg-brand-blue !text-white rounded-tr-[4px]"
+                          ? "bg-brand-ink !text-white rounded-tr-[4px]"
                           : "bg-white border border-brand-border text-brand-navy rounded-tl-[4px]"
                       )}
                     >
@@ -525,8 +525,8 @@ export function ChatBot() {
                             className={cn(
                               "inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold font-heading transition-all shadow-xs",
                               isUser
-                                ? "bg-white text-brand-blue hover:bg-[#F3F8FD]"
-                                : "bg-brand-blue hover:bg-brand-navy text-white"
+                                ? "bg-white text-brand-blue hover:bg-[#f3eee5]"
+                                : "bg-brand-ink hover:bg-brand-blue text-white"
                             )}
                           >
                             <span>{message.actionLink.label}</span>
@@ -575,9 +575,9 @@ export function ChatBot() {
                   <BrandStar className="w-3.5 h-3.5 text-white fill-white" />
                 </div>
                 <div className="bg-white border border-brand-border rounded-[20px] rounded-tl-[4px] px-3.5 py-2.5 text-xs shadow-2xs flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce [animation-delay:0.15s]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-bounce [animation-delay:0.3s]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-ink animate-bounce" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-ink animate-bounce [animation-delay:0.15s]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-ink animate-bounce [animation-delay:0.3s]" />
                 </div>
               </div>
             )}
@@ -593,7 +593,7 @@ export function ChatBot() {
                   key={question}
                   type="button"
                   onClick={() => handleSendMessage(question)}
-                  className="px-2.5 py-1 rounded-full text-[11px] font-[500] font-heading whitespace-nowrap bg-brand-bg hover:bg-brand-blue text-brand-navy hover:text-white border border-brand-border transition-all flex-shrink-0 cursor-pointer shadow-2xs"
+                  className="px-2.5 py-1 rounded-full text-[11px] font-[500] font-heading whitespace-nowrap bg-brand-bg hover:bg-brand-ink text-brand-navy hover:text-white border border-brand-border transition-all flex-shrink-0 cursor-pointer shadow-2xs"
                 >
                   {question.length > 32 ? question.slice(0, 32) + "..." : question}
                 </button>
@@ -614,7 +614,7 @@ export function ChatBot() {
                 className={cn(
                   "w-full pl-4 pr-10 py-2.5 rounded-full bg-brand-bg border border-brand-border",
                   "text-xs sm:text-[13px] text-brand-navy placeholder:text-brand-gray/60",
-                  "focus:outline-none focus:border-brand-blue focus:bg-white font-sans transition-all"
+                  "focus:outline-none focus:border-brand-ink focus:bg-white font-sans transition-all"
                 )}
               />
 
@@ -626,7 +626,7 @@ export function ChatBot() {
                 className={cn(
                   "absolute right-1.5 w-7 h-7 rounded-full flex items-center justify-center transition-all",
                   inputValue.trim()
-                    ? "bg-brand-blue hover:bg-brand-navy text-white cursor-pointer shadow-2xs hover:scale-105"
+                    ? "bg-brand-ink hover:bg-brand-blue text-white cursor-pointer shadow-2xs hover:scale-105"
                     : "bg-transparent text-brand-gray/40 cursor-not-allowed"
                 )}
               >

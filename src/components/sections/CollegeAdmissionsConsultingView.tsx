@@ -164,7 +164,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               viewport={{ once: false, amount: 0.15 }}
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   OVERVIEW &amp; APPROACH
                 </span>
@@ -186,7 +186,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-brand-border/60">
                 <motion.div
                   whileHover={{ y: -3 }}
-                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center"
+                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-center"
                 >
                   <div className="text-lg sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
                     16+
@@ -198,7 +198,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
 
                 <motion.div
                   whileHover={{ y: -3 }}
-                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center"
+                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-center"
                 >
                   <div className="text-lg sm:text-2xl font-extrabold text-[#2F9E5C] font-heading tracking-tight">
                     Top 20
@@ -210,7 +210,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
 
                 <motion.div
                   whileHover={{ y: -3 }}
-                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center col-span-2 lg:col-span-1"
+                  className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-center col-span-2 lg:col-span-1"
                 >
                   <div className="text-lg sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
                     100%
@@ -228,16 +228,16 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-gradient-to-br from-[#f8fbfe] to-white rounded-[5px] border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.07)] p-6 sm:p-8 overflow-hidden"
+              className="relative bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] p-6 sm:p-8 overflow-hidden"
             >
               {/* Corner Petal Accent */}
               <div
-                className="absolute top-0 right-0 w-28 h-28 rounded-bl-[80px] bg-gradient-to-bl from-[#d8edfd] to-transparent pointer-events-none"
+                className="absolute top-0 right-0 w-28 h-28 rounded-bl-[80px] bg-gradient-to-bl from-[#faf7f2] to-transparent pointer-events-none"
                 aria-hidden="true"
               />
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E3F1FC] text-brand-blue text-xs font-bold font-heading mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5f1ea] text-brand-blue text-xs font-bold font-heading mb-4">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Key Benefits</span>
                 </div>
@@ -278,7 +278,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <span>Start Your Admissions Journey</span>
                     <ArrowRight className="w-4 h-4" />
@@ -295,14 +295,14 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
              (With Student_Collaboration_&_Teamwork.png in Fixed Modern Background)
           ======================================================== */}
       <section
-        className="py-14 sm:py-18 lg:py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-local sm:bg-fixed border-y border-[#e2eef9]"
+        className="py-14 sm:py-18 lg:py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-local sm:bg-fixed border-y border-[#e9e3d8]"
         style={{
           backgroundImage: "url('/images/services/College_Admissions_Consulting/Student_Collaboration_&_Teamwork.png')",
         }}
       >
         {/* Modern Soft Blur & Gradient Overlay for readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#f8fbfe]/94 via-white/90 to-[#f3f8fd]/95 backdrop-blur-[2px] pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-b from-[#faf7f2]/94 via-white/90 to-[#faf7f2]/95 backdrop-blur-[2px] pointer-events-none"
           aria-hidden="true"
         />
 
@@ -326,11 +326,11 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14"
           >
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-white font-heading">
                 CORE PILLARS
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-white font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px]">
@@ -350,26 +350,26 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e2eef9] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all flex flex-col justify-between group"
+              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#e5f1fc] text-brand-blue flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#f5f1ea] text-brand-blue flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
                   <Laptop className="w-6 h-6" />
                 </div>
                 <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-2.5 leading-snug group-hover:text-brand-blue transition-colors">
                   Curiosity &amp; Intellectual Passion
                 </h3>
-                <ul className="space-y-2.5 pt-3 border-t border-[#edf4fb]">
+                <ul className="space-y-2.5 pt-3 border-t border-[#e9e3d8]">
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Helping students explore their interests deeply and show genuine curiosity.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Guidance on academic projects, research, and subject exploration.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Support in presenting a clear, focused academic narrative.</span>
                   </li>
                 </ul>
@@ -380,16 +380,16 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e2eef9] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all flex flex-col justify-between group"
+              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#e2f7eb] text-[#2F9E5C] flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-2.5 leading-snug group-hover:text-brand-blue transition-colors">
                   Authentic Student Voice
                 </h3>
-                <ul className="space-y-2.5 pt-3 border-t border-[#edf4fb]">
+                <ul className="space-y-2.5 pt-3 border-t border-[#e9e3d8]">
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#2F9E5C] flex-shrink-0 mt-2" />
                     <span>Crafting compelling, personal stories that reflect your true experiences.</span>
@@ -410,26 +410,26 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e2eef9] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all flex flex-col justify-between group"
+              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#e5f1fc] text-brand-blue flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#f5f1ea] text-brand-blue flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-2.5 leading-snug group-hover:text-brand-blue transition-colors">
                   Confidence &amp; Resilience
                 </h3>
-                <ul className="space-y-2.5 pt-3 border-t border-[#edf4fb]">
+                <ul className="space-y-2.5 pt-3 border-t border-[#e9e3d8]">
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Building a positive mindset for a competitive admissions process.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Interview preparation and communication coaching.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                     <span>Help in handling challenges and learning from setbacks.</span>
                   </li>
                 </ul>
@@ -440,16 +440,16 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e2eef9] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_44px_rgba(10,61,107,0.12)] transition-all flex flex-col justify-between group"
+              className="bg-white/95 backdrop-blur-md rounded-[8px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#e2f7eb] text-[#2F9E5C] flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                <div className="w-[52px] h-[52px] rounded-[6px] bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center mb-5 shadow-xs transition-transform duration-300 group-hover:scale-105">
                   <BarChart3 className="w-6 h-6" />
                 </div>
                 <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy font-heading mb-2.5 leading-snug group-hover:text-brand-blue transition-colors">
                   Balanced &amp; Strategic Positioning
                 </h3>
-                <ul className="space-y-2.5 pt-3 border-t border-[#edf4fb]">
+                <ul className="space-y-2.5 pt-3 border-t border-[#e9e3d8]">
                   <li className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#2F9E5C] flex-shrink-0 mt-2" />
                     <span>Showcasing academic achievements, leadership, and meaningful activities.</span>
@@ -479,7 +479,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
-            className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_16px_44px_rgba(2,82,105,0.16)]"
+            className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
           >
             {/* Luminous Glows */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -495,7 +495,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   Make College Admissions Stress-Free &amp; Exciting!
                 </h3>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#e0effd] font-sans mb-6">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] font-sans mb-6">
                   Let&apos;s discuss your academic goals, explore the right programs, and create a personalized plan to make your college journey a success.
                 </p>
 
@@ -537,7 +537,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-sm hover:shadow-md"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f3eee5] transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-brand-navy" />
@@ -552,7 +552,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
       {/* ========================================================
           5. READY TO GET THE COMPETITIVE EDGE (Image Left + Text Right)
           ======================================================== */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#f8fbfe] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#f5f1ea] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center">
             {/* Image Left (Ready_to_get_competitive_edge.png) */}
@@ -561,7 +561,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group"
+              className="relative rounded-[6px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] bg-white group"
             >
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
@@ -584,7 +584,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               className="flex flex-col justify-center"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   COMPETITIVE EDGE
                 </span>
@@ -608,7 +608,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4" />
@@ -635,7 +635,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               className="flex flex-col justify-center order-2 lg:order-1"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   PROACTIVE PREPARATION
                 </span>
@@ -674,7 +674,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="inline-block">
                   <Link
                     href="/services/college-planning"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
                   >
                     <span>Explore Early Planning Roadmap</span>
                     <ArrowRight className="w-4 h-4" />
@@ -689,7 +689,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group order-1 lg:order-2"
+              className="relative rounded-[6px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] bg-white group order-1 lg:order-2"
             >
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
@@ -709,7 +709,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
       {/* ========================================================
           7. CURIOUS TO SEE HOW WE WORK? (Text Left + Image Right)
           ======================================================== */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#f8fbfe] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#f5f1ea] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center">
             {/* Text Left (Exact Previous Font Size) */}
@@ -721,7 +721,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               className="flex flex-col justify-center"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   OUR SERVICE SCOPE
                 </span>
@@ -736,25 +736,25 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e7f0f9]">
+                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     We start with a one-on-one consultation to understand your goals.
                   </span>
                 </div>
-                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e7f0f9]">
+                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     Provide expert guidance on applications, essays, and interviews
                   </span>
                 </div>
-                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e7f0f9]">
+                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     Create a personalized plan tailored to your academic journey.
                   </span>
                 </div>
-                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e7f0f9]">
+                <div className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
                     Stay with you at every step, from planning to final admission.
@@ -763,7 +763,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </div>
 
               {/* 3 Tags and CTA Row */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-4 border-t border-[#e2eef9]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-4 border-t border-[#e9e3d8]">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mr-1">
                     Specializations:
@@ -771,7 +771,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   {["Personalized Support", "Expert Guidance", "Proven Results"].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-[5px] bg-[#e6f2fc] text-brand-blue font-bold text-xs font-heading border border-[#d1e6f9]"
+                      className="px-3 py-1 rounded-[5px] bg-[#f3eee5] text-brand-blue font-bold text-xs font-heading border border-[#e9e3d8]"
                     >
                       {tag}
                     </span>
@@ -782,7 +782,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -796,7 +796,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group w-full"
+              className="relative rounded-[6px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] bg-white group w-full"
             >
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
                 <Image
@@ -818,7 +818,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
              (Strictly Preserving Exact Font Size and Text)
           ======================================================== */}
       {service.testimonials && service.testimonials.length > 0 && (
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#f4f9fd] border-b border-[#e2eef9]">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#faf7f2] border-b border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               variants={fadeUpVariants}
@@ -828,11 +828,11 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   STUDENT &amp; PARENT SUCCESS
                 </span>
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px]">
@@ -852,7 +852,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   key={idx}
                   variants={cardItemVariants}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="bg-white rounded-[6px] border border-[#e5f0fa] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] flex flex-col justify-between relative group"
+                  className="bg-white rounded-[6px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] flex flex-col justify-between relative group"
                 >
                   <div>
                     <Quote className="w-8 h-8 text-[#b9dbf7] mb-3" />
@@ -869,7 +869,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#edf4fb] flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#e9e3d8] flex items-center justify-between">
                     <div>
                       <h4 className="text-[16px] font-bold text-brand-navy font-heading">
                         {t.author}
@@ -878,7 +878,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                         {t.role}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-[4px] bg-[#eef7ee] text-[#2F9E5C] text-[11px] font-bold font-heading">
+                    <span className="px-2.5 py-1 rounded-[4px] bg-[#f3eee5] text-[#2F9E5C] text-[11px] font-bold font-heading">
                       Verified Admit
                     </span>
                   </div>
@@ -902,11 +902,11 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16"
           >
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 OUR METHODOLOGY
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
@@ -926,10 +926,10 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                   01
                 </div>
 
@@ -943,7 +943,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </div>
 
               {/* Step 1 Image */}
-              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#dce8f5] bg-white mt-2">
+              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#e9e3d8] bg-white mt-2">
                 <Image
                   src="/images/services/College_Admissions_Consulting/Initial_Consultation.png"
                   alt="Initial Consultation discussion"
@@ -958,10 +958,10 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                   02
                 </div>
 
@@ -975,7 +975,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </div>
 
               {/* Step 2 Image */}
-              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#dce8f5] bg-white mt-2">
+              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#e9e3d8] bg-white mt-2">
                 <Image
                   src="/images/services/College_Admissions_Consulting/Personalized_Strategy_Planning.png"
                   alt="Personalized Strategy and Planning roadmap"
@@ -990,10 +990,10 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                   03
                 </div>
 
@@ -1007,7 +1007,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </div>
 
               {/* Step 3 Image */}
-              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#dce8f5] bg-white mt-2">
+              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#e9e3d8] bg-white mt-2">
                 <Image
                   src="/images/services/College_Admissions_Consulting/Profile_&_Application_Support.png"
                   alt="Profile and Application Support writing assistance"
@@ -1022,10 +1022,10 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             <motion.div
               variants={cardItemVariants}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group overflow-hidden"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                   04
                 </div>
 
@@ -1039,7 +1039,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               </div>
 
               {/* Step 4 Image */}
-              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#dce8f5] bg-white mt-2">
+              <div className="relative w-full aspect-[16/10] rounded-[5px] overflow-hidden border border-[#e9e3d8] bg-white mt-2">
                 <Image
                   src="/images/services/College_Admissions_Consulting/Final_Review_&_Submission.png"
                   alt="Final Review and Submission confirmation"
@@ -1056,14 +1056,14 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
       {/* ========================================================
           10. WHAT'S INCLUDED IN YOUR ENGAGEMENT (Deliverables)
           ======================================================== */}
-      <section className="py-12 sm:py-16 bg-[#f5f9fd] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#faf7f2] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={fadeUpVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
-            className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)]"
+            className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
           >
             <div className="max-w-2xl mb-8">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-2">
@@ -1085,7 +1085,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e8f2fc]"
+                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8]"
                 >
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0" />
                   <span className="text-[15px] sm:text-[16px] font-semibold text-brand-navy font-heading">
@@ -1111,7 +1111,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               viewport={{ once: false, amount: 0.2 }}
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
@@ -1165,7 +1165,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
-            className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden"
+            className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden"
           >
             {/* Luminous Wave Ribbons */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
@@ -1185,7 +1185,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   Make College Admissions Less Stressful and More Successful
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
                   Schedule a complimentary 30-minute introductory consultation with our senior advisory team to map your student&apos;s personalized roadmap.
                 </p>
 
@@ -1209,7 +1209,7 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group"
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />

@@ -59,8 +59,8 @@ export function ScrollToTop() {
         "fixed z-50 flex items-center justify-center transition-all duration-300 transform select-none cursor-pointer",
         "bottom-[90px] right-[22.5px] sm:bottom-[105px] sm:right-[30px]",
         "w-10 h-11 sm:w-10 sm:h-10 rounded-[5px]",
-        "bg-brand-blue hover:bg-brand-navy text-white",
-        "border border-white/25 shadow-[0_8px_24px_rgba(10,61,107,0.28)] hover:shadow-[0_12px_32px_rgba(10,61,107,0.4)]",
+        "bg-brand-ink hover:bg-brand-blue text-white",
+        "border border-white/25 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)]",
         "active:scale-95 group focus:outline-none focus:ring-2 focus:ring-brand-blue/50",
         isVisible
           ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"

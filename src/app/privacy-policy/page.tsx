@@ -52,12 +52,12 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "November 2026";
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F3F8FD]">
+    <div className="min-h-screen flex flex-col bg-[#f3eee5]">
       <Navbar />
 
       <main className="flex-1">
         {/* Hero Header Section */}
-        <section className="relative w-full py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden border-b border-[#2072a7]/40">
+        <section className="relative w-full py-14 sm:py-18 lg:py-20 bg-brand-ink text-white overflow-hidden border-b border-[#2072a7]/40">
           {/* Subtle Ambient Wave Lights */}
           <div
             className="absolute inset-0 pointer-events-none overflow-hidden z-0"
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
 
-            <p className="text-[15px] sm:text-[16.5px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] max-w-2xl font-sans mb-3">
+            <p className="text-[15px] sm:text-[16.5px] leading-[25px] sm:leading-[27px] text-[#f3eee5] max-w-2xl font-sans mb-3">
               This privacy policy explains how Blue Stars Admissions Consulting uses and protects the data you provide to us when you visit and use{" "}
               <a
                 href={SITE_CONFIG.url}
@@ -161,7 +161,7 @@ export default function PrivacyPolicyPage() {
               </div>
 
               {/* Direct Help / Questions Card */}
-              <div className="bg-brand-sky/50 rounded-[12px] p-6 border border-[#cbe1f5]">
+              <div className="bg-brand-sky/50 rounded-[12px] p-6 border border-[#e9e3d8]">
                 <div className="flex items-center gap-2 mb-2 text-brand-navy font-heading font-bold text-sm sm:text-base">
                   <Lock className="w-4 h-4 text-brand-blue" />
                   <span>Privacy Inquiries</span>
@@ -266,7 +266,7 @@ export default function PrivacyPolicyPage() {
                 className="bg-white rounded-[12px] p-6 sm:p-8 border border-brand-border shadow-xs scroll-mt-24"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-[6px] bg-[#E3F5EA] text-[#2F9E5C] grid place-items-center flex-shrink-0 font-heading font-bold text-sm">
+                  <div className="w-8 h-8 rounded-[6px] bg-[#f3eee5] text-[#2F9E5C] grid place-items-center flex-shrink-0 font-heading font-bold text-sm">
                     3
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading tracking-tight">
@@ -277,7 +277,7 @@ export default function PrivacyPolicyPage() {
                   We are collecting your data for several reasons:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="p-3.5 rounded-[8px] bg-[#f8fbfe] border border-brand-border/80">
+                  <div className="p-3.5 rounded-[8px] bg-[#f5f1ea] border border-brand-border/80">
                     <div className="font-heading font-bold text-sm text-brand-navy mb-1">
                       Understand Your Needs
                     </div>
@@ -285,7 +285,7 @@ export default function PrivacyPolicyPage() {
                       To better understand your student&apos;s educational goals and counseling requirements.
                     </p>
                   </div>
-                  <div className="p-3.5 rounded-[8px] bg-[#f8fbfe] border border-brand-border/80">
+                  <div className="p-3.5 rounded-[8px] bg-[#f5f1ea] border border-brand-border/80">
                     <div className="font-heading font-bold text-sm text-brand-navy mb-1">
                       Improve Programs &amp; Services
                     </div>
@@ -293,7 +293,7 @@ export default function PrivacyPolicyPage() {
                       To continually enhance our mentorship frameworks, guides, and admissions tools.
                     </p>
                   </div>
-                  <div className="p-3.5 rounded-[8px] bg-[#f8fbfe] border border-brand-border/80">
+                  <div className="p-3.5 rounded-[8px] bg-[#f5f1ea] border border-brand-border/80">
                     <div className="font-heading font-bold text-sm text-brand-navy mb-1">
                       Relevant Communications
                     </div>
@@ -301,7 +301,7 @@ export default function PrivacyPolicyPage() {
                       To send you informative emails containing webinars, admissions deadlines, and guide releases.
                     </p>
                   </div>
-                  <div className="p-3.5 rounded-[8px] bg-[#f8fbfe] border border-brand-border/80">
+                  <div className="p-3.5 rounded-[8px] bg-[#f5f1ea] border border-brand-border/80">
                     <div className="font-heading font-bold text-sm text-brand-navy mb-1">
                       Surveys &amp; Feedback
                     </div>
@@ -309,7 +309,7 @@ export default function PrivacyPolicyPage() {
                       To contact you to fill out surveys and participate in educational market research.
                     </p>
                   </div>
-                  <div className="p-3.5 rounded-[8px] bg-[#f8fbfe] border border-brand-border/80 sm:col-span-2">
+                  <div className="p-3.5 rounded-[8px] bg-[#f5f1ea] border border-brand-border/80 sm:col-span-2">
                     <div className="font-heading font-bold text-sm text-brand-navy mb-1">
                       Website Customization
                     </div>
@@ -337,7 +337,7 @@ export default function PrivacyPolicyPage() {
                   <p>
                     Blue Stars Admissions Consulting is committed to securing your data and keeping it confidential. Blue Stars has done all in its power to prevent data theft, unauthorized access, and disclosure by implementing the latest technologies and software, which help us safeguard all the information we collect online.
                   </p>
-                  <div className="p-4 rounded-[8px] bg-[#eef7fc] border border-[#cbe1f5] flex items-start gap-3">
+                  <div className="p-4 rounded-[8px] bg-[#f3eee5] border border-[#e9e3d8] flex items-start gap-3">
                     <Lock className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                     <p className="text-xs sm:text-[13.5px] leading-relaxed text-brand-navy font-sans">
                       All web traffic between your browser and our servers is encrypted using modern Transport Layer Security (TLS/HTTPS). Stored inquiries and client records are protected by access-controlled cloud infrastructure.
@@ -369,7 +369,7 @@ export default function PrivacyPolicyPage() {
                   <p>
                     Please note that cookies don’t allow us to gain control of your computer in any way. They are strictly used to monitor which pages you find useful and which you do not so that we can provide a better experience for you.
                   </p>
-                  <div className="p-4 rounded-[8px] bg-[#f8fbfe] border border-brand-border">
+                  <div className="p-4 rounded-[8px] bg-[#f5f1ea] border border-brand-border">
                     <div className="flex items-center gap-2 text-sm font-bold text-brand-navy font-heading mb-1.5">
                       <Cookie className="w-4 h-4 text-brand-blue" />
                       <span>Disabling Cookies in Your Browser</span>
@@ -410,7 +410,7 @@ export default function PrivacyPolicyPage() {
                 className="bg-white rounded-[12px] p-6 sm:p-8 border border-brand-border shadow-xs scroll-mt-24"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-[6px] bg-[#E3F5EA] text-[#2F9E5C] grid place-items-center flex-shrink-0 font-heading font-bold text-sm">
+                  <div className="w-8 h-8 rounded-[6px] bg-[#f3eee5] text-[#2F9E5C] grid place-items-center flex-shrink-0 font-heading font-bold text-sm">
                     7
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading tracking-tight">
@@ -456,7 +456,7 @@ export default function PrivacyPolicyPage() {
                   <h3 className="text-lg sm:text-xl font-bold font-heading mb-1 text-white">
                     Ready to Begin Your College Journey?
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#d4e8f8] font-sans max-w-md">
+                  <p className="text-xs sm:text-sm text-[#f3eee5] font-sans max-w-md">
                     Schedule a confidential 30-minute introductory consultation with our senior advisory team.
                   </p>
                 </div>
@@ -464,7 +464,7 @@ export default function PrivacyPolicyPage() {
                   href={SITE_CONFIG.consultationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-[6px] bg-white hover:bg-[#d8ecfc] text-brand-navy font-bold text-xs sm:text-[13.5px] font-heading shadow-md transition-all flex-shrink-0"
+                  className="px-6 py-3 rounded-[6px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-[13.5px] font-heading shadow-md transition-all flex-shrink-0"
                 >
                   Book Free Consultation
                 </a>

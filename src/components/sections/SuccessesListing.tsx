@@ -76,13 +76,13 @@ export function SuccessesListing() {
   return (
     <section
       id="cycles-records"
-      className="w-full py-8 sm:py-14 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-y border-[#e2eef9]"
+      className="w-full py-8 sm:py-14 bg-white border-y border-[#e9e3d8]"
     >
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5 sm:mb-7">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase font-heading mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#f5f1ea] text-brand-blue text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase font-heading mb-2">
               <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
               <span>Verified Results Archive</span>
             </div>
@@ -115,7 +115,7 @@ export function SuccessesListing() {
                   "flex-shrink-0 px-4 py-2 rounded-[5px] font-heading text-xs sm:text-[13.5px] font-bold transition-all duration-150 border",
                   isSelected
                     ? "bg-brand-navy text-white border-brand-navy shadow-sm scale-[1.01]"
-                    : "bg-white text-brand-navy border-[#e2eef9] hover:bg-[#E3F1FC]/50 hover:text-brand-blue"
+                    : "bg-white text-brand-navy border-[#e9e3d8] hover:bg-[#f5f1ea]/50 hover:text-brand-blue"
                 )}
               >
                 <span>College {cycle.year}</span>
@@ -125,9 +125,9 @@ export function SuccessesListing() {
         </div>
 
         {/* Active Cycle Context Box & Compact Controls */}
-        <div className="bg-white rounded-[5px] border border-[#e2eef9] p-4 sm:p-5 shadow-[0_4px_16px_rgba(10,61,107,0.04)] mb-6">
+        <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-4 sm:p-5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] mb-6">
           {/* Top Row: Cycle Headline + Mode Switcher & Total Count Badges */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3.5 border-b border-[#e2eef9]">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3.5 border-b border-[#e9e3d8]">
             <div>
               <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-brand-blue">
                 Admissions Cycle
@@ -140,8 +140,8 @@ export function SuccessesListing() {
             {/* Total Badge & Mode Switcher */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5">
               {/* Prominent Total Pill */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-[#E3F1FC] border border-brand-blue/20 text-brand-blue text-xs sm:text-[13px] font-extrabold font-heading">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-[#f5f1ea] border border-brand-blue/20 text-brand-blue text-xs sm:text-[13px] font-extrabold font-heading">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-ink animate-pulse" />
                 <span>
                   {activeTab === "admissions"
                     ? `Total: ${currentCycle.admissions.length} Universities / Colleges`
@@ -150,13 +150,13 @@ export function SuccessesListing() {
               </div>
 
               {/* Mode Switcher */}
-              <div className="inline-flex p-1 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] self-start sm:self-auto">
+              <div className="inline-flex p-1 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] self-start sm:self-auto">
                 <button
                   onClick={() => setActiveTab("admissions")}
                   className={cn(
                     "inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[5px] text-xs sm:text-[13px] font-heading font-bold transition-all",
                     activeTab === "admissions"
-                      ? "bg-brand-blue text-white shadow-xs"
+                      ? "bg-brand-ink text-white shadow-xs"
                       : "text-brand-text hover:text-brand-navy"
                   )}
                 >
@@ -170,7 +170,7 @@ export function SuccessesListing() {
                     className={cn(
                       "inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[5px] text-xs sm:text-[13px] font-heading font-bold transition-all",
                       activeTab === "summer"
-                        ? "bg-brand-blue text-white shadow-xs"
+                        ? "bg-brand-ink text-white shadow-xs"
                         : "text-brand-text hover:text-brand-navy"
                     )}
                   >
@@ -196,7 +196,7 @@ export function SuccessesListing() {
                     ? "Search university, scholarship..."
                     : "Search summer program..."
                 }
-                className="w-full pl-9 pr-8 py-2 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs sm:text-[13.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-1.5 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                className="w-full pl-9 pr-8 py-2 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-xs sm:text-[13.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-1.5 focus:ring-brand-blue/30 focus:border-brand-ink transition-all"
               />
               {searchQuery && (
                 <button
@@ -219,8 +219,8 @@ export function SuccessesListing() {
                     className={cn(
                       "px-3 py-1.5 rounded-[5px] text-xs sm:text-[12.5px] font-heading font-semibold transition-all whitespace-nowrap border",
                       selectedTag === tag
-                        ? "bg-brand-blue text-white border-brand-blue shadow-xs"
-                        : "bg-[#f8fbfe] text-brand-text border-[#e2eef9] hover:bg-[#E3F1FC]/60 hover:text-brand-navy"
+                        ? "bg-brand-ink text-white border-brand-ink shadow-xs"
+                        : "bg-[#f5f1ea] text-brand-text border-[#e9e3d8] hover:bg-[#f5f1ea]/60 hover:text-brand-navy"
                     )}
                   >
                     {tag}
@@ -235,7 +235,7 @@ export function SuccessesListing() {
         {activeTab === "admissions" && (
           <div>
             {filteredAdmissions.length === 0 ? (
-              <div className="bg-white rounded-[5px] border border-[#e2eef9] p-8 text-center shadow-xs">
+              <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-8 text-center shadow-xs">
                 <Compass className="w-10 h-10 text-brand-lightBlue mx-auto mb-2 opacity-60" />
                 <h4 className="text-base sm:text-lg font-heading font-bold text-brand-navy">
                   No matching university acceptances found
@@ -256,13 +256,13 @@ export function SuccessesListing() {
                 {filteredAdmissions.map((item, index) => (
                   <div
                     key={`${item.institution}-${index}`}
-                    className="group relative bg-white rounded-[14px] border border-[#e2eef9] hover:border-brand-blue/50 shadow-[0_6px_20px_rgba(10,61,107,0.05)] hover:shadow-[0_16px_34px_rgba(10,61,107,0.12)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
+                    className="group relative bg-white rounded-[14px] border border-[#e9e3d8] hover:border-brand-blue/50 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
                   >
                     <div>
                       {/* Top Row: Institution Name & Optional Count */}
                       <div className="flex items-start justify-between gap-3 mb-3">
                         <div className="flex items-start gap-3 min-w-0">
-                          <div className="w-9 h-9 rounded-[10px] bg-[#E3F1FC] flex items-center justify-center flex-shrink-0 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors duration-200">
+                          <div className="w-9 h-9 rounded-[10px] bg-[#f5f1ea] flex items-center justify-center flex-shrink-0 text-brand-blue group-hover:bg-brand-ink group-hover:text-white transition-colors duration-200">
                             <GraduationCap className="w-[18px] h-[18px]" />
                           </div>
                           <h4 className="text-[15px] sm:text-[16px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
@@ -270,7 +270,7 @@ export function SuccessesListing() {
                           </h4>
                         </div>
 
-                        <span className="flex-shrink-0 px-2.5 py-1 rounded-full bg-[#E3F1FC] text-brand-blue text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
+                        <span className="flex-shrink-0 px-2.5 py-1 rounded-full bg-[#f5f1ea] text-brand-blue text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
                           {item.count && item.count > 1 ? `${item.count} Admits` : "1 Admit"}
                         </span>
                       </div>
@@ -286,11 +286,11 @@ export function SuccessesListing() {
 
                     {/* Bottom Tags */}
                     {item.tags && item.tags.length > 0 && (
-                      <div className="pt-3.5 border-t border-[#e2eef9]/80 flex items-center gap-1.5 flex-wrap mt-4">
+                      <div className="pt-3.5 border-t border-[#e9e3d8]/80 flex items-center gap-1.5 flex-wrap mt-4">
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2.5 py-1 rounded-full bg-[#f3f8fd] text-[11px] font-sans font-medium text-brand-text"
+                            className="px-2.5 py-1 rounded-full bg-[#f3eee5] text-[11px] font-sans font-medium text-brand-text"
                           >
                             {tag}
                           </span>
@@ -308,7 +308,7 @@ export function SuccessesListing() {
         {activeTab === "summer" && (
           <div>
             {filteredSummerPrograms.length === 0 ? (
-              <div className="bg-white rounded-[5px] border border-[#e2eef9] p-8 text-center shadow-xs">
+              <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-8 text-center shadow-xs">
                 <BookOpen className="w-10 h-10 text-brand-lightBlue mx-auto mb-2 opacity-60" />
                 <h4 className="text-base sm:text-lg font-heading font-bold text-brand-navy">
                   No matching summer programs found
@@ -329,13 +329,13 @@ export function SuccessesListing() {
                 {filteredSummerPrograms.map((prog, index) => (
                   <div
                     key={`${prog.name}-${index}`}
-                    className="group relative bg-white rounded-[14px] border border-[#e2eef9] hover:border-brand-blue/50 shadow-[0_6px_20px_rgba(10,61,107,0.05)] hover:shadow-[0_16px_34px_rgba(10,61,107,0.12)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
+                    className="group relative bg-white rounded-[14px] border border-[#e9e3d8] hover:border-brand-blue/50 shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:-translate-y-1 p-5 transition-all duration-200 flex flex-col justify-between min-h-[150px]"
                   >
                     <div>
                       {/* Top Row: Summer Program Name & Admits Badge */}
                       <div className="flex items-start justify-between gap-2.5 mb-2">
                         <div className="flex items-start gap-2.5 min-w-0">
-                          <div className="w-6 h-6 rounded-[5px] bg-[#e2f7eb] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white transition-colors duration-200">
+                          <div className="w-6 h-6 rounded-[5px] bg-[#f3eee5] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white transition-colors duration-200">
                             <BookOpen className="w-3.5 h-3.5" />
                           </div>
                           <h4 className="text-[13.5px] sm:text-[14.5px] font-heading font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-200 leading-snug break-words">
@@ -343,13 +343,13 @@ export function SuccessesListing() {
                           </h4>
                         </div>
 
-                        <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#e2f7eb] text-[#2F9E5C] border border-[#2F9E5C]/25 text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
+                        <span className="flex-shrink-0 px-2 py-0.5 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] border border-[#2F9E5C]/25 text-[11px] sm:text-xs font-heading font-bold whitespace-nowrap">
                           {prog.count && prog.count > 1 ? `${prog.count} Admits` : "1 Admit"}
                         </span>
                       </div>
 
                       {prog.highlight && (
-                        <div className="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[5px] bg-[#E3F1FC] text-brand-blue border border-brand-blue/20 text-[11px] font-heading font-semibold">
+                        <div className="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[5px] bg-[#f5f1ea] text-brand-blue border border-brand-blue/20 text-[11px] font-heading font-semibold">
                           <Sparkles className="w-3 h-3" />
                           <span>{prog.highlight}</span>
                         </div>

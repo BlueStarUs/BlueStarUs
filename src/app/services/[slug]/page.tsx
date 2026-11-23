@@ -199,7 +199,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             {/* Left: Rich Overview Narrative */}
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   OVERVIEW &amp; APPROACH
                 </span>
@@ -222,7 +222,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 {service.overview.keyStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center"
+                    className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-center"
                   >
                     <div className="text-lg sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
                       {stat.value}
@@ -236,7 +236,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
 
             {/* Right: Modern Elevated Program Card */}
-            <div className="relative bg-gradient-to-br from-[#f8fbfe] to-white rounded-[5px] border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.07)] p-6 sm:p-8 overflow-hidden">
+            <div className="relative bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] p-6 sm:p-8 overflow-hidden">
               {/* Corner Petal Accent */}
               <svg
                 className="absolute top-0 right-0 w-28 h-28 pointer-events-none"
@@ -247,13 +247,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               >
                 <path
                   d="M100 0H28C28 39.76 60.24 72 100 72V0Z"
-                  fill={isBlue ? "#d8edfd" : "#daf5e5"}
+                  fill={isBlue ? "#f3eee5" : "#f3eee5"}
                   opacity="0.8"
                 />
               </svg>
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E3F1FC] text-brand-blue text-xs font-bold font-heading mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5f1ea] text-brand-blue text-xs font-bold font-heading mb-4">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Program Profile</span>
                 </div>
@@ -277,7 +277,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
                 >
                   <span>Book a Free Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -289,21 +289,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* 3. Core Service Pillars Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-y border-[#e2eef9] relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-[#e9e3d8] relative overflow-hidden">
         {/* Background Organic Waves */}
         <div
-          className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/70 to-transparent rounded-br-[220px] pointer-events-none"
+          className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#faf7f2]/70 to-transparent rounded-br-[220px] pointer-events-none"
           aria-hidden="true"
         />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 CORE PILLARS
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-4">
@@ -316,7 +316,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             {service.pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className="bg-white rounded-[5px] border border-[#e7f0f9] shadow-[0_10px_30px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_42px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all duration-300 hover:-translate-y-1.5 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
               >
                 {/* Decorative Top-Right Corner Arc */}
                 <svg
@@ -328,7 +328,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 >
                   <path
                     d="M100 0H28C28 39.76 60.24 72 100 72V0Z"
-                    fill={idx % 2 === 0 ? "#e2f2fd" : "#daf5e5"}
+                    fill={idx % 2 === 0 ? "#f3eee5" : "#f3eee5"}
                     opacity="0.8"
                   />
                 </svg>
@@ -338,7 +338,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div
                     className={cn(
                       "w-[56px] h-[56px] rounded-[5px] grid place-items-center mb-5 transition-transform duration-300 group-hover:scale-105 shadow-xs",
-                      idx % 2 === 0 ? "bg-[#e5f1fc] text-brand-blue" : "bg-[#e2f7eb] text-[#2F9E5C]"
+                      idx % 2 === 0 ? "bg-[#f5f1ea] text-brand-blue" : "bg-[#f3eee5] text-[#2F9E5C]"
                     )}
                   >
                     {idx === 0 && <Compass className="w-6 h-6 stroke-[2.2]" />}
@@ -355,13 +355,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     {pillar.description}
                   </p>
 
-                  <ul className="space-y-2 pt-3 border-t border-[#edf4fb]">
+                  <ul className="space-y-2 pt-3 border-t border-[#e9e3d8]">
                     {pillar.highlights.map((item) => (
                       <li
                         key={item}
                         className="flex items-center gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -377,7 +377,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {service.consultationBanner && (
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_16px_44px_rgba(2,82,105,0.16)]">
+            <div className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
               {/* Background Glow Ribbons */}
               <div
                 className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"
@@ -395,7 +395,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     {service.consultationBanner.heading}
                   </h3>
 
-                  <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#e0effd] font-sans mb-6">
+                  <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] font-sans mb-6">
                     {service.consultationBanner.description}
                   </p>
 
@@ -423,7 +423,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                   <Link
                     href={service.consultationBanner.ctaHref || "/#contact"}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f0f7fe] transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-white text-brand-navy hover:bg-[#f3eee5] transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
                   >
                     <span>{service.consultationBanner.ctaText}</span>
                     <ArrowRight className="w-4 h-4 text-brand-navy" />
@@ -437,7 +437,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* 5. Modern Feature Stories with Alternative Images (From Screenshots) */}
       {service.stories && service.stories.length > 0 && (
-        <section className="py-8 sm:py-12 lg:py-14 bg-[#f8fbfe] border-y border-[#e2eef9]">
+        <section className="py-8 sm:py-12 lg:py-14 bg-[#f5f1ea] border-y border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20 lg:space-y-24">
             {service.stories.map((story, sIdx) => {
               const isImageLeft = story.imagePosition === "left";
@@ -452,7 +452,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   {/* Image Column */}
                   <div
                     className={cn(
-                      "relative rounded-[6px] overflow-hidden border border-[#dce8f5] shadow-[0_12px_36px_rgba(10,61,107,0.08)] bg-white group",
+                      "relative rounded-[6px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] bg-white group",
                       isImageLeft ? "order-1" : "order-1 lg:order-2"
                     )}
                   >
@@ -476,7 +476,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     )}
                   >
                     <div className="flex items-center gap-2.5 mb-2.5">
-                      <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                      <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                       <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                         {story.kicker}
                       </span>
@@ -511,7 +511,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <div className="mt-2">
                       <Link
                         href={story.ctaHref || "/#contact"}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
                       >
                         <span>{story.ctaText || "Learn More"}</span>
                         <ArrowRight className="w-4 h-4" />
@@ -529,10 +529,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {service.specializedService && (
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] p-7 sm:p-10 lg:p-12 shadow-[0_10px_30px_rgba(10,61,107,0.05)]">
+            <div className="rounded-[6px] bg-[#f5f1ea] border border-[#e9e3d8] p-7 sm:p-10 lg:p-12 shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
               <div className="max-w-3xl mb-8">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                  <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                   <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                     {service.specializedService.kicker}
                   </span>
@@ -552,7 +552,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 {service.specializedService.bullets.map((bullet) => (
                   <div
                     key={bullet}
-                    className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e7f0f9]"
+                    className="flex items-start gap-3 p-4 rounded-[5px] bg-white border border-[#e9e3d8]"
                   >
                     <BlueCircleCheck className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <span className="text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug">
@@ -563,7 +563,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
 
               {/* Tags and CTA Row */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-6 border-t border-[#e2eef9]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-6 border-t border-[#e9e3d8]">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mr-1">
                     Specializations:
@@ -571,7 +571,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   {service.specializedService.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-[5px] bg-[#e6f2fc] text-brand-blue font-bold text-xs font-heading border border-[#d1e6f9]"
+                      className="px-3 py-1 rounded-[5px] bg-[#f3eee5] text-brand-blue font-bold text-xs font-heading border border-[#e9e3d8]"
                     >
                       {tag}
                     </span>
@@ -580,7 +580,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                 <Link
                   href={service.specializedService.ctaHref || "/#contact"}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
                 >
                   <span>{service.specializedService.ctaText || "Explore Scope"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -593,15 +593,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* 7. Dedicated Service Testimonials (If Defined) */}
       {service.testimonials && service.testimonials.length > 0 && (
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#f4f9fd] border-y border-[#e2eef9]">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#faf7f2] border-y border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   STUDENT &amp; PARENT SUCCESS
                 </span>
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px]">
@@ -613,7 +613,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.testimonials.map((t, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-[6px] border border-[#e5f0fa] p-7 sm:p-8 shadow-[0_10px_32px_rgba(10,61,107,0.06)] flex flex-col justify-between relative group hover:-translate-y-1 transition-all duration-300"
+                  className="bg-white rounded-[6px] border border-[#e9e3d8] p-7 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] flex flex-col justify-between relative group hover:-translate-y-1 transition-all duration-300"
                 >
                   <Quote className="w-8 h-8 text-[#b9dbf7] mb-3" />
 
@@ -628,7 +628,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     &ldquo;{t.quote}&rdquo;
                   </p>
 
-                  <div className="pt-4 border-t border-[#edf4fb] flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#e9e3d8] flex items-center justify-between">
                     <div>
                       <h4 className="text-[16px] font-bold text-brand-navy font-heading">
                         {t.author}
@@ -637,7 +637,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                         {t.role}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-[4px] bg-[#eef7ee] text-[#2F9E5C] text-[11px] font-bold font-heading">
+                    <span className="px-2.5 py-1 rounded-[4px] bg-[#f3eee5] text-[#2F9E5C] text-[11px] font-bold font-heading">
                       Verified Admit
                     </span>
                   </div>
@@ -653,11 +653,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 OUR METHODOLOGY
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
@@ -670,10 +670,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             {service.methodology.map((step) => (
               <div
                 key={step.stepNumber}
-                className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-card group"
+                className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-card group"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                     {step.stepNumber}
                   </div>
 
@@ -692,9 +692,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* 9. Key Deliverables Checklist Section */}
-      <section className="py-12 sm:py-16 bg-[#f5f9fd] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#faf7f2] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)]">
+          <div className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
             <div className="max-w-2xl mb-8">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-2">
                 PROGRAM DELIVERABLES
@@ -708,7 +708,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.deliverables.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e8f2fc]"
+                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8]"
                 >
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0" />
                   <span className="text-[15px] sm:text-[16px] font-semibold text-brand-navy font-heading">
@@ -727,7 +727,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14 items-start">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
@@ -766,7 +766,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* 12. Modern Elevated CTA Banner Card */}
       <section className="relative w-full py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-4">
-          <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Luminous Flowing Wave Ribbons in Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
               <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
@@ -796,7 +796,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </h2>
 
                 {/* Description */}
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
                   Schedule a complimentary 30-minute introductory consultation with our senior advisory team to map your student&apos;s personalized roadmap.
                 </p>
 
@@ -821,7 +821,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f3eee5] text-[#0A3D6B] font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 text-[#0A3D6B] transition-transform duration-200 group-hover:translate-x-1" />

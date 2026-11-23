@@ -57,13 +57,13 @@ export default function TermsOfServicePage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F3F8FD]">
+    <div className="min-h-screen flex flex-col bg-[#f3eee5]">
       <BreadcrumbJsonLd items={breadcrumbs} />
       <Navbar />
 
       <main className="flex-1">
         {/* Hero Header Section */}
-        <section className="relative w-full py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden border-b border-[#2072a7]/40">
+        <section className="relative w-full py-14 sm:py-18 lg:py-20 bg-brand-ink text-white overflow-hidden border-b border-[#2072a7]/40">
           <div
             className="absolute inset-0 pointer-events-none overflow-hidden z-0"
             aria-hidden="true"
@@ -82,7 +82,7 @@ export default function TermsOfServicePage() {
               Terms of Service
             </h1>
 
-            <p className="text-[15px] sm:text-[16.5px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] max-w-2xl font-sans mb-3">
+            <p className="text-[15px] sm:text-[16.5px] leading-[25px] sm:leading-[27px] text-[#f3eee5] max-w-2xl font-sans mb-3">
               Please review these Terms of Service before using our website, scheduling consultations, or accessing educational materials provided by{" "}
               <strong>Blue Stars Admissions Consulting</strong>.
             </p>
@@ -101,7 +101,7 @@ export default function TermsOfServicePage() {
               {/* 1. Acceptance of Terms */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <FileText className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -129,7 +129,7 @@ export default function TermsOfServicePage() {
               {/* 2. Educational Consulting Scope & NACAC Ethics */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#e2f7eb] text-[#2F9E5C] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -140,7 +140,7 @@ export default function TermsOfServicePage() {
                   <p>
                     Blue Stars Admissions Consulting provides educational advising, academic mentorship, high school curriculum planning, extracurricular coaching, and essay feedback.
                   </p>
-                  <div className="p-4 rounded-[5px] bg-[#f8fbfe] border-l-4 border-brand-blue space-y-2">
+                  <div className="p-4 rounded-[5px] bg-[#f5f1ea] border-l-4 border-brand-ink space-y-2">
                     <p className="font-bold text-brand-blue">
                       Important Admissions Disclaimer:
                     </p>
@@ -157,7 +157,7 @@ export default function TermsOfServicePage() {
               {/* 3. Consultation Journey: Initial Consultation & Strategy Consultation */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -193,7 +193,7 @@ export default function TermsOfServicePage() {
               {/* 4. Intellectual Property */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <Scale className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -233,7 +233,7 @@ export default function TermsOfServicePage() {
               {/* 6. Limitation of Liability */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -253,7 +253,7 @@ export default function TermsOfServicePage() {
               {/* 7. Governing Law */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <Scale className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -270,7 +270,7 @@ export default function TermsOfServicePage() {
               {/* 8. Contact Information */}
               <div className="bg-white rounded-[5px] border border-brand-border p-6 sm:p-8 shadow-xs">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
@@ -281,7 +281,7 @@ export default function TermsOfServicePage() {
                   <p>
                     If you have questions regarding these Terms of Service, please contact our team:
                   </p>
-                  <div className="p-4 rounded-[5px] bg-[#f8fbfe] border border-brand-border space-y-2 text-sm sm:text-base">
+                  <div className="p-4 rounded-[5px] bg-[#f5f1ea] border border-brand-border space-y-2 text-sm sm:text-base">
                     <div className="flex items-center gap-2 text-brand-navy">
                       <Mail className="w-4 h-4 text-brand-blue" />
                       <span>Email: <a href="mailto:info@bluestars.us" className="text-brand-blue underline font-semibold">info@bluestars.us</a></span>
@@ -327,18 +327,18 @@ export default function TermsOfServicePage() {
               </div>
 
               {/* Consultation Action Card */}
-              <div className="p-6 rounded-[5px] bg-gradient-to-br from-[#073d63] to-[#0c5989] text-white shadow-md">
+              <div className="p-6 rounded-[5px] bg-brand-ink text-white shadow-md">
                 <h3 className="font-heading font-extrabold text-lg text-white mb-2">
                   Ready to Start?
                 </h3>
-                <p className="text-xs sm:text-sm text-[#d4e8f8] mb-4 font-sans leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#f3eee5] mb-4 font-sans leading-relaxed">
                   Book your complimentary 30-minute Initial Consultation with our senior admissions team.
                 </p>
                 <a
                   href={HUBSPOT_CONSULTATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-sm font-heading shadow-sm transition-all hover:scale-[1.02]"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[5px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-sm font-heading shadow-sm transition-all hover:scale-[1.02]"
                 >
                   <span>Book Your Initial Consultation</span>
                 </a>

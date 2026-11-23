@@ -53,7 +53,7 @@ export function ServicesDifference({ faqs }: ServicesDifferenceProps) {
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 THE BLUESTARS DIFFERENCE
               </span>
@@ -75,7 +75,7 @@ export function ServicesDifference({ faqs }: ServicesDifferenceProps) {
             <div ref={statsContainerRef} className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
               <motion.div
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="gsap-stat-box p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] text-center shadow-2xs hover:shadow-xs transition-shadow"
+                className="gsap-stat-box p-4 rounded-[6px] bg-[#f5f1ea] border border-[#e9e3d8] text-center shadow-2xs hover:shadow-xs transition-shadow"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-brand-blue font-heading">
                   16+
@@ -87,7 +87,7 @@ export function ServicesDifference({ faqs }: ServicesDifferenceProps) {
 
               <motion.div
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="gsap-stat-box p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] text-center shadow-2xs hover:shadow-xs transition-shadow"
+                className="gsap-stat-box p-4 rounded-[6px] bg-[#f5f1ea] border border-[#e9e3d8] text-center shadow-2xs hover:shadow-xs transition-shadow"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-[#2F9E5C] font-heading">
                   Top 20
@@ -99,7 +99,7 @@ export function ServicesDifference({ faqs }: ServicesDifferenceProps) {
 
               <motion.div
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="gsap-stat-box p-4 rounded-[6px] bg-[#f8fbfe] border border-[#e2eef9] text-center col-span-2 sm:col-span-1 shadow-2xs hover:shadow-xs transition-shadow"
+                className="gsap-stat-box p-4 rounded-[6px] bg-[#f5f1ea] border border-[#e9e3d8] text-center col-span-2 sm:col-span-1 shadow-2xs hover:shadow-xs transition-shadow"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-brand-blue font-heading">
                   100%

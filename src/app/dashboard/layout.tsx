@@ -29,7 +29,7 @@ export default function DashboardLayout({
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-brand-text">Welcome, Student</span>
-            <div className="w-8 h-8 rounded-full bg-brand-blue text-white grid place-items-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-brand-ink text-white grid place-items-center font-bold text-xs">
               S
             </div>
           </div>

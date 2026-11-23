@@ -19,7 +19,7 @@ const STAR = "M12 0c.9 6 5 10.1 12 12-7 1.9-11.1 6-12 12-.9-6-5-10.1-12-12C7 10.
 
 export function ReachMap() {
   return (
-    <div className="relative overflow-hidden rounded-[6px] bg-gradient-to-br from-brand-ink via-[#0d4a86] to-brand-blue p-5 sm:p-7 shadow-[0_12px_36px_rgba(10,61,107,0.18)]">
+    <div className="relative overflow-hidden rounded-[6px] bg-gradient-to-br from-brand-ink via-[#0d4a86] to-brand-blue p-5 sm:p-7 shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
       <svg
         viewBox="0 0 100 50"
         className="w-full h-auto text-white"

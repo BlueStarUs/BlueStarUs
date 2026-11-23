@@ -52,7 +52,7 @@ const RECENT_ADMISSIONS_LOGOS: UniversityLogoItem[] = [
 export function RecentAdmissionsLogos() {
   return (
     <section
-      className="relative w-full py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#0199BB] text-white border-y border-[#8FD2C8]/30 overflow-hidden"
+      className="relative w-full py-8 sm:py-10 lg:py-12 bg-brand-ink text-white border-y border-[#8FD2C8]/30 overflow-hidden"
       id="recent-admissions"
       aria-label="Recent Admissions"
     >
@@ -77,7 +77,7 @@ export function RecentAdmissionsLogos() {
             <h2 className="text-2xl sm:text-[26px] md:text-[28px] font-extrabold text-white font-heading tracking-tight leading-snug">
               Recent Admissions
             </h2>
-            <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[25px] text-[#cfe4f6] font-sans mt-1 max-w-sm">
+            <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[25px] text-[#f3eee5] font-sans mt-1 max-w-sm">
               Admitted to America&apos;s most selective universities.
             </p>
           </div>

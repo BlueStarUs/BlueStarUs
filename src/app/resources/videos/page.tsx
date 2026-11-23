@@ -93,10 +93,10 @@ export default function VideosPage() {
       <VideosListing />
 
       {/* Why Watch Blue Stars Videos - Services Style 3-Column Highlights */}
-      <section className="py-12 sm:py-16 bg-[#F3F8FD] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#f3eee5] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="w-12 h-[3px] bg-brand-blue rounded-full mb-3.5 mx-auto" aria-hidden="true" />
+            <div className="w-12 h-[3px] bg-brand-ink rounded-full mb-3.5 mx-auto" aria-hidden="true" />
             <h2 className="text-2xl sm:text-[30px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug">
               Why Families Rely On Blue Stars Video Insights
             </h2>
@@ -106,8 +106,8 @@ export default function VideosPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F1FC] text-brand-blue grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f5f1ea] text-brand-blue grid place-items-center mb-4">
                 <Video className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -118,8 +118,8 @@ export default function VideosPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] grid place-items-center mb-4">
                 <Sparkles className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -130,8 +130,8 @@ export default function VideosPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F1FC] text-brand-blue grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f5f1ea] text-brand-blue grid place-items-center mb-4">
                 <BookOpen className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -155,7 +155,7 @@ export default function VideosPage() {
       {/* Elevated CTA Banner (Services Styling) */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Ambient Flowing Light */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
               <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
@@ -174,7 +174,7 @@ export default function VideosPage() {
                   Ready to Turn Strategy into Personal Results?
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
                   While our video library offers great frameworks, every student’s journey is distinct. Book a free 30-minute Initial Consultation with Dr. Amy Morgenstern and our senior counseling team.
                 </p>
 
@@ -183,7 +183,7 @@ export default function VideosPage() {
                     href={HUBSPOT_CONSULTATION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-md hover:shadow-lg transition-all"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />

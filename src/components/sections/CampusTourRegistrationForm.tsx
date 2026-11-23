@@ -66,9 +66,9 @@ export function CampusTourRegistrationForm({
   };
 
   return (
-    <div className="bg-white rounded-[8px] border border-[#c4dcfa] p-5 sm:p-7 shadow-[0_15px_40px_rgba(10,61,107,0.12)] relative">
+    <div className="bg-white rounded-[8px] border border-[#e9e3d8] p-5 sm:p-7 shadow-[0_1px_3px_rgba(18,48,90,0.05)] relative">
       <div className="flex items-center gap-2 mb-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-brand-blue animate-pulse" />
+        <span className="w-2.5 h-2.5 rounded-full bg-brand-ink animate-pulse" />
         <span className="text-[11px] font-extrabold uppercase tracking-wider text-brand-blue font-heading">
           INSTANT ON-DEMAND ACCESS
         </span>
@@ -82,7 +82,7 @@ export function CampusTourRegistrationForm({
       </p>
 
       {status === "success" ? (
-        <div className="p-6 rounded-[6px] bg-[#E3F5EA] border border-[#2F9E5C]/30 text-center animate-in fade-in duration-200">
+        <div className="p-6 rounded-[6px] bg-[#f3eee5] border border-[#2F9E5C]/30 text-center animate-in fade-in duration-200">
           <div className="w-12 h-12 rounded-full bg-[#2F9E5C] text-white flex items-center justify-center mx-auto mb-3 shadow-sm">
             <CheckCircle2 className="w-6 h-6" />
           </div>
@@ -116,7 +116,7 @@ export function CampusTourRegistrationForm({
                 placeholder="e.g. Sarah"
                 value={formData.firstName}
                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
               />
             </div>
             <div>
@@ -130,7 +130,7 @@ export function CampusTourRegistrationForm({
                 placeholder="e.g. Smith"
                 value={formData.lastName}
                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export function CampusTourRegistrationForm({
               placeholder="e.g. sarah.smith@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+              className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
             />
           </div>
 
@@ -161,7 +161,7 @@ export function CampusTourRegistrationForm({
                 placeholder="(555) 123-4567"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
               />
             </div>
             <div>
@@ -172,7 +172,7 @@ export function CampusTourRegistrationForm({
                 id="campustour-grad"
                 value={formData.gradYear}
                 onChange={(e) => setFormData({ ...formData, gradYear: e.target.value })}
-                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all bg-white"
+                className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all bg-white"
               >
                 <option value="2025 (Senior)">2025 (Senior)</option>
                 <option value="2026 (Junior)">2026 (Junior)</option>
@@ -193,7 +193,7 @@ export function CampusTourRegistrationForm({
               placeholder="Any specific questions about campus visits or college list building?"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+              className="w-full px-3 py-2 rounded-[5px] text-xs sm:text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
             />
           </div>
 
@@ -218,7 +218,7 @@ export function CampusTourRegistrationForm({
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-3 px-5 rounded-[5px] text-xs sm:text-sm font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center gap-2 mt-2 disabled:opacity-50"
+            className="w-full py-3 px-5 rounded-[5px] text-xs sm:text-sm font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center gap-2 mt-2 disabled:opacity-50"
           >
             {status === "loading" ? (
               <span>Submitting...</span>

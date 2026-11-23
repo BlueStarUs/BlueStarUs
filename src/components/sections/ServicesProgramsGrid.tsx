@@ -156,11 +156,11 @@ export function ServicesProgramsGrid() {
     >
       {/* Subtle organic background glows (Animated with GSAP ScrollTrigger) */}
       <div
-        className="gsap-ambient-shape absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/60 via-[#edf6fd]/30 to-transparent rounded-bl-[200px] pointer-events-none"
+        className="gsap-ambient-shape absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/60 via-[#faf7f2]/30 to-transparent rounded-bl-[200px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="gsap-ambient-shape absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#e5f2fc]/50 via-[#eef6fe]/20 to-transparent rounded-tr-[180px] pointer-events-none"
+        className="gsap-ambient-shape absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/50 via-[#faf7f2]/20 to-transparent rounded-tr-[180px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -178,7 +178,7 @@ export function ServicesProgramsGrid() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-12 h-[3px] bg-brand-blue rounded-full mb-3.5 origin-center"
+            className="w-12 h-[3px] bg-brand-ink rounded-full mb-3.5 origin-center"
             aria-hidden="true"
           />
           <h2 className="text-2xl sm:text-[30px] md:text-[34px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-2.5">
@@ -210,15 +210,15 @@ export function ServicesProgramsGrid() {
                   y: -7,
                   transition: { duration: 0.25, ease: "easeOut" },
                 }}
-                className="bg-white rounded-[5px] border border-[#e5eef7] shadow-xs hover:shadow-[0_18px_40px_rgba(10,61,107,0.12)] transition-shadow duration-300 p-5 sm:p-6 flex flex-col justify-between group overflow-hidden relative cursor-default"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-shadow duration-300 p-5 sm:p-6 flex flex-col justify-between group overflow-hidden relative cursor-default"
               >
                 {/* Top-Right Decorative Curve Accent */}
                 <div
                   className={cn(
                     "absolute top-0 right-0 w-24 h-24 rounded-bl-[75px] pointer-events-none transition-transform duration-300 group-hover:scale-110",
                     isBlue
-                      ? "bg-gradient-to-bl from-[#e8f3fc] to-transparent"
-                      : "bg-gradient-to-bl from-[#e3f7eb] to-transparent"
+                      ? "bg-white"
+                      : "bg-white"
                   )}
                   aria-hidden="true"
                 />
@@ -230,8 +230,8 @@ export function ServicesProgramsGrid() {
                     className={cn(
                       "w-11 h-11 rounded-[5px] flex items-center justify-center mb-3.5 transition-colors duration-300 shadow-2xs",
                       isBlue
-                        ? "bg-[#eaf4fc] text-brand-blue group-hover:bg-brand-blue group-hover:text-white"
-                        : "bg-[#e3f5ea] text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white"
+                        ? "bg-[#f3eee5] text-brand-blue group-hover:bg-brand-ink group-hover:text-white"
+                        : "bg-[#f3eee5] text-[#2F9E5C] group-hover:bg-[#2F9E5C] group-hover:text-white"
                     )}
                   >
                     <Icon className="w-5 h-5" />
@@ -248,7 +248,7 @@ export function ServicesProgramsGrid() {
                   </p>
 
                   {/* Program Image (From public/images/services) with smooth scale */}
-                  <div className="relative w-full aspect-[16/9] rounded-[5px] overflow-hidden mb-4 border border-[#e8f1f9] bg-[#f8fbfe] shadow-2xs">
+                  <div className="relative w-full aspect-[16/9] rounded-[5px] overflow-hidden mb-4 border border-[#e9e3d8] bg-[#f5f1ea] shadow-2xs">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -264,7 +264,7 @@ export function ServicesProgramsGrid() {
                   <motion.div whileTap={{ scale: 0.96 }} className="inline-block">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[5px] bg-[#eaf3fc] hover:bg-brand-blue text-brand-blue hover:text-white text-[14px] sm:text-[15px] font-bold font-heading transition-all shadow-2xs group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[5px] bg-[#f3eee5] hover:bg-brand-ink text-brand-blue hover:text-white text-[14px] sm:text-[15px] font-bold font-heading transition-all shadow-2xs group/btn"
                     >
                       <span>Explore Service</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
