@@ -603,3 +603,21 @@ h3.font-display {
   font-weight: 600;
   letter-spacing: -0.005em;
 }
+
+/* Homepage admissions ticker: slow continuous scroll, pauses on hover/focus,
+   and stays still for visitors who prefer reduced motion. */
+@keyframes admits-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.admits-ticker__track {
+  animation: admits-ticker-scroll 90s linear infinite;
+}
+.admits-ticker:hover .admits-ticker__track,
+.admits-ticker:focus-within .admits-ticker__track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .admits-ticker { overflow-x: auto; }
+  .admits-ticker__track { animation: none; }
+}

@@ -5,7 +5,6 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { GA_TRACKING_ID } from "@/lib/analytics";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatBot } from "@/components/ui/ChatBot";
-import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export const viewport: Viewport = {
@@ -128,7 +127,6 @@ export default function RootLayout({
         <ScrollToTop />
         {children}
         <ChatBot />
-        <NewsletterPopup />
       </body>
     </html>
   );
