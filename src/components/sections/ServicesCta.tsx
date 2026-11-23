@@ -72,8 +72,6 @@ export function ServicesCta() {
         >
           {/* Luminous Flowing Wave Ribbons in Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-            <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
             <svg
               className="absolute -bottom-6 left-0 w-[500px] h-[180px] text-[#00b4d8] opacity-20 blur-xs"
@@ -161,10 +159,6 @@ export function ServicesCta() {
             <div className="relative w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible pt-2 lg:pt-0">
               <div className="relative w-[210px] sm:w-[260px] md:w-[290px] lg:w-[320px] xl:w-[335px] h-[190px] sm:h-[240px] md:h-[260px] lg:h-[280px] flex items-end justify-center">
                 {/* Radial Glow */}
-                <div
-                  className="absolute inset-0 bg-[#229ae3]/20 rounded-full blur-2xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Cyan 4-Point Brand Star (Positioned relative to student) */}
                 <div

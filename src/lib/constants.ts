@@ -58,7 +58,6 @@ export const NAV_LINKS: NavItem[] = [
   { label: "Our Services", href: "/services", hasDropdown: true },
   { label: "Successes", href: "/successes" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Resources", href: "/resources", hasDropdown: true },
   { label: "Blog", href: "/blogs" },
   { label: "About", href: "/about" },
 ];

@@ -1,15 +1,12 @@
 import React from "react";
-import Link from "next/link";
 import {
   Compass,
   FileText,
   Lightbulb,
   HeartHandshake,
   CheckCircle2,
-  ArrowRight,
   Sparkles,
 } from "lucide-react";
-import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 const METHODOLOGY_PILLARS = [
   {
@@ -119,36 +116,6 @@ export function SuccessesMethodology() {
           })}
         </div>
 
-        {/* Bottom Banner linking to Consultation & Services */}
-        <div className="rounded-[24px] bg-gradient-to-r from-brand-navy via-brand-darkNavy to-brand-navy text-white p-7 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_22px_50px_rgba(2,59,76,0.25)]">
-          <div className="max-w-2xl text-center md:text-left">
-            <h3 className="text-[22px] sm:text-[28px] leading-snug text-white mb-2">
-              Ready to write your family’s admissions success story?
-            </h3>
-            <p className="text-[14.5px] sm:text-[15.5px] font-sans text-[#f3eee5] leading-[1.7]">
-              Schedule an introductory consultation with Dr. Amy Morgenstern and our senior counseling team to review your student’s profile and goals.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
-            <a
-              href={HUBSPOT_CONSULTATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-lightBlue hover:from-[#095296] hover:to-[#1b7ec5] text-white font-heading font-semibold text-[14px] shadow-md transition-all whitespace-nowrap"
-            >
-              <span>Book a Free Consultation</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-
-            <Link
-              href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white font-heading font-medium text-[14px] transition-all whitespace-nowrap"
-            >
-              <span>Explore Our Services</span>
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );

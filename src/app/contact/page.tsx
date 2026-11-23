@@ -132,14 +132,6 @@ export default function ContactPage() {
       {/* Main Clean Contact Section */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
         {/* Soft Decorative Ambient Background */}
-        <div
-          className="absolute -top-24 right-0 w-[450px] h-[450px] bg-[#00b4d8]/10 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[380px] h-[380px] bg-[#f5f1ea]/80 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -611,8 +603,6 @@ export default function ContactPage() {
       <section className="relative w-full py-8 sm:py-10 lg:py-11 bg-brand-ink text-white overflow-hidden border-t border-[#2072a7]/40 mb-8">
         {/* Subtle Ambient Wave Lights */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-          <div className="absolute -top-16 -left-12 w-72 h-72 bg-[#0096c7]/20 rounded-full blur-2xl" />
-          <div className="absolute -bottom-16 right-10 w-80 h-60 bg-[#00b4d8]/20 rounded-full blur-2xl" />
         </div>
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

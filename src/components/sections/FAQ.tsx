@@ -19,14 +19,6 @@ export function FAQ() {
       id="faq"
     >
       {/* Decorative Organic Wave & Ambient Backdrops */}
-      <div
-        className="absolute top-0 left-0 w-[460px] h-[380px] bg-gradient-to-br from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-br-[240px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 right-0 w-[420px] h-[340px] bg-gradient-to-tl from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-tl-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

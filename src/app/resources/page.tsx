@@ -621,8 +621,6 @@ export default function ResourcesPage() {
           <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Ambient Background Waves */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
               <svg
                 className="absolute -bottom-6 left-0 w-[500px] h-[180px] text-[#00b4d8] opacity-20 blur-xs"

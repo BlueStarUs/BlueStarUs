@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Calendar, Compass, Award, GraduationCap, ArrowRight } from "lucide-react";
+import { Calendar, Compass, Award, GraduationCap } from "lucide-react";
 import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 interface ProcessStepItem {
@@ -82,15 +81,6 @@ export function Process() {
             </li>
           ))}
         </ol>
-
-        <a
-          href={HUBSPOT_CONSULTATION_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-14 inline-flex items-center gap-2 rounded-full bg-brand-ink hover:bg-brand-ink text-white px-7 py-3.5 text-[14px] font-semibold tracking-wide transition-colors"
-        >
-          Book your free 30-minute consultation <ArrowRight className="w-4 h-4" />
-        </a>
       </div>
     </section>
   );

@@ -397,10 +397,6 @@ export function ChatBot() {
           {/* Header */}
           <header className="px-4 py-3.5 bg-gradient-to-r from-brand-navy via-[#07466F] to-brand-blue text-white flex items-center justify-between gap-3 flex-shrink-0 relative overflow-hidden">
             {/* Ambient Star Glow */}
-            <div
-              className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"
-              aria-hidden="true"
-            />
 
             <div className="flex items-center gap-2.5 min-w-0 z-10">
               {/* Profile Avatar with Brand Star */}

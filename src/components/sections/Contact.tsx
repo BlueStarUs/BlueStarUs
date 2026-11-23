@@ -60,14 +60,6 @@ export function Contact() {
       id="contact"
     >
       {/* Decorative Organic Wave Shapes in Background (Matching Services & Process) */}
-      <div
-        className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-bl-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/70 via-[#faf7f2]/30 to-transparent rounded-tr-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

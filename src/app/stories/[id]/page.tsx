@@ -129,14 +129,6 @@ export default async function StoryDetailPage({ params }: PageProps) {
       {/* 2. Main Story Detail Section */}
       <section className="relative w-full py-10 sm:py-14 lg:py-18 bg-white overflow-hidden">
         {/* Decorative Organic Wave Shapes in Background (Matching Our Services) */}
-        <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-bl-[220px] pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/70 via-[#faf7f2]/30 to-transparent rounded-tr-[200px] pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back Navigation Bar */}
@@ -385,10 +377,6 @@ export default async function StoryDetailPage({ params }: PageProps) {
               {/* Consultation CTA Card */}
               <div className="bg-gradient-to-br from-brand-navy to-brand-darkNavy text-white rounded-[5px] p-6 shadow-[0_1px_3px_rgba(18,48,90,0.05)] relative overflow-hidden">
                 {/* Decorative Background Arc */}
-                <div
-                  className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100px] pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 <span className="inline-block px-2.5 py-1 rounded-[5px] bg-brand-ink text-[11px] font-bold font-heading uppercase tracking-wider mb-3">
                   YOUR COLLEGE JOURNEY

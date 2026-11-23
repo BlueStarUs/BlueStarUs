@@ -155,14 +155,6 @@ export function ServicesProgramsGrid() {
       id="programs"
     >
       {/* Subtle organic background glows (Animated with GSAP ScrollTrigger) */}
-      <div
-        className="gsap-ambient-shape absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/60 via-[#faf7f2]/30 to-transparent rounded-bl-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="gsap-ambient-shape absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/50 via-[#faf7f2]/20 to-transparent rounded-tr-[180px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header: Animates on both scroll down & scroll up */}

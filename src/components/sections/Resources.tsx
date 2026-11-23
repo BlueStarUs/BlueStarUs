@@ -51,14 +51,6 @@ export function Resources() {
       id="resources"
     >
       {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
-      <div
-        className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#faf7f2]/60 via-[#faf7f2]/25 to-transparent rounded-br-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#faf7f2]/60 via-[#faf7f2]/25 to-transparent rounded-tl-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

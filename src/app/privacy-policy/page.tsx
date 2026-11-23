@@ -63,8 +63,6 @@ export default function PrivacyPolicyPage() {
             className="absolute inset-0 pointer-events-none overflow-hidden z-0"
             aria-hidden="true"
           >
-            <div className="absolute -top-16 -left-12 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-16 right-10 w-96 h-72 bg-[#00b4d8]/20 rounded-full blur-3xl" />
           </div>
 
           <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center sm:text-left">

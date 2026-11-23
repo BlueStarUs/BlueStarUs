@@ -53,10 +53,6 @@ export function CTA() {
             {/* Unified container for student and stars that scales, grounds at bottom, and stays aligned */}
             <div className="relative w-[210px] sm:w-[260px] md:w-[290px] lg:w-[330px] xl:w-[350px] h-[190px] sm:h-[240px] md:h-[260px] lg:h-[300px] xl:h-[320px] flex items-end justify-center">
               {/* Ambient Radial Soft Glow */}
-              <div
-                className="absolute inset-0 bg-[#229ae3]/25 rounded-full blur-2xl pointer-events-none"
-                aria-hidden="true"
-              />
 
               {/* Cyan/Blue 4-point Brand Star (Positioned relative to student) */}
               <div

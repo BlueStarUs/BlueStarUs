@@ -409,17 +409,6 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 </ul>
               </div>
 
-              <div>
-                <Link
-                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-navy text-white hover:bg-brand-ink transition-all duration-200 shadow-xs hover:shadow-sm"
-                >
-                  <span>Start Your Teen&apos;s Creative Roadmap</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -482,15 +471,6 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   </div>
                 </div>
 
-                <Link
-                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 shadow-xs font-heading group-hover:scale-[1.01]"
-                >
-                  <span>Book Your Initial Consultation</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
               </motion.div>
             ))}
           </motion.div>

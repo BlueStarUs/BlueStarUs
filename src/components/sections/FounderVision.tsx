@@ -10,14 +10,6 @@ export function FounderVision() {
   return (
     <section className="py-14 sm:py-18 lg:py-22 bg-white border-y border-[#e9e3d8] relative overflow-hidden" id="founder">
       {/* Ambient Radial Brand Glows */}
-      <div
-        className="absolute top-10 right-0 w-[420px] h-[360px] bg-[#00b4d8]/10 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-10 left-0 w-[380px] h-[320px] bg-[#2ba3ea]/10 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Pill Kicker */}

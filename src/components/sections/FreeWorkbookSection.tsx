@@ -28,8 +28,6 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
     name: "",
     email: "",
     grade: "9th Grade (Freshman)",
-    role: "Student",
-    interest: "College Planning",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -56,8 +54,8 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
           phone: "Not provided (Workbook Lead)",
           studentGrade: formData.grade,
           targetYear: "Upcoming Cycle",
-          serviceInterest: `Free Workbook (${formData.interest})`,
-          message: `Requested Free Workbook: Blue Stars College Planning Foundations. Role: ${formData.role}, Grade: ${formData.grade}`,
+          serviceInterest: "Free Workbook",
+          message: `Requested Free Workbook: Blue Stars College Planning Foundations. Grade: ${formData.grade}`,
           source: "Free Workbook Form",
         }),
       }).catch(() => {
@@ -89,14 +87,6 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
       )}
     >
       {/* Decorative Background Lighting */}
-      <div
-        className="absolute top-0 right-0 w-[450px] h-[380px] bg-gradient-to-bl from-[#faf7f2]/70 via-transparent to-transparent rounded-bl-[240px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/60 via-transparent to-transparent rounded-tr-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -243,23 +233,6 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="wb-role" className="block text-[13px] sm:text-[14px] md:text-[14.5px] font-bold text-brand-navy font-heading mb-1.5">
-                      I am a:
-                    </label>
-                    <select
-                      id="wb-role"
-                      value={formData.role}
-                      onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-ink transition-all"
-                    >
-                      <option value="Student">High School Student</option>
-                      <option value="Parent">Parent / Guardian</option>
-                      <option value="Counselor">Educator / Counselor</option>
-                    </select>
-                  </div>
-
                   <div>
                     <label htmlFor="wb-grade" className="block text-[13px] sm:text-[14px] md:text-[14.5px] font-bold text-brand-navy font-heading mb-1.5">
                       Student Grade:
@@ -278,25 +251,6 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                       <option value="Other">Other / Counselor</option>
                     </select>
                   </div>
-                </div>
-
-                <div>
-                  <label htmlFor="wb-interest" className="block text-[13px] sm:text-[14px] md:text-[14.5px] font-bold text-brand-navy font-heading mb-1.5">
-                    Primary Area of Interest:
-                  </label>
-                  <select
-                    id="wb-interest"
-                    value={formData.interest}
-                    onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                    className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-ink transition-all"
-                  >
-                    <option value="College Planning">4-Year College Planning &amp; Roadmap</option>
-                    <option value="Admissions Strategy">Selective Admissions Consulting</option>
-                    <option value="Essay Guidance">College Essays &amp; Personal Statement</option>
-                    <option value="Research & Internships">Scientific Research &amp; Lab Placements</option>
-                    <option value="Art Admissions">Art, Design &amp; Architecture Portfolios</option>
-                  </select>
-                </div>
 
                 <button
                   type="submit"

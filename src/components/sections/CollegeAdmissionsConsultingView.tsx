@@ -231,10 +231,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               className="relative bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] p-6 sm:p-8 overflow-hidden"
             >
               {/* Corner Petal Accent */}
-              <div
-                className="absolute top-0 right-0 w-28 h-28 rounded-bl-[80px] bg-gradient-to-bl from-[#faf7f2] to-transparent pointer-events-none"
-                aria-hidden="true"
-              />
 
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5f1ea] text-brand-blue text-xs font-bold font-heading mb-4">
@@ -307,14 +303,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
         />
 
         {/* Ambient subtle glow lights */}
-        <div
-          className="absolute top-0 right-0 w-[450px] h-[350px] bg-[#00b4d8]/10 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-[#2ba3ea]/10 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
@@ -482,7 +470,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
             className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
           >
             {/* Luminous Glows */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 items-center relative z-10">
               <div>
@@ -602,19 +589,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                 Through personalized strategy, expert admissions insights, and comprehensive support, we ensure your student is well-prepared to compete with confidence at top universities around the world.
               </p>
 
-              <div className="mt-2">
-                <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} className="inline-block">
-                  <Link
-                    href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
-                  >
-                    <span>Book Your Initial Consultation</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </motion.div>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -778,15 +752,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
                   ))}
                 </div>
 
-                <Link
-                  href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 font-heading shadow-xs self-start sm:self-auto"
-                >
-                  <span>Book Your Initial Consultation</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
             </motion.div>
 
@@ -1169,8 +1134,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
           >
             {/* Luminous Wave Ribbons */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
@@ -1220,10 +1183,6 @@ export function CollegeAdmissionsConsultingView({ service }: CollegeAdmissionsCo
               {/* Right Column: Student Cutout & Glowing Brand Stars */}
               <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 {/* Radial Glow */}
-                <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Decorative Brand Stars */}
                 <div

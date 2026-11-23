@@ -116,8 +116,6 @@ export function ServiceResourcesBanner({
     >
       {/* Luminous Ambient Background Glow Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-        <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
         {/* Floating Brand Star Glow with GSAP Scroll Parallax */}
         <div

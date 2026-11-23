@@ -291,10 +291,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* 3. Core Service Pillars Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-[#e9e3d8] relative overflow-hidden">
         {/* Background Organic Waves */}
-        <div
-          className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#faf7f2]/70 to-transparent rounded-br-[220px] pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -379,10 +375,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative rounded-[6px] bg-gradient-to-br from-[#013B4C] via-[#1166B0] to-[#025269] text-white p-7 sm:p-10 lg:p-12 overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
               {/* Background Glow Ribbons */}
-              <div
-                className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"
-                aria-hidden="true"
-              />
 
               <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 items-center relative z-10">
                 <div>
@@ -769,8 +761,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Luminous Flowing Wave Ribbons in Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
               <svg
                 className="absolute -bottom-6 left-0 w-[500px] h-[180px] text-[#00b4d8] opacity-20 blur-xs"
@@ -831,10 +821,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {/* Right Column: Student Cutout & Glowing Brand Stars */}
               <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 {/* Radial Glow */}
-                <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Cyan 4-Point Brand Star */}
                 <div

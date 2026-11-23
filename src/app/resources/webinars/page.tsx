@@ -147,8 +147,6 @@ export default function WebinarsPage() {
         <div className="max-w-[1360px] mx-auto px-3.5 sm:px-6 lg:px-8">
           <div className="relative rounded-[6px] sm:rounded-[8px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
@@ -190,10 +188,6 @@ export default function WebinarsPage() {
                 {/* Unified container for student and stars that scales and centers together on all viewports */}
                 <div className="relative w-[210px] sm:w-[260px] md:w-[290px] lg:w-[320px] xl:w-[340px] h-[190px] sm:h-[240px] md:h-[260px] lg:h-[280px] flex items-end justify-center">
                   {/* Radial Glow */}
-                  <div
-                    className="absolute inset-0 bg-[#229ae3]/20 rounded-full blur-2xl pointer-events-none"
-                    aria-hidden="true"
-                  />
 
                   {/* Cyan 4-Point Brand Star (Positioned relative to student) */}
                   <div

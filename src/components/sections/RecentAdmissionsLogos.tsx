@@ -57,14 +57,6 @@ export function RecentAdmissionsLogos() {
       aria-label="Recent Admissions"
     >
       {/* Ambient Radial Background Glow */}
-      <div
-        className="absolute -top-16 -left-16 w-72 h-72 bg-[#00b4d8]/15 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -bottom-16 -right-16 w-80 h-80 bg-[#2ba3ea]/15 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">

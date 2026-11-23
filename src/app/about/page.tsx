@@ -387,10 +387,6 @@ export default function AboutPage() {
         className="scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-white border-y border-[#e9e3d8] relative overflow-hidden"
       >
         {/* Ambient Organic Waves */}
-        <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/70 via-[#faf7f2]/40 to-transparent rounded-bl-[220px] pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
@@ -1000,8 +996,6 @@ export default function AboutPage() {
           className="absolute inset-0 pointer-events-none overflow-hidden z-0"
           aria-hidden="true"
         >
-          <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">

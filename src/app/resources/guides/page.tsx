@@ -135,8 +135,6 @@ export default function GuidesPage() {
           <div className="relative rounded-[8px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Ambient Flowing Light in Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
@@ -177,10 +175,6 @@ export default function GuidesPage() {
               {/* Right Column: Student Cutout Image & Decorative Brand Stars */}
               <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 {/* Radial Glow */}
-                <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Cyan 4-Point Brand Star */}
                 <div
