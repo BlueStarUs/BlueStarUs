@@ -47,16 +47,16 @@ const RESOURCES_DATA: ResourceArticleItem[] = [
 export function Resources() {
   return (
     <section
-      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
+      className="relative w-full py-12 sm:py-14 lg:py-18 bg-white overflow-hidden"
       id="resources"
     >
       {/* Decorative Organic Wave Shapes in Background (Matching reference) */}
       <div
-        className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/60 via-[#edf6fd]/25 to-transparent rounded-br-[220px] pointer-events-none"
+        className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#faf7f2]/60 via-[#faf7f2]/25 to-transparent rounded-br-[220px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#e5f2fc]/60 via-[#eef6fe]/25 to-transparent rounded-tl-[200px] pointer-events-none"
+        className="absolute bottom-0 right-0 w-[380px] h-[320px] bg-gradient-to-tl from-[#faf7f2]/60 via-[#faf7f2]/25 to-transparent rounded-tl-[200px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -85,7 +85,7 @@ export function Resources() {
           {/* View All Articles Pill Button */}
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[16px] font-heading transition-all duration-200 shadow-sm flex-shrink-0 group"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#f5f1ea] hover:bg-brand-ink text-brand-blue hover:text-white font-bold text-xs sm:text-[16px] font-heading transition-all duration-200 shadow-sm flex-shrink-0 group"
           >
             <span>View All Articles</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -101,14 +101,14 @@ export function Resources() {
             return (
               <article
                 key={article.id}
-                className="relative bg-white rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(10,61,107,0.08)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_38px_rgba(10,61,107,0.12)] flex flex-col group"
+                className="relative bg-white rounded-[20px] overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] flex flex-col group"
               >
                 {/* Decorative Bottom-Right Corner Petal Accent */}
                 <div className="absolute bottom-0 right-0 w-24 h-24 pointer-events-none overflow-hidden rounded-br-[20px] z-0">
                   <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
                     <path
                       d="M100 0V100H0C55.23 100 100 55.23 100 0Z"
-                      fill={isBlue ? "#e2f2fd" : "#e3f8ec"}
+                      fill={isBlue ? "#f3eee5" : "#f3eee5"}
                       opacity="0.85"
                     />
                   </svg>
@@ -156,10 +156,10 @@ export function Resources() {
                   <div className="absolute -top-7 left-6 z-20">
                     <div
                       className={cn(
-                        "w-[52px] h-[52px] rounded-[16px] border-[3px] border-white shadow-[0_6px_18px_rgba(10,61,107,0.12)] grid place-items-center transition-transform duration-300 group-hover:scale-105",
+                        "w-[52px] h-[52px] rounded-[16px] border-[3px] border-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] grid place-items-center transition-transform duration-300 group-hover:scale-105",
                         isBlue
-                          ? "bg-gradient-to-b from-[#f0f7fe] to-[#d8eefc]"
-                          : "bg-gradient-to-b from-[#f0fbf4] to-[#d4f6e1]"
+                          ? "bg-gradient-to-b from-[#faf7f2] to-[#faf7f2]"
+                          : "bg-gradient-to-b from-[#faf7f2] to-[#faf7f2]"
                       )}
                     >
                       <Icon
@@ -189,7 +189,7 @@ export function Resources() {
                   <div>
                     <Link
                       href={article.href}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[8px] bg-brand-blue hover:bg-brand-navy text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[8px] bg-brand-ink hover:bg-brand-blue text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <span>Read More</span>
                       <ArrowRight className="w-3.5 h-3.5" />

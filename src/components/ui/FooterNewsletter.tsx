@@ -56,7 +56,7 @@ export function FooterNewsletter() {
           <CheckCircle2 className="w-5 h-5 text-[#3bd386] flex-shrink-0" />
           <div className="text-xs sm:text-[13.5px] font-sans">
             <span className="font-bold font-heading text-white">Thank you for subscribing!</span>
-            <p className="text-[#d8ebf9] text-[12px] sm:text-[12.5px] mt-0.5">
+            <p className="text-[#f3eee5] text-[12px] sm:text-[12.5px] mt-0.5">
               You will receive admissions updates and seasonal insights from Blue Stars.
             </p>
           </div>

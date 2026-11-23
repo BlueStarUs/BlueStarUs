@@ -59,7 +59,7 @@ export async function Hero({ customConfig }: HeroProps = {}) {
               <a
                 href={heroConfig.primaryBtnHref || "/#contact"}
                 {...(primaryIsExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-ink hover:bg-brand-blue text-white px-7 py-3.5 text-[14px] font-semibold tracking-wide transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-ink hover:bg-brand-ink text-white px-7 py-3.5 text-[14px] font-semibold tracking-wide transition-colors duration-200"
               >
                 {heroConfig.primaryBtnText}
                 <ArrowRight className="w-4 h-4" />

@@ -23,13 +23,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseClasses =
-      "inline-flex items-center justify-center gap-2 rounded-lg font-semibold font-heading transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
+      "inline-flex items-center justify-center gap-2 rounded-full font-semibold font-sans tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
     const variantClasses = {
       primary:
-        "bg-brand-blue text-white border-[1.5px] border-brand-blue hover:bg-brand-navy hover:border-brand-navy shadow-sm",
+        "bg-brand-ink text-white border-[1.5px] border-brand-ink hover:bg-brand-blue hover:border-brand-blue",
       outline:
-        "bg-white text-brand-blue border-[1.5px] border-brand-blue hover:bg-brand-sky",
+        "bg-transparent text-brand-ink border-[1.5px] border-brand-ink/70 hover:bg-brand-ink hover:text-white",
       white:
         "bg-white text-brand-navy border-[1.5px] border-white hover:bg-brand-sky hover:border-brand-sky shadow-sm",
     };

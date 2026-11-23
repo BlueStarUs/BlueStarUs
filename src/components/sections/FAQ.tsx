@@ -15,16 +15,16 @@ export function FAQ() {
 
   return (
     <section
-      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-r from-[#f1f8fd] via-[#e9f4fc] to-[#f2f8fd] overflow-hidden"
+      className="relative w-full py-12 sm:py-14 lg:py-18 bg-white overflow-hidden"
       id="faq"
     >
       {/* Decorative Organic Wave & Ambient Backdrops */}
       <div
-        className="absolute top-0 left-0 w-[460px] h-[380px] bg-gradient-to-br from-[#e1f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-br-[240px] pointer-events-none"
+        className="absolute top-0 left-0 w-[460px] h-[380px] bg-gradient-to-br from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-br-[240px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 right-0 w-[420px] h-[340px] bg-gradient-to-tl from-[#e3f2fd]/80 via-[#edf6fe]/40 to-transparent rounded-tl-[220px] pointer-events-none"
+        className="absolute bottom-0 right-0 w-[420px] h-[340px] bg-gradient-to-tl from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-tl-[220px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -63,8 +63,8 @@ export function FAQ() {
           </div>
 
           {/* Right Column: Unified Elevated FAQ Card */}
-          <div className="bg-white rounded-[16px] border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)] overflow-hidden transition-all duration-300">
-            <div className="divide-y divide-[#edf3f9]">
+          <div className="bg-white rounded-[16px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] overflow-hidden transition-all duration-300">
+            <div className="divide-y divide-[#f3eee5]">
               {FAQS.map((faq, index) => {
                 const isOpen = openIndex === index;
 

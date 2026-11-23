@@ -84,24 +84,24 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
     <section
       id="free-workbook"
       className={cn(
-        "relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-y border-[#e2eef9] overflow-hidden",
+        "relative w-full py-12 sm:py-16 lg:py-20 bg-white border-y border-[#e9e3d8] overflow-hidden",
         className
       )}
     >
       {/* Decorative Background Lighting */}
       <div
-        className="absolute top-0 right-0 w-[450px] h-[380px] bg-gradient-to-bl from-[#E3F1FC]/70 via-transparent to-transparent rounded-bl-[240px] pointer-events-none"
+        className="absolute top-0 right-0 w-[450px] h-[380px] bg-gradient-to-bl from-[#faf7f2]/70 via-transparent to-transparent rounded-bl-[240px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#e2f7eb]/60 via-transparent to-transparent rounded-tr-[200px] pointer-events-none"
+        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/60 via-transparent to-transparent rounded-tr-[200px] pointer-events-none"
         aria-hidden="true"
       />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#f5f1ea] text-brand-blue text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
             <span>FREE ADMISSIONS WORKBOOK</span>
           </div>
@@ -121,7 +121,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
           <div>
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
               {/* Cover Image Container */}
-              <div className="relative w-[180px] sm:w-[210px] aspect-[612/794] rounded-[5px] overflow-hidden flex-shrink-0 shadow-[0_18px_40px_rgba(10,61,107,0.18)] border border-[#e2eef9] group bg-white">
+              <div className="relative w-[180px] sm:w-[210px] aspect-[612/794] rounded-[5px] overflow-hidden flex-shrink-0 shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] group bg-white">
                 <Image
                   src="/images/resources/workbook-cover.png"
                   alt="Blue Stars College Planning Foundations Workbook Cover"
@@ -130,7 +130,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   priority
                 />
-                <div className="absolute top-2 right-2 px-2 py-0.5 rounded-[4px] bg-brand-blue text-white text-[10px] font-extrabold tracking-wider uppercase font-heading shadow-xs">
+                <div className="absolute top-2 right-2 px-2 py-0.5 rounded-[4px] bg-brand-ink text-white text-[10px] font-extrabold tracking-wider uppercase font-heading shadow-xs">
                   PDF
                 </div>
               </div>
@@ -159,7 +159,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
             </div>
 
             {/* 5 Strategic Exercises List */}
-            <div className="space-y-3 mb-6 bg-white p-5 rounded-[5px] border border-[#e2eef9] shadow-xs">
+            <div className="space-y-3 mb-6 bg-white p-5 rounded-[5px] border border-[#e9e3d8] shadow-xs">
               <h4 className="text-[15px] sm:text-[18px] font-bold text-brand-navy font-heading flex items-center gap-2 mb-4">
                 <BookOpen className="w-4 h-4 text-brand-blue" />
                 <span>What&apos;s Inside This 4-Year Strategic Toolkit:</span>
@@ -192,7 +192,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
           </div>
 
           {/* Right Column: Lead Form Card */}
-          <div className="bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-8 lg:p-9 shadow-[0_12px_36px_rgba(10,61,107,0.08)]">
+          <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-6 sm:p-8 lg:p-9 shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-4.5">
                 <div>
@@ -224,7 +224,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                     placeholder="Student or Parent Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-[5px] border border-[#e2eef9] bg-[#f8fbfe] text-[14px] sm:text-[15px] md:text-[15.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[14px] sm:text-[15px] md:text-[15.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink transition-all"
                   />
                 </div>
 
@@ -239,7 +239,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-[5px] border border-[#e2eef9] bg-[#f8fbfe] text-[14px] sm:text-[15px] md:text-[15.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[14px] sm:text-[15px] md:text-[15.5px] font-sans text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink transition-all"
                   />
                 </div>
 
@@ -252,7 +252,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                       id="wb-role"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e2eef9] bg-[#f8fbfe] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-blue transition-all"
+                      className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-ink transition-all"
                     >
                       <option value="Student">High School Student</option>
                       <option value="Parent">Parent / Guardian</option>
@@ -268,7 +268,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                       id="wb-grade"
                       value={formData.grade}
                       onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                      className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e2eef9] bg-[#f8fbfe] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-blue transition-all"
+                      className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-ink transition-all"
                     >
                       <option value="8th Grade">8th Grade</option>
                       <option value="9th Grade (Freshman)">9th Grade (Freshman)</option>
@@ -288,7 +288,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                     id="wb-interest"
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                    className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e2eef9] bg-[#f8fbfe] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-blue transition-all"
+                    className="w-full px-3.5 py-3 sm:py-3.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-[13.5px] sm:text-[14.5px] md:text-[15px] font-sans text-brand-navy focus:outline-none focus:border-brand-ink transition-all"
                   >
                     <option value="College Planning">4-Year College Planning &amp; Roadmap</option>
                     <option value="Admissions Strategy">Selective Admissions Consulting</option>
@@ -301,7 +301,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 sm:py-4 px-5 rounded-[5px] font-extrabold text-[14.5px] sm:text-[15.5px] md:text-[16px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-70 mt-3"
+                  className="w-full py-3.5 sm:py-4 px-5 rounded-[5px] font-extrabold text-[14.5px] sm:text-[15.5px] md:text-[16px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-70 mt-3"
                 >
                   {isSubmitting ? (
                     <span>Preparing Your Download...</span>
@@ -319,7 +319,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
               </form>
             ) : (
               <div className="text-center py-6 sm:py-8">
-                <div className="w-14 h-14 rounded-full bg-[#e2f7eb] text-[#2F9E5C] flex items-center justify-center mx-auto mb-4 shadow-xs">
+                <div className="w-14 h-14 rounded-full bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center mx-auto mb-4 shadow-xs">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
 
@@ -335,7 +335,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                   <a
                     href="/downloads/Blue-Stars-College-Planning-Foundations-Workbook.pdf"
                     download="Blue-Stars-College-Planning-Foundations-Workbook.pdf"
-                    className="inline-flex items-center justify-center gap-2 w-full py-3.5 sm:py-4 px-5 rounded-[5px] font-extrabold text-[14px] sm:text-[15.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all shadow-md"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3.5 sm:py-4 px-5 rounded-[5px] font-extrabold text-[14px] sm:text-[15.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all shadow-md"
                   >
                     <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Download PDF Again (2.2 MB)</span>
@@ -345,7 +345,7 @@ export function FreeWorkbookSection({ className }: { className?: string }) {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-[#E3F1FC] text-brand-blue hover:bg-brand-blue hover:text-white transition-all"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-[5px] font-bold text-xs sm:text-[14px] font-heading bg-[#f5f1ea] text-brand-blue hover:bg-brand-ink hover:text-white transition-all"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4" />

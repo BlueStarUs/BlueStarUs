@@ -88,9 +88,9 @@ export function NewsletterPopup() {
       aria-labelledby="popup-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-300"
     >
-      <div className="relative w-full max-w-lg bg-white rounded-[12px] shadow-[0_24px_60px_rgba(10,61,107,0.3)] border border-[#cbe1f5] overflow-hidden animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-lg bg-white rounded-[12px] shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] overflow-hidden animate-in zoom-in-95 duration-200">
         {/* Header Ribbon with Brand Star */}
-        <div className="relative bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white p-6 sm:p-7 overflow-hidden">
+        <div className="relative bg-brand-ink text-white p-6 sm:p-7 overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00b4d8]/20 rounded-full blur-2xl pointer-events-none" />
           
           {/* Close button */}
@@ -114,7 +114,7 @@ export function NewsletterPopup() {
             >
               Get College Admissions Updates
             </h3>
-            <p className="text-xs sm:text-[13.5px] text-[#cfe6f9] mt-1.5 font-sans leading-relaxed">
+            <p className="text-xs sm:text-[13.5px] text-[#f3eee5] mt-1.5 font-sans leading-relaxed">
               Stay ahead with seasonal deadline alerts, UC PIQ guides, webinar invites, and proven application strategy.
             </p>
           </div>
@@ -124,7 +124,7 @@ export function NewsletterPopup() {
         <div className="p-6 sm:p-7 bg-[#fbfdff]">
           {status === "success" ? (
             <div className="py-6 text-center animate-in fade-in duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#E3F5EA] text-[#2F9E5C] mx-auto flex items-center justify-center mb-3">
+              <div className="w-12 h-12 rounded-full bg-[#f3eee5] text-[#2F9E5C] mx-auto flex items-center justify-center mb-3">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <h4 className="font-heading font-extrabold text-lg text-brand-navy">
@@ -154,7 +154,7 @@ export function NewsletterPopup() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@example.com"
-                    className="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-[6px] border border-[#d6e3f0] focus:border-brand-blue bg-white text-brand-navy placeholder-brand-text/50 text-xs sm:text-[13.5px] outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all font-sans"
+                    className="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-[6px] border border-[#e9e3d8] focus:border-brand-ink bg-white text-brand-navy placeholder-brand-text/50 text-xs sm:text-[13.5px] outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all font-sans"
                   />
                 </div>
               </div>
@@ -174,7 +174,7 @@ export function NewsletterPopup() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full sm:flex-1 py-3 px-5 rounded-[6px] bg-brand-blue hover:bg-brand-navy active:scale-[0.98] text-white text-xs sm:text-[13.5px] font-bold font-heading transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                  className="w-full sm:flex-1 py-3 px-5 rounded-[6px] bg-brand-ink hover:bg-brand-blue active:scale-[0.98] text-white text-xs sm:text-[13.5px] font-bold font-heading transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                 >
                   {status === "submitting" ? (
                     <>

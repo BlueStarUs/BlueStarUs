@@ -87,7 +87,7 @@ export default function WebinarsPage() {
       <WebinarsListing />
 
       {/* Why Attend Blue Stars Masterclasses with Clean University Campus Background */}
-      <section className="relative py-8 sm:py-14 lg:py-18 overflow-hidden border-y border-[#e2eef9]">
+      <section className="relative py-8 sm:py-14 lg:py-18 overflow-hidden border-y border-[#e9e3d8]">
         {/* Background Campus Image with Responsive Fill & Aspect Ratio */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -145,7 +145,7 @@ export default function WebinarsPage() {
       {/* Elevated CTA Banner */}
       <section className="relative w-full py-6 sm:py-10 lg:py-14 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-3.5 sm:px-6 lg:px-8">
-          <div className="relative rounded-[6px] sm:rounded-[8px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[6px] sm:rounded-[8px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
               <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
               <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
@@ -162,7 +162,7 @@ export default function WebinarsPage() {
                   Want 1-on-1 Guidance Tailored to Your Student?
                 </h2>
 
-                <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#d4e8f8] mb-4 sm:mb-6 max-w-xl font-sans">
+                <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#f3eee5] mb-4 sm:mb-6 max-w-xl font-sans">
                   Schedule a free 30-minute Initial Consultation with our senior advisors to map out a personalized multi-year college admissions plan.
                 </p>
 
@@ -171,7 +171,7 @@ export default function WebinarsPage() {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-md hover:shadow-lg transition-all"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#07466f]" />

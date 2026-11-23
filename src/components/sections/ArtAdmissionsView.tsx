@@ -219,10 +219,10 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
       />
 
       {/* 2. Top Key Stats Bar */}
-      <section className="border-b border-[#e2eef9] bg-[#f8fbfe] py-6 sm:py-8">
+      <section className="border-b border-[#e9e3d8] bg-[#f5f1ea] py-6 sm:py-8">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e2eef9] shadow-xs text-center">
+            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e9e3d8] shadow-xs text-center">
               <span className="block text-2xl sm:text-3xl font-extrabold text-brand-navy font-heading">
                 15+ Years
               </span>
@@ -230,7 +230,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 Creative Admissions Mentorship
               </span>
             </div>
-            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e2eef9] shadow-xs text-center">
+            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e9e3d8] shadow-xs text-center">
               <span className="block text-2xl sm:text-3xl font-extrabold text-brand-blue font-heading">
                 MFA Led
               </span>
@@ -238,7 +238,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 Contemporary Art Faculty Direction
               </span>
             </div>
-            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e2eef9] shadow-xs text-center">
+            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e9e3d8] shadow-xs text-center">
               <span className="block text-2xl sm:text-3xl font-extrabold text-brand-navy font-heading">
                 12–20
               </span>
@@ -246,7 +246,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 Curated Works per SlideRoom Portfolio
               </span>
             </div>
-            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e2eef9] shadow-xs text-center">
+            <div className="bg-white rounded-[5px] p-4 sm:p-5 border border-[#e9e3d8] shadow-xs text-center">
               <span className="block text-2xl sm:text-3xl font-extrabold text-[#2F9E5C] font-heading">
                 Top BFA &amp; MFA
               </span>
@@ -271,7 +271,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
             {/* Left Narrative */}
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   ART ADMISSIONS MENTORSHIP
                 </span>
@@ -315,7 +315,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-xs hover:shadow-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -324,7 +324,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
             </div>
 
             {/* Right Image Container */}
-            <div className="relative rounded-[5px] overflow-hidden border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.08)] group aspect-[4/3] bg-[#f8fbfe]">
+            <div className="relative rounded-[5px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] group aspect-[4/3] bg-[#f5f1ea]">
               <Image
                 src="/images/services/others_images/Dream_art_Programs.png"
                 alt="Student developing art portfolio for dream college admissions"
@@ -347,7 +347,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
       </section>
 
       {/* 4. Hero Feature 2: Creating a Successful Artistic Profile — Start Early to Get Ahead */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={fadeUpVariants}
@@ -357,7 +357,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
             className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 xl:gap-16 items-center"
           >
             {/* Left Image Container */}
-            <div className="relative rounded-[5px] overflow-hidden border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.08)] group aspect-[4/3] bg-[#f8fbfe] order-2 lg:order-1">
+            <div className="relative rounded-[5px] overflow-hidden border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] group aspect-[4/3] bg-[#f5f1ea] order-2 lg:order-1">
               <Image
                 src="/images/services/others_images/Early_art_Development.png"
                 alt="Early high school art development and sketchbook mentorship"
@@ -397,7 +397,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                 Guided by &ldquo;The Calm Way,&rdquo; we structure the entire multi-year timeline into manageable, exciting milestones—preventing senior-year panic and giving your teen the space to take creative risks that truly stand out.
               </p>
 
-              <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs mb-8">
+              <div className="p-4 rounded-[5px] bg-white border border-[#e9e3d8] shadow-xs mb-8">
                 <h4 className="text-sm font-bold text-brand-navy font-heading mb-2 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-brand-blue" />
                   <span>The Blue Stars Advantage for Young Artists</span>
@@ -414,7 +414,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-navy text-white hover:bg-brand-blue transition-all duration-200 shadow-xs hover:shadow-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-navy text-white hover:bg-brand-ink transition-all duration-200 shadow-xs hover:shadow-sm"
                 >
                   <span>Start Your Teen&apos;s Creative Roadmap</span>
                   <ArrowRight className="w-4 h-4" />
@@ -430,11 +430,11 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 TAILORED PROGRAMS
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px] mb-3">
@@ -457,10 +457,10 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               <motion.div
                 key={item.title}
                 variants={cardItemVariants}
-                className="bg-white rounded-[5px] border border-[#e2eef9] shadow-[0_6px_24px_rgba(10,61,107,0.06)] hover:shadow-[0_16px_36px_rgba(10,61,107,0.12)] transition-all duration-300 hover:-translate-y-1.5 p-6 flex flex-col justify-between group"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all duration-300 hover:-translate-y-1.5 p-6 flex flex-col justify-between group"
               >
                 <div>
-                  <span className="inline-block px-2.5 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-[11px] font-bold font-heading mb-3">
+                  <span className="inline-block px-2.5 py-1 rounded-[5px] bg-[#f5f1ea] text-brand-blue text-[11px] font-bold font-heading mb-3">
                     {item.kicker}
                   </span>
 
@@ -472,7 +472,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                     {item.description}
                   </p>
 
-                  <div className="space-y-2.5 pt-4 border-t border-[#edf4fb] mb-6">
+                  <div className="space-y-2.5 pt-4 border-t border-[#e9e3d8] mb-6">
                     {item.bullets.map((b) => (
                       <div key={b} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-brand-navy font-sans leading-snug">
                         <CheckCircle2 className="w-4 h-4 text-[#2F9E5C] flex-shrink-0 mt-0.5" />
@@ -486,7 +486,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-xs font-heading group-hover:scale-[1.01]"
+                  className="inline-flex items-center justify-center w-full gap-2 py-3 px-4 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 shadow-xs font-heading group-hover:scale-[1.01]"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -512,7 +512,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               The STARS Method Makes the Difference
             </h2>
 
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] font-sans">
+            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] font-sans">
               Our 5-pillar proprietary framework guiding high school artists from raw sketchbook exploration to triumphant admissions offers.
             </p>
           </div>
@@ -533,7 +533,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   <h4 className="text-[16px] sm:text-[17px] font-bold text-white font-heading mb-2 leading-snug">
                     {s.title}
                   </h4>
-                  <p className="text-xs sm:text-[12.5px] leading-[19px] text-[#d4e8f8] font-sans">
+                  <p className="text-xs sm:text-[12.5px] leading-[19px] text-[#f3eee5] font-sans">
                     {s.description}
                   </p>
                 </div>
@@ -544,11 +544,11 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
       </section>
 
       {/* 7. Featured Student Testimonial: Jeanie (Admitted to RISD) */}
-      <section className="py-14 sm:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-b border-[#e2eef9]">
+      <section className="py-14 sm:py-18 bg-white border-b border-[#e9e3d8]">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-10 shadow-[0_12px_36px_rgba(10,61,107,0.06)] relative overflow-hidden">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#eef5fb]">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#e2f7eb] text-[#2F9E5C] text-xs font-bold font-heading">
+          <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-6 sm:p-10 shadow-[0_1px_3px_rgba(18,48,90,0.05)] relative overflow-hidden">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#e9e3d8]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] text-xs font-bold font-heading">
                 <Award className="w-3.5 h-3.5" />
                 <span>Admitted to Dream School: Rhode Island School of Design (RISD)</span>
               </div>
@@ -565,7 +565,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               &ldquo;When I first started working with Blue Stars, I wasn&apos;t completely sure I wanted to pursue art. She encouraged me to immerse myself in the art world by visiting art museums and listening to podcasts. These engaging activities inspired me, and I became more passionate about studying art in the future. With Blue Stars&apos; guidance during the college admissions process, <strong>I was admitted into my dream school, RISD!</strong> It became easier to complete everything once it was broken down into specific tasks. Blue Stars gave me lots of excellent feedback on my essays, and I became more confident in what I wanted to convey in my writing.&rdquo;
             </p>
 
-            <div className="flex items-center justify-between gap-4 pt-4 border-t border-[#eef5fb]">
+            <div className="flex items-center justify-between gap-4 pt-4 border-t border-[#e9e3d8]">
               <div>
                 <span className="block text-base font-bold text-brand-navy font-heading">
                   Jeanie
@@ -599,7 +599,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="bg-[#f8fbfe] rounded-[5px] p-5 sm:p-6 border border-[#e2eef9] shadow-xs">
+            <div className="bg-[#f5f1ea] rounded-[5px] p-5 sm:p-6 border border-[#e9e3d8] shadow-xs">
               <span className="block text-sm font-extrabold text-brand-blue font-heading mb-1">
                 STEP 01
               </span>
@@ -611,7 +611,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               </p>
             </div>
 
-            <div className="bg-[#f8fbfe] rounded-[5px] p-5 sm:p-6 border border-[#e2eef9] shadow-xs">
+            <div className="bg-[#f5f1ea] rounded-[5px] p-5 sm:p-6 border border-[#e9e3d8] shadow-xs">
               <span className="block text-sm font-extrabold text-brand-blue font-heading mb-1">
                 STEP 02
               </span>
@@ -623,7 +623,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               </p>
             </div>
 
-            <div className="bg-[#f8fbfe] rounded-[5px] p-5 sm:p-6 border border-[#e2eef9] shadow-xs">
+            <div className="bg-[#f5f1ea] rounded-[5px] p-5 sm:p-6 border border-[#e9e3d8] shadow-xs">
               <span className="block text-sm font-extrabold text-brand-blue font-heading mb-1">
                 STEP 03
               </span>
@@ -635,7 +635,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
               </p>
             </div>
 
-            <div className="bg-[#f8fbfe] rounded-[5px] p-5 sm:p-6 border border-[#e2eef9] shadow-xs">
+            <div className="bg-[#f5f1ea] rounded-[5px] p-5 sm:p-6 border border-[#e9e3d8] shadow-xs">
               <span className="block text-sm font-extrabold text-brand-blue font-heading mb-1">
                 STEP 04
               </span>
@@ -651,12 +651,12 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
       </section>
 
       {/* 9. FAQs */}
-      <section className="py-14 sm:py-18 bg-white border-t border-[#e2eef9]">
+      <section className="py-14 sm:py-18 bg-white border-t border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14 items-start">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
@@ -694,7 +694,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
       {/* 10. Consultation CTA Banner with Student Cutout */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-4">
-          <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
               <div className="p-7 sm:p-10 lg:p-12 xl:p-14 flex flex-col items-start text-left">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[5px] bg-[#0d4f7c]/80 border border-[#2597e0]/50 text-[#79c3f7] text-[11px] sm:text-xs font-bold tracking-[0.14em] uppercase font-heading mb-3 shadow-xs">
@@ -706,7 +706,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   Make the College Art Admissions Process Less Stressful and More Successful
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
                   Schedule a complimentary 30-minute introductory consultation with Dr. Amy Morgenstern to evaluate your student&apos;s art portfolio trajectory.
                 </p>
 
@@ -729,7 +729,7 @@ export function ArtAdmissionsView({ service }: ArtAdmissionsViewProps) {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />

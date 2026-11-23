@@ -127,14 +127,14 @@ export default async function StoryDetailPage({ params }: PageProps) {
       />
 
       {/* 2. Main Story Detail Section */}
-      <section className="relative w-full py-10 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden">
+      <section className="relative w-full py-10 sm:py-14 lg:py-18 bg-white overflow-hidden">
         {/* Decorative Organic Wave Shapes in Background (Matching Our Services) */}
         <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
+          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/80 via-[#faf7f2]/40 to-transparent rounded-bl-[220px] pointer-events-none"
           aria-hidden="true"
         />
         <div
-          className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#e5f2fc]/70 via-[#eef6fe]/30 to-transparent rounded-tr-[200px] pointer-events-none"
+          className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#faf7f2]/70 via-[#faf7f2]/30 to-transparent rounded-tr-[200px] pointer-events-none"
           aria-hidden="true"
         />
 
@@ -157,7 +157,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {/* Two-Column Layout: Main Story (Left ~65%) & Sticky Snapshot Sidebar (Right ~35%) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* Left Column: Full Story Article */}
-            <article className="lg:col-span-8 bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgba(10,61,107,0.06)] relative overflow-hidden">
+            <article className="lg:col-span-8 bg-white rounded-[5px] border border-[#e9e3d8] p-6 sm:p-8 lg:p-10 shadow-[0_1px_3px_rgba(18,48,90,0.05)] relative overflow-hidden">
               {/* Top Accent Stripe */}
               <div
                 className={cn(
@@ -172,7 +172,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
               {/* Kicker & Meta Badges (Matching Our Services font size & spacing) */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-5 pt-1">
                 <div className="flex items-center gap-2.5">
-                  <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                  <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                   <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                     STUDENT SUCCESS STORY
                   </span>
@@ -202,8 +202,8 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
               {/* Key Admissions Outcome Banner (Prominent, matching popup & services cards) */}
               {story.admittedTo && (
-                <div className="rounded-[5px] p-4 sm:p-5 bg-gradient-to-r from-[#E8F3FC] via-[#f1f7fd] to-white border border-[#cbe2f7] flex items-start gap-4 mb-7 shadow-xs">
-                  <div className="w-11 h-11 rounded-[5px] bg-brand-blue text-white flex items-center justify-center flex-shrink-0 shadow-xs mt-0.5">
+                <div className="rounded-[5px] p-4 sm:p-5 bg-gradient-to-r from-[#faf7f2] via-[#faf7f2] to-white border border-[#e9e3d8] flex items-start gap-4 mb-7 shadow-xs">
+                  <div className="w-11 h-11 rounded-[5px] bg-brand-ink text-white flex items-center justify-center flex-shrink-0 shadow-xs mt-0.5">
                     <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                   <div className="min-w-0">
@@ -223,7 +223,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
               )}
 
               {/* Pull Quote Block (Highlighting the core testimonial quote) */}
-              <div className="relative p-5 sm:p-6 rounded-[5px] bg-[#f8fbfe] border-l-4 border-brand-blue border-y border-r border-[#e2eef9] my-7">
+              <div className="relative p-5 sm:p-6 rounded-[5px] bg-[#f5f1ea] border-l-4 border-brand-ink border-y border-r border-[#e9e3d8] my-7">
                 <Quote className="w-8 h-8 text-brand-blue/30 mb-2" />
                 <p className="text-[15px] sm:text-[16px] md:text-[17px] font-medium italic text-brand-navy leading-[24px] sm:leading-[27px] font-sans">
                   &ldquo;{story.quote}&rdquo;
@@ -260,7 +260,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
               {/* Story Highlights & Tags */}
               {story.tags && story.tags.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-[#eef4fa]">
+                <div className="mt-8 pt-6 border-t border-[#e9e3d8]">
                   <div className="text-xs sm:text-[13px] font-bold text-brand-navy font-heading uppercase tracking-wider mb-3">
                     Key Application Highlights:
                   </div>
@@ -268,7 +268,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                     {story.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1.5 rounded-[5px] bg-[#f0f6fc] text-brand-navy text-xs font-semibold font-sans border border-[#dde9f5]"
+                        className="px-3 py-1.5 rounded-[5px] bg-[#f5f1ea] text-brand-navy text-xs font-semibold font-sans border border-[#e9e3d8]"
                       >
                         #{tag}
                       </span>
@@ -278,14 +278,14 @@ export default async function StoryDetailPage({ params }: PageProps) {
               )}
 
               {/* Author & Student Footer Card */}
-              <div className="mt-8 pt-6 border-t border-[#eef4fa] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="mt-8 pt-6 border-t border-[#e9e3d8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div
                     className={cn(
                       "w-12 h-12 rounded-[5px] flex items-center justify-center flex-shrink-0 shadow-xs border transition-colors",
                       isBlue
-                        ? "bg-gradient-to-br from-[#E3F1FC] to-[#d6ebfb] border-[#c4e0f7] text-brand-blue"
-                        : "bg-gradient-to-br from-[#e2f7eb] to-[#d2f3e0] border-[#c0ebd2] text-[#1e9e5a]"
+                        ? "bg-gradient-to-br from-[#faf7f2] to-[#faf7f2] border-[#e9e3d8] text-brand-blue"
+                        : "bg-gradient-to-br from-[#faf7f2] to-[#faf7f2] border-[#c0ebd2] text-[#1e9e5a]"
                     )}
                   >
                     <User className="w-6 h-6 stroke-[2.2]" />
@@ -303,7 +303,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
                 <Link
                   href="/stories"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[13px] font-heading transition-colors shadow-xs"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-[#f5f1ea] hover:bg-brand-ink text-brand-blue hover:text-white font-bold text-xs sm:text-[13px] font-heading transition-colors shadow-xs"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Browse More Stories</span>
@@ -314,8 +314,8 @@ export default async function StoryDetailPage({ params }: PageProps) {
             {/* Right Column: Sticky Snapshot Sidebar */}
             <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               {/* Snapshot Info Card */}
-              <div className="bg-white rounded-[5px] border border-[#e2eef9] p-5 sm:p-6 shadow-[0_6px_24px_rgba(10,61,107,0.05)]">
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#eef4fa]">
+              <div className="bg-white rounded-[5px] border border-[#e9e3d8] p-5 sm:p-6 shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#e9e3d8]">
                   <Award className="w-5 h-5 text-brand-blue flex-shrink-0" />
                   <h3 className="text-base font-extrabold text-brand-navy font-heading">
                     Story Snapshot
@@ -333,7 +333,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
                   {/* Admitted School */}
                   {story.admittedTo && (
-                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#f0f5fa]">
+                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#e9e3d8]">
                       <span className="text-brand-text font-medium">Admitted School</span>
                       <span className="font-bold text-brand-blue font-heading text-right max-w-[190px]">
                         {story.admittedTo}
@@ -343,7 +343,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
                   {/* Category Track */}
                   {story.category && (
-                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#f0f5fa]">
+                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#e9e3d8]">
                       <span className="text-brand-text font-medium">Category</span>
                       <span className="font-semibold text-brand-navy text-right">
                         {story.category}
@@ -353,7 +353,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
                   {/* High School or Role */}
                   {story.highSchool && (
-                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#f0f5fa]">
+                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#e9e3d8]">
                       <span className="text-brand-text font-medium">High School</span>
                       <span className="font-semibold text-brand-navy text-right">
                         {story.highSchool}
@@ -363,7 +363,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
                   {/* Location */}
                   {story.location && (
-                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#f0f5fa]">
+                    <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#e9e3d8]">
                       <span className="text-brand-text font-medium">Location</span>
                       <span className="font-semibold text-brand-navy text-right">
                         {story.location}
@@ -372,7 +372,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                   )}
 
                   {/* Verification */}
-                  <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#f0f5fa]">
+                  <div className="flex items-start justify-between gap-3 pt-3 border-t border-[#e9e3d8]">
                     <span className="text-brand-text font-medium">Status</span>
                     <span className="inline-flex items-center gap-1 font-bold text-[#1e9e5a] text-xs">
                       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -383,14 +383,14 @@ export default async function StoryDetailPage({ params }: PageProps) {
               </div>
 
               {/* Consultation CTA Card */}
-              <div className="bg-gradient-to-br from-brand-navy to-brand-darkNavy text-white rounded-[5px] p-6 shadow-[0_10px_30px_rgba(10,61,107,0.18)] relative overflow-hidden">
+              <div className="bg-gradient-to-br from-brand-navy to-brand-darkNavy text-white rounded-[5px] p-6 shadow-[0_1px_3px_rgba(18,48,90,0.05)] relative overflow-hidden">
                 {/* Decorative Background Arc */}
                 <div
                   className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100px] pointer-events-none"
                   aria-hidden="true"
                 />
 
-                <span className="inline-block px-2.5 py-1 rounded-[5px] bg-brand-blue text-[11px] font-bold font-heading uppercase tracking-wider mb-3">
+                <span className="inline-block px-2.5 py-1 rounded-[5px] bg-brand-ink text-[11px] font-bold font-heading uppercase tracking-wider mb-3">
                   YOUR COLLEGE JOURNEY
                 </span>
 
@@ -414,7 +414,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
               </div>
 
               {/* Quick Services Link Card */}
-              <div className="bg-[#f8fbfe] rounded-[5px] border border-[#e2eef9] p-5">
+              <div className="bg-[#f5f1ea] rounded-[5px] border border-[#e9e3d8] p-5">
                 <h4 className="text-sm font-bold text-brand-navy font-heading mb-2">
                   Explore Blue Stars Services
                 </h4>
@@ -433,11 +433,11 @@ export default async function StoryDetailPage({ params }: PageProps) {
           </div>
 
           {/* 3. More Inspiring Success Stories Grid */}
-          <div className="mt-16 sm:mt-20 pt-12 border-t border-[#e2eef9]">
+          <div className="mt-16 sm:mt-20 pt-12 border-t border-[#e9e3d8]">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-8 sm:mb-10">
               <div>
                 <div className="flex items-center gap-2.5 mb-2">
-                  <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                  <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                   <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                     MORE SUCCESS STORIES
                   </span>
@@ -449,7 +449,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
               <Link
                 href="/stories"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-[#E3F1FC] hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] bg-[#f5f1ea] hover:bg-brand-ink text-brand-blue hover:text-white font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 shadow-xs"
               >
                 <span>View All 50+ Stories</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -468,7 +468,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                 return (
                   <article
                     key={relStory.id}
-                    className="relative bg-white rounded-[5px] p-5 sm:p-6 shadow-[0_6px_24px_rgba(10,61,107,0.05)] border border-[#e2eef9] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(10,61,107,0.1)] flex flex-col justify-between group"
+                    className="relative bg-white rounded-[5px] p-5 sm:p-6 shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] flex flex-col justify-between group"
                   >
                     <div>
                       {/* Top Bar: Category + 5 Stars */}
@@ -478,7 +478,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                             "px-2.5 py-0.5 rounded-[5px] text-[11px] font-bold font-heading tracking-wide uppercase",
                             relIsBlue
                               ? "bg-brand-sky text-brand-blue border border-brand-border/60"
-                              : "bg-[#e2f7eb] text-[#1e9e5a] border border-[#c4eed6]"
+                              : "bg-[#f3eee5] text-[#1e9e5a] border border-[#e9e3d8]"
                           )}
                         >
                           {relStory.category || "Success Story"}
@@ -497,7 +497,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                       {/* Admitted School Badge */}
                       {relStory.admittedTo && (
                         <div className="mb-3">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-xs font-bold text-brand-navy font-heading">
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-xs font-bold text-brand-navy font-heading">
                             <GraduationCap className="w-3.5 h-3.5 text-brand-blue flex-shrink-0" />
                             <span className="truncate">{relStory.admittedTo}</span>
                           </span>
@@ -518,14 +518,14 @@ export default async function StoryDetailPage({ params }: PageProps) {
                     </div>
 
                     {/* Bottom: Author Info + Read More Link */}
-                    <div className="pt-4 border-t border-[#eef4fa] flex flex-col gap-3">
+                    <div className="pt-4 border-t border-[#e9e3d8] flex flex-col gap-3">
                       <div className="flex items-center gap-2.5">
                         <div
                           className={cn(
                             "w-9 h-9 rounded-[5px] flex items-center justify-center flex-shrink-0 shadow-xs border",
                             relIsBlue
-                              ? "bg-gradient-to-br from-[#E3F1FC] to-[#d6ebfb] border-[#c4e0f7] text-brand-blue"
-                              : "bg-gradient-to-br from-[#e2f7eb] to-[#d2f3e0] border-[#c0ebd2] text-[#1e9e5a]"
+                              ? "bg-gradient-to-br from-[#faf7f2] to-[#faf7f2] border-[#e9e3d8] text-brand-blue"
+                              : "bg-gradient-to-br from-[#faf7f2] to-[#faf7f2] border-[#c0ebd2] text-[#1e9e5a]"
                           )}
                         >
                           <User className="w-4.5 h-4.5 stroke-[2.2]" />
@@ -545,7 +545,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
                         className={cn(
                           "w-full py-2.5 px-4 rounded-[5px] font-bold text-xs sm:text-[13px] font-heading transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-2xs border text-center",
                           relIsBlue
-                            ? "bg-brand-blue hover:bg-[#f8fbfe] text-white hover:text-brand-blue border-brand-blue hover:border-brand-blue"
+                            ? "bg-brand-ink hover:bg-[#f5f1ea] text-white hover:text-brand-blue border-brand-ink hover:border-brand-ink"
                             : "bg-[#1e9e5a] hover:bg-[#f6fcf8] text-white hover:text-[#1e9e5a] border-[#1e9e5a] hover:border-[#1e9e5a]"
                         )}
                       >

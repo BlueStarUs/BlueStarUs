@@ -166,7 +166,7 @@ export function BlogShareButtons({
         <button
           type="button"
           onClick={handleShareEmail}
-          className="w-8 h-8 rounded-[5px] bg-white hover:bg-brand-blue text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border shadow-xs"
+          className="w-8 h-8 rounded-[5px] bg-white hover:bg-brand-ink text-brand-navy hover:text-white grid place-items-center transition-colors border border-brand-border shadow-xs"
           title="Share via Email"
           aria-label="Share via Email"
         >

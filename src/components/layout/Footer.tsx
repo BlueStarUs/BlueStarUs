@@ -45,7 +45,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden mt-auto">
+    <footer className="relative w-full bg-brand-ink text-white overflow-hidden mt-auto">
       {/* Flowing Ambient Cyan/Blue Light Waves in Background (Matching reference) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
         {/* Soft Radial Ambient Lights */}
@@ -128,7 +128,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-ink border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="Facebook"
               >
                 <FacebookIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
@@ -137,7 +137,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-ink border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
@@ -146,7 +146,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.pinterest}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-ink border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="Pinterest"
               >
                 <PinterestIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
@@ -155,7 +155,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-ink border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
@@ -164,7 +164,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-blue border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                className="w-9 sm:w-10 h-9 sm:h-10 rounded-[10px] bg-[#0f4d78]/60 hover:bg-brand-ink border border-[#267db5]/40 hover:border-brand-lightBlue grid place-items-center text-white transition-all duration-200 hover:scale-105 shadow-sm"
                 aria-label="YouTube"
               >
                 <YoutubeIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
@@ -196,7 +196,7 @@ export function Footer() {
                         href={link.href}
                         className="flex items-center gap-3 py-1 group text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#e0effa] hover:text-white transition-colors"
                       >
-                        <span className="w-7 h-7 rounded-[8px] bg-[#0d4f7c]/80 group-hover:bg-brand-blue border border-[#2177ab]/40 grid place-items-center text-white flex-shrink-0 transition-colors shadow-xs">
+                        <span className="w-7 h-7 rounded-[8px] bg-[#0d4f7c]/80 group-hover:bg-brand-ink border border-[#2177ab]/40 grid place-items-center text-white flex-shrink-0 transition-colors shadow-xs">
                           <Icon className="w-3.5 h-3.5" />
                         </span>
                         <span className="font-medium font-sans flex-1">
@@ -232,7 +232,7 @@ export function Footer() {
                 href={`mailto:${SITE_CONFIG.contact.email}`}
                 className="w-full bg-[#0a4570]/50 hover:bg-[#0c4e7e]/70 backdrop-blur-md border border-[#1b6d9e]/40 hover:border-[#2a8fd6]/60 rounded-[14px] p-2 pr-5 sm:p-2.5 sm:pr-6 flex items-center gap-3.5 transition-all group"
               >
-                <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
+                <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-ink border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
                   <Mail className="w-4 h-4" />
                 </span>
                 <span className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">
@@ -247,7 +247,7 @@ export function Footer() {
                   className="flex items-center gap-3.5 flex-1 min-w-0"
                   title="Direct Telephone Call"
                 >
-                  <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-blue border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
+                  <span className="w-9 h-9 rounded-[10px] bg-[#0a5285] group-hover:bg-brand-ink border border-[#2983ba]/50 grid place-items-center text-white flex-shrink-0 shadow-sm transition-colors">
                     <Phone className="w-4 h-4" />
                   </span>
                   <span className="text-[14.5px] sm:text-[15.5px] leading-[24px] sm:leading-[26px] font-medium text-white tracking-wide truncate">

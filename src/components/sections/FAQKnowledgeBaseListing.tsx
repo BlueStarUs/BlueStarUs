@@ -67,7 +67,7 @@ export function FAQKnowledgeBaseListing() {
               placeholder="Search by keyword (e.g. Early Decision, UC PIQ, SAT, financial aid)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 rounded-[5px] text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all shadow-xs"
+              className="w-full pl-12 pr-4 py-3.5 rounded-[5px] text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all shadow-xs"
             />
             {searchQuery && (
               <button
@@ -92,8 +92,8 @@ export function FAQKnowledgeBaseListing() {
                   className={cn(
                     "px-3.5 py-1.5 rounded-[5px] text-xs sm:text-[16px] font-bold font-heading transition-all duration-200 cursor-pointer border",
                     isActive
-                      ? "bg-brand-blue text-white border-brand-blue shadow-xs"
-                      : "bg-[#f8fbfe] text-brand-navy border-[#e2eef9] hover:bg-brand-sky/60 hover:text-brand-blue"
+                      ? "bg-brand-ink text-white border-brand-ink shadow-xs"
+                      : "bg-[#f5f1ea] text-brand-navy border-[#e9e3d8] hover:bg-brand-sky/60 hover:text-brand-blue"
                   )}
                 >
                   {cat}
@@ -105,7 +105,7 @@ export function FAQKnowledgeBaseListing() {
 
         {/* Categories and Accordions */}
         {filteredCategories.length === 0 ? (
-          <div className="text-center py-16 p-8 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] max-w-xl mx-auto">
+          <div className="text-center py-16 p-8 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] max-w-xl mx-auto">
             <HelpCircle className="w-12 h-12 text-brand-blue mx-auto mb-3 opacity-60" />
             <h3 className="text-lg font-bold text-brand-navy font-heading mb-1">
               No matching questions found
@@ -119,7 +119,7 @@ export function FAQKnowledgeBaseListing() {
                 setSearchQuery("");
                 setSelectedCat("All");
               }}
-              className="px-4 py-2 rounded-[5px] text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy"
+              className="px-4 py-2 rounded-[5px] text-xs font-bold text-white bg-brand-ink hover:bg-brand-blue"
             >
               Reset Search Filter
             </button>
@@ -129,9 +129,9 @@ export function FAQKnowledgeBaseListing() {
             {filteredCategories.map((group) => (
               <div key={group.category} className="space-y-4">
                 {/* Category Header */}
-                <div className="border-b border-[#e2eef9] pb-3 mb-4">
+                <div className="border-b border-[#e9e3d8] pb-3 mb-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                    <span className="w-2 h-2 rounded-full bg-brand-ink" />
                     <h3 className="text-lg sm:text-xl font-extrabold text-brand-navy font-heading">
                       {group.category}
                     </h3>
@@ -154,7 +154,7 @@ export function FAQKnowledgeBaseListing() {
                           "rounded-[5px] border transition-all duration-200 overflow-hidden",
                           isOpen
                             ? "bg-white border-brand-blue/30 shadow-xs"
-                            : "bg-[#f8fbfe] border-[#e2eef9] hover:bg-white hover:border-[#c5defa]"
+                            : "bg-[#f5f1ea] border-[#e9e3d8] hover:bg-white hover:border-[#e9e3d8]"
                         )}
                       >
                         <button
@@ -170,7 +170,7 @@ export function FAQKnowledgeBaseListing() {
                             className={cn(
                               "w-7 h-7 rounded-[5px] flex items-center justify-center flex-shrink-0 transition-transform duration-200",
                               isOpen
-                                ? "bg-brand-blue text-white rotate-180"
+                                ? "bg-brand-ink text-white rotate-180"
                                 : "bg-brand-sky text-brand-blue"
                             )}
                           >
@@ -179,7 +179,7 @@ export function FAQKnowledgeBaseListing() {
                         </button>
 
                         {isOpen && (
-                          <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-[14px] sm:text-[14.5px] leading-[23px] sm:leading-[25px] text-brand-text font-sans border-t border-[#edf4fb] pt-3 animate-in fade-in duration-150">
+                          <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-[14px] sm:text-[14.5px] leading-[23px] sm:leading-[25px] text-brand-text font-sans border-t border-[#e9e3d8] pt-3 animate-in fade-in duration-150">
                             {faq.answer}
                           </div>
                         )}

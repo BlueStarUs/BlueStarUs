@@ -276,11 +276,11 @@ export default function AboutPage() {
       <AboutBoutique />
 
       {/* 3. Paving the Way for Personal & Academic Excellence */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f3f8fe] via-white to-[#e9f3fd] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
         <svg
           viewBox="0 0 1440 160"
           preserveAspectRatio="none"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full text-[#d9eafb]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full text-[#f3eee5]"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -300,7 +300,7 @@ export default function AboutPage() {
               aria-hidden="true"
             />
 
-            <div className="group relative -rotate-[3deg] overflow-hidden rounded-[36px] border-[5px] border-white shadow-[0_30px_70px_rgba(11,99,181,0.28)]">
+            <div className="group relative -rotate-[3deg] overflow-hidden rounded-[36px] border-[5px] border-white shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
               <div className="relative aspect-[1/1.02] w-full">
                 <Image
                   src="/images/abouts/paving-way.webp"
@@ -312,7 +312,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="absolute -bottom-0 left-[16%] w-[72%] max-w-[420px] rounded-[22px] border border-sky-200 bg-white/95 p-5 shadow-[0_18px_44px_rgba(11,99,181,0.22)] backdrop-blur-sm sm:left-[22%] sm:p-6">
+            <div className="absolute -bottom-0 left-[16%] w-[72%] max-w-[420px] rounded-[22px] border border-sky-200 bg-white/95 p-5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] backdrop-blur-sm sm:left-[22%] sm:p-6">
               <p className="mb-1.5 flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-brand-blue">
                 <BrandStar className="h-4 w-4" aria-hidden="true" />
                 Our signature method
@@ -326,7 +326,7 @@ export default function AboutPage() {
 
           {/* Right: content */}
           <div className="flex flex-col justify-center">
-            <p className="mb-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#dcedfb] px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-[#0b63b5]">
+            <p className="mb-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#f3eee5] px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-[#0b63b5]">
               <BrandStar className="h-3.5 w-3.5" aria-hidden="true" />
               Our approach
             </p>
@@ -357,9 +357,9 @@ export default function AboutPage() {
                 return (
                   <li
                     key={pillar}
-                    className="flex items-center gap-4 rounded-[18px] bg-white px-4 py-3.5 shadow-[0_8px_24px_rgba(11,99,181,0.1)] ring-1 ring-[#e3eef9]"
+                    className="flex items-center gap-4 rounded-[18px] bg-white px-4 py-3.5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5]"
                   >
-                    <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-full bg-[#e6f1fc] text-brand-blue">
+                    <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-full bg-[#f3eee5] text-brand-blue">
                       <PillarIcon className="h-[22px] w-[22px]" />
                     </span>
                     <span className="text-[14.5px] font-semibold leading-snug text-brand-ink">{pillar}</span>
@@ -371,7 +371,7 @@ export default function AboutPage() {
             <div>
               <Link
                 href="/services"
-                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0b63b5] to-[#06335f] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(11,99,181,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-ink px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-transform duration-200 hover:scale-[1.02]"
               >
                 <span>Learn More About Our Approach</span>
                 <ArrowRight className="h-4 w-4" />
@@ -384,11 +384,11 @@ export default function AboutPage() {
       {/* 4. Why Choose Blue Stars Admissions Consulting */}
       <section
         id="why-us"
-        className="scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#f3f8fe] via-white to-[#e8f2fc] border-y border-[#dfeaf6] relative overflow-hidden"
+        className="scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-white border-y border-[#e9e3d8] relative overflow-hidden"
       >
         {/* Ambient Organic Waves */}
         <div
-          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#dcebfb]/70 via-[#eaf3fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
+          className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#faf7f2]/70 via-[#faf7f2]/40 to-transparent rounded-bl-[220px] pointer-events-none"
           aria-hidden="true"
         />
 
@@ -396,7 +396,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
             {/* Left: Text & Stats */}
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-[#dcedfb] px-4 py-2 text-[11.5px] font-semibold tracking-[0.16em] uppercase text-[#0b63b5] font-sans mb-5">
+              <p className="inline-flex items-center gap-2 rounded-full bg-[#f3eee5] px-4 py-2 text-[11.5px] font-semibold tracking-[0.16em] uppercase text-[#0b63b5] font-sans mb-5">
                 <BrandStar className="h-3.5 w-3.5" aria-hidden="true" />
                 The Blue Stars Difference
               </p>
@@ -430,9 +430,9 @@ export default function AboutPage() {
                   return (
                     <div
                       key={item.label}
-                      className="flex items-start gap-4 rounded-[18px] bg-white border border-[#e3eef9] p-5 shadow-[0_10px_30px_rgba(11,99,181,0.08)] transition-shadow hover:shadow-[0_16px_40px_rgba(11,99,181,0.14)]"
+                      className="flex items-start gap-4 rounded-[18px] bg-white border border-[#e9e3d8] p-5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-shadow hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
                     >
-                      <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-[14px] bg-[#e6f1fc] text-brand-blue">
+                      <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-[14px] bg-[#f3eee5] text-brand-blue">
                         <StatIcon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
@@ -455,11 +455,11 @@ export default function AboutPage() {
           </div>
 
           {/* 3 Core Pillars: stars joined by a constellation line */}
-          <div className="mt-16 border-t border-[#dbe7f3] pt-12 sm:mt-20 sm:pt-14">
+          <div className="mt-16 border-t border-[#e9e3d8] pt-12 sm:mt-20 sm:pt-14">
             <div className="mb-12 grid gap-4 sm:mb-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:items-end lg:gap-14">
               <div>
                 <p className="mb-4 inline-flex items-center gap-3 font-sans text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-blue">
-                  <span className="h-0.5 w-8 bg-brand-blue" aria-hidden="true" />
+                  <span className="h-0.5 w-8 bg-brand-ink" aria-hidden="true" />
                   Our 3 core pillars
                 </p>
                 <h3 className="text-[28px] leading-[1.12] text-brand-ink sm:text-[38px]">
@@ -484,9 +484,9 @@ export default function AboutPage() {
                   return (
                     <li
                       key={pillar.title}
-                      className="group relative rounded-[24px] bg-white p-7 pt-11 shadow-[0_12px_34px_rgba(11,99,181,0.09)] ring-1 ring-[#e3eef9] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,99,181,0.16)] sm:p-8 sm:pt-12"
+                      className="group relative rounded-[24px] bg-white p-7 pt-11 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] sm:p-8 sm:pt-12"
                     >
-                      <span className="absolute -top-4 left-1/2 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full bg-white text-brand-blue shadow-sm ring-1 ring-[#cfe3f8]">
+                      <span className="absolute -top-4 left-1/2 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full bg-white text-brand-blue shadow-sm ring-1 ring-[#f3eee5]">
                         <BrandStar className="h-4 w-4" aria-hidden="true" />
                       </span>
 
@@ -497,7 +497,7 @@ export default function AboutPage() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
 
-                      <div className="mb-5 grid h-14 w-14 place-items-center rounded-[16px] bg-[#e6f1fc] text-brand-blue">
+                      <div className="mb-5 grid h-14 w-14 place-items-center rounded-[16px] bg-[#f3eee5] text-brand-blue">
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
 
@@ -515,7 +515,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. We Work With Students All Over the World */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f1f7fe] via-white to-[#e6f1fc] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
         {/* Faint dotted "map" texture and waves (decorative) */}
         <div
           className="pointer-events-none absolute -right-10 top-8 hidden h-64 w-[34rem] opacity-30 lg:block"
@@ -542,7 +542,7 @@ export default function AboutPage() {
           {/* Left: tilted photo card with floating badge and stat bar */}
           <div className="relative mx-auto w-full max-w-[760px] pb-14 pt-6">
             <div className="relative">
-              <div className="overflow-hidden rounded-[38px] border-[4px] border-white shadow-[0_30px_70px_rgba(11,99,181,0.28)] [transform:skewX(-5deg)_skewY(-3deg)]">
+              <div className="overflow-hidden rounded-[38px] border-[4px] border-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] [transform:skewX(-5deg)_skewY(-3deg)]">
                 <div className="relative aspect-[1.22/1] w-full [transform:skewY(3deg)_skewX(5deg)] scale-[1.18]">
                   <Image
                     src="/images/abouts/global-reach.webp"
@@ -591,7 +591,7 @@ export default function AboutPage() {
           {/* Right: content */}
           <div className="flex flex-col justify-center">
             <p className="mb-5 flex items-center gap-4 text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-blue">
-              <span className="h-0.5 w-10 bg-brand-blue" aria-hidden="true" />
+              <span className="h-0.5 w-10 bg-brand-ink" aria-hidden="true" />
               Nationwide &amp; international reach
             </p>
 
@@ -617,7 +617,7 @@ export default function AboutPage() {
               transformative, personalized admissions mentoring.
             </p>
 
-            <div className="mb-8 flex items-center gap-5 rounded-[20px] bg-[#eaf3fd]/80 p-5 ring-1 ring-[#dbe9f8] sm:gap-6 sm:p-6">
+            <div className="mb-8 flex items-center gap-5 rounded-[20px] bg-[#f3eee5]/80 p-5 ring-1 ring-[#f3eee5] sm:gap-6 sm:p-6">
               <GraduationCap className="h-11 w-11 flex-shrink-0 text-brand-ink" aria-hidden="true" />
               <span className="hidden h-14 w-px bg-brand-ink/30 sm:block" aria-hidden="true" />
               <p className="text-[15px] font-medium leading-[1.65] text-brand-ink sm:text-[16px]">
@@ -629,7 +629,7 @@ export default function AboutPage() {
             <div>
               <Link
                 href="/contact"
-                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-ink px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
               >
                 <span>Connect With Our Global Team</span>
                 <ArrowRight className="h-4 w-4" />
@@ -640,8 +640,8 @@ export default function AboutPage() {
       </section>
 
       {/* 6. Who We Are (Counselors Make All the Difference) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fafcff] to-[#eef5fd] pb-32 pt-16 sm:pt-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:pb-40 lg:pt-14">
-        <div className="pointer-events-none absolute -left-40 -top-24 h-80 w-[34rem] rounded-full bg-[#e8f1fc]/80" aria-hidden="true" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fafcff] to-[#faf7f2] pb-32 pt-16 sm:pt-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:pb-40 lg:pt-14">
+        <div className="pointer-events-none absolute -left-40 -top-24 h-80 w-[34rem] rounded-full bg-[#f3eee5]/80" aria-hidden="true" />
 
         {/* Blue waves at the bottom (no gold accents) */}
         <svg
@@ -685,14 +685,14 @@ export default function AboutPage() {
               return (
                 <li
                   key={item.text}
-                  className="relative flex items-center gap-4 rounded-[18px] bg-white px-5 py-6 shadow-[0_10px_30px_rgba(11,99,181,0.08)] ring-1 ring-[#e0ebf8] transition-transform duration-300 hover:-translate-y-1"
+                  className="relative flex items-center gap-4 rounded-[18px] bg-white px-5 py-6 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <span className="grid h-16 w-16 flex-shrink-0 place-items-center rounded-[16px] bg-[#e9f2fd] text-brand-blue">
+                  <span className="grid h-16 w-16 flex-shrink-0 place-items-center rounded-[16px] bg-[#f3eee5] text-brand-blue">
                     <HighlightIcon className="h-7 w-7" aria-hidden="true" />
                   </span>
                   <span className="font-sans text-[16px] font-semibold leading-snug text-brand-ink">{item.text}</span>
                   <span
-                    className="absolute bottom-0 left-1/2 h-1 w-[34%] -translate-x-1/2 rounded-t-full bg-brand-blue"
+                    className="absolute bottom-0 left-1/2 h-1 w-[34%] -translate-x-1/2 rounded-t-full bg-brand-ink"
                     aria-hidden="true"
                   />
                 </li>
@@ -703,7 +703,7 @@ export default function AboutPage() {
           <div className="flex justify-center">
             <Link
               href="#team"
-              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-9 text-[16px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-brand-ink px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-9 text-[16px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
             >
               <span>Meet Our Full Team Below</span>
               <ArrowRight className="h-4 w-4" />
@@ -715,10 +715,10 @@ export default function AboutPage() {
       {/* 7. Meet Our Team */}
       <section
         id="team"
-        className="relative overflow-hidden bg-gradient-to-b from-[#e9f3fd] via-[#f3f8fe] to-[#e9f3fd] py-14 sm:py-18 lg:py-20"
+        className="relative overflow-hidden bg-white py-14 sm:py-18 lg:py-20"
       >
         <div className="pointer-events-none absolute -left-44 -top-10 h-[28rem] w-[28rem] rounded-full bg-white/60" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-48 top-48 h-[30rem] w-[30rem] rounded-full bg-[#cfe3f8]/45" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-48 top-48 h-[30rem] w-[30rem] rounded-full bg-[#f3eee5]/45" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center sm:mb-10">
@@ -743,7 +743,7 @@ export default function AboutPage() {
               return (
                 <li
                   key={item.label}
-                  className="flex items-center gap-3 rounded-full bg-white px-6 py-3 shadow-[0_8px_22px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8]"
+                  className="flex items-center gap-3 rounded-full bg-white px-6 py-3 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5]"
                 >
                   <HighlightIcon className="h-5 w-5 text-brand-blue" aria-hidden="true" />
                   <span className="font-sans text-[14.5px] font-semibold text-brand-ink">{item.label}</span>
@@ -757,12 +757,12 @@ export default function AboutPage() {
       </section>
 
       {/* 7b. Professional Accreditations & Affiliations (HECA / WACAC / IECA Badges) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f2f8fe] via-[#eef6fd] to-[#e4f0fc] py-14 sm:py-18 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+      <section className="relative overflow-hidden bg-white py-14 sm:py-18 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
         <div className="pointer-events-none absolute -left-40 -top-24 h-[24rem] w-[24rem] rounded-full bg-white/70" aria-hidden="true" />
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 w-full text-[#c6dff7]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 w-full text-[#f3eee5]"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -775,7 +775,7 @@ export default function AboutPage() {
 
             <div className="mb-4 flex items-center justify-center gap-4">
               <span className="hidden h-0.5 w-16 bg-brand-blue/70 sm:block" aria-hidden="true" />
-              <p className="inline-flex items-center gap-2.5 rounded-full bg-[#dcedfb] px-5 py-2.5 font-sans text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#0b4f94] shadow-sm">
+              <p className="inline-flex items-center gap-2.5 rounded-full bg-[#f3eee5] px-5 py-2.5 font-sans text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#0b4f94] shadow-sm">
                 <ShieldCheck className="h-4 w-4" aria-hidden="true" />
                 Ethics &amp; professional standards
               </p>
@@ -790,7 +790,7 @@ export default function AboutPage() {
               Blue Stars adheres to the ethical codes and standards of the nation&apos;s foremost admissions
               associations.
             </p>
-            <span className="mx-auto mt-5 block h-1 w-20 rounded-full bg-brand-blue" aria-hidden="true" />
+            <span className="mx-auto mt-5 block h-1 w-20 rounded-full bg-brand-ink" aria-hidden="true" />
           </div>
 
           <ul className="grid grid-cols-1 gap-7 md:grid-cols-3 lg:gap-8">
@@ -801,7 +801,7 @@ export default function AboutPage() {
               return (
                 <li
                   key={badge.name}
-                  className="group flex flex-col overflow-hidden rounded-[32px] border-b-[5px] border-b-[#1b5fb8] bg-white shadow-[0_24px_60px_rgba(11,99,181,0.16)] ring-1 ring-[#dbe9f8] transition-transform duration-300 hover:-translate-y-1"
+                  className="group flex flex-col overflow-hidden rounded-[32px] border-b-[5px] border-b-[#1b5fb8] bg-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-transform duration-300 hover:-translate-y-1"
                 >
                   {/* Logo on a soft wave */}
                   <div className="relative flex h-44 items-center justify-center px-6 pt-5">
@@ -832,8 +832,8 @@ export default function AboutPage() {
 
                     <p className="mt-3 font-sans text-[15px] leading-[1.6] text-[#344155]">{badge.description}</p>
 
-                    <div className="mt-auto flex w-full items-center gap-4 border-t border-[#e3eef9] pt-4 text-left">
-                      <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-[14px] bg-[#e6f1fc] text-brand-blue">
+                    <div className="mt-auto flex w-full items-center gap-4 border-t border-[#e9e3d8] pt-4 text-left">
+                      <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-[14px] bg-[#f3eee5] text-brand-blue">
                         <HighlightIcon className="h-6 w-6" aria-hidden="true" />
                       </span>
                       <span className="font-sans text-[14.5px] font-bold leading-snug text-brand-ink">
@@ -849,12 +849,12 @@ export default function AboutPage() {
       </section>
 
       {/* 8. Leading Hundreds of College-Bound Teens to Success (7 Core Principles) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fafcff] to-[#f0f6fd] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
-        <div className="pointer-events-none absolute -left-32 -top-24 h-72 w-96 rounded-full bg-[#e6f0fc]/70" aria-hidden="true" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fafcff] to-[#faf7f2] py-16 sm:py-20 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:py-14">
+        <div className="pointer-events-none absolute -left-32 -top-24 h-72 w-96 rounded-full bg-[#f3eee5]/70" aria-hidden="true" />
         <svg
           viewBox="0 0 1440 140"
           preserveAspectRatio="none"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full text-[#dbe9f9]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full text-[#f3eee5]"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -866,7 +866,7 @@ export default function AboutPage() {
           {/* Left */}
           <div className="flex flex-col justify-center">
             <p className="mb-5 flex items-center gap-4 font-sans text-[11.5px] font-semibold uppercase tracking-[0.2em] text-brand-blue">
-              <span className="h-0.5 w-12 bg-brand-blue" aria-hidden="true" />
+              <span className="h-0.5 w-12 bg-brand-ink" aria-hidden="true" />
               Our philosophy &amp; approach
             </p>
 
@@ -884,7 +884,7 @@ export default function AboutPage() {
             <div>
               <Link
                 href="/#contact"
-                className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0d2f5e] to-[#071d3d] px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+                className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-ink px-6 py-4 text-center sm:inline-flex sm:w-auto sm:px-8 text-[15px] font-semibold tracking-wide text-white shadow-[0_12px_30px_rgba(7,29,61,0.35)] transition-transform duration-200 hover:scale-[1.02]"
               >
                 <span>Read More About Our Philosophy</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -893,19 +893,19 @@ export default function AboutPage() {
           </div>
 
           {/* Divider */}
-          <div className="hidden bg-[#e0e8f3] lg:block" aria-hidden="true" />
+          <div className="hidden bg-[#f3eee5] lg:block" aria-hidden="true" />
 
           {/* Principles */}
           <ol className="flex flex-col justify-center gap-3.5 sm:gap-4">
             {SUCCESS_PRINCIPLES.map((item) => (
               <li
                 key={item.step}
-                className="group flex items-center gap-4 rounded-[34px] bg-white/85 px-4 py-3.5 shadow-[0_10px_30px_rgba(11,99,181,0.07)] ring-1 ring-[#dfe9f7] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(11,99,181,0.14)] sm:gap-5 sm:px-5 sm:py-4"
+                className="group flex items-center gap-4 rounded-[34px] bg-white/85 px-4 py-3.5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] sm:gap-5 sm:px-5 sm:py-4"
               >
-                <span className="grid h-[3.8rem] w-[3.8rem] flex-shrink-0 place-items-center rounded-[18px] bg-[#e6effb] font-sans text-[26px] font-bold text-brand-blue sm:h-[4.4rem] sm:w-[4.4rem] sm:text-[30px]">
+                <span className="grid h-[3.8rem] w-[3.8rem] flex-shrink-0 place-items-center rounded-[18px] bg-[#f3eee5] font-sans text-[26px] font-bold text-brand-blue sm:h-[4.4rem] sm:w-[4.4rem] sm:text-[30px]">
                   {String(item.step).padStart(2, "0")}
                 </span>
-                <span className="h-11 w-px flex-shrink-0 bg-[#d3dff0]" aria-hidden="true" />
+                <span className="h-11 w-px flex-shrink-0 bg-[#f3eee5]" aria-hidden="true" />
                 <p className="font-display text-[18px] leading-[1.3] text-brand-ink sm:text-[21px]">
                   {item.title.endsWith(".") ? item.title : `${item.title}.`}
                 </p>
@@ -916,8 +916,8 @@ export default function AboutPage() {
       </section>
 
       {/* 9. Our Commitment to Your Teen and Your Family (6 Core Values) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f2f8fe] via-white to-[#eaf3fd] py-16 sm:py-20 lg:py-24">
-        <div className="pointer-events-none absolute -right-40 -top-24 h-[26rem] w-[26rem] rounded-full bg-[#dcebfb]/70" aria-hidden="true" />
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute -right-40 -top-24 h-[26rem] w-[26rem] rounded-full bg-[#f3eee5]/70" aria-hidden="true" />
         <div className="pointer-events-none absolute -left-44 bottom-10 h-[24rem] w-[24rem] rounded-full bg-white/80" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
@@ -944,7 +944,7 @@ export default function AboutPage() {
               return (
                 <li
                   key={val.title}
-                  className="group relative flex flex-col overflow-hidden rounded-[26px] bg-white shadow-[0_18px_46px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_60px_rgba(11,99,181,0.2)]"
+                  className="group relative flex flex-col overflow-hidden rounded-[26px] bg-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     {"image" in val && val.image ? (
@@ -983,7 +983,7 @@ export default function AboutPage() {
                   </div>
 
                   <span
-                    className="absolute bottom-0 left-7 h-1 w-14 rounded-t-full bg-brand-blue transition-all duration-300 group-hover:w-24"
+                    className="absolute bottom-0 left-7 h-1 w-14 rounded-t-full bg-brand-ink transition-all duration-300 group-hover:w-24"
                     aria-hidden="true"
                   />
                 </li>
@@ -1022,14 +1022,14 @@ export default function AboutPage() {
               STAR.
             </h3>
 
-            <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] font-sans mb-4">
+            <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#f3eee5] font-sans mb-4">
               In astronomy, blue stars burn the hottest, shine the brightest,
               and illuminate the farthest corners of space. In our counseling
               practice, we believe every student possesses a distinct, powerful
               spark.
             </p>
 
-            <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#d4e8f8] font-sans mb-8">
+            <p className="text-[15px] sm:text-[16px] leading-[25px] sm:leading-[27px] text-[#f3eee5] font-sans mb-8">
               Our mission is to help teens uncover, ignite, and project that
               spark into the world&mdash;creating college applications that burn
               brightly in selective admissions pools, and personal confidence
@@ -1061,7 +1061,7 @@ export default function AboutPage() {
       {/* 11. Final CTA banner */}
       <section className="relative w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#031a3a] via-[#06306a] to-[#0a4fa8] text-white shadow-[0_30px_70px_rgba(6,38,74,0.3)]">
+          <div className="relative overflow-hidden rounded-[28px] bg-brand-ink text-white shadow-[0_30px_70px_rgba(6,38,74,0.3)]">
             {/* Glow and sweeping curves (decorative) */}
             <div
               className="pointer-events-none absolute inset-0"

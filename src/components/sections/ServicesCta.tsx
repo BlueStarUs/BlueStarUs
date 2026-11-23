@@ -68,7 +68,7 @@ export function ServicesCta() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-[12px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden"
+          className="relative rounded-[12px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden"
         >
           {/* Luminous Flowing Wave Ribbons in Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
@@ -116,7 +116,7 @@ export function ServicesCta() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans"
+                className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans"
               >
                 Schedule a free 30-minute introductory consultation to discuss your student&apos;s goals and college plan with our senior advisory team.
               </motion.p>
@@ -149,7 +149,7 @@ export function ServicesCta() {
                   href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[10px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[10px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group cursor-pointer"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />

@@ -23,7 +23,7 @@ const TOP_MULTIPLE = Math.max(...ROWS.map((r) => r.multiple));
 /** Data-led panel for "Why Choose Blue Stars": glowing bars compare Blue Stars results with official rates. */
 export function DifferencePanel() {
   return (
-    <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#051f3f] via-[#093566] to-[#0c4a8c] text-white p-6 sm:p-9 shadow-[0_28px_70px_rgba(6,38,74,0.35)] ring-1 ring-white/15">
+    <div className="relative overflow-hidden rounded-[24px] bg-brand-ink text-white p-6 sm:p-9 shadow-[0_28px_70px_rgba(6,38,74,0.35)] ring-1 ring-white/15">
       {/* Glow waves and constellation (decorative) */}
       <div
         className="absolute bottom-0 right-0 w-[420px] h-[260px] pointer-events-none"

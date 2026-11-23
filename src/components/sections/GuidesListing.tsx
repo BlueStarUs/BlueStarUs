@@ -85,8 +85,8 @@ export function GuidesListing() {
                 className={cn(
                   "px-4 py-2 rounded-[5px] text-xs sm:text-[13px] font-bold font-heading transition-all duration-200 cursor-pointer border",
                   isActive
-                    ? "bg-brand-blue text-white border-brand-blue shadow-xs"
-                    : "bg-[#f8fbfe] text-brand-navy border-[#e2eef9] hover:bg-brand-sky/60 hover:text-brand-blue"
+                    ? "bg-brand-ink text-white border-brand-ink shadow-xs"
+                    : "bg-[#f5f1ea] text-brand-navy border-[#e9e3d8] hover:bg-brand-sky/60 hover:text-brand-blue"
                 )}
               >
                 {cat}
@@ -101,11 +101,11 @@ export function GuidesListing() {
             <div
               key={guide.id}
               id={guide.slug}
-              className="bg-white rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+              className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
             >
               <div>
                 {/* Cover Image Container */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8f2fc]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f3eee5]">
                   <Image
                     src={guide.coverImage}
                     alt={guide.title}
@@ -150,7 +150,7 @@ export function GuidesListing() {
                   </p>
 
                   {/* Key Highlights */}
-                  <div className="space-y-2 pt-4 border-t border-[#edf4fb] mb-5">
+                  <div className="space-y-2 pt-4 border-t border-[#e9e3d8] mb-5">
                     <div className="text-[14px] font-bold tracking-wider uppercase text-brand-navy font-heading">
                       What&apos;s Inside:
                     </div>
@@ -163,7 +163,7 @@ export function GuidesListing() {
                   </div>
 
                   {/* Target Audience */}
-                  <div className="p-3 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-[13.5px] text-brand-text mb-2">
+                  <div className="p-3 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-[13.5px] text-brand-text mb-2">
                     <span className="font-bold text-brand-navy font-heading">Best For: </span>
                     {guide.targetAudience}
                   </div>
@@ -178,7 +178,7 @@ export function GuidesListing() {
                     setActiveGuideModal(guide);
                     setDownloadSuccess(false);
                   }}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 font-heading shadow-xs cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 font-heading shadow-xs cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download Free PDF Guide</span>
@@ -196,18 +196,18 @@ export function GuidesListing() {
             aria-modal="true"
             aria-labelledby="guide-modal-title"
           >
-            <div className="bg-white rounded-[5px] max-w-lg w-full p-6 sm:p-8 shadow-[0_25px_60px_rgba(10,61,107,0.25)] border border-[#e2eef9] relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-[5px] max-w-lg w-full p-6 sm:p-8 shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
               <button
                 type="button"
                 onClick={() => setActiveGuideModal(null)}
-                className="absolute top-4 right-4 w-8 h-8 rounded-[5px] bg-[#f0f6fc] text-brand-navy hover:text-brand-blue grid place-items-center transition-colors focus:outline-none"
+                className="absolute top-4 right-4 w-8 h-8 rounded-[5px] bg-[#f5f1ea] text-brand-navy hover:text-brand-blue grid place-items-center transition-colors focus:outline-none"
                 aria-label="Close dialog"
               >
                 <X className="w-4 h-4" />
               </button>
 
               <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-brand-ink animate-pulse" />
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-brand-blue font-heading">
                   INSTANT FREE DOWNLOAD
                 </span>
@@ -222,7 +222,7 @@ export function GuidesListing() {
               </p>
 
               {downloadSuccess ? (
-                <div className="p-6 rounded-[5px] bg-[#E3F5EA] border border-[#2F9E5C]/30 text-center animate-in fade-in duration-200">
+                <div className="p-6 rounded-[5px] bg-[#f3eee5] border border-[#2F9E5C]/30 text-center animate-in fade-in duration-200">
                   <div className="w-12 h-12 rounded-full bg-[#2F9E5C] text-white flex items-center justify-center mx-auto mb-3 shadow-sm">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
@@ -245,7 +245,7 @@ export function GuidesListing() {
                       placeholder="e.g. parent@example.com"
                       value={emailInput}
                       onChange={(e) => setEmailInput(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-[5px] text-sm text-brand-navy border border-[#c4dcfa] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-[5px] text-sm text-brand-navy border border-[#e9e3d8] focus:border-brand-ink focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
                     />
                   </div>
 
@@ -263,7 +263,7 @@ export function GuidesListing() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 px-5 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-3 px-5 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center gap-2"
                   >
                     <Download className="w-4 h-4" />
                     <span>Send Me the Free PDF Guide</span>
