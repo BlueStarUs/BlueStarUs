@@ -32,9 +32,7 @@ import {
   NAV_RESOURCES,
   SITE_CONFIG,
   HUBSPOT_CONSULTATION_URL,
-  HUBSPOT_STRATEGY_CONSULTATION_URL,
 } from "@/lib/constants";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { cn } from "@/lib/utils";
 
 // Map service icon names to custom Blue Stars SVG icon components
@@ -286,15 +284,12 @@ export function Navbar() {
           : "shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
       )}
     >
-      {/* Dynamic Announcement Bar */}
-      <AnnouncementBar />
-
       {/* 1360px Max Width Container */}
       <div className="max-w-[1390px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] sm:h-[80px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center cursor-pointer focus:outline-none select-none bg-[#1166B0] hover:bg-[#0e5594] px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-[8px] transition-all duration-300 shadow-xs hover:shadow-md group"
+          className="flex items-center cursor-pointer select-none rounded-[6px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-4 group"
           aria-label={SITE_CONFIG.name}
           onClick={() => {
             setIsOpen(false);
@@ -302,12 +297,12 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/images/BlueStars_Reverse-logo.webp"
+            src="/images/BlueStars_logo_color.webp"
             alt="Blue Stars Admissions Consulting"
-            width={220}
-            height={106}
+            width={900}
+            height={434}
             priority
-            className="h-[36px] sm:h-[42px] md:h-[46px] lg:h-[50px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            className="h-[44px] sm:h-[52px] lg:h-[58px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-85"
           />
         </Link>
 
@@ -925,17 +920,6 @@ export function Navbar() {
                 className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 <span>Book Your Initial Consultation</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href={HUBSPOT_STRATEGY_CONSULTATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleNavClick}
-                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-bold font-heading text-brand-blue bg-[#f5f1ea] hover:bg-brand-ink hover:text-white transition-all shadow-xs flex items-center justify-center gap-2"
-              >
-                <span>Schedule Strategy Consultation (75 Min)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 

@@ -6,8 +6,8 @@ export const HUBSPOT_CONSULTATION_URL =
 export const HUBSPOT_DISCOVERY_URL =
   "https://meetings-na2.hubspot.com/bluestars/discovery-session";
 
-export const HUBSPOT_STRATEGY_CONSULTATION_URL =
-  "https://meetings-na2.hubspot.com/bluestars/discovery-session";
+// The 75-minute Strategy Consultation link is shared privately with families after their
+// Initial Consultation, so it is intentionally not linked anywhere on the public site.
 
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
   kicker: "Boutique College Counseling \u00b7 Since 2010",
@@ -39,7 +39,6 @@ export const SITE_CONFIG = {
   consultationUrl: HUBSPOT_CONSULTATION_URL,
   initialConsultationUrl: HUBSPOT_CONSULTATION_URL,
   discoveryUrl: HUBSPOT_DISCOVERY_URL,
-  strategyConsultationUrl: HUBSPOT_STRATEGY_CONSULTATION_URL,
   contact: {
     email: "info@bluestars.us",
     phone: "415-426-9444",

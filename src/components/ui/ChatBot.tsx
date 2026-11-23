@@ -19,7 +19,7 @@ import {
   Award,
 } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
-import { HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
+import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface ChatMessage {

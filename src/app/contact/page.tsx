@@ -25,7 +25,7 @@ import {
   YoutubeIcon,
   WhatsAppIcon,
 } from "@/components/ui/Icons";
-import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
+import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
 import { ContactFormData } from "@/types";
 import { cn } from "@/lib/utils";
@@ -275,7 +275,7 @@ export default function ContactPage() {
                   </span>
                 </div>
                 <p className="text-xs sm:text-[13px] text-brand-navy/90 font-sans">
-                  Start with your Initial Consultation (30 Min), followed by our comprehensive 75-Min Strategy Consultation:
+                  Every family starts with a complimentary 30-minute Initial Consultation. If there is a strong fit, we schedule the 75-minute Strategy Consultation with you directly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                   <a
@@ -286,15 +286,6 @@ export default function ContactPage() {
                   >
                     <span>Book Your Initial Consultation (30 Min)</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                  <a
-                    href={HUBSPOT_STRATEGY_CONSULTATION_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy text-xs sm:text-[13px] font-bold font-heading border border-brand-border transition-all shadow-xs"
-                  >
-                    <span>75-Min Strategy Consultation</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-brand-blue" />
                   </a>
                 </div>
               </div>
