@@ -54,7 +54,7 @@ export default function SuccessesPage() {
       {/* Strategic Methodology: Why Blue Stars Students Consistently Stand Out */}
       <SuccessesMethodology />
 
-      {/* Free Consultation CTA */}
+      {/* Consultation CTA */}
       <CTA />
     </div>
   );

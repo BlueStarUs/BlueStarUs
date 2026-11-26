@@ -30,9 +30,9 @@ const ARC_CLIP = "[clip-path:ellipse(100%_153%_at_100%_100%)]";
  */
 export function AboutHero() {
   return (
-    <div className="relative flex flex-col bg-[#eaf3fd] lg:min-h-[calc(100svh-7.8rem)]">
+    <div className="relative flex flex-col bg-[#f3eee5] lg:min-h-[calc(100svh-7.8rem)]">
       {/* ---------- Hero ---------- */}
-      <section className="relative flex-1 overflow-hidden bg-gradient-to-br from-[#04172f] via-[#0a2f5c] to-[#0f4f93] pb-32 text-white sm:pb-36 lg:pb-[11.5rem]">
+      <section className="relative flex-1 overflow-hidden bg-brand-ink pb-32 text-white sm:pb-36 lg:pb-[11.5rem]">
         <div
           className="pointer-events-none absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 62% 30%, rgba(56,189,248,0.18), transparent 55%)" }}
@@ -132,7 +132,7 @@ export function AboutHero() {
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
-          className="absolute inset-x-0 bottom-0 h-14 w-full text-[#eaf3fd] lg:h-24"
+          className="absolute inset-x-0 bottom-0 h-14 w-full text-[#f3eee5] lg:h-24"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -142,45 +142,45 @@ export function AboutHero() {
 
       {/* ---------- Consultation card (overlaps the hero) ---------- */}
       <section className="relative z-20 mx-auto -mt-16 w-full max-w-[1360px] px-4 pb-8 sm:-mt-20 sm:px-6 lg:-mt-[8.5rem] lg:px-8 lg:pb-10">
-        <div className="grid grid-cols-1 items-center gap-6 rounded-[30px] bg-white p-6 shadow-[0_26px_70px_rgba(6,38,74,0.22)] ring-1 ring-[#dfeaf6] sm:p-8 lg:grid-cols-[minmax(0,1.5fr)_auto_minmax(0,1fr)] lg:gap-9 lg:px-9 lg:py-[clamp(1.25rem,3.4vh,2rem)]">
+        <div className="grid grid-cols-1 items-center gap-6 rounded-[30px] bg-white p-6 shadow-[0_26px_70px_rgba(6,38,74,0.22)] ring-1 ring-[#f3eee5] sm:p-8 lg:grid-cols-[minmax(0,1.5fr)_auto_minmax(0,1fr)] lg:gap-9 lg:px-9 lg:py-[clamp(1.25rem,3.4vh,2rem)]">
           <div className="flex items-center gap-5 sm:gap-7">
-            <div className="hidden h-[5.5rem] w-[5.5rem] flex-shrink-0 place-items-center rounded-[22px] bg-[#e6f1fc] text-brand-blue sm:grid">
+            <div className="hidden h-[5.5rem] w-[5.5rem] flex-shrink-0 place-items-center rounded-[22px] bg-[#f3eee5] text-brand-blue sm:grid">
               <CalendarCheck className="h-10 w-10" aria-hidden="true" />
             </div>
             <div>
               <p className="mb-2 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#344155]">
-                <span className="hidden h-0.5 w-6 bg-brand-blue sm:block" aria-hidden="true" />
+                <span className="hidden h-0.5 w-6 bg-brand-ink sm:block" aria-hidden="true" />
                 Save time &bull; Stress less &bull; Achieve continuously
-                <span className="hidden h-0.5 w-6 bg-brand-blue sm:block" aria-hidden="true" />
+                <span className="hidden h-0.5 w-6 bg-brand-ink sm:block" aria-hidden="true" />
               </p>
               <h2 className="mb-2 text-[28px] leading-[1.08] text-brand-ink sm:text-[36px] lg:text-[clamp(28px,4.4vh,42px)]">
                 Begin Your Journey With a
-                <span className="block text-brand-blue">Complimentary Consultation</span>
+                <span className="block text-brand-blue">Personal Consultation</span>
               </h2>
               <p className="max-w-[600px] text-[15px] leading-[1.6] text-[#344155] lg:text-[clamp(14px,1.9vh,17px)]">
-                Schedule a 30-minute introductory strategy session to evaluate where your student stands and map an
+                Schedule an introductory strategy session to evaluate where your student stands and map an
                 actionable roadmap toward selective college acceptances.
               </p>
             </div>
           </div>
 
-          <div className="hidden h-full min-h-[7rem] w-px bg-[#dfeaf6] lg:block" aria-hidden="true" />
+          <div className="hidden h-full min-h-[7rem] w-px bg-[#f3eee5] lg:block" aria-hidden="true" />
 
-          <div className="rounded-[22px] bg-gradient-to-br from-[#edf5fe] to-[#e2effc] p-5 text-center sm:p-6">
+          <div className="rounded-[22px] bg-white p-5 text-center sm:p-6">
             <div className="mb-4 flex items-center justify-center gap-3">
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-[#d9eafb] text-brand-blue">
+              <span className="grid h-14 w-14 place-items-center rounded-full bg-[#f3eee5] text-brand-blue">
                 <Clock className="h-7 w-7" aria-hidden="true" />
               </span>
               <div className="text-left">
-                <span className="block font-display text-[32px] leading-none text-brand-ink sm:text-[38px]">Free 30-Min</span>
-                <span className="mt-1 block text-[14px] text-[#344155]">1-on-1 Initial Consultation</span>
+                <span className="block font-display text-[32px] leading-none text-brand-ink sm:text-[38px]">1-on-1</span>
+                <span className="mt-1 block text-[14px] text-[#344155]">Initial Consultation</span>
               </div>
             </div>
             <Link
               href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0b63b5] to-[#06335f] px-6 py-3.5 text-[15px] font-semibold tracking-wide text-white shadow-[0_10px_26px_rgba(11,99,181,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-ink px-6 py-3.5 text-[15px] font-semibold tracking-wide text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-transform duration-200 hover:scale-[1.02]"
             >
               <span>Get Started Now</span>
               <ArrowRight className="h-4 w-4" />

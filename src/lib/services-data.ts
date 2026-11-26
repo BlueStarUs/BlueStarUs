@@ -143,9 +143,9 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free 30-Min Initial Consultation & 75-Min Strategy Consultation",
+        title: "Initial Consultation & 75-Min Strategy Consultation",
         description:
-          "We begin with a complimentary 30-minute Initial Consultation, followed by a comprehensive 75-minute Strategy Consultation analyzing transcripts, diagnostic testing, extracurriculars, and personal values to map your roadmap 'The Calm Way'.",
+          "We begin with an Initial Consultation, followed by a comprehensive 75-minute Strategy Consultation analyzing transcripts, diagnostic testing, extracurriculars, and personal values to map your roadmap 'The Calm Way'.",
       },
       {
         stepNumber: "02",
@@ -659,7 +659,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free 30-Minute Initial Consultation",
+        title: "Initial Consultation",
         description:
           "Initial consultation conversation to understand your student's unique personality, academic trajectory, and your family's college goals.",
       },
@@ -716,9 +716,9 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       kicker: "MAKE ADMISSIONS STRESS-FREE",
       heading: "Make College Admissions Stress-Free & Exciting",
       description:
-        "Schedule your free Initial Consultation to understand where your student stands and chart an actionable roadmap toward dream college acceptances.",
+        "Schedule your Initial Consultation to understand where your student stands and chart an actionable roadmap toward dream college acceptances.",
       bullets: [
-        "Free 30-minute one-on-one Initial Consultation with senior advisors",
+        "One-on-one Initial Consultation with senior advisors",
         "Assessment of student strengths, extracurricular profile, and goals",
         "Actionable roadmap tailored specifically to your family's timeline",
         "No pressure, transparent advising built on 'The Calm Way'",
@@ -869,7 +869,7 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
     methodology: [
       {
         stepNumber: "01",
-        title: "Free Portfolio Diagnostic & Initial Consultation",
+        title: "Portfolio Diagnostic & Initial Consultation",
         description:
           "We review existing artwork, sketchbook studies, and creative ambitions to assess technical foundation and conceptual direction.",
       },
@@ -926,9 +926,9 @@ export const SERVICES_CATALOG: Record<string, ServiceDetail> = {
       kicker: "PORTFOLIO DIAGNOSTIC",
       heading: "Make Your Art Portfolio Review Stress-Free",
       description:
-        "Schedule your free 30-minute portfolio diagnostic with Dr. Amy Morgenstern (MFA in contemporary art, former university faculty) to evaluate current artwork and target elite art schools.",
+        "Schedule a portfolio diagnostic with Dr. Amy Morgenstern (MFA in contemporary art, former university faculty) to evaluate current artwork and target elite art schools.",
       bullets: [
-        "Free 30-minute portfolio diagnostic and preliminary review",
+        "Portfolio diagnostic and preliminary review",
         "Direct feedback from MFA-trained faculty on technique and concept",
         "Clear roadmap of needed pieces, thematic series, and media variety",
         "Strategic list of art school & university visual arts opportunities",

@@ -121,7 +121,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
         {/* Intro & key figures */}
         <div className="mb-12 sm:mb-14">
           <p className="inline-flex items-center gap-3 text-[11.5px] font-semibold tracking-[0.22em] uppercase text-brand-blue mb-4 font-sans">
-            <span className="h-px w-8 bg-brand-blue" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-ink" aria-hidden="true" />
             Testimonials &amp; success stories
           </p>
 
@@ -182,7 +182,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search stories, schools..."
               aria-label="Search stories and schools"
-              className="w-full pl-11 pr-4 py-3 rounded-full text-[13px] bg-white border border-[#e3dccf] text-brand-ink placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue font-sans transition-all"
+              className="w-full pl-11 pr-4 py-3 rounded-full text-[13px] bg-white border border-[#e3dccf] text-brand-ink placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-ink font-sans transition-all"
             />
           </div>
         </div>
@@ -202,7 +202,7 @@ export function StoriesListing({ initialStories }: StoriesListingProps) {
                 setSelectedCategory("All Stories");
                 setSearchQuery("");
               }}
-              className="px-6 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold hover:bg-brand-blue transition-colors cursor-pointer"
+              className="px-6 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold hover:bg-brand-ink transition-colors cursor-pointer"
             >
               Reset Filters
             </button>

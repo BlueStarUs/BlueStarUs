@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Calendar, Compass, Award, GraduationCap, ArrowRight } from "lucide-react";
+import { Calendar, Compass, Award, GraduationCap } from "lucide-react";
 import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 
 interface ProcessStepItem {
@@ -20,7 +19,7 @@ const GET_STARTED_STEPS: ProcessStepItem[] = [
   {
     step: "Step 1",
     stepNumber: "01",
-    title: "Complimentary 30-Min Initial Consultation",
+    title: "Initial Consultation",
     description:
       "Let’s get together to discuss your teen's background, ambitions, and family goals. Meet one of our expert counselors and get to know our philosophy. If there is strong mutual fit, we schedule the next step: a comprehensive 75-minute Strategy Consultation.",
     icon: Calendar,
@@ -82,15 +81,6 @@ export function Process() {
             </li>
           ))}
         </ol>
-
-        <a
-          href={HUBSPOT_CONSULTATION_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-14 inline-flex items-center gap-2 rounded-full bg-brand-ink hover:bg-brand-blue text-white px-7 py-3.5 text-[14px] font-semibold tracking-wide transition-colors"
-        >
-          Book your free 30-minute consultation <ArrowRight className="w-4 h-4" />
-        </a>
       </div>
     </section>
   );

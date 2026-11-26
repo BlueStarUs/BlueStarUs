@@ -52,19 +52,11 @@ const RECENT_ADMISSIONS_LOGOS: UniversityLogoItem[] = [
 export function RecentAdmissionsLogos() {
   return (
     <section
-      className="relative w-full py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#0199BB] text-white border-y border-[#8FD2C8]/30 overflow-hidden"
+      className="relative w-full py-8 sm:py-10 lg:py-12 bg-brand-ink text-white border-y border-[#8FD2C8]/30 overflow-hidden"
       id="recent-admissions"
       aria-label="Recent Admissions"
     >
       {/* Ambient Radial Background Glow */}
-      <div
-        className="absolute -top-16 -left-16 w-72 h-72 bg-[#00b4d8]/15 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -bottom-16 -right-16 w-80 h-80 bg-[#2ba3ea]/15 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
@@ -77,7 +69,7 @@ export function RecentAdmissionsLogos() {
             <h2 className="text-2xl sm:text-[26px] md:text-[28px] font-extrabold text-white font-heading tracking-tight leading-snug">
               Recent Admissions
             </h2>
-            <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[25px] text-[#cfe4f6] font-sans mt-1 max-w-sm">
+            <p className="text-[14.5px] sm:text-[16px] leading-[23px] sm:leading-[25px] text-[#f3eee5] font-sans mt-1 max-w-sm">
               Admitted to America&apos;s most selective universities.
             </p>
           </div>

@@ -68,7 +68,7 @@ export function AboutBoutique() {
           <div className="relative mx-auto w-full max-w-[400px] lg:mx-0">
             {/* offset arch behind the portrait */}
             <div
-              className="absolute -left-4 top-5 h-full w-full rounded-t-[200px] rounded-b-[14px] bg-[#dcebfb] sm:-left-6 sm:top-6"
+              className="absolute -left-4 top-5 h-full w-full rounded-t-[200px] rounded-b-[14px] bg-[#f3eee5] sm:-left-6 sm:top-6"
               aria-hidden="true"
             />
             <div className="relative aspect-[4/5] overflow-hidden rounded-t-[200px] rounded-b-[14px] bg-white shadow-[0_26px_60px_rgba(18,48,90,0.18)] ring-1 ring-[#ece6db]">
@@ -177,8 +177,8 @@ export function AboutBoutique() {
                     {row.topic}
                   </p>
 
-                  <p className="flex items-start gap-3.5 bg-[#f3f8fe] px-6 py-5 font-sans text-[15.5px] font-medium leading-[1.6] text-brand-ink md:px-8 md:py-7">
-                    <span className="mt-0.5 grid h-6 w-6 flex-shrink-0 place-items-center rounded-full bg-brand-blue text-white">
+                  <p className="flex items-start gap-3.5 bg-[#f3eee5] px-6 py-5 font-sans text-[15.5px] font-medium leading-[1.6] text-brand-ink md:px-8 md:py-7">
+                    <span className="mt-0.5 grid h-6 w-6 flex-shrink-0 place-items-center rounded-full bg-brand-ink text-white">
                       <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden="true" />
                     </span>
                     <span>
@@ -248,7 +248,7 @@ export function AboutBoutique() {
                 </p>
 
                 {t.admittedTo && (
-                  <span className="mb-6 inline-flex w-fit max-w-full items-center gap-2 rounded-full bg-[#e9f2fd] px-3.5 py-1.5 font-sans text-[12px] font-semibold text-[#0b4f94]">
+                  <span className="mb-6 inline-flex w-fit max-w-full items-center gap-2 rounded-full bg-[#f3eee5] px-3.5 py-1.5 font-sans text-[12px] font-semibold text-[#0b4f94]">
                     <GraduationCap className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
                     <span className="truncate">{t.admittedTo}</span>
                   </span>

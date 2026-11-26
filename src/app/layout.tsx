@@ -5,12 +5,14 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { GA_TRACKING_ID } from "@/lib/analytics";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatBot } from "@/components/ui/ChatBot";
-import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  // Mobile keyboard shrinks the layout so the chat input stays visible above it.
+  interactiveWidget: "resizes-content",
 };
 
 export const metadata: Metadata = {
@@ -126,9 +128,8 @@ export default function RootLayout({
         />
 
         <ScrollToTop />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <ChatBot />
-        <NewsletterPopup />
       </body>
     </html>
   );

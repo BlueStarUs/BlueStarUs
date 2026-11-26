@@ -55,7 +55,7 @@ export default function TestimonialsPage() {
       {/* Free College Planning Foundations Workbook */}
       <FreeWorkbookSection />
 
-      {/* Free Consultation CTA */}
+      {/* Consultation CTA */}
       <CTA />
     </div>
   );

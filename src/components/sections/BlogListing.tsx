@@ -251,7 +251,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                 }}
                 placeholder="Search articles by keyword, topic, or school..."
                 aria-label="Search articles by keyword, topic, or school"
-                className="w-full pl-12 pr-11 py-3.5 rounded-full bg-white border border-[#e3dccf] text-sm text-brand-ink placeholder:text-brand-text/60 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-all font-sans"
+                className="w-full pl-12 pr-11 py-3.5 rounded-full bg-white border border-[#e3dccf] text-sm text-brand-ink placeholder:text-brand-text/60 focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-ink transition-all font-sans"
               />
               {searchInput && (
                 <button
@@ -425,7 +425,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
                           trackSearchResultClick(featuredPost.slug, featuredPost.title, debouncedQuery);
                         }
                       }}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold tracking-wide group-hover:bg-brand-blue transition-colors duration-200"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-ink text-white text-[13px] font-semibold tracking-wide group-hover:bg-brand-ink transition-colors duration-200"
                     >
                       <span>Read Article</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -666,7 +666,7 @@ export function BlogListing({ initialPosts }: BlogListingProps) {
               <button
                 type="button"
                 onClick={handleResetAll}
-                className="px-6 py-2.5 rounded-full bg-brand-ink text-white font-semibold text-[13px] hover:bg-brand-blue transition-colors"
+                className="px-6 py-2.5 rounded-full bg-brand-ink text-white font-semibold text-[13px] hover:bg-brand-ink transition-colors"
               >
                 Reset All Filters
               </button>

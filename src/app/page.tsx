@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { AdmitsTicker } from "@/components/sections/AdmitsTicker";
 import { FounderNote } from "@/components/sections/FounderNote";
 import { ResultsWall } from "@/components/sections/ResultsWall";
 import { TeamIntro } from "@/components/sections/TeamIntro";
@@ -54,6 +55,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
         <Hero />
+        <AdmitsTicker />
         <FounderNote />
         <ResultsWall />
         <Services />

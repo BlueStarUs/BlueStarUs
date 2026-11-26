@@ -105,7 +105,7 @@ export function AnnouncementBar({
     <aside
       role="region"
       aria-label="Important Announcements"
-      className="relative z-50 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#1166B0] text-white border-b border-white/10 shadow-[0_2px_12px_rgba(2,82,105,0.25)] select-none overflow-hidden h-[38px] sm:h-[42px] flex items-center"
+      className="relative z-50 bg-gradient-to-r from-[#013B4C] via-[#025269] to-[#1166B0] text-white border-b border-white/10 shadow-[0_1px_3px_rgba(18,48,90,0.05)] select-none overflow-hidden h-[38px] sm:h-[42px] flex items-center"
     >
       {/* Left Edge Ambient Fade Mask */}
       <div

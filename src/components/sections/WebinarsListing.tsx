@@ -54,14 +54,14 @@ export function WebinarsListing() {
       <div className="max-w-[1360px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Compact Tab Switcher (Kam Space) */}
         <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8">
-          <div className="inline-flex p-1 rounded-[6px] bg-[#f0f6fc] border border-[#dbe7f3]">
+          <div className="inline-flex p-1 rounded-[6px] bg-[#f5f1ea] border border-[#e9e3d8]">
             <button
               type="button"
               onClick={() => handleTabChange("upcoming")}
               className={cn(
                 "px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[5px] text-xs font-bold font-heading transition-all duration-150 cursor-pointer flex items-center gap-1.5",
                 activeTab === "upcoming"
-                  ? "bg-brand-blue text-white shadow-xs"
+                  ? "bg-brand-ink text-white shadow-xs"
                   : "text-brand-navy hover:text-brand-blue"
               )}
             >
@@ -72,7 +72,7 @@ export function WebinarsListing() {
                   "px-1.5 py-0.2 rounded-full text-[10px] font-bold",
                   activeTab === "upcoming"
                     ? "bg-white/20 text-white"
-                    : "bg-[#dbe7f3] text-brand-navy"
+                    : "bg-[#f3eee5] text-brand-navy"
                 )}
               >
                 {upcomingCount > 0 ? upcomingCount : "0"}
@@ -85,7 +85,7 @@ export function WebinarsListing() {
               className={cn(
                 "px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[5px] text-xs font-bold font-heading transition-all duration-150 cursor-pointer flex items-center gap-1.5",
                 activeTab === "past"
-                  ? "bg-brand-blue text-white shadow-xs"
+                  ? "bg-brand-ink text-white shadow-xs"
                   : "text-brand-navy hover:text-brand-blue"
               )}
             >
@@ -96,7 +96,7 @@ export function WebinarsListing() {
                   "px-1.5 py-0.2 rounded-full text-[10px] font-bold",
                   activeTab === "past"
                     ? "bg-white/20 text-white"
-                    : "bg-brand-blue text-white"
+                    : "bg-brand-ink text-white"
                 )}
               >
                 {pastCount}
@@ -123,12 +123,12 @@ export function WebinarsListing() {
                   <Link
                     key={webinar.id}
                     href={targetUrl}
-                    className="group bg-white rounded-[8px] border border-[#e2eef9] hover:border-brand-blue/50 hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden cursor-pointer"
+                    className="group bg-white rounded-[8px] border border-[#e9e3d8] hover:border-brand-blue/50 hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden cursor-pointer"
                   >
                     <div>
                       {/* Image Container: ONLY rendered when a real authentic image exists */}
                       {hasRealImage && bannerSrc ? (
-                        <div className="relative w-full aspect-[16/9] min-h-[180px] sm:min-h-[200px] lg:min-h-[210px] bg-slate-100 overflow-hidden border-b border-[#edf4fb]">
+                        <div className="relative w-full aspect-[16/9] min-h-[180px] sm:min-h-[200px] lg:min-h-[210px] bg-slate-100 overflow-hidden border-b border-[#e9e3d8]">
                           <Image
                             src={bannerSrc}
                             alt={webinar.title}
@@ -150,7 +150,7 @@ export function WebinarsListing() {
                           </div>
 
                           {/* Play Icon Pill Overlay */}
-                          <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-brand-blue text-white text-[11px] font-bold font-heading shadow-xs">
+                          <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-brand-ink text-white text-[11px] font-bold font-heading shadow-xs">
                             <Play className="w-3 h-3 fill-current" />
                             <span>Watch Replay</span>
                           </div>
@@ -158,7 +158,7 @@ export function WebinarsListing() {
                       ) : (
                         /* Top Strip for Cards Without Images (Clean & Space-Saving) */
                         <div className="p-4 pb-0 flex items-center justify-between gap-2">
-                          <span className="px-2.5 py-1 rounded-[4px] bg-[#E3F1FC] text-[10.5px] font-bold font-heading text-brand-blue uppercase tracking-wider">
+                          <span className="px-2.5 py-1 rounded-[4px] bg-[#f5f1ea] text-[10.5px] font-bold font-heading text-brand-blue uppercase tracking-wider">
                             {webinar.category}
                           </span>
                           <span className="text-xs font-semibold text-brand-text flex items-center gap-1">
@@ -187,8 +187,8 @@ export function WebinarsListing() {
                         </p>
 
                         {/* Speaker Mini Pill */}
-                        <div className="flex items-center gap-2.5 p-2 rounded-[5px] bg-[#f8fbfe] border border-[#eef4fa]">
-                          <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-[#dbe7f3]">
+                        <div className="flex items-center gap-2.5 p-2 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8]">
+                          <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-[#e9e3d8]">
                             <Image
                               src={webinar.speaker.avatar}
                               alt={webinar.speaker.name}
@@ -209,7 +209,7 @@ export function WebinarsListing() {
                     </div>
 
                     {/* Bottom Action Strip */}
-                    <div className="px-4 py-2.5 sm:px-5 sm:py-3 bg-[#fbfdff] border-t border-[#edf4fb] flex items-center justify-between text-xs sm:text-[13px] font-bold text-brand-blue font-heading group-hover:bg-brand-sky/40 transition-colors">
+                    <div className="px-4 py-2.5 sm:px-5 sm:py-3 bg-[#fbfdff] border-t border-[#e9e3d8] flex items-center justify-between text-xs sm:text-[13px] font-bold text-brand-blue font-heading group-hover:bg-brand-sky/40 transition-colors">
                       <span>View Details &amp; Video</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                     </div>
@@ -220,7 +220,7 @@ export function WebinarsListing() {
 
             {/* Compact Pagination Controls */}
             {totalPages > 1 && (
-              <div className="mt-8 pt-5 border-t border-[#edf4fb] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="mt-8 pt-5 border-t border-[#e9e3d8] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <p className="text-xs sm:text-[13.5px] text-brand-text font-sans">
                   Showing <strong className="text-brand-navy">{startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, filtered.length)}</strong> of <strong className="text-brand-navy">{filtered.length}</strong> replays
                 </p>
@@ -233,8 +233,8 @@ export function WebinarsListing() {
                     className={cn(
                       "px-3 py-1.5 rounded-[4px] text-xs font-bold font-heading flex items-center gap-1 border transition-all",
                       currentPage === 1
-                        ? "opacity-40 cursor-not-allowed bg-[#f8fbfe] text-brand-text border-[#e2eef9]"
-                        : "bg-white text-brand-navy border-[#c4dcfa] hover:bg-brand-sky hover:text-brand-blue cursor-pointer"
+                        ? "opacity-40 cursor-not-allowed bg-[#f5f1ea] text-brand-text border-[#e9e3d8]"
+                        : "bg-white text-brand-navy border-[#e9e3d8] hover:bg-brand-sky hover:text-brand-blue cursor-pointer"
                     )}
                     aria-label="Previous page"
                   >
@@ -250,8 +250,8 @@ export function WebinarsListing() {
                       className={cn(
                         "w-8 h-8 rounded-[4px] text-xs font-bold font-heading transition-all cursor-pointer border grid place-items-center",
                         currentPage === pageNum
-                          ? "bg-brand-blue text-white border-brand-blue shadow-xs"
-                          : "bg-white text-brand-navy border-[#e2eef9] hover:bg-brand-sky hover:text-brand-blue"
+                          ? "bg-brand-ink text-white border-brand-ink shadow-xs"
+                          : "bg-white text-brand-navy border-[#e9e3d8] hover:bg-brand-sky hover:text-brand-blue"
                       )}
                       aria-current={currentPage === pageNum ? "page" : undefined}
                       aria-label={`Page ${pageNum}`}
@@ -267,8 +267,8 @@ export function WebinarsListing() {
                     className={cn(
                       "px-3 py-1.5 rounded-[4px] text-xs font-bold font-heading flex items-center gap-1 border transition-all",
                       currentPage === totalPages
-                        ? "opacity-40 cursor-not-allowed bg-[#f8fbfe] text-brand-text border-[#e2eef9]"
-                        : "bg-white text-brand-navy border-[#c4dcfa] hover:bg-brand-sky hover:text-brand-blue cursor-pointer"
+                        ? "opacity-40 cursor-not-allowed bg-[#f5f1ea] text-brand-text border-[#e9e3d8]"
+                        : "bg-white text-brand-navy border-[#e9e3d8] hover:bg-brand-sky hover:text-brand-blue cursor-pointer"
                     )}
                     aria-label="Next page"
                   >
@@ -280,8 +280,8 @@ export function WebinarsListing() {
             )}
           </>
         ) : (
-          <div className="bg-[#F8FBFE] rounded-[6px] border border-[#e2eef9] p-5 sm:p-8 text-center max-w-xl mx-auto shadow-xs">
-            <div className="w-10 h-10 rounded-full bg-[#E3F1FC] text-brand-blue flex items-center justify-center mx-auto mb-2.5">
+          <div className="bg-[#faf7f2] rounded-[6px] border border-[#e9e3d8] p-5 sm:p-8 text-center max-w-xl mx-auto shadow-xs">
+            <div className="w-10 h-10 rounded-full bg-[#f5f1ea] text-brand-blue flex items-center justify-center mx-auto mb-2.5">
               <Radio className="w-5 h-5 text-brand-blue" />
             </div>
             <h3 className="text-base sm:text-lg font-extrabold text-brand-navy font-heading mb-1.5">
@@ -293,7 +293,7 @@ export function WebinarsListing() {
             <button
               type="button"
               onClick={() => handleTabChange("past")}
-              className="px-4 py-2 rounded-[5px] text-xs font-bold text-white bg-brand-blue hover:bg-brand-navy transition-colors font-heading shadow-xs cursor-pointer"
+              className="px-4 py-2 rounded-[5px] text-xs font-bold text-white bg-brand-ink hover:bg-brand-blue transition-colors font-heading shadow-xs cursor-pointer"
             >
               Browse On-Demand Replays
             </button>

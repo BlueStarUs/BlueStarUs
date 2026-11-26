@@ -112,12 +112,10 @@ export function ServiceResourcesBanner({
     <section
       ref={bannerRef}
       id={id}
-      className="relative w-full py-14 sm:py-18 lg:py-20 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden"
+      className="relative w-full py-14 sm:py-18 lg:py-20 bg-brand-ink text-white overflow-hidden"
     >
       {/* Luminous Ambient Background Glow Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-        <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0096c7]/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 right-10 w-[500px] h-[320px] bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
         {/* Floating Brand Star Glow with GSAP Scroll Parallax */}
         <div
@@ -160,7 +158,7 @@ export function ServiceResourcesBanner({
 
           {/* Description */}
           {description && (
-            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] max-w-2xl font-sans mt-1">
+            <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] max-w-2xl font-sans mt-1">
               {description}
             </p>
           )}
@@ -198,10 +196,10 @@ export function ServiceResourcesBanner({
                   y: -7,
                   transition: { duration: 0.25, ease: "easeOut" },
                 }}
-                className="bg-white rounded-[8px] border border-[#e5f0fa] shadow-[0_14px_40px_rgba(7,61,99,0.25)] hover:shadow-[0_22px_55px_rgba(7,61,99,0.38)] overflow-hidden flex flex-col justify-between group transition-shadow duration-300"
+                className="bg-white rounded-[8px] border border-[#e9e3d8] shadow-[0_14px_40px_rgba(7,61,99,0.25)] hover:shadow-[0_22px_55px_rgba(7,61,99,0.38)] overflow-hidden flex flex-col justify-between group transition-shadow duration-300"
               >
                 {/* Top Image Container with Badge */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8f2fc]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f3eee5]">
                   <Image
                     src={item.image}
                     alt={item.alt}
@@ -237,11 +235,11 @@ export function ServiceResourcesBanner({
                   </div>
 
                   {/* Bottom Action Button */}
-                  <div className="pt-2 border-t border-[#edf4fb]">
+                  <div className="pt-2 border-t border-[#e9e3d8]">
                     <motion.div whileTap={{ scale: 0.96 }} className="inline-block">
                       <Link
                         href={item.actionHref}
-                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[5px] text-[14.5px] sm:text-[15px] font-bold text-brand-blue bg-[#f3eee5] hover:bg-brand-ink hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
                       >
                         <span>{item.actionText}</span>
                         <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />

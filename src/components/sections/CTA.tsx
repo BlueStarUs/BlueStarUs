@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BrandStar } from "@/components/ui/Icons";
-import { HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
+import { HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { BrandTagline } from "@/components/ui/BrandTagline";
 
 export function CTA() {
   return (
     <section
-      className="relative w-full bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden mb-0"
+      className="relative w-full bg-brand-ink text-white overflow-hidden mb-0"
       id="consultation"
     >
       {/* 1360px Max Width Container */}
@@ -28,30 +28,20 @@ export function CTA() {
             </h2>
 
             {/* Description */}
-            <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#d8ebf9] mb-4 sm:mb-6 max-w-2xl font-sans">
-              Book a free initial consultation and get personalized guidance for your college journey.
+            <p className="text-xs sm:text-[15px] sm:text-[16px] leading-relaxed sm:leading-[26px] text-[#f3eee5] mb-4 sm:mb-6 max-w-2xl font-sans">
+              Book an initial consultation and get personalized guidance for your college journey.
             </p>
 
-            {/* Primary Initial & Strategy Consultation Action Buttons */}
+            {/* Primary consultation action */}
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <Link
                 href={HUBSPOT_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-[#f0f7fe] text-brand-navy text-[12.5px] sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-[#f3eee5] text-brand-navy text-[12.5px] sm:text-[14.5px] font-bold font-heading shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center"
               >
-                <span className="whitespace-nowrap">Book Your Initial Consultation (30 Min)</span>
+                <span className="whitespace-nowrap">Book Your Initial Consultation</span>
                 <ArrowRight className="w-4 h-4 text-brand-navy shrink-0" />
-              </Link>
-
-              <Link
-                href={HUBSPOT_STRATEGY_CONSULTATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[12.5px] sm:text-[14.5px] font-bold font-heading border border-white/40 hover:border-white shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 backdrop-blur-xs text-center"
-              >
-                <span className="whitespace-nowrap">Schedule Strategy Consultation (75 Min)</span>
-                <ArrowRight className="w-4 h-4 text-white shrink-0" />
               </Link>
             </div>
 
@@ -63,10 +53,6 @@ export function CTA() {
             {/* Unified container for student and stars that scales, grounds at bottom, and stays aligned */}
             <div className="relative w-[210px] sm:w-[260px] md:w-[290px] lg:w-[330px] xl:w-[350px] h-[190px] sm:h-[240px] md:h-[260px] lg:h-[300px] xl:h-[320px] flex items-end justify-center">
               {/* Ambient Radial Soft Glow */}
-              <div
-                className="absolute inset-0 bg-[#229ae3]/25 rounded-full blur-2xl pointer-events-none"
-                aria-hidden="true"
-              />
 
               {/* Cyan/Blue 4-point Brand Star (Positioned relative to student) */}
               <div

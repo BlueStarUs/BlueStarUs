@@ -56,18 +56,10 @@ export function Contact() {
 
   return (
     <section
-      className="relative w-full py-12 sm:py-14 lg:py-18 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden"
+      className="relative w-full py-12 sm:py-14 lg:py-18 bg-white overflow-hidden"
       id="contact"
     >
       {/* Decorative Organic Wave Shapes in Background (Matching Services & Process) */}
-      <div
-        className="absolute top-0 right-0 w-[420px] h-[360px] bg-gradient-to-bl from-[#e3f1fc]/80 via-[#edf6fd]/40 to-transparent rounded-bl-[220px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[380px] h-[320px] bg-gradient-to-tr from-[#e5f2fc]/70 via-[#eef6fe]/30 to-transparent rounded-tr-[200px] pointer-events-none"
-        aria-hidden="true"
-      />
 
       {/* 1360px Max Width Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -100,7 +92,7 @@ export function Contact() {
             {/* Contact Details List with Squircle Icon Badges */}
             <ul className="space-y-4 sm:space-y-6">
               <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
-                <span className="w-9 h-9 rounded-[12px] bg-[#e3f1fc] grid place-items-center flex-shrink-0 text-brand-blue shadow-xs">
+                <span className="w-9 h-9 rounded-[12px] bg-[#f5f1ea] grid place-items-center flex-shrink-0 text-brand-blue shadow-xs">
                   <Mail className="w-4 h-4" />
                 </span>
                 <a
@@ -112,7 +104,7 @@ export function Contact() {
               </li>
 
               <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
-                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
+                <span className="w-9 h-9 rounded-[12px] bg-[#f3eee5] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <Phone className="w-4 h-4" />
                 </span>
                 <div className="flex items-center gap-2.5 flex-wrap">
@@ -136,7 +128,7 @@ export function Contact() {
               </li>
 
               <li className="flex items-center gap-3 text-[15px] sm:text-[16px] text-brand-navy font-bold font-heading">
-                <span className="w-9 h-9 rounded-[12px] bg-[#e5f7ed] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
+                <span className="w-9 h-9 rounded-[12px] bg-[#f3eee5] grid place-items-center flex-shrink-0 text-[#2F9E5C] shadow-xs">
                   <MapPin className="w-4 h-4" />
                 </span>
                 <span>{SITE_CONFIG.contact.address}</span>
@@ -145,7 +137,7 @@ export function Contact() {
           </div>
 
           {/* Center Column: Family Advising Photograph */}
-          <div className="relative w-full aspect-[4/3] sm:aspect-[17/10] lg:aspect-[1.15/1] rounded-[16px] overflow-hidden shadow-[0_10px_32px_rgba(10,61,107,0.06)] flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[17/10] lg:aspect-[1.15/1] rounded-[16px] overflow-hidden shadow-[0_1px_3px_rgba(18,48,90,0.05)] flex items-center justify-center">
             {/* Desktop Left Soft Fade Mask */}
             <div
               className="hidden lg:block absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white via-white/40 to-transparent z-10 pointer-events-none"
@@ -171,7 +163,7 @@ export function Contact() {
           </div>
 
           {/* Right Column: Modern Elevated Form Card */}
-          <div className="bg-white rounded-[15px] shadow-[0_16px_44px_rgba(10,61,107,0.08)] border border-[#e2eef9] p-6 sm:p-7 relative z-20 overflow-hidden">
+          <div className="bg-white rounded-[15px] shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] p-6 sm:p-7 relative z-20 overflow-hidden">
             <h3 className="text-[20px] sm:text-[22px] font-bold text-brand-navy mb-4 font-heading tracking-tight relative z-10 mb-6">
               Send Us a Message
             </h3>
@@ -193,7 +185,7 @@ export function Contact() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#e9e3d8] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink transition-all"
                 />
               </div>
 
@@ -213,7 +205,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#e9e3d8] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink transition-all"
                 />
               </div>
 
@@ -231,7 +223,7 @@ export function Contact() {
                     name="interest"
                     value={formData.interest}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 pr-9 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all appearance-none cursor-pointer"
+                    className="w-full px-3.5 py-2.5 pr-9 border border-[#e9e3d8] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink transition-all appearance-none cursor-pointer"
                   >
                     <option value="">Select an option</option>
                     <option value="College Admissions Consulting">College Admissions Consulting</option>
@@ -261,7 +253,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder=""
-                  className="w-full px-3.5 py-2.5 border border-[#d6e3f0] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue min-h-[50px] resize-y transition-all"
+                  className="w-full px-3.5 py-2.5 border border-[#e9e3d8] rounded-[8px] text-[15px] sm:text-[16px] leading-[24px] bg-white text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-ink min-h-[50px] resize-y transition-all"
                 />
               </div>
 
@@ -269,7 +261,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[5px] font-bold text-[15px] sm:text-[16px] leading-[24px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-[5px] font-bold text-[15px] sm:text-[16px] leading-[24px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

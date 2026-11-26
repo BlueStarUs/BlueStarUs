@@ -122,8 +122,8 @@ export function SiteSearchModal({
         icon: Award,
       },
       {
-        id: "free-consultation",
-        title: "Book Free Initial Consultation (30-Min)",
+        id: "consultation",
+        title: "Book an Initial Consultation",
         category: "Page",
         href: HUBSPOT_CONSULTATION_URL,
         description:
@@ -214,11 +214,11 @@ export function SiteSearchModal({
       aria-label="Site Search"
     >
       <div
-        className="w-full max-w-2xl bg-white rounded-[6px] shadow-[0_24px_64px_rgba(10,61,107,0.25)] border border-[#dce8f5] overflow-hidden flex flex-col mt-4 sm:mt-10 animate-in zoom-in-95 duration-200"
+        className="w-full max-w-2xl bg-white rounded-[6px] shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#e9e3d8] overflow-hidden flex flex-col mt-4 sm:mt-10 animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-[#e2eef9] bg-gradient-to-r from-[#f8fbfe] to-white">
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-[#e9e3d8] bg-white">
           <Search className="w-5 h-5 text-brand-blue flex-shrink-0" />
           <input
             ref={inputRef}
@@ -232,13 +232,13 @@ export function SiteSearchModal({
             <button
               type="button"
               onClick={() => setQuery("")}
-              className="p-1 rounded-full text-brand-text/60 hover:text-brand-navy hover:bg-[#e2eef9] transition-colors"
+              className="p-1 rounded-full text-brand-text/60 hover:text-brand-navy hover:bg-[#f3eee5] transition-colors"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
             </button>
           ) : (
-            <span className="hidden sm:inline-block text-[11px] font-bold text-brand-text/60 bg-[#edf5fc] px-2 py-0.5 rounded-[4px] border border-[#d2e5f5] font-heading">
+            <span className="hidden sm:inline-block text-[11px] font-bold text-brand-text/60 bg-[#f3eee5] px-2 py-0.5 rounded-[4px] border border-[#e9e3d8] font-heading">
               ESC to close
             </span>
           )}
@@ -253,7 +253,7 @@ export function SiteSearchModal({
         </div>
 
         {/* Results List */}
-        <div className="max-h-[60vh] overflow-y-auto p-3 sm:p-4 space-y-1.5 divide-y divide-[#f0f6fc]">
+        <div className="max-h-[60vh] overflow-y-auto p-3 sm:p-4 space-y-1.5 divide-y divide-[#f3eee5]">
           <div className="px-3 py-1.5 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-brand-blue font-heading">
             <span>
               {query.trim()
@@ -285,9 +285,9 @@ export function SiteSearchModal({
                   key={item.id}
                   type="button"
                   onClick={() => handleSelect(item.href)}
-                  className="w-full text-left p-3 rounded-[5px] hover:bg-[#f0f7fe] transition-colors flex items-start gap-3.5 group cursor-pointer"
+                  className="w-full text-left p-3 rounded-[5px] hover:bg-[#f3eee5] transition-colors flex items-start gap-3.5 group cursor-pointer"
                 >
-                  <div className="w-8 h-8 rounded-[4px] bg-[#E3F1FC] text-brand-blue grid place-items-center flex-shrink-0 mt-0.5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-[4px] bg-[#f5f1ea] text-brand-blue grid place-items-center flex-shrink-0 mt-0.5 group-hover:bg-brand-ink group-hover:text-white transition-colors">
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -295,7 +295,7 @@ export function SiteSearchModal({
                       <span className="font-heading font-extrabold text-brand-navy text-[14.5px] sm:text-[15.5px] group-hover:text-brand-blue transition-colors truncate">
                         {item.title}
                       </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-[3px] bg-[#eef6fc] text-brand-blue border border-[#d6e7f7] font-heading flex-shrink-0">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-[3px] bg-[#f3eee5] text-brand-blue border border-[#e9e3d8] font-heading flex-shrink-0">
                         {item.category}
                       </span>
                     </div>
@@ -311,7 +311,7 @@ export function SiteSearchModal({
         </div>
 
         {/* Footer info bar */}
-        <div className="px-5 py-3 bg-[#f8fbfe] border-t border-[#e2eef9] flex items-center justify-between text-xs text-brand-text font-sans">
+        <div className="px-5 py-3 bg-[#f5f1ea] border-t border-[#e9e3d8] flex items-center justify-between text-xs text-brand-text font-sans">
           <span>
             Need direct assistance? Call{" "}
             <a
@@ -328,7 +328,7 @@ export function SiteSearchModal({
             onClick={onClose}
             className="font-bold text-brand-blue hover:text-brand-navy font-heading"
           >
-            Book Free Initial Consultation &rarr;
+            Book an Initial Consultation &rarr;
           </Link>
         </div>
       </div>

@@ -25,7 +25,7 @@ import {
   YoutubeIcon,
   WhatsAppIcon,
 } from "@/components/ui/Icons";
-import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL, HUBSPOT_STRATEGY_CONSULTATION_URL } from "@/lib/constants";
+import { SITE_CONFIG, HUBSPOT_CONSULTATION_URL } from "@/lib/constants";
 import { submitContactForm } from "@/services/api";
 import { ContactFormData } from "@/types";
 import { cn } from "@/lib/utils";
@@ -130,16 +130,8 @@ export default function ContactPage() {
       />
 
       {/* Main Clean Contact Section */}
-      <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] overflow-hidden">
+      <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
         {/* Soft Decorative Ambient Background */}
-        <div
-          className="absolute -top-24 right-0 w-[450px] h-[450px] bg-[#00b4d8]/10 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[380px] h-[380px] bg-[#e3f1fc]/80 rounded-full blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -147,7 +139,7 @@ export default function ContactPage() {
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                  <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                   <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                     DIRECT ADMISSION ADVISORY
                   </span>
@@ -165,7 +157,7 @@ export default function ContactPage() {
               {/* Direct Info Cards */}
               <div className="space-y-3.5 pt-2">
                 {/* Email Card */}
-                <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs flex items-center gap-3.5">
+                <div className="p-4 rounded-[5px] bg-white border border-[#e9e3d8] shadow-xs flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-[5px] bg-brand-sky text-brand-blue flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
@@ -183,15 +175,15 @@ export default function ContactPage() {
                 </div>
 
                 {/* Telephone & WhatsApp Card */}
-                <div className="p-4 sm:p-4.5 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                <div className="p-4 sm:p-4.5 rounded-[5px] bg-white border border-[#e9e3d8] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                   <div className="flex items-center gap-3.5 min-w-0">
-                    <div className="w-10 h-10 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <div className="w-10 h-10 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center flex-shrink-0 shadow-xs">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div className="min-w-0">
                       <div className="text-[11px] font-bold text-brand-navy/70 uppercase tracking-wider font-heading flex items-center gap-1.5">
                         <span>Telephone &amp; WhatsApp</span>
-                        <span className="px-1.5 py-0.2 rounded-[3px] bg-[#E3F5EA] text-[#2F9E5C] text-[9.5px] font-extrabold uppercase">
+                        <span className="px-1.5 py-0.2 rounded-[3px] bg-[#f3eee5] text-[#2F9E5C] text-[9.5px] font-extrabold uppercase">
                           Available
                         </span>
                       </div>
@@ -210,7 +202,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Direct Contact Actions: Call & WhatsApp */}
-                  <div className="flex items-center gap-2 self-start sm:self-auto flex-shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-[#e2eef9] w-full sm:w-auto justify-end">
+                  <div className="flex items-center gap-2 self-start sm:self-auto flex-shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-[#e9e3d8] w-full sm:w-auto justify-end">
                     <a
                       href={`tel:${SITE_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] bg-brand-bg hover:bg-brand-sky text-brand-navy hover:text-brand-blue text-xs font-bold font-heading border border-brand-border transition-colors shadow-2xs"
@@ -233,7 +225,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Location Card */}
-                <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs flex items-center gap-3.5">
+                <div className="p-4 rounded-[5px] bg-white border border-[#e9e3d8] shadow-xs flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-[5px] bg-brand-sky text-brand-blue flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -249,7 +241,7 @@ export default function ContactPage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="p-5 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] space-y-4">
+              <div className="p-5 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] space-y-4">
                 <div className="flex items-center gap-2 text-[15px] sm:text-[16px] font-[500] text-brand-navy font-heading">
                   <CheckCircle2 className="w-4.5 h-4.5 text-brand-blue flex-shrink-0" />
                   <span>16+ Years Guiding Top Students to Dream Universities</span>
@@ -270,31 +262,22 @@ export default function ContactPage() {
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-blue font-heading">
                     Prefer Instant Online Booking?
                   </span>
-                  <span className="text-[10.5px] font-bold px-2 py-0.5 rounded-[4px] bg-brand-blue text-white uppercase tracking-wider">
+                  <span className="text-[10.5px] font-bold px-2 py-0.5 rounded-[4px] bg-brand-ink text-white uppercase tracking-wider">
                     HubSpot Live
                   </span>
                 </div>
                 <p className="text-xs sm:text-[13px] text-brand-navy/90 font-sans">
-                  Start with your Initial Consultation (30 Min), followed by our comprehensive 75-Min Strategy Consultation:
+                  Every family starts with an Initial Consultation. If there is a strong fit, we schedule the 75-minute Strategy Consultation with you directly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                   <a
                     href={HUBSPOT_CONSULTATION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-[13px] font-bold font-heading transition-all shadow-xs"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-brand-ink hover:bg-brand-blue text-white text-xs sm:text-[13px] font-bold font-heading transition-all shadow-xs"
                   >
-                    <span>Book Your Initial Consultation (30 Min)</span>
+                    <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                  <a
-                    href={HUBSPOT_STRATEGY_CONSULTATION_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-[5px] bg-white hover:bg-brand-sky text-brand-navy text-xs sm:text-[13px] font-bold font-heading border border-brand-border transition-all shadow-xs"
-                  >
-                    <span>75-Min Strategy Consultation</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-brand-blue" />
                   </a>
                 </div>
               </div>
@@ -309,7 +292,7 @@ export default function ContactPage() {
                     href={SITE_CONFIG.socials.facebook}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-ink hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
                     aria-label="Facebook"
                   >
                     <FacebookIcon className="w-4 h-4" />
@@ -318,7 +301,7 @@ export default function ContactPage() {
                     href={SITE_CONFIG.socials.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-ink hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
                     aria-label="Instagram"
                   >
                     <InstagramIcon className="w-4 h-4" />
@@ -327,7 +310,7 @@ export default function ContactPage() {
                     href={SITE_CONFIG.socials.pinterest}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-ink hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
                     aria-label="Pinterest"
                   >
                     <PinterestIcon className="w-4 h-4" />
@@ -336,7 +319,7 @@ export default function ContactPage() {
                     href={SITE_CONFIG.socials.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-ink hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon className="w-4 h-4" />
@@ -345,7 +328,7 @@ export default function ContactPage() {
                     href={SITE_CONFIG.socials.youtube}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-blue hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
+                    className="w-9 h-9 rounded-[8px] bg-brand-bg hover:bg-brand-ink hover:text-white text-brand-navy border border-brand-border grid place-items-center transition-all hover:scale-105 shadow-2xs"
                     aria-label="YouTube"
                   >
                     <YoutubeIcon className="w-4 h-4" />
@@ -356,7 +339,7 @@ export default function ContactPage() {
 
             {/* Right Column: Small, Compact, Clean Contact Form */}
             <div className="lg:col-span-5">
-              <div className="bg-white rounded-[5px] p-6 sm:p-8 lg:p-9 border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)]">
+              <div className="bg-white rounded-[5px] p-6 sm:p-8 lg:p-9 border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)]">
                 <div className="mb-6">
                   <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-1">
                     FAST INQUIRY
@@ -370,7 +353,7 @@ export default function ContactPage() {
                 </div>
 
                 {isSuccess ? (
-                  <div className="p-7 rounded-[5px] bg-[#E3F5EA] border border-[#2F9E5C]/30 text-center space-y-3 animate-in fade-in duration-200">
+                  <div className="p-7 rounded-[5px] bg-[#f3eee5] border border-[#2F9E5C]/30 text-center space-y-3 animate-in fade-in duration-200">
                     <div className="w-12 h-12 rounded-full bg-[#2F9E5C] text-white flex items-center justify-center mx-auto shadow-sm">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
@@ -383,7 +366,7 @@ export default function ContactPage() {
                     <button
                       type="button"
                       onClick={() => setIsSuccess(false)}
-                      className="mt-2 px-5 py-2.5 rounded-[5px] text-xs font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-colors cursor-pointer"
+                      className="mt-2 px-5 py-2.5 rounded-[5px] text-xs font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue transition-colors cursor-pointer"
                     >
                       Send Another Message
                     </button>
@@ -409,7 +392,7 @@ export default function ContactPage() {
                         value={formData.fullName}
                         onChange={handleChange}
                         placeholder="e.g. Sarah Miller"
-                        className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-ink transition-all"
                       />
                     </div>
 
@@ -427,7 +410,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="name@example.com"
-                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all"
+                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-ink transition-all"
                         />
                       </div>
 
@@ -442,7 +425,7 @@ export default function ContactPage() {
                           value={formData.phone || ""}
                           onChange={handleChange}
                           placeholder="(415) 000-0000 (Call or WhatsApp)"
-                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all"
+                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-ink transition-all"
                         />
                       </div>
                     </div>
@@ -458,7 +441,7 @@ export default function ContactPage() {
                           name="interest"
                           value={formData.interest}
                           onChange={handleChange}
-                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all appearance-none cursor-pointer"
+                          className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-xs sm:text-sm text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-ink transition-all appearance-none cursor-pointer"
                         >
                           <option value="">Please Select a Program</option>
                           {INTEREST_OPTIONS.map((item) => (
@@ -484,7 +467,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your student's current grade, target colleges, or any questions you have..."
-                        className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#c4dcfa] bg-[#f8fbfe] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-blue transition-all resize-y"
+                        className="w-full px-3.5 py-2.5 rounded-[5px] border border-[#e9e3d8] bg-[#f5f1ea] text-xs sm:text-sm text-brand-navy placeholder:text-brand-text/50 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:bg-white focus:border-brand-ink transition-all resize-y"
                       />
                     </div>
 
@@ -493,7 +476,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3 px-6 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                        className="w-full py-3 px-6 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                       >
                         {isSubmitting ? (
                           <span>Sending Message...</span>
@@ -521,7 +504,7 @@ export default function ContactPage() {
       <ContactBoutique />
 
       {/* Direct Quick Reach Cards */}
-      <section className="relative w-full py-12 sm:py-14 bg-white border-t border-[#e2eef9]">
+      <section className="relative w-full py-12 sm:py-14 bg-white border-t border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
             <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading mb-1">
@@ -537,9 +520,9 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Telephone & WhatsApp */}
-            <div className="p-6 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center flex flex-col justify-between">
+            <div className="p-6 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] flex items-center justify-center mx-auto mb-3 shadow-xs">
+                <div className="w-11 h-11 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] flex items-center justify-center mx-auto mb-3 shadow-xs">
                   <Phone className="w-5 h-5" />
                 </div>
                 <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
@@ -579,7 +562,7 @@ export default function ContactPage() {
             </div>
 
             {/* Email */}
-            <div className="p-6 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center">
+            <div className="p-6 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center">
               <div className="w-11 h-11 rounded-[5px] bg-brand-sky flex items-center justify-center mx-auto mb-3 text-brand-blue">
                 <Mail className="w-5 h-5" />
               </div>
@@ -598,8 +581,8 @@ export default function ContactPage() {
             </div>
 
             {/* Virtual Consultation */}
-            <div className="p-6 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F5EA] flex items-center justify-center mx-auto mb-3 text-[#2F9E5C]">
+            <div className="p-6 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] hover:border-brand-blue/40 hover:shadow-sm transition-all text-center">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f3eee5] flex items-center justify-center mx-auto mb-3 text-[#2F9E5C]">
                 <MapPin className="w-5 h-5" />
               </div>
               <h3 className="font-heading font-bold text-brand-navy text-sm sm:text-base mb-1">
@@ -617,11 +600,9 @@ export default function ContactPage() {
       </section>
 
       {/* Modern Compact Full-Width Newsletter Banner Section at the Bottom */}
-      <section className="relative w-full py-8 sm:py-10 lg:py-11 bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white overflow-hidden border-t border-[#2072a7]/40 mb-8">
+      <section className="relative w-full py-8 sm:py-10 lg:py-11 bg-brand-ink text-white overflow-hidden border-t border-[#2072a7]/40 mb-8">
         {/* Subtle Ambient Wave Lights */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-          <div className="absolute -top-16 -left-12 w-72 h-72 bg-[#0096c7]/20 rounded-full blur-2xl" />
-          <div className="absolute -bottom-16 right-10 w-80 h-60 bg-[#00b4d8]/20 rounded-full blur-2xl" />
         </div>
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -648,7 +629,7 @@ export default function ContactPage() {
             {/* Right Form / Subscription Block */}
             <div className="w-full lg:max-w-md xl:max-w-lg flex-shrink-0">
               {newsletterStatus === "success" ? (
-                <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#e3f5ea] border border-[#a3e4be] text-xs sm:text-sm text-[#1e7a43] flex items-center gap-3 animate-in fade-in duration-200">
+                <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#f3eee5] border border-[#a3e4be] text-xs sm:text-sm text-[#1e7a43] flex items-center gap-3 animate-in fade-in duration-200">
                   <div className="w-7 h-7 rounded-full bg-[#2F9E5C] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
@@ -673,7 +654,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={newsletterStatus === "submitting"}
-                    className="px-5 sm:px-6 py-3 rounded-[5px] text-xs sm:text-[12.5px] font-bold font-heading uppercase tracking-wider text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-sm hover:shadow-md transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                    className="px-5 sm:px-6 py-3 rounded-[5px] text-xs sm:text-[12.5px] font-bold font-heading uppercase tracking-wider text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-sm hover:shadow-md transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                   >
                     {newsletterStatus === "submitting" ? (
                       <>

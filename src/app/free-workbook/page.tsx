@@ -73,7 +73,7 @@ const WORKBOOK_FAQS = [
   {
     question: "What should we do after completing the workbook?",
     answer:
-      "Once you've mapped out your initial thoughts, you can schedule a complimentary 30-minute diagnostic session with Dr. Amy Morgenstern and our senior counseling team to review your responses and build a tailored college admissions strategy.",
+      "Once you've mapped out your initial thoughts, you can schedule a diagnostic session with Dr. Amy Morgenstern and our senior counseling team to review your responses and build a tailored college admissions strategy.",
   },
 ];
 
@@ -104,10 +104,10 @@ export default function FreeWorkbookPage() {
         <FreeWorkbookSection />
 
       {/* Why This Workbook Matters - 3 Column Feature Grid (Services Theme) */}
-      <section className="py-12 sm:py-16 bg-[#F3F8FD] border-b border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#f3eee5] border-b border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="w-12 h-[3px] bg-brand-blue rounded-full mb-3.5 mx-auto" aria-hidden="true" />
+            <div className="w-12 h-[3px] bg-brand-ink rounded-full mb-3.5 mx-auto" aria-hidden="true" />
             <h2 className="text-2xl sm:text-[30px] font-extrabold text-brand-navy font-heading tracking-tight leading-snug">
               Why Start With The Blue Stars Foundations Workbook?
             </h2>
@@ -117,8 +117,8 @@ export default function FreeWorkbookPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F1FC] text-brand-blue grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f5f1ea] text-brand-blue grid place-items-center mb-4">
                 <BookOpen className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -129,8 +129,8 @@ export default function FreeWorkbookPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] grid place-items-center mb-4">
                 <Sparkles className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -141,8 +141,8 @@ export default function FreeWorkbookPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-shadow">
-              <div className="w-11 h-11 rounded-[5px] bg-[#E3F1FC] text-brand-blue grid place-items-center mb-4">
+            <div className="bg-white p-6 rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-11 h-11 rounded-[5px] bg-[#f5f1ea] text-brand-blue grid place-items-center mb-4">
                 <Award className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-extrabold text-brand-navy font-heading mb-2">
@@ -166,22 +166,22 @@ export default function FreeWorkbookPage() {
       {/* Consultation CTA Banner */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-lg border border-[#2072a7]/40">
+          <div className="rounded-[5px] bg-brand-ink text-white p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-lg border border-[#2072a7]/40">
             <span className="text-xs font-bold uppercase tracking-wider text-[#79c3f7] font-heading mb-2 inline-block">
               READY FOR 1-ON-1 ADVISING?
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight mb-3">
               Review Your Workbook With Dr. Amy Morgenstern
             </h2>
-            <p className="text-sm sm:text-base text-[#d4e8f8] max-w-xl mx-auto mb-6 font-sans">
-              Schedule a free 30-minute diagnostic session to discuss your student&apos;s academic profile, high school roadmap, and college goals.
+            <p className="text-sm sm:text-base text-[#f3eee5] max-w-xl mx-auto mb-6 font-sans">
+              Schedule a diagnostic session to discuss your student&apos;s academic profile, high school roadmap, and college goals.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3.5">
               <Link
                 href={HUBSPOT_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-md transition-all"
               >
                 <span>Book Your Initial Consultation</span>
                 <ArrowRight className="w-4 h-4 text-[#07466f]" />

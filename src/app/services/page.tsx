@@ -40,7 +40,7 @@ const GENERAL_SERVICES_FAQS = [
   {
     question: "How do I choose which service package is right for my student?",
     answer:
-      "During your free 30-minute consultation, our senior advisors evaluate your student's current grade level, academic profile, and specific timeline to recommend whether our comprehensive multi-year planning, research mentorship, or targeted application package is the best fit.",
+      "During your initial consultation, our senior advisors evaluate your student's current grade level, academic profile, and specific timeline to recommend whether our comprehensive multi-year planning, research mentorship, or targeted application package is the best fit.",
   },
   {
     question: "Do you offer combined or comprehensive full-cycle packages?",

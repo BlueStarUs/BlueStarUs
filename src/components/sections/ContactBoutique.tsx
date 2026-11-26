@@ -9,7 +9,7 @@ import { BrandTagline } from "@/components/ui/BrandTagline";
 const STEPS = [
   {
     title: "You reach out",
-    text: "Send us a note or book a complimentary 30-minute Initial Consultation. Tell us about your teen, their ambitions, and your family's goals.",
+    text: "Send us a note or book an Initial Consultation. Tell us about your teen, their ambitions, and your family's goals.",
   },
   {
     title: "You meet a counselor",
@@ -30,7 +30,7 @@ export function ContactBoutique() {
           {/* Who is behind the inbox */}
           <div>
             <p className="mb-4 flex items-center gap-3 font-sans text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-blue">
-              <span className="h-px w-8 bg-brand-blue" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-ink" aria-hidden="true" />
               Boutique, not a call center
             </p>
             <h2 className="mb-5 text-[30px] leading-[1.1] text-brand-ink sm:text-[42px]">

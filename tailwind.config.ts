@@ -32,9 +32,9 @@ const config: Config = {
           // Semantic Theme Utilities
           lightBlue: "#0199BB",
           green: "#F0F8EC",      // Soft light green tint
-          sky: "#EBF5F7",        // Luminous soft tint derived from #8FD2C8
-          bg: "#F4F9FB",         // Neutral soft background
-          border: "#D8EAEE",     // Harmonized border line
+          sky: "#F3EFE7",        // Luminous soft tint derived from #8FD2C8
+          bg: "#FAF7F2",         // Neutral soft background
+          border: "#E9E3D8",     // Harmonized border line
           ivory: "#FAF7F2",      // Boutique warm off-white background
           ink: "#12305A",        // Deep editorial navy for display headings
         },

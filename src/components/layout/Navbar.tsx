@@ -32,9 +32,7 @@ import {
   NAV_RESOURCES,
   SITE_CONFIG,
   HUBSPOT_CONSULTATION_URL,
-  HUBSPOT_STRATEGY_CONSULTATION_URL,
 } from "@/lib/constants";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { cn } from "@/lib/utils";
 
 // Map service icon names to custom Blue Stars SVG icon components
@@ -280,21 +278,18 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-white/100 border-b border-[#e2eef9] transition-all duration-300",
+        "sticky top-0 z-50 bg-white/100 border-b border-[#e9e3d8] transition-all duration-300",
         isScrolled
-          ? "shadow-[0_4px_24px_rgba(10,61,107,0.08)] py-0"
-          : "shadow-[0_2px_12px_rgba(10,61,107,0.03)]"
+          ? "shadow-[0_1px_3px_rgba(18,48,90,0.05)] py-0"
+          : "shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
       )}
     >
-      {/* Dynamic Announcement Bar */}
-      <AnnouncementBar />
-
       {/* 1360px Max Width Container */}
       <div className="max-w-[1390px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] sm:h-[80px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center cursor-pointer focus:outline-none select-none bg-[#1166B0] hover:bg-[#0e5594] px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-[8px] transition-all duration-300 shadow-xs hover:shadow-md group"
+          className="flex items-center cursor-pointer select-none rounded-[6px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-4 group"
           aria-label={SITE_CONFIG.name}
           onClick={() => {
             setIsOpen(false);
@@ -302,12 +297,12 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/images/BlueStars_Reverse-logo.webp"
+            src="/images/BlueStars_logo_color.webp"
             alt="Blue Stars Admissions Consulting"
-            width={220}
-            height={106}
+            width={900}
+            height={434}
             priority
-            className="h-[36px] sm:h-[42px] md:h-[46px] lg:h-[50px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            className="h-[44px] sm:h-[52px] lg:h-[58px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-85"
           />
         </Link>
 
@@ -355,7 +350,7 @@ export function Navbar() {
                     />
                     {active && (
                       <span
-                        className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-blue rounded-full animate-in fade-in duration-200"
+                        className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-ink rounded-full animate-in fade-in duration-200"
                         aria-hidden="true"
                       />
                     )}
@@ -369,11 +364,11 @@ export function Navbar() {
                       aria-label="Our Services"
                       className="absolute top-full -left-20 sm:-left-28 md:-left-36 lg:-left-44 pt-2.5 w-[740px] lg:w-[820px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in slide-in-from-top-2 duration-200 pointer-events-auto"
                     >
-                      <div className="bg-white rounded-[5px] shadow-[0_22px_50px_rgba(10,61,107,0.15)] border border-brand-border overflow-hidden">
+                      <div className="bg-white rounded-[5px] shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-brand-border overflow-hidden">
                         {/* Dropdown Top Bar */}
                         <div className="px-6 py-3.5 bg-gradient-to-r from-brand-bg via-white to-brand-sky/40 border-b border-brand-border flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
+                            <span className="w-2 h-2 rounded-full bg-brand-ink animate-pulse" />
                             <span className="text-[14px] sm:text-[14.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
                               Admissions Consulting Programs
                             </span>
@@ -450,14 +445,14 @@ export function Navbar() {
                         <div className="px-6 py-3.5 bg-brand-bg border-t border-brand-border flex items-center justify-between">
                           <div className="text-[14px] sm:text-[14.5px] leading-[22px] sm:leading-[24px] text-brand-text truncate font-sans">
                             <span className="font-semibold text-brand-navy">Not sure which roadmap fits?</span>{" "}
-                            Book a free 30-minute diagnostic session.
+                            Book a diagnostic session.
                           </div>
                           <a
                             href={HUBSPOT_CONSULTATION_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setIsServicesOpen(false)}
-                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
+                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-ink hover:bg-brand-blue px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
                             <span>Book Consultation</span>
                             <ArrowRight className="w-3 h-3" />
@@ -506,7 +501,7 @@ export function Navbar() {
                     />
                     {active && (
                       <span
-                        className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-blue rounded-full animate-in fade-in duration-200"
+                        className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-ink rounded-full animate-in fade-in duration-200"
                         aria-hidden="true"
                       />
                     )}
@@ -520,11 +515,11 @@ export function Navbar() {
                       aria-label="Resources & Insights"
                       className="absolute top-full -left-28 sm:-left-36 md:-left-44 lg:-left-56 pt-2.5 w-[740px] lg:w-[820px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in slide-in-from-top-2 duration-200 pointer-events-auto"
                     >
-                      <div className="bg-white rounded-[5px] shadow-[0_22px_50px_rgba(10,61,107,0.15)] border border-brand-border overflow-hidden">
+                      <div className="bg-white rounded-[5px] shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-brand-border overflow-hidden">
                         {/* Dropdown Top Bar */}
                         <div className="px-6 py-3.5 bg-gradient-to-r from-brand-bg via-white to-brand-sky/40 border-b border-brand-border flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
+                            <span className="w-2 h-2 rounded-full bg-brand-ink animate-pulse" />
                             <span className="text-[14px] sm:text-[14.5px] font-extrabold uppercase tracking-wider text-brand-navy font-heading">
                               Admissions Knowledge & Insights
                             </span>
@@ -608,7 +603,7 @@ export function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setIsResourcesOpen(false)}
-                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-blue hover:bg-brand-navy px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
+                            className="inline-flex items-center gap-1.5 text-[14px] sm:text-[14.5px] font-bold text-white bg-brand-ink hover:bg-brand-blue px-3.5 py-1.5 rounded-[5px] transition-all shadow-xs font-heading"
                           >
                             <span>Book Consultation</span>
                             <ArrowRight className="w-3 h-3" />
@@ -637,7 +632,7 @@ export function Navbar() {
                 <span>{item.label}</span>
                 {active && (
                   <span
-                    className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-blue rounded-full animate-in fade-in duration-200"
+                    className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-brand-ink rounded-full animate-in fade-in duration-200"
                     aria-hidden="true"
                   />
                 )}
@@ -653,7 +648,7 @@ export function Navbar() {
             href={HUBSPOT_CONSULTATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border border-brand-blue"
+            className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border border-brand-ink"
           >
             <span>Book Consultation</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -662,7 +657,7 @@ export function Navbar() {
           {/* Mobile Menu Hamburger Button */}
           <button
             type="button"
-            className="md:hidden w-8 h-8 min-w-[42px] min-h-[42px] rounded-[5px] bg-[#E3F1FC] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue cursor-pointer"
+            className="md:hidden w-8 h-8 min-w-[42px] min-h-[42px] rounded-[5px] bg-[#f5f1ea] text-brand-navy hover:text-brand-blue grid place-items-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
@@ -674,7 +669,7 @@ export function Navbar() {
 
       {/* Mobile Dropdown Menu Drawer */}
       {isOpen && (
-       <div className="md:hidden absolute top-full left-0 w-full h-[calc(100dvh-100%)] bg-white px-5 py-5 shadow-[0_20px_40px_rgba(10,61,107,0.12)] overflow-y-auto animate-in slide-in-from-left duration-300 ease-out">
+       <div className="md:hidden absolute top-full left-0 w-full h-[calc(100dvh-100%)] bg-white px-5 py-5 shadow-[0_1px_3px_rgba(18,48,90,0.05)] overflow-y-auto animate-in slide-in-from-left duration-300 ease-out">
           <nav className="flex flex-col space-y-1.5" aria-label="Mobile Navigation">
             {NAV_LINKS.map((item) => {
               const active = isLinkActive(item.href);
@@ -687,8 +682,8 @@ export function Navbar() {
                       className={cn(
                         "rounded-[5px] transition-colors flex items-center justify-between",
                         active || isMobileServicesOpen
-                          ? "bg-[#E3F1FC]"
-                          : "hover:bg-[#E3F1FC]/50"
+                          ? "bg-[#f5f1ea]"
+                          : "hover:bg-[#f5f1ea]/50"
                       )}
                     >
                       <Link
@@ -795,8 +790,8 @@ export function Navbar() {
                       className={cn(
                         "rounded-[5px] transition-colors flex items-center justify-between",
                         active || isMobileResourcesOpen
-                          ? "bg-[#E3F1FC]"
-                          : "hover:bg-[#E3F1FC]/50"
+                          ? "bg-[#f5f1ea]"
+                          : "hover:bg-[#f5f1ea]/50"
                       )}
                     >
                       <Link
@@ -904,38 +899,27 @@ export function Navbar() {
                   className={cn(
                     "py-3 px-4 rounded-[5px] text-[15px] font-bold font-heading transition-colors flex items-center justify-between",
                     active
-                      ? "bg-[#E3F1FC] text-brand-blue font-extrabold"
-                      : "text-brand-navy hover:bg-[#E3F1FC]/50 hover:text-brand-blue"
+                      ? "bg-[#f5f1ea] text-brand-blue font-extrabold"
+                      : "text-brand-navy hover:bg-[#f5f1ea]/50 hover:text-brand-blue"
                   )}
                 >
                   <span>{item.label}</span>
                   {active && (
-                    <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                    <span className="w-2 h-2 rounded-full bg-brand-ink" />
                   )}
                 </Link>
               );
             })}
 
-            <div className="pt-4 mt-2 border-t border-[#e2eef9] flex flex-col gap-2.5">
+            <div className="pt-4 mt-2 border-t border-[#e9e3d8] flex flex-col gap-2.5">
               <a
                 href={HUBSPOT_CONSULTATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
-                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-blue hover:bg-brand-navy transition-all shadow-sm flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13.5px] font-bold font-heading text-white bg-brand-ink hover:bg-brand-blue transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 <span>Book Your Initial Consultation</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href={HUBSPOT_STRATEGY_CONSULTATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleNavClick}
-                className="w-full py-3 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-bold font-heading text-brand-blue bg-[#E3F1FC] hover:bg-brand-blue hover:text-white transition-all shadow-xs flex items-center justify-center gap-2"
-              >
-                <span>Schedule Strategy Consultation (75 Min)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -946,7 +930,7 @@ export function Navbar() {
                   "w-full py-2.5 px-4 rounded-[5px] text-center text-xs sm:text-[13px] font-medium font-heading transition-all",
                   isContactActive
                     ? "bg-brand-bg text-brand-blue font-bold"
-                    : "text-brand-navy hover:bg-[#E3F1FC]/50 hover:text-brand-blue"
+                    : "text-brand-navy hover:bg-[#f5f1ea]/50 hover:text-brand-blue"
                 )}
               >
                 Contact Form &amp; Questions

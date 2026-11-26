@@ -59,7 +59,7 @@ const GUIDES_FAQS = [
   {
     question: "Do you offer individualized guidance if we need personalized help?",
     answer:
-      "Yes. If your family wants dedicated 1-on-1 counseling to build an application strategy, develop extracurricular spikes, and polish essays, you can book a free 30-minute consultation with our advisory team.",
+      "Yes. If your family wants dedicated 1-on-1 counseling to build an application strategy, develop extracurricular spikes, and polish essays, you can book a consultation with our advisory team.",
   },
 ];
 
@@ -91,12 +91,12 @@ export default function GuidesPage() {
       <FreeWorkbookSection />
 
       {/* Why Blue Stars Guides Section */}
-      <section className="py-12 sm:py-16 bg-[#f8fbfe] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#f5f1ea] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   DATA-DRIVEN METHODOLOGY
                 </span>
@@ -111,11 +111,11 @@ export default function GuidesPage() {
               </p>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9]">
+                <div className="p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <div className="text-2xl font-extrabold text-brand-blue font-heading">16+</div>
                   <div className="text-xs font-semibold text-brand-navy font-heading mt-0.5">Years of Success</div>
                 </div>
-                <div className="p-4 rounded-[5px] bg-white border border-[#e2eef9]">
+                <div className="p-4 rounded-[5px] bg-white border border-[#e9e3d8]">
                   <div className="text-2xl font-extrabold text-brand-blue font-heading">100%</div>
                   <div className="text-xs font-semibold text-brand-navy font-heading mt-0.5">Free & Unrestricted</div>
                 </div>
@@ -132,11 +132,9 @@ export default function GuidesPage() {
       {/* Elevated CTA Banner */}
       <section className="relative w-full py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-[8px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[8px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Ambient Flowing Light in Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
@@ -151,7 +149,7 @@ export default function GuidesPage() {
                   Need Help Implementing These Blueprints?
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
                   Connect directly with our senior counseling team to review your student&apos;s coursework, extracurricular profile, and personalized college list.
                 </p>
 
@@ -160,7 +158,7 @@ export default function GuidesPage() {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-md hover:shadow-lg transition-all"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
@@ -177,10 +175,6 @@ export default function GuidesPage() {
               {/* Right Column: Student Cutout Image & Decorative Brand Stars */}
               <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 {/* Radial Glow */}
-                <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Cyan 4-Point Brand Star */}
                 <div

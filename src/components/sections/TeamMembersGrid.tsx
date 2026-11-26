@@ -41,7 +41,7 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
         return (
           <article
             key={member.name}
-            className="group flex flex-col rounded-[28px] bg-white p-3 shadow-[0_20px_50px_rgba(11,99,181,0.12)] ring-1 ring-[#dbe9f8] transition-shadow duration-300 hover:shadow-[0_26px_60px_rgba(11,99,181,0.2)]"
+            className="group flex flex-col rounded-[28px] bg-white p-3 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5] transition-shadow duration-300 hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
           >
             {/* Photo on a blue panel */}
             <div className="relative aspect-[1/0.88] w-full overflow-hidden rounded-[22px] bg-gradient-to-br from-[#3a8fe3] via-[#1d63b9] to-[#0c3f86]">
@@ -70,7 +70,7 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
               <h3 className="font-display text-[25px] leading-tight !font-medium text-brand-ink">{member.name}</h3>
 
               <div className="mt-2.5 lg:min-h-[3.1rem]">
-                <span className="inline-flex rounded-full bg-[#e3effc] px-3.5 py-1.5 font-sans text-[12px] font-bold uppercase leading-snug tracking-[0.07em] text-[#0b4f94]">
+                <span className="inline-flex rounded-full bg-[#f3eee5] px-3.5 py-1.5 font-sans text-[12px] font-bold uppercase leading-snug tracking-[0.07em] text-[#0b4f94]">
                   {member.role}
                 </span>
               </div>
@@ -102,12 +102,12 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
 
               <div className="mt-auto">
                 {member.affiliations && member.affiliations.length > 0 && (
-                  <div className="mb-3 flex flex-wrap items-center gap-2 border-t border-[#e3eef9] pt-2.5">
+                  <div className="mb-3 flex flex-wrap items-center gap-2 border-t border-[#e9e3d8] pt-2.5">
                     <span className="font-sans text-[14.5px] font-bold text-brand-ink">Accredited</span>
                     {member.affiliations.map((aff) => (
                       <div
                         key={aff.name}
-                        className="flex h-9 items-center justify-center rounded-full bg-white px-3 shadow-[0_4px_12px_rgba(11,99,181,0.12)] ring-1 ring-[#e3eef9]"
+                        className="flex h-9 items-center justify-center rounded-full bg-white px-3 shadow-[0_1px_3px_rgba(18,48,90,0.05)] ring-1 ring-[#f3eee5]"
                         title={aff.name}
                       >
                         <Image
@@ -122,14 +122,14 @@ export function TeamMembersGrid({ members }: TeamMembersGridProps) {
                   </div>
                 )}
 
-                <div className="border-t border-[#e3eef9] px-1 pb-1 pt-4 sm:px-0 sm:pb-0 sm:pt-3">
+                <div className="border-t border-[#e9e3d8] px-1 pb-1 pt-4 sm:px-0 sm:pb-0 sm:pt-3">
                   <Link
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-[#2b6cb8]/45 px-5 py-3 text-center font-sans text-[13.5px] font-bold leading-tight sm:py-2.5 sm:px-4 sm:text-[14px] text-brand-ink transition-colors duration-200 hover:border-brand-ink hover:bg-brand-ink hover:text-white"
                   >
-                    <span className="whitespace-nowrap">Book Free 30-Min Consultation</span>
+                    <span className="whitespace-nowrap">Book a Consultation</span>
                     <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" />
                   </Link>
                 </div>

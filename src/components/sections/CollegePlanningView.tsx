@@ -174,7 +174,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               viewport={{ once: false, amount: 0.15 }}
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   OVERVIEW &amp; APPROACH
                 </span>
@@ -198,7 +198,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                   <motion.div
                     key={stat.label}
                     whileHover={{ y: -3 }}
-                    className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] text-center"
+                    className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] text-center"
                   >
                     <div className="text-lg sm:text-2xl font-extrabold text-brand-blue font-heading tracking-tight">
                       {stat.value}
@@ -217,7 +217,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-gradient-to-br from-[#f8fbfe] to-white rounded-[5px] border border-[#e2eef9] shadow-[0_14px_38px_rgba(10,61,107,0.07)] p-6 sm:p-8 overflow-hidden"
+              className="relative bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] p-6 sm:p-8 overflow-hidden"
             >
               {/* Corner Petal Accent */}
               <svg
@@ -229,13 +229,13 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               >
                 <path
                   d="M100 0H28C28 39.76 60.24 72 100 72V0Z"
-                  fill={isBlue ? "#d8edfd" : "#daf5e5"}
+                  fill={isBlue ? "#f3eee5" : "#f3eee5"}
                   opacity="0.8"
                 />
               </svg>
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E3F1FC] text-brand-blue text-xs font-bold font-heading mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5f1ea] text-brand-blue text-xs font-bold font-heading mb-4">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Program Profile</span>
                 </div>
@@ -260,7 +260,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-blue text-white hover:bg-brand-navy transition-all duration-200 shadow-sm hover:shadow-md"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-[5px] font-bold text-xs sm:text-[13.5px] font-heading bg-brand-ink text-white hover:bg-brand-blue transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4" />
@@ -276,12 +276,8 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
           3. WHAT WE FOCUS ON DURING YOUR PROGRAM (CORE PILLARS)
              (With 4 Images from public/images/services/college-planning)
           ======================================================== */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f8fbfe] via-white to-[#f4f9fd] border-y border-[#e2eef9] relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-[#e9e3d8] relative overflow-hidden">
         {/* Background Organic Waves */}
-        <div
-          className="absolute top-0 left-0 w-[420px] h-[360px] bg-gradient-to-br from-[#e3f1fc]/70 to-transparent rounded-br-[220px] pointer-events-none"
-          aria-hidden="true"
-        />
 
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
@@ -293,11 +289,11 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
             className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16"
           >
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 CORE PILLARS
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-blue font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:!leading-[45px] mb-4">
@@ -323,7 +319,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                   key={pillar.title}
                   variants={cardItemVariants}
                   whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                  className="bg-white rounded-[5px] border border-[#e7f0f9] shadow-[0_10px_30px_rgba(10,61,107,0.06)] hover:shadow-[0_18px_42px_rgba(10,61,107,0.12)] transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
+                  className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)] hover:shadow-[0_1px_3px_rgba(18,48,90,0.05)] transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
                 >
                   {/* Decorative Top-Right Corner Arc */}
                   <svg
@@ -335,7 +331,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                   >
                     <path
                       d="M100 0H28C28 39.76 60.24 72 100 72V0Z"
-                      fill={idx % 2 === 0 ? "#e2f2fd" : "#daf5e5"}
+                      fill={idx % 2 === 0 ? "#f3eee5" : "#f3eee5"}
                       opacity="0.8"
                     />
                   </svg>
@@ -347,8 +343,8 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                         className={cn(
                           "w-[56px] h-[56px] rounded-[5px] grid place-items-center mb-5 transition-transform duration-300 group-hover:scale-105 shadow-xs",
                           idx % 2 === 0
-                            ? "bg-[#e5f1fc] text-brand-blue"
-                            : "bg-[#e2f7eb] text-[#2F9E5C]"
+                            ? "bg-[#f5f1ea] text-brand-blue"
+                            : "bg-[#f3eee5] text-[#2F9E5C]"
                         )}
                       >
                         {idx === 0 && <Compass className="w-6 h-6 stroke-[2.2]" />}
@@ -368,7 +364,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                       </p>
 
                       {/* Pillar Image from public/images/services/college-planning */}
-                      <div className="relative w-full aspect-[16/8] sm:aspect-[16/6] rounded-[6px] overflow-hidden mb-5 border border-[#e8f1f9] bg-[#f8fbfe] shadow-2xs group-hover:shadow-xs transition-shadow">
+                      <div className="relative w-full aspect-[16/8] sm:aspect-[16/6] rounded-[6px] overflow-hidden mb-5 border border-[#e9e3d8] bg-[#f5f1ea] shadow-2xs group-hover:shadow-xs transition-shadow">
                         <Image
                           src={imageSrc}
                           alt={pillar.title}
@@ -381,13 +377,13 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                     </div>
 
                     {/* Highlights List */}
-                    <ul className="space-y-2 pt-3 border-t border-[#edf4fb]">
+                    <ul className="space-y-2 pt-3 border-t border-[#e9e3d8]">
                       {pillar.highlights.map((item) => (
                         <li
                           key={item}
                           className="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] text-brand-navy font-medium font-sans leading-snug"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-ink flex-shrink-0 mt-2" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -413,11 +409,11 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
             className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16"
           >
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 OUR METHODOLOGY
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[38px] lg:leading-[42px]">
@@ -438,10 +434,10 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                 key={step.stepNumber}
                 variants={cardItemVariants}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="relative rounded-[5px] bg-[#f8fbfe] border border-[#e2eef9] p-6 sm:p-7 flex flex-col justify-between hover:shadow-card transition-all duration-300 group"
+                className="relative rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8] p-6 sm:p-7 flex flex-col justify-between hover:shadow-card transition-all duration-300 group"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-full bg-brand-blue text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-brand-ink text-white font-extrabold text-sm font-heading grid place-items-center mb-4 shadow-sm">
                     {step.stepNumber}
                   </div>
 
@@ -462,14 +458,14 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
       {/* ========================================================
           5. KEY DELIVERABLES SECTION (What's Included)
           ======================================================== */}
-      <section className="py-12 sm:py-16 bg-[#f5f9fd] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 bg-[#faf7f2] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={fadeUpVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
-            className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e2eef9] shadow-[0_12px_36px_rgba(10,61,107,0.06)]"
+            className="bg-white rounded-[6px] p-6 sm:p-10 border border-[#e9e3d8] shadow-[0_1px_3px_rgba(18,48,90,0.05)]"
           >
             <div className="max-w-2xl mb-8">
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading block mb-2">
@@ -484,7 +480,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               {service.deliverables.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f8fbfe] border border-[#e8f2fc]"
+                  className="flex items-center gap-3.5 p-4 rounded-[5px] bg-[#f5f1ea] border border-[#e9e3d8]"
                 >
                   <BlueCircleCheck className="w-5 h-5 flex-shrink-0" />
                   <span className="text-[15px] sm:text-[16px] font-semibold text-brand-navy font-heading">
@@ -510,7 +506,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               viewport={{ once: false, amount: 0.2 }}
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
@@ -568,12 +564,10 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.15 }}
-            className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden"
+            className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden"
           >
             {/* Luminous Wave Ribbons */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center relative z-10">
@@ -588,14 +582,14 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                   Build Your Student&apos;s Strategic College Roadmap
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
-                  Schedule a complimentary 30-minute introductory consultation with our senior advisory team to start mapping a personalized, low-stress college plan.
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
+                  Schedule an introductory consultation with our senior advisory team to start mapping a personalized, low-stress college plan.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-8 text-xs sm:text-[13.5px] text-[#bfe2fa] font-medium font-sans">
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
-                    <span>Free Initial Consultation</span>
+                    <span>1-on-1 Initial Consultation</span>
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#3bd386] flex-shrink-0" />
@@ -612,7 +606,7 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group"
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-[5px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-[15px] font-heading shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-200 group"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-brand-navy transition-transform duration-200 group-hover:translate-x-1" />
@@ -623,10 +617,6 @@ export function CollegePlanningView({ service }: CollegePlanningViewProps) {
               {/* Right Column: Student Cutout & Glowing Brand Stars */}
               <div className="relative h-[240px] sm:h-[280px] lg:h-full min-h-[250px] lg:min-h-[300px] w-full flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 {/* Radial Glow */}
-                <div
-                  className="absolute right-[12%] top-[18%] w-[260px] h-[260px] bg-[#229ae3]/25 rounded-full blur-3xl pointer-events-none"
-                  aria-hidden="true"
-                />
 
                 {/* Decorative Brand Stars */}
                 <div

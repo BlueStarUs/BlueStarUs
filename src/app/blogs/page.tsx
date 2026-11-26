@@ -65,7 +65,7 @@ export default function BlogsPage() {
         <BlogListing initialPosts={BLOG_POSTS} />
       </Suspense>
 
-      {/* Free Consultation CTA */}
+      {/* Consultation CTA */}
       <CTA />
     </div>
   );

@@ -181,7 +181,7 @@ const GENERAL_RESOURCE_FAQS = [
   {
     question: "How do I take the next step after reading a guide?",
     answer:
-      "If you would like personalized, one-on-one advising tailored to your student's unique strengths, schedule a free 30-minute introductory consultation with our senior advisory team.",
+      "If you would like personalized, one-on-one advising tailored to your student's unique strengths, schedule an introductory consultation with our senior advisory team.",
   },
 ];
 
@@ -205,16 +205,16 @@ export default function ResourcesPage() {
       />
 
       {/* 6 Core Resource Hubs Grid Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#f9fcff] border-b border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#faf7f2] border-b border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Heading */}
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="flex items-center gap-2.5 mb-2.5">
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
               <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                 EXPLORE BY CATEGORY
               </span>
-              <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+              <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
             </div>
 
             <h2 className="text-2xl sm:text-[28px] md:text-[32px] lg:text-[35px] font-extrabold text-brand-navy font-heading tracking-tight leading-[32px] sm:leading-[36px] lg:leading-[42px]">
@@ -233,7 +233,7 @@ export default function ResourcesPage() {
               return (
                 <div
                   key={hub.id}
-                  className="bg-white rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between p-6 sm:p-7 group hover:-translate-y-1"
+                  className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between p-6 sm:p-7 group hover:-translate-y-1"
                 >
                   <div>
                     {/* Top Row: Icon + Badge */}
@@ -277,7 +277,7 @@ export default function ResourcesPage() {
                     </p>
 
                     {/* Highlights List */}
-                    <div className="space-y-2 mb-6 pt-3 border-t border-[#edf4fb]">
+                    <div className="space-y-2 mb-6 pt-3 border-t border-[#e9e3d8]">
                       {hub.highlights.map((h, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-brand-navy/90 font-medium">
                           <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue flex-shrink-0 mt-0.5" />
@@ -288,10 +288,10 @@ export default function ResourcesPage() {
                   </div>
 
                   {/* Action Link Button */}
-                  <div className="pt-3 border-t border-[#edf4fb]">
+                  <div className="pt-3 border-t border-[#e9e3d8]">
                     <Link
                       href={hub.href}
-                      className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
+                      className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-brand-blue bg-[#f3eee5] hover:bg-brand-ink hover:text-white transition-all duration-200 font-heading shadow-xs group-hover:shadow-sm"
                     >
                       <span>{hub.actionText}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -310,7 +310,7 @@ export default function ResourcesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-12">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   POPULAR DOWNLOADS
                 </span>
@@ -333,10 +333,10 @@ export default function ResourcesPage() {
             {featuredGuides.map((guide) => (
               <div
                 key={guide.id}
-                className="bg-white rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md hover:border-brand-blue/30 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md hover:border-brand-blue/30 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8f2fc]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f3eee5]">
                     <Image
                       src={guide.coverImage}
                       alt={guide.title}
@@ -362,7 +362,7 @@ export default function ResourcesPage() {
                       {guide.description}
                     </p>
 
-                    <div className="space-y-1.5 pt-3 border-t border-[#edf4fb]">
+                    <div className="space-y-1.5 pt-3 border-t border-[#e9e3d8]">
                       {guide.highlights.slice(0, 2).map((h, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-brand-navy/90">
                           <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue flex-shrink-0 mt-0.5" />
@@ -376,7 +376,7 @@ export default function ResourcesPage() {
                 <div className="p-6 pt-0">
                   <Link
                     href={`/resources/guides#${guide.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-colors font-heading shadow-xs"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-colors font-heading shadow-xs"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download Free Guide</span>
@@ -389,12 +389,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Upcoming & On-Demand Webinars Highlight */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#f9fcff] border-y border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#faf7f2] border-y border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-12">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   LIVE ADMISSIONS SESSIONS
                 </span>
@@ -417,11 +417,11 @@ export default function ResourcesPage() {
             {upcomingWebinars.map((webinar) => (
               <div
                 key={webinar.id}
-                className="bg-white rounded-[5px] border border-[#e2eef9] p-6 sm:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] p-6 sm:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-[#E3F5EA] text-[#2F9E5C] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#2F9E5C]/20">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-[#f3eee5] text-[#2F9E5C] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#2F9E5C]/20">
                       <Radio className="w-3.5 h-3.5 animate-pulse" />
                       <span>{webinar.category}</span>
                     </span>
@@ -466,13 +466,13 @@ export default function ResourcesPage() {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#edf4fb] flex items-center justify-between gap-3">
+                <div className="pt-3 border-t border-[#e9e3d8] flex items-center justify-between gap-3">
                   <span className="text-xs text-brand-text font-sans">
                     Free live registration • Interactive Q&A
                   </span>
                   <Link
                     href="/events"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-blue hover:bg-brand-navy transition-colors font-heading shadow-xs"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-white bg-brand-ink hover:bg-brand-blue transition-colors font-heading shadow-xs"
                   >
                     <span>Reserve Seat</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -490,7 +490,7 @@ export default function ResourcesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-12">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   ON-DEMAND VIDEO LIBRARY
                 </span>
@@ -513,10 +513,10 @@ export default function ResourcesPage() {
             {VIDEO_RESOURCES.slice(0, 3).map((video) => (
               <div
                 key={video.id}
-                className="bg-white rounded-[5px] border border-[#e2eef9] shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                className="bg-white rounded-[5px] border border-[#e9e3d8] shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8f2fc]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f3eee5]">
                     <Image
                       src={video.thumbnail}
                       alt={video.title}
@@ -559,7 +559,7 @@ export default function ResourcesPage() {
                 <div className="p-6 pt-0">
                   <Link
                     href={`/resources/videos#${video.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-brand-blue bg-[#e4f1fc] hover:bg-brand-blue hover:text-white transition-colors font-heading"
+                    className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-[5px] text-xs sm:text-[13px] font-bold text-brand-blue bg-[#f3eee5] hover:bg-brand-ink hover:text-white transition-colors font-heading"
                   >
                     <span>Watch Masterclass</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -572,12 +572,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#f9fcff] border-t border-[#e2eef9]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#faf7f2] border-t border-[#e9e3d8]">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div>
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="w-6 h-[2px] bg-brand-blue rounded-full" aria-hidden="true" />
+                <span className="w-6 h-[2px] bg-brand-ink rounded-full" aria-hidden="true" />
                 <span className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-brand-blue font-heading">
                   NEED CLARITY?
                 </span>
@@ -591,7 +591,7 @@ export default function ResourcesPage() {
                 Have questions about how to utilize our free tools, when to begin working with a counselor, or how Blue Stars compares to other consulting programs?
               </p>
 
-              <div className="p-6 rounded-[5px] bg-white border border-[#e2eef9] shadow-xs">
+              <div className="p-6 rounded-[5px] bg-white border border-[#e9e3d8] shadow-xs">
                 <h4 className="text-[15px] font-bold text-brand-navy font-heading mb-1.5">
                   Looking for the Complete 50+ Question FAQ Hub?
                 </h4>
@@ -618,11 +618,9 @@ export default function ResourcesPage() {
       {/* Modern Elevated Blue Stars CTA Banner Card (Exact match with Services page) */}
       <section className="relative w-full py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-4 lg:px-4">
-          <div className="relative rounded-[5px] bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-[0_20px_50px_rgba(10,61,107,0.18)] border border-[#2072a7]/40 overflow-hidden">
+          <div className="relative rounded-[5px] bg-brand-ink text-white shadow-[0_1px_3px_rgba(18,48,90,0.05)] border border-[#2072a7]/40 overflow-hidden">
             {/* Ambient Background Waves */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-              <div className="absolute -top-24 -left-16 w-80 h-80 bg-[#0096c7]/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 right-1/3 w-96 h-60 bg-[#00b4d8]/20 rounded-full blur-3xl" />
 
               <svg
                 className="absolute -bottom-6 left-0 w-[500px] h-[180px] text-[#00b4d8] opacity-20 blur-xs"
@@ -645,8 +643,8 @@ export default function ResourcesPage() {
                   Turn Admissions Insights into Acceptance Letters
                 </h2>
 
-                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#d4e8f8] mb-6 max-w-xl font-sans">
-                  Ready to craft an authentic extracurricular spike and write essays that truly resonate? Schedule a free 30-minute introductory consultation with our senior mentors.
+                <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#f3eee5] mb-6 max-w-xl font-sans">
+                  Ready to craft an authentic extracurricular spike and write essays that truly resonate? Schedule an introductory consultation with our senior mentors.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
@@ -654,7 +652,7 @@ export default function ResourcesPage() {
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#d8ecfc] shadow-md hover:shadow-lg transition-all duration-200"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[5px] text-xs sm:text-[13.5px] font-bold font-heading text-[#07466f] bg-white hover:bg-[#f3eee5] shadow-md hover:shadow-lg transition-all duration-200"
                   >
                     <span>Book Your Initial Consultation</span>
                     <ArrowRight className="w-4 h-4 text-[#07466f]" />
@@ -678,7 +676,7 @@ export default function ResourcesPage() {
                       <div className="font-heading font-bold text-white text-sm">
                         16+ Years Guiding Top Students
                       </div>
-                      <div className="text-xs text-[#d4e8f8] mt-0.5 font-sans">
+                      <div className="text-xs text-[#f3eee5] mt-0.5 font-sans">
                         Proven holistic approach under Dr. Amy Morgenstern.
                       </div>
                     </div>
@@ -690,7 +688,7 @@ export default function ResourcesPage() {
                       <div className="font-heading font-bold text-white text-sm">
                         Top 20 & Elite University Admits
                       </div>
-                      <div className="text-xs text-[#d4e8f8] mt-0.5 font-sans">
+                      <div className="text-xs text-[#f3eee5] mt-0.5 font-sans">
                         Students admitted to Ivies, Stanford, MIT, and UC campuses.
                       </div>
                     </div>
@@ -702,7 +700,7 @@ export default function ResourcesPage() {
                       <div className="font-heading font-bold text-white text-sm">
                         100% Tailored Mentorship
                       </div>
-                      <div className="text-xs text-[#d4e8f8] mt-0.5 font-sans">
+                      <div className="text-xs text-[#f3eee5] mt-0.5 font-sans">
                         No generic formulas or one-size-fits-all advising.
                       </div>
                     </div>

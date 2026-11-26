@@ -37,7 +37,7 @@ export default function AdminAnnouncementsPage() {
   const [formData, setFormData] = useState<Partial<Announcement>>({
     title: "",
     badge: "LIMITED SPOTS",
-    linkText: "Schedule Free Consultation",
+    linkText: "Schedule a Consultation",
     linkUrl: "https://meetings-na2.hubspot.com/bluestars/initial-consultation",
     type: "banner",
     isActive: true,
@@ -78,7 +78,7 @@ export default function AdminAnnouncementsPage() {
     setFormData({
       title: "",
       badge: "LIMITED SPOTS",
-      linkText: "Schedule Free Consultation",
+      linkText: "Schedule a Consultation",
       linkUrl: "/contact",
       type: "banner",
       isActive: true,
@@ -659,7 +659,7 @@ export default function AdminAnnouncementsPage() {
                     type="text"
                     value={formData.linkText || ""}
                     onChange={(e) => setFormData({ ...formData, linkText: e.target.value })}
-                    placeholder="e.g. Schedule Free Consultation"
+                    placeholder="e.g. Schedule a Consultation"
                     className="w-full px-3.5 py-2 text-sm rounded-[5px] border border-[#dce8f5] focus:outline-none focus:ring-2 focus:ring-brand-blue/30 text-brand-navy"
                   />
                 </div>

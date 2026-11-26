@@ -161,7 +161,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
       <main className="min-h-screen bg-white">
         {/* Top Kicker Bar */}
-        <section className="bg-gradient-to-r from-[#073d63] via-[#094c79] to-[#0c5989] text-white py-2.5 sm:py-3 border-b border-white/10">
+        <section className="bg-brand-ink text-white py-2.5 sm:py-3 border-b border-white/10">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 text-xs font-heading font-bold">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
@@ -169,7 +169,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                 {webinar.status === "upcoming" ? "LIVE MASTERCLASS" : "ON-DEMAND REPLAY"}
               </span>
             </div>
-            <div className="flex items-center gap-4 text-[#d8ebf9] text-[11.5px] sm:text-xs">
+            <div className="flex items-center gap-4 text-[#f3eee5] text-[11.5px] sm:text-xs">
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-[#38bdf8]" />
                 <span>{webinar.date}</span>
@@ -188,13 +188,13 @@ export default async function EventDetailPage({ params }: PageProps) {
         </section>
 
         {/* Hero Section */}
-        <section className="py-5 sm:py-8 lg:py-10 bg-gradient-to-b from-[#f3f8fd] to-white border-b border-[#e2eef9]">
+        <section className="py-5 sm:py-8 lg:py-10 bg-white border-b border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Top Navigation */}
             <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-3">
               <Link
                 href="/resources/webinars"
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-[#f0f6fc] hover:bg-brand-sky border border-[#c4dcfa] transition-colors font-heading shadow-xs"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-[#f5f1ea] hover:bg-brand-sky border border-[#e9e3d8] transition-colors font-heading shadow-xs"
               >
                 &larr; Back to All Webinars &amp; Events
               </Link>
@@ -211,7 +211,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               {/* Left Column: Media (YouTube Video or Banner), Overview & Topics (7 cols) */}
               <div className="lg:col-span-7 flex flex-col">
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-[#E3F1FC] text-brand-blue text-xs font-bold font-heading uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[5px] bg-[#f5f1ea] text-brand-blue text-xs font-bold font-heading uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>{webinar.category}</span>
                   </span>
@@ -231,7 +231,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
                 {/* Media Container: Embedded YouTube Player OR Banner Image */}
                 {webinar.youtubeId ? (
-                  <div className="relative w-full aspect-video rounded-[8px] overflow-hidden border border-[#dbe7f3] shadow-md bg-black mb-6">
+                  <div className="relative w-full aspect-video rounded-[8px] overflow-hidden border border-[#e9e3d8] shadow-md bg-black mb-6">
                     <iframe
                       src={`https://www.youtube-nocookie.com/embed/${webinar.youtubeId}?autoplay=0&rel=0`}
                       title={webinar.title}
@@ -241,7 +241,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                     />
                   </div>
                 ) : webinar.bannerImage ? (
-                  <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[280px] rounded-[8px] overflow-hidden border border-[#dbe7f3] shadow-md bg-slate-100 mb-6">
+                  <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[280px] rounded-[8px] overflow-hidden border border-[#e9e3d8] shadow-md bg-slate-100 mb-6">
                     <Image
                       src={webinar.bannerImage}
                       alt={webinar.title}
@@ -264,7 +264,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
                 {/* Key Topics Section */}
                 {webinar.topics && webinar.topics.length > 0 && (
-                  <div className="mb-6 p-5 sm:p-6 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                  <div className="mb-6 p-5 sm:p-6 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                     <h3 className="text-sm font-bold text-brand-navy font-heading uppercase tracking-wider mb-3">
                       Key Topics Covered:
                     </h3>
@@ -289,7 +289,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
                 {/* Key Takeaways Card */}
                 {webinar.takeaways && webinar.takeaways.length > 0 && (
-                  <div className="p-5 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                  <div className="p-5 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                     <h4 className="text-xs font-bold text-brand-navy font-heading uppercase tracking-wider mb-3">
                       Included With This Session:
                     </h4>
@@ -305,18 +305,18 @@ export default async function EventDetailPage({ params }: PageProps) {
                 )}
 
                 {/* Quick Consultation Callout */}
-                <div className="p-5 rounded-[8px] bg-gradient-to-r from-[#073d63] to-[#0c5989] text-white">
+                <div className="p-5 rounded-[8px] bg-brand-ink text-white">
                   <h4 className="text-sm font-bold font-heading mb-1.5">
                     Need 1-on-1 Admissions Guidance?
                   </h4>
-                  <p className="text-xs text-[#d8ebf9] leading-relaxed mb-3">
-                    Book a free 30-minute initial consultation with Dr. Amy Morgenstern and our senior counseling team.
+                  <p className="text-xs text-[#f3eee5] leading-relaxed mb-3">
+                    Book an initial consultation with Dr. Amy Morgenstern and our senior counseling team.
                   </p>
                   <Link
                     href="https://meetings-na2.hubspot.com/bluestars/initial-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-white hover:bg-[#d8ecfc] transition-colors font-heading"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-white hover:bg-[#f3eee5] transition-colors font-heading"
                   >
                     <span>Book Initial Consultation</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -328,7 +328,7 @@ export default async function EventDetailPage({ params }: PageProps) {
         </section>
 
         {/* Featured Speakers Section */}
-        <section className="py-10 sm:py-14 bg-[#f8fbfe] border-b border-[#e2eef9]">
+        <section className="py-10 sm:py-14 bg-[#f5f1ea] border-b border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <span className="text-xs font-bold text-brand-blue uppercase tracking-[0.14em] font-heading">
@@ -344,10 +344,10 @@ export default async function EventDetailPage({ params }: PageProps) {
                 CAMPUS_TOURS_SPEAKERS.map((spk, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-[8px] border border-[#e2eef9] p-5 sm:p-6 shadow-xs flex flex-col justify-between"
+                    className="bg-white rounded-[8px] border border-[#e9e3d8] p-5 sm:p-6 shadow-xs flex flex-col justify-between"
                   >
                     <div>
-                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-[8px] overflow-hidden mb-4 border border-[#dbe7f3] mx-auto">
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-[8px] overflow-hidden mb-4 border border-[#e9e3d8] mx-auto">
                         <Image
                           src={spk.image}
                           alt={spk.name}
@@ -361,7 +361,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                       <p className="text-[15.5px] font-semibold text-brand-blue font-sans text-center mb-1">
                         {spk.role}
                       </p>
-                      <p className="text-[12.5px] text-brand-text font-sans text-center mb-4 pb-3 border-b border-[#edf4fb]">
+                      <p className="text-[12.5px] text-brand-text font-sans text-center mb-4 pb-3 border-b border-[#e9e3d8]">
                         {spk.credentials}
                       </p>
                       <p className="text-[15px] leading-relaxed text-brand-text font-sans">
@@ -374,10 +374,10 @@ export default async function EventDetailPage({ params }: PageProps) {
                 ESTATE_PLANNING_SPEAKERS.map((spk, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-[8px] border border-[#e2eef9] p-5 sm:p-6 shadow-xs flex flex-col justify-between"
+                    className="bg-white rounded-[8px] border border-[#e9e3d8] p-5 sm:p-6 shadow-xs flex flex-col justify-between"
                   >
                     <div>
-                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-[8px] overflow-hidden mb-4 border border-[#dbe7f3] mx-auto">
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-[8px] overflow-hidden mb-4 border border-[#e9e3d8] mx-auto">
                         <Image
                           src={spk.image}
                           alt={spk.name}
@@ -391,7 +391,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                       <p className="text-xs font-semibold text-brand-blue font-sans text-center mb-1">
                         {spk.role}
                       </p>
-                      <p className="text-[11.5px] text-brand-text font-sans text-center mb-4 pb-3 border-b border-[#edf4fb]">
+                      <p className="text-[11.5px] text-brand-text font-sans text-center mb-4 pb-3 border-b border-[#e9e3d8]">
                         {spk.credentials}
                       </p>
                       <p className="text-xs leading-relaxed text-brand-text font-sans">
@@ -401,9 +401,9 @@ export default async function EventDetailPage({ params }: PageProps) {
                   </div>
                 ))
               ) : (
-                <div className="bg-white rounded-[8px] border border-[#e2eef9] p-5 sm:p-6 shadow-xs flex flex-col justify-between md:col-span-2 lg:col-span-3 max-w-xl mx-auto">
+                <div className="bg-white rounded-[8px] border border-[#e9e3d8] p-5 sm:p-6 shadow-xs flex flex-col justify-between md:col-span-2 lg:col-span-3 max-w-xl mx-auto">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-[8px] overflow-hidden border border-[#dbe7f3] shrink-0">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-[8px] overflow-hidden border border-[#e9e3d8] shrink-0">
                       <Image
                         src={webinar.speaker.avatar}
                         alt={webinar.speaker.name}
@@ -430,7 +430,7 @@ export default async function EventDetailPage({ params }: PageProps) {
         </section>
 
         {/* Parent Testimonials */}
-        <section className="py-10 sm:py-14 bg-white border-b border-[#e2eef9]">
+        <section className="py-10 sm:py-14 bg-white border-b border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-8">
               <span className="text-xs font-bold text-brand-blue uppercase tracking-[0.14em] font-heading">
@@ -445,7 +445,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               {SHARED_TESTIMONIALS.map((t, idx) => (
                 <div
                   key={idx}
-                  className="p-5 sm:p-6 rounded-[8px] bg-[#f8fbfe] border border-[#e2eef9] flex flex-col justify-between"
+                  className="p-5 sm:p-6 rounded-[8px] bg-[#f5f1ea] border border-[#e9e3d8] flex flex-col justify-between"
                 >
                   <div>
                     <Quote className="w-6 h-6 text-brand-blue/30 mb-2" />
@@ -453,7 +453,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                       &ldquo;{t.quote}&rdquo;
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-[#e2eef9]">
+                  <div className="pt-3 border-t border-[#e9e3d8]">
                     <div className="text-[15px] font-bold text-brand-navy font-heading">
                       {t.author}
                     </div>
@@ -469,10 +469,10 @@ export default async function EventDetailPage({ params }: PageProps) {
 
         {/* Special Partner Cards: ember or Von Rock Law */}
         {isCampusTours && (
-          <section className="py-10 sm:py-14 bg-[#f4f9fd] border-b border-[#e2eef9]">
+          <section className="py-10 sm:py-14 bg-[#f5f1ea] border-b border-[#e9e3d8]">
             <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                   <div className="flex items-center gap-2 mb-3">
                     <Users className="w-5 h-5 text-brand-blue" />
                     <h3 className="text-lg sm:text-xl font-bold text-brand-navy font-heading">
@@ -484,7 +484,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                   </p>
                 </div>
 
-                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                   <div className="flex items-center gap-2 mb-3">
                     <GraduationCap className="w-5 h-5 text-brand-blue" />
                     <h3 className="text-lg sm:text-xl font-bold text-brand-navy font-heading">
@@ -501,10 +501,10 @@ export default async function EventDetailPage({ params }: PageProps) {
         )}
 
         {isEstatePlanning && (
-          <section className="py-10 sm:py-14 bg-[#f4f9fd] border-b border-[#e2eef9]">
+          <section className="py-10 sm:py-14 bg-[#f5f1ea] border-b border-[#e9e3d8]">
             <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                   <div className="flex items-center gap-2 mb-3">
                     <Scale className="w-5 h-5 text-brand-blue" />
                     <h3 className="text-lg sm:text-xl font-bold text-brand-navy font-heading">
@@ -516,7 +516,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                   </p>
                 </div>
 
-                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e2eef9] shadow-xs">
+                <div className="p-6 sm:p-8 rounded-[8px] bg-white border border-[#e9e3d8] shadow-xs">
                   <div className="flex items-center gap-2 mb-3">
                     <GraduationCap className="w-5 h-5 text-brand-blue" />
                     <h3 className="text-lg sm:text-xl font-bold text-brand-navy font-heading">
@@ -533,11 +533,11 @@ export default async function EventDetailPage({ params }: PageProps) {
         )}
 
         {/* Bottom Navigation */}
-        <section className="py-8 bg-white border-t border-[#e2eef9]">
+        <section className="py-8 bg-white border-t border-[#e9e3d8]">
           <div className="max-w-[1360px] mx-auto px-4 flex flex-wrap items-center justify-between gap-4">
             <Link
               href="/resources/webinars"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-[#f0f6fc] hover:bg-brand-sky border border-[#c4dcfa] transition-colors font-heading"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] text-xs font-bold text-brand-navy bg-[#f5f1ea] hover:bg-brand-sky border border-[#e9e3d8] transition-colors font-heading"
             >
               &larr; Back to All Webinars &amp; Events
             </Link>

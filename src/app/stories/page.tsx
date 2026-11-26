@@ -55,7 +55,7 @@ export default function StoriesPage() {
       {/* Free College Planning Foundations Workbook */}
       <FreeWorkbookSection />
 
-      {/* Free Consultation CTA */}
+      {/* Consultation CTA */}
       <CTA />
     </div>
   );

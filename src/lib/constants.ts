@@ -6,8 +6,8 @@ export const HUBSPOT_CONSULTATION_URL =
 export const HUBSPOT_DISCOVERY_URL =
   "https://meetings-na2.hubspot.com/bluestars/discovery-session";
 
-export const HUBSPOT_STRATEGY_CONSULTATION_URL =
-  "https://meetings-na2.hubspot.com/bluestars/discovery-session";
+// The 75-minute Strategy Consultation link is shared privately with families after their
+// Initial Consultation, so it is intentionally not linked anywhere on the public site.
 
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
   kicker: "Boutique College Counseling \u00b7 Since 2010",
@@ -16,7 +16,7 @@ export const DEFAULT_HERO_CONFIG: HeroConfig = {
   headingLine3: "whole story.",
   description:
     "Blue Stars is a boutique practice led by Dr. Amy Morgenstern, Ph.D., MFA. Every family works with one dedicated counselor, often from 8th grade through the final decision, with a plan that is personalized, data driven, and results oriented.",
-  primaryBtnText: "Book a Free 30-Minute Consultation",
+  primaryBtnText: "Book a Consultation",
   primaryBtnHref: HUBSPOT_CONSULTATION_URL,
   secondaryBtnText: "Meet Our Team",
   secondaryBtnHref: "/#team",
@@ -39,7 +39,6 @@ export const SITE_CONFIG = {
   consultationUrl: HUBSPOT_CONSULTATION_URL,
   initialConsultationUrl: HUBSPOT_CONSULTATION_URL,
   discoveryUrl: HUBSPOT_DISCOVERY_URL,
-  strategyConsultationUrl: HUBSPOT_STRATEGY_CONSULTATION_URL,
   contact: {
     email: "info@bluestars.us",
     phone: "415-426-9444",
@@ -59,7 +58,6 @@ export const NAV_LINKS: NavItem[] = [
   { label: "Our Services", href: "/services", hasDropdown: true },
   { label: "Successes", href: "/successes" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Resources", href: "/resources", hasDropdown: true },
   { label: "Blog", href: "/blogs" },
   { label: "About", href: "/about" },
 ];
@@ -381,7 +379,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
 export const FAQS: FAQItem[] = [
   {
     question: "How does the consultation process work?",
-    answer: "You start by booking a complimentary 30-minute Initial Consultation so we can learn about your student's profile and family goals. This is followed by a 75-minute in-depth Strategy Consultation where we diagnose strengths, evaluate transcripts, and present an actionable college roadmap.",
+    answer: "You start by booking an Initial Consultation so we can learn about your student's profile and family goals. This is followed by a 75-minute in-depth Strategy Consultation where we diagnose strengths, evaluate transcripts, and present an actionable college roadmap.",
   },
   {
     question: "Do you help with international college applications?",

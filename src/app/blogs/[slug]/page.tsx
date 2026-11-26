@@ -209,13 +209,13 @@ function processBlogContentHtml(html?: string): string {
       const lowerAlt = alt.toLowerCase();
       const lowerContent = bqContent.toLowerCase();
 
-      let borderColor = "border-brand-blue";
+      let borderColor = "border-brand-ink";
       let bgColor = "bg-brand-sky/25";
       let imgBorder = "border-brand-blue/30";
       let speakerHighlight = "text-brand-blue";
 
       if (lowerAlt.includes("amy") || lowerAlt.includes("morgenstern") || lowerContent.includes("drm:") || lowerContent.includes("dr. m:")) {
-        borderColor = "border-brand-blue";
+        borderColor = "border-brand-ink";
         bgColor = "bg-brand-sky/25";
         imgBorder = "border-brand-blue/30";
         speakerHighlight = "text-brand-blue";
@@ -275,13 +275,13 @@ function processBlogContentHtml(html?: string): string {
       const lowerAlt = alt.toLowerCase();
       const lowerContent = bqContent.toLowerCase();
 
-      let borderColor = "border-brand-blue";
+      let borderColor = "border-brand-ink";
       let bgColor = "bg-brand-sky/25";
       let imgBorder = "border-brand-blue/30";
       let speakerHighlight = "text-brand-blue";
 
       if (lowerAlt.includes("amy") || lowerAlt.includes("morgenstern") || lowerContent.includes("drm:") || lowerContent.includes("dr. m:")) {
-        borderColor = "border-brand-blue";
+        borderColor = "border-brand-ink";
         bgColor = "bg-brand-sky/25";
         imgBorder = "border-brand-blue/30";
         speakerHighlight = "text-brand-blue";
@@ -485,7 +485,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             )}
 
             {/* 5. Responsive Meta Bar: Author, Role, Date, Read Time & Social Share */}
-            <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#f8fbfe] border border-brand-border/80 mb-5 sm:mb-6 shadow-2xs">
+            <div className="p-3.5 sm:p-4 rounded-[5px] bg-[#f5f1ea] border border-brand-border/80 mb-5 sm:mb-6 shadow-2xs">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
                 {/* Author Info + Date & Read Time */}
                 <div className="flex items-center gap-3 min-w-0">
@@ -549,7 +549,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             {post.keyTakeaways && post.keyTakeaways.length > 0 && (
               <div className="bg-gradient-to-r from-brand-sky/70 via-brand-bg/90 to-brand-sky/40 border border-brand-blue/30 rounded-[5px] p-4 sm:p-5 mb-6 shadow-xs">
                 <div className="flex items-center gap-2 mb-2.5">
-                  <div className="w-6 h-6 rounded-[5px] bg-brand-blue text-white grid place-items-center flex-shrink-0 shadow-xs">
+                  <div className="w-6 h-6 rounded-[5px] bg-brand-ink text-white grid place-items-center flex-shrink-0 shadow-xs">
                     <Sparkles className="w-3.5 h-3.5" />
                   </div>
                   <h2 className="text-sm sm:text-base font-bold font-heading text-brand-navy tracking-tight">
@@ -585,7 +585,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                   prose-ul:my-2.5 prose-ul:space-y-1.5 prose-ul:list-disc prose-ul:pl-5
                   prose-ol:my-2.5 prose-ol:space-y-1.5 prose-ol:list-decimal prose-ol:pl-5
                   prose-li:text-brand-text prose-li:my-0.5 prose-li:text-[15px] sm:prose-li:text-[16px]
-                  prose-blockquote:my-4 prose-blockquote:border-l-4 prose-blockquote:border-brand-blue prose-blockquote:bg-brand-sky/40 prose-blockquote:py-3 prose-blockquote:px-4 sm:prose-blockquote:px-5 prose-blockquote:rounded-r-[5px] prose-blockquote:italic prose-blockquote:text-brand-navy
+                  prose-blockquote:my-4 prose-blockquote:border-l-4 prose-blockquote:border-brand-ink prose-blockquote:bg-brand-sky/40 prose-blockquote:py-3 prose-blockquote:px-4 sm:prose-blockquote:px-5 prose-blockquote:rounded-r-[5px] prose-blockquote:italic prose-blockquote:text-brand-navy
                   prose-img:rounded-[5px] prose-img:shadow-xs prose-img:my-3 sm:prose-img:my-4 prose-img:mx-auto prose-img:max-w-full prose-img:w-auto prose-img:h-auto prose-img:max-h-[460px] prose-img:object-contain prose-img:block
                   [&_p[id^='caption']]:text-center [&_p[id^='caption']]:text-xs sm:[&_p[id^='caption']]:text-sm [&_p[id^='caption']]:text-brand-text/80 [&_p[id^='caption']]:italic [&_p[id^='caption']]:-mt-1.5 [&_p[id^='caption']]:mb-4
                   [&_figcaption]:text-center [&_figcaption]:text-xs sm:[&_figcaption]:text-sm [&_figcaption]:text-brand-text/80 [&_figcaption]:italic [&_figcaption]:mt-1.5 [&_figcaption]:mb-4
@@ -618,7 +618,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                       return (
                         <section key={idx} id={sectionId} className="scroll-mt-28">
                           <h2 className="text-xl sm:text-2xl font-extrabold text-brand-navy font-heading tracking-tight leading-snug mb-3 pb-1.5 border-b border-brand-border/70 flex items-center gap-2.5">
-                            <span className="w-2 h-5 bg-brand-blue rounded-full flex-shrink-0" />
+                            <span className="w-2 h-5 bg-brand-ink rounded-full flex-shrink-0" />
                             <span>{section.heading}</span>
                           </h2>
 
@@ -637,7 +637,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                             <ul className="my-3 space-y-1.5 bg-brand-bg/60 p-4 rounded-[5px] border border-brand-border/60">
                               {section.bullets.map((bullet, bIdx) => (
                                 <li key={bIdx} className="flex items-start gap-2.5">
-                                  <span className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                                  <span className="w-2 h-2 rounded-full bg-brand-ink mt-2 flex-shrink-0" />
                                   <span className="text-sm sm:text-base leading-relaxed text-brand-navy/90 font-medium font-sans">
                                     {bullet}
                                   </span>
@@ -647,7 +647,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
                           )}
 
                           {section.callout && (
-                            <div className="my-4 p-4 rounded-[5px] bg-gradient-to-r from-brand-sky/60 via-brand-bg to-brand-sky/30 border-l-4 border-brand-blue shadow-xs">
+                            <div className="my-4 p-4 rounded-[5px] bg-gradient-to-r from-brand-sky/60 via-brand-bg to-brand-sky/30 border-l-4 border-brand-ink shadow-xs">
                               <div className="flex items-start gap-3">
                                 {section.callout.type === "quote" ? (
                                   <Quote className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
@@ -723,7 +723,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             </div>
 
             {/* Author Attribution Card */}
-            <div className="mt-8 p-4 sm:p-5 rounded-[5px] bg-[#f8fbfe] border border-brand-border shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="mt-8 p-4 sm:p-5 rounded-[5px] bg-[#f5f1ea] border border-brand-border shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5 min-w-0">
                 <div className="relative w-12 h-12 rounded-[5px] overflow-hidden bg-brand-sky text-brand-blue border border-brand-blue/30 flex items-center justify-center flex-shrink-0 shadow-xs">
                   {post.author?.avatar ? (
@@ -798,8 +798,8 @@ export default async function SingleBlogPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Free Consultation Booking Card (Direct HubSpot Meeting) */}
-            <div className="p-6 rounded-[5px] bg-gradient-to-br from-[#073d63] via-[#094c79] to-[#0c5989] text-white shadow-card relative overflow-hidden">
+            {/* Consultation Booking Card (Direct HubSpot Meeting) */}
+            <div className="p-6 rounded-[5px] bg-brand-ink text-white shadow-card relative overflow-hidden">
               <div className="relative z-10">
                 <div className="w-9 h-9 rounded-[5px] bg-white/10 backdrop-blur-md border border-white/20 grid place-items-center mb-3.5">
                   <BrandStar className="w-4.5 h-4.5 text-white fill-white" />
@@ -807,14 +807,14 @@ export default async function SingleBlogPage({ params }: PageProps) {
                 <h3 className="font-heading font-extrabold text-base sm:text-lg text-white mb-2 leading-tight">
                   Ready to Plan Your Student&apos;s Admissions Journey?
                 </h3>
-                <p className="text-xs sm:text-sm leading-relaxed text-[#cbe5fb] font-sans mb-4">
-                  Schedule a complimentary 30-minute initial consultation with Dr. Amy Morgenstern and our senior counseling team.
+                <p className="text-xs sm:text-sm leading-relaxed text-[#f3eee5] font-sans mb-4">
+                  Schedule an initial consultation with Dr. Amy Morgenstern and our senior counseling team.
                 </p>
                 <a
                   href={HUBSPOT_CONSULTATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-white hover:bg-[#f0f7fe] text-brand-navy font-bold text-xs sm:text-sm font-heading shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-white hover:bg-[#f3eee5] text-brand-navy font-bold text-xs sm:text-sm font-heading shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <span>Book Your Initial Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5 text-brand-navy" />
@@ -836,7 +836,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
               </p>
               <Link
                 href="/free-workbook"
-                className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-[5px] bg-brand-sky hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs font-heading transition-colors"
+                className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-[5px] bg-brand-sky hover:bg-brand-ink text-brand-blue hover:text-white font-bold text-xs font-heading transition-colors"
               >
                 <span>Download Free Workbook</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -844,7 +844,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             </div>
 
             {/* Quick Article Overview */}
-            <div className="p-5 rounded-[5px] bg-[#f8fbfe] border border-brand-border/70 space-y-2.5 text-xs text-brand-text font-sans">
+            <div className="p-5 rounded-[5px] bg-[#f5f1ea] border border-brand-border/70 space-y-2.5 text-xs text-brand-text font-sans">
               <div className="flex justify-between py-1 border-b border-brand-border/40">
                 <span className="font-semibold text-brand-navy">Category:</span>
                 <span className="font-medium text-brand-blue">{post.category}</span>
@@ -871,7 +871,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 mb-8">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="w-5 h-[2px] bg-brand-blue rounded-full" />
+                  <span className="w-5 h-[2px] bg-brand-ink rounded-full" />
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-blue font-heading">
                     EXPLORE MORE
                   </span>
