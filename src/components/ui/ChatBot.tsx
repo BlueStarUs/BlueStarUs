@@ -8,7 +8,6 @@ import {
   Send,
   RotateCcw,
   ChevronRight,
-  ArrowRight,
   Mic,
   Square,
   Loader2,
@@ -610,14 +609,14 @@ export function ChatBot() {
                             }
                           }}
                           className={cn(
-                            "inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.89em] font-bold font-heading transition-all shadow-xs",
-                            isUser
-                              ? "bg-white text-brand-blue hover:bg-[#f3eee5]"
-                              : "bg-brand-ink hover:bg-brand-blue text-white"
+                            message.actionLink.href === HUBSPOT_CONSULTATION_URL
+                              ? // Booking is the real CTA, so it stays a (compact) button
+                                "inline-block px-3.5 py-1.5 rounded-full text-[0.89em] font-bold font-heading transition-all shadow-xs bg-brand-ink hover:bg-brand-blue text-white"
+                              : // "Learn more" pages are plain text links: wrap cleanly on mobile
+                                "inline text-[0.89em] font-semibold font-heading text-brand-blue underline underline-offset-2 decoration-brand-blue/40 hover:decoration-brand-blue break-words transition-colors"
                           )}
                         >
-                          <span>{message.actionLink.label}</span>
-                          <ArrowRight className="w-3 h-3" />
+                          {message.actionLink.label}
                         </Link>
                       </div>
                     )}
